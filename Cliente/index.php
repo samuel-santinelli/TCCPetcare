@@ -4,6 +4,7 @@
 require_once('bd/conexao.php');
 require_once('config/config.php');
 require_once(SRC. 'control/exibirSexo.php');
+require_once(SRC. 'control/exibirClientes.php');
 //  conexao();
 
 $nome = (string) null;
@@ -14,11 +15,11 @@ $confirmarSenha = (string) null;
 // $foto = (string) ''; 
 $idSexo =  ( int )null;
 $data = (string) null;
-
+$telefone = (string) null;
 
 $nomeSexo = "Selecione um Item"; 
 
-
+$foto = (string) ''; 
 
 
 
@@ -36,9 +37,23 @@ $nomeSexo = "Selecione um Item";
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post"  action="control/recebeCliente.php">
+            <form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?nomeFoto=<?=$foto?>">
             
-      
+            <div class="campos">
+                        <div class="cadastroInformacoesPessoais">
+                            <label> Foto: </label>
+                        </div>
+                        <div class="cadastroEntradaDeDados">
+                            <input type="file" name="fleFoto" accept="image/jpeg, image/jpg, image/png">
+                        </div>
+                        <div id="visualizarFoto"> 
+                            <img src="<?= NOME_DIRETORIO_FILE.$foto?>"> 
+
+                        </div>
+                    </div>
+
+
+            <input value="<?=$telefone?>" placeholder="telefone" type="text" name="telefone"/>
                     
             <input value="<?=$nome?>" placeholder="Nome" type="text" name="inputNome" id="inputNome"/>
             <input value="<?=$data?>" placeholder="Data" type="text" name="inputData" id="inputData"/>
@@ -65,8 +80,46 @@ $nomeSexo = "Selecione um Item";
       
                         ?>
                         </select>
-            <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
-        </form>
+                      
+                                
+
+
+         <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+        
+        
+        
+        
+        </form> 
+
+        <?php
+                $dados = exibirClientes();
+                
+                while ($exibirClientes = mysqli_fetch_assoc($dados))
+                {
+                ?>
+                <tr id="tblLinhas">
+                    <td ><?=$exibirClientes['nome']?></td>
+                    <br>
+                    <td ><?=$exibirClientes['cpf']?></td>
+                    <br>
+                    <td><?=$exibirClientes['dataNascimento']?></td>
+                    <br>
+                    <td ><?=$exibirClientes['email']?></td>
+                    <br>
+                    <td ><?=$exibirClientes['senha']?></td>
+                    <br>
+                    <td ><?=$exibirClientes['telefone']?></td>
+                    <br>
+    
+                    <td > <td ><img class= "foto"src="<?= NOME_DIRETORIO_FILE.$exibirClientes['foto']?>"></td></td>
+
+                 <pre>
+
+
+
+                    <?php  
+                    }
+                ?>
 
        
 </body> 

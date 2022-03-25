@@ -24,7 +24,7 @@ $possuiAnimais = (int) 0;
 $possuiCriancas = (int) 0;
 
 
-$foto = (string) null; // variavel criada guardar o nome da foto
+$foto = (string) null; 
 
 
 if(isset($_GET['id'])){

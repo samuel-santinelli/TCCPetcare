@@ -7,9 +7,11 @@ function inserirCliente($arrayCliente){
         nome,
         cpf,
         dataNascimento,
+        foto,
         email,
         senha,
-       idSexo
+       idSexo,
+       telefone
        
       
 
@@ -19,9 +21,11 @@ function inserirCliente($arrayCliente){
         '".$arrayCliente['nome']."',
         '".$arrayCliente['cpf']."',
         '".$arrayCliente['dataNascimento']."',
+        '".$arrayCliente['foto']."',
         '".$arrayCliente['email']."',
         '".$arrayCliente['senha']."',
-        ".$arrayCliente['idSexo']."
+        ".$arrayCliente['idSexo'].",
+        '".$arrayCliente['telefone']."'
          )
 ";
 

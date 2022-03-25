@@ -5,7 +5,7 @@ session_start();
 require_once("bd/conexao.php");
 require_once('config/config.php');
 require_once(SRC. 'control/exibir.php');
-// require_once(SRC. 'control/exibirAgenda.php');
+
 require_once(SRC. 'control/exibirHost.php');
  //conexao();
 
