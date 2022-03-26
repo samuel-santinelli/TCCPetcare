@@ -1,0 +1,20 @@
+
+#containerLink{
+    height: 20rem;
+    width: 90rem;
+    margin-top: 7rem;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-left: 3rem;
+  }
+  
+  .containerLink, a {
+    height: 10rem;
+    margin: 0.5rem;
+    font-size: 2.0rem;
+  }
+  
+  .containerLink, .linkEntreAgora{
+    color: #f28907;
+  }

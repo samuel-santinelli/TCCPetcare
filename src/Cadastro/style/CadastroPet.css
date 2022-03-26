@@ -1,0 +1,129 @@
+#containerMainPet {
+  height: 1259px;
+  width: 210rem;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: end;
+  position: relative;
+  margin-left: 25rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  background-color: #fff;
+}
+
+#InputsContainerSelect {
+  margin-right: 10px;
+}
+
+#containerInputCheckbox {
+  width: 18rem;
+  margin-left: 6.7rem;
+  display: flex;
+}
+
+#containerInputCheckbox,
+label {
+  margin-right: 5rem;
+  padding-right: 5rem;
+}
+
+.lastLabel {
+  margin-right: 5rem;
+  font-size: 1.5rem;
+}
+
+#containerInputsPet {
+  height: 96rem;
+  width: 92rem;
+  margin-left: 90px;
+  background-color: #fff;
+}
+
+#contInputsPet {
+  height: 4.5rem;
+  width: 92rem;
+  margin-bottom: 2rem;
+  flex-direction: row;
+  margin-bottom: 45px;
+  margin-left: 6.5rem;
+}
+
+/* Conteudo Pet NextPage começa aqui*/
+
+#contInputsPetCheckbox {
+    height: 4.5rem;
+    width: 92rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    margin-bottom: 45px;
+    margin-left: 6.5rem;
+    display: flex;
+}
+
+#contInputCheckbox {
+  height: 5rem;
+  width: 44rem;
+  margin-bottom: 15px;
+  margin-right: 2rem;
+  margin-bottom: 6rem;
+  border: solid 1px #f28907;
+}
+
+.containerSelectPeso{
+  height: 20rem;
+
+}
+
+.containerInputsSelectPeso{
+  height: 15rem;
+  width: 50rem;
+  background-color: aquamarine;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3{
+  font-size: 2.7rem;
+  text-align: center;
+}
+
+.checkmarkPeso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.containerSelectPesoMarked:hover input ~ .checkmarkPeso {
+  background-color: #ccc;
+}
+
+.containerSelectPesoMarked input:checked ~ .checkmarkPeso {
+  background-color: #2196F3;
+}
+
+.containerSelectPesoMarked:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.containerSelectPesoMarked input:checked ~ .checkmarkPeso:after {
+  display: block;
+}
+
+.containerSelectPesoMarked .checkmarkPeso:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+/* Conteudo Pet NextPage termina aqui*/

@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --main-color: #f28907;
+  --black: rgba(0, 0, 0, 0.5);
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+body{
+  background-color: #f28907;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+#containerMain {
+ height: 1061px;
+ width: 210rem;
+ margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: end;
+  position: relative;
+  margin-left: 25rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  background-color: #fff;
+}
+
+
+#containerInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 7rem;
+
+}
+
+#containerBorderImage {
+  height: 20rem;
+  width: 20rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 100%;
+  border: solid 3px #f28907; 
+}
+
+#inputImage{
+  margin-top: 4.5rem;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  position: absolute;
+  opacity: 0;
+}
+
+#iconInputCamera{
+  margin-top: 7rem;
+  margin-left: 6rem;
+}
+
+#contInputs {
+  height: 6.9rem;
+  width: 82rem;
+  margin-bottom: 2rem;
+  margin-top: 3.5rem;
+  flex-direction: row;
+  margin-bottom: 40px;
+  margin-left: 7.5rem;
+}
+
+#contInputsMoradia{
+  height: 6.9rem;
+  width: 82rem;
+  margin-bottom: 2rem;
+  margin-top: 3.5rem;
+  flex-direction: row;
+  margin-bottom: 40px;
+  margin-left: 6.6rem;
+}
+
+#InputsContainer, #senhaForca{
+  margin-left: 265px;
+}
+
+#InputsContainerSelect{
+  height: 6.5rem;
+  
+  width: 44rem;
+  font-size: 2.2rem;
+  padding-left: 1rem;
+  border: solid 1px #f28907;
+}
+
+#InputsContainerCheckbox{
+  padding-left: 195px;
+}
+
+#InputsContainerPreferences{
+  margin-right: 44.4rem;
+}
+
+#contInputStretcCadastro{
+  height: 5rem;
+  margin-bottom: 60px;
+  margin-right: 38rem;
+}
+
+#iconInputLabel{
+  height: 4rem;
+  width: 4rem;
+  padding-top: 1.5rem;
+}
+
+#iconInputCPF{
+  height: 45px;
+  position: absolute;
+  align-items: left;
+  width: 3.5rem;
+  padding-left: 2rem;
+  padding-top: 3rem;
+}
+
+#inputCPF{
+  margin-top: 10rem;
+}
+
+#inputEmail{
+  width: 85rem;
+  background-color: #fff;
+}
+
+#inputNome, #inputSobrenome, #inputEmail, #inputSenha, #inputConfirmarSenha{
+  padding-left: 6rem;
+}
+
+input #iconInputNome{
+  height: 45px;
+  border-bottom: none;
+}
+
+#iconInputSobrenome{
+  height: 45px;
+}
+
+#inputNameIcon{
+  border: none;
+  background-color: #932;
+  position: none;
+}
+
+#impSenha, #erroSenhaForca{
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#iconInputCamera{
+  width: 8rem;
+  height: 5rem;
+}
+
+#containerInputCheckbox{
+ height: 7rem;
+  margin-right: 50rem;
+}

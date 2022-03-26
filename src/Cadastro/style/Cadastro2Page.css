@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --main-color: #f28907;
+  --black: rgba(0, 0, 0, 0.5);
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+body{
+  background-color: #f28907;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+#containerMain {
+ height: 1061px;
+ width: 210rem;
+ margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: end;
+  position: relative;
+  margin-left: 25rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  background-color: #fff;
+}
+
+#bannerNext {
+  height: 106.1rem;
+  width: 95rem;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../../../images/fotoBannerNext2.jpg');
+}
+
+#containerInputs {
+  height: 94rem;
+  width: 88rem;
+  margin-left: 90px;
+  background-color: #fff;
+}
+
+#containerInputs,
+h1 {
+  font-size: 6.5rem;
+  color: #f28907;
+}
+
+#containerInputs,
+h2 {
+  font-size: 2.2rem;
+  color: var(--black);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#inputCont {
+  height: 5rem;
+  width: 95rem;
+  margin-bottom: 15px;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Conteudo Cuidador  começa aqui*/
+
+#contInputsPetCheckbox {
+  height: 4.5rem;
+  width: 92rem;
+  margin-bottom: 2rem;
+  flex-direction: row;
+  margin-bottom: 45px;
+  margin-left: 6.5rem;
+  display: flex;
+}
+
+#contInputCheckbox {
+height: 5rem;
+width: 44rem;
+margin-bottom: 15px;
+margin-right: 2rem;
+margin-bottom: 6rem;
+border: solid 1px #f28907;
+}
+
+#labelCheckbox{
+  font-size: 1.7rem;
+  margin-left: 1.5rem;
+}
+
+/* Conteudo Cuidador termina aqui*/

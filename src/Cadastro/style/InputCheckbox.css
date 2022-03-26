@@ -1,0 +1,146 @@
+.labelInputCheckbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right: 2rem;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .labelInputCheckbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: solid 1px #F28907;
+  }
+  
+  .labelInputCheckbox:hover input ~ .checkmark {
+    background-color: #F28907;
+  }
+  
+  .labelInputCheckbox input:checked ~ .checkmark {
+    background-color: #F28907;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .labelInputCheckbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .labelInputCheckbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .inputCheckboxLeft{
+      margin-left: 6.5rem;
+  }
+  
+  .inputCheckboxLeftBravo{
+      margin-left: 4.8rem;
+  }
+  
+  .inputCheckboxLeftAcanhoso{
+      margin-left: 6.8rem;
+  }
+
+
+  /* Conteudo checkbox cuidador */
+  .labelInputCheckboxCuidador {
+    display: block;
+    margin-top: 1rem;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right: 2rem;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .labelInputCheckboxCuidador input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmarkCuidador {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: solid 1px #F28907;
+    margin-left: 38rem;
+ 
+  }
+  
+  .labelInputCheckboxCuidador:hover input ~ .checkmarkCuidador {
+    background-color: #F28907;
+  }
+  
+  .labelInputCheckboxCuidador input:checked ~ .checkmarkCuidador {
+    background-color: #F28907;
+  }
+  
+  .checkmarkCuidador:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .labelInputCheckboxCuidador input:checked ~ .checkmarkCuidador:after {
+    display: block;
+  }
+  
+  .labelInputCheckboxCuidador .checkmarkCuidador:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  /* Conteudo checkbox cuidador termina aqui */

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --main-color: #f28907;
+  --black: rgba(0, 0, 0, 0.5);
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+body{
+  background-color: #f28907;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+#containerMainInputs {
+ height: 1450px;
+ width: 210rem;
+ margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: end;
+  position: relative;
+  margin-left: 25rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  background-color: #fff;
+}
+#containerInputsCliente{
+  /* padding-top: 240px; */
+  height: 125rem;
+  width: 112rem;
+  margin-right: 5rem;
+  background-color: #fff;
+}
+
+#containerInputs,
+h1 {
+  font-size: 6.5rem;
+  color: #f28907;
+}
+
+#inputContCliente {
+  height: 5rem;
+  margin-bottom: 15px;
+  background-color: #fff;
+  margin-top: 7rem;
+}
+
+#impSenha, #erroSenhaForca{
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#InputsContainerSelectCliente{
+  height: 6.5rem;
+  width: 42rem;
+  font-size: 2.2rem;
+  padding-left: 1rem;
+  border: solid 1px #f28907;
+}
+
+#contInputStretch{
+  height: 5rem;
+  margin-bottom: 60px;
+  margin-left: 6.5rem;
+}
