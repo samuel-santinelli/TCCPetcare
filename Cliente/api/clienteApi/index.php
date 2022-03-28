@@ -89,6 +89,6 @@ $app->post('/cliente', function($request, $response, $args){
 
 $app->run();
 
-// http://localhost/Cuidador/Cuidador/api/cuidador
+// http://localhost/Cuidador/Cliente/api/cliente
 
 ?>
