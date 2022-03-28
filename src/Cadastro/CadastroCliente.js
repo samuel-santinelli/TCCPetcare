@@ -1,5 +1,5 @@
 import "./style/CadastroCliente.css";
-import InputsIconCliente from './inputs/InputsIconCliente'
+import InputsIconCliente from './inputs/ConteudoInputsCliente'
 import HomeCliente from './HomeCliente';
 import InputButton from "./button/InputButton";
 import Footer from "./footer/Footer";
