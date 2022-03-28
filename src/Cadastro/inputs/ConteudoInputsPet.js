@@ -49,9 +49,9 @@ const InputsPet = () => {
         />
         <select id="InputsContainerSelect">
           <option disabled selected>
-            Vacinas
+            Espécie
           </option>
-          <option>Masculino</option>
+          <option>V8.V10</option>
           <option>Femininio</option>
           <option>Não Binario</option>
         </select>
@@ -61,9 +61,9 @@ const InputsPet = () => {
           <option disabled selected>
             Fase
           </option>
-          <option>Masculino</option>
-          <option>Femininio</option>
-          <option>Não Binario</option>
+          <option>Filhote</option>
+          <option>Adulto</option>
+          <option>Sênior</option>
         </select>
         <select id="InputsContainerSelect">
           <option disabled selected>

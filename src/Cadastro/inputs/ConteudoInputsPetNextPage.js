@@ -11,6 +11,30 @@ import { styled } from "@mui/material/styles";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const InputsPetNextPage = () => {
+  function createAluno( aluno ) {
+    const url = 'http://seudominio/alunos/';
+    const options = {
+      method: 'POST',
+      body: JSON.stringify( aluno )
+    };
+
+    fetch(url, options )
+  }
+
+    const aluno = {
+      "id":"",
+      "nome": "Cleyde Gomes da Silva",
+      "email": "cleydegomes@gmail.com",
+      "celular": "1199988888",
+      "logradouro": "rua sem fim",
+      "bairro": "Sem nome",
+      "cidade": "Barueri",
+      "estado": "SP",
+      "cep": "18135300"
+  };
+
+  createAluno(aluno);
+
   const Input = styled(TextField)({
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
