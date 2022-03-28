@@ -107,4 +107,13 @@ border: solid 1px #f28907;
   margin-left: 1.5rem;
 }
 
+#cpf, #limitacoes, #moradia, #preferencias{
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+#moradia{
+  margin-right: 4.7rem;
+}
+
 /* Conteudo Cuidador termina aqui*/

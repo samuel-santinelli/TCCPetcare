@@ -81,3 +81,12 @@ h1 {
   margin-bottom: 60px;
   margin-left: 6.5rem;
 }
+
+#nome, #sobrenome, #email, #senha, #confirmarSenha, #moradia, #telefone, #cpf{
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+#cpf{
+  margin-right: 5rem;
+}

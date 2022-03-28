@@ -17,6 +17,7 @@ const InputsPet = () => {
         height: 70,
         width: 390,
         borderColor: "#f28907",
+        borderRadius: 10,
         // qualquer outra classe css aqui
       },
       "&:hover fieldset": {
@@ -37,7 +38,7 @@ const InputsPet = () => {
       <div id="contInputsPet">
         <Input
           label="Nome Do Pet"
-          id="InputsContainer"
+          id="nomePet"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

@@ -26,6 +26,7 @@ const InputsIconCliente = () => {
         height: 70,
         width: 390,
         borderColor: "#f28907",
+        borderRadius: 10,
         // qualquer outra classe css aqui
       },
       "&:hover fieldset": {
@@ -45,7 +46,7 @@ const InputsIconCliente = () => {
       <div id="contInputsPet">
         <Input
           label="Nome"
-          id="InputsContainer"
+          id="nome"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -56,6 +57,7 @@ const InputsIconCliente = () => {
         />
         <Input
           label="Sobrenome"
+          id="sobrenome"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -68,7 +70,7 @@ const InputsIconCliente = () => {
       <div id="contInputStretch">
         <Input
           label="Email"
-          id="contInputEmail"
+          id="email"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -81,7 +83,7 @@ const InputsIconCliente = () => {
       <div id="contInputsPet">
         <Input
           label="Senha"
-          id="InputsContainer"
+          id="senha"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -92,6 +94,7 @@ const InputsIconCliente = () => {
         />
         <Input
           label="Confirmar Senha"
+          id="confirmarSenha"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -104,7 +107,7 @@ const InputsIconCliente = () => {
       <div id="contInputsPet">
         <Input
           label="Moradia"
-          id="InputsContainer"
+          id="moradia"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -114,7 +117,8 @@ const InputsIconCliente = () => {
           }}
         />
         <Input
-          label="Preferências"
+          label="Telefone"
+          id="telefone"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -127,7 +131,7 @@ const InputsIconCliente = () => {
       <div id="contInputsPet">
         <Input
           label="CPF"
-          id="InputsContainer"
+          id="cpf"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

@@ -20,6 +20,7 @@ const InputsIconNextPage = () => {
         height: 70,
         width: 390,
         borderColor: "#f28907",
+        borderRadius: 10,
         // qualquer outra classe css aqui
       },
       "&:hover fieldset": {
@@ -48,6 +49,7 @@ const InputsIconNextPage = () => {
 
         <Input
           label="CPF"
+          id="cpf"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -76,7 +78,7 @@ const InputsIconNextPage = () => {
       <div id="contInputsPet">
         <Input
           label="Preferências"
-          id="InputsContainerPreferences"
+          id="limitacoes"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -89,7 +91,7 @@ const InputsIconNextPage = () => {
       <div id="contInputsMoradia">
         <Input
           label="Moradia"
-          id="InputsContainer"
+          id="moradia"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -100,6 +102,7 @@ const InputsIconNextPage = () => {
         />
         <Input
           label="Preferências"
+          id="preferencias"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

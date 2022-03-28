@@ -17,6 +17,7 @@ const InputsIcon = () => {
         height: 70,
         width: 390,
         borderColor: "#f28907",
+        borderRadius: 10,
         // qualquer outra classe css aqui
       },
       "&:hover fieldset": {
@@ -25,6 +26,7 @@ const InputsIcon = () => {
       },
       "&.Mui-focused fieldset": {
         borderColor: "f28907",
+        fontSize: 19,
         // qualquer classe p/ efeito de focus aqui
       },
     },
@@ -36,7 +38,7 @@ const InputsIcon = () => {
       <div id="contInputsPet">
         <Input
           label="Nome"
-          id="InputsContainer"
+          id="nome"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -47,6 +49,7 @@ const InputsIcon = () => {
         />
         <Input
           label="Sobrenome"
+          id="sobrenome"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -59,7 +62,7 @@ const InputsIcon = () => {
       <div id="contInputStretch">
         <Input
           label="Email"
-          id="InputEmail"
+          id="email"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -72,11 +75,11 @@ const InputsIcon = () => {
       <div id="contInputsPet">
         <Input
           label="Senha"
-          id="InputsContainer"
+          id="senha"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <LockIcon id="iconInputLabel" />
+                <LockIcon id="iconInputLabel" onsClick="validationSenha()"/>
               </InputAdornment>
             ),
           }}
@@ -84,6 +87,7 @@ const InputsIcon = () => {
         
         <Input
           label="Confirmar Senha"
+          id="confirmarSenha"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

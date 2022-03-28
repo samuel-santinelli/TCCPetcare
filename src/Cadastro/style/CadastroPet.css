@@ -14,6 +14,7 @@
 
 #InputsContainerSelect {
   margin-right: 10px;
+  border-radius: 1.5rem;
 }
 
 #containerInputCheckbox {
@@ -42,11 +43,13 @@ label {
 
 #contInputsPet {
   height: 4.5rem;
-  width: 92rem;
+  width: 95rem;
+  max-width: 100rem;
   margin-bottom: 2rem;
   flex-direction: row;
   margin-bottom: 45px;
   margin-left: 6.5rem;
+  
 }
 
 /* Conteudo Pet NextPage começa aqui*/
@@ -59,15 +62,17 @@ label {
     margin-bottom: 45px;
     margin-left: 6.5rem;
     display: flex;
+    border-radius: 10,
 }
 
 #contInputCheckbox {
-  height: 5rem;
+  height: 6rem;
   width: 44rem;
   margin-bottom: 15px;
   margin-right: 2rem;
   margin-bottom: 6rem;
   border: solid 1px #f28907;
+  border-radius: 1.5rem;
 }
 
 .containerSelectPeso{
@@ -124,6 +129,13 @@ h3{
 	height: 8px;
 	border-radius: 50%;
 	background: white;
+}
+
+#nomePet{
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-right: 4rem;
+  padding-left: 1rem;
 }
 
 /* Conteudo Pet NextPage termina aqui*/
