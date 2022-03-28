@@ -77,27 +77,27 @@ const InputsPetNextPage = () => {
           <h3>PORTE</h3>
           <div>
             <div class="containerInputsSelectPeso">
-            <label class="containerSelectPesoMarked">
-              One
-              <input type="radio" checked="checked" name="radio" />
-              <span class="checkmarkPeso"></span>
-            </label>
-            <label class="container">
-              Two
-              <input type="radio" name="radio" />
-              <span class="checkmarkPeso"></span>
-            </label>
-            <label class="container">
-              Three
-              <input type="radio" name="radio" />
-              <span class="checkmarkPeso"></span>
-            </label>
-            <label class="container">
-              Four
-              <input type="radio" name="radio" />
-              <span class="checkmarkPeso"></span>
-            </label>
-          </div>
+              <label class="containerSelectPesoMarked">
+                <input type="radio" checked="checked" name="radio" class="radioPeso" />
+                <div id="peso5kg"/>
+                <span class="checkmarkPeso"></span>
+              </label>
+              <label class="containerSelectPesoMarked">
+                <input type="radio" name="radio" class="radioPeso"/>
+                <div id="peso10kg"/>
+                <span class="checkmarkPeso"></span>
+              </label>
+              <label class="containerSelectPesoMarked">
+                <input type="radio" name="radio" class="radioPeso"/>
+                <div id="peso20kg"/>
+                <span class="checkmarkPeso"></span>
+              </label>
+              <label class="containerSelectPesoMarked">
+                <input type="radio" name="radio" class="radioPeso"/>
+                <div id="peso40kg"/>
+                <span class="checkmarkPeso"></span>
+              </label>
+            </div>
           </div>
         </div>
       </div>

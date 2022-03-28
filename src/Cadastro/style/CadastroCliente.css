@@ -74,6 +74,7 @@ h1 {
   font-size: 2.2rem;
   padding-left: 1rem;
   border: solid 1px #f28907;
+  border-radius: 1.5rem;
 }
 
 #contInputStretch{
@@ -88,5 +89,5 @@ h1 {
 }
 
 #cpf{
-  margin-right: 5rem;
+  margin-right: 8.7rem;
 }

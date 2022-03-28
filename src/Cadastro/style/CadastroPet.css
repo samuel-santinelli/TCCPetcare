@@ -71,7 +71,6 @@ label {
   margin-bottom: 15px;
   margin-right: 2rem;
   margin-bottom: 6rem;
-  border: solid 1px #f28907;
   border-radius: 1.5rem;
 }
 
@@ -81,12 +80,13 @@ label {
 }
 
 .containerInputsSelectPeso{
-  height: 15rem;
-  width: 50rem;
-  background-color: aquamarine;
+  height: 20rem;
+  width: 85rem;
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  border: solid 2px #F28907;
+  border-radius: 4rem;
 }
 
 h3{
@@ -102,6 +102,13 @@ h3{
   width: 25px;
   background-color: #eee;
   border-radius: 50%;
+}
+
+.containerSelectPesoMarked{
+  height: 10rem;
+  width: 8rem;
+  padding-left: 4rem;
+  text-align: center;
 }
 
 .containerSelectPesoMarked:hover input ~ .checkmarkPeso {
@@ -134,8 +141,45 @@ h3{
 #nomePet{
   font-size: 2.5rem;
   font-weight: 500;
-  margin-right: 4rem;
+  margin-right: 7.7rem;
   padding-left: 1rem;
+}
+
+#peso5kg{
+  height: 12.9rem;
+  width: 13.7rem;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-image: url("../../../images/peso5kg.png");
+}
+
+#peso10kg{
+  height: 12.9rem;
+  width: 13.7rem;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-image: url("../../../images/peso10kg.png");
+}
+
+#peso20kg{
+  height: 13.9rem;
+  width: 13.7rem;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-image: url("../../../images/peso20kg.png");
+}
+
+#peso40kg{
+  height: 13.9rem;
+  width: 13.7rem;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-image: url("../../../images/peso40kg.png");
+}
+
+.radioPeso{
+  margin-left: 5rem;
+  margin-top: 3rem;
 }
 
 /* Conteudo Pet NextPage termina aqui*/
