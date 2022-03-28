@@ -32,6 +32,7 @@ const InputsIcon = () => {
     },
   });
 
+
   return (
     <>
       <InputCamera />

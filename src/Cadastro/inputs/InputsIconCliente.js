@@ -1,23 +1,17 @@
-import React from "react";
+import {useState} from "react";
+import axios from "react";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
-import WcIcon from "@mui/icons-material/Wc";
-import PanToolIcon from "@mui/icons-material/PanTool";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LockIcon from "@mui/icons-material/Lock";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import CallIcon from "@mui/icons-material/Call";
-import AccessibilityIcon from "@mui/icons-material/Accessibility";
 import "../style/CadastroCliente.css";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 import InputCamera from "./InputCamera";
-import { pink } from "@mui/material/colors";
-import Checkbox from "@mui/material/Checkbox";
-
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const InputsIconCliente = () => {
   const Input = styled(TextField)({
@@ -40,13 +34,26 @@ const InputsIconCliente = () => {
     },
   });
 
+  const [user, setUser] = useState({})
+
+  const handleUserSubmit = (user) => {
+    const url = ("http://localhost/Cuidador/Cliente/api/cliente", user);
+    axios
+    .post(url)
+    .then((res) => { console.log(res.data);
+    })
+  
+  }
+
   return (
     <>
+    <form onSubmit={() => handleUserSubmit(user)}>
     <InputCamera/>
       <div id="contInputsPet">
         <Input
           label="Nome"
           id="nome"
+          onChange={(e) => setUser({...user, name: e.target.value})}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -55,22 +62,13 @@ const InputsIconCliente = () => {
             ),
           }}
         />
-        <Input
-          label="Sobrenome"
-          id="sobrenome"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AccountCircle id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
+          <input type="date" class="inputCalendar"/>
       </div>
       <div id="contInputStretch">
         <Input
           label="Email"
           id="email"
+          onChange={(e) => setUser({...user, email: e.target.value})}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -84,6 +82,7 @@ const InputsIconCliente = () => {
         <Input
           label="Senha"
           id="senha"
+          onChange={(e) => setUser({...user, senha: e.target.value})}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -95,6 +94,7 @@ const InputsIconCliente = () => {
         <Input
           label="Confirmar Senha"
           id="confirmarSenha"
+          onChange={(e) => setUser({...user, confirmarSenha: e.target.value})}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -108,6 +108,7 @@ const InputsIconCliente = () => {
         <Input
           label="Moradia"
           id="moradia"
+          onChange={(e) => setUser({...user, moradia: e.target.value})}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -119,6 +120,7 @@ const InputsIconCliente = () => {
         <Input
           label="Telefone"
           id="telefone"
+          onChange={(e) => setUser({...user, telefone: e.target.value})}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -132,6 +134,7 @@ const InputsIconCliente = () => {
         <Input
           label="CPF"
           id="cpf"
+          onChange={(e) => setUser({...user, cpf: e.target.value})}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -149,6 +152,16 @@ const InputsIconCliente = () => {
           <option>Não Binario</option>
         </select>
       </div>
+      <div id="containerButton">
+      <input
+        value="Cadastrar"
+        type="submit"
+        name="inputConfirmarSenha"
+        id="buttonCadastrar"
+        class="button"
+      />
+    </div>
+      </form>
     </>
   );
 };

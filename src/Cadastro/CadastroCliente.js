@@ -6,16 +6,16 @@ import Footer from "./footer/Footer";
 
 function CadastroCliente() {
   return (
-    <form class="containerMainPet" id="containerMainPet">
+    <div class="containerMainPet" id="containerMainPet" >
       <HomeCliente/>
       {/* conteudo das inputs */}
       <div id="containerInputsPet" class="containerInputsPet">
       <h1>Bem vindo a página de Cadastro!</h1>
         <InputsIconCliente/>
-        <InputButton />
+        {/* <InputButton /> */}
         <Footer />
       </div>
-    </form>
+    </div>
   );
 }
 
