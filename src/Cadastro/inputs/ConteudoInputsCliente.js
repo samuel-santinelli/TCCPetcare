@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import axios from "react";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -8,162 +8,136 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import CallIcon from "@mui/icons-material/Call";
 import "../style/CadastroCliente.css";
-import InputAdornment from "@mui/material/InputAdornment";
-import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import InputButtonCadastrar from "../button/inputButtonCadastrar";
 import InputCamera from "./InputCamera";
+import validarSenhaForca from "./validation/validation";
 
-const InputsIconCliente = () => {
-  const Input = styled(TextField)({
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        height: 70,
-        width: 390,
-        borderColor: "#f28907",
-        borderRadius: 10,
-        // qualquer outra classe css aqui
-      },
-      "&:hover fieldset": {
-        borderColor: "f28907",
-        // qualquer classe p/ efeito de hover aqui
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "f28907",
-        // qualquer classe p/ efeito de focus aqui
-      },
-    },
+const ConteudoInputsCliente = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    senha: "",
+    moradia: "",
+    telefone: "",
+    cpf: "",
   });
-
-  const [user, setUser] = useState({})
 
   const handleUserSubmit = (user) => {
     const url = ("http://localhost/Cuidador/Cliente/api/cliente", user);
-    axios
-    .post(url)
-    .then((res) => { console.log(res.data);
-    })
-  
-  }
+    fetch.post(url).then((res) => {
+      console.log(res.data);
+    });
+  };
 
   return (
     <>
-    <form onSubmit={() => handleUserSubmit(user)}>
-    <InputCamera/>
-      <div id="contInputsPet">
-        <Input
-          label="Nome"
-          id="nome"
-          onChange={(e) => setUser({...user, name: e.target.value})}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AccountCircle id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-          <input type="date" class="inputCalendar"/>
-      </div>
-      <div id="contInputStretch">
-        <Input
-          label="Email"
-          id="email"
-          onChange={(e) => setUser({...user, email: e.target.value})}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AlternateEmailIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </div>
-      <div id="contInputsPet">
-        <Input
-          label="Senha"
-          id="senha"
-          onChange={(e) => setUser({...user, senha: e.target.value})}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <Input
-          label="Confirmar Senha"
-          id="confirmarSenha"
-          onChange={(e) => setUser({...user, confirmarSenha: e.target.value})}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockOpenIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </div>
-      <div id="contInputsPet">
-        <Input
-          label="Moradia"
-          id="moradia"
-          onChange={(e) => setUser({...user, moradia: e.target.value})}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LocationOnIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <Input
-          label="Telefone"
-          id="telefone"
-          onChange={(e) => setUser({...user, telefone: e.target.value})}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <CallIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </div>
-      <div id="contInputsPet">
-        <Input
-          label="CPF"
-          id="cpf"
-          onChange={(e) => setUser({...user, cpf: e.target.value})}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AssignmentIndIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-           <select id="InputsContainerSelectCliente">
-          <option disabled selected>
-            Selecione um genêro
-          </option>
-          <option>Masculino</option>
-          <option>Femininio</option>
-          <option>Não Binario</option>
-        </select>
-      </div>
-      <div id="containerButton">
-      <input
-        value="Cadastrar"
-        type="submit"
-        name="inputConfirmarSenha"
-        id="buttonCadastrar"
-        class="button"
-      />
-    </div>
+      <form onSubmit={() => handleUserSubmit(user)}>
+        <div id="containerInput">
+          <div id="containerBorderImage">
+            <input
+              type="file"
+              name="inputImage"
+              className="inputImage"
+              id="foto"
+              value={user.foto}
+            />
+            <CameraAltIcon id="iconInputCamera" />
+          </div>
+        </div>
+        <div id="contInputsPet">
+          <AccountCircle id="iconInputLabel" />
+          <input
+            label="Nome"
+            id="nome"
+            value={user.nome}
+            className="containerInputNome"
+            placeholder="Nome"
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
+          />
+
+          <input type="date" className="inputCalendar" />
+        </div>
+        <div id="contInputStretch">
+          <AlternateEmailIcon id="iconInputLabel" />
+          <input
+            label="Email"
+            id="email"
+            value={user.email}
+            className="containerInputEmail"
+            placeholder="Email"
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+          />
+        </div>
+        <div id="contInputsPet">
+          <LockIcon id="iconInputLabel" />
+          <input
+            label="Senha"
+            id="senha"
+            type="password"
+            value={user.senha}
+            onKeyUp={validarSenhaForca}
+            className="containerInput"
+            placeholder="Senha"
+            onChange={(e) => setUser({ ...user, senha: e.target.value })}
+          />
+
+          <LockOpenIcon id="iconInputLabel" />
+          <input
+            label="Confirmar Senha"
+            id="confirmarSenha"
+            type="password"
+            className="containerInput"
+            placeholder="Confirmar Senha"
+          />
+        </div>
+        <div id="impSenha"></div>
+        <div id="impForcaSenha"></div>
+        <div id="erroSenhaForca"></div>
+        <div id="contInputsPet">
+          <LocationOnIcon id="iconInputLabel" />
+          <input
+            label="Moradia"
+            id="moradia"
+            className="containerInput"
+            value={user.moradia}
+            placeholder="Localização"
+            onChange={(e) => setUser({ ...user, moradia: e.target.value })}
+          />
+          <CallIcon id="iconInputLabel" />
+          <input
+            label="Telefone"
+            id="telefone"
+            value={user.telefone}
+            className="containerInput"
+            placeholder="Telefone"
+            onChange={(e) => setUser({ ...user, telefone: e.target.value })}
+          />
+        </div>
+        <div id="contInputsPet">
+          <AssignmentIndIcon id="iconInputLabel" />
+          <input
+            label="CPF"
+            id="cpf"
+            value={user.cpf}
+            className="containerInput"
+            placeholder="CPF"
+            onChange={(e) => setUser({ ...user, cpf: e.target.value })}
+          />
+        </div>
+
+        <div id="containerButton">
+          <input
+            value="Cadastrar"
+            type="submit"
+            name="inputConfirmarSenha"
+            id="buttonCadastrar"
+            className="button"
+          />
+        </div>
       </form>
     </>
   );
 };
 
-export default InputsIconCliente;
+export default ConteudoInputsCliente;

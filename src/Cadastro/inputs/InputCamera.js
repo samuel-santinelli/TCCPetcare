@@ -5,7 +5,7 @@ function InputCamera() {
   return (
     <div id="containerInput">
         <div id="containerBorderImage">
-    <input type="file" name="inputImage" id="inputImage" />
+    <input type="file" name="inputImage" className="inputImage" id="foto" />
     <CameraAltIcon id="iconInputCamera" />
     </div>
   </div>

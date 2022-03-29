@@ -44,6 +44,7 @@ html {
 
 
 #containerInput {
+  height: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +62,7 @@ html {
   border: solid 3px #f28907; 
 }
 
-#inputImage{
+.inputImage{
   margin-top: 4.5rem;
   height: 10rem;
   width: 10rem;

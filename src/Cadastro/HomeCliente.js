@@ -3,8 +3,8 @@ import "./style/CadastroCliente.css";
 function HomeCliente() {
   return (
     <>
-      <div id="bannerLogin" class="bannerLogin"></div>
-      <div id="waveCliente" class="wave"></div>
+      <div id="bannerLogin" className="bannerLogin"></div>
+      <div id="waveCliente" className="wave"></div>
     </>
   );
 }

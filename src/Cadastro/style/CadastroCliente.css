@@ -42,10 +42,8 @@ html {
   background-color: #fff;
 }
 #containerInputsCliente{
-  /* padding-top: 240px; */
   height: 125rem;
   width: 142rem;
-  margin-right: 5rem;
   background-color: #fff;
 }
 
@@ -56,19 +54,13 @@ h1 {
 }
 
 #inputContCliente {
-  height: 5rem;
+  height: 52rem;
   margin-bottom: 15px;
   background-color: #fff;
   margin-top: 7rem;
 }
 
-#impSenha, #erroSenhaForca{
-  margin-top: 5rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-#InputsContainerSelectCliente{
+.InputsContainerSelectCliente{
   height: 6.5rem;
   width: 42rem;
   font-size: 2.2rem;
@@ -79,7 +71,7 @@ h1 {
 
 #contInputStretch{
   height: 5rem;
-  margin-bottom: 60px;
+  margin-bottom: 3.8rem;
   margin-left: 6.5rem;
 }
 
@@ -88,15 +80,53 @@ h1 {
   font-weight: 500;
 }
 
+#senha, #moradia{
+  width: 35rem;
+}
+
 #cpf{
-  margin-right: 8.7rem;
+  margin-right: 5rem;
 }
 
 .inputCalendar{
   height: 6.5rem;
-  width: 42rem;
+  width: 35rem;
+  padding-right: 3rem;
   font-size: 2.2rem;
   padding-left: 1rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
+}
+
+.containerInput{
+  height: 6.5rem;
+  width: 30rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
+}
+
+.containerInputNome, .containerInputSobrenome{
+  height: 6.5rem;
+  width: 35rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
+}
+
+.containerInputEmail{
+  height: 6.5rem;
+  width: 82rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
+}
+
+#iconInputLabel{
+  position: absolute;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
 }

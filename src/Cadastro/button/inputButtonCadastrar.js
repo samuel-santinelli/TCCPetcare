@@ -8,7 +8,7 @@ function InputButtonCadastrar() {
         type="submit"
         name="inputConfirmarSenha"
         id="buttonCadastrar"
-        class="button"
+        className="button"
       />
     </div>
   );

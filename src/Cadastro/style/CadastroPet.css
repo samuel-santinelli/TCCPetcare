@@ -35,7 +35,7 @@ label {
 }
 
 #containerInputsPet {
-  height: 96rem;
+  height: 110rem;
   width: 92rem;
   margin-left: 90px;
   background-color: #fff;
@@ -43,11 +43,10 @@ label {
 
 #contInputsPet {
   height: 4.5rem;
-  width: 135rem;
+  width: 115rem;
   max-width: 100rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4.6rem;
   flex-direction: row;
-  margin-bottom: 45px;
   margin-left: 6.5rem;
   
 }

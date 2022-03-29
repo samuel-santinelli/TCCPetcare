@@ -7,7 +7,7 @@ function InputButton() {
         value="Próxima Pagina"
         type="submit"
         id="buttonProximo"
-        class="button"
+        className="button"
       />
     </div>
   );

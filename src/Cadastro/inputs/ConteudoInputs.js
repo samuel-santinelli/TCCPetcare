@@ -4,100 +4,78 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LockIcon from "@mui/icons-material/Lock";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import "../style/Cadastro.css";
+import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import InputCamera from "./InputCamera";
 import InputAdornment from "@mui/material/InputAdornment";
+import validarSenhaForca from "./validation/validation";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 
 const InputsIcon = () => {
-  const Input = styled(TextField)({
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        height: 70,
-        width: 390,
-        borderColor: "#f28907",
-        borderRadius: 10,
-        // qualquer outra classe css aqui
-      },
-      "&:hover fieldset": {
-        borderColor: "f28907",
-        // qualquer classe p/ efeito de hover aqui
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "f28907",
-        fontSize: 19,
-        // qualquer classe p/ efeito de focus aqui
-      },
-    },
-  });
-
 
   return (
     <>
-      <InputCamera />
+      <div id="containerInput">
+        <div id="containerBorderImage">
+          <input
+            type="file"
+            name="inputImage"
+            className="inputImage"
+            id="foto"
+          />
+          <CameraAltIcon id="iconInputCamera" />
+        </div>
+      </div>
       <div id="contInputsPet">
-        <Input
+        <AccountCircle id="iconInputLabel" />
+        <input
           label="Nome"
           id="nome"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AccountCircle  id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
+          className="containerInputNome"
+          placeholder="Nome"
         />
-        <Input
+        <AccountCircle id="iconInputLabel" />
+        <input
           label="Sobrenome"
           id="sobrenome"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AccountCircle id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
+          className="containerInputSobrenome"
+          placeholder="Sobrenome"
         />
       </div>
       <div id="contInputStretch">
-        <Input
+        <AlternateEmailIcon id="iconInputLabel" />
+        <input
           label="Email"
           id="email"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AlternateEmailIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
+          className="containerInputEmail"
+          placeholder="Email"
         />
       </div>
       <div id="contInputsPet">
-        <Input
+        <LockIcon id="iconInputLabel" />
+        <input
           label="Senha"
           id="senha"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockIcon id="iconInputLabel" onsClick="validationSenha()"/>
-              </InputAdornment>
-            ),
-          }}
+          type="password"
+          onKeyUp={validarSenhaForca}
+          className="containerInput"
+          placeholder="Senha"
         />
-        
-        <Input
+
+        <LockOpenIcon id="iconInputLabel" />
+        <input
           label="Confirmar Senha"
           id="confirmarSenha"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockOpenIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
+          type="password"
+          className="containerInput"
+          placeholder="Confirmar Senha"
         />
       </div>
+      <div id="impSenha"></div>
+      <div id="impForcaSenha"></div>
+      <div id="erroSenhaForca"></div>
+      <div id="contInputsPet"></div>
     </>
   );
 };
