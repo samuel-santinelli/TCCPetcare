@@ -8,6 +8,11 @@ function exibirPets(){
     $dados = listarPets();
     return $dados;
 }
+// function buscarNomeClientes($nome){
+//     $dados = buscarNome($nome);
+
+//     return $dados;
+// }
 
 
 ?>

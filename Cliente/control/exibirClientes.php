@@ -55,4 +55,21 @@ function criarJSONCLIENTE($arrayDados)
          return false;
     }
 }
+
+
+function busca($idCliente){
+   
+    $sql = "select tblClientes.*, tblPets.nome from tblClientes
+	inner join tblPets
+    on tblPets.idPet = tblClientes.idPet
+    where tblClientes.idClientes = ".$idCliente;
+
+    $conexao = conexao();
+
+    $select = mysqli_query($conexao,$sql);
+
+    return $select;
+}
+
+
 ?>

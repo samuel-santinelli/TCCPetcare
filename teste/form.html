@@ -15,25 +15,27 @@
     
     <script src="post.js"></script>
     <form onsubmit="cadastraUsuario()">
-        <input type="file" name="fleFoto" id="fleFoto" accept="image/jpeg, image/jpg, image/png">
-        <select name="sltSexo" id="sltSexo">
-                    
-            <option selected value="masculino" id="masculino"> Masculino  </option> 
-            <option value="feminino" id="feminino"> Feminino </option> 
-        
+        <select id="sltSexo">
+                            
+            <option selected value="">Masculino </option> 
+
+                        <option value="">Femino</option>
+              
         </select>
 
-    <input value="" placeholder="Nome" type="text" name="nome" id="nome"/>
-    
-    <input value="" placeholder="Data" type="text" name="inputData" id="dataNascimento"/>
-    <input value="" placeholder="deficiencia" type="sobrenome" name="sobrenome" id="deficiencia"/>
-    <input value="" placeholder="Email" type="email" name="inputEmail" id="email"/>
-    <input value="" placeholder="Senha" type="password" name="inputSenha" id="senha"/>
-    <input value="" placeholder="Confirmar Senha" type="password" name="inputConfirmarSenha" id="confirmarSenha"/>
-    <input value="" placeholder="CPF" type="text" name="inputCPF" id="cpf"/>
-    <input value="" placeholder="Possui animais" type="checkbox" name="possuiAnimais" id="descricao"/>
-    <input value="" placeholder="Possui Crianças" type="checkbox" name="possuiCriancas" id="castrado"/>
-    <input value="" placeholder="Limitações" type="teste" name="limitacoes" id="foto"/>
+<input value="" placeholder="telefone" type="text" id="telefone"/>
+        
+<input value="" placeholder="Nome" type="text" name="inputNome" id="nome"/>
+<input value="" placeholder="Data" type="text" name="inputData" id="data"/>
+<input value="" placeholder="Email" type="email" name="inputEmail" id="email"/>
+<input value="" placeholder="Senha" type="password" name="inputSenha" id="senha"/>
+<input value="" placeholder="Confirmar Senha" type="password" name="inputConfirmarSenha" id="inputConfirmarSenha"/>
+
+<input value="" placeholder="CPF" type="text" id="cpf"/>
+              
+
+          
+                    
 
         <button type="submit">Enviar</button>
     </form>

@@ -17,24 +17,25 @@ function cadastraUsuario() {
     event.preventDefault()
     let url = "http://localhost/Cuidador/Cliente/api/cliente"
     let nome = document.getElementById("nome").value
-    let dataNascimento = document.getElementById("dataNascimento").value
+    let data = document.getElementById("data").value
     let cpf = document.getElementById("cpf").value
     let email = document.getElementById("email").value
     let senha = document.getElementById("senha").value
-    let foto = document.getElementById("fleFoto").value
+    let telefone = document.getElementById("telefone").value
+    let idSexo = document.getElementById("sltSexo").value
 
-
-    console.log(nome)
-    console.log(email)
+    // console.log(nome)
+    // console.log(email)
 
     body = {
         
         "nome": nome,
-        "dataNascimento": dataNascimento,
         "cpf": cpf,
+        "data": data,
         "email": email,
         "senha": senha,
-        "foto": foto,
+        "idSexo": idSexo,
+        "telefone": telefone
     }
 
     fazPost(url, body)

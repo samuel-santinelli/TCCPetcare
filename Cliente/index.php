@@ -38,7 +38,7 @@ $foto = (string) '';
 </head>
 <body>
             <form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?nomeFoto=<?=$foto?>">
-            
+           
             <div class="campos">
                         <div class="cadastroInformacoesPessoais">
                             <label> Foto: </label>

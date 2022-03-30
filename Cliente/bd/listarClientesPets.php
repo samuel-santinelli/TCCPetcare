@@ -13,5 +13,4 @@ function listarClientes(){
     return $select;
 }
 
-
 ?>

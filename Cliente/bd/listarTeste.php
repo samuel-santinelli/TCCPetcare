@@ -2,9 +2,9 @@
 
 require_once(SRC.'bd/conexao.php');
 
-function listarClientes(){
+function listarClientePets(){
 
-    $sql = "select *from  tblClientes";
+    $sql = "select *from tblTeste";
 
     $conexao = conexao();
 
