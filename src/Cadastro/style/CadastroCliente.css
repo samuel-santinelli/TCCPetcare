@@ -107,18 +107,18 @@ h1 {
   padding-left: 5.5rem;
 }
 
-.containerInputNome, .containerInputSobrenome{
+.containerInputNome, .containerInputSobrenome, .containerInputCpf, .containerInputMoradia{
   height: 6.5rem;
-  width: 35rem;
+  width: 39rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
   padding-left: 5.5rem;
 }
 
-.containerInputEmail{
+.containerInputEmail, .containerInputCpf{
   height: 6.5rem;
-  width: 82rem;
+  width: 86.5rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -129,4 +129,22 @@ h1 {
   position: absolute;
   margin-top: 1.5rem;
   margin-left: 1rem;
+}
+
+.containerInputSenha{
+  height: 6.5rem;
+  width: 48rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
+}
+
+.containerInputConfirmarSenha, .containerInputTelefone{
+  height: 6.5rem;
+  width: 37rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
 }

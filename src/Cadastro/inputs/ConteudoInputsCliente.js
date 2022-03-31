@@ -25,7 +25,7 @@ const ConteudoInputsCliente = () => {
 
   const handleUserSubmit = (user) => {
     const url = ("http://localhost/Cuidador/Cliente/api/cliente", user);
-    fetch.post(url).then((res) => {
+    axios.post(url).then((res) => {
       console.log(res.data);
     });
   };
@@ -63,6 +63,7 @@ const ConteudoInputsCliente = () => {
           <input
             label="Email"
             id="email"
+            type="email"
             value={user.email}
             className="containerInputEmail"
             placeholder="Email"
@@ -77,7 +78,7 @@ const ConteudoInputsCliente = () => {
             type="password"
             value={user.senha}
             onKeyUp={validarSenhaForca}
-            className="containerInput"
+            className="containerInputSenha"
             placeholder="Senha"
             onChange={(e) => setUser({ ...user, senha: e.target.value })}
           />
@@ -87,7 +88,7 @@ const ConteudoInputsCliente = () => {
             label="Confirmar Senha"
             id="confirmarSenha"
             type="password"
-            className="containerInput"
+            className="containerInputConfirmarSenha"
             placeholder="Confirmar Senha"
           />
         </div>
@@ -99,9 +100,9 @@ const ConteudoInputsCliente = () => {
           <input
             label="Moradia"
             id="moradia"
-            className="containerInput"
+            className="containerInputMoradia"
             value={user.moradia}
-            placeholder="Localização"
+            placeholder="Aonde você reside?"
             onChange={(e) => setUser({ ...user, moradia: e.target.value })}
           />
           <CallIcon id="iconInputLabel" />
@@ -109,7 +110,7 @@ const ConteudoInputsCliente = () => {
             label="Telefone"
             id="telefone"
             value={user.telefone}
-            className="containerInput"
+            className="containerInputTelefone"
             placeholder="Telefone"
             onChange={(e) => setUser({ ...user, telefone: e.target.value })}
           />
@@ -119,8 +120,9 @@ const ConteudoInputsCliente = () => {
           <input
             label="CPF"
             id="cpf"
+            type="number"
             value={user.cpf}
-            className="containerInput"
+            className="containerInputCpf"
             placeholder="CPF"
             onChange={(e) => setUser({ ...user, cpf: e.target.value })}
           />
@@ -137,7 +139,3 @@ const ConteudoInputsCliente = () => {
         </div>
       </form>
     </>
-  );
-};
-
-export default ConteudoInputsCliente;

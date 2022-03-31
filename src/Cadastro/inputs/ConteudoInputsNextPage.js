@@ -46,17 +46,12 @@ const InputsIconNextPage = () => {
           <option>Femininio</option>
           <option>Não Binario</option>
         </select>
-
-        <Input
+        <AssignmentIndIcon id="iconInputLabel" />
+        <input
           label="CPF"
           id="cpf"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AssignmentIndIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
+          className="containerInputs"
+          placeholder="CPF"
         />
       </div>
       <div id="contInputsPetCheckbox">
@@ -68,7 +63,7 @@ const InputsIconNextPage = () => {
           </label>
         </div>
         <div id="contInputCheckbox">
-        <label class="labelInputCheckboxCuidador">
+          <label class="labelInputCheckboxCuidador">
             Possui Crianças?
             <input type="checkbox" />
             <span class="checkmarkCuidador"></span>
@@ -76,41 +71,20 @@ const InputsIconNextPage = () => {
         </div>
       </div>
       <div id="contInputsPet">
-        <Input
+        <PanToolIcon id="iconInputLabel" />
+        <input
           label="Preferências"
           id="limitacoes"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <PanToolIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
+          className="containerInputLimitacoes"
+          placeholder="Você possui limitações?"
         />
       </div>
       <div id="contInputsMoradia">
-        <Input
-          label="Moradia"
-          id="moradia"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <HouseIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <Input
-          label="Preferências"
-          id="preferencias"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AccessibilityIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
+        <HouseIcon id="iconInputLabel" />
+        <input label="Moradia" id="moradia" className="containerInputMoradia" placeholder="Aonde você reside?"/>
+
+        <AccessibilityIcon id="iconInputLabel" />
+        <input label="Preferências" id="preferencias" className="containerInputPreferencias" />
       </div>
     </>
   );

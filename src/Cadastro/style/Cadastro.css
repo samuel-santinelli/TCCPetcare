@@ -88,11 +88,10 @@ html {
 
 #contInputsMoradia{
   height: 6.9rem;
-  width: 82rem;
+  width: 91rem;
   margin-bottom: 2rem;
   margin-top: 3.5rem;
   flex-direction: row;
-  margin-bottom: 40px;
   margin-left: 6.6rem;
 }
 
@@ -131,6 +130,7 @@ html {
 #iconInputLabel{
   height: 4rem;
   width: 4rem;
+  position: absolute;
 }
 
 #iconInputCPF{
@@ -179,4 +179,40 @@ input #iconInputNome{
 #containerInputCheckbox{
  height: 7rem;
   margin-right: 50rem;
+}
+
+.containerInputs{
+  height: 6.5rem;
+  width: 39rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.8rem;
+}
+
+.containerInputLimitacoes{
+  height: 6.5rem;
+  width: 84rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 6.2rem;
+}
+
+.containerInputMoradia{
+  height: 6.5rem;
+  width: 89rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 6.2rem;
+}
+
+.containerInputPreferencias{
+  height: 6.5rem;
+  width: 33.7rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 6.2rem;
 }
