@@ -84,7 +84,7 @@ const InputsIconNextPage = () => {
         <input label="Moradia" id="moradia" className="containerInputMoradia" placeholder="Aonde você reside?"/>
 
         <AccessibilityIcon id="iconInputLabel" />
-        <input label="Preferências" id="preferencias" className="containerInputPreferencias" />
+        <input label="Preferências" id="preferencias" placeholder="Possui alguma preferência?" className="containerInputPreferencias" />
       </div>
     </>
   );

@@ -36,18 +36,7 @@ const InputsPet = () => {
     <>
       <InputCamera />
       <div id="contInputsPet">
-        <Input
-          label="Nome Do Pet"
-          id="nomePet"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <PetsIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <select id="InputsContainerSelect">
+        <select id="select" className="InputsContainerSelectEspecie">
           <option disabled selected>
             Espécie
           </option>

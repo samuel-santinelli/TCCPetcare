@@ -11,26 +11,26 @@ import { styled } from "@mui/material/styles";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const InputsPetNextPage = () => {
-  function createAluno( aluno ) {
-    const url = 'http://seudominio/alunos/';
+  function createAluno(aluno) {
+    const url = "http://seudominio/alunos/";
     const options = {
-      method: 'POST',
-      body: JSON.stringify( aluno )
+      method: "POST",
+      body: JSON.stringify(aluno),
     };
 
-    fetch(url, options )
+    fetch(url, options);
   }
 
-    const aluno = {
-      "id":"",
-      "nome": "Cleyde Gomes da Silva",
-      "email": "cleydegomes@gmail.com",
-      "celular": "1199988888",
-      "logradouro": "rua sem fim",
-      "bairro": "Sem nome",
-      "cidade": "Barueri",
-      "estado": "SP",
-      "cep": "18135300"
+  const aluno = {
+    id: "",
+    nome: "Cleyde Gomes da Silva",
+    email: "cleydegomes@gmail.com",
+    celular: "1199988888",
+    logradouro: "rua sem fim",
+    bairro: "Sem nome",
+    cidade: "Barueri",
+    estado: "SP",
+    cep: "18135300",
   };
 
   createAluno(aluno);
@@ -60,17 +60,9 @@ const InputsPetNextPage = () => {
     <>
       <InputCamera />
       <div id="contInputsPet">
-        <Input
-          label="Nome Do Pet"
-          id="nomePet"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <PetsIcon id="iconInputLabel" />
-              </InputAdornment>
-            ),
-          }}
-        />
+      <PetsIcon id="iconInputLabel" />
+        <input label="Nome Do Pet" id="nomePet" className="containerInputNomePet" />
+
         <select id="InputsContainerSelect">
           <option disabled selected>
             Vacinas
@@ -102,23 +94,28 @@ const InputsPetNextPage = () => {
           <div>
             <div class="containerInputsSelectPeso">
               <label class="containerSelectPesoMarked">
-                <input type="radio" checked="checked" name="radio" class="radioPeso" />
-                <div id="peso5kg"/>
+                <input
+                  type="radio"
+                  checked="checked"
+                  name="radio"
+                  class="radioPeso"
+                />
+                <div id="peso5kg" />
                 <span class="checkmarkPeso"></span>
               </label>
               <label class="containerSelectPesoMarked">
-                <input type="radio" name="radio" class="radioPeso"/>
-                <div id="peso10kg"/>
+                <input type="radio" name="radio" class="radioPeso" />
+                <div id="peso10kg" />
                 <span class="checkmarkPeso"></span>
               </label>
               <label class="containerSelectPesoMarked">
-                <input type="radio" name="radio" class="radioPeso"/>
-                <div id="peso20kg"/>
+                <input type="radio" name="radio" class="radioPeso" />
+                <div id="peso20kg" />
                 <span class="checkmarkPeso"></span>
               </label>
               <label class="containerSelectPesoMarked">
-                <input type="radio" name="radio" class="radioPeso"/>
-                <div id="peso40kg"/>
+                <input type="radio" name="radio" class="radioPeso" />
+                <div id="peso40kg" />
                 <span class="checkmarkPeso"></span>
               </label>
             </div>

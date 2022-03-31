@@ -68,7 +68,7 @@ const InputsIcon = () => {
           label="Confirmar Senha"
           id="confirmarSenha"
           type="password"
-          className="containerInput"
+          className="containerInputConfirmarSenha"
           placeholder="Confirmar Senha"
         />
       </div>

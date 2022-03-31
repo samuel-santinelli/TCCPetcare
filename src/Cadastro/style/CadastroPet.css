@@ -17,6 +17,17 @@
   border-radius: 1.5rem;
 }
 
+.InputsContainerSelectEspecie{
+  height: 6.5rem;
+  width: 88.7rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 1.2rem;
+  margin-right: 10px;
+  border-radius: 1.5rem;
+}
+
 #containerInputCheckbox {
   width: 18rem;
   margin-left: 6.7rem;
@@ -137,12 +148,6 @@ h3{
 	background: white;
 }
 
-#nomePet{
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin-right: 7.7rem;
-  padding-left: 1rem;
-}
 
 #peso5kg{
   height: 12.9rem;
@@ -179,6 +184,16 @@ h3{
 .radioPeso{
   margin-left: 5rem;
   margin-top: 3rem;
+}
+
+.containerInputNomePet{
+  height: 6.5rem;
+  width: 43rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 6rem;
+  margin-right: 2rem;
 }
 
 /* Conteudo Pet NextPage termina aqui*/

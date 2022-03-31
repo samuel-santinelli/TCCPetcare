@@ -102,7 +102,7 @@ html {
 #nome, #sobrenome, #email, #senha, #confirmarSenha{
   font-size: 2.5rem;
   font-weight: 500;
-  margin-right: 8rem;
+  margin-right: 3rem;
 }
 
 #InputsContainerSelect{
@@ -192,7 +192,7 @@ input #iconInputNome{
 
 .containerInputLimitacoes{
   height: 6.5rem;
-  width: 84rem;
+  width: 83rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -210,9 +210,9 @@ input #iconInputNome{
 
 .containerInputPreferencias{
   height: 6.5rem;
-  width: 33.7rem;
+  width: 40rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
-  padding-left: 6.2rem;
+  padding-left: 5.2rem;
 }
