@@ -1,5 +1,5 @@
-import { useState } from "react";
-import axios from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LockIcon from "@mui/icons-material/Lock";
@@ -15,21 +15,32 @@ import validarSenhaForca from "./validation/validation";
 
 const ConteudoInputsCliente = () => {
   const [user, setUser] = useState({
-    name: "",
+    nome: "",
+    cpf: "",
+    dataNascimento: "",
+    foto: "",
     email: "",
     senha: "",
-    moradia: "",
+    idSexo: 1,
     telefone: "",
-    cpf: "",
   });
+  console.log(user);
 
   const handleUserSubmit = (user) => {
-    const url = ("http://localhost/Cuidador/Cliente/api/cliente", user);
-    axios.post(url).then((res) => {
-      console.log(res.data);
-    });
+    axios.defaults.headers.post["Content-Type"] =
+      "application/json;charset=utf-8";
+    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+    axios
+      .post("http://localhost/Cuidador/Cliente/api/cliente", user)
+      .then((res) => console.log(res.data));
   };
 
+  const listElements = () => {
+    axios
+    .get("http://localhost/Cuidador/Cliente/api/cliente")
+    .then((res) => console.log(res.data));
+  }
+  useEffect(() => {listElements()}, [])
   return (
     <>
       <form onSubmit={() => handleUserSubmit(user)}>
@@ -41,6 +52,7 @@ const ConteudoInputsCliente = () => {
               className="inputImage"
               id="foto"
               value={user.foto}
+              onChange={(e) => setUser({ ...user, foto: e.target.value })}
             />
             <CameraAltIcon id="iconInputCamera" />
           </div>
@@ -53,10 +65,19 @@ const ConteudoInputsCliente = () => {
             value={user.nome}
             className="containerInputNome"
             placeholder="Nome"
-            onChange={(e) => setUser({ ...user, name: e.target.value })}
+            onChange={(e) => setUser({ ...user, nome: e.target.value })}
           />
 
-          <input type="date" className="inputCalendar" />
+          <input
+            type="text"
+            id="dataNascimento"
+            placeholder="aaaa-mm-dd"
+            value={user.dataNascimento}
+            className="inputCalendar"
+            onChange={(e) =>
+              setUser({ ...user, dataNascimento: e.target.value })
+            }
+          />
         </div>
         <div id="contInputStretch">
           <AlternateEmailIcon id="iconInputLabel" />
@@ -97,14 +118,16 @@ const ConteudoInputsCliente = () => {
         <div id="erroSenhaForca"></div>
         <div id="contInputsPet">
           <LocationOnIcon id="iconInputLabel" />
-          <input
-            label="Moradia"
+          <select
             id="moradia"
-            className="containerInputMoradia"
-            value={user.moradia}
-            placeholder="Aonde você reside?"
-            onChange={(e) => setUser({ ...user, moradia: e.target.value })}
-          />
+            className="containerInput"
+            value={user.idSexo}
+            placeholder="Selecione seu genêro"
+            onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
+          >
+            <option value={user.idMasculino}>Masculino</option>
+            <option value={user.idFeminino}>Feminino</option>
+          </select>
           <CallIcon id="iconInputLabel" />
           <input
             label="Telefone"

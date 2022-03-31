@@ -140,9 +140,18 @@ h1 {
   padding-left: 5.5rem;
 }
 
-.containerInputConfirmarSenha, .containerInputTelefone{
+.containerInputConfirmarSenha{
   height: 6.5rem;
   width: 37rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
+}
+
+.containerInputTelefone{
+  height: 6.5rem;
+  width: 43rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;

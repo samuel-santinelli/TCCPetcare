@@ -9,11 +9,11 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CadastroCuidador />
-    <CadastroCuidador2Page />
+    {/* <CadastroCuidador />
+    <CadastroCuidador2Page /> */}
     <CadastroCliente />
-    <CadastroPetNextPage/>
-    <CadastroPet/>
+    {/* <CadastroPetNextPage/>
+    <CadastroPet/> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
