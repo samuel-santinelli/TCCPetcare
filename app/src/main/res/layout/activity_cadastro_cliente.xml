@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:layout_width="1000dp"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/logo"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="130dp">
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cardViewLogo"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cadastre-se"
+                android:textColor="#F28907"
+                android:textSize="30dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/vwFoto"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/txtNome"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:hint="Nome"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/vwFoto"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="15dp"/>
+
+        <EditText
+            android:id="@+id/txtDataDeNascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:drawableStart="@drawable/ic_baseline_calendar_month_24"
+            android:hint="Data De Nascimento"
+            android:inputType="text"
+            app:layout_constraintStart_toEndOf="@id/txtNome"
+            app:layout_constraintTop_toTopOf="@+id/txtNome"
+            android:background="@drawable/bordas"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"/>
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:hint="Email"
+            android:inputType="text"
+            app:layout_constraintStart_toEndOf="@id/txtDataDeNascimento"
+            app:layout_constraintTop_toBottomOf="@+id/txtDataDeNascimento"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"/>
+
+        <EditText
+            android:id="@+id/txtSenha"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_baseline_lock_open_24"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@id/txtEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="15dp"/>
+
+        <EditText
+            android:id="@+id/txtConfirmarSenha"
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:hint="Confirmar Senha"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toEndOf="@id/txtSenha"
+            app:layout_constraintTop_toTopOf="@id/txtSenha"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"/>
+
+        <EditText
+            android:id="@+id/txtEndereco"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_baseline_my_location_24"
+            android:hint="Endereço"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtSenha"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="15dp"/>
+
+        <EditText
+            android:id="@+id/txtTelefone"
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:drawableStart="@drawable/ic_baseline_call_24"
+            android:hint="Telefone"
+            android:inputType="text"
+            app:layout_constraintStart_toEndOf="@id/txtEndereco"
+            app:layout_constraintTop_toTopOf="@id/txtEndereco"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"/>
+
+        <EditText
+            android:id="@+id/txtCpf"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_baseline_person_pin_24"
+            android:hint="CPF"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEndereco"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="15dp"/>
+
+        <EditText
+            android:id="@+id/txtSexo"
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:drawableStart="@drawable/ic_baseline_wc_24"
+            android:hint="Sexo"
+            android:inputType="text"
+            app:layout_constraintStart_toEndOf="@id/txtCpf"
+            app:layout_constraintTop_toTopOf="@+id/txtCpf"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"/>
+
+        <Button
+            android:id="@+id/btnProxima"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#F28907"
+            android:text="CADASTRAR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/txtSexo"/>
+
+        <TextView
+            android:id="@+id/txtJaTemConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Já tem uma conta?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnProxima" />
+
+        <TextView
+            android:id="@+id/txtEncaminhaCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Entre agora"
+            android:textColor="#F28907"
+            app:layout_constraintStart_toEndOf="@id/txtJaTemConta"
+            app:layout_constraintTop_toTopOf="@+id/txtJaTemConta"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

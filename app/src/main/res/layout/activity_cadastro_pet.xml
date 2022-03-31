@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="1000dp"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/logo"/>
+
+
+        <EditText
+            android:id="@+id/txtNomeDoPet"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_baseline_pets_24"
+            android:hint="nome_do_pet"
+            android:inputType="text"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@id/logo"/>
+
+        <Spinner
+            android:spinnerMode="dialog"
+            android:id="@+id/spnVacinas"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/txtNomeDoPet"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="30dp"
+            android:entries="@array/spnVacinas"/>
+
+        <Spinner
+            android:spinnerMode="dialog"
+            android:id="@+id/spnFase"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/spnVacinas"
+            app:layout_constraintTop_toTopOf="@id/spnVacinas"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:entries="@array/spnFase"/>
+
+        <Spinner
+            android:spinnerMode="dialog"
+            android:id="@+id/spnRaca"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@id/spnFase"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:entries="@array/spnRaca"/>
+
+
+        <CheckBox
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/boxDocil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/spnRaca"
+            android:text="Dócil"
+            android:layout_marginStart="15dp"/>
+
+        <CheckBox
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/boxSistematico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/boxDocil"
+            android:text="Sistemático"
+            android:layout_marginStart="15dp"/>
+
+        <CheckBox
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/boxCiumento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/boxSistematico"
+            android:text="Ciúmento"
+            android:layout_marginStart="15dp"/>
+
+        <CheckBox
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/boxGuloso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/boxCiumento"
+            android:text="Guloso"
+            android:layout_marginStart="15dp"/>
+
+        <CheckBox
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/boxTemperamental"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/boxGuloso"
+            android:text="Temperamental"
+            android:layout_marginStart="15dp"/>
+
+        <CheckBox
+            android:id="@+id/boxAntissocial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/boxDocil"
+            android:text="Antissocial"
+            android:layout_marginEnd="15dp"/>
+
+        <CheckBox
+            android:id="@+id/boxAcanhoso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="Acanhoso"
+            app:layout_constraintStart_toStartOf="@id/boxAntissocial"
+            app:layout_constraintTop_toBottomOf="@+id/boxAntissocial"/>
+
+        <CheckBox
+            android:id="@+id/boxBravo"
+            android:layout_width="95dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="20dp"
+            android:text="Bravo"
+            app:layout_constraintStart_toStartOf="@id/boxAntissocial"
+            app:layout_constraintTop_toBottomOf="@+id/boxAcanhoso" />
+
+        <Button
+            android:id="@+id/btnProxima"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#F28907"
+            android:text="CADASTRAR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/boxTemperamental"/>
+
+        <TextView
+            android:id="@+id/txtJaTemConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Já tem uma conta?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnProxima" />
+
+        <TextView
+            android:id="@+id/txtEncaminhaCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Entre agora"
+            android:textColor="#F28907"
+            app:layout_constraintStart_toEndOf="@id/txtJaTemConta"
+            app:layout_constraintTop_toTopOf="@+id/txtJaTemConta"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

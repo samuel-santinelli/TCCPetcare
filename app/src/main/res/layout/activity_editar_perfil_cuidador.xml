@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F28907">
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/vwFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30px">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_close_24"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Larissa Pinheiro"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintTop_toBottomOf="@id/vwFoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/container"
+        android:layout_width="350dp"
+        android:layout_height="550dp"
+        android:background="@drawable/bordas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"/>
+
+    <TextView
+        android:id="@+id/editarPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Perfil"
+        android:textColor="#F28907"
+        android:textSize="28dp"
+        app:layout_constraintTop_toTopOf="@id/container"
+        app:layout_constraintEnd_toEndOf="@id/container"
+        app:layout_constraintStart_toStartOf="@id/container"
+        android:layout_marginTop="15dp"/>
+
+
+
+    <EditText
+        android:id="@+id/txtEditarNome"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="Larissa Pinheiro"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/editarPerfil"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <EditText
+        android:id="@+id/txtEditarCpf"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="231.121.131-83"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarNome"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <EditText
+        android:id="@+id/txtEditarTelefone"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="11 94329321"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarCpf"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <EditText
+        android:id="@+id/txtEditarSexo"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_baseline_edit_24"
+        android:hint="Não Binário"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarTelefone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <CheckBox
+        android:id="@+id/txtEditarPossuiCriancas"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="Possui Crianças?"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarTelefone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <CheckBox
+        android:id="@+id/txtEditarPossuiAnimais"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="Possui Animais?"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarPossuiCriancas"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <EditText
+        android:id="@+id/txtEditarLimitacoes"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="Limitações"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarPossuiAnimais"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <EditText
+        android:id="@+id/txtEditarMoradia"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="Moradia"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarLimitacoes"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <EditText
+        android:id="@+id/txtEditarPreferencias"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:hint="Preferencias"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarLimitacoes"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bordas"
+        android:paddingStart="15dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#F28907"/>
+
+    <Button
+        android:id="@+id/btnAlterarSenha"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="#F28907"
+        android:text="Alterar Senha"
+        app:layout_constraintStart_toStartOf="@id/container"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarPreferencias"/>
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="#F28907"
+        android:text="Salvar"
+        app:layout_constraintStart_toEndOf="@id/btnAlterarSenha"
+        app:layout_constraintTop_toBottomOf="@id/txtEditarPreferencias"/>
+
+    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btnExcluirMinhaConta"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="#F28907"
+        android:text="Excluir Minha Conta"
+        app:layout_constraintTop_toBottomOf="@id/btnAlterarSenha"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PetCareTCC</string>
+
+    <string-array name="spnVacinas">
+        <item>V8/V10</item>
+        <item>Antirrábica</item>
+    </string-array>
+
+    <string-array name="spnFase">
+        <item>Filhote</item>
+        <item>Adulto</item>
+        <item>Idoso</item>
+    </string-array>
+
+    <string-array name="spnRaca">
+        <item>Pit-Bull</item>
+        <item>Yorkshire</item>
+        <item>Bulldog</item>
+    </string-array>
+
+    <string-array name="spnEspecies">
+        <item>Ave</item>
+        <item>Cachorro</item>
+        <item>Gato</item>
+    </string-array>
+
+</resources>
