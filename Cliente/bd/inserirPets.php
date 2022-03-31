@@ -12,8 +12,7 @@ function inserirPet($arrayPets){
         avaliacao,
         idRaca,
         idEspecie,
-        idFase,
-        idCliente
+        idFase
        
       
     )
@@ -26,8 +25,7 @@ function inserirPet($arrayPets){
         '".$arrayPets['avaliacao']."',
         '".$arrayPets['idRaca']."',
         '".$arrayPets['idEspecie']."',
-        '".$arrayPets['idFase']."',
-        '".$arrayPets['idCliente']."'
+        '".$arrayPets['idFase']."'
 
          )
 ";

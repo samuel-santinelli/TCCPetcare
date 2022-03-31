@@ -110,8 +110,7 @@ $nomeFases = "Selecione uma fase";
             <input value="<?=$avaliacao?>" placeholder="avaliacao" type="text" name="avaliacao" id="avaliacao"/>
                       
                                 
-            <input value="<?=$nome?>" placeholder="Nome" type="text" name="inputNome" id="inputNome"/> 
-            <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="sltClientes" id="inputNome"/>   
+            <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="sltClientes" id="sltClientes"/>   
 
          <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
      

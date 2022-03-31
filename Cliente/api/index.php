@@ -16,6 +16,15 @@
            case 'cliente':
                     require_once('clienteApi/index.php');
                     break;  
+            case 'pets':
+                    require_once('petsApi/index.php');
+                    break; 
+            case 'comportamento':
+                    require_once('comportamentoApi/index.php');
+                    break;   
+            case 'vacinas':
+                    require_once('vacinaApi/index.php');
+                    break;   
        }
    
     
