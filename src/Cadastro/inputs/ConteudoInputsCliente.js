@@ -139,3 +139,7 @@ const ConteudoInputsCliente = () => {
         </div>
       </form>
     </>
+  );
+};
+
+export default ConteudoInputsCliente;
