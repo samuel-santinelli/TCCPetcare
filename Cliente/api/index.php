@@ -1,16 +1,17 @@
 <?php
-    
-    header('Access-Control-Allow-Origin: *'); 
-    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS'); 
-    header('Access-Control-Allow-Header: Content-Type');
-   header('Content-Type: application/json');
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header("Access-Control-Allow-Headers: Content-Type, Origin");
+header('content-Type: application/json');
+
    
-        require_once("../config/config.php");
+require_once("../config/config.php");
    
-       $url = (string) null;
+$url = (string) null;
    
        
-       $url = explode('/',$_GET['url']); 
+$url = explode('/',$_GET['url']); 
            
        switch($url[0]){
            case 'cliente':
@@ -25,10 +26,9 @@
             case 'vacinas':
                     require_once('vacinaApi/index.php');
                     break;   
-       }
+}
    
     
     
-
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
-require_once("../config/config.php");
-require_once(SRC."bd/conexo.php");
+// require_once("../config/config.php");
+require_once(SRC."bd/conexao.php");
 
 function listarPets(){
     $sql = "select *from tblPets";

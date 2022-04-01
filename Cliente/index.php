@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 require_once('bd/conexao.php');
 require_once('config/config.php');
 require_once(SRC. 'control/exibirSexo.php');
@@ -17,9 +17,28 @@ $idSexo =  ( int )null;
 $data = (string) null;
 $telefone = (string) null;
 
+$modo = (string) "Salvar"; 
+ 
 $nomeSexo = "Selecione um Item"; 
 
-$foto = (string) ''; 
+$foto = (string) 'semFoto.png'; 
+
+if(isset( $_SESSION['cliente'])){
+    $id = $_SESSION['cliente']['idCliente'];
+    $nome = $_SESSION['cliente']['nome'];
+    $cpf = $_SESSION['cliente']['cpf'];
+    $data =  $_SESSION['cliente']['dataNascimento'];
+    $foto = $_SESSION['cliente'] ['foto'];
+    $email = $_SESSION['cliente']['email'];
+    $senha = $_SESSION['cliente']['senha'];
+    $telefone = $_SESSION['cliente']['telefone'];
+    $idSexo =$_SESSION['cliente'] ['idSexo'];
+    $nomeSexo =$_SESSION['cliente'] ['nomeSexo']; 
+   
+    $modo = "Atualizar";
+
+    unset($_SESSION['cliente']);
+}
 
 
 
@@ -37,7 +56,7 @@ $foto = (string) '';
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?nomeFoto=<?=$foto?>">
+            <form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?nomeFoto=<?=$foto?>&id=<?=$id?>?modo=<?=$modo?>">
            
             <div class="campos">
                         <div class="cadastroInformacoesPessoais">
@@ -84,7 +103,7 @@ $foto = (string) '';
                                 
 
 
-         <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+         <input value="<?=$modo?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
         
         
         
@@ -117,6 +136,12 @@ $foto = (string) '';
 
 
 
+                 <a onclick="return confirm('Quer excluir?');" href="control/deleteCliente.php?id=<?=$exibirClientes['idCliente']?>&foto=<?=$exibirClientes['foto']?>"> 
+                            <img src="img/trash.png" >
+                        </a>   
+                        <a href="control/editarCliente.php?id=<?=$exibirClientes['idCliente']?>">
+                          <img src="img/edit.png" > 
+                        </a>
                     <?php  
                     }
                 ?>

@@ -14,4 +14,19 @@ function listarClientes(){
 }
 
 
+function buscaCliente($idCliente){
+   
+    $sql = "select tblClientes.*, tblSexo.* from tblClientes
+    inner join tblSexo
+      on tblSexo.idSexo = tblClientes.idSexo
+      where tblClientes.idCliente =".$idCliente;
+  
+    $conexao = conexao();
+    // echo($sql);
+    // die;
+    $select = mysqli_query($conexao,$sql);
+  
+    return $select;
+  }
+  
 ?>

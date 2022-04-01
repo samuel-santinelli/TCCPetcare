@@ -4,6 +4,7 @@
 require_once('../bd/inserirCliente.php');
 require_once('../config/config.php');
 require_once(SRC.'config/upload.php');
+require_once(SRC .'bd/updateCliente.php');
 
 
 $nome = (string) null;
@@ -15,6 +16,15 @@ $data = (string) null;
 $telefone = (string) null;
 $foto = (string) null;
 
+
+if(isset($_GET['id'])){
+    $id = (int) $_GET['id'];
+}
+else{
+  $id = (int) 0; 
+} 
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = $_POST['inputNome'];
     $email = $_POST['inputEmail'];
@@ -24,10 +34,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cpf = $_POST['inputCPF'];
     $telefone = $_POST['telefone'];
     $idSexo = $_POST['sltSexo'];
-    $nomeFoto = $_GET['nomeFoto']; 
-
   
-    if($_FILES['fleFoto'] ['name'] != "") 
+    
+    $nomeFoto = $_GET['nomeFoto']; 
+    if(strtoupper($_GET['modo']) == 'ATUALIZAR')
+    {
+        if($_FILES['fleFoto'] ['name'] != "") 
         {
              $foto = uploadFile($_FILES['fleFoto']); 
              unlink(SRC.NOME_DIRETORIO_FILE.$nomeFoto ); 
@@ -35,6 +47,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }else{
             $foto = $nomeFoto;
         }
+    }else{ 
+        $foto = uploadFile($_FILES['fleFoto']); 
+    }
 
 
 
@@ -63,11 +78,52 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "email" => $email,
                "senha" =>  $senha,
                 "idSexo" => $idSexo,
-                "telefone" => $telefone
+                "telefone" => $telefone,
+                "id" => $id
 
                
             
             );
+            if(strtoupper($_GET['modo']) == 'SALVAR'){
+                
+           
+                //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
+               if (inserirCliente($cliente)) //tratamento para ver se os dados chegaram no banco
+                    echo ("
+                        <script>
+                            alert('foi inserido');
+                            window.location.href = '../index.php';
+                        </script>
+                        " );
+                else
+                    echo ("
+                        <script>
+                            alert('nao foi inserido');
+                             window.history.back();
+                        </script>
+                    ");
+                }elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')
+                { 
+                    // edita($cuidador);
+                   //  die;
+                    if(editaCliente($cliente))
+                    echo("
+                    <script>
+                        alert('foi atualizado');
+                        window.location.href = '../index.php';
+                        </script>
+                " );
+                    
+                        
+                        else
+                            echo ("
+                                <script>
+                                alert('nao foi atualizado');
+                                window.history.back();
+                                </script>
+                            ");
+                    
+                }
           
         
 

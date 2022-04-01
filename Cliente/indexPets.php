@@ -4,6 +4,7 @@ require_once(SRC."control/exibirEspecie.php");
 require_once(SRC."control/exibirFase.php");
 require_once(SRC."control/exibirRaca.php");
 require_once(SRC."control/exibirClientes.php");
+require_once(SRC."control/exibirPets.php");
 
 $nome = (string)null;
 $deficiencia = (int) null;
@@ -118,6 +119,38 @@ $nomeFases = "Selecione uma fase";
         
         </form> 
       
+        <?php
+                $dados = exibirPets();
+                
+                while ($exibirPets = mysqli_fetch_assoc($dados))
+                {
+                ?>
+                <tr id="tblLinhas">
+                    <td ><?=$exibirPets['nome']?></td>
+                    <br>
+                    <td ><?=$exibirPets['deficiencia']?></td>
+                    <br>
+                    <td><?=$exibirPets['descricao']?></td>
+                    <br>
+                    <td><?=$exibirPets['foto']?></td>
+                    <br>
+                    <td ><?=$exibirPets['dataNascimento']?></td>
+                    <br>
+                    <td ><?=$exibirPets['idRaca']?></td>
+                    <br>
+                    <td ><?=$exibirPets['idEspecie']?></td>
+                    <br>
+                    <td ><?=$exibirPets['idFase']?></td>
+                    <br>
+                 
+    
+                    <td > <td ><img class= "foto"src="<?= NOME_DIRETORIO_FILE.$exibirPets['foto']?>"></td></td>
+
+                 <pre>
+
+                    <?php  
+                    }
+                ?>
        
 </body> 
 </html>

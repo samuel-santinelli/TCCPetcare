@@ -16,7 +16,23 @@ $config = [
 $app = new \Slim\App($config);
 
 
+$app->get('/pets', function($request, $response, $args){
+    require_once("../control/exibirPets.php");
+    if($listar = exibirPets()){
+        if( $listarArray = criarArrayPet($listar)){  
+            $listarDadosJSON = criarJsonPet($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
 
+});
 $app->post('/pets', function($request, $response, $args){ 
 
    
