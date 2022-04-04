@@ -5,33 +5,33 @@ import "./style/styleBoasVindas.css";
 
 const Login = () => {
   return (
-    <div className="container">
-      <div className="containerBanner">
+    <div className="containerWelcome">
+      <div className="containerBannerWelcome">
         <div className="bannerWelcome"></div>
       </div>
       <div className="containerH1">
-        <h1>Seja Bem-Vindo!</h1>
-        <h2>
+        <h1 className="titleWelcome">Seja Bem-Vindo!</h1>
+        <h2 className="subtitleWelcome">
           Agora que você já se cadastrou, seremos como amigos, já temos algo em
           comum! zelamos nossos PET'S!
         </h2>
       </div>
 
-      <div className="containerButton">
+      <div className="containerButtonWelcome">
         <input
           type="button"
           value="Adicione seu pet"
-          className="inputButton"
+          className="inputButtonWelcome"
         />
-        <AddIcon id="iconInput" />
+        <AddIcon id="iconInputWelcome" />
         </div>
-        <div className="containerButton">
+        <div className="containerButtonWelcome">
         <input
           type="button"
           value="Deixar para depois"
-          className="inputButton"
+          className="inputButtonWelcome"
         />
-        <WatchLaterIcon id="iconInput"/>
+        <WatchLaterIcon id="iconInputWelcome"/>
       </div>
     </div>
   );

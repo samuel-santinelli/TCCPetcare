@@ -19,7 +19,7 @@
     transition: all 0.2s linear;
   }
 
-.container{
+.containerWelcome{
     height: 90vh;
     width: 70vh;
     max-height: 100vh;
@@ -31,7 +31,7 @@
     flex-direction: column;
 }
 
-.containerBanner{
+.containerBannerWelcome{
     height: 38vh;
     width: 90vh;
     display: flex;
@@ -54,20 +54,20 @@
     flex-direction: column;
 }
 
-h1{
+.titleWelcome{
     font-size: 14em;
     margin: 1vh;
     color: var(--white)  ;
 }
 
-h2{
+.subtitleWelcome{
     width: 60vh;
     color: var(--white);
     font-size: 7rem;
     opacity: 90%;
 }
 
-.containerButton{
+.containerButtonWelcome{
     height: 10vh;
     width: 80vh;
     justify-content: center;
@@ -76,7 +76,7 @@ h2{
     
 }
 
-.inputButton{
+.inputButtonWelcome{
     height: 6.8vh;
     width: 50vh;
     margin: 3vh;
@@ -86,7 +86,7 @@ h2{
     padding-right: 22vh;
 }
 
-#iconInput{
+#iconInputWelcome{
     height: 5vh;
     width: 8vh;
     position: absolute;
