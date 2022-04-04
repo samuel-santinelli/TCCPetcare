@@ -5,15 +5,19 @@ import CadastroCuidador2Page from "./Cadastro/CadastroCuidador2Page";
 import CadastroCliente from "./Cadastro/CadastroCliente";
 import CadastroPet from './Cadastro/CadastroPet'
 import CadastroPetNextPage from './Cadastro/CadastroPetNextPage'
+import Login from './Login/Login'
+import EsqueciMinhaSenha from './EsqueciMinhaSenha/EsqueciMinhaSenha'
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <CadastroCuidador />
-    <CadastroCuidador2Page /> */}
-    <CadastroCliente />
-    {/* <CadastroPetNextPage/>
-    <CadastroPet/> */}
+    <EsqueciMinhaSenha/>
+    <Login/>
+    <CadastroCuidador />
+    <CadastroCuidador2Page />
+    <CadastroCliente /><CadastroPetNextPage/>
+    <CadastroPet/>
+    {/*  */}
   </React.StrictMode>,
   document.getElementById("root")
 );

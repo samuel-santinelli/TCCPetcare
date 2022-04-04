@@ -149,4 +149,44 @@ h1 {
   background-size: cover;
 }
 
-/* Conteudo banner Next Page cuidador termina aqui */
+/* Conteudo banner login começa aqui */
+
+.bannerLogin{
+  height: 146.1rem;
+  width: 100rem;
+  background-image: url("../../../images/bannerLogin.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.wavelogin{
+  margin: 87rem;
+  height: 146rem;
+  width: 26rem;
+  background-image: url("../../../images/Wave.png");
+  position: absolute;
+  display:block;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Conteudo banner Login termina aqui */
+
+.bannerEsqueciMinhaSenha {
+  height: 146.1rem;
+  width: 92rem;
+  background-image: url("../../../images/BannerEsqueciMinhaSenha.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#waveEsqueciMinhaSenha {
+  margin: 77rem;
+  height: 146.2rem;
+  width: 26rem;
+  background-image: url("../../../images/Wave.png");
+  position: absolute;
+  display:block;
+  background-position: center;
+  background-size: cover;
+}
