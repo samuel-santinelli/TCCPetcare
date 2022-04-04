@@ -13,7 +13,7 @@ import InputButtonCadastrar from "../button/inputButtonCadastrar";
 import InputCamera from "./InputCamera";
 import validarSenhaForca from "./validation/validation";
 
-const ConteudoInputsCliente = () => {
+function ConteudoInputsCliente() {
   const [user, setUser] = useState({
     nome: "",
     cpf: "",
@@ -37,10 +37,10 @@ const ConteudoInputsCliente = () => {
 
   const listElements = () => {
     axios
-    .get("http://localhost/Cuidador/Cliente/api/cliente")
-    .then((res) => console.log(res.data));
-  }
-  useEffect(() => {listElements()}, [])
+      .get("http://localhost/Cuidador/Cliente/api/cliente")
+      .then((res) => console.log(res.data));
+  };
+  useEffect(() => { listElements(); }, []);
 
   return (
     <>
@@ -52,9 +52,9 @@ const ConteudoInputsCliente = () => {
               name="inputImage"
               className="inputImage"
               id="foto"
+              accept="image/jpeg, image/jpg, image/png"
               value={user.foto}
-              onChange={(e) => setUser({ ...user, foto: e.target.value })}
-            />
+              onChange={(e) => setUser({ ...user, foto: e.target.value })} />
             <CameraAltIcon id="iconInputCamera" />
           </div>
         </div>
@@ -66,19 +66,15 @@ const ConteudoInputsCliente = () => {
             value={user.nome}
             className="containerInputNome"
             placeholder="Nome"
-            onChange={(e) => setUser({ ...user, nome: e.target.value })}
-          />
+            onChange={(e) => setUser({ ...user, nome: e.target.value })} />
 
           <input
-            type="text"
+            type="date"
             id="dataNascimento"
             placeholder="aaaa-mm-dd"
             value={user.dataNascimento}
             className="inputCalendar"
-            onChange={(e) =>
-              setUser({ ...user, dataNascimento: e.target.value })
-            }
-          />
+            onChange={(e) => setUser({ ...user, dataNascimento: e.target.value })} />
         </div>
         <div id="contInputStretch">
           <AlternateEmailIcon id="iconInputLabel" />
@@ -89,8 +85,7 @@ const ConteudoInputsCliente = () => {
             value={user.email}
             className="containerInputEmail"
             placeholder="Email"
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
+            onChange={(e) => setUser({ ...user, email: e.target.value })} />
         </div>
         <div id="contInputsPet">
           <LockIcon id="iconInputLabel" />
@@ -102,8 +97,7 @@ const ConteudoInputsCliente = () => {
             onKeyUp={validarSenhaForca}
             className="containerInputSenha"
             placeholder="Senha"
-            onChange={(e) => setUser({ ...user, senha: e.target.value })}
-          />
+            onChange={(e) => setUser({ ...user, senha: e.target.value })} />
 
           <LockOpenIcon id="iconInputLabel" />
           <input
@@ -111,8 +105,7 @@ const ConteudoInputsCliente = () => {
             id="confirmarSenha"
             type="password"
             className="containerInputConfirmarSenha"
-            placeholder="Confirmar Senha"
-          />
+            placeholder="Confirmar Senha" />
         </div>
         <div id="impSenha"></div>
         <div id="impForcaSenha"></div>
@@ -136,8 +129,7 @@ const ConteudoInputsCliente = () => {
             value={user.telefone}
             className="containerInputTelefone"
             placeholder="Telefone"
-            onChange={(e) => setUser({ ...user, telefone: e.target.value })}
-          />
+            onChange={(e) => setUser({ ...user, telefone: e.target.value })} />
         </div>
         <div id="contInputsPet">
           <AssignmentIndIcon id="iconInputLabel" />
@@ -148,8 +140,7 @@ const ConteudoInputsCliente = () => {
             value={user.cpf}
             className="containerInputCpf"
             placeholder="CPF"
-            onChange={(e) => setUser({ ...user, cpf: e.target.value })}
-          />
+            onChange={(e) => setUser({ ...user, cpf: e.target.value })} />
         </div>
 
         <div id="containerButton">
@@ -158,12 +149,11 @@ const ConteudoInputsCliente = () => {
             type="submit"
             name="inputConfirmarSenha"
             id="buttonCadastrar"
-            className="button"
-          />
+            className="button" />
         </div>
       </form>
     </>
   );
-};
+}
 
 export default ConteudoInputsCliente;

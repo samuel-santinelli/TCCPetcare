@@ -11,12 +11,13 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <EsqueciMinhaSenha/>
-    <Login/>
-    <CadastroCuidador />
-    <CadastroCuidador2Page />
-    <CadastroCliente /><CadastroPetNextPage/>
-    <CadastroPet/>
+    {/* <EsqueciMinhaSenha/> */}
+    {/* <Login/> */}
+    {/* <CadastroCuidador /> */}
+    {/* <CadastroCuidador2Page /> */}
+    <CadastroCliente />
+    {/* <CadastroPetNextPage/> */}
+    {/* <CadastroPet/> */}
     {/*  */}
   </React.StrictMode>,
   document.getElementById("root")
