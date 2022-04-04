@@ -1,6 +1,6 @@
 import React from "react"
-import HomeLogin from "../Cadastro/HomeLogin"
-import FooterLogin from "../Cadastro/footer/FooterLogin"
+import HomeLogin from "../Home/HomeLogin"
+import FooterLogin from "../footer/FooterLogin"
 import InputsLogin from "./input/InputsLogin"
 
 const Login = () => {

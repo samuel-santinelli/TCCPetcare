@@ -1,4 +1,4 @@
-import "./style/CadastroCliente.css";
+import "./style/Home.css";
 
 function HomeCliente() {
   return (

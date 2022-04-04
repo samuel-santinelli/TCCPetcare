@@ -7,18 +7,19 @@ import CadastroPet from './Cadastro/CadastroPet'
 import CadastroPetNextPage from './Cadastro/CadastroPetNextPage'
 import Login from './Login/Login'
 import EsqueciMinhaSenha from './EsqueciMinhaSenha/EsqueciMinhaSenha'
+import BoasVindas from "./BoasVindas/BoasVindas";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
+    <BoasVindas/>
     {/* <EsqueciMinhaSenha/> */}
     {/* <Login/> */}
-    <CadastroCuidador />
-    <CadastroCuidador2Page />
-    <CadastroCliente />
+    {/* <CadastroCuidador /> */}
+    {/* <CadastroCuidador2Page /> */}
+    {/* <CadastroCliente /> */}
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}
-    {/*  */}
   </React.StrictMode>,
   document.getElementById("root")
 );

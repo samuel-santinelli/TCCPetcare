@@ -1,7 +1,7 @@
 import "./style/CadastroPet.css";
 import InputsPet from "./inputs/ConteudoInputsPet";
-import HomePet from "./HomePet";
-import Footer from "./footer/Footer";
+import HomePet from "../Home/HomePet";
+import Footer from "../footer/Footer";
 import InputButtonCadastrar from "./button/inputButtonCadastrar";
 
 function CadastroPet() {

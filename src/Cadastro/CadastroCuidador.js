@@ -1,7 +1,7 @@
 import "./style/Cadastro.css";
 import InputsIcon from "./inputs/ConteudoInputs";
-import Home from "./Home";
-import Footer from "./footer/Footer";
+import Home from "../Home/Home";
+import Footer from "../footer/Footer";
 import InputButton from "./button/InputButton";
 
 function CadastroCuidador() {

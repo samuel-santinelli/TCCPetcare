@@ -1,6 +1,6 @@
 import "./style/CadastroPet.css";
-import HomePet from "./HomePet";
-import Footer from "./footer/Footer";
+import HomePet from "../Home/HomePet";
+import Footer from "../footer/Footer";
 import InputButton from "./button/InputButton";
 import InputsPetNextPage from "./inputs/ConteudoInputsPetNextPage";
 

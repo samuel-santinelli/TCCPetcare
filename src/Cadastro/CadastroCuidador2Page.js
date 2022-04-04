@@ -1,9 +1,9 @@
 import "./style/Cadastro2Page.css";
 import InputsIconNextPage from "./inputs/ConteudoInputsNextPage";
 import InputButton from "./button/InputButton";
-import HomeNextPageCuidador from "./HomeNextPageCuidador";
+import HomeNextPageCuidador from "../Home/HomeNextPageCuidador";
 import InputButtonCadastrar from "./button/inputButtonCadastrar";
-import Footer from "./footer/Footer";
+import Footer from "../footer/Footer";
 
 function CadastroCuidador2Page() {
   return (

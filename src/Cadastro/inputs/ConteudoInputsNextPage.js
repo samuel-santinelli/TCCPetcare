@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
-import WcIcon from "@mui/icons-material/Wc";
+import BusinessIcon from '@mui/icons-material/Business';
 import PanToolIcon from "@mui/icons-material/PanTool";
 import HouseIcon from "@mui/icons-material/House";
 import AccessibilityIcon from "@mui/icons-material/Accessibility";
@@ -12,6 +13,7 @@ import { styled } from "@mui/material/styles";
 import { pink } from "@mui/material/colors";
 
 const InputsIconNextPage = () => {
+  
   const [userCuidador, setUserCuidador] = useState({
     cpf: "",
     foto: "",
@@ -24,6 +26,7 @@ const InputsIconNextPage = () => {
     avaliacao: "",
     idSexoHost: "",
   });
+
   return (
     <>
       <InputCamera />
@@ -70,21 +73,31 @@ const InputsIconNextPage = () => {
         />
       </div>
       <div id="contInputsMoradia">
+        <BusinessIcon id="iconInputLabel" />
+        <input
+          id="cep"
+          className="containerInputMoradia"
+          placeholder="Informe seu cep"
+          type="number"
+          required
+        />
         <HouseIcon id="iconInputLabel" />
         <input
           label="Moradia"
           id="moradia"
           className="containerInputMoradia"
           placeholder="Aonde você reside?"
+          required
         />
-
-        <AccessibilityIcon id="iconInputLabel" />
-        <input
-          label="Preferências"
-          id="preferencias"
-          placeholder="Possui alguma preferência?"
-          className="containerInputPreferencias"
-        />
+        <div>
+          <AccessibilityIcon id="iconInputLabel" />
+          <input
+            label="Preferências"
+            id="preferencias"
+            placeholder="Possui alguma preferência?"
+            className="containerInputPreferencias"
+          />
+        </div>
       </div>
     </>
   );

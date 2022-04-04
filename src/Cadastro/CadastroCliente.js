@@ -1,8 +1,8 @@
 import "./style/CadastroCliente.css";
 import ConteudoInputsCliente from './inputs/ConteudoInputsCliente'
-import HomeCliente from './HomeCliente';
+import HomeCliente from '../Home/HomeCliente';
 import InputButton from "./button/InputButton";
-import Footer from "./footer/Footer";
+import Footer from "../footer/Footer";
 
 function CadastroCliente() {
   return (

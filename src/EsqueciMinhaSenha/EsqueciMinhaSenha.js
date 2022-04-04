@@ -1,6 +1,6 @@
 import React from "react"
-import HomeEsqueciMinhaSenha from "../Cadastro/HomeEsqueciMinhaSenha"
-import Footer from "../Cadastro/footer/Footer"
+import HomeEsqueciMinhaSenha from "../Home/HomeEsqueciMinhaSenha"
+import Footer from "../footer/Footer"
 import InputsEsqueciMinhaSenha from "./inputs/InputsEsqueciMinhaSenha"
 
 const EsqueciMinhaSenha = () => {
