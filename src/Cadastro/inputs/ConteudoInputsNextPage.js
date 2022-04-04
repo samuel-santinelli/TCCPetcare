@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import WcIcon from "@mui/icons-material/Wc";
 import PanToolIcon from "@mui/icons-material/PanTool";
@@ -11,29 +11,19 @@ import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 import { pink } from "@mui/material/colors";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
-
 const InputsIconNextPage = () => {
-  const Input = styled(TextField)({
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        height: 70,
-        width: 390,
-        borderColor: "#f28907",
-        borderRadius: 10,
-        // qualquer outra classe css aqui
-      },
-      "&:hover fieldset": {
-        borderColor: "#f28907",
-        // qualquer classe p/ efeito de hover aqui
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "#f28907",
-        // qualquer classe p/ efeito de focus aqui
-      },
-    },
+  const [userCuidador, setUserCuidador] = useState({
+    cpf: "",
+    foto: "",
+    biografia: "",
+    possuiAnimais: "",
+    possuiCriancas: "",
+    preferencias: "",
+    moradia: "",
+    limitacoes: "",
+    avaliacao: "",
+    idSexoHost: "",
   });
-
   return (
     <>
       <InputCamera />
@@ -56,17 +46,17 @@ const InputsIconNextPage = () => {
       </div>
       <div id="contInputsPetCheckbox">
         <div id="contInputCheckbox">
-          <label class="labelInputCheckboxCuidador">
+          <label className="labelInputCheckboxCuidador">
             Possui Animais
             <input type="checkbox" />
-            <span class="checkmarkCuidador"></span>
+            <span className="checkmarkCuidador"></span>
           </label>
         </div>
         <div id="contInputCheckbox">
-          <label class="labelInputCheckboxCuidador">
+          <label className="labelInputCheckboxCuidador">
             Possui Crianças?
             <input type="checkbox" />
-            <span class="checkmarkCuidador"></span>
+            <span className="checkmarkCuidador"></span>
           </label>
         </div>
       </div>
@@ -81,10 +71,20 @@ const InputsIconNextPage = () => {
       </div>
       <div id="contInputsMoradia">
         <HouseIcon id="iconInputLabel" />
-        <input label="Moradia" id="moradia" className="containerInputMoradia" placeholder="Aonde você reside?"/>
+        <input
+          label="Moradia"
+          id="moradia"
+          className="containerInputMoradia"
+          placeholder="Aonde você reside?"
+        />
 
         <AccessibilityIcon id="iconInputLabel" />
-        <input label="Preferências" id="preferencias" placeholder="Possui alguma preferência?" className="containerInputPreferencias" />
+        <input
+          label="Preferências"
+          id="preferencias"
+          placeholder="Possui alguma preferência?"
+          className="containerInputPreferencias"
+        />
       </div>
     </>
   );

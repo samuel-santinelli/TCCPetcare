@@ -1,4 +1,5 @@
-import React from "react";
+import {useState} from "react";
+import axios from "axios"
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LockIcon from "@mui/icons-material/Lock";
@@ -13,6 +14,12 @@ import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 
 const InputsIcon = () => {
+  const [userCuidador, setUserCuidador] = useState({
+    nome: "",
+    sobrenome: "",
+    email: "",
+    senha: "",
+  })
 
   return (
     <>

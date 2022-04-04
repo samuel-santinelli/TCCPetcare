@@ -13,8 +13,8 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <EsqueciMinhaSenha/> */}
     {/* <Login/> */}
-    {/* <CadastroCuidador /> */}
-    {/* <CadastroCuidador2Page /> */}
+    <CadastroCuidador />
+    <CadastroCuidador2Page />
     <CadastroCliente />
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}

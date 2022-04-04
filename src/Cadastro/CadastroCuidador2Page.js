@@ -7,9 +7,9 @@ import Footer from "./footer/Footer";
 
 function CadastroCuidador2Page() {
   return (
-    <form class="containerMainPet" id="containerMainPet">
+    <form className="containerMainPet" id="containerMainPet">
       <HomeNextPageCuidador />
-      <div id="containerInputsPet" class="containerInputsPet">
+      <div id="containerInputsPet" className="containerInputsPet">
         <h1>Seja um novo Cuidador!</h1>
         <InputsIconNextPage />
         <InputButtonCadastrar />

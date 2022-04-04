@@ -3,8 +3,8 @@ import "./style/Home.css";
 function HomeCuidador() {
   return (
     <>
-      <div id="banner" class="banner"></div>
-      <div id="wave" class="wave"></div>
+      <div id="banner" className="banner"></div>
+      <div id="wave" className="wave"></div>
     </>
   );
 }

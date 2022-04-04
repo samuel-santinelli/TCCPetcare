@@ -3,8 +3,8 @@ import "./style/Home.css";
 function HomeNextPageCuidador() {
   return (
     <>
-      <div id="bannerNextCuidador" class="bannerNextCuidador"></div>
-      <div id="waveNextCuidador" class="waveNextCuidador"></div>
+      <div id="bannerNextCuidador" className="bannerNextCuidador"></div>
+      <div id="waveNextCuidador" className="waveNextCuidador"></div>
     </>
   );
 }
