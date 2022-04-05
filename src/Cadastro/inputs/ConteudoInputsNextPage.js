@@ -76,7 +76,7 @@ const InputsIconNextPage = () => {
         <BusinessIcon id="iconInputLabel" />
         <input
           id="cep"
-          className="containerInputMoradia"
+
           placeholder="Informe seu cep"
           type="number"
           required

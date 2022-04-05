@@ -1,12 +1,13 @@
 #containerMainPet {
-  height: 1459px;
-  width: 210rem;
-  margin-top: 10rem;
+  height: 143.4rem;
+  width: 215rem;
+  margin-top: 2vh;
   display: flex;
   align-items: center;
   -ms-flex-pack: end;
   position: relative;
-  margin-left: 25rem;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
   background-color: #fff;
@@ -46,9 +47,9 @@ label {
 }
 
 #containerInputsPet {
-  height: 110rem;
+  height: 85vh;
   width: 92rem;
-  margin-left: 90px;
+  margin-left:4rem;
   background-color: #fff;
 }
 
