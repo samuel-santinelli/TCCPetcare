@@ -4,7 +4,7 @@
 
 require_once("vendor/autoload.php");
 
-require_once('../control/recebePetsApi.php');
+require_once('../control/recebeRacaApi.php');
 
 
 $config = [
@@ -15,12 +15,11 @@ $config = [
 
 $app = new \Slim\App($config);
 
-
-$app->get('/pets', function($request, $response, $args){
-    require_once("../control/exibirPets.php");
-    if($listar = exibirPets()){
-        if( $listarArray = criarArrayPet($listar)){  
-            $listarDadosJSON = criarJsonPet($listarArray);
+$app->get('/raca', function($request, $response, $args){
+    require_once("../control/exibirRaca.php");
+    if($listar = exibirRaca()){
+        if( $listarArray = criarArrayRaca($listar)){  
+            $listarDadosJSON = criarJsonRaca($listarArray);
              }
     }
        if($listarArray){
@@ -33,7 +32,7 @@ $app->get('/pets', function($request, $response, $args){
   
 
 });
-$app->post('/pets', function($request, $response, $args){ 
+$app->post('/raca', function($request, $response, $args){ 
 
    
     $contentType = $request-> getHeaderLine('Content-Type'); 
@@ -63,10 +62,10 @@ $app->post('/pets', function($request, $response, $args){
 
          
           
-            if(inserirPetsAPI($dadosBodyJSON)){ 
+            if(inserirRacaAPI($dadosBodyJSON)){ 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Cadastro de pet criado com sucesso"}');
+                                    ->write('{"message":"Cadastro de raca criado com sucesso"}');
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')
@@ -87,6 +86,6 @@ $app->post('/pets', function($request, $response, $args){
 
 $app->run();
 
-// http://localhost/Cuidador/Cliente/api/pets
+// http://localhost/Cuidador/Cliente/api/raca
 
 ?>

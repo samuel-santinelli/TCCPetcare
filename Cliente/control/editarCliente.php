@@ -19,7 +19,7 @@ if($exbirCliente = mysqli_fetch_assoc($dados)){
     $_SESSION['cliente'] = $exbirCliente;
     
   
-    header('location:../index.php');
+    header('location:../indexCliente.php');
 }else{
     echo ("
             <script>

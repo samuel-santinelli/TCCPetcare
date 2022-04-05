@@ -84,41 +84,40 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                
             
             );
-            if(strtoupper($_GET['modo']) == 'SALVAR'){
+               //validacao para saber se é para inserir um novo registro ou se é para atualizar um registro existente no bd
+               if(strtoupper($_GET['modo']) == 'SALVAR'){
                 
            
                 //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
                if (inserirCliente($cliente)) //tratamento para ver se os dados chegaram no banco
                     echo ("
                         <script>
-                            alert('foi inserido');
-                            window.location.href = '../index.php';
+                            alert('foi');
+                            window.location.href = '../indexCliente.php';
                         </script>
                         " );
                 else
                     echo ("
                         <script>
-                            alert('nao foi inserido');
+                            alert('Não foi inserido');
                              window.history.back();
                         </script>
                     ");
-                }elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')
+                }elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')//logica para o atualizar
                 { 
-                    // edita($cuidador);
-                   //  die;
-                    if(editaCliente($cliente))
-                    echo("
-                    <script>
-                        alert('foi atualizado');
-                        window.location.href = '../index.php';
-                        </script>
-                " );
+                    //  editar($cliente);
                     
-                        
+                    if(editaCliente($cliente))
+                         echo ("
+                            <script>
+                                alert('foi atualizado');
+                                window.location.href = '../indexCliente.php';
+                                </script>
+                        " );
                         else
                             echo ("
                                 <script>
-                                alert('nao foi atualizado');
+                                alert('Não foi atualizado');
                                 window.history.back();
                                 </script>
                             ");
@@ -127,20 +126,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           
         
 
-           if (inserirCliente($cliente)) 
-                echo ("
-                    <script>
-                        alert('foi inserido');
-                        window.location.href = '../index.php';
-                    </script>
-                    " );
-            else
-                echo ("
-                    <script>
-                        alert('nao foi inserido');
-                         window.history.back();
-                    </script>
-                ");
             
         }
 

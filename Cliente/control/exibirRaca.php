@@ -9,5 +9,47 @@ function exibirRaca(){
     return $dados;
 }
 
+function criarArrayRaca($objeto)
+{
+    $cont = (int) 0;
 
+    
+    while($exibirDados = mysqli_fetch_assoc($objeto))
+    {
+        
+        $arrayDados[$cont] = array( 
+            "id" => $exibirDados['idRaca'],
+            "nome" => $exibirDados['nomeRaca'],
+            "idPorte" =>$exibirDados['idPorte']
+            
+           
+        );
+
+        $cont +=1; 
+    }
+ 
+  
+ 
+    if(isset($arrayDados)){
+        return $arrayDados;
+    }else{
+        return false;
+    }
+}
+
+
+function criarJsonRaca($arrayDados)
+{
+    
+    header("content-type:application/json");
+
+    $listarJSON = json_encode($arrayDados); 
+
+
+    if(isset($listarJSON)){
+        return $listarJSON;
+     }else{
+         return false;
+    }
+}
 ?>

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 require_once('bd/conexao.php');
 require_once('config/config.php');
 require_once(SRC. 'control/exibirSexo.php');
@@ -16,8 +17,8 @@ $confirmarSenha = (string) null;
 $idSexo =  ( int )null;
 $data = (string) null;
 $telefone = (string) null;
-
-$modo = (string) "Salvar"; 
+$id = (int) 0;
+$md = (string) "Salvar"; 
  
 $nomeSexo = "Selecione um Item"; 
 
@@ -35,7 +36,7 @@ if(isset( $_SESSION['cliente'])){
     $idSexo =$_SESSION['cliente'] ['idSexo'];
     $nomeSexo =$_SESSION['cliente'] ['nomeSexo']; 
    
-    $modo = "Atualizar";
+    $md = "Atualizar";
 
     unset($_SESSION['cliente']);
 }
@@ -56,9 +57,9 @@ if(isset( $_SESSION['cliente'])){
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?nomeFoto=<?=$foto?>&id=<?=$id?>?modo=<?=$modo?>">
-           
-            <div class="campos">
+
+<form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?modo=<?=$md?>&nomeFoto=<?=$foto?>">
+<div class="campos">
                         <div class="cadastroInformacoesPessoais">
                             <label> Foto: </label>
                         </div>
@@ -98,17 +99,18 @@ if(isset( $_SESSION['cliente'])){
                                 }
       
                         ?>
-                        </select>
-                      
-                                
+                    </select>
+
+                    <?php
+                        
 
 
-         <input value="<?=$modo?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
-        
-        
-        
-        
-        </form> 
+                    ?>
+
+
+
+            <input value="<?=$md?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+        </form>
 
         <?php
                 $dados = exibirClientes();
@@ -149,6 +151,4 @@ if(isset( $_SESSION['cliente'])){
        
 </body> 
 </html>
-
-
 

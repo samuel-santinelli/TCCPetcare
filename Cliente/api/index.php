@@ -26,6 +26,9 @@ $url = explode('/',$_GET['url']);
             case 'vacinas':
                     require_once('vacinaApi/index.php');
                     break;   
+        case 'raca':
+                require_once('racaApi/index.php');
+                break;  
 }
    
     

@@ -6,9 +6,11 @@ require_once(SRC."bd/conexao.php");
 function inserirVacinaPet($arrayVacinaPet){
     $sql = "insert into tblPetsVacinas 
     (
+        idPet,
         idVacina
         )
     values(
+        '".$arrayVacinaPet['idPet']."',
         '".$arrayVacinaPet['idVacina']."'
     )";
 
