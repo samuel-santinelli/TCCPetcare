@@ -12,7 +12,7 @@ if(excluir($id)){
     echo ("
     <script>
         alert('Foi');
-        window.location.href = '../index.php';
+        window.location.href = '../indexCliente.php';
     </script>
     " );
 // echo("foi");

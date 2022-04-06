@@ -1,7 +1,20 @@
 <?php
 require_once("config/config.php");
 require_once(SRC."control/exibirClientes.php");
-$idCliente = (int) 0;
+// require_once(SRC .'bd/listarClientes.php');
+// $idCliente = (int) 0;
+
+
+
+
+// if(isset($_GET['id'])){
+//     $idCliente = (int) $_GET['id'];
+// }
+// else{
+//   $idCliente = (int) 0; 
+// } 
+
+
 
 ?>
 
@@ -15,23 +28,35 @@ $idCliente = (int) 0;
     <title>Document</title>
 </head>
 <body>
-    <form method="post" enctype="multipart/form-data" action="indexPets.php?idCliente=<?=$idCliente?>">
+    <form method="post" enctype="multipart/form-data" action="indexPets.php?id=<?=$idCliente?>">
             
             <button id="Deixar para depois "> Deixar para depois</button> 
    
-    <?php
-                $dados = exibirClientes();
-                
-                $exibirClientes = mysqli_fetch_assoc($dados)
-                
-                ?>
-            
-                        <a href="indexPets.php?id=<?=$exibirClientes['idCliente']?>">
-                        <button id="Adicionar um pet" > Adicionar um pet</button>
-                        </a>
-                    <?php  
-                    
-                ?>
-           </form>     
+   
+           </form>    
+           <?php
+              
+              require_once(SRC .'bd/listarClientes.php');
+
+              $idCliente= $_GET['id'];
+              echo ($idCliente);
+
+              $dados= buscaCliente($idCliente); 
+             
+              $exibirCliente = mysqli_fetch_array($dados);
+              // var_dump($exbirCliente);
+              // die;
+                 
+         
+  
+  ?>
+
+       
+          <a href="indexPets.php?id=<?=$exibirCliente['idCliente']?>">
+          <button id="Adicionar um pet" > Adicionar um pet</button>
+          </a>
+      <?php  
+      
+  ?> 
 </body>
 </html>

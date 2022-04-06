@@ -6,6 +6,7 @@ require_once('bd/conexao.php');
 require_once('config/config.php');
 require_once(SRC. 'control/exibirSexo.php');
 require_once(SRC. 'control/exibirClientes.php');
+require_once(SRC. 'bd/listarClientes.php');
 //  conexao();
 
 $nome = (string) null;
@@ -58,7 +59,7 @@ if(isset( $_SESSION['cliente'])){
 </head>
 <body>
 
-<form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?modo=<?=$md?>&nomeFoto=<?=$foto?>">
+<form method="post" enctype="multipart/form-data" action="control/recebeCliente.php?modo=<?=$md?>&nomeFoto=<?=$foto?>&id=<?=$id?>">
 <div class="campos">
                         <div class="cadastroInformacoesPessoais">
                             <label> Foto: </label>
@@ -108,9 +109,35 @@ if(isset( $_SESSION['cliente'])){
                     ?>
 
 
-
+                    
             <input value="<?=$md?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+       
+          
+  
+       
+       
         </form>
+
+      
+
+        <?php
+                $dados = exibirClientes();
+                
+                while ($exibirClientes = mysqli_fetch_assoc($dados))
+                {
+                
+                ?>                      
+
+
+
+        <a href="indexAddPet.php?id=<?=$exibirClientes['idCliente']?>">   
+        <button id="Adicionar um pet" > Adicionar um pet</button>                   
+        </a>
+
+        <?php  
+                }     
+                ?>
+
 
         <?php
                 $dados = exibirClientes();

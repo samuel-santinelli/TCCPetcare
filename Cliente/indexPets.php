@@ -12,7 +12,7 @@ $descricao = (string) null;
 $castrado = (string) null;
 $foto = (string) '';
 $dataNascimento = (string) null;
-$avaliacao = (int) 0;
+$avaliacao = (int) null;
 $idRaca = (int) 0;
 $idEspecie = (int) 0;
 $idFase = (int) 0;
@@ -97,6 +97,7 @@ $nomeFases = "Selecione uma fase";
       
                         ?>
                         </select>      
+                      
                         
                    
 
