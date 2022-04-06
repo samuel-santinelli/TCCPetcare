@@ -12,7 +12,6 @@ function CadastroPetNextPage() {
         <h1>Cadastre seu pet ja procure um cuidador!</h1>
         
         <InputsPetNextPage />
-        <InputButton />
         <Footer />
       </div>
     </form>

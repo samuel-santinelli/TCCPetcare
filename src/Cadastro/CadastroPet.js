@@ -12,7 +12,7 @@ function CadastroPet() {
         <h1>Cadastre seu pet ja procure um cuidador!</h1>
         
         <InputsPet />
-        <InputButtonCadastrar />
+
         <Footer />
       </div>
     </form>

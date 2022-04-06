@@ -84,6 +84,9 @@ const InputsIconNextPage = () => {
             className="containerInputs"
             placeholder="CPF"
             value={userCuidadorNext.cpf}
+            onChange={(e) => setUserCuidadorNext({...userCuidadorNext, cpf: e.target.value,
+            })
+          }
           />
         </div>
         <div id="contInputsPetCheckbox">
@@ -93,10 +96,7 @@ const InputsIconNextPage = () => {
               <input
                 type="checkbox"
                 value={userCuidadorNext.possuiAnimais}
-                onChange={(e) =>
-                  setUserCuidadorNext({
-                    ...userCuidadorNext,
-                    possuiAnimais: e.target.value,
+                onChange={(e) => setUserCuidadorNext({...userCuidadorNext, possuiAnimais: e.target.value,
                   })
                 }
               />
@@ -127,11 +127,11 @@ const InputsIconNextPage = () => {
             id="limitacoes"
             className="containerInputLimitacoes"
             placeholder="Você possui limitações?"
-            value={userCuidadorNext.possuiLimitacoes}
+            value={userCuidadorNext.limitacoes}
             onChange={(e) =>
               setUserCuidadorNext({
                 ...userCuidadorNext,
-                possuiLimitacoes: e.target.value,
+                limitacoes: e.target.value,
               })
             }
           />
@@ -176,12 +176,24 @@ const InputsIconNextPage = () => {
                 })
               }
             />
+            
+               <input
+              id="preferencias"
+              placeholder="Me diga um pouco sobre você"
+              className="containerInputPreferencias"
+              value={userCuidadorNext.biografia}
+              onChange={(e) =>
+                setUserCuidadorNext({
+                  ...userCuidadorNext,
+                  biografia: e.target.value,
+                })
+              }
+            />
           </div>
           <div id="containerButton">
             <input
               value="Cadastrar"
               type="submit"
-              name="inputConfirmarSenha"
               id="buttonCadastrar"
               className="button"
             />

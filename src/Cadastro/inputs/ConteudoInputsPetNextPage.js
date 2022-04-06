@@ -94,6 +94,15 @@ const InputsPetNextPage = () => {
             </div>
           </div>
         </div>
+        <div id="containerButtonNext">
+            <input
+              value="Cadastrar"
+              type="submit"
+              id="buttonCadastrarNext"
+              className="buttonNext"
+            />
+          </div>
+  
       </div>
     </>
   );

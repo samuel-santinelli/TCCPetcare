@@ -92,6 +92,14 @@ const InputsPet = () => {
         </label>
         </div>
       </div>
+      <div id="containerButton">
+            <input
+              value="Cadastrar"
+              type="submit"
+              id="buttonCadastrar"
+              className="button"
+            />
+          </div>
   
     </>
   );
