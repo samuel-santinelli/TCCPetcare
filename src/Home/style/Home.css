@@ -108,7 +108,7 @@ h1 {
 /* Conteudo Banner Cliente começa aqui */
 #bannerLogin {
   height: 143.7rem;
-  width: 43vw;
+  width: 109rem;
   background-image: url("../../../images/bannerCliente2.jpg");
   background-position: center;
   background-size: cover;
@@ -132,7 +132,7 @@ h1 {
 
 #bannerNextCuidador{
   height: 143.8rem;
-  width: 43vw;
+  width: 109rem;
   background-image: url("../../../images/bannerNextPage3.jpg");
   background-position: center;
   background-size: cover;
@@ -162,7 +162,7 @@ h1 {
 .wavelogin{
   margin: 85.9rem;
   height: 143.7rem;
-  width: 15.4vw;
+  width: 40rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -183,7 +183,7 @@ h1 {
 #waveEsqueciMinhaSenha {
   margin: 90rem;
   height: 143.7rem;
-  width: 15.4vw;
+  width: 45rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
