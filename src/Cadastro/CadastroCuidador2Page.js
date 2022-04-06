@@ -3,17 +3,16 @@ import InputsIconNextPage from "./inputs/ConteudoInputsNextPage";
 import InputButton from "./button/InputButton";
 import HomeNextPageCuidador from "../Home/HomeNextPageCuidador";
 import InputButtonCadastrar from "./button/inputButtonCadastrar";
-import Footer from "../footer/Footer";
+import FooterNextPage from "../footer/FooterNextPage";
 
 function CadastroCuidador2Page() {
   return (
-    <form className="containerMainPet" id="containerMainPet">
+    <form id="containerMainPet">
       <HomeNextPageCuidador />
       <div id="containerInputsPet" className="containerInputsPet">
         <h1>Seja um novo Cuidador!</h1>
         <InputsIconNextPage />
-        <InputButtonCadastrar />
-        <Footer />
+        <FooterNextPage />
       </div>
     </form>
   );

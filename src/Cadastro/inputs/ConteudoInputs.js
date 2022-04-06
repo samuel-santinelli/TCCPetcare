@@ -10,8 +10,7 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import InputCamera from "./InputCamera";
 import InputAdornment from "@mui/material/InputAdornment";
 import validarSenhaForca from "./validation/validation";
-import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
+
 
 const InputsIcon = () => {
   const [userCuidador, setUserCuidador] = useState({
@@ -35,6 +34,10 @@ const InputsIcon = () => {
     .then((res) => console.log(res.data));
   }
   useEffect(() => {listElements()}, [])
+
+  function testeClick(){
+    console.log("ola");
+  }
 
   return (
     <>
@@ -106,6 +109,7 @@ const InputsIcon = () => {
       <div id="erroSenhaForca"></div>
       <div id="contInputsPet"></div>
       <div id="containerButton">
+        <a>
           <input
             value="Próxima Pagina"
             type="submit"
@@ -113,6 +117,7 @@ const InputsIcon = () => {
             id="buttonCadastrar"
             className="button"
           />
+          </a>
         </div>
       </form>
     </>
