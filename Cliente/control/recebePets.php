@@ -2,7 +2,7 @@
 
 require_once('../config/config.php');
 require_once(SRC.'bd/inserirPets.php');
-
+require_once(SRC .'bd/listarClientes.php');
 
 
 
@@ -19,8 +19,10 @@ $idEspecie = (int) 0;
 $idFase = (int) 0;
 $idCliente = (int) 0;
 
+$idCliente= $_GET['id'];
+//   echo ($idCliente);
 
-
+  $dados= buscaCliente($idCliente);
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -28,17 +30,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = $_POST['nome'];
     // echo($nome);
     // die;
-    $deficiencia = $_POST['deficiencia'];
+    // $deficiencia = $_POST['deficiencia'];
     $descricao = $_POST['descricao'];
-    $castrado = $_POST['castrado'];
+    // $castrado = $_POST['castrado'];
     // $foto = $_POST['fleFoto'];
     $dataNascimento = $_POST['dataNascimento'];
     $avaliacao = $_POST['avaliacao'];
     $idRaca = $_POST['sltraca'];
     $idEspecie = $_POST['sltEspecie'];
     $idFase = $_POST['sltFases'];
-    $idCliente = $_POST['sltClientes'];
-
+    // $idCliente = $_POST['idCliente'];
+    if(isset( $_POST['deficiencia'])){
+        $deficiencia = 1;
+     } else{
+         $deficiencia = 0;
+     } 
+     if(isset( $_POST['castrado'])){
+         $castrado = 1;
+      } else{
+          $castrado = 0;
+      }     
+ 
   
     // if($_FILES['fleFoto'] ['name'] != "") 
     //     {

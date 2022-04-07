@@ -24,6 +24,13 @@ $nomeFases = "Selecione uma fase";
 
 
 
+
+
+$idCliente= $_GET['id'];
+//   echo ($idCliente);
+
+  $dados= buscaCliente($idCliente); 
+
 ?>
 
 
@@ -37,7 +44,7 @@ $nomeFases = "Selecione uma fase";
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebePets.php">
+            <form method="post" enctype="multipart/form-data" action="control/recebePets.php?id=<?=$idCliente?>">
       
             <select name="sltEspecie">
                             
@@ -105,14 +112,14 @@ $nomeFases = "Selecione uma fase";
 
           
     
-            <input value="<?=$deficiencia?>" placeholder="deficiencia" type="text" name="deficiencia" id="deficiencia"/>
+            <input value="<?=$deficiencia?>" placeholder="deficiencia" type="checkbox" name="deficiencia" id="deficiencia"/>
             <input value="<?=$descricao?>" placeholder="descricao" type="text" name="descricao" id="descricao"/>
-            <input value="<?=$castrado?>" placeholder="castrado" type="castrado" name="castrado" id="castrado"/>
+            <input value="<?=$castrado?>" placeholder="castrado" type="checkbox" name="castrado" id="castrado"/>
             <input value="<?=$dataNascimento?>" placeholder="data nascimento" type="text" name="dataNascimento" id="dataNascimento"/>
             <input value="<?=$avaliacao?>" placeholder="avaliacao" type="text" name="avaliacao" id="avaliacao"/>
                       
-                                
-            <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="sltClientes" id="sltClientes"/>   
+              
+            <!-- <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>    -->
 
          <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
      
@@ -146,7 +153,9 @@ $nomeFases = "Selecione uma fase";
                  
     
                     <td > <td ><img class= "foto"src="<?= NOME_DIRETORIO_FILE.$exibirPets['foto']?>"></td></td>
-
+                    <a onclick="return confirm('Quer excluir?');" href="control/deletePet.php?id=<?=$exibirPets['idPet']?>"> 
+                            <img src="img/trash.png" >
+                        </a>   
                  <pre>
 
                     <?php  

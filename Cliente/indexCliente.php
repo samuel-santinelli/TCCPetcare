@@ -123,8 +123,8 @@ if(isset( $_SESSION['cliente'])){
         <?php
                 $dados = exibirClientes();
                 
-                while ($exibirClientes = mysqli_fetch_assoc($dados))
-                {
+                $exibirClientes = mysqli_fetch_assoc($dados)
+                
                 
                 ?>                      
 
@@ -135,7 +135,7 @@ if(isset( $_SESSION['cliente'])){
         </a>
 
         <?php  
-                }     
+                   
                 ?>
 
 

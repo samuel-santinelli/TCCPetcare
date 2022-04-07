@@ -85,6 +85,36 @@ $app->post('/pets', function($request, $response, $args){
   
 });
 
+
+$app->delete('/pets/{id}', function($request, $response, $args){ 
+       
+            
+    if(!isset($args['id']) || !is_numeric($args['id']) )
+    {
+        return $response    ->withStatus(406)
+                            ->withHeader('Content-Type', 'application/json')
+                             ->write('{"message":"Não chegou o id."}');
+    }else
+    {
+        $id = $args['id']; 
+
+        require_once('../control/excluirPetApi.php');
+        if(excluirPetApi($id)){ 
+            return $response    ->withStatus(200)
+                                ->withHeader('Content-Type', 'application/json')
+                                ->write('{"message":"Pet excluido com sucesso"}');
+        }else{
+            return $response    ->withStatus(400)
+                                ->withHeader('Content-Type', 'application/json')
+                                ->write('{"message":"Não foi possível excluir os dados"}');
+        }
+      
+    }
+
+
+
+});
+
 $app->run();
 
 // http://localhost/Cuidador/Cliente/api/pets

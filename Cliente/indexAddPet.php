@@ -7,12 +7,12 @@ require_once(SRC."control/exibirClientes.php");
 
 
 
-// if(isset($_GET['id'])){
-//     $idCliente = (int) $_GET['id'];
-// }
-// else{
-//   $idCliente = (int) 0; 
-// } 
+if(isset($_GET['id'])){
+    $idCliente = (int) $_GET['id'];
+}
+else{
+  $idCliente = (int) 0; 
+} 
 
 
 
@@ -39,11 +39,11 @@ require_once(SRC."control/exibirClientes.php");
               require_once(SRC .'bd/listarClientes.php');
 
               $idCliente= $_GET['id'];
-              echo ($idCliente);
+              //  echo ($idCliente);
 
               $dados= buscaCliente($idCliente); 
              
-              $exibirCliente = mysqli_fetch_array($dados);
+              $exibirCliente =mysqli_fetch_assoc($dados);
               // var_dump($exbirCliente);
               // die;
                  

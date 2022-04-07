@@ -4,7 +4,7 @@ require_once(SRC.'bd/conexao.php');
 
 function listarClientes(){
 
-    $sql = "select *from  tblClientes";
+    $sql = "select *from  tblClientes order by idcliente desc";
 
     $conexao = conexao();
 
