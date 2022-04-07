@@ -1,0 +1,15 @@
+#containerButtonAgendar{
+    height: 23rem;
+    width: 25rem;
+}
+  .buttonAgendar{
+    margin-top: 2rem;
+    height: 4rem;
+    width: 25rem;
+    border-radius: 21px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: #f28907;
+    color: #fff;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+  }

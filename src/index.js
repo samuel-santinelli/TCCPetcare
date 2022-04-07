@@ -9,6 +9,7 @@ import Login from './Login/Login'
 import EsqueciMinhaSenha from './EsqueciMinhaSenha/EsqueciMinhaSenha'
 import BoasVindas from "./BoasVindas/BoasVindas";
 import reportWebVitals from "./reportWebVitals";
+import Agendamento from "./Agendamento/Agendamento";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,10 +17,11 @@ ReactDOM.render(
     {/* <EsqueciMinhaSenha/> */}
     {/* <Login/> */}
     {/* <CadastroCuidador /> */}
-    <CadastroCuidador2Page />
+    {/* <CadastroCuidador2Page /> */}
     {/* <CadastroCliente /> */}
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}
+    <Agendamento/>
   </React.StrictMode>,
   document.getElementById("root")
 );

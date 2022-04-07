@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --main-color: #f28907;
+  --black: rgba(0, 0, 0, 0.5);
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  --colorLocation: #949494;
+  --colorBiography: #808080;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.containerMain{
+    height: 100rem;
+    width: 100vw ;
+}
+
+.map{
+    height: 25vh;
+    width: 100vw;
+}
+
+.containerAgendamento{
+    height: 80rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.containerInputSearch{
+    height: 10rem;
+    width: 92vw;
+}
+
+#iconSearch{
+    position: absolute;
+    height: 4rem;
+    width: 4.5rem;
+    margin-top: 2.3rem;
+    padding-left: 1.7rem;
+}
+
+.inputSearch{
+    height: 4.9rem;
+    width: 80vw;
+    border-radius: 14rem;
+    margin-top: 2rem;
+    font-size: 2.6rem;
+    padding-left: 6.5rem;
+}
+
+#containerMainCard{
+    height: 100rem;
+    width: 91vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Container dos cards do cuidador começa aqui */
+
+.containerCardCuidadores{
+    margin-top: 3.4rem;
+    height: 80rem;
+    width: 45vw;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerInfoCuidadores{
+    margin-top: 3.4rem;
+    height: 70rem;
+    width: 45vw;
+    background-color: chartreuse;
+    margin-right: 1rem;
+}
+
+.selectCuidador{
+    height: 4.6rem;
+    width: 7.5rem;
+    margin-left: 3vh;
+    
+}
+.card{
+    height: 30rem;
+    width: 40vw;
+    background-color: #fff;
+    margin-top: 3rem;
+    margin-left: 5vh;
+    border-radius: 2.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.contentCenterCuidador{
+    height: 9rem;
+    width: 70rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+}
+
+.imageCuidador{
+    height: 8.8rem;
+    width: 8.8rem;
+    background-image: url("../../../images/imageCuidador1.png");
+    margin-left: 2rem;
+}
+
+.infoCuidador{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-top: 0.7rem;
+}
+
+.nameCuidador{
+    font-size: 2.1rem;
+    color: #000;
+    margin-left: 2rem;
+    margin-bottom: 0.2rem;
+    font-weight: bolder;
+}
+
+.hourCuidador{
+    font-size: 1.6rem;
+    color: var(--colorLocation);
+    margin-left: 2.7rem;
+}
+
+.containerRating{
+    margin-top: 0.7rem;
+    margin-left: 5rem;
+}
+
+.containerBio{
+    height: 10rem;
+    width: 50rem;
+    display: flex;
+}
+
+.biographyCuidador{
+    font-size: 1.5rem;
+    color: var(--colorBiography);
+    margin-top: 0.7rem;
+}
+/* Container dos cards do cuidador termina aqui */
