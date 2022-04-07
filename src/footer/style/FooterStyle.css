@@ -12,7 +12,17 @@
 }
 
 #containerLink{
-    margin-top: 5rem;
+    margin-top: 10rem;
+    height: 20rem;
+    width: 90rem;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-left: 3rem;
+  }
+
+  #containerLinkNext{
+    margin-top: 31rem;
     height: 20rem;
     width: 90rem;
     display: flex;

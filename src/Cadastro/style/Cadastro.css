@@ -235,3 +235,17 @@ input #iconInputNome{
   border-radius: 1.5rem;
   padding-left: 5.2rem;
 }
+
+.containerInputBiografia{
+  margin-top: 2.5rem;
+}
+
+
+.inputBiografia{
+  height: 6.5rem;
+  width: 83.3rem;
+  font-size: 2.7rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.3rem;
+}

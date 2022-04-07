@@ -1,43 +1,81 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
-import BusinessIcon from '@mui/icons-material/Business';
+import BusinessIcon from "@mui/icons-material/Business";
 import PanToolIcon from "@mui/icons-material/PanTool";
 import HouseIcon from "@mui/icons-material/House";
 import AccessibilityIcon from "@mui/icons-material/Accessibility";
+import InfoIcon from '@mui/icons-material/Info';
 import "../style/Cadastro.css";
-import InputAdornment from "@mui/material/InputAdornment";
-import InputCamera from "./InputCamera";
-import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
-import { pink } from "@mui/material/colors";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
 
 const InputsIconNextPage = () => {
-  
-  const [userCuidador, setUserCuidador] = useState({
+  const [userCuidadorNext, setUserCuidadorNext] = useState({
     cpf: "",
     foto: "",
     biografia: "",
-    possuiAnimais: "",
-    possuiCriancas: "",
+    possuiAnimais: 0,
+    possuiCriancas: 1,
+    cep: "",
     preferencias: "",
     moradia: "",
     limitacoes: "",
     avaliacao: "",
-    idSexoHost: "",
+    idSexoHost: 1,
   });
+  console.log(userCuidadorNext);
+
+  const handleUserCuidadorNextSubmit = (userCuidadorNext) => {
+    axios.defaults.headers.post["Content-Type"] =
+      "application/json;charset=utf-8";
+    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+    axios
+      .post("http://localhost/Cuidador/Cuidador/api/cuidador", userCuidadorNext)
+      .then((res) => console.log(res.data));
+  };
+
+  const listElementsCuidador = () => {
+    axios
+      .get("http://localhost/Cuidador/Cuidador/api/cuidador")
+      .then((res) => console.log(res.data));
+  };
+  useEffect(() => {
+    listElementsCuidador();
+  }, []);
 
   return (
     <>
-      <InputCamera />
+      <div id="containerInput">
+        <div id="containerBorderImage">
+          <input
+            type="file"
+            name="inputImage"
+            className="inputImage"
+            id="foto"
+            value={userCuidadorNext.foto}
+            onChange={(e) =>
+              setUserCuidadorNext({
+                ...userCuidadorNext,
+                foto: e.target.value,
+              })
+            }
+          />
+          <CameraAltIcon id="iconInputCamera" />
+        </div>
+      </div>
       <div id="contInputsPet">
-        <select id="InputsContainerSelect">
-          <option disabled selected>
-            Selecione um genêro
-          </option>
-          <option>Masculino</option>
-          <option>Femininio</option>
-          <option>Não Binario</option>
+        <select
+          value={userCuidadorNext.idSexoHost}
+          id="InputsContainerSelect"
+          onChange={(e) =>
+            setUserCuidadorNext({
+              ...userCuidadorNext,
+              idSexoHost: e.target.value,
+            })
+          }
+        >
+          <option value={userCuidadorNext.idMasculino}>Masculino</option>
+          <option value={userCuidadorNext.idFemininio}>Femininio</option>
         </select>
         <AssignmentIndIcon id="iconInputLabel" />
         <input
@@ -45,20 +83,42 @@ const InputsIconNextPage = () => {
           id="cpf"
           className="containerInputs"
           placeholder="CPF"
+          value={userCuidadorNext.cpf}
+          onChange={(e) =>
+            setUserCuidadorNext({ ...userCuidadorNext, cpf: e.target.value })
+          }
         />
       </div>
       <div id="contInputsPetCheckbox">
         <div id="contInputCheckbox">
           <label className="labelInputCheckboxCuidador">
             Possui Animais
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value={userCuidadorNext.possuiAnimais}
+              onChange={(e) =>
+                setUserCuidadorNext({
+                  ...userCuidadorNext,
+                  possuiAnimais: e.target.value,
+                })
+              }
+            />
             <span className="checkmarkCuidador"></span>
           </label>
         </div>
         <div id="contInputCheckbox">
           <label className="labelInputCheckboxCuidador">
             Possui Crianças?
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value={userCuidadorNext.possuiCriancas}
+              onChange={(e) =>
+                setUserCuidadorNext({
+                  ...userCuidadorNext,
+                  possuiCriancas: e.target.value,
+                })
+              }
+            />
             <span className="checkmarkCuidador"></span>
           </label>
         </div>
@@ -70,6 +130,13 @@ const InputsIconNextPage = () => {
           id="limitacoes"
           className="containerInputLimitacoes"
           placeholder="Você possui limitações?"
+          value={userCuidadorNext.limitacoes}
+          onChange={(e) =>
+            setUserCuidadorNext({
+              ...userCuidadorNext,
+              limitacoes: e.target.value,
+            })
+          }
         />
       </div>
       <div id="contInputsMoradia">
@@ -79,26 +146,65 @@ const InputsIconNextPage = () => {
           className="containerInputMoradia"
           placeholder="Informe seu cep"
           type="number"
-          required
+          value={userCuidadorNext.cep}
+          onChange={(e) =>
+            setUserCuidadorNext({ ...userCuidadorNext, cep: e.target.value })
+          }
         />
-        
+
         <HouseIcon id="iconInputLabelLeft" />
         <input
           label="Moradia"
-          id="moradiaCuidador"
+          id="moradia"
           className="containerInputMoradia"
           placeholder="Aonde você reside?"
-          required
+          value={userCuidadorNext.moradia}
+          onChange={(e) =>
+            setUserCuidadorNext({
+              ...userCuidadorNext,
+              moradia: e.target.value,
+            })
+          }
         />
         <div>
-        <div className="containerPreferences">
-          <AccessibilityIcon id="iconInputLabel" />
-          <input
-            label="Preferências"
-            id="preferencias"
-            placeholder="Possui alguma preferência?"
-            className="containerInputPreferencias"
-          />
+          <div className="containerPreferences">
+            <AccessibilityIcon id="iconInputLabel" />
+            <input
+              label="Preferências"
+              id="preferencias"
+              placeholder="Possui alguma preferência?"
+              className="containerInputPreferencias"
+              value={userCuidadorNext.preferencias}
+              onChange={(e) =>
+                setUserCuidadorNext({
+                  ...userCuidadorNext,
+                  preferencias: e.target.value,
+                })
+              }
+            />
+            <div className="containerInputBiografia">
+            <InfoIcon id="iconInputLabel"/>
+              <input
+                id="biografia"
+                placeholder="Me diga um pouco sobre você"
+                className="inputBiografia"
+                value={userCuidadorNext.biografia}
+                onChange={(e) =>
+                  setUserCuidadorNext({
+                    ...userCuidadorNext,
+                    biografia: e.target.value,
+                  })
+                }
+              />
+            </div>
+          </div>
+          <div id="containerButton">
+            <input
+              value="Cadastrar"
+              type="submit"
+              id="buttonCadastrar"
+              className="button"
+            />
           </div>
         </div>
       </div>
