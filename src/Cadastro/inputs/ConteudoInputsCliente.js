@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -37,10 +37,12 @@ const ConteudoInputsCliente = () => {
 
   const listElements = () => {
     axios
-    .get("http://localhost/Cuidador/Cliente/api/cliente")
-    .then((res) => console.log(res.data));
-  }
-  useEffect(() => {listElements()}, [])
+      .get("http://localhost/Cuidador/Cliente/api/cliente")
+      .then((res) => console.log(res.data));
+  };
+  useEffect(() => {
+    listElements();
+  }, []);
   return (
     <>
       <form onSubmit={() => handleUserSubmit(user)}>

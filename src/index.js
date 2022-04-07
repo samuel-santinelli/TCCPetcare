@@ -12,7 +12,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BoasVindas/>
+    {/* <BoasVindas/> */}
     <EsqueciMinhaSenha/>
     <Login/>
     <CadastroCuidador />

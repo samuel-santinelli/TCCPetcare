@@ -73,7 +73,7 @@ const InputsIconNextPage = () => {
         />
       </div>
       <div id="contInputsMoradia">
-        <BusinessIcon id="iconInputLabel" />
+        <BusinessIcon id="iconInputLabelLeft" />
         <input
           id="cep"
           className="containerInputMoradia"
@@ -81,15 +81,17 @@ const InputsIconNextPage = () => {
           type="number"
           required
         />
-        <HouseIcon id="iconInputLabel" />
+        
+        <HouseIcon id="iconInputLabelLeft" />
         <input
           label="Moradia"
-          id="moradia"
+          id="moradiaCuidador"
           className="containerInputMoradia"
           placeholder="Aonde você reside?"
           required
         />
         <div>
+        <div className="containerPreferences">
           <AccessibilityIcon id="iconInputLabel" />
           <input
             label="Preferências"
@@ -97,6 +99,7 @@ const InputsIconNextPage = () => {
             placeholder="Possui alguma preferência?"
             className="containerInputPreferencias"
           />
+          </div>
         </div>
       </div>
     </>
