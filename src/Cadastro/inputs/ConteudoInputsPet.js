@@ -5,33 +5,8 @@ import InputCamera from "./InputCamera";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import "../style/InputCheckbox.css"
-import { pink } from "@mui/material/colors";
-import { styled } from "@mui/material/styles";
-
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const InputsPet = () => {
-  const Input = styled(TextField)({
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        height: 70,
-        width: 390,
-        borderColor: "#f28907",
-        borderRadius: 10,
-        // qualquer outra classe css aqui
-      },
-      "&:hover fieldset": {
-        borderColor: "f28907",
-        fonstSize: '14rem',
-        // qualquer classe p/ efeito de hover aqui
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "f28907",
-        // qualquer classe p/ efeito de focus aqui
-      },
-    },
-  });
-
   return (
     <>
       <InputCamera />
@@ -117,6 +92,14 @@ const InputsPet = () => {
         </label>
         </div>
       </div>
+      <div id="containerButton">
+            <input
+              value="Cadastrar"
+              type="submit"
+              id="buttonCadastrar"
+              className="button"
+            />
+          </div>
   
     </>
   );

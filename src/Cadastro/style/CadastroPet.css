@@ -1,12 +1,13 @@
 #containerMainPet {
-  height: 1459px;
-  width: 210rem;
-  margin-top: 10rem;
+  height: 143.4rem;
+  width: 215rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   -ms-flex-pack: end;
   position: relative;
-  margin-left: 25rem;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
   background-color: #fff;
@@ -195,6 +196,26 @@ h3{
   border-radius: 1.5rem;
   padding-left: 6rem;
   margin-right: 2rem;
+}
+
+#containerButtonNext{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  align-content: center;
+  margin-top: 1rem;
+}
+
+.buttonNext{
+  margin-top: 5rem;
+  margin-left: 16rem;
+  height: 7rem;
+  width: 47rem;
+  border-radius: 21px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-color: #f28907;
+  color: #fff;
+  font-size: 3rem;
 }
 
 /* Conteudo Pet NextPage termina aqui*/

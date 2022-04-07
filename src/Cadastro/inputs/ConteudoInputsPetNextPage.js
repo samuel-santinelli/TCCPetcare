@@ -2,13 +2,7 @@ import React from "react";
 import "../style/CadastroPet.css";
 import PetsIcon from "@mui/icons-material/Pets";
 import InputCamera from "./InputCamera";
-import InputAdornment from "@mui/material/InputAdornment";
-import TextField from "@mui/material/TextField";
 import "../style/InputCheckbox.css";
-import { pink } from "@mui/material/colors";
-import { styled } from "@mui/material/styles";
-
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const InputsPetNextPage = () => {
   function createAluno(aluno) {
@@ -34,27 +28,6 @@ const InputsPetNextPage = () => {
   };
 
   createAluno(aluno);
-
-  const Input = styled(TextField)({
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        height: 70,
-        width: 390,
-        borderColor: "#f28907",
-        borderRadius: 10,
-        // qualquer outra classe css aqui
-      },
-      "&:hover fieldset": {
-        borderColor: "f28907",
-        fonstSize: "14rem",
-        // qualquer classe p/ efeito de hover aqui
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "f28907",
-        // qualquer classe p/ efeito de focus aqui
-      },
-    },
-  });
 
   return (
     <>
@@ -121,6 +94,15 @@ const InputsPetNextPage = () => {
             </div>
           </div>
         </div>
+        <div id="containerButtonNext">
+            <input
+              value="Cadastrar"
+              type="submit"
+              id="buttonCadastrarNext"
+              className="buttonNext"
+            />
+          </div>
+  
       </div>
     </>
   );

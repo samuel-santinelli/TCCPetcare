@@ -6,7 +6,7 @@ import InputButton from "./button/InputButton";
 
 function CadastroCuidador() {
   return (
-    <form className="containerMainPet" id="containerMainPet">
+    <div className="containerMainPet" id="containerMainPet">
       <Home />
       <div id="containerInputsPet" className="containerInputsPet">
         <h1>Seja um novo Cuidador!</h1>
@@ -16,10 +16,10 @@ function CadastroCuidador() {
         <div id="impSenha"></div>
         <div id="impForcaSenha"></div>
         <div id="erroSenhaForca"></div>
-        <InputButton />
+      
         <Footer />
       </div>
-    </form>
+    </div>
   );
 }
 

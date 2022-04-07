@@ -13,13 +13,13 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     {/* <BoasVindas/> */}
-    <EsqueciMinhaSenha/>
-    <Login/>
-    <CadastroCuidador />
+    {/* <EsqueciMinhaSenha/> */}
+    {/* <Login/> */}
+    {/* <CadastroCuidador /> */}
     <CadastroCuidador2Page />
-    <CadastroCliente />
-    <CadastroPetNextPage/>
-    <CadastroPet/>
+    {/* <CadastroCliente /> */}
+    {/* <CadastroPetNextPage/> */}
+    {/* <CadastroPet/> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

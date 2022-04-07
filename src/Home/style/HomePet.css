@@ -30,16 +30,16 @@ html {
 }
 
 #bannerPet{
-  height: 146.1rem;
-  width: 92rem;
+  height: 88rem;
+  width: 40rem;
   background-image: url("../../../images/bannerDog1.jpeg");
   background-position: center;
   background-size: cover;
 }
 
 #wavePet {
-  margin: 77rem;
-  height: 146.2;
+  margin: 78rem;
+  height: 117rem;
   width: 26rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;

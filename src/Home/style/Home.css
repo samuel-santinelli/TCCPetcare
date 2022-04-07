@@ -45,16 +45,16 @@ html {
 /* Conteudo Banner Login começa aqui */
 
 #banner{
-  height: 146.1rem;
-  width: 92rem;
+  height: 143.7rem;
+  width: 110rem;
   background-image: url("../../../images/banner.jpeg");
   background-position: center;
   background-size: cover;
 }
 
 #wave {
-  margin: 75rem;
-  height: 146.1rem;
+  margin: 94rem;
+  height: 143.7rem;
   width: 26rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
@@ -65,7 +65,7 @@ html {
 
 #containerInputsCliente {
   height: 86rem;
-  width: 95rem;
+  width: 90rem;
   margin-left: 90px;
   background-color: #fff;
 }
@@ -82,7 +82,7 @@ h1 {
 /* Conteudo Banner Login termina aqui */
 
 #bannerPet{
-  height: 146.1rem;
+  height: 143.7rem;
   width: 92rem;
   background-image: url("../../../images/bannerDog1.jpeg");
   background-position: center;
@@ -91,7 +91,7 @@ h1 {
 
 #wavePet {
   margin: 77rem;
-  height: 146rem;
+  height: 143.7rem;
   width: 26rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
@@ -107,17 +107,17 @@ h1 {
 
 /* Conteudo Banner Cliente começa aqui */
 #bannerLogin {
-  height: 146.1rem;
-  width: 92rem;
+  height: 143.7rem;
+  width: 109rem;
   background-image: url("../../../images/bannerCliente2.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #waveCliente {
-  margin: 77rem;
-  height: 146.2rem;
-  width: 26rem;
+  margin: 92rem;
+  height: 143.7rem;
+  width: 28.4rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -131,17 +131,17 @@ h1 {
 /* Conteudo banner Next Page cuidador começa aqui */
 
 #bannerNextCuidador{
-  height: 146.1rem;
-  width: 92rem;
+  height: 143.8rem;
+  width: 109rem;
   background-image: url("../../../images/bannerNextPage3.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #waveNextCuidador {
-  margin: 77rem;
-  height: 146rem;
-  width: 26rem;
+  margin: 83rem;
+  height: 143.8rem;
+  width: 45rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -152,17 +152,17 @@ h1 {
 /* Conteudo banner login começa aqui */
 
 .bannerLogin{
-  height: 146.1rem;
-  width: 100rem;
+  height: 143.7rem;
+  width: 110rem;
   background-image: url("../../../images/bannerLogin.png");
   background-position: center;
   background-size: cover;
 }
 
 .wavelogin{
-  margin: 87rem;
-  height: 146rem;
-  width: 26rem;
+  margin: 85.9rem;
+  height: 143.7rem;
+  width: 40rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -173,17 +173,17 @@ h1 {
 /* Conteudo banner Login termina aqui */
 
 .bannerEsqueciMinhaSenha {
-  height: 146.1rem;
-  width: 92rem;
+  height: 143.7rem;
+  width: 110rem;
   background-image: url("../../../images/BannerEsqueciMinhaSenha.png");
   background-position: center;
   background-size: cover;
 }
 
 #waveEsqueciMinhaSenha {
-  margin: 77rem;
-  height: 146.2rem;
-  width: 26rem;
+  margin: 90rem;
+  height: 143.7rem;
+  width: 45rem;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;

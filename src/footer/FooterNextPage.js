@@ -12,3 +12,4 @@ function FooterNextPage() {
 }
 
 export default FooterNextPage;
+

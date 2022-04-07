@@ -71,9 +71,8 @@ const ConteudoInputsCliente = () => {
           />
 
           <input
-            type="text"
+            type="date"
             id="dataNascimento"
-            placeholder="aaaa-mm-dd"
             value={user.dataNascimento}
             className="inputCalendar"
             onChange={(e) =>
@@ -134,6 +133,7 @@ const ConteudoInputsCliente = () => {
           <input
             label="Telefone"
             id="telefone"
+            type="number"
             value={user.telefone}
             className="containerInputTelefone"
             placeholder="Telefone"
