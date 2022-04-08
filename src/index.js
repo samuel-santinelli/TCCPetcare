@@ -14,13 +14,13 @@ import Agendamento from "./Agendamento/Agendamento";
 ReactDOM.render(
   <React.StrictMode>
     {/* <BoasVindas/> */}
-    {/* <EsqueciMinhaSenha/> */}
-    {/* <Login/> */}
-    {/* <CadastroCuidador /> */}
-    {/* <CadastroCuidador2Page /> */}
-    {/* <CadastroCliente /> */}
-    {/* <CadastroPetNextPage/> */}
-    {/* <CadastroPet/> */}
+    <EsqueciMinhaSenha/>
+    <Login/>
+    <CadastroCuidador />
+    <CadastroCuidador2Page />
+    <CadastroCliente />
+    <CadastroPetNextPage/>
+    <CadastroPet/>
     <Agendamento/>
   </React.StrictMode>,
   document.getElementById("root")

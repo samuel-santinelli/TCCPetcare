@@ -6,56 +6,54 @@ import StarIcon from "@mui/icons-material/Star";
 import "./style/styleAgendamento.css";
 import ButtonAgendar from "./button/ButtonAgendar";
 
-
 const USERDATA = [
   {
-    nome: 'Fernanda',
-    sobrenome: 'Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda",
+    sobrenome: "Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
   {
-    nome: 'Fernanda Silva',
-    name: 'Ontem as 09:35',
-    imageUrl: 'https://dummyimage.com/84x84',
+    nome: "Fernanda Silva",
+    name: "Ontem as 09:35",
+    imageUrl: "https://dummyimage.com/84x84",
   },
 ];
-
 
 const Agendamento = () => {
   return (
@@ -158,7 +156,7 @@ const Agendamento = () => {
                   </div>
                 </div>
               </div>
-                  <div className="card">
+              <div className="card">
                 <div className="contentCenterCuidador">
                   <div className="imageCuidador" />
                   <div className="infoCuidador">
@@ -197,10 +195,53 @@ const Agendamento = () => {
                 </div>
               </div>
             </div>
-            <div className="containerInfoCuidadores"></div>
+
+            {/* Conteudo da modal de cuidadores */}
+            <div className="containerInfoCuidadores">
+            <div className="cardModal">
+              <div className="containerBanner">                
+                <img className="" />
+              </div>
+              <div>
+                <div className="contentCenterCuidador">
+                  <div className="imageCuidadorServico" />
+                  <div className="infoCuidador">
+                    <label className="nameCuidadorModal">Maria de Lurdes</label>
+                    <label className="hourCuidadorModal">São Paulo</label>
+                    <div className="containerRating">
+                      <Rating
+                        name="text-feedback"
+                        readOnly
+                        precision={0.5}
+                        emptyIcon={
+                          <StarIcon
+                            style={{ opacity: 0.95 }}
+                            fontSize="inherit"
+                          />
+                        }
+                      />
+                    </div>
+                    
+                  </div>
+                </div>
+                <div className="containerServicos">
+                  <label className="tituloServicos">Serviços</label>
+                  <div className="containerCardServicos">
+                  <div className="cardPetTrip">
+                    <div className="imagePetTrip"/>
+                  </div>
+                  <div className="cardPetHome">
+                    <div className="imagePetHome"/>
+                  </div>
+                  </div>
+                </div>
+                {/* <ButtonAgendar /> */}
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

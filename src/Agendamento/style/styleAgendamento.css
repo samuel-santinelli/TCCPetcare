@@ -83,9 +83,9 @@
 
 .containerInfoCuidadores{
     margin-top: 3.4rem;
-    height: 70rem;
-    width: 45vw;
-    background-color: chartreuse;
+    height: 90rem;
+    width: 35vw;
+    background-color: #fff;
     margin-right: 1rem;
 }
 
@@ -97,7 +97,7 @@
 }
 .card{
     height: 45rem;
-    width: 40vw;
+    width: 30vw;
     background-color: #fff;
     margin-top: 3rem;
     margin-left: 5vh;
@@ -160,16 +160,110 @@
 
 .containerMap{
     height: 10rem;
+    width: 30rem;
     display: flex;
     justify-content: end;
-    margin-left: 13.5rem;
+    margin-left: 27.9rem;
 }
 
 .localMap{
-    height: 15rem;
-    width: 17rem;
-    margin-left: 16rem;
+    height: 16rem;
+    width: 30rem;
 }
 
+
+/* Container de modal */
+.cardModal{
+    height: 90rem;
+    width: 89.9rem;
+}
+.containerBanner{
+    height: 25rem;
+}
+
+.imageCuidadorServico{
+    height: 11rem;
+    width: 11.4rem;
+    background-size: cover;
+    background-image: url("../../../images/imagePerfilCuidador.png");
+    margin-left: 2rem;
+}
+
+
+.nameCuidadorModal{
+    font-size: 2.4rem;
+    color: #000;
+    margin-left: 1rem;
+    margin-bottom: 0.2rem;
+    font-weight: bolder;
+}
+
+.hourCuidadorModal{
+    font-size: 1.9rem;
+    color: var(--colorLocation);
+    margin-left: 1.4rem;
+}
+
+.containerServicos{
+    height: 40rem;
+    width: 70rem;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tituloServicos{
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--colorBiography);
+    margin-left: 5rem;
+}
+
+.containerCardServicos{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.cardPetTrip{
+    height: 15rem;
+    width: 20rem;
+    margin-right: 5rem;
+    display: flex;
+    background-color: red;
+    justify-content: center;
+    
+}
+
+.cardPetHome{
+    height: 15rem;
+    width: 20rem;
+    margin-right: 5rem;
+    display: flex;
+    background-color: red;
+    justify-content: center;
+}
+
+.imagePetTrip{
+    height: 3.7rem;
+    width: 5.78rem;
+    background-size: cover;
+    justify-content: center;
+    background-image: url("../../../images/imagePetTrip.png");
+}
+
+.imagePetHome{
+    height: 3.7rem;
+    width: 5.78rem;
+    background-size: cover;
+    justify-content: center;
+    background-image: url("../../../images/imagePetHouse.png");
+}
+
+.textServices{
+    font-size: 1.2rem;
+    text-align: center;
+}
 
 /* Container dos cards do cuidador termina aqui */
