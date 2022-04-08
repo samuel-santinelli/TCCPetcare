@@ -35,6 +35,7 @@ $app->get('/cliente', function($request, $response, $args){
 
 });
 
+
 $app->post('/cliente', function($request, $response, $args){ 
 
    
