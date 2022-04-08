@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once('config/config.php');
 require_once(SRC."control/exibirEspecie.php");
 require_once(SRC."control/exibirFase.php");
@@ -10,19 +13,25 @@ $nome = (string)null;
 $deficiencia = (int) null;
 $descricao = (string) null;
 $castrado = (string) null;
-$foto = (string) '';
+$foto = (string) "semFoto.png";
 $dataNascimento = (string) null;
 $avaliacao = (int) null;
-$idRaca = (int) 0;
+$idRacas = (int) 0;
 $idEspecie = (int) 0;
-$idFase = (int) 0;
+$idFases = (int) 0;
 $idCliente = (int) null;
 $nomeEspecie = "Selecione uma especie"; 
 $nomeFases = "Selecione uma fase"; 
  $nomeRacas = "Selecione uma racas"; 
  $nomeCliente = "nome cliente";
-
-
+ $modo = (string) "Salvar"; 
+$idPet = (int) 0;
+//  if(isset($_GET['id'])){
+//     $idCliente = (int) $_GET['id'];
+// }
+// else{
+//   $idCliente = (int) 0; 
+// } 
 
 
 
@@ -30,6 +39,31 @@ $idCliente= $_GET['id'];
 //   echo ($idCliente);
 
   $dados= buscaCliente($idCliente); 
+
+
+  if(isset($_SESSION['pet'])) 
+  {
+      $idPet = $_SESSION['pet']['idPet'];
+      $nome = $_SESSION['pet']['nome'];
+      $deficiencia = $_SESSION['pet']['deficiencia'];
+      $descricao = $_SESSION['pet']['descricao'];
+      $castrado = $_SESSION['pet']['castrado'];
+      $dataNascimento =$_SESSION['pet']['dataNascimento'];
+      $avaliacao = $_SESSION['pet']['avaliacao'];
+      $idRacas = $_SESSION['pet']['idRaca'];
+      $foto = $_SESSION['pet'] ['foto'];
+    //   $nomeEspecie = $_SESSION['pet']['nomeEspecie'];
+      $idEspecie = $_SESSION['pet'] ['idEspecie'];
+      $idFases = $_SESSION['pet']['idFase'];
+      $idCliente = $_SESSION['pet'] ['idCliente']; 
+      $modo = "Atualizar"; 
+      
+
+      unset($_SESSION['pet']);
+  }
+    
+
+
 
 ?>
 
@@ -44,8 +78,19 @@ $idCliente= $_GET['id'];
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebePets.php?id=<?=$idCliente?>">
-      
+            <form method="post" enctype="multipart/form-data" action="control/recebePets.php?modo=<?=$modo?>&id=<?=$idCliente?>&nomeFoto=<?=$foto?>&idPet=<?=$idPet?>">
+            <div class="campos">
+                        <div class="cadastroInformacoesPessoais">
+                            <label> Foto: </label>
+                        </div>
+                        <div class="cadastroEntradaDeDados">
+                            <input type="file" name="fleFoto" accept="image/jpeg, image/jpg, image/png">
+                        </div>
+                        <div id="visualizarFoto"> 
+                            <img src="<?= NOME_DIRETORIO_FILE.$foto?>"> 
+
+                        </div>
+                    </div>
             <select name="sltEspecie">
                             
                             <option selected value="<?=$idEspecie?>"> <?=$nomeEspecie?>  </option> 
@@ -121,7 +166,7 @@ $idCliente= $_GET['id'];
               
             <!-- <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>    -->
 
-         <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+         <input value="<?=$modo?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
      
                        
         
@@ -153,9 +198,13 @@ $idCliente= $_GET['id'];
                  
     
                     <td > <td ><img class= "foto"src="<?= NOME_DIRETORIO_FILE.$exibirPets['foto']?>"></td></td>
-                    <a onclick="return confirm('Quer excluir?');" href="control/deletePet.php?id=<?=$exibirPets['idPet']?>"> 
+                    <a onclick="return confirm('Quer excluir?');" href="control/deletePet.php?id=<?=$exibirPets['idPet']?>&foto=<?=$exibirPets['foto']?>"> 
                             <img src="img/trash.png" >
                         </a>   
+
+                        <a href="control/editarPet.php?id=<?=$exibirPets['idPet']?>">
+                          <img src="img/edit.png" > 
+                        </a>
                  <pre>
 
                     <?php  

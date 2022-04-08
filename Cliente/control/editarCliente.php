@@ -6,7 +6,7 @@ require_once('../config/config.php');
 require_once(SRC .'bd/listarClientes.php');
 
 $idCliente= $_GET['id'];
-// echo ($idCuidador);
+// echo ($idCliente);
 
 $dados= buscaCliente($idCliente); 
 // echo($dados);

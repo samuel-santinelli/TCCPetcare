@@ -85,7 +85,54 @@ $app->post('/pets', function($request, $response, $args){
   
 });
 
+$app->put('/pets/{id}', function($request, $response, $args){ 
+   
 
+    $contentType = $request-> getHeaderLine('Content-Type'); 
+    
+    
+    
+    if($contentType == 'application/json'){ 
+    
+    $dadosBodyJSON = $request-> getParsedBody();
+    
+    
+    
+    
+    if( $dadosBodyJSON == "" || $dadosBodyJSON == null || !isset($args['id']) || !is_numeric($args['id']) ) 
+    {
+        return $response    ->withStatus(406)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Conteudo enviado pelo body não contem dados validos"}');
+    }else
+    {
+    
+    $id = $args['id']; 
+    
+    
+    require_once('../control/recebePetsApi.php');
+    if(atualizarPetAPI($dadosBodyJSON,$id)){
+        return $response    ->withStatus(200)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Pet foi atualizado com sucesso"}');
+    }
+    else{
+        return $response    ->withStatus(400)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Não foi possível salvar os dados, por favor conferir o body da mensagem"}');
+    }
+    
+    }
+    
+    
+    }
+    else{
+        return $response    ->withStatus(406)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Formato de dados do header incompatível com o padrão json"}');
+    }
+    
+    });
 $app->delete('/pets/{id}', function($request, $response, $args){ 
        
             
