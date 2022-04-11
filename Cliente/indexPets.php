@@ -8,6 +8,7 @@ require_once(SRC."control/exibirFase.php");
 require_once(SRC."control/exibirRaca.php");
 require_once(SRC."control/exibirClientes.php");
 require_once(SRC."control/exibirPets.php");
+require_once(SRC.'control/exibirVacinas.php');
 
 $nome = (string)null;
 $deficiencia = (int) null;
@@ -17,6 +18,8 @@ $foto = (string) "semFoto.png";
 $dataNascimento = (string) null;
 $avaliacao = (int) null;
 $idRacas = (int) 0;
+$idVacina = (int) 0;
+$nomeVacina = "selecione vacina";
 $idEspecie = (int) 0;
 $idFases = (int) 0;
 $idCliente = (int) null;
@@ -40,6 +43,10 @@ $idCliente= $_GET['id'];
 
   $dados= buscaCliente($idCliente); 
 
+//   $Vacina= $_GET['idVacina'];
+//   //   echo ($idCliente);
+  
+//     $dados= buscaVacina($idVacina); 
 
   if(isset($_SESSION['pet'])) 
   {
@@ -78,7 +85,7 @@ $idCliente= $_GET['id'];
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebePets.php?modo=<?=$modo?>&id=<?=$idCliente?>&nomeFoto=<?=$foto?>&idPet=<?=$idPet?>">
+            <form method="post" enctype="multipart/form-data" action="control/recebePets.php?modo=<?=$modo?>&id=<?=$idCliente?>&nomeFoto=<?=$foto?>&idPet=<?=$idPet?>&idVacina=<?=$idVacina?>">
             <div class="campos">
                         <div class="cadastroInformacoesPessoais">
                             <label> Foto: </label>
@@ -151,7 +158,26 @@ $idCliente= $_GET['id'];
                         </select>      
                       
                         
-                   
+                        <select name="sltVacina">
+                            
+                            <option selected value="<?=$idVacina?>"> <?=$nomeVacina?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirVacinas();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                     
+                                        <option value="<?=$exibir['idVacina']?>"> <?=$exibir['nomeVacina']?> </option>
+                                 
+                                   <?php
+                                }
+      
+                        ?>
+                </select> 
+
 
             <input value="<?=$nome?>" placeholder="nome" type="text" name="nome"/>
 

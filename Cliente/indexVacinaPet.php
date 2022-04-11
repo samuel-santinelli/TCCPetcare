@@ -1,12 +1,19 @@
 <?php
 require_once('config/config.php');
-
-
+require_once(SRC.'control/exibirVacinas.php');
+require_once(SRC.'bd/listarPets.php');
 $idPet = (int)null;
 $idVacina = (int)null;
 
+$idVacina= $_GET['id'];
+  // echo ($idVacina);
 
+  $dados= buscaVacina($idVacina); 
+  // $idPet= $_GET['idPet'];
+  // // echo ($idVacina);
 
+  // $dados= buscaPet($idPet); 
+  
 ?>
 
 
@@ -20,12 +27,12 @@ $idVacina = (int)null;
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebeVacinaPet.php">
+            <form method="post" enctype="multipart/form-data" action="control/recebeVacinaPet.php?id=<?=$idVacina?>idPet=<?=$idPet?>">
       
                    
 
-            <input value="<?=$idPet?>" placeholder="nome" type="text" name="idPet"/>
-            <input value="<?=$idVacina?>" placeholder="nome" type="text" name="idVacina"/>
+            <input value="<?=$idPet?>" placeholder="idPet" type="text" name="idPet"/>
+            <input value="<?=$idVacina?>" placeholder="idVacina" type="text" name="idVacina"/>
           
     
          <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        

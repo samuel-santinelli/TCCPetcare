@@ -1,9 +1,11 @@
 <?php
 require_once('config/config.php');
+require_once(SRC.'control/exibirVacinas.php');
 
+$nomeVacina = (string)null;
+$idVacina = (int) null;
 
-$nomeVacinas = (string)null;
-
+$nomeVacina = 'Selecione uma vacina';
 
 
 
@@ -22,9 +24,25 @@ $nomeVacinas = (string)null;
 <body>
             <form method="post" enctype="multipart/form-data" action="control/recebeVacina.php">
       
-                   
-
-            <input value="<?=$nomeVacinas?>" placeholder="nome" type="text" name="nome"/>
+            <select name="sltVacina">
+                            
+                            <option selected value="<?=$idVacina?>"> <?=$nomeVacina?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirVacinas();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                     
+                                        <option value="<?=$exibir['idVacina']?>"> <?=$exibir['nomeVacina']?> </option>
+                                 
+                                   <?php
+                                }
+      
+                        ?>
+                </select> 
 
           
     
@@ -33,7 +51,22 @@ $nomeVacinas = (string)null;
                        
         
         </form> 
+        
       
+        <?php
+                $dados = exibirVacinas();
+                
+                while ($exibir = mysqli_fetch_assoc($dados))
+                {
+                ?>
+                  <a href="indexVacinaPet.php?id=<?=$exibir['idVacina']?>">   
+                 <button id="Adicionar um pet" > Vacina</button>                   
+                </a>
+
+                    <?php  
+                    }
+                ?>
+
        
 </body> 
 </html>

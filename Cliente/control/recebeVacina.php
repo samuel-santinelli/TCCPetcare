@@ -16,7 +16,7 @@ $nomeVacinas = (string)null;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $nomeVacinas = $_POST['nome'];
+    $nomeVacinas = $_POST['sltVacina'];
     // echo($nome);
     // die;
 
