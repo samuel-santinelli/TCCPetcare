@@ -21,9 +21,10 @@ const ConteudoInputsCliente = () => {
     foto: "",
     email: "",
     senha: "",
-    idSexo: 1,
     telefone: "",
+    idSexo:1,
   });
+  
   console.log(user);
 
   const handleUserSubmit = (user) => {
@@ -126,8 +127,9 @@ const ConteudoInputsCliente = () => {
             placeholder="Selecione seu genêro"
             onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
           >
-            <option value={user.idMasculino}>Masculino</option>
-            <option value={user.idFeminino}>Feminino</option>
+            
+              <option value={user.idSexo}>Masculino</option>
+              <option value={user.idSexo}>Feminino</option>
           </select>
           <CallIcon id="iconInputLabel" />
           <input

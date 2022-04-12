@@ -19,6 +19,7 @@ const InputsIcon = () => {
     email: "",
     senha: "",
   })
+
   console.log(userCuidador);
   const handleUserCuidadorSubmit = (userCuidador) => {
     axios.defaults.headers.post["Content-Type"] =
@@ -42,6 +43,7 @@ const InputsIcon = () => {
   return (
     <>
     <form onSubmit={() => handleUserCuidadorSubmit(userCuidador)}>
+    <div id="teste">
       <div id="containerInput">
         <div id="containerBorderImage">
           <input
@@ -103,11 +105,13 @@ const InputsIcon = () => {
           className="containerInputConfirmarSenha"
           placeholder="Confirmar Senha"
         />
+    
       </div>
       <div id="impSenha"></div>
       <div id="impForcaSenha"></div>
       <div id="erroSenhaForca"></div>
       <div id="contInputsPet"></div>
+      </div>
       <div id="containerButton">
         <a>
           <input
@@ -118,6 +122,7 @@ const InputsIcon = () => {
             className="button"
           />
           </a>
+        
         </div>
       </form>
     </>

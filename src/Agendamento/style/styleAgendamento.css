@@ -20,250 +20,292 @@
   transition: all 0.2s linear;
 }
 
-.containerMain{
-    height: 100rem;
-    width: 100vw ;
+.containerMain {
+  height: 165rem;
+  width: 100vw;
+  max-height: 500rem;
 }
 
-.map{
-    height: 25vh;
-    width: 100vw;
+.map {
+  height: 25vh;
+  width: 100vw;
 }
 
-.containerAgendamento{
-    height: 80rem;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+.containerAgendamento {
+  height: 80rem;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
-.containerInputSearch{
-    height: 10rem;
-    width: 92vw;
+.containerInputSearch {
+  height: 10rem;
+  width: 92vw;
 }
 
-#iconSearch{
-    position: absolute;
-    height: 4rem;
-    width: 4.5rem;
-    margin-top: 2.3rem;
-    padding-left: 1.7rem;
+#iconSearch {
+  position: absolute;
+  height: 4rem;
+  width: 4.5rem;
+  margin-top: 2.3rem;
+  padding-left: 1.7rem;
 }
 
-.inputSearch{
-    height: 4.9rem;
-    width: 80vw;
-    border-radius: 14rem;
-    margin-top: 2rem;
-    font-size: 2.6rem;
-    padding-left: 6.5rem;
+.inputSearch {
+  height: 4.9rem;
+  width: 80vw;
+  border-radius: 14rem;
+  margin-top: 2rem;
+  font-size: 2.6rem;
+  padding-left: 6.5rem;
 }
 
-#containerMainCard{
-    height: 100rem;
-    width: 91vw;
-    max-height: 1000rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
+#containerMainCard {
+  height: 100rem;
+  width: 91vw;
+  max-height: 1000rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
 }
 
 /* Container dos cards do cuidador começa aqui */
 
-.containerCardCuidadores{
-    margin-top: 3.4rem;
-    height: 90rem;
-    width: 45vw;
-    margin-right: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.containerCardCuidadores {
+  margin-top: 3.4rem;
+  height: 90rem;
+  width: 45vw;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.containerInfoCuidadores{
-    margin-top: 3.4rem;
-    height: 90rem;
-    width: 35vw;
-    background-color: #fff;
-    margin-right: 1rem;
+.containerInfoCuidadores {
+  margin-top: 3.4rem;
+  height: 115rem;
+  width: 37.5vw;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-right: 1rem;
 }
 
-.selectCuidador{
-    height: 4.6rem;
-    width: 7.5rem;
-    margin-left: 3vh;
-    
-}
-.card{
-    height: 45rem;
-    width: 30vw;
-    background-color: #fff;
-    margin-top: 3rem;
-    margin-left: 5vh;
-    border-radius: 2.5rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+.card {
+  height: 45rem;
+  width: 30vw;
+  max-width: 40vw;
+  background-color: #fff;
+  margin-top: 3rem;
+  margin-left: 5vh;
+  border-radius: 2.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.contentCenterCuidador{
-    height: 9rem;
-    width: 70rem;
-    display: flex;
-    flex-direction: row;
-    margin-top: 1.5rem;
+.contentCenterCuidador {
+  height: 9rem;
+  width: 75rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
 }
 
-.imageCuidador{
-    height: 8.8rem;
-    width: 8.8rem;
-    background-image: url("../../../images/imageCuidador1.png");
-    margin-left: 2rem;
+.imageCuidador {
+  height: 8.8rem;
+  width: 8.8rem;
+  background-image: url("../../../images/imageCuidador1.png");
+  margin-left: 2rem;
 }
 
-.infoCuidador{
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
-    margin-top: 0.7rem;
+.infoCuidador {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-top: 0.7rem;
 }
 
-.nameCuidador{
-    font-size: 2.1rem;
-    color: #000;
-    margin-left: 2rem;
-    margin-bottom: 0.2rem;
-    font-weight: bolder;
+.nameCuidador {
+  font-size: 2.1rem;
+  color: #000;
+  margin-left: 2rem;
+  margin-bottom: 0.2rem;
+  font-weight: bolder;
 }
 
-.hourCuidador{
-    font-size: 1.6rem;
-    color: var(--colorLocation);
-    margin-left: 2.7rem;
+.hourCuidador {
+  font-size: 1.6rem;
+  color: var(--colorLocation);
+  margin-left: 2.7rem;
 }
 
-.containerRating{
-    margin-top: 0.7rem;
-    margin-left: 5rem;
+.containerRating {
+  margin-top: 0.7rem;
+  margin-left: 5rem;
 }
 
-.containerBio{
-    height: 0rem;
-    width: 40rem;
-    display: flex;
+.containerBio {
+  height: 0rem;
+  width: 40rem;
+  display: flex;
 }
 
-.biographyCuidador{
-    font-size: 1.5rem;
-    color: var(--colorBiography);
-    margin-top: 0.7rem;
+.biographyCuidador {
+  font-size: 1.5rem;
+  color: var(--colorBiography);
+  margin-top: 0.7rem;
 }
 
-.containerMap{
-    height: 10rem;
-    width: 30rem;
-    display: flex;
-    justify-content: end;
-    margin-left: 27.9rem;
+.containerMap {
+  height: 10rem;
+  width: 12.5vw;
+  display: flex;
+  justify-content: end;
+  margin-left: 27.9rem;
 }
 
-.localMap{
-    height: 16rem;
-    width: 30rem;
+.localMap {
+  height: 16rem;
+  width: 12.5vw;
 }
-
 
 /* Container de modal */
-.cardModal{
-    height: 90rem;
-    width: 89.9rem;
+.cardModal {
+  height: 90rem;
+  width: 89.9rem;
 }
-.containerBanner{
-    height: 25rem;
-}
-
-.imageCuidadorServico{
-    height: 11rem;
-    width: 11.4rem;
-    background-size: cover;
-    background-image: url("../../../images/imagePerfilCuidador.png");
-    margin-left: 2rem;
+.containerBanner {
+  height: 36rem;
+  width: 37.5vw;
 }
 
-
-.nameCuidadorModal{
-    font-size: 2.4rem;
-    color: #000;
-    margin-left: 1rem;
-    margin-bottom: 0.2rem;
-    font-weight: bolder;
+.imageCuidadorServico {
+  height: 11rem;
+  width: 11.4rem;
+  background-size: cover;
+  background-image: url("../../../images/imagePerfilCuidador.png");
+  margin-left: 2rem;
 }
 
-.hourCuidadorModal{
-    font-size: 1.9rem;
-    color: var(--colorLocation);
-    margin-left: 1.4rem;
+.nameCuidadorModal {
+  font-size: 2.4rem;
+  color: #000;
+  margin-left: 1rem;
+  margin-bottom: 0.2rem;
+  font-weight: bolder;
 }
 
-.containerServicos{
-    height: 40rem;
-    width: 70rem;
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+.hourCuidadorModal {
+  font-size: 1.9rem;
+  color: var(--colorLocation);
+  margin-left: 1.4rem;
 }
 
-.tituloServicos{
-    text-align: center;
-    font-size: 2.8rem;
-    color: var(--colorBiography);
-    margin-left: 5rem;
+.containerServicos {
+  height: 40rem;
+  width: 70rem;
+  margin-top: 3rem;
+  margin-left: 7vw;
+  margin-right: auto;
+  text-align: center;
 }
 
-.containerCardServicos{
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
+.tituloServicos {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--colorBiography);
+  margin-left: 5rem;
 }
 
-.cardPetTrip{
-    height: 15rem;
-    width: 20rem;
-    margin-right: 5rem;
-    display: flex;
-    background-color: red;
-    justify-content: center;
-    
+.containerCardServicos {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
-.cardPetHome{
-    height: 15rem;
-    width: 20rem;
-    margin-right: 5rem;
-    display: flex;
-    background-color: red;
-    justify-content: center;
+.cardPetTrip,
+.cardPetHome {
+  height: 20rem;
+  width: 25rem;
+  margin-right: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 1px 2px 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.imagePetTrip{
-    height: 3.7rem;
-    width: 5.78rem;
-    background-size: cover;
-    justify-content: center;
-    background-image: url("../../../images/imagePetTrip.png");
+.titleServices {
+  height: 3rem;
+  width: 22rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.imagePetHome{
-    height: 3.7rem;
-    width: 5.78rem;
-    background-size: cover;
-    justify-content: center;
-    background-image: url("../../../images/imagePetHouse.png");
+.titleServices,
+h4 {
+  font-size: 1.7rem;
+  padding: 0.3rem;
+  text-transform: uppercase;
 }
 
-.textServices{
-    font-size: 1.2rem;
-    text-align: center;
+.titleServices,
+h5 {
+  font-size: 1.7rem;
+  color: var(--main-color);
 }
 
+.descServices {
+  font-size: 1.3rem;
+  color: var(--colorBiography);
+  text-align: center;
+}
+
+.descServices p {
+  font-size: 1.3rem;
+  color: var(--colorBiography);
+}
+
+.imagePetTrip {
+  height: 3.7rem;
+  width: 5.78rem;
+  flex-direction: column;
+  background-image: url("../../../images/imagePetTrip.png");
+}
+
+.imagePetHome {
+  height: 3.7rem;
+  width: 5.78rem;
+  background-size: cover;
+  justify-content: center;
+  background-image: url("../../../images/imagePetHouse.png");
+}
+
+.textServices {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.containerSelectPeso1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  margin-top: 0.6vw;
+}
+
+.containerInputsSelectPeso2 {
+  height: 20rem;
+  width: 75rem;
+  padding-top: 2rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 2px #F28907;
+  border-radius: 4rem;
+}
 /* Container dos cards do cuidador termina aqui */
