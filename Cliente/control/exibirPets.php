@@ -37,6 +37,13 @@ function criarArrayPet($objeto)
             
            
         );
+        $arrayDadosVacina[$cont] = array( 
+            "idPetVacina" => $exibirDados['idPetVacina'],
+            "idPet" => $exibirDados['idPet'],
+            "idVacina" =>$exibirDados['idVacina']
+            
+           
+        );
 
         $cont +=1; 
     }
@@ -45,6 +52,8 @@ function criarArrayPet($objeto)
  
     if(isset($arrayDados)){
         return $arrayDados;
+    }elseif(isset($arrayDadosVacina)){
+        return $arrayDadosVacina;
     }else{
         return false;
     }
