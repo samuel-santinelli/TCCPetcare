@@ -4,7 +4,9 @@
 require_once(SRC."bd/conexao.php");
 
 function listarPets(){
-    $sql = "select *from tblPets";
+    $sql = " select tblPets.*, tblPetsVacinas.idPetVacina,  tblVacinas.idVacina from tblPetsVacinas
+    inner join tblPets
+      on tblPets.idPet = tblPetsVacinas.idPet inner join tblVacinas on tblVacinas.idVacina = tblPetsVacinas.idVacina";
 
     $conexao = conexao();
 

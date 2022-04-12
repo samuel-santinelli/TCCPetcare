@@ -4,8 +4,8 @@
 
 require_once("vendor/autoload.php");
 
-require_once('../control/recebePetsApi.php');
-require_once("../control/exibirPetVacina.php");
+
+
 
 $config = [
     'settings' => [
@@ -16,9 +16,9 @@ $config = [
 $app = new \Slim\App($config);
 
 
-$app->get('/pets', function($request, $response, $args){
+$app->get('/pets/listar', function($request, $response, $args){
     require_once("../control/exibirPets.php");
-    if($listar = exibirPets() && $listarVacinas){
+    if($listar = exibirPets()){
         if( $listarArray = criarArrayPet($listar)){  
             $listarDadosJSON = criarJsonPet($listarArray);
              }
@@ -33,7 +33,25 @@ $app->get('/pets', function($request, $response, $args){
   
 
 });
-$app->post('/pets', function($request, $response, $args){ 
+$app->get('/pets/listarVacinas', function($request, $response, $args){
+    require_once("../control/exibirVacinas.php");
+    if($listar = exibirVacinas()){
+        if( $listarArray = arrayVacinas($listar)){  
+            $listarDadosJSON = jsonVacinas($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
+
+$app->post('/pets/inserir', function($request, $response, $args){ 
 
    
     $contentType = $request-> getHeaderLine('Content-Type'); 
@@ -62,8 +80,9 @@ $app->post('/pets', function($request, $response, $args){
           
 
          
-          
-            if(inserirPetsAPI($dadosBodyJSON)){ 
+            require_once('../control/recebePetsApi.php');
+            require_once('../control/recebeVacinasApi.php');
+            if(inserirPetsAPI($dadosBodyJSON) && inserirVacinasAPI($dadosBodyJSON)){ 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
                                     ->write('{"message":"Cadastro de pet criado com sucesso"}');
@@ -87,7 +106,7 @@ $app->post('/pets', function($request, $response, $args){
 
 
 $app->get('/pets/vacinas', function($request, $response, $args){
-    
+    require_once("../control/exibirPetVacina.php");
     if($listar = exibirPetVacina()){
         if( $listarArray = criarArrayVacinas($listar)){  
             $listarDadosJSON = criarJsonVacinas($listarArray);

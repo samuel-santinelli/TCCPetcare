@@ -6,7 +6,7 @@ require_once("vendor/autoload.php");
 
 require_once('../control/recebeClientesApi.php');
 require_once("../control/exibirClientes.php");
-
+require_once("../control/exibirSexo.php");
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
@@ -34,6 +34,8 @@ $app->get('/cliente', function($request, $response, $args){
   
 
 });
+
+
 
 
 $app->post('/cliente', function($request, $response, $args){ 
@@ -86,6 +88,24 @@ $app->post('/cliente', function($request, $response, $args){
                             ->write('{"message":"Formato de dados do header incompatível com o padrão json"}');
     }
   
+});
+
+$app->get('/cliente/listarSexo', function($request, $response, $args){
+ 
+    if($listar = exibirSexo()){
+        if( $listarArray = criarArraySexo($listar)){  
+            $listarDadosJSON = criarJsonSexo($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
 });
 
 $app->put('/cliente/{id}', function($request, $response, $args){ 

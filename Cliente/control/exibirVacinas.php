@@ -19,7 +19,7 @@ function buscaVacina($idVacina){
     return $select;
 }
 
-function criarArrayVacinas($objeto)
+function arrayVacinas($objeto)
 {
     $cont = (int) 0;
 
@@ -28,9 +28,8 @@ function criarArrayVacinas($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            "idPetVacina" => $exibirDados['idPetVacina'],
-            "idPet" => $exibirDados['idPet'],
-            "idVacina" =>$exibirDados['idVacina']
+            "idVacina" => $exibirDados['idVacina'],
+            "nomeVacina" => $exibirDados['nomeVacina']
             
            
         );
@@ -48,7 +47,7 @@ function criarArrayVacinas($objeto)
 }
 
 
-function criarJsonVacinas($arrayDados)
+function jsonVacinas($arrayDados)
 {
     
     header("content-type:application/json");
