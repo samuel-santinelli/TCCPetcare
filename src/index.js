@@ -10,6 +10,7 @@ import EsqueciMinhaSenha from './EsqueciMinhaSenha/EsqueciMinhaSenha'
 import BoasVindas from "./BoasVindas/BoasVindas";
 import reportWebVitals from "./reportWebVitals";
 import Agendamento from "./Agendamento/Agendamento";
+import Perfil from "./Perfil/Perfil"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,7 +22,8 @@ ReactDOM.render(
     {/* <CadastroCliente /> */}
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}
-    <Agendamento/>
+    {/* <Agendamento/> */}
+    <Perfil/>
   </React.StrictMode>,
   document.getElementById("root")
 );

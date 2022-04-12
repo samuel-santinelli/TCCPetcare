@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --main-color: #f28907;
+  --black: rgba(0, 0, 0, 0.5);
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+body{
+  background-color: #f28907;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+.containerMainPerfil {
+ height: 45vw;
+ width: 60vw;
+ margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: end;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  background-color: #fff;
+}
+
+.containerBannerPerfil{
+    height: 87vh;
+    width: 100vw;
+}
+
+.mainCard{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.cardInfoCuidador{
+    height: 28vh;
+    width: 40vw;
+    background-color: #F28907;
+    flex-direction: column;
+    border-radius: 4rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.imageCuidadorPefil{
+    height: 11rem;
+    width: 11.4rem;
+    background-size: cover;
+    background-image: url("../../../images/imagePerfilCuidador.png");
+    margin-left: 2rem;
+}
+
+.nameCuidadorPerfil{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-left: 1vw;
+}
+
+.locationCuidadorPerfil{
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 1vw;
+    color: #545454;
+}
+
+.infoCardPerfil{
+    height: 10vh;
+    padding-left: 10rem;
+    width: 42vw;
+    flex-direction:row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.titleCenterPerfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.titleServicePerfil{
+    color: #fff;
+    font-size: 2.3rem;
+}
+
+.barra{
+    height: 12rem;
+    margin-right: 5rem;
+    width: 0.5rem;
+    background-color: #fff;
+}
+
+/* Container da Biografia */
+.containerBioPerfil{
+    height: 12vh;
+    width: 30vw;
+    margin-top: 18vh;
+    display: flex;
+    margin-left: 5rem;
+    flex-direction: column;
+    
+}
+
+.textBio{
+    font-size: 3.5rem;
+    text-transform: none;
+}
+
+.h7{
+    color: #f28907;
+}
+
+.textBioPerfil, .textBioPerfilBio{
+    font-size: 3.3rem;
+    margin-right: 1.2rem;
+}
+
+.containerTitleBioPerfil{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.textBioPerfilBio{
+    color: #f28907;
+}
+.bio{
+    display: flex;
+    flex-direction: column;
+    font-size: 2.2rem;
+    color: #545454;
+    text-align: center;
+}
+
+.containerSelectPesoPerfil{
+    margin-top: 4rem;
+    color: #545454;
+}
+
+#inpuIconDesc{
+    width: 9rem;
+    background-color: red;
+    height: 6rem;
+}

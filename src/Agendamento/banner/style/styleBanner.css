@@ -120,8 +120,8 @@
   
   .carousel__navigation-button {
     display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background-color: #333;
     background-clip: content-box;
     border: 0.25rem solid transparent;
