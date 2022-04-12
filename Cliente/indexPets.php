@@ -9,6 +9,7 @@ require_once(SRC."control/exibirRaca.php");
 require_once(SRC."control/exibirClientes.php");
 require_once(SRC."control/exibirPets.php");
 require_once(SRC.'control/exibirVacinas.php');
+require_once(SRC.'control/exibirPorte.php');
 
 $nome = (string)null;
 $deficiencia = (int) null;
@@ -27,6 +28,7 @@ $nomeEspecie = "Selecione uma especie";
 $nomeFases = "Selecione uma fase"; 
  $nomeRacas = "Selecione uma racas"; 
  $nomeCliente = "nome cliente";
+ $nomePorte = "nome porte";
  $modo = (string) "Salvar"; 
 $idPet = (int) 0;
 //  if(isset($_GET['id'])){
@@ -136,6 +138,24 @@ $idCliente= $_GET['id'];
                         ?>
                         </select>
 
+                        <select name="sltPorte">
+                            
+                            <option selected value="<?=$idPorte?>"> <?=$nomePorte?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirPorte();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                        <option value="<?=$exibir['idPorte']?>"> <?=$exibir['nomePorte']?> </option>
+                                    <?php
+                                }
+      
+                        ?>
+                        </select>
+
                         <select name="sltraca">
                         
 
@@ -197,6 +217,21 @@ $idCliente= $_GET['id'];
                        
         
         </form> 
+
+        <?php
+                $dados = exibirPets();
+                
+                while ($exibir = mysqli_fetch_assoc($dados))
+                {
+                ?>
+                  <a href="indexVacinaPet.php?id=<?=$exibir['idPet']?>">   
+                 <button id="Adicionar um pet" > pet</button>                   
+                </a>
+
+                    <?php  
+                    }
+                ?>
+          
       
         <?php
                 $dados = exibirPets();

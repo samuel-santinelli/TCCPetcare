@@ -5,15 +5,16 @@ require_once(SRC.'bd/listarPets.php');
 $idPet = (int)null;
 $idVacina = (int)null;
 
-$idVacina= $_GET['id'];
+// $idVacina= $_GET['idVacina'];
+//   // echo ($idVacina);
+
+//   $dados= buscaVacina($idVacina); 
+  $idPet= $_GET['id'];
   // echo ($idVacina);
 
-  $dados= buscaVacina($idVacina); 
-  // $idPet= $_GET['idPet'];
-  // // echo ($idVacina);
-
-  // $dados= buscaPet($idPet); 
+  $dados= buscaPet($idPet); 
   
+$nomeVacina = 'Selecione uma vacina';
 ?>
 
 
@@ -32,8 +33,25 @@ $idVacina= $_GET['id'];
                    
 
             <input value="<?=$idPet?>" placeholder="idPet" type="text" name="idPet"/>
-            <input value="<?=$idVacina?>" placeholder="idVacina" type="text" name="idVacina"/>
-          
+            <select name="idVacina">
+                            
+                            <option selected value="<?=$idVacina?>"> <?=$nomeVacina?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirVacinas();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                     
+                                        <option value="<?=$exibir['idVacina']?>"> <?=$exibir['nomeVacina']?> </option>
+                                 
+                                   <?php
+                                }
+      
+                        ?>
+                </select> 
     
          <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
      

@@ -15,8 +15,8 @@ function inserirVacinaPet($arrayVacinaPet){
     )";
 
         $conexao = conexao();
-echo($sql);
-die;
+// echo($sql);
+// die;
         if(mysqli_query($conexao, $sql)){
             // echo('Foi inserido');
             return true;

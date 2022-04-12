@@ -22,8 +22,8 @@ $nomeVacina = 'Selecione uma vacina';
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebeVacina.php">
-      
+            <!-- <form method="post" enctype="multipart/form-data" action="control/recebeVacina.php?idVacina=<?=$idVacina?>">
+       -->
             <select name="sltVacina">
                             
                             <option selected value="<?=$idVacina?>"> <?=$nomeVacina?>  </option> 
@@ -44,15 +44,7 @@ $nomeVacina = 'Selecione uma vacina';
                         ?>
                 </select> 
 
-          
-    
-         <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
-     
-                       
-        
-        </form> 
-        
-      
+                      
         <?php
                 $dados = exibirVacinas();
                 
@@ -66,6 +58,15 @@ $nomeVacina = 'Selecione uma vacina';
                     <?php  
                     }
                 ?>
+          
+    
+         <!-- <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>         -->
+     
+                       
+        
+        </form> 
+        
+
 
        
 </body> 

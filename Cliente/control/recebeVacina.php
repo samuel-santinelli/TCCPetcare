@@ -9,14 +9,17 @@ require_once(SRC.'bd/inserirVacinas.php');
 
 $nomeVacinas = (string)null;
 
+$idVacina= $_GET['idVacina'];
+  // echo ($idVacina);
 
+  $dados= buscaVacina($idVacina); 
 
 
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $nomeVacinas = $_POST['sltVacina'];
+    // $nomeVacinas = $_POST['sltVacina'];
     // echo($nome);
     // die;
 

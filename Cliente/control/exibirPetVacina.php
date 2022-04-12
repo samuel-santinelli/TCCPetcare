@@ -1,23 +1,18 @@
 <?php
 
+// require_once("config/config.php");
+require_once(SRC."bd/listarVacinaPet.php");
 
-require_once(SRC. 'bd/listarVacinas.php');
 
-function exibirVacinas(){
-    $dadosListar = listarVacinas();
-    return $dadosListar;
+function exibirPetVacina(){
+    $dados = listarPetVacina();
+    return $dados;
 }
+// function buscarNomeClientes($nome){
+//     $dados = buscarNome($nome);
 
-function buscaVacina($idVacina){
-   
-    $sql = "select * from tblVacinas where tblVacinas.idVacina = ".$idVacina;
-
-    $conexao = conexao();
-
-    $select = mysqli_query($conexao,$sql);
-
-    return $select;
-}
+//     return $dados;
+// }
 
 function criarArrayVacinas($objeto)
 {
