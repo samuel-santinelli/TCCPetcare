@@ -17,13 +17,13 @@ ReactDOM.render(
     {/* <BoasVindas/> */}
     {/* <EsqueciMinhaSenha/> */}
     {/* <Login/> */}
-    {/* <CadastroCuidador /> */}
+    <CadastroCuidador />
     {/* <CadastroCuidador2Page /> */}
     {/* <CadastroCliente /> */}
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}
     {/* <Agendamento/> */}
-    <Perfil/>
+    {/* <Perfil/> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

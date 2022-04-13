@@ -44,7 +44,7 @@ const InputsIconNextPage = () => {
   }, []);
 
   return (
-    <>
+    <><form onSubmit={() => handleUserCuidadorNextSubmit(userCuidadorNext)}>
       <div id="containerInput">
         <div id="containerBorderImage">
           <input
@@ -208,6 +208,7 @@ const InputsIconNextPage = () => {
           </div>
         </div>
       </div>
+      </form>
     </>
   );
 };

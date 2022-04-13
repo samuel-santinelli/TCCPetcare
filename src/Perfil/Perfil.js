@@ -14,34 +14,32 @@ const Perfil = () => {
             <div className="locationCuidadorPerfil">São Paulo</div>
             <div className="infoCardPerfil">
               <div className="titleCenterPerfil">
-              <StarBorderPurple500Icon id="inpuIconDesc"/>
+              {/* <StarBorderPurple500Icon id="inpuIconDesc"/> */}
                 <label className="titleServicePerfil">Avaliações</label>
-                <label className="titleServicePerfil">255</label>
+                <label className="titleBioServicePerfil">255</label>
               </div>
-              <div className="barra"></div>
-              <div className="titleCenterPerfil">
-              <StarBorderPurple500Icon id="inpuIconDesc"/>
+              <div className="barra"/>
+              <div className="titleCenterPerfilAnimaisCuidados">
                 <label className="titleServicePerfil">Animais Cuidados</label>
-                <label className="titleServicePerfil">255</label>
+                <label className="titleBioServicePerfil">304</label>
               </div>
-              <div className="barra"></div>
-              <div className="titleCenterPerfil">
-              <StarBorderPurple500Icon id="inpuIconDesc"/>
+              <div className="barra"/>
+              <div className="titleRightPerfil">
+              {/* <StarBorderPurple500Icon id="inpuIconDesc"/> */}
                 <label className="titleServicePerfil">Premium</label>
-                <label className="titleServicePerfil">√</label>
+                <label className="titleBioServicePerfil">22</label>
               </div>
             </div>
           </div>
         </div>
         <div className="containerBioPerfil">
           <div className="containerTitleBioPerfil">
-            <div className="textBioPerfil">Sua </div>
-            <div className="textBioPerfilBio">Biografia</div>
-          </div>
+            <div className="textBioPerfil">Sua <p className="subtitleBio">Biografia</p> </div>
           <div className="bio">
             Sou uma senhora que ama os animais desde minha infância, estou a
             muitos anos nesse rede de cuidadores e tenho muita experiência em
             cuidar de animais.
+          </div>
           </div>
           <div className="containerSelectPesoPerfil">
             <h3>Preferencia de Pesos</h3>
@@ -49,19 +47,16 @@ const Perfil = () => {
               <div className="containerInputsSelectPeso2">
                 <label className="containerSelectPesoMarked">
                   <div id="peso5kg" />
-                  <span className="checkmarkPeso"></span>
                 </label>
                 <label className="containerSelectPesoMarked">
                   <div id="peso10kg" />
-                  <span className="checkmarkPeso"></span>
                 </label>
                 <label className="containerSelectPesoMarked">
                   <div id="peso20kg" />
-                  <span className="checkmarkPeso"></span>
                 </label>
                 <label className="containerSelectPesoMarked">
                   <div id="peso40kg" />
-                  <span className="checkmarkPeso"></span>
+                  
                 </label>
               </div>
             </div>

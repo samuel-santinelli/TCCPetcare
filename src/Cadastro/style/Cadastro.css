@@ -255,3 +255,7 @@ input #iconInputNome{
   width: 95rem;
   overflow-x: scroll;
 }
+
+#contInputsScroll{
+  margin-top: 3rem;
+}

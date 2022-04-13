@@ -30,8 +30,8 @@ html {
 }
 
 .containerMainPerfil {
- height: 45vw;
- width: 60vw;
+ height: 155vh;
+ width: 90vw;
  margin-top: 10rem;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ html {
 }
 
 .containerBannerPerfil{
-    height: 87vh;
+    height: 155vh;
     width: 100vw;
 }
 
@@ -56,8 +56,9 @@ html {
 }
 
 .cardInfoCuidador{
-    height: 28vh;
-    width: 40vw;
+    height: 55vh;
+    width: 65vw;
+    margin-top: 22rem;
     background-color: #F28907;
     flex-direction: column;
     border-radius: 4rem;
@@ -90,44 +91,85 @@ html {
 }
 
 .infoCardPerfil{
-    height: 10vh;
+    height: 20vh;
     padding-left: 10rem;
-    width: 42vw;
+    margin-top: 3rem;
+    width: 70vw;
     flex-direction:row;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+    text-align: center;
 }
 
 .titleCenterPerfil{
     display: flex;
+    width: 10vh;
+    height: 14rem;
     justify-content: center;
-    align-items: center;
     align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleCenterPerfil{
+    display: flex;
+    width: 19vh;
+    height: 14rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleCenterPerfilAnimaisCuidados{
+    display: flex;
+    width: 19vh;
+    height: 14rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-left: 13vh;
+    flex-direction: column;
+}
+
+.titleRightPerfil{
+    display: flex;
+    width: 19vh;
+    height: 14rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-left: 13vh;
     flex-direction: column;
 }
 
 .titleServicePerfil{
     color: #fff;
-    font-size: 2.3rem;
+    font-size: 2.6rem;
+}
+
+.titleBioServicePerfil{
+    color: #fff;
+    font-size: 3.2rem;
 }
 
 .barra{
-    height: 12rem;
-    margin-right: 5rem;
+    height: 14rem;
     width: 0.5rem;
+    margin: 2rem;
     background-color: #fff;
 }
 
 /* Container da Biografia */
 .containerBioPerfil{
-    height: 12vh;
-    width: 30vw;
-    margin-top: 18vh;
+    height: 52vh;
+    width: 85vw;
+    margin-top: 48vh;
     display: flex;
     margin-left: 5rem;
-    flex-direction: column;
+    flex-direction: row;
     
 }
 
@@ -143,17 +185,26 @@ html {
 .textBioPerfil, .textBioPerfilBio{
     font-size: 3.3rem;
     margin-right: 1.2rem;
+    display: flex;
+    
 }
 
 .containerTitleBioPerfil{
+    height: 52vh;
+    width: 250vw;
+    margin-top: 10vh;
+    margin-right: 5vh;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
 }
 
-.textBioPerfilBio{
+.subtitleBio{
     color: #f28907;
+    margin-left: 1rem;
 }
+
 .bio{
     display: flex;
     flex-direction: column;
@@ -169,6 +220,5 @@ html {
 
 #inpuIconDesc{
     width: 9rem;
-    background-color: red;
     height: 6rem;
 }

@@ -157,3 +157,89 @@ h1 {
   border-radius: 1.5rem;
   padding-left: 5.5rem;
 }
+
+.modal-container{
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0, 0, 0, .5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal{
+  background: white;
+  width: 35%;
+  height: 35%;
+  min-width: 300px;
+  padding: 40px;
+  border: 10px solid #88AED1;
+  box-shadow: 0 0 0 10px white;
+  position: relative;
+}
+
+.fechar{
+  position: absolute;
+  font-size: 1.2em;
+  top: -30px;
+  right: -30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 4px white;
+  background: #88AED1;
+  color: white;
+  font-family: "PT Mono", monospace;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+  cursor: pointer;
+}
+
+.modal-container input{
+  width: 250px;
+  color: #000;
+  border: solid 1px #88AED1;
+  height: 35px;
+  background: none;
+  text-indent: 1.2rem;
+  margin: 10px;
+  font-size: 1.7rem;
+}
+
+.modal-container.mostrar{
+  display: flex;
+}
+
+.modal-container .button{
+  width: 200px;
+  height: 45px;
+  background-color: #88AED1;
+  color: #fff;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.modal-container .button:hover{
+  width: 200px;
+  height: 45px;
+  background-color: #88AED1;
+  color: #fff;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.mostrar .modal {
+  animation: modal .3s;
+}
+
+.modal-container h3{
+  color: #88AED1;
+  font-weight: bold;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}

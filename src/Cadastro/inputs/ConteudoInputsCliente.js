@@ -128,8 +128,8 @@ const ConteudoInputsCliente = () => {
             onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
           >
             
-              <option value={user.idSexo}>Masculino</option>
-              <option value={user.idSexo}>Feminino</option>
+              <option value={user.Masculino}>Masculino</option>
+              <option value={user.Masculino}>Feminino</option>
           </select>
           <CallIcon id="iconInputLabel" />
           <input
