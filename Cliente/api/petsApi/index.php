@@ -33,23 +33,6 @@ $app->get('/pets/listar', function($request, $response, $args){
   
 
 });
-$app->get('/pets/listarVacinas', function($request, $response, $args){
-    require_once("../control/exibirVacinas.php");
-    if($listar = exibirVacinas()){
-        if( $listarArray = arrayVacinas($listar)){  
-            $listarDadosJSON = jsonVacinas($listarArray);
-             }
-    }
-       if($listarArray){
-        return $response   ->withStatus(200) 
-        ->withHeader('Content-Type', 'application/json') 
-        ->write($listarDadosJSON);
-    }else{
-        return $response   ->withStatus(204);
-    }
-  
-
-});
 
 $app->post('/pets/inserir', function($request, $response, $args){ 
 
@@ -82,7 +65,8 @@ $app->post('/pets/inserir', function($request, $response, $args){
          
             require_once('../control/recebePetsApi.php');
             require_once('../control/recebeVacinasApi.php');
-            if(inserirPetsAPI($dadosBodyJSON) && inserirVacinasAPI($dadosBodyJSON)){ 
+            // require_once('../control/recebeComportamentoApi.php');
+            if( inserirVacinasAPI($dadosBodyJSON) || inserirPetsAPI($dadosBodyJSON)) { 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
                                     ->write('{"message":"Cadastro de pet criado com sucesso"}');
@@ -103,6 +87,25 @@ $app->post('/pets/inserir', function($request, $response, $args){
     }
   
 });
+$app->get('/pets/listarVacinas', function($request, $response, $args){
+    require_once("../control/exibirVacinas.php");
+    if($listar = exibirVacinas()){
+        if( $listarArray = arrayVacinas($listar)){  
+            $listarDadosJSON = jsonVacinas($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
+
+
 
 
 $app->get('/pets/vacinas', function($request, $response, $args){

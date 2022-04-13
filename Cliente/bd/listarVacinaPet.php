@@ -4,10 +4,12 @@
 require_once(SRC."bd/conexao.php");
 
 function listarPetVacina(){
-    $sql = "select tblPets.idPet, tblPetsVacinas.idPetVacina,  tblVacinas.idVacina from tblPetsVacinas
-    inner join tblPets
-      on tblPets.idPet = tblPetsVacinas.idPet inner join tblVacinas on tblVacinas.idVacina = tblPetsVacinas.idVacina";
-
+    // $sql = "select tblPets.idPet, tblPetsVacinas.idPetVacina,  tblVacinas.idVacina from tblPetsVacinas
+    // inner join tblPets
+    //   // on tblPets.idPet = tblPetsVacinas.idPet inner join tblVacinas on tblVacinas.idVacina = tblPetsVacinas.idVacina";
+  $sql = "select tblPets.*, tblPetsVacinas.* from tblPetsVacinas
+  inner join tblPets
+   on tblPets.idPet = tblPetsVacinas.idPet";
     $conexao = conexao();
 
 
