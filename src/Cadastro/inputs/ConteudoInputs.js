@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
+import {
+  MdAccountCircle,
+  MdOutlineAccountCircle,
+  MdAlternateEmail,
+  MdLock,
+  MdLockOpen,
+  MdFingerprint,
+} from "react-icons/md";
 import axios from "axios";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import LockIcon from "@mui/icons-material/Lock";
-import LockOpenIcon from "@mui/icons-material/LockOpen";
-import "../style/Cadastro.css";
+import styles from "../style/Cadastro.css";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import InputCamera from "./InputCamera";
-import InputAdornment from "@mui/material/InputAdornment";
 import validarSenhaForca from "./validation/validation";
 
 const InputsIcon = () => {
   const [cuidador, setCuidador] = useState({
-    nome: "Melhor Cuidador",
+    nome: "",
     dataNascimento: "2000-10-12",
     cpf: "5412552452",
     email: "bestcuidador@gmail.com",
@@ -33,6 +35,12 @@ const InputsIcon = () => {
   console.log(cuidador);
 
   const handleCuidadorSubmit = (cuidador) => {
+    const nome = document.getElementById("nome");
+    const sobrenome = document.getElementById("sobrenome");
+    const cpf = document.getElementById("cpf");
+    const email = document.getElementById("email");
+    const senha = document.getElementById("senha");
+
     axios.defaults.headers.post["Content-Type"] =
       "application/json;charset=utf-8";
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -40,6 +48,7 @@ const InputsIcon = () => {
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
       .then((res) => console.log(res.data));
   };
+
   const listElements = () => {
     axios
       .get("http://localhost/Cuidador/Cuidador/api/cuidador")
@@ -69,7 +78,7 @@ const InputsIcon = () => {
             </div>
           </div>
           <div id="contInputsPet">
-            {/* <AccountCircle id="iconInputLabel" /> */}
+            <MdAccountCircle id="iconInputLabel" />
             <input
               id="nome"
               className="containerInputNome"
@@ -80,7 +89,7 @@ const InputsIcon = () => {
                 setCuidador({ ...cuidador, nome: e.target.value })
               }
             />
-            {/* <AccountCircle id="iconInputLabel" /> */}
+            <MdOutlineAccountCircle id="iconInputLabel" />
             <input
               label="Sobrenome"
               id="sobrenome"
@@ -94,7 +103,7 @@ const InputsIcon = () => {
             />
           </div>
           <div id="contInputStretch">
-            {/* <AlternateEmailIcon id="iconInputLabel" /> */}
+            <MdAlternateEmail id="iconInputLabel" />
             <input
               label="Email"
               id="email"
@@ -108,7 +117,7 @@ const InputsIcon = () => {
             />
           </div>
           <div id="contInputsPet">
-            {/* <LockIcon id="iconInputLabel" /> */}
+            <MdLock id="iconInputLabel" />
             <input
               id="senha"
               type="password"
@@ -121,7 +130,7 @@ const InputsIcon = () => {
               }
             />
 
-            {/* <LockOpenIcon id="iconInputLabel" /> */}
+            <MdLockOpen id="iconInputLabel" />
             <input
               label="Confirmar Senha"
               id="confirmarSenha"
@@ -155,16 +164,18 @@ const InputsIcon = () => {
                 <option value={cuidador.Masculino}>Masculino</option>
                 <option value={cuidador.Femininio}>Feminino</option>
               </select>
-              {/* <AssignmentIndIcon id="iconInputLabel" /> */}
-              <input
-                type="number"
-                className="containerInputCpfScroll"
-                placeholder="Informe seu CPF"
-                value={cuidador.cpf}
-                onChange={(e) =>
-                  setCuidador({ ...cuidador, cpf: e.target.value })
-                }
-              />
+              <div>
+                <MdFingerprint className="iconInputLabelCpf"/>
+                <input
+                  type="number"
+                  className="containerInputCpfScroll"
+                  placeholder="Informe seu CPF"
+                  value={cuidador.cpf}
+                  onChange={(e) =>
+                    setCuidador({ ...cuidador, cpf: e.target.value })
+                  }
+                />
+              </div>
             </div>
             <div id="contInputsCheckboxScroll">
               <div id="contInputCheckboxScroll">
@@ -185,18 +196,18 @@ const InputsIcon = () => {
               </div>
               <div id="contInputCheckboxScroll">
                 <label className="labelInputCheckboxCuidador">
-                Possui Crianças
-                <input
-                  type="checkbox"
-                  value={cuidador.possuiCriancas}
-                  onChange={(e) => {
-                    setCuidador({
-                      ...cuidador,
-                      possuiCriancas: e.target.value,
-                    });
-                  }}
-                />
-                <span className="checkmarkCuidador"></span>
+                  Possui Crianças
+                  <input
+                    type="checkbox"
+                    value={cuidador.possuiCriancas}
+                    onChange={(e) => {
+                      setCuidador({
+                        ...cuidador,
+                        possuiCriancas: e.target.value,
+                      });
+                    }}
+                  />
+                  <span className="checkmarkCuidador"></span>
                 </label>
               </div>
             </div>

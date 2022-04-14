@@ -131,8 +131,19 @@ html {
 #iconInputLabel{
   height: 4rem;
   width: 4rem;
-  position: absolute;
+  overflow: hidden;
+
 }
+
+.iconInputLabelCpf{
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  margin-top: 3vh;
+  margin-left: 0.8vh;
+ 
+}
+
 
 #iconInputLabelLeft{
   height: 4rem;

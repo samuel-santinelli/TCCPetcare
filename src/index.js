@@ -15,13 +15,13 @@ import Perfil from "./Perfil/Perfil"
 ReactDOM.render(
   <React.StrictMode>
     {/* <BoasVindas/> */}
-    <EsqueciMinhaSenha/>
-    <Login/>
+    {/* <EsqueciMinhaSenha/> */}
+    {/* <Login/> */}
     <CadastroCuidador />
-    <CadastroCuidador2Page />
-    <CadastroCliente />
-    <CadastroPetNextPage/>
-    <CadastroPet/>
+    {/* <CadastroCuidador2Page /> */}
+    {/* <CadastroCliente /> */}
+    {/* <CadastroPetNextPage/> */}
+    {/* <CadastroPet/> */}
     {/* <Agendamento/> */}
     {/* <Perfil/> */}
   </React.StrictMode>,
