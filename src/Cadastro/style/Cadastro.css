@@ -253,7 +253,7 @@ input #iconInputNome{
 #teste{
   height: 100rem;
   width: 83rem;
-  overflow-x: hidden;
+  overflow-x: scroll;
   color: #000;
 }
 
@@ -344,7 +344,6 @@ input #iconInputNome{
   height: 6.5rem;
   width: 36.3rem;
   padding-right: 3rem;
-  padding-left: 5.5rem;
   margin-right: 3rem;
   font-size: 2.5rem;
   border: solid 1px #f28907;

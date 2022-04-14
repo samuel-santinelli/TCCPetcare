@@ -168,21 +168,26 @@ const InputsIcon = () => {
             </div>
             <div id="contInputsCheckboxScroll">
               <div id="contInputCheckboxScroll">
-                <input
-                  type="number"
-                  value={cuidador.possuiAnimais}
-                  onChange={(e) =>
-                    setCuidador({
-                      ...cuidador,
-                      possuiAnimais: e.target.value,
-                    })
-                  }
-                />
-                {/* <span className="checkmarkCuidador"></span> */}
+                <label className="labelInputCheckboxCuidador">
+                  Possui Animais
+                  <input
+                    type="checkbox"
+                    value={cuidador.possuiAnimais}
+                    onChange={(e) =>
+                      setCuidador({
+                        ...cuidador,
+                        possuiAnimais: e.target.value,
+                      })
+                    }
+                  />
+                  <span className="checkmarkCuidador"></span>
+                </label>
               </div>
               <div id="contInputCheckboxScroll">
+                <label className="labelInputCheckboxCuidador">
+                Possui Crianças
                 <input
-                  type="number"
+                  type="checkbox"
                   value={cuidador.possuiCriancas}
                   onChange={(e) => {
                     setCuidador({
@@ -191,6 +196,8 @@ const InputsIcon = () => {
                     });
                   }}
                 />
+                <span className="checkmarkCuidador"></span>
+                </label>
               </div>
             </div>
             <div id="">
@@ -266,18 +273,18 @@ const InputsIcon = () => {
                       }
                     />
                     <div className="containerPreferencesScroll">
-                    <input
-                      id="avaliacao"
-                      placeholder="Me diga um pouco sobre você"
-                      className="containerInputEmailScroll"
-                      value={cuidador.avaliacao}
-                      onChange={(e) =>
-                        setCuidador({
-                          ...cuidador,
-                          avaliacao: e.target.value,
-                        })
-                      }
-                    />
+                      <input
+                        id="avaliacao"
+                        placeholder="Me diga um pouco sobre você"
+                        className="containerInputEmailScroll"
+                        value={cuidador.avaliacao}
+                        onChange={(e) =>
+                          setCuidador({
+                            ...cuidador,
+                            avaliacao: e.target.value,
+                          })
+                        }
+                      />
                     </div>
                   </div>
                 </div>
