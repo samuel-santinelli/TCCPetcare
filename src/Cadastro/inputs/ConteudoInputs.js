@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
@@ -13,26 +13,26 @@ import validarSenhaForca from "./validation/validation";
 
 const InputsIcon = () => {
   const [cuidador, setCuidador] = useState({
-    nome: "",
-    sobrenome: "",
-    email: "",
-    senha: "",
-    dataNascimento: "",
-    cpf: "",
+    nome: "Melhor Cuidador",
+    dataNascimento: "2000-10-12",
+    cpf: "5412552452",
+    email: "bestcuidador@gmail.com",
+    senha: "123456",
     foto: "",
-    biografia: "",
+    biografia: "Melhor cuidador da região",
     possuiAnimais: 1,
     possuiCriancas: 1,
-    preferencias: "",
-    moradia: "",
-    limitacoes: "",
-    avaliacao: 1,
-    idSexoHost: 1,
+    preferencias: "possuo, tenho certos probelmas para lidar com pets",
+    moradia: "Barueri, SP",
+    limitacoes: "Não tenho paciência com pets",
+    avaliacao: "0",
+    idSexoHost: "1",
+    sobrenome: "Do mundo",
   });
 
   console.log(cuidador);
 
-  const handleUserCuidadorSubmit = (cuidador) => {
+  const handleCuidadorSubmit = (cuidador) => {
     axios.defaults.headers.post["Content-Type"] =
       "application/json;charset=utf-8";
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -51,7 +51,7 @@ const InputsIcon = () => {
 
   return (
     <>
-      <form onSubmit={() => handleUserCuidadorSubmit(cuidador)}>
+      <form onSubmit={() => handleCuidadorSubmit(cuidador)}>
         <div id="teste">
           <div id="containerInput">
             <div id="containerBorderImage">
@@ -99,7 +99,7 @@ const InputsIcon = () => {
               label="Email"
               id="email"
               type="email"
-              className="containerInputEmail"
+              className="containerInputEmailScroll"
               placeholder="Email"
               value={cuidador.email}
               onChange={(e) =>
@@ -134,7 +134,7 @@ const InputsIcon = () => {
                 type="date"
                 id="dataNascimento"
                 value={cuidador.dataNascimento}
-                className="inputCalendar"
+                className="inputCalendarScroll"
                 onChange={(e) =>
                   setCuidador({
                     ...cuidador,
@@ -144,7 +144,7 @@ const InputsIcon = () => {
               />
               <select
                 value={cuidador.idSexoHost}
-                id="InputsContainerSelect"
+                id="InputsContainerSelectScroll"
                 onChange={(e) =>
                   setCuidador({
                     ...cuidador,
@@ -153,15 +153,13 @@ const InputsIcon = () => {
                 }
               >
                 <option value={cuidador.Masculino}>Masculino</option>
-                <option value={cuidador.Femininio}>Femininio</option>
+                <option value={cuidador.Femininio}>Feminino</option>
               </select>
               {/* <AssignmentIndIcon id="iconInputLabel" /> */}
               <input
-                label="CPF"
-                id="cpf"
                 type="number"
-                className="containerInputs"
-                placeholder="CPF"
+                className="containerInputCpfScroll"
+                placeholder="Informe seu CPF"
                 value={cuidador.cpf}
                 onChange={(e) =>
                   setCuidador({ ...cuidador, cpf: e.target.value })
@@ -169,7 +167,7 @@ const InputsIcon = () => {
               />
             </div>
             <div id="contInputsCheckboxScroll">
-              <div id="contInputCheckbox">
+              <div id="contInputCheckboxScroll">
                 <input
                   type="number"
                   value={cuidador.possuiAnimais}
@@ -182,7 +180,7 @@ const InputsIcon = () => {
                 />
                 {/* <span className="checkmarkCuidador"></span> */}
               </div>
-              <div id="contInputCheckbox">
+              <div id="contInputCheckboxScroll">
                 <input
                   type="number"
                   value={cuidador.possuiCriancas}
@@ -195,7 +193,7 @@ const InputsIcon = () => {
                 />
               </div>
             </div>
-            <div id="contInputsPetScroll">
+            <div id="">
               {/* <PanToolIcon id="iconInputLabel" /> */}
               <input
                 label="Preferências"
@@ -212,11 +210,11 @@ const InputsIcon = () => {
                 }
               />
             </div>
-            <div id="contInputsMoradia">
+            <div id="contInputsScroll">
               {/* <BusinessIcon id="iconInputLabelLeft" /> */}
               <input
                 id="cep"
-                className="containerInputMoradia"
+                className="containerInputMoradiaScroll"
                 placeholder="Informe seu cep"
                 type="number"
               />
@@ -224,9 +222,8 @@ const InputsIcon = () => {
               {/* <HouseIcon id="iconInputLabelLeft" /> */}
               <input
                 label="Moradia"
-                id="moradia"
                 type="text"
-                className="containerInputMoradia"
+                className="containerInputLocal"
                 placeholder="Aonde você reside?"
                 value={cuidador.moradia}
                 onChange={(e) =>
@@ -237,14 +234,14 @@ const InputsIcon = () => {
                 }
               />
               <div>
-                <div className="containerPreferences">
+                <div className="containerPreferencesScroll">
                   {/* <AccessibilityIcon id="iconInputLabel" /> */}
                   <input
                     label="Preferências"
                     type="text"
                     id="preferencias"
                     placeholder="Possui alguma preferência?"
-                    className="containerInputPreferencias"
+                    className="containerInputEmailScroll"
                     value={cuidador.preferencias}
                     onChange={(e) =>
                       setCuidador({
@@ -258,7 +255,7 @@ const InputsIcon = () => {
                     <input
                       id="biografia"
                       placeholder="Me diga um pouco sobre você"
-                      className="inputBiografia"
+                      className="containerInputEmailScroll"
                       value={cuidador.biografia}
                       type="text"
                       onChange={(e) =>
@@ -268,10 +265,11 @@ const InputsIcon = () => {
                         })
                       }
                     />
+                    <div className="containerPreferencesScroll">
                     <input
                       id="avaliacao"
                       placeholder="Me diga um pouco sobre você"
-                      className="inputBiografia"
+                      className="containerInputEmailScroll"
                       value={cuidador.avaliacao}
                       onChange={(e) =>
                         setCuidador({
@@ -280,23 +278,20 @@ const InputsIcon = () => {
                         })
                       }
                     />
+                    </div>
                   </div>
                 </div>
-                <div id="containerButton">
+                <div id="containerButtonScroll">
                   <input
                     value="Cadastrar"
                     type="submit"
-                    id="buttonCadastrar"
+                    id="buttonCadastrarScroll"
                     className="button"
                   />
                 </div>
               </div>
             </div>
           </div>
-          <div id="impSenha"></div>
-          <div id="impForcaSenha"></div>
-          <div id="erroSenhaForca"></div>
-          <div id="contInputsPet"></div>
         </div>
       </form>
     </>

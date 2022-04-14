@@ -44,6 +44,16 @@ const ConteudoInputsCliente = () => {
   useEffect(() => {
     listElements();
   }, []);
+
+  const listGender = () => {
+    axios
+    .get("http://localhost/Cuidador/Cliente/api/cliente/listarSexo")
+    .then((res) => console.log(res.data));
+  }
+  useEffect(() => {
+    listGender();
+  }, []);
+
   return (
     <>
       <form onSubmit={() => handleUserSubmit(user)}>
@@ -127,9 +137,8 @@ const ConteudoInputsCliente = () => {
             placeholder="Selecione seu genêro"
             onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
           >
-            
               <option value={user.Masculino}>Masculino</option>
-              <option value={user.Masculino}>Feminino</option>
+              <option value={user.Feminino}>Feminino</option>
           </select>
           <CallIcon id="iconInputLabel" />
           <input
