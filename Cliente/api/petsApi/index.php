@@ -34,6 +34,78 @@ $app->get('/pets/listar', function($request, $response, $args){
 
 });
 
+$app->get('/pets/listarEspecie', function($request, $response, $args){
+    require_once("../control/exibirEspecie.php");
+    if($listar = exibirEspecie()){
+        if( $listarArray = criarArrayEspecie($listar)){  
+            $listarDadosJSON = criarJsonExpecie($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
+
+$app->get('/pets/listarFase', function($request, $response, $args){
+    require_once("../control/exibirFase.php");
+    if($listar = exibirFase()){
+        if( $listarArray = criarArrayFase($listar)){  
+            $listarDadosJSON = criarJsonFase($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
+
+$app->get('/pets/listarRaca', function($request, $response, $args){
+    require_once("../control/exibirRaca.php");
+    if($listar = exibirRaca()){
+        if( $listarArray = criarArrayRaca($listar)){  
+            $listarDadosJSON = criarJsonRaca($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
+
+$app->get('/pets/vacinasPet', function($request, $response, $args){
+    require_once("../control/exibirVacinas.php");
+    if($listar = exibirVacinas()){
+        if( $listarArray = arrayVacinas($listar)){  
+            $listarDadosJSON = jsonVacinas($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
+
 $app->post('/pets/inserir', function($request, $response, $args){ 
 
    

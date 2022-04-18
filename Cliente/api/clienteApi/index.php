@@ -108,6 +108,8 @@ $app->get('/cliente/listarSexo', function($request, $response, $args){
 
 });
 
+
+
 $app->put('/cliente/{id}', function($request, $response, $args){ 
    
 

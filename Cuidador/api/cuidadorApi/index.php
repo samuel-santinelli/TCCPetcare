@@ -5,7 +5,7 @@
 require_once("vendor/autoload.php");
 require_once("../control/exibirHost.php");
 require_once('../control/recebeCuidadoresAPI.php');
-
+require_once("../control/exibirSexo.php");
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
@@ -33,7 +33,23 @@ $app->get('/cuidador', function($request, $response, $args){
   
 
 });
+$app->get('/cuidador/listarSexoHost', function($request, $response, $args){
+    
+    if($listar = exibirSexo()){
+        if( $listarArray = criarArraySexo($listar)){  
+            $listarDadosJSON = criarJsonSexo($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
 
+});
 
 $app->post('/cuidador', function($request, $response, $args){ 
 
