@@ -97,13 +97,54 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 
            
            
-           if (inserirComportamento($comportamento))
-                echo ("
-                    <script>
-                        alert('foi inserido');
-                        window.location.href = '../indexComportamento.php';
-                    </script>
-                    " );
+           if (inserirComportamento($comportamento, $idComportamento))
+               {
+                   
+                $sql = "insert into tblTeste 
+                (
+                    docil,
+                    temperamental,
+                    sistematico,
+                    antissocial,
+                    ciumento,
+                    acanhoso,
+                    guloso,
+                    bravo
+                    )
+                values(
+                    '".$arrayComportamento['docil']."',
+                    '".$arrayComportamento['temperamental']."',
+                    '".$arrayComportamento['sistematico']."',
+                    '".$arrayComportamento['antissocial']."',
+                    '".$arrayComportamento['ciumento']."',
+                    '".$arrayComportamento['acanhoso']."',
+                    '".$arrayComportamento['guloso']."',
+                    '".$arrayComportamento['bravo']."'
+                )";
+                if(  $conexao = conexao()){
+                    echo('foi');
+                }else{
+                    echo("nao");
+                }
+  
+  
+                  mysqli_query($conexao, $sql);
+                  printf ( mysqli_insert_id($conexao));
+                  $idComportamento =  mysqli_insert_id($conexao);
+                  echo($idComportamento);
+                  // $dados = exibirPets();
+                  // die;
+                  // $exibirPets = mysqli_fetch_assoc($dados);
+                     echo (
+                     "
+                     <script>
+                         alert('foi inserido');
+                         window.location.href = '../indexComportamentoPet.php?idComportamento=$idComportamento';
+                     </script>
+                     " 
+                      ); 
+                      die;
+               }
             else
                 echo ("
                     <script>

@@ -167,7 +167,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 mysqli_query($conexao, $sql);
                 // printf ( mysqli_insert_id($conexao));
                 $idPet =  mysqli_insert_id($conexao);
-                echo($idPet);
+                // echo($idPet);
                 // $dados = exibirPets();
                 // die;
                 // $exibirPets = mysqli_fetch_assoc($dados);
@@ -176,10 +176,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                    <script>
                        alert('foi inserido');
                        window.location.href = '../indexVacinaPet.php?idPet=$idPet';
+                       window.location.href = '../indexComportamentoPet.php?idPet=$idPet';
                    </script>
                    " 
                     );
-                    die;
+                    // die;
                 }
             else
                {

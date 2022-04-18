@@ -27,14 +27,31 @@ function inserirComportamento($arrayComportamento){
     )";
 
         $conexao = conexao();
+// echo($sql);
+// die;
 
-        if(mysqli_query($conexao, $sql)){
-            // echo('Foi inserido');
-            return true;
-        }else{
-            // echo('Nao foi inserido');
-            return false;
-        }
+
+mysqli_query($conexao, $sql);
+// printf ( mysqli_insert_id($conexao));
+// $idPet =  mysqli_insert_id($conexao);
+// echo($idPet);
+// echo($sql);
+// die;
+
+     return true;
+    // return $idPet;
+    // }else{
+    //     return false;
+    // }
+
+
+        // if(mysqli_query($conexao, $sql)){
+        //     // echo('Foi inserido');
+        //     return true;
+        // }else{
+        //     // echo('Nao foi inserido');
+        //     return false;
+        // }
 }
 
 

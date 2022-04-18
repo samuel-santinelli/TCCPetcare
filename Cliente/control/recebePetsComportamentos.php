@@ -1,32 +1,80 @@
 <?php
 
 require_once('../config/config.php');
-require_once(SRC.'bd/inserirVacinaPet.php');
+require_once(SRC.'bd/inserirComportamentoPet.php');
 require_once(SRC.'control/exibirVacinas.php');
 require_once(SRC.'bd/listarPets.php');
 require_once(SRC."control/exibirPets.php");
-
-
+require_once(SRC.'bd/inserirComportamento.php');
+require_once(SRC. 'control/exibirComportamentoPet.php');
 $idPet = (int)null;
 $idComportamento = (int)null;
+$docil = (int) 0;
+$temperamental = (int) 0;
+$sistematico = (int) 0;
+$antissocial = (int) 0;
+$ciumento = (int) 0;
+$acanhoso = (int) 0;
+$guloso = (int) 0;
+$bravo = (int) 0;
 
-// $idVacina= $_GET['idVacina'];
-//   echo ($idVacina);
+$idComportamento= $_GET['idComportamento'];
+  echo ($idComportamento);
 
-//   $dados= buscaVacina($idVacina); 
-  $idPet= $_GET['idPet'];
-  echo ($idPet);
+  $dados= buscaComportamentoPet($idComportamento); 
+//   $idPet= $_GET['idPet'];
+//   echo ($idPet);
 
-  $dados= buscaPet($idPet); 
+//   $dados= buscaPet($idPet); 
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $idPet = $_POST['idPet'];
-    $idComportamento = $_POST['idComportamento'];
+    // $idComportamento = $_POST['idComportamento'];
     // echo($nome);
     // die;
 
+    if(isset( $_POST['docil'])){
+        $docil = 1;
+     } else{
+         $docil = 0;
+     } 
+     if(isset( $_POST['temperamental'])){
+         $temperamental = 1;
+      } else{
+          $temperamental = 0;
+      }  
+      if(isset( $_POST['sistematico'])){
+         $sistematico = 1;
+      } else{
+          $sistematico = 0;
+      }   
+      if(isset( $_POST['antissocial'])){
+         $antissocial = 1;
+      } else{
+          $antissocial = 0;
+      }   
+      if(isset( $_POST['ciumento'])){
+         $ciumento = 1;
+      } else{
+          $ciumento = 0;
+      }   
+      if(isset( $_POST['acanhoso'])){
+         $acanhoso = 1;
+      } else{
+          $acanhoso = 0;
+      }   
+      if(isset( $_POST['guloso'])){
+         $guloso = 1;
+      } else{
+          $guloso = 0;
+      }   
+      if(isset( $_POST['bravo'])){
+         $bravo = 1;
+      } else{
+          $bravo = 0;
+      }     
 
 
 
@@ -47,20 +95,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             
             );
 
-            
+           
           
             // echo($nome);
             // die;
-        // echo(inserirPet($pets));
+        // echo(inserirPetComportamento($pets));
         // die;
 
            if (inserirPetComportamento($comportamentoPet)) 
+             {
+
+                
                 echo ("
-                    <script>
-                        alert('foi inserido');
-                        window.location.href = '../indexVacinaPet.php';
-                    </script>
-                    " );
+                foi
+                  " );
+                //   die;
+             }
             else
                 echo ("
                     <script>

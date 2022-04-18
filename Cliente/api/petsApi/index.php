@@ -138,7 +138,7 @@ $app->post('/pets/inserir', function($request, $response, $args){
             require_once('../control/recebePetsApi.php');
             require_once('../control/recebeVacinasApi.php');
 
-            if( inserirVacinasAPI($dadosBodyJSON) && inserirPetsAPI($dadosBodyJSON)&& inserirComportamentoAPI($dadosBodyJSON)) { 
+            if( inserirPetsAPI($dadosBodyJSON) && inserirVacinasAPI($dadosBodyJSON)) { 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
                                     ->write('{"message":"Cadastro de pet criado com sucesso"}');
