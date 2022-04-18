@@ -2,10 +2,16 @@
 
 require_once('../config/config.php');
 require_once(SRC.'bd/inserirPets.php');
+require_once(SRC.'bd/inserirVacinaPet.php');
 require_once(SRC .'bd/listarClientes.php');
 require_once(SRC.'bd/updatePet.php');
 require_once(SRC.'config/upload.php');
+require_once(SRC.'control/exibirVacinas.php');
 
+// $idVacina= $_GET['idVacina'];
+//   echo ($idVacina);
+
+//   $dados= buscaVacina($idVacina); 
 
 $nome = (string)null;
 $deficiencia = (int) null;
@@ -46,6 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $idRaca = $_POST['sltraca'];
     $idEspecie = $_POST['sltEspecie'];
     $idFases = $_POST['sltFases'];
+    $idVacina = $_POST['sltVacina'];
     // $idCliente = $_POST['idCliente'];
     if(isset( $_POST['deficiencia'])){
         $deficiencia = 1;
@@ -108,7 +115,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             );
 
             
-          
+            $vacinaPet = array(
+                "idPet" => $idPet,
+                 "idVacina"=> $idVacina
+            
+            );
             // echo($nome);
             // die;
         // echo(inserirPet($pets));
@@ -117,20 +128,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 
            
             //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
-           if (inserirPet($pets)) //tratamento para ver se os dados chegaram no banco
-                echo ("
-                    <script>
-                        alert('foi');
-                        window.location.href = '../indexPets.php';
-                    </script>
+           if (inserirPet($pets, $vacinaPet)) //tratamento para ver se os dados chegaram no banco
+               { 
+                   echo ("
+                   foi
                     " );
+                    die;
+                }
             else
+               {
                 echo ("
-                    <script>
-                        alert('Não foi');
-                         window.history.back();
-                    </script>
-                ");
+                nao foi
+             ");
+             die;
+               }
             }elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')//logica para o atualizar
             { 
                 //  editaPet($pets);

@@ -39,15 +39,21 @@ function inserirPet($arrayPets){
 
 $conexao = conexao();
 
+
+
+mysqli_query($conexao, $sql);
+// printf ( mysqli_insert_id($conexao));
+$idPet =  mysqli_insert_id($conexao);
+echo($idPet);
 // echo($sql);
 // die;
 
-if($resultado = mysqli_query($conexao, $sql)){
      return true;
-    
-    }else{
-        return false;
-    }
-
+    return $idPet;
+    // }else{
+    //     return false;
+    // }
+ 
 }
+
 ?>

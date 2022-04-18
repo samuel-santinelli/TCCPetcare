@@ -3,14 +3,15 @@
 require_once("../config/config.php");
 require_once(SRC."bd/conexao.php");
 
-function inserirVacinaPet($arrayVacinaPet){
+
+function inserirVacinaPet($arrayVacinaPet, $idPet){
     $sql = "insert into tblPetsVacinas 
     (
         idPet,
         idVacina
         )
     values(
-        '".$arrayVacinaPet['idPet']."',
+        $idPet,
         '".$arrayVacinaPet['idVacina']."'
     )";
 
