@@ -44,7 +44,7 @@ html {
 
 
 #containerInput {
-  height: 30rem;
+  height: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,8 +54,9 @@ html {
 }
 
 #containerBorderImage {
-  height: 20rem;
-  width: 20rem;
+  height: 17rem;
+  width: 17rem;
+  margin-top: 1rem;
   background-color: #fff;
   border: none;
   border-radius: 100%;
@@ -72,8 +73,8 @@ html {
 }
 
 #iconInputCamera{
-  margin-top: 7rem;
-  margin-left: 6rem;
+  margin-top: 5.5rem;
+  margin-left: 4.5rem;
 }
 
 #contInputs {
@@ -131,8 +132,19 @@ html {
 #iconInputLabel{
   height: 4rem;
   width: 4rem;
-  position: absolute;
+  overflow: hidden;
+
 }
+
+.iconInputLabelCpf{
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  margin-top: 3vh;
+  margin-left: 0.8vh;
+ 
+}
+
 
 #iconInputLabelLeft{
   height: 4rem;
@@ -201,7 +213,7 @@ input #iconInputNome{
 
 .containerInputLimitacoes{
   height: 6.5rem;
-  width: 83rem;
+  width: 75.5rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -251,11 +263,111 @@ input #iconInputNome{
 }
 
 #teste{
-  height: 80rem;
-  width: 95rem;
+  height: 70rem;
+  width: 83rem;
   overflow-x: scroll;
+  color: #000;
+}
+
+#teste::-webkit-scrollbar{
+  border-radius: 8px;
+  background-color: rgb(214, 214, 214);
+}
+
+#teste::-webkit-scrollbar-thumb{
+  background-color: #f28907;
+  border: 6px;
 }
 
 #contInputsScroll{
   margin-top: 3rem;
+}
+
+.containerInputEmailScroll{
+  height: 6.5rem;
+  width: 75rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
+}
+
+.inputCalendarScroll{
+  height: 6.5rem;
+  width: 35rem;
+  padding-right: 3rem;
+  margin-right: 2.8rem;
+  font-size: 2.2rem;
+  padding-left: 1rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+}
+
+#InputsContainerSelectScroll{
+  height: 6.5rem;
+  width: 37.5rem;
+  padding-right: 3rem;
+  margin-right: 2.8rem;
+  font-size: 2.2rem;
+  padding-left: 1rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+}
+
+.containerInputCpfScroll{
+  height: 6.5rem;
+  width: 75.5rem;
+  margin-top: 3rem;
+  padding-right: 3rem;
+  margin-right: 2.8rem;
+  padding-left: 5.5rem;
+  font-size: 2.5rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+}
+
+.containerInputMoradiaScroll{
+  height: 6.5rem;
+  width: 35.5rem;
+  padding-right: 3rem;
+  padding-left: 5.5rem;
+  font-size: 2.5rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+}
+
+.containerInputLocal{
+  height: 6.5rem;
+  width: 38rem;
+  padding-right: 3rem;
+  padding-left: 5.5rem;
+  margin-left: 2rem;
+  font-size: 2.5rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+}
+
+.containerPreferencesScroll{
+  width: 75.5rem;
+  margin-top: 3rem;
+}
+
+#contInputCheckboxScroll{
+  height: 6.5rem;
+  width: 36.3rem;
+  padding-right: 3rem;
+  margin-right: 3rem;
+  font-size: 2.5rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+}
+
+#containerButtonScroll{
+  margin-left: 10vh;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+
+#buttonCadastrarScroll{
+  margin-bottom: 5rem;
 }

@@ -10,20 +10,22 @@ import EsqueciMinhaSenha from './EsqueciMinhaSenha/EsqueciMinhaSenha'
 import BoasVindas from "./BoasVindas/BoasVindas";
 import reportWebVitals from "./reportWebVitals";
 import Agendamento from "./Agendamento/Agendamento";
-import Perfil from "./Perfil/Perfil"
+import PerfilCuidador from "./Perfil/PerfilCuidador"
+import PerfilCliente from "./Perfil/PerfilCliente";
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <BoasVindas/> */}
     {/* <EsqueciMinhaSenha/> */}
-    {/* <Login/> */}
-    <CadastroCuidador />
+    <Login/>
+    {/* <CadastroCuidador /> */}
     {/* <CadastroCuidador2Page /> */}
     {/* <CadastroCliente /> */}
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}
     {/* <Agendamento/> */}
-    {/* <Perfil/> */}
+    {/* <PerfilCuidador/> */}
+    {/* <PerfilCliente/> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

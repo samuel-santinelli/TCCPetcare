@@ -1,7 +1,7 @@
 #containerMainPet {
-  height: 143.4rem;
-  width: 215rem;
-  margin-top: 2rem;
+  height: 95rem;
+  width: 175rem;
+  margin-top: 3rem;
   display: flex;
   align-items: center;
   -ms-flex-pack: end;
@@ -47,7 +47,7 @@ label {
 }
 
 #containerInputsPet {
-  height: 110rem;
+  height: 95rem;
   width: 98rem;
   margin-left: 90px;
   background-color: #fff;

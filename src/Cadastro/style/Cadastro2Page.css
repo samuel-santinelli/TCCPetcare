@@ -59,7 +59,8 @@ html {
 
 #containerInputs,
 h1 {
-  font-size: 6.5rem;
+  margin-top: 5rem;
+  font-size: 5.5rem;
   color: #f28907;
 }
 

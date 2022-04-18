@@ -2,7 +2,7 @@ import "./style/stylePerfil.css";
 import Banner from "../Agendamento/banner/Banner";
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500';
 
-const Perfil = () => {
+const PerfilCuidador = () => {
   return (
     <div className="containerMainPerfil">
       <div className="containerBannerPerfil">
@@ -67,4 +67,4 @@ const Perfil = () => {
   );
 };
 
-export default Perfil;
+export default PerfilCuidador;

@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --main-color: #f28907;
+  --black: rgba(0, 0, 0, 0.5);
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+body{
+  background-color: #f28907;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+.containerMainPerfilCliente {
+ height: 95vh;
+ width: 85vw;
+ margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  -ms-flex-pack: end;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  background-color: #fff;
+}
+
+.containerBannerCliente{
+  height: 40vh;
+  width: 85vw;
+  background-image: url("../../../images/bannerGolden.jpg");
+  background-size: cover;
+}
+
+.containerCardPerfilCliente{
+  height: 65vh;
+  width: 58vw;
+  margin-top: 28vh;
+  border-radius: 3vh;
+  background-color: var(--main-color);
+  position: absolute;
+}
+
+
+.containerPefilClienteInfo{
+  height: 30vh;
+  width: 40vw;
+  margin-top: 23vh;
+  margin-right: 48vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.cardFotoPerfilCliente{
+  height: 20vh;
+  width: 20vh;
+  margin-left: 10.7vw;
+  background-image: url("../../../images/imagePerfilCuidador.png");
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.containerNamePerfilCliente{
+  position: absolute;
+  margin-top: 22vh;
+  font-size: 3.5rem;
+  display: flex;
+  color: #fff;
+  margin-left: 15vw;
+}
+
+.containerLocationPerfilCliente{
+  position: absolute;
+  margin-top: 25.5vh;
+  font-size: 2.4rem;
+  color: #fff;
+  margin-left: 15vw;
+}
+
+.containerInfoCardPetCuidador{
+  height: 35vh;
+  width: 45vw;
+  display: flex;
+  margin-top: 55vh;
+  position: absolute;
+}
+
+.containerFotoPerfilPet{
+  height: 13vh;
+  width: 13vh;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  background-image: url("../../../images/fotoPerfilPet.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.containerPetInfoPet{
+  height: 35vh;
+  width: 105vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5rem;
+}
+
+.containerNamePerfilPet{
+  position: absolute;
+  margin-top: 4vh;
+  font-size: 4rem;
+  display: flex;
+  color: #000;
+  margin-left: 8vw;
+}
+
+.containerRacaPerfilPet{
+  position: absolute;
+  margin-top: 7.5vh;
+  font-size: 2.4rem;
+  color: #000;
+  margin-left: 9vw;
+}
+
+.containerRightPet{
+  height: 35vh;
+  width: 40vh;
+  padding-top: 1vh;
+  padding-left: 2vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-bottom-right-radius: 5rem;
+  border-top-right-radius: 5rem;
+}
+
+.containerLocationPet{
+  text-align: center;
+  font-size: 3.5rem;
+  margin-left: 3vh;
+  color: #000;
+}
+
+.fotoMoradiaHouse{
+  height: 10vh;
+  width: 5vw;
+  margin-top: 4rem;
+  background-size: cover;
+}
+
+.containerMoradiaPerfilPetRight{
+  height: 15vh;
+  width: 5vw;
+  margin-left: 2vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.containerMoradiaNamePetRight{
+  height: 10vh;
+  width: 6vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerMainInfoPet{
+  height: 22vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.containerMoradiaName{
+  height: 15vh;
+  width: 10vw;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerCityPet{
+  font-size: 2rem;
+  text-align: center;
+  margin-left: 2vw;
+}
+
+.containerLastServices{
+  height: 20vh;
+  width: 20vw;
+  margin-left: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonLastServices{
+  height: 8vh;
+  width: 30vh;
+  background-color: var(--main-color);
+  border-radius: 1rem;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.containerEditPerfil{
+  height: 8vh;
+  width: 4vw;
+  position: absolute;
+  margin-left: 81vw;
+  border: solid 0.2px #fff;
+}
+
+.iconPencil{
+  position: absolute;
+  height: 3.5vh;
+  width: 5vw;
+  margin-top: 1vw;
+  margin-left: 81vw;
+}

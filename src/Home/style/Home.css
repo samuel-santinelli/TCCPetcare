@@ -45,17 +45,17 @@ html {
 /* Conteudo Banner Login começa aqui */
 
 #banner{
-  height: 143.7rem;
-  width: 110rem;
+  height: 95rem;
+  width: 100%;
   background-image: url("../../../images/banner.jpeg");
   background-position: center;
   background-size: cover;
 }
 
 #wave {
-  margin: 94rem;
-  height: 143.7rem;
-  width: 26rem;
+  margin: 58rem;
+  height: 100%;
+  width: 15%;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -82,17 +82,17 @@ h1 {
 /* Conteudo Banner Login termina aqui */
 
 #bannerPet{
-  height: 143.7rem;
-  width: 92rem;
+  height: 95rem;
+  width: 100%;
   background-image: url("../../../images/bannerDog1.jpeg");
   background-position: center;
   background-size: cover;
 }
 
 #wavePet {
-  margin: 77rem;
-  height: 143.7rem;
-  width: 26rem;
+  margin: 53rem;
+  height: 100%;
+  width: 15%;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -106,18 +106,11 @@ h1 {
 }
 
 /* Conteudo Banner Cliente começa aqui */
-#bannerLogin {
-  height: 143.7rem;
-  width: 109rem;
-  background-image: url("../../../images/bannerCliente2.jpg");
-  background-position: center;
-  background-size: cover;
-}
 
 #waveCliente {
-  margin: 92rem;
-  height: 143.7rem;
-  width: 28.4rem;
+  margin: 56rem;
+  height: 100%;
+  width: 15%;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -131,17 +124,17 @@ h1 {
 /* Conteudo banner Next Page cuidador começa aqui */
 
 #bannerNextCuidador{
-  height: 143.8rem;
-  width: 109rem;
+  height: 95rem;
+  width: 100%;
   background-image: url("../../../images/bannerNextPage3.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #waveNextCuidador {
-  margin: 83rem;
-  height: 143.8rem;
-  width: 45rem;
+  margin: 58rem;
+  height: 100%;
+  width: 15%;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -152,17 +145,17 @@ h1 {
 /* Conteudo banner login começa aqui */
 
 .bannerLogin{
-  height: 143.7rem;
-  width: 110rem;
-  background-image: url("../../../images/bannerLogin.png");
+  height: 95rem;
+  width: 100%;
+  background-image: url("../../../images/bannerCliente2.jpg");
   background-position: center;
   background-size: cover;
 }
 
 .wavelogin{
-  margin: 85.9rem;
-  height: 143.7rem;
-  width: 40rem;
+  margin: 58rem;
+  height: 100%;
+  width: 15%;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
@@ -173,17 +166,17 @@ h1 {
 /* Conteudo banner Login termina aqui */
 
 .bannerEsqueciMinhaSenha {
-  height: 143.7rem;
-  width: 110rem;
+  height: 95rem;
+  width: 100%;
   background-image: url("../../../images/BannerEsqueciMinhaSenha.png");
   background-position: center;
   background-size: cover;
 }
 
 #waveEsqueciMinhaSenha {
-  margin: 90rem;
-  height: 143.7rem;
-  width: 45rem;
+  margin: 58rem;
+  height: 100%;
+  width: 15%;
   background-image: url("../../../images/Wave.png");
   position: absolute;
   display:block;
