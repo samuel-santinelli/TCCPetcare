@@ -9,7 +9,7 @@ $idVacina = (int)null;
 //   // echo ($idVacina);
 
 //   $dados= buscaVacina($idVacina); 
-  $idPet= $_GET['id'];
+  $idPet= $_GET['idPet'];
   // echo ($idVacina);
 
   $dados= buscaPet($idPet); 

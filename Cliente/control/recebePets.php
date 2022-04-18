@@ -7,7 +7,7 @@ require_once(SRC .'bd/listarClientes.php');
 require_once(SRC.'bd/updatePet.php');
 require_once(SRC.'config/upload.php');
 require_once(SRC.'control/exibirVacinas.php');
-
+require_once(SRC."control/exibirPets.php");
 // $idVacina= $_GET['idVacina'];
 //   echo ($idVacina);
 
@@ -115,11 +115,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             );
 
             
-            $vacinaPet = array(
-                "idPet" => $idPet,
-                 "idVacina"=> $idVacina
-            
-            );
+          
             // echo($nome);
             // die;
         // echo(inserirPet($pets));
@@ -128,11 +124,61 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 
            
             //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
-           if (inserirPet($pets, $vacinaPet)) //tratamento para ver se os dados chegaram no banco
+           if (inserirPet($pets, $idPet)) //tratamento para ver se os dados chegaram no banco
                { 
-                   echo ("
-                   foi
-                    " );
+                $sql = "insert into tblPets(
+                    nome,
+                    deficiencia,
+                    descricao,
+                    castrado,
+                    foto,
+                    dataNascimento,
+                    avaliacao,
+                    idRaca,
+                    idEspecie,
+                    idFase,
+                    idCliente
+                   
+                  
+                )
+                values(
+                    nome,
+                    deficiencia,
+                    descricao,
+                    castrado,
+                    foto,
+                    dataNascimento,
+                    avaliacao,
+                    idRaca,
+                    idEspecie,
+                    idFase,
+                    idCliente
+            
+                     )
+            ";
+
+              if(  $conexao = conexao()){
+                  echo('foi');
+              }else{
+                  echo("nao");
+              }
+
+
+                mysqli_query($conexao, $sql);
+                // printf ( mysqli_insert_id($conexao));
+                $idPet =  mysqli_insert_id($conexao);
+                echo($idPet);
+                // $dados = exibirPets();
+                // die;
+                // $exibirPets = mysqli_fetch_assoc($dados);
+                   echo (
+                   "
+                   <script>
+                       alert('foi inserido');
+                       window.location.href = '../indexVacinaPet.php?idPet=$idPet';
+                   </script>
+                   " 
+                    );
                     die;
                 }
             else

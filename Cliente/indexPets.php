@@ -218,19 +218,19 @@ $idCliente= $_GET['id'];
         
         </form> 
 
-        <?php
-                $dados = exibirPets();
+        
+                <!-- // $dados = exibirPets();
                 
-                while ($exibir = mysqli_fetch_assoc($dados))
-                {
-                ?>
-                  <a href="indexVacinaPet.php?id=<?=$exibir['idPet']?>">   
-                 <button id="Adicionar um pet" > pet</button>                   
-                </a>
+                // while ($exibir = mysqli_fetch_assoc($dados))
+                // {
+                //  -->
+                  <!-- <a href="indexVacinaPet.php?id=">   
+                  <button id="Adicionar um pet" > pet</button>                   
+                 </a> -->
 
-                    <?php  
-                    }
-                ?>
+                     
+                <!-- //     } -->
+                
           
       
         <?php

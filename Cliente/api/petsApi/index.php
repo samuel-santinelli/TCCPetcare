@@ -3,7 +3,7 @@
 
 
 require_once("vendor/autoload.php");
-
+require_once('../control/recebeComportamentoApi.php');
 
 
 
@@ -137,8 +137,8 @@ $app->post('/pets/inserir', function($request, $response, $args){
          
             require_once('../control/recebePetsApi.php');
             require_once('../control/recebeVacinasApi.php');
-            // require_once('../control/recebeComportamentoApi.php');
-            if( inserirVacinasAPI($dadosBodyJSON) || inserirPetsAPI($dadosBodyJSON)) { 
+
+            if( inserirVacinasAPI($dadosBodyJSON) && inserirPetsAPI($dadosBodyJSON)&& inserirComportamentoAPI($dadosBodyJSON)) { 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
                                     ->write('{"message":"Cadastro de pet criado com sucesso"}');

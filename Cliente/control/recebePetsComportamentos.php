@@ -8,7 +8,7 @@ require_once(SRC."control/exibirPets.php");
 
 
 $idPet = (int)null;
-$idVacina = (int)null;
+$idComportamento = (int)null;
 
 // $idVacina= $_GET['idVacina'];
 //   echo ($idVacina);
@@ -23,7 +23,7 @@ $idVacina = (int)null;
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $idPet = $_POST['idPet'];
-    $idVacina = $_POST['idVacina'];
+    $idComportamento = $_POST['idComportamento'];
     // echo($nome);
     // die;
 
@@ -40,9 +40,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
         else{
         
-            $vacinaPet = array(
+            $comportamentoPet = array(
                 "idPet" => $idPet,
-                "idVacina"=> $idVacina
+                "idComportamento"=> $idComportamento
         
             
             );
@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // echo(inserirPet($pets));
         // die;
 
-           if (inserirVacinaPet($vacinaPet)) 
+           if (inserirPetComportamento($comportamentoPet)) 
                 echo ("
                     <script>
                         alert('foi inserido');

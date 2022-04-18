@@ -43,13 +43,13 @@ $conexao = conexao();
 
 mysqli_query($conexao, $sql);
 // printf ( mysqli_insert_id($conexao));
-$idPet =  mysqli_insert_id($conexao);
-echo($idPet);
+// $idPet =  mysqli_insert_id($conexao);
+// echo($idPet);
 // echo($sql);
 // die;
 
      return true;
-    return $idPet;
+    // return $idPet;
     // }else{
     //     return false;
     // }
