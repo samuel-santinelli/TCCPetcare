@@ -45,6 +45,11 @@ const ConteudoInputsCliente = () => {
     const passwordValue = senha.value.trim();
     const confirmPasswordValue = confirmarSenha.value.trim();
 
+    // if(nome.value || dataNascimento.value || email.value || senha.value || confirmarSenha.value === "") {
+    //   console.log("preencha todos os campos");
+    //   // e.preventDefault();
+    // }
+
     if (senha.value !== confirmarSenha.value) {
       errorValidation(senha);
       senha.focus();

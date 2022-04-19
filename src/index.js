@@ -20,10 +20,10 @@ ReactDOM.render(
     {/* <Login/> */}
     {/* <CadastroCuidador /> */}
     {/* <CadastroCuidador2Page /> */}
-    <CadastroCliente />
+    {/* <CadastroCliente /> */}
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}
-    {/* <Agendamento/> */}
+    <Agendamento/>
     {/* <PerfilCuidador/> */}
     {/* <PerfilCliente/> */}
   </React.StrictMode>,

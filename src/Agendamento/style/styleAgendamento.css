@@ -74,7 +74,8 @@
 
 .containerCardCuidadores {
   margin-top: 3.4rem;
-  height: 90rem;
+  height: auto;
+  min-height: 270rem;
   width: 45vw;
   margin-right: 1rem;
   display: flex;
@@ -167,8 +168,8 @@
 }
 
 .localMap {
-  height: 16rem;
-  width: 12.5vw;
+  height: 15rem;
+  width: 30rem;
 }
 
 /* Container de modal */
