@@ -1,9 +1,8 @@
 #containerButtonAgendar{
   height: 23rem;
-  width: 25rem;
+  width: 23rem;
 }
 .buttonAgendar{
-  margin-top: 2rem;
   height: 4rem;
   width: 25rem;
   border-radius: 21px;
@@ -31,4 +30,8 @@
   color: #fff;
   font-size: 2.2rem;
   text-transform: uppercase;
+}
+
+.iconStar{
+  font-size: 2.9rem;
 }

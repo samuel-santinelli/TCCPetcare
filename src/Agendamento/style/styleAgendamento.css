@@ -27,7 +27,7 @@
 }
 
 .map {
-  height: 25vh;
+  height: 35rem;
   width: 100vw;
 }
 
@@ -96,7 +96,7 @@
 
 .card {
   height: 45rem;
-  width: 30vw;
+  width: 70rem;
   max-width: 40vw;
   background-color: #fff;
   margin-top: 3rem;
@@ -112,6 +112,12 @@
   display: flex;
   flex-direction: row;
   margin-top: 1.5rem;
+}
+
+.iconInputSave{
+  font-size: 1.9rem;
+  float: right;
+  margin-left: 15vw;
 }
 
 .imageCuidador {
@@ -139,17 +145,17 @@
 .hourCuidador {
   font-size: 1.6rem;
   color: var(--colorLocation);
-  margin-left: 2.7rem;
+  margin-left: 2rem;
 }
 
 .containerRating {
   margin-top: 0.7rem;
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 
 .containerBio {
   height: 0rem;
-  width: 40rem;
+  width: 35rem;
   display: flex;
 }
 
@@ -161,15 +167,16 @@
 
 .containerMap {
   height: 10rem;
-  width: 12.5vw;
+  width: 25rem;
+  background-color: red;
   display: flex;
   justify-content: end;
-  margin-left: 27.9rem;
+  margin-left: 29.9rem;
 }
 
 .localMap {
   height: 15rem;
-  width: 30rem;
+  width: 28rem;
 }
 
 /* Container de modal */
