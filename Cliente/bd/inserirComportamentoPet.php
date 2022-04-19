@@ -5,7 +5,7 @@ require_once(SRC."bd/conexao.php");
 
 
 function inserirPetComportamento($arrayPetsComportamentos ){
-    $sql = "insert into tblPetsComportamentos 
+    $sql = "insert into tblPetsComportamento 
     (
         idPet,
         idComportamento
@@ -16,8 +16,8 @@ function inserirPetComportamento($arrayPetsComportamentos ){
     )";
 
         $conexao = conexao();
-echo($sql);
-die;
+// echo($sql);
+// die;
         if(mysqli_query($conexao, $sql)){
             // echo('Foi inserido');
             return true;

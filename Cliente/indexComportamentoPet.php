@@ -14,8 +14,8 @@ $idComportamento= $_GET['idComportamento'];
   // echo ($idPet);
 
   $dados= buscaPet($idPet); 
-  $idComportamento = (int) null;
-  $nomeComportamento = "escolha";
+  
+  // $nomeComportamento = "escolha";
 
 ?>
 
@@ -29,45 +29,15 @@ $idComportamento= $_GET['idComportamento'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro do cuidador</title>
 </head>
-<body>
-            <form method="post" enctype="multipart/form-data" action="control/recebePetsComportamentos.php?idComportamento=<?=$idComportamento?>idPet=<?=$idPet?>">
+<body>                                                                                                                                                           
+            <form method="post" enctype="multipart/form-data" action="control/recebePetsComportamentos.php?idComportamento=<?=$idComportamento?>&idPet=<?=$idPet?>">
       
                    
 
             <input value="<?=$idPet?>" placeholder="idPet" type="text" name="idPet"/>
+            <input value="<?=$idComportamento?>" placeholder="idComportamento" type="text" name="idComportamento"/>
           
-                        <?php 
-                            
-                               $listar= exibirComportamentoPet();
-                              
-            
-                                $exibir= mysqli_fetch_assoc($listar)
-                                
-                                    ?>
-                                     
-                                     <div>
-            <label> docil</label>
-            <input value="<?=$docil?>" placeholder="docil" type="checkbox" name="docil"/>
-            <label> temperamental</label>
-            <input value="<?=$temperamental?>" placeholder="temperamental" type="checkbox" name="temperamental"/>
-            <label> sistematico</label>
-            <input value="<?=$sistematico?>" placeholder="sistematico" type="checkbox" name="sistematico"/>
-            <label> antissocial</label>
-            <input value="<?=$antissocial?>" placeholder="antissocial" type="checkbox" name="antissocial"/>
-            <label> ciumento</label>
-            <input value="<?=$ciumento?>" placeholder="ciumento" type="checkbox" name="ciumento"/>
-            <label> acanhoso</label>
-            <input value="<?=$acanhoso?>" placeholder="acanhoso" type="checkbox" name="acanhoso"/>
-            <label> guloso</label>
-            <input value="<?=$guloso?>" placeholder="guloso" type="checkbox" name="guloso"/>
-            <label> bravo</label>
-            <input value="<?=$bravo?>" placeholder="bravo" type="checkbox" name="bravo"/>
-            </div>
-                                 
-                                   <?php
-                                
-      
-                        ?>
+                      
                 
          <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
      

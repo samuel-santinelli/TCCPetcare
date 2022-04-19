@@ -19,7 +19,7 @@ $guloso = (int) 0;
 $bravo = (int) 0;
 
 $idComportamento= $_GET['idComportamento'];
-  echo ($idComportamento);
+//   echo ($idComportamento);
 
   $dados= buscaComportamentoPet($idComportamento); 
 //   $idPet= $_GET['idPet'];

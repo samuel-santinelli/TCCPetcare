@@ -99,7 +99,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            
            if (inserirComportamento($comportamento, $idComportamento))
                {
-                   
                 $sql = "insert into tblTeste 
                 (
                     docil,
@@ -112,26 +111,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     bravo
                     )
                 values(
-                    '".$arrayComportamento['docil']."',
-                    '".$arrayComportamento['temperamental']."',
-                    '".$arrayComportamento['sistematico']."',
-                    '".$arrayComportamento['antissocial']."',
-                    '".$arrayComportamento['ciumento']."',
-                    '".$arrayComportamento['acanhoso']."',
-                    '".$arrayComportamento['guloso']."',
-                    '".$arrayComportamento['bravo']."'
+                    docil,
+                    temperamental,
+                    sistematico,
+                    antissocial,
+                    ciumento,
+                    acanhoso,
+                    guloso,
+                    bravo
                 )";
-                if(  $conexao = conexao()){
-                    echo('foi');
-                }else{
-                    echo("nao");
-                }
-  
-  
-                  mysqli_query($conexao, $sql);
-                  printf ( mysqli_insert_id($conexao));
-                  $idComportamento =  mysqli_insert_id($conexao);
-                  echo($idComportamento);
+            
+                    $conexao = conexao();
+            // echo($sql);
+            // die;
+            
+            
+            // if(mysqli_query($conexao, $sql)){
+            //     return true;
+            // }
+            // else{
+            //     return false;
+            // }
+            mysqli_query($conexao, $sql);
+            // printf ( mysqli_insert_id($conexao));
+            $idComportamento =  mysqli_insert_id($conexao);
+            // echo($idComportamento);
+            // echo($sql);
+            // die;
+            
+               
                   // $dados = exibirPets();
                   // die;
                   // $exibirPets = mysqli_fetch_assoc($dados);
@@ -143,7 +151,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                      </script>
                      " 
                       ); 
-                      die;
+                    //   die;
                }
             else
                 echo ("
