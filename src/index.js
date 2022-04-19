@@ -17,10 +17,10 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <BoasVindas/> */}
     {/* <EsqueciMinhaSenha/> */}
-    <Login/>
+    {/* <Login/> */}
     {/* <CadastroCuidador /> */}
     {/* <CadastroCuidador2Page /> */}
-    {/* <CadastroCliente /> */}
+    <CadastroCliente />
     {/* <CadastroPetNextPage/> */}
     {/* <CadastroPet/> */}
     {/* <Agendamento/> */}

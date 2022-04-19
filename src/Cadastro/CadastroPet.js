@@ -6,16 +6,16 @@ import InputButtonCadastrar from "./button/inputButtonCadastrar";
 
 function CadastroPet() {
   return (
-    <form class="containerMainPet" id="containerMainPet">
+    <div className="containerMainPet" id="containerMainPet" >
       <HomePet />
-      <div id="containerInputsPet" class="containerInputsPet">
+      <div id="containerInputsPet" className="containerInputsPet">
         <h1>Cadastre seu pet ja procure um cuidador!</h1>
         
         <InputsPet />
 
         <Footer />
       </div>
-    </form>
+      </div>
   );
 }
 

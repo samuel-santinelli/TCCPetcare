@@ -22,9 +22,9 @@ const ConteudoInputsCliente = () => {
     email: "",
     senha: "",
     telefone: "",
-    idSexo:1,
+    idSexo: 1,
   });
-  
+
   console.log(user);
 
   const handleUserSubmit = (user) => {
@@ -35,6 +35,20 @@ const ConteudoInputsCliente = () => {
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => console.log(res.data));
   };
+  function validate(e) {
+    const nome = document.getElementById("nome")
+    const dataNascimento = document.getElementById("dataNascimento")
+    const email = document.getElementById("email")
+    const senha = document.getElementById("senha")
+    const confirmarSenha = document.getElementById("confirmarSenha")
+    const button = document.getElementById("buttonCadastrarCliente")
+
+    if (senha.value !== confirmarSenha.value) {
+      alert("as senhas não concidem!")
+      senha.focus()
+      e.preventDefault()
+    }
+  }
 
   const listElements = () => {
     axios
@@ -127,9 +141,8 @@ const ConteudoInputsCliente = () => {
             placeholder="Selecione seu genêro"
             onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
           >
-            
-              <option value={user.Masculino}>Masculino</option>
-              <option value={user.Masculino}>Feminino</option>
+            <option value={user.Masculino}>Masculino</option>
+            <option value={user.Masculino}>Feminino</option>
           </select>
           <CallIcon id="iconInputLabel" />
           <input
@@ -160,8 +173,9 @@ const ConteudoInputsCliente = () => {
             value="Cadastrar"
             type="submit"
             name="inputConfirmarSenha"
-            id="buttonCadastrar"
+            id="buttonCadastrarCliente"
             className="button"
+            onClick={validate}
           />
         </div>
       </form>

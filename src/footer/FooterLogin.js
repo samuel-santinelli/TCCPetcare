@@ -4,10 +4,10 @@ function FooterLogin() {
   return (
     <>
       <div className="containerCheckBox">
-      <label class="labelInputCheckbox">
+      <label className="labelInputCheckbox">
           Lembre-se de mim
           <input type="checkbox" />
-          <span class="checkmark"></span>
+          <span className="checkmark"></span>
         </label>
         <label>Esqueci minha senha</label>
       </div>

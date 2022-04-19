@@ -5,16 +5,17 @@ import InputsLogin from "./input/InputsLogin"
 
 const Login = () => {
   return (
-    <form class="containerMainPet" id="containerMainPet">
+    <div className="containerMainPet" id="containerMainPet" >
     <HomeLogin />
-    <div id="containerInputsPet" class="containerInputsPet">
+    <div id="containerInputsPet" className="containerInputsPet">
       <h1>Entre na sua conta, venha conosco!</h1>
       <InputsLogin/>
      
     
       <FooterLogin />
     </div>
-  </form>
+    </div>
+  
   )
 }
 
