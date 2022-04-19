@@ -4,6 +4,7 @@
   --main-color: #f28907;
   --black: rgba(0, 0, 0, 0.5);
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  --error: red;
 }
 
 * {
@@ -133,16 +134,52 @@ h1 {
 
 .containerInputSenha{
   height: 6.5rem;
-  width: 48rem;
+  width: 36rem;
+  margin-right: 2rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
   padding-left: 5.5rem;
 }
 
+#contInputsControl {
+  height: 4.5rem;
+  width: 115rem;
+  max-width: 100rem;
+  margin-bottom: 4.6rem;
+  flex-direction: row;
+  display: flex;
+  margin-left: 6.5rem;
+  
+}
+.form-control{
+  height: 6.5rem;
+  width: 39.5rem;
+  margin-right: 2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 1rem;
+}
+
+.form-control.error{
+  border: solid 4px red;
+}
+
+.containerInputSenhaControl{
+  width: auto;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+}
+
+#iconInputLabelControl{
+  font-size: 3.5rem;
+  margin-top: 1rem;
+}
+
 .containerInputConfirmarSenha{
   height: 6.5rem;
-  width: 43rem;
+  width: 48rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;

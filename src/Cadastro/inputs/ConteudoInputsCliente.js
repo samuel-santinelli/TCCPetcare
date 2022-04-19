@@ -9,11 +9,16 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import CallIcon from "@mui/icons-material/Call";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import InputButtonCadastrar from "../button/inputButtonCadastrar";
-import InputCamera from "./InputCamera";
 import validarSenhaForca from "./validation/validation";
 
 const ConteudoInputsCliente = () => {
+  const nome = document.getElementById("nome");
+  const dataNascimento = document.getElementById("dataNascimento");
+  const email = document.getElementById("email");
+  const senha = document.getElementById("senhaClient");
+  const confirmarSenha = document.getElementById("confirmarSenhaControl");
+  const button = document.getElementById("buttonCadastrarCliente");
+
   const [user, setUser] = useState({
     nome: "",
     cpf: "",
@@ -35,19 +40,22 @@ const ConteudoInputsCliente = () => {
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => console.log(res.data));
   };
+
   function validate(e) {
-    const nome = document.getElementById("nome")
-    const dataNascimento = document.getElementById("dataNascimento")
-    const email = document.getElementById("email")
-    const senha = document.getElementById("senha")
-    const confirmarSenha = document.getElementById("confirmarSenha")
-    const button = document.getElementById("buttonCadastrarCliente")
+    const passwordValue = senha.value.trim();
+    const confirmPasswordValue = confirmarSenha.value.trim();
 
     if (senha.value !== confirmarSenha.value) {
-      alert("as senhas não concidem!")
-      senha.focus()
-      e.preventDefault()
+      errorValidation(senha);
+      senha.focus();
+      e.preventDefault();
     }
+  }
+
+  function errorValidation(inputError) {
+    const formError = inputError.parentElement;
+
+    formError.className = "form-control error";
   }
 
   const listElements = () => {
@@ -107,27 +115,29 @@ const ConteudoInputsCliente = () => {
             onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
-        <div id="contInputsPet">
-          <LockIcon id="iconInputLabel" />
-          <input
-            label="Senha"
-            id="senha"
-            type="password"
-            value={user.senha}
-            onKeyUp={validarSenhaForca}
-            className="containerInputSenha"
-            placeholder="Senha"
-            onChange={(e) => setUser({ ...user, senha: e.target.value })}
-          />
-
-          <LockOpenIcon id="iconInputLabel" />
+        <div id="contInputsControl">
+          <div className="form-control">
+            <LockIcon id="iconInputLabelControl" />
+            <input
+              label="Senha"
+              type="password"
+              id="senhaClient"
+              value={user.senha}
+              className="containerInputSenhaControl"
+              placeholder="Senha"
+              onChange={(e) => setUser({ ...user, senha: e.target.value })}
+            />
+          </div>
+          <div className="form-control">
+          <LockOpenIcon id="iconInputLabelControl" />
           <input
             label="Confirmar Senha"
-            id="confirmarSenha"
+            id="confirmarSenhaControl"
             type="password"
-            className="containerInputConfirmarSenha"
+            className="containerInputSenhaControl"
             placeholder="Confirmar Senha"
           />
+          </div>
         </div>
         <div id="impSenha"></div>
         <div id="impForcaSenha"></div>
