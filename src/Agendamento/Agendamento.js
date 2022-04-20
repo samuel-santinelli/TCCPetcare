@@ -11,55 +11,6 @@ import ButtonAgendar from "./button/ButtonAgendar";
 import ButtonAgendarModal from "./button/ButtonAgendarModal";
 import Banner from "./banner/Banner";
 
-const USERDATA = [
-  {
-    nome: "Fernanda",
-    sobrenome: "Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-  {
-    nome: "Fernanda Silva",
-    name: "Ontem as 09:35",
-    imageUrl: "https://dummyimage.com/84x84",
-  },
-];
-
 const Agendamento = () => {
   const [cuidadores, setCuidadores] = useState([]);
 
@@ -95,7 +46,7 @@ const Agendamento = () => {
               {cuidadores.map((cuidador, key) => (
                 <div className="card" key={key}>
                   <div className="contentCenterCuidador">
-                    <div className="imageCuidador" />
+                    <img className="imageCuidador" src={cuidador.foto} alt=""/>
                     <div className="infoCuidador">
                       <label className="nameCuidador">{cuidador.nome}</label>
                       <label className="hourCuidador">
@@ -112,7 +63,8 @@ const Agendamento = () => {
                           {cuidador.biografia}
                         </label>
                       </div>
-                      
+                      <ButtonAgendar />
+                      </div>
                       <div className="containerMap">
                       <RiBookmarkLine className="iconInputSave" />
                         <iframe
@@ -122,9 +74,8 @@ const Agendamento = () => {
                           loading="lazy"
                         ></iframe>
                       </div>
-                      <ButtonAgendar />
                     </div>
-                  </div>
+                  
                 </div>
               ))}
             </div>

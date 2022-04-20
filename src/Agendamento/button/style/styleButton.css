@@ -1,11 +1,12 @@
 #containerButtonAgendar{
   height: 23rem;
   width: 23rem;
+  margin-top: 6rem;
 }
 .buttonAgendar{
-  height: 4rem;
-  width: 25rem;
-  border-radius: 21px;
+  height: 4.5rem;
+  width: 19rem;
+  border-radius: 12px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   background-color: #f28907;
   color: #fff;
@@ -20,6 +21,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 13rem;
+  margin-left: 13rem;
 }
 .buttonAgendarModal{
   height: 6rem;
@@ -30,8 +32,4 @@
   color: #fff;
   font-size: 2.2rem;
   text-transform: uppercase;
-}
-
-.iconStar{
-  font-size: 2.9rem;
 }

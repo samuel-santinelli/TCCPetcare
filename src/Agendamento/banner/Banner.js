@@ -1,6 +1,6 @@
 import "./style/styleBanner.css";
 
-function ButtonAgendar() {
+function Banner() {
   return (
       <section class="carousel" aria-label="Gallery">
   <ol class="carousel__viewport">
@@ -66,4 +66,4 @@ function ButtonAgendar() {
   );
 }
 
-export default ButtonAgendar;
+export default Banner;
