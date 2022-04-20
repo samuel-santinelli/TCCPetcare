@@ -1,33 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../style/CadastroPet.css";
 import PetsIcon from "@mui/icons-material/Pets";
 import InputCamera from "./InputCamera";
 import "../style/InputCheckbox.css";
 
 const InputsPetNextPage = () => {
-  function createAluno(aluno) {
-    const url = "http://seudominio/alunos/";
-    const options = {
-      method: "POST",
-      body: JSON.stringify(aluno),
-    };
+  const [pet, setPet] = useState({})
 
-    fetch(url, options);
-  }
-
-  const aluno = {
-    id: "",
-    nome: "Cleyde Gomes da Silva",
-    email: "cleydegomes@gmail.com",
-    celular: "1199988888",
-    logradouro: "rua sem fim",
-    bairro: "Sem nome",
-    cidade: "Barueri",
-    estado: "SP",
-    cep: "18135300",
-  };
-
-  createAluno(aluno);
 
   return (
     <>

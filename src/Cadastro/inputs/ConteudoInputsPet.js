@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../style/CadastroPet.css";
 import PetsIcon from "@mui/icons-material/Pets";
 import InputCamera from "./InputCamera";
@@ -7,36 +8,72 @@ import TextField from "@mui/material/TextField";
 import "../style/InputCheckbox.css";
 
 const InputsPet = () => {
+  const [pet, setPet] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets/listarEspecie")
+      .then((res) => {
+        setPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets/listarFase")
+      .then((res) => {
+        setPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets/listarRaca")
+      .then((res) => {
+        setPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
+  console.log(pet);
+
   return (
     <>
       <form>
         <InputCamera />
         <div id="contInputsPet">
-          <select id="select" className="InputsContainerSelectEspecie">
+          <select id="select" className="InputsContainerSelectEspecie" value={pet.selectEspecie}>
             <option disabled selected>
-              Espécie
+              Qual o tipo de Espécie?
             </option>
-            <option>V8.V10</option>
-            <option>Femininio</option>
-            <option>Não Binario</option>
+            {pet.map((pet, keyVacina) => (
+              <option key={keyVacina}>{pet.nomeEspecie}</option>
+            ))}
           </select>
         </div>
         <div id="contInputsPet">
-          <select id="InputsContainerSelect">
+          <select id="InputsContainerSelect" value={pet.selectFase}>
             <option disabled selected>
               Fase
             </option>
-            <option>Filhote</option>
-            <option>Adulto</option>
-            <option>Sênior</option>
+            {pet.map((pet, keyVacina) => (
+              <option key={keyVacina}>{pet.tipo}</option>
+            ))}
           </select>
-          <select id="InputsContainerSelect">
+          <select id="InputsContainerSelect" value={pet.selectRaca}>
             <option disabled selected>
               Raça
             </option>
-            <option>Masculino</option>
-            <option>Femininio</option>
-            <option>Não Binario</option>
+            {pet.map((pet, keyVacina) => (
+              <option key={keyVacina}>{pet.nome}</option>
+            ))}
           </select>
         </div>
         <div id="containerInputCheckbox">
