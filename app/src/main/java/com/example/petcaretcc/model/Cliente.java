@@ -41,9 +41,9 @@ public class Cliente {
     @Expose
     private String foto;
 
-    @SerializedName("sexo")
+    @SerializedName("idSexo")
     @Expose
-    private int sexo;
+    private int idSexo;
 
     @SerializedName("numero")
     @Expose
@@ -54,7 +54,7 @@ public class Cliente {
 
     }
 
-    public Cliente(String nome, String email, String senha, String cpf, String telefone, String dataNascimento, String cep, int numero, int sexo){
+    public Cliente(String nome, String email, String senha, String cpf, String telefone, String dataNascimento, String cep, int numero, int idSexo){
 
         this.nome = nome;
         this.email = email;
@@ -64,7 +64,7 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
         this.cep = cep;
         this.numero = numero;
-        this.sexo = sexo;
+        this.idSexo = idSexo;
 
     }
 
@@ -104,9 +104,9 @@ public class Cliente {
 
     public void setFoto(String foto) { this.foto = foto; }
 
-    public int getSexo() { return sexo; }
+    public int getSexo() { return idSexo; }
 
-    public void setSexo(int sexo) { this.sexo = sexo; }
+    public void setSexo(int idSexo) { this.idSexo = idSexo; }
 
     public int getNumero() { return numero; }
 

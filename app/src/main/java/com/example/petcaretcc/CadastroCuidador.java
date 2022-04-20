@@ -2,11 +2,13 @@ package com.example.petcaretcc;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -32,9 +34,17 @@ public class CadastroCuidador extends AppCompatActivity {
     private EditText txtTelefone;
     private EditText txtCPF;
     private EditText txtNumero;
+    private CardView txtFoto;
+    private EditText txtPreferencias;
+    private EditText txtLimitacoes;
+    private EditText txtbiografia;
+    private RadioGroup radioMoradia;
+    private RadioGroup radioSexo;
+
     private Button btnCadastrar;
 
-
+    private CheckBox cbPossuiCriancas;
+    private CheckBox cbPossuiAnimais;
 
     private TextView intentLogin;
 
@@ -48,7 +58,20 @@ public class CadastroCuidador extends AppCompatActivity {
         //Resgate
         //btnCadastrar = findViewById(R.id.btnCadastrar)
 
-
+        txtNome = findViewById(R.id.txtNome);
+        txtEmail = findViewById(R.id.txtEmail);
+        txtDataNascimento = findViewById(R.id.txtDataDeNascimento);
+        txtSenha = findViewById(R.id.txtSenha);
+        txtTelefone = findViewById(R.id.txtTelefone);
+        radioSexo = findViewById(R.id.radioSexo);
+        txtCPF = findViewById(R.id.txtCpf);
+        radioMoradia = findViewById(R.id.radioMoradia);
+        txtCEP = findViewById(R.id.txtCep);
+        cbPossuiAnimais = findViewById(R.id.checkPossuiAnimais);
+        cbPossuiCriancas = findViewById(R.id.checkPossuiCriancas);
+        txtLimitacoes = findViewById(R.id.txtLimitacoes);
+        txtPreferencias = findViewById(R.id.txtPreferencias);
+        //cvFoto = findViewById(R.id);
 
         routerInterface = APIUtil.getClientInterface();
 
@@ -71,15 +94,6 @@ public class CadastroCuidador extends AppCompatActivity {
 
                                 Cuidador cuidador = new Cuidador();
 
-//                                Cuidador2.setNome(txtNome.getText().toString());
-//                                Cuidador2.setEmail(txtEmail.getText().toString());
-//                                Cuidador2.setDataNascimento(txtDataNascimento.getText().toString());
-//                                Cuidador2.setSenha(txtSenha.getText().toString());
-//                                Cuidador2.setTelefone(txtTelefone.getText().toString());
-//                                Cuidador2.setSexo(Integer.parseInt(txtSexo.getText().toString()));
-//                                Cuidador2.setCpf(txtCPF.getText().toString());
-//                                Cuidador2.setFoto("0");
-
                                 cuidador.setNome("nome teste");
                                 cuidador.setEmail("email teste");
                                 cuidador.setDataNascimento("2022-04-12");
@@ -87,7 +101,6 @@ public class CadastroCuidador extends AppCompatActivity {
                                 cuidador.setTelefone("123 telefone");
                                 //cuidador.setSexo();
                                 cuidador.setCpf("123 cpf");
-                                //cuidador.setSexo();
                                 //cuidador.setMoradia();
                                 cuidador.setCep("foto teste");
                                 cuidador.setNumero("foto teste");
@@ -99,10 +112,9 @@ public class CadastroCuidador extends AppCompatActivity {
 
                                 addCuidador(cuidador);
 
-                                //Cuidador2.setCep(txtCPF.getText().toString());
-                                //Cuidador2.setNumero(43);
+                                //Cuidador.setCep(txtCPF.getText().toString());
+                                //Cuidador.setNumero(43);
 
-                                //addCuidador(Cuidador2);
 
                             })
                             .setNegativeButton("CANCELAR", (dialog1, wich)->{})
@@ -190,6 +202,6 @@ public class CadastroCuidador extends AppCompatActivity {
             }
         });
 
-    }//Fim do consumo de API para cadastrar Cuidador2
+    }//Fim do consumo de API para cadastrar Cuidador
 
 }

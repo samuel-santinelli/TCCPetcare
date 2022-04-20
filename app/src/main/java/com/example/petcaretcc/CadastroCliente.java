@@ -167,12 +167,20 @@ public class CadastroCliente extends AppCompatActivity {
             @Override
             public void onResponse(Call<Cliente> call, Response<Cliente> response) {
 
+                Log.d("API-ERRO", new String(String.valueOf(response.errorBody())));
+
                 if(response.isSuccessful()){
 
+                    Log.d("API-ERRO ONFAILURE", String.valueOf(response.message()));
                     Toast.makeText(CadastroCliente.this,
                             "CLIENTE CADASTRADO",
                             Toast.LENGTH_LONG).show();
 
+                }
+                else{
+                    Toast.makeText(CadastroCliente.this,
+                            "ELSE ONRESPONSE",
+                            Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -181,7 +189,7 @@ public class CadastroCliente extends AppCompatActivity {
 
                 Log.d("API-ERRO ONFAILURE", t.getMessage());
                 Toast.makeText(CadastroCliente.this,
-                        "ON FAILURE",
+                        "ONFAILURE - API",
                         Toast.LENGTH_LONG).show();
 
             }
