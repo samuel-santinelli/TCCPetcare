@@ -142,6 +142,7 @@ const InputsIcon = () => {
                   })
                 }
               />
+
               <select
                 value={cuidador.idSexoHost}
                 id="InputsContainerSelect"

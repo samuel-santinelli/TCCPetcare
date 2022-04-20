@@ -22,8 +22,8 @@ ReactDOM.render(
     {/* <CadastroCuidador2Page /> */}
     {/* <CadastroCliente /> */}
     {/* <CadastroPetNextPage/> */}
-    {/* <CadastroPet/> */}
-    <Agendamento/>
+    <CadastroPet/>
+    {/* <Agendamento/> */}
     {/* <PerfilCuidador/> */}
     {/* <PerfilCliente/> */}
   </React.StrictMode>,

@@ -28,6 +28,7 @@ const ConteudoInputsCliente = () => {
     senha: "",
     telefone: "",
     idSexo: 1,
+    nomeSexo: "Masculino",
   });
 
   console.log(user);
@@ -40,6 +41,19 @@ const ConteudoInputsCliente = () => {
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => console.log(res.data));
   };
+
+  const [sexo, setSexo] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/cliente/listarSexo")
+      .then((res) => {
+        setSexo(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
 
   function validate(e) {
     const passwordValue = senha.value.trim();
@@ -71,6 +85,7 @@ const ConteudoInputsCliente = () => {
   useEffect(() => {
     listElements();
   }, []);
+
   return (
     <>
       <form onSubmit={() => handleUserSubmit(user)}>
@@ -134,14 +149,14 @@ const ConteudoInputsCliente = () => {
             />
           </div>
           <div className="form-control">
-          <LockOpenIcon id="iconInputLabelControl" />
-          <input
-            label="Confirmar Senha"
-            id="confirmarSenhaControl"
-            type="password"
-            className="containerInputSenhaControl"
-            placeholder="Confirmar Senha"
-          />
+            <LockOpenIcon id="iconInputLabelControl" />
+            <input
+              label="Confirmar Senha"
+              id="confirmarSenhaControl"
+              type="password"
+              className="containerInputSenhaControl"
+              placeholder="Confirmar Senha"
+            />
           </div>
         </div>
         <div id="impSenha"></div>
@@ -149,6 +164,7 @@ const ConteudoInputsCliente = () => {
         <div id="erroSenhaForca"></div>
         <div id="contInputsPet">
           <LocationOnIcon id="iconInputLabel" />
+
           <select
             id="moradia"
             className="containerInput"
@@ -156,9 +172,13 @@ const ConteudoInputsCliente = () => {
             placeholder="Selecione seu genêro"
             onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
           >
-            <option value={user.Masculino}>Masculino</option>
-            <option value={user.Masculino}>Feminino</option>
+            {sexo.map((sexo, keyCuidador) => (
+              <option key={keyCuidador}>
+                {sexo.nomeSexo}
+              </option>
+            ))}
           </select>
+
           <CallIcon id="iconInputLabel" />
           <input
             label="Telefone"
