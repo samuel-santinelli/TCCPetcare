@@ -23,6 +23,7 @@ function buscaPet($idPet){
       on tblEspecies.idEspecie = tblPets.idEspecie inner join tblRacas on tblRacas.idRaca = tblPets.idRaca 
       inner join tblFases on tblFases.idFase = tblPets.idFase 
       inner join tblClientes on tblClientes.idCliente = tblPets.idCliente
+      inner join tblVacinas on tblVacinas.idVacina = tblPets.idVacina
       where tblPets.idPet =".$idPet;
     
     $conexao = conexao();

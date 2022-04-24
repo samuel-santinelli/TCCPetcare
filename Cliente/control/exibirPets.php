@@ -33,7 +33,9 @@ function criarArrayPet($objeto)
             "idRaca" =>$exibirDados['idRaca'],
             "idFase" =>$exibirDados['idFase'],
             "idEspecie" =>$exibirDados['idEspecie'],
-            "idCliente" =>$exibirDados['idCliente']
+            "idCliente" =>$exibirDados['idCliente'],
+            "comportamento" =>$exibirDados['comportamento'],
+            "idVacina" =>$exibirDados['idVacina']
             
            
         );

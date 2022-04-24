@@ -11,18 +11,19 @@ require_once(SRC."control/exibirPets.php");
 require_once(SRC.'control/exibirVacinas.php');
 require_once(SRC.'control/exibirPorte.php');
 
-$docil = (int) 0;
-$temperamental = (int) 0;
-$sistematico = (int) 0;
-$antissocial = (int) 0;
-$ciumento = (int) 0;
-$acanhoso = (int) 0;
-$guloso = (int) 0;
-$bravo = (int) 0;
+// $docil = (int) 0;
+// $temperamental = (int) 0;
+// $sistematico = (int) 0;
+// $antissocial = (int) 0;
+// $ciumento = (int) 0;
+// $acanhoso = (int) 0;
+// $guloso = (int) 0;
+// $bravo = (int) 0;
 
 
 
 $nome = (string)null;
+$comportamento = (string)null;
 $deficiencia = (int) null;
 $descricao = (string) null;
 $castrado = (string) null;
@@ -76,6 +77,7 @@ $idCliente= $_GET['id'];
       $idEspecie = $_SESSION['pet'] ['idEspecie'];
       $idFases = $_SESSION['pet']['idFase'];
       $idCliente = $_SESSION['pet'] ['idCliente']; 
+      $comportamento = $_SESSION['pet'] ['comportamento']; 
       $modo = "Atualizar"; 
       
 
@@ -219,27 +221,11 @@ $idCliente= $_GET['id'];
             <input value="<?=$castrado?>" placeholder="castrado" type="checkbox" name="castrado" id="castrado"/>
             <input value="<?=$dataNascimento?>" placeholder="data nascimento" type="text" name="dataNascimento" id="dataNascimento"/>
             <input value="<?=$avaliacao?>" placeholder="avaliacao" type="text" name="avaliacao" id="avaliacao"/>
-                      
+            <input value="<?=$comportamento?>" placeholder="comportamento" type="text" name="comportamento" id="comportamento"/>
               
             <!-- <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>    -->
 
-            <label> docil</label>
-            <input value="<?=$docil?>" placeholder="docil" type="checkbox" name="docil"/>
-            <label> temperamental</label>
-            <input value="<?=$temperamental?>" placeholder="temperamental" type="checkbox" name="temperamental"/>
-            <label> sistematico</label>
-            <input value="<?=$sistematico?>" placeholder="sistematico" type="checkbox" name="sistematico"/>
-            <label> antissocial</label>
-            <input value="<?=$antissocial?>" placeholder="antissocial" type="checkbox" name="antissocial"/>
-            <label> ciumento</label>
-            <input value="<?=$ciumento?>" placeholder="ciumento" type="checkbox" name="ciumento"/>
-            <label> acanhoso</label>
-            <input value="<?=$acanhoso?>" placeholder="acanhoso" type="checkbox" name="acanhoso"/>
-            <label> guloso</label>
-            <input value="<?=$guloso?>" placeholder="guloso" type="checkbox" name="guloso"/>
-            <label> bravo</label>
-            <input value="<?=$bravo?>" placeholder="bravo" type="checkbox" name="bravo"/>
-            </div>
+           
 
 
 

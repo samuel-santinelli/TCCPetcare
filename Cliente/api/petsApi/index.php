@@ -136,9 +136,9 @@ $app->post('/pets/inserir', function($request, $response, $args){
 
          
             require_once('../control/recebePetsApi.php');
-            require_once('../control/recebeVacinasApi.php');
+            // require_once('../control/recebeVacinasApi.php');
            
-            if( inserirPetsAPI($dadosBodyJSON) &&  inserirVacinasAPI($dadosBodyJSON) && inserirComportamentoAPI($dadosBodyJSON)) { 
+            if( inserirPetsAPI($dadosBodyJSON)) { 
 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')

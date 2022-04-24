@@ -34,5 +34,18 @@ function busca($idCuidador){
   return $select;
 }
 
+function buscarNome($nome){
+  //script
+  $sql = "select * from tblHost where tblHost.nome like '%".$nome."%'";
+
+
+
+$conexao = conexao();
+
+
+$select =  mysqli_query($conexao, $sql);
+
+return $select;
+}
 
 ?>

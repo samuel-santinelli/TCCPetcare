@@ -22,7 +22,7 @@
             </div>
             <div id="cadastroInformacoes">
         
-                <form action="autenticar.php" name="frmCadastro" method="post" >
+                <form action="autenticacao.php" name="frmCadastro" method="post" >
                    
                     <div class="campo">
                         <div class="informacoesPessoais">

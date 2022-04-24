@@ -7,6 +7,11 @@ function exibirHost(){
     $dadosListar = listarHost();
     return $dadosListar;
 }
+function buscarNomeCuidadores($nome){
+    $dados = buscarNome($nome);
+
+    return $dados;
+}
 
       
 function criarArrayHost($objeto)

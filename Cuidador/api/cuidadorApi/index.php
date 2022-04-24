@@ -18,17 +18,53 @@ $app = new \Slim\App($config);
 
 $app->get('/cuidador', function($request, $response, $args){
 
-    if($listar = exibirHost()){
-        if( $listarDadosArray = criarArrayHost($listar)){  
-            $listarDadosJSON = criarJSONHost($listarDadosArray);
-             }
-    }
-       if($listarDadosArray){
-        return $response   ->withStatus(200) 
-        ->withHeader('Content-Type', 'application/json') 
-        ->write($listarDadosJSON);
+    // if($listar = exibirHost()){
+    //     if( $listarDadosArray = criarArrayHost($listar)){  
+    //         $listarDadosJSON = criarJSONHost($listarDadosArray);
+    //          }
+    // }
+    //    if($listarDadosArray){
+    //     return $response   ->withStatus(200) 
+    //     ->withHeader('Content-Type', 'application/json') 
+    //     ->write($listarDadosJSON);
+    // }else{
+    //     return $response   ->withStatus(204);
+    // }
+
+
+    if(isset( $request ->getQueryParams()['nome'])) //vendo se existe esse parametro nome, se teve a existencia da chegada de dados, parametro para filtrar pelo nome
+    {
+
+    /************** Recebendo dados pela query string */
+        $nome = (string) null;
+        $nome = $request ->getQueryParams()['nome']; 
+
+        if($listDados = buscarNomeCuidadores($nome)){
+
+                if( $listDadosArray = criarArrayHost($listDados)){  
+                         $listDadosJSON = criarJSONHost($listDadosArray);
+                }
+        }
+ 
     }else{
-        return $response   ->withStatus(204);
+   
+  
+        if($listDados =  exibirHost()){
+       
+            if( $listDadosArray = criarArrayHost($listDados)){  
+                     $listDadosJSON = criarJSONHost($listDadosArray); 
+            }
+        } 
+    }
+
+   
+    if( $listDadosArray){ 
+        return $response   ->withStatus(200) 
+                           ->withHeader('Content-Type', 'application/json') 
+                           ->write($listDadosJSON); 
+
+    }else{
+                     return $response   ->withStatus(204); 
     }
   
 

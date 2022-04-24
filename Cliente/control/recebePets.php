@@ -15,14 +15,14 @@ require_once(SRC."control/exibirPets.php");
 //   $dados= buscaVacina($idVacina); 
 
 
-$docil = (int) 0;
-$temperamental = (int) 0;
-$sistematico = (int) 0;
-$antissocial = (int) 0;
-$ciumento = (int) 0;
-$acanhoso = (int) 0;
-$guloso = (int) 0;
-$bravo = (int) 0;
+// $docil = (int) 0;
+// $temperamental = (int) 0;
+// $sistematico = (int) 0;
+// $antissocial = (int) 0;
+// $ciumento = (int) 0;
+// $acanhoso = (int) 0;
+// $guloso = (int) 0;
+// $bravo = (int) 0;
 
 
 $nome = (string)null;
@@ -53,46 +53,46 @@ else{
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     
-    if(isset( $_POST['docil'])){
-        $docil = 1;
-     } else{
-         $docil = 0;
-     } 
-     if(isset( $_POST['temperamental'])){
-         $temperamental = 1;
-      } else{
-          $temperamental = 0;
-      }  
-      if(isset( $_POST['sistematico'])){
-         $sistematico = 1;
-      } else{
-          $sistematico = 0;
-      }   
-      if(isset( $_POST['antissocial'])){
-         $antissocial = 1;
-      } else{
-          $antissocial = 0;
-      }   
-      if(isset( $_POST['ciumento'])){
-         $ciumento = 1;
-      } else{
-          $ciumento = 0;
-      }   
-      if(isset( $_POST['acanhoso'])){
-         $acanhoso = 1;
-      } else{
-          $acanhoso = 0;
-      }   
-      if(isset( $_POST['guloso'])){
-         $guloso = 1;
-      } else{
-          $guloso = 0;
-      }   
-      if(isset( $_POST['bravo'])){
-         $bravo = 1;
-      } else{
-          $bravo = 0;
-      }      
+    // if(isset( $_POST['docil'])){
+    //     $docil = 1;
+    //  } else{
+    //      $docil = 0;
+    //  } 
+    //  if(isset( $_POST['temperamental'])){
+    //      $temperamental = 1;
+    //   } else{
+    //       $temperamental = 0;
+    //   }  
+    //   if(isset( $_POST['sistematico'])){
+    //      $sistematico = 1;
+    //   } else{
+    //       $sistematico = 0;
+    //   }   
+    //   if(isset( $_POST['antissocial'])){
+    //      $antissocial = 1;
+    //   } else{
+    //       $antissocial = 0;
+    //   }   
+    //   if(isset( $_POST['ciumento'])){
+    //      $ciumento = 1;
+    //   } else{
+    //       $ciumento = 0;
+    //   }   
+    //   if(isset( $_POST['acanhoso'])){
+    //      $acanhoso = 1;
+    //   } else{
+    //       $acanhoso = 0;
+    //   }   
+    //   if(isset( $_POST['guloso'])){
+    //      $guloso = 1;
+    //   } else{
+    //       $guloso = 0;
+    //   }   
+    //   if(isset( $_POST['bravo'])){
+    //      $bravo = 1;
+    //   } else{
+    //       $bravo = 0;
+    //   }      
  
  
    
@@ -111,6 +111,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $idEspecie = $_POST['sltEspecie'];
     $idFases = $_POST['sltFases'];
     $idVacina = $_POST['sltVacina'];
+    $comportamento = $_POST['comportamento'];
     // $idCliente = $_POST['idCliente'];
     if(isset( $_POST['deficiencia'])){
         $deficiencia = 1;
@@ -168,24 +169,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "idEspecie" => $idEspecie,
                 "idFase"=> $idFases,
                 "idCliente"=> $idCliente,
-                "idPet" => $idPet
+                "idPet" => $idPet,
+                "comportamento" => $comportamento,
+                "idVacina" => $idVacina
             
             );
 
-            $comportamento = array(
-             
-                "docil" => $docil,
-                "temperamental" => $temperamental,
-                "sistematico" => $sistematico,
-                "antissocial" => $antissocial,
-                "ciumento" => $ciumento,
-                "acanhoso" => $acanhoso,
-                "guloso" => $guloso,
-                "bravo" => $bravo
-
-               
-            
-            );
+         
          
             
           
@@ -197,97 +187,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 
            
             //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
-           if (inserirPet($pets, $idPet, $idComportamento) && inserirComportamento($comportamento)) //tratamento para ver se os dados chegaram no banco
-               { 
-                $sql = "insert into tblPets(
-                    nome,
-                    deficiencia,
-                    descricao,
-                    castrado,
-                    foto,
-                    dataNascimento,
-                    avaliacao,
-                    idRaca,
-                    idEspecie,
-                    idFase,
-                    idCliente
-                   
+           if (inserirPet($pets)) //tratamento para ver se os dados chegaram no banco
+               
+            echo (
+                "
+                <script>
+                    alert('foi inserido');
+                    window.location.href = '../indexPets.php';
                   
-                )
-                values(
-                    nome,
-                    deficiencia,
-                    descricao,
-                    castrado,
-                    foto,
-                    dataNascimento,
-                    avaliacao,
-                    idRaca,
-                    idEspecie,
-                    idFase,
-                    idCliente
-            
-                     )
-            ";
-            
-            if(  $conexao = conexao()){
-                echo('foi');
-            }else{
-                echo("nao");
-            }
-            $query = "insert into tblTeste 
-                    (
-                        docil,
-                        temperamental,
-                        sistematico,
-                        antissocial,
-                        ciumento,
-                        acanhoso,
-                        guloso,
-                        bravo
-                        )
-                    values(
-                        docil,
-                        temperamental,
-                        sistematico,
-                        antissocial,
-                        ciumento,
-                        acanhoso,
-                        guloso,
-                        bravo
-                    )";
-
-              if(  $conexaoQuery = conexao()){
-                  echo('foi');
-              }else{
-                  echo("nao");
-              }
-
-
-                mysqli_query($conexao, $sql);
-                mysqli_query($conexaoQuery, $query);
-                // printf ( mysqli_insert_id($conexao));
-                $idPet =  mysqli_insert_id($conexao);
-                $idComportamento =  mysqli_insert_id($conexaoQuery);
-                //     echo($idComportamento);
-                // echo($idPet);
-                // $dados = exibirPets();
-                // die;
-                // $exibirPets = mysqli_fetch_assoc($dados);
-                   echo (
-                   "
-                   <script>
-                       alert('foi inserido');
-                       window.location.href = '../indexVacinaPet.php?idPet=$idPet';
-                       window.location.href = '../indexComportamentoPet.php?idPet=$idPet&idComportamento=$idComportamento';
-                       
-                   </script>
-                   " 
-                    );
+                    
+                </script>
+                " 
+                 );
+        
                     
 
-               }
-            }elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')//logica para o atualizar
+           
+            elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')//logica para o atualizar
             { 
                 //  editaPet($pets);
                 
@@ -317,7 +233,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 
-
+}
 
 
 

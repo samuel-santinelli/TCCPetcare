@@ -1,10 +1,11 @@
 <?php
-// require_once("../config/config.php");
+
+
 require_once(SRC.'bd/conexao.php');
 
-function listar(){
+function listarTiposServicos(){
 
-    $sql = "select *from  tblSexoHost";
+    $sql = "select *from tblTipos ";
 
     $conexao = conexao();
 
@@ -18,6 +19,7 @@ function listar(){
 
     return $select;
 }
+
 
 
 ?>
