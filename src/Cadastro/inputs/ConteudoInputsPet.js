@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../style/CadastroPet.css";
-import PetsIcon from "@mui/icons-material/Pets";
 import InputCamera from "./InputCamera";
-import InputAdornment from "@mui/material/InputAdornment";
-import TextField from "@mui/material/TextField";
 import "../style/InputCheckbox.css";
 
 const InputsPet = () => {
@@ -48,6 +45,9 @@ const InputsPet = () => {
     <>
       <form>
         <InputCamera />
+        <div id="contInputsPet">
+        <input id="InputsContainerSelect" placeholder="Qual o nome do seu pet?"/>
+        </div>
         <div id="contInputsPet">
           <select
             id="select"
