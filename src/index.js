@@ -15,6 +15,7 @@ import PerfilCliente from "./Perfil/PerfilCliente";
 
 ReactDOM.render(
   <React.StrictMode>
+    
     {/* <BoasVindas/> */}
     {/* <EsqueciMinhaSenha/> */}
     {/* <Login/> */}
