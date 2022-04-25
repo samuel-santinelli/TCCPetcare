@@ -1,0 +1,371 @@
+/* Conteudo da main se inicia aqui */
+
+main{
+    width: 100%;
+    height: 2700px;
+    /* background-color: rgb(153, 192, 226); */
+
+}
+.box-container{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+    border-radius: 21px;
+    width: 93%;
+    height: 480px;
+    background-color: rgba(249, 250, 249);
+    
+}
+
+#img-box-container{
+    width: 700px;
+    height: 700px;
+    margin-left: 50px;
+}
+
+.texto-container{
+    /* background-color: aqua; */
+    width: 400px;
+    height: 350px;
+    margin-left: 20px;
+    margin-top: 70px;
+
+    
+    
+}
+
+.texto-superior{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 50px;
+    /* background-color: azure; */
+    margin: auto;
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.tituloPet-servico{
+    /* width: 10%; */
+    height: inherit;
+    color: black;
+    text-align: center;
+    font-size: 32px;
+}
+
+.tituloHome-servico{
+    /* width: 10%; */
+    height: inherit;
+    color: #F28907;
+    text-align: center;
+    font-size: 32px;
+}
+
+
+.texto-meio{
+    width: 80%;
+    height: 170px;
+    /* background-color: burlywood; */
+    margin: auto;
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.box-container2{
+    height:200px;
+    /* background-color:gold; */
+    text-align: center;
+    font-size: 32px;
+    padding-top: 80px;
+}
+#text-center{
+    color:black;
+}
+#text-center2{
+    color: #F28907;
+}
+.box-container3{
+    height: 550px;
+    /* background-color: aqua; */
+}
+#div-input{
+    height: 80px;
+    /* background-color:blue; */
+}
+#input-pesquisa{
+    width: 500px;
+    height: 50px;
+    border-style: none;
+    list-style: none;
+    border-radius: 21px;
+    margin-left: 80px;
+    padding-left: 2.7vw;
+    font-size: 1.6rem;
+    display: flex;
+    outline: none;
+    border:none;
+    background-color: #e9e9e9;
+    
+}
+.pesquisa-icon{
+    margin-left: 20px;
+    display: flex;
+    /* background-color: darkgreen; */
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+    position: absolute;
+    margin-left: 75px;
+    /* margin-left: 4.9vw; */
+    
+}
+.pesquisa-icon::before{
+    content:'';
+    width: 30%;
+    height: 30%;
+    border:4px solid #F28907;
+    border-radius: 50%;
+}
+.pesquisa-icon::after{
+    content: "";
+    width: 25%;
+    height: 4px;
+    background-color: #F28907;
+    border-radius: 50%;
+}
+
+#cuidadores-container{
+    justify-content:center;
+    flex-grow: 1;
+    display: flex;
+    height: 470px;
+/* background-color: #e9e9e9; */
+
+}
+.box1{
+    width: 380px;
+    height: 400px;
+    background-color: #e9e9e9;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.header-box1{
+    height: 167px;
+    background-color: #F28907;
+}
+
+.feedback{
+   height: 750px;
+   /* background-color:purple;
+     */
+}
+#linha-feedback{
+    height:150px;
+    /* background-color:gold; */
+    text-align: center;
+    font-size: 32px;
+    padding-top: 50px;
+}
+#container-feedback{
+    height: 750px;
+    display: flex;
+    flex-direction: row;
+    /* background-color: red; */
+}
+#div-form-feedback{
+    width: 50%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.frmfeedback{
+    /* width: 500px; */
+    margin-left: 130px;
+    margin-top: 50px;
+}
+.input-feedback{ 
+    height: 70px;
+    width:450px;
+    border: none;
+    outline: none;
+    border-style: none;
+    list-style: none;
+    border-bottom: 2px solid #F28907;
+    margin-bottom: 50px;
+    padding-left: 16px;
+    /* background-color: aqua; */
+}
+.input-feedback-mensagem{
+    height: 240px;
+    width:450px;
+    outline: none;
+    border-style: none;
+    list-style: none;
+    border: 2px solid #F28907;
+    border-radius: 21px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    padding-left: 16px;
+}
+.input-feedback-enviar{
+    width: 190px;
+    height: 55px;
+    background-color: #F28907;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    border: none;
+    border-radius: 21px;
+    color: white;
+
+}
+#img-feedback{
+    width: 50%;
+    height: inherit;
+    background-image: url("../../../images/Feedback-bro\ 1.png");
+    background-repeat: no-repeat;
+}
+
+/* Conteudo da main se encerra aqui */
+
+/* Conteudo do header se inicia aqui */
+header{
+    width: 100%;
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../../images//gatinhosCapa.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+}
+#parteSuperior{
+    height: 50px;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.boxBotao{
+    width: 451px;
+    height: inherit;
+    gap: 20px;
+    display: flex;
+}
+
+#login-input{
+    width: 120px;
+    height: inherit;
+    border-style: none;
+    background-color: #F28907;
+    border-radius: 21px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+#cadastro-input{
+    width: 180px;
+    height: inherit;
+    border-style: none;
+    background-color: #F28907;
+    border-radius: 21px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+#parteMeio{
+    width: inherit;
+    height: 210px;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 300px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 44px;
+    margin-top: 38px;
+    line-height: 60px;
+    font-weight: 700;
+    /* justify-content: center; */
+}
+#div-texto{
+    position: absolute;
+    width: 544px;
+    height: 172px;
+    /* left: 708px;
+    top: 123px; */
+    
+}
+
+#parteInferior{
+    width: inherit;
+    height: 100px;
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 500px;
+}
+
+#Agendar-agora{
+    width: 250px;
+    height: 60px;
+    border-style: none;
+    background-color: #F28907;
+    border-radius: 21px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-top: 25px
+;
+    
+}
+
+/* .texto-header{
+    float: right;
+    margin-right: 100px;
+
+    color: white;
+    font-size: larger;
+    float: left;
+}
+
+@media (max-width: 720px){
+    header{
+        
+    }
+} */
+
+/* Conteudo do header se se encerra aqui */
+
+/* Conteudo do body se inicia aqui */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: aqua; */
+}
+
+/* Conteudo do body se encerra aqui */
