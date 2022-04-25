@@ -219,3 +219,14 @@ h3{
 }
 
 /* Conteudo Pet NextPage termina aqui*/
+
+.inputObs{
+  height: 15.5rem;
+  width: 56rem;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  margin-left: 7rem;
+  padding-bottom: 10rem;
+  text-indent: 1rem;
+}

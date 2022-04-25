@@ -49,7 +49,11 @@ const InputsPet = () => {
       <form>
         <InputCamera />
         <div id="contInputsPet">
-          <select id="select" className="InputsContainerSelectEspecie" value={pet.selectEspecie}>
+          <select
+            id="select"
+            className="InputsContainerSelectEspecie"
+            value={pet.selectEspecie}
+          >
             <option disabled selected>
               Qual o tipo de Espécie?
             </option>
@@ -76,59 +80,8 @@ const InputsPet = () => {
             ))}
           </select>
         </div>
-        <div id="containerInputCheckbox">
-          <label className="labelInputCheckbox">
-            Dócil
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <div className="inputCheckboxLeft">
-            <label className="labelInputCheckbox">
-              Temperamental
-              <input type="checkbox" />
-              <span className="checkmark"></span>
-            </label>
-          </div>
-
-          <label className="labelInputCheckbox">
-            Sistematico
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-        </div>
-        <div id="containerInputCheckbox">
-          <label className="labelInputCheckbox">
-            Antissocial
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <label className="labelInputCheckbox">
-            Ciúmento
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <div className="inputCheckboxLeftAcanhoso">
-            <label className="labelInputCheckbox">
-              Acanhoso
-              <input type="checkbox" />
-              <span className="checkmark"></span>
-            </label>
-          </div>
-        </div>
-
-        <div id="containerInputCheckbox">
-          <label className="labelInputCheckbox">
-            Guloso
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <div className="inputCheckboxLeftBravo">
-            <label className="labelInputCheckbox">
-              Bravo
-              <input type="checkbox" />
-              <span className="checkmark"></span>
-            </label>
-          </div>
+        <div className="contInputsPet">
+          <input className="inputObs" type="text" placeholder="Descreva o comportamento do seu pet"/>
         </div>
         <div id="containerButton">
           <input
