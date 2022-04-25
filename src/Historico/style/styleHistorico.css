@@ -1,0 +1,142 @@
+/* Conteudo da main inicia aqui */
+#titulo{
+    height: 100px;
+    /* background-color:gold; */
+    padding: 20px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+}
+#text1{
+color:black
+}
+#text2{
+    color: #F28907;
+}
+
+#box-container1{
+    height: 600px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction:row;
+}
+#pessoas{
+    width: 50%;
+    height: inherit;
+    /* background-color: #F28907; */
+}
+#mapa{
+    margin-right: 30px;
+    width: 50%;
+    height: inherit;
+    background-color: #07f28c;
+}
+.card{
+    width: 600px;
+    height: 110px;
+    border-radius: 21px;
+    background-color: rgb(224, 224, 225);
+    margin-top: 30px;
+    margin-left: 100px;
+    display: flex;
+}
+.foto{
+    width:92px;
+    height:87px;
+    /* background-color: #f20707; */
+    margin-left: 24px;
+    margin-top: 10px;
+    border-radius: 50%;
+    background-image: url("../../../images/fotoCard.png");
+}
+.texts{
+    display: flex;
+    flex-direction:column;
+    margin-top: 25px;
+    margin-left: 20px;
+    width: 190px;
+    height: 70px;
+    /* background-color:   rgb(192, 145, 145); */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    text-align: justify;
+    
+    
+}
+.nome1{
+    font-size: 20px;
+}
+.nome2{
+    margin-top: 10px;
+    font-size: 13px;
+    color:rgba(0, 0, 0, 0.46);
+}
+.texts2{
+    display: flex;
+    flex-direction:column;
+    margin-top: 25px;
+    margin-left: 113px;
+    width: 140px;
+    height: 70px;
+    /* background-color:   rgb(171, 145, 192); */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    text-align: right;
+    line-height: 29px;
+}
+.local{
+    color:rgba(0, 0, 0, 0.46);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+footer{
+    height: 80px;
+}
+
+
+/* Conteudo da main se encerra aqui */
+
+/* Conteudo do header se inicia aqui */
+header{
+    height: 150px;
+    /* background-color: rgb(218, 87, 87); */
+}
+#icon-close{
+    width: 50px;
+    height:50px;
+    background-color: #F28907;
+    margin: 50px;
+    text-align: center;
+    padding-top: 6px;
+    border-radius:50%; 
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;   
+    font-size: 32px;    
+    color: white;
+}
+/* Conteudo do header se encerra aqui */
+
+/* Conteudo do body se incia aqui */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: aqua; */
+}
+/* Conteudo do body se encerra aqui */
