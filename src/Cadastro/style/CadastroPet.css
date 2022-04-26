@@ -90,7 +90,8 @@ label {
 
 #contInputCheckbox {
   height: 6rem;
-  width: 39.3rem;
+  width: auto;
+  min-width: 20.5vw;
   margin-bottom: 15px;
   margin-top: 1.7rem;
   margin-right: 2rem;
@@ -99,14 +100,19 @@ label {
 }
 
 .containerSelectPeso{
-  height: 25rem;
-  margin-left: 7rem;
+  height: 25vh;
+  width: 30vw;
+  margin-left: 7vw;
+}
 
+.containerSelectPeso, h3{
+  margin-left: 6vw;
 }
 
 .containerInputsSelectPeso{
-  height: 20rem;
-  width: 65rem;
+  height: 20vh;
+  width: auto;
+  min-width: 37vw;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -130,8 +136,8 @@ h3{
 }
 
 .containerSelectPesoMarked{
-  height: 10rem;
-  width: 8rem;
+  height: 5vh;
+  width: 3vw;
   padding-left: 4rem;
   text-align: center;
 }
@@ -141,7 +147,7 @@ h3{
 }
 
 .containerSelectPesoMarked input:checked ~ .checkmarkPeso {
-  background-color: #2196F3;
+  background-color: red;
 }
 
 .containerSelectPesoMarked:after {
@@ -165,32 +171,40 @@ h3{
 
 
 #peso5kg{
-  height: 12.9rem;
-  width: 13.7rem;
+  height: auto;
+  min-height: 10vh;
+  width: 5.9vw;
+  margin-top: 1vw;
   -webkit-background-size: cover;
   background-size: cover;
   background-image: url("../../../images/peso5kg.png");
 }
 
 #peso10kg{
-  height: 12.9rem;
-  width: 13.7rem;
+  height: auto;
+  min-height: 10vh;
+  width: 5.3vw;
+  margin-top: 1vw;
   -webkit-background-size: cover;
   background-size: cover;
   background-image: url("../../../images/peso10kg.png");
 }
 
 #peso20kg{
-  height: 13.9rem;
-  width: 13.7rem;
+  height: auto;
+  min-height: 10vh;
+  width: 5.3vw;
+  margin-top: 1vw;
   -webkit-background-size: cover;
   background-size: cover;
   background-image: url("../../../images/peso20kg.png");
 }
 
 #peso40kg{
-  height: 13.9rem;
-  width: 13.7rem;
+  height: auto;
+  min-height: 10vh;
+  width: 5.3vw;
+  margin-top: 1vw;
   -webkit-background-size: cover;
   background-size: cover;
   background-image: url("../../../images/peso40kg.png");
