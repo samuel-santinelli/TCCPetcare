@@ -12,11 +12,12 @@ import reportWebVitals from "./reportWebVitals";
 import Agendamento from "./Agendamento/Agendamento";
 import PerfilCuidador from "./Perfil/PerfilCuidador";
 import PerfilCliente from "./Perfil/PerfilCliente";
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import OurRoutes from "./routes/OurRoutes";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <OurRoutes />
+  </BrowserRouter>,
   document.getElementById("root")
 );

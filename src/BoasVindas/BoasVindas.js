@@ -1,6 +1,7 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import { Link } from "react-router-dom";
 import "./style/styleBoasVindas.css";
 
 const Login = () => {
@@ -18,20 +19,26 @@ const Login = () => {
       </div>
 
       <div className="containerButtonWelcome">
-        <input
-          type="button"
-          value="Adicione seu pet"
-          className="inputButtonWelcome"
-        />
+        <Link to="/CadastroPet">
+          <input
+            type="button"
+            value="Adicione seu pet"
+            className="inputButtonWelcome"
+          />
+         
+        </Link>
         <AddIcon id="iconInputWelcome" />
-        </div>
-        <div className="containerButtonWelcome">
+      </div>
+
+      <div className="containerButtonWelcome">
+      <Link to="/CadastroPet">
         <input
           type="button"
           value="Deixar para depois"
           className="inputButtonWelcome"
         />
-        <WatchLaterIcon id="iconInputWelcome"/>
+        </Link>
+        <WatchLaterIcon id="iconInputWelcome" />
       </div>
     </div>
   );
