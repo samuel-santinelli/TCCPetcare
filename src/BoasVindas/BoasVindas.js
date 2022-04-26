@@ -31,7 +31,7 @@ const Login = () => {
       </div>
 
       <div className="containerButtonWelcome">
-      <Link to="/CadastroPet">
+      <Link to="/Agendamento">
         <input
           type="button"
           value="Deixar para depois"

@@ -76,11 +76,14 @@
 
 .containerButtonWelcome{
     height: 10vh;
-    width: 80vh;
+    width: 55vh;
     justify-content: center;
     align-items: center;
     display: flex;
-    
+}
+
+.containerButtonWelcome, input:hover{
+    cursor: pointer;
 }
 
 .inputButtonWelcome{
@@ -96,8 +99,9 @@
 }
 
 #iconInputWelcome{
-    height: 5vh;
-    width: 3vw;
+    font-size: 3.9rem;
     position: absolute;
-    margin-left: 10.7vw;
+    margin-left: 11.4vw;
+    margin-top: 0.5rem;
+    float: right;
 }
