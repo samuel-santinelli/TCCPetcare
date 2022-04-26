@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.petcaretcc">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,15 +16,7 @@
         android:theme="@style/Theme.PetCareTCC">
         <activity
             android:name=".TelaAgendamento"
-            android:exported="true">
-
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            android:exported="false">
         </activity>
         <activity
             android:name=".TelaLoading"
@@ -47,7 +39,15 @@
             android:exported="false" />
         <activity
             android:name=".CadastroCliente"
-            android:exported="false" />
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".TelaRedirecionamento"
             android:exported="false" />
@@ -61,7 +61,7 @@
             android:name=".RecuperarSenha"
             android:exported="false" />
         <activity
-            android:name=".PerfilCuidador"
+            android:name=".PerfilCuidadorAgenda"
             android:exported="false" />
         <activity
             android:name=".CadastroCuidador"
@@ -69,6 +69,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false">
+
         </activity>
     </application>
 
