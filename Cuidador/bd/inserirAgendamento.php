@@ -39,8 +39,8 @@
      ";
 
      $conexao = conexao();
-             echo($sql);
-             die;
+            //  echo($sql);
+            //  die;
 
      if($teste = mysqli_query($conexao, $sql)){
         // echo('foi 1');

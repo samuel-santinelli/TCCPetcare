@@ -48,4 +48,19 @@ $select =  mysqli_query($conexao, $sql);
 return $select;
 }
 
+
+function buscaHost($idHost){
+   
+  $sql = "select tblHost.idHost, tblSexoHost.idSexoHost from tblHost 
+  inner join tblSexoHost on tblSexoHost.idSexoHost = tblHost.idSexoHost
+  where tblHost.idHost =".$idHost;
+
+  $conexao = conexao();
+  // echo($sql);
+  // die;
+  $select = mysqli_query($conexao,$sql);
+
+  return $select;
+}
+
 ?>

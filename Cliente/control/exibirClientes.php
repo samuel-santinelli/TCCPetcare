@@ -62,7 +62,7 @@ function busca($idCliente){
     $sql = "select tblClientes.*, tblPets.nome from tblClientes
 	inner join tblPets
     on tblPets.idPet = tblClientes.idPet
-    where tblClientes.idClientes = ".$idCliente;
+    where tblClientes.idCliente = ".$idCliente;
 
     $conexao = conexao();
 

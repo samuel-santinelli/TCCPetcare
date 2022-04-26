@@ -55,7 +55,7 @@ $idPet = (int) 0;
 $idCliente= $_GET['id'];
 //   echo ($idCliente);
 
-  $dados= buscaCliente($idCliente); 
+  $dados= busca($idCliente); 
 
 //   $Vacina= $_GET['idVacina'];
 //   //   echo ($idCliente);

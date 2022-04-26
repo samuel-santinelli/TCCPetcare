@@ -2,6 +2,7 @@
 
 
 require_once('../bd/inserirCliente.php');
+
 require_once('../config/config.php');
 require_once(SRC.'config/upload.php');
 require_once(SRC .'bd/updateCliente.php');
@@ -90,8 +91,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            
                 //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
                if (inserirCliente($cliente)) //tratamento para ver se os dados chegaram no banco
-                    echo ("
-                       foi");
+                 {
+               
+                
+                       echo (
+                       "
+                       <script>
+                           alert('foi inserido');
+                           window.location.href = '../indexAddPet.php';
+                          
+                           
+                       </script>
+                       " 
+                        );
+                 }
+               
+               
+               
+              
                 else
                     echo ("
                         <script>

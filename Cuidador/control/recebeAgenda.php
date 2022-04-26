@@ -4,21 +4,23 @@
 require_once('../bd/inserirAgendamento.php');
 require_once('../config/config.php');
 require_once(SRC .'bd/update.php');
-
+require_once(SRC."../Cliente/bd/listarClientes.php");
 
 
 $valor = (double) null;
 $dataFinal = (string) null;
 $dataInicial = (string) null;
 
+// $idCliente= $_GET['idCliente'];
+// //   echo ($idCliente);
+//   $dados= buscaCliente($idCliente);
 
-
-if(isset($_GET['id'])){
-    $id = (int) $_GET['id'];
-}
-else{
-  $id = (int) 0; 
-} 
+// if(isset($_GET['id'])){
+//     $id = (int) $_GET['id'];
+// }
+// else{
+//   $id = (int) 0; 
+// } 
 
 
 
@@ -27,9 +29,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $dataInicial = $_POST['dataInicial'];
     $dataFinal = $_POST['dataFinal'];
     $idTipo = $_POST['sltTipos'];
-  
-
-
+    $idCliente = $_POST['idCliente'];
+    $idPet = $_POST['idPet'];
+    $idHost = $_POST['idHost'];
 
   
 

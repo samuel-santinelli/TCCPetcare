@@ -124,7 +124,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            
             //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
            if (inserir($cuidador)) //tratamento para ver se os dados chegaram no banco
-                echo ("
+        
+           echo ("
                     <script>
                         alert('foi inserido');
                         window.location.href = '../index.php';

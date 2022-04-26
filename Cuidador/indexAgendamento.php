@@ -1,10 +1,23 @@
 <?php
 require_once('config/config.php');
 require_once(SRC. 'control/exibirTiposServicos.php');
-
-
+require_once(SRC."../Cliente/bd/listarClientes.php");
+require_once(SRC."../Cuidador/bd/listarHost.php");
 $idTipo = (int) null;
 $nome = ("selecione um tipo");
+
+$idCliente= $_GET['idCliente'];
+//   echo ($idCliente);
+
+  $dados= buscaClientePet($idCliente);
+  
+$idPet= $_GET['idPet'];
+//   echo ($idCliente);
+
+  $dados= buscaClientePet($idPet);
+  
+  $idHost = $_GET['idHost'];
+  $dados= buscaHost($idHost); 
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +29,7 @@ $nome = ("selecione um tipo");
     <title>Agendamento</title>
 </head>
 <body>
-<form method="post" action="control/recebeAgenda.php">
+<form method="post" action="control/recebeAgenda.php?idCliente=<?=$idCliente?>?idPet=<?=$idPet?>?idHost=<?=$idHost?>">
 
 <input value="" placeholder="nome" type="text" name="nome" id="nome"/>
 
@@ -46,7 +59,9 @@ $nome = ("selecione um tipo");
       
                         ?>
                         </select>
-          
+                        <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>   
+                        <input value="<?=$idPet?>" placeholder="idPet" type="text" name="idPet" id="idPet"/>   
+                        <input value="<?=$idHost?>" placeholder="idHost" type="text" name="idHost" id="idHost"/>   
             <input value="agendar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
         </form>
 </body>

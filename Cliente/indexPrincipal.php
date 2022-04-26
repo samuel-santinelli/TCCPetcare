@@ -1,9 +1,11 @@
 <?php
 require_once("config/config.php");
 require_once(SRC."control/exibirClientes.php");
+require_once(SRC."control/exibirPets.php");
 
 $idCliente = $_GET['idCliente'];
 $dados= buscaCliente($idCliente); 
+
 
 ?>
 
@@ -19,21 +21,22 @@ $dados= buscaCliente($idCliente);
     <!-- <form> -->
     <!-- <input value="<?=$idCliente?>" placeholder="idCliente" type="submit" name="idCliente" id="idCliente"/>    -->
     <?php
-                $dados = exibirClientes();
-                
-                $exibirClientes = mysqli_fetch_assoc($dados)
+                $dados = exibirPets();
+                while ($exibirClientes = mysqli_fetch_assoc($dados))
+                {
+               
                 
                 
                 ?>                      
 
 
 
-        <a href="../Cuidador/indexAgendamento.php?id=<?=$exibirClientes['idCliente']?>">   
-        <button id="Adicionar um pet" > Adicionar um pet</button>                   
+        <a href="../Cuidador/indexBuscaCuidador.php?idPet=<?=$exibirClientes['idPet']?>&idCliente=<?=$exibirClientes['idCliente']?>">   
+        <button id="Adicionar um pet" > Agendar o seu cuidador</button>                   
         </a>
 
         <?php  
-                   
+                }    
                 ?>
     <!-- </form> -->
 </body>
