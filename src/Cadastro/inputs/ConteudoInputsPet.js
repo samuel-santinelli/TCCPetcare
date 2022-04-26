@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../style/CadastroPet.css";
@@ -9,7 +7,7 @@ import "../style/InputCheckbox.css";
 const InputsPet = () => {
   const [pet, setPet] = useState({
     nome: "",
-    deficiencia: "",
+    deficiencia: 1,
     descricao: "",
     castrado: 1,
     foto: "",
@@ -20,7 +18,14 @@ const InputsPet = () => {
     idEspecie: 1,
     idCliente: 1,
     comportamento: "",
-    idVacina: 2
+    idVacina: 2,
+    idPorte: 1,
+    nomePorte: "",
+    nomeEspecie: "",
+    tipo: "",
+    nomeVacina: "",
+    idCliente: 10,
+    avaliacao: 1,
   });
 
   const handleSubmitPet = (pet) => {
@@ -31,54 +36,73 @@ const InputsPet = () => {
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) => console.log(res.data));
   };
+  const listElements = () => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets")
+      .then((res) => console.log(res.data));
+  };
+  useEffect(() => {
+    listElements();
+  }, []);
+
+  console.log(pet);
 
   const [infoPet, setInfoPet] = useState([]);
-  
-useEffect(() => {
-  axios
-    .get("http://localhost/Cuidador/Cliente/api/pets/listarEspecie")
-    .then((res) => {
-      setPet(res.data);
-    })
-    .catch(() => {
-      console.log("Deu erro");
-    });
-}, []);
 
-useEffect(() => {
-  axios
-    .get("http://localhost/Cuidador/Cliente/api/pets/listarFase")
-    .then((res) => {
-      setPet(res.data);
-    })
-    .catch(() => {
-      console.log("Deu erro");
-    });
-}, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets/listarEspecie")
+      .then((res) => {
+        setInfoPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
 
-useEffect(() => {
-  axios
-    .get("http://localhost/Cuidador/Cliente/api/pets/listarRaca")
-    .then((res) => {
-      setPet(res.data);
-    })
-    .catch(() => {
-      console.log("Deu erro");
-    });
-}, []);
-console.log(pet);
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets/listarFase")
+      .then((res) => {
+        setInfoPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets/listarRaca")
+      .then((res) => {
+        setInfoPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/pets/listarVacinas")
+      .then((res) => {
+        setInfoPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
 
   return (
     <>
-      <form onSubmit={handleSubmitPet(pet)}>
+      <form onSubmit={() => handleSubmitPet(pet)}>
         <div id="containerScroll">
           <InputCamera />
           <div id="contInputsPet">
             <input
               className="containerInputNomePet"
               placeholder="Qual o nome do seu pet?"
-              value={setPet.nome}
+              value={pet.nome}
               onChange={(e) => setPet({ ...pet, nome: e.target.value })}
             />
           </div>
@@ -86,31 +110,31 @@ console.log(pet);
             <select
               id="select"
               className="InputsContainerSelectEspecie"
-              value={infoPet.selectEspecie}
+              value={pet.idEspecie}
+              onChange={(e) => setPet({ ...pet, idEspecie: e.target.value })}
             >
-              <option disabled selected>
-                Qual o tipo de Espécie?
-              </option>
               {infoPet.map((pet, keyVacina) => (
                 <option key={keyVacina}>{pet.nomeEspecie}</option>
               ))}
             </select>
           </div>
           <div id="contInputsPet">
-            <select id="InputsContainerSelectPet" value={infoPet.selectFase}>
-              <option disabled selected>
-                Fase
-              </option>
-              {infoPet.map((pet, keyVacina) => (
-                <option key={keyVacina}>{pet.tipo}</option>
+            <select
+              id="InputsContainerSelectPet"
+              value={pet.idFase}
+              onChange={(e) => setPet({ ...pet, idFase: e.target.value })}
+            >
+              {infoPet.map((fase, keyFase) => (
+                <option key={keyFase}>{fase.tipo}</option>
               ))}
             </select>
-            <select id="InputsContainerSelectPet" value={infoPet.selectRaca}>
-              <option disabled selected>
-                Raça
-              </option>
-              {infoPet.map((pet, keyVacina) => (
-                <option key={keyVacina}>{pet.nome}</option>
+            <select
+              id="InputsContainerSelectPet"
+              value={pet.idRaca}
+              onChange={(e) => setPet({ ...pet, idRaca: e.target.value })}
+            >
+              {infoPet.map((raca, keyRaca) => (
+                <option key={keyRaca}>{raca.nome}</option>
               ))}
             </select>
           </div>
@@ -119,66 +143,50 @@ console.log(pet);
               className="inputObs"
               type="text"
               placeholder="Descreva o comportamento do seu pet"
+              value={pet.comportamento}
+              onChange={(e) =>
+                setPet({ ...pet, comportamento: e.target.value })
+              }
             />
           </div>
           <div id="contInputsPet">
-            <select id="InputsContainerSelectVacina">
-              <option disabled selected>
-                Vacinas
-              </option>
-              <option>Masculino</option>
-              <option>Femininio</option>
-              <option>Não Binario</option>
+            <select
+              id="InputsContainerSelectVacina"
+              value={pet.idVacina}
+              onChange={(e) => setPet({ ...pet, idVacina: e.target.value })}
+            >
+              {infoPet.map((vacina, keyVacina) => (
+                <option key={keyVacina}>{vacina.nomeVacina}</option>
+              ))}
             </select>
           </div>
           <div id="contInputsPetCheckbox">
             <div id="contInputCheckbox">
               <label className="labelInputCheckboxCuidador">
                 Possui deficiência?
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  value={pet.deficiencia}
+                  onChange={(e) =>
+                    setPet({ ...pet, deficiencia: e.target.value })
+                  }
+                />
                 <span className="checkmarkCuidador"></span>
               </label>
             </div>
             <div id="contInputCheckbox">
               <label className="labelInputCheckboxCuidador">
                 Seu PET é castrado?
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  value={pet.castrado}
+                  onChange={(e) => setPet({ ...pet, castrado: e.target.value })}
+                />
                 <span className="checkmarkCuidador"></span>
               </label>
             </div>
           </div>
-          <div className="containerSelectPeso">
-            <h3>PORTE</h3>
-            <div>
-              <div className="containerInputsSelectPeso">
-                <label className="containerSelectPesoMarked">
-                  <input
-                    type="radio"
-                    checked="checked"
-                    name="radio"
-                    className="radioPeso"
-                  />
-                  <div id="peso5kg" />
-                  <span className="checkmarkPeso"></span>
-                </label>
-                <label className="containerSelectPesoMarked">
-                  <input type="radio" name="radio" className="radioPeso" />
-                  <div id="peso10kg" />
-                  <span className="checkmarkPeso"></span>
-                </label>
-                <label className="containerSelectPesoMarked">
-                  <input type="radio" name="radio" className="radioPeso" />
-                  <div id="peso20kg" />
-                  <span className="checkmarkPeso"></span>
-                </label>
-                <label className="containerSelectPesoMarked">
-                  <input type="radio" name="radio" className="radioPeso" />
-                  <div id="peso40kg" />
-                  <span className="checkmarkPeso"></span>
-                </label>
-              </div>
-            </div>
-          </div>
+
           <div id="containerButton">
             <input
               value="Cadastrar"
@@ -194,4 +202,3 @@ console.log(pet);
 };
 
 export default InputsPet;
-

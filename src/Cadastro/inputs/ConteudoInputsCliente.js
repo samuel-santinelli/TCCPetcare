@@ -8,6 +8,7 @@ import LockOpenIcon from "@mui/icons-material/LockOpen";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import CallIcon from "@mui/icons-material/Call";
+import CadastroPet from "../CadastroPet";
 import BoasVindas from "../../BoasVindas/BoasVindas"
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
@@ -43,6 +44,7 @@ const ConteudoInputsCliente = () => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => console.log(res.data));
+      navigate("/BoasVindas")
   };
 
   const [sexo, setSexo] = useState([]);
@@ -204,7 +206,7 @@ const ConteudoInputsCliente = () => {
         </div>
 
         <div id="containerButton">
-          <Link to="/BoasVindas">
+          {/* <Link to="/BoasVindas"> */}
             <input
               value="Cadastrar"
               type="submit"
@@ -213,7 +215,7 @@ const ConteudoInputsCliente = () => {
               className="button"
               onClick={validate}
             />
-          </Link>
+          {/* </Link> */}
         </div>
       </form>
     </>

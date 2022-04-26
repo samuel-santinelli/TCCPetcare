@@ -101,18 +101,19 @@ label {
 
 .containerSelectPeso{
   height: 25vh;
-  width: 30vw;
+  width: 35vw;
   margin-left: 7vw;
 }
 
-.containerSelectPeso, h3{
-  margin-left: 6vw;
+h3{
+margin-top: 3vw;
+margin-bottom: 1vw;
 }
 
 .containerInputsSelectPeso{
   height: 20vh;
   width: auto;
-  min-width: 37vw;
+  min-width: 25vw;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -138,7 +139,7 @@ h3{
 .containerSelectPesoMarked{
   height: 5vh;
   width: 3vw;
-  padding-left: 4rem;
+  padding-left: 3.2vw;
   text-align: center;
 }
 

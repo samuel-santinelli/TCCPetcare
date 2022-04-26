@@ -17,8 +17,8 @@ import OurRoutes from "./routes/OurRoutes";
 
 ReactDOM.render(
   <BrowserRouter>
-  <Login/>
-    {/* <OurRoutes /> */}
+  {/* <Login/> */}
+    <OurRoutes />
   </BrowserRouter>,
   document.getElementById("root")
 );

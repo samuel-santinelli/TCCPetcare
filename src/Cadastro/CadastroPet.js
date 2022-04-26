@@ -9,7 +9,7 @@ function CadastroPet() {
     <div className="containerMainPet" id="containerMainPet" >
       <HomePet />
       <div id="containerInputsPet" className="containerInputsPet">
-        <h1>Cadastre seu pet ja procure um cuidador!</h1>
+        <h1>Cadastre seu pet já procure um cuidador!</h1>
         
         <InputsPet />
 
