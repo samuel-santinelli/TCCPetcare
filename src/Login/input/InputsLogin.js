@@ -4,36 +4,21 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import LockIcon from "@mui/icons-material/Lock";
 import "./style/ContainerInputsLogin.css";
 
-const InputsLogin = () => {
-  const [userLogin, setLogin] = useState({
-    login: "",
-    senha: "",
-  });
-  console.log(userLogin);
+function InputsLogin(){
 
   const handleLoginSubmit = (userLogin) => {
-    axios.defaults.headers.post["Content-Type"] =
-      "application/json;charset=utf-8";
-    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     axios
-      .post("http://localhost/Cuidador/Cliente/api/cliente", userLogin)
-      .then((res) => console.log(res.data));
+      .post("http://localhost/Cuidador/Cliente/api/cliente", {
+      login: userLogin.login,
+      senha: userLogin.email,
+      }).then((res) => {
+        console.log(res.data)
+    })
   };
-
-  useEffect(() => {
-    axios
-      .get("http://localhost/Cuidador/Cliente/api/cliente")
-      .then((res) => {
-        setLogin(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro");
-      });
-  }, []);
 
   return (
     <>
-    <form onSubmit={() => handleLoginSubmit(userLogin)}>
+    <form onSubmit={handleLoginSubmit}>
       <div className="containerInputsLogin">
         <div id="InputsLogin">
           <AccountCircle id="iconInputLabelLogin" />
@@ -42,8 +27,6 @@ const InputsLogin = () => {
             id="emailLogin"
             className="inputLogin"
             placeholder="Digite seu email"
-            value={userLogin.login}
-            onChange={(e) => setLogin({...userLogin, login: e.target.value})}
           />
         </div>
         <div>
@@ -54,8 +37,6 @@ const InputsLogin = () => {
             id="senhaLogin"
             className="inputLogin"
             placeholder="Digite sua senha"
-            value={userLogin.senha}
-            onChange={(e) => setLogin({...userLogin, senha: e.target.value})}
           />
         </div>
         <div id="containerButton">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -7,6 +8,7 @@ import LockOpenIcon from "@mui/icons-material/LockOpen";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import CallIcon from "@mui/icons-material/Call";
+import BoasVindas from "../../BoasVindas/BoasVindas"
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
@@ -32,6 +34,7 @@ const ConteudoInputsCliente = () => {
   });
 
   console.log(user);
+  const navigate = useNavigate();
 
   const handleUserSubmit = (user) => {
     axios.defaults.headers.post["Content-Type"] =
@@ -164,7 +167,6 @@ const ConteudoInputsCliente = () => {
         <div id="erroSenhaForca"></div>
         <div id="contInputsPet">
           <LocationOnIcon id="iconInputLabel" />
-
           <select
             id="moradia"
             className="containerInput"
@@ -173,9 +175,7 @@ const ConteudoInputsCliente = () => {
             onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
           >
             {sexo.map((sexo, keyCuidador) => (
-              <option key={keyCuidador}>
-                {sexo.nomeSexo}
-              </option>
+              <option key={keyCuidador}>{sexo.nomeSexo}</option>
             ))}
           </select>
 
@@ -204,14 +204,16 @@ const ConteudoInputsCliente = () => {
         </div>
 
         <div id="containerButton">
-          <input
-            value="Cadastrar"
-            type="submit"
-            name="inputConfirmarSenha"
-            id="buttonCadastrarCliente"
-            className="button"
-            onClick={validate}
-          />
+          <Link to="/BoasVindas">
+            <input
+              value="Cadastrar"
+              type="submit"
+              name="inputConfirmarSenha"
+              id="buttonCadastrarCliente"
+              className="button"
+              onClick={validate}
+            />
+          </Link>
         </div>
       </form>
     </>

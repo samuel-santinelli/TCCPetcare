@@ -76,22 +76,9 @@ h1 {
   margin-left: 6.5rem;
 }
 
-#nome, #sobrenome, #email, #senha, #confirmarSenha, #moradia, #telefone, #cpf{
-  font-size: 2.5rem;
-  font-weight: 500;
-}
-
-#senha, #moradia{
-  width: 35rem;
-}
-
-#cpf{
-  margin-right: 5rem;
-}
-
 .inputCalendar{
   height: 6.5rem;
-  width: 42rem;
+  width: 21.8vw;
   padding-right: 3rem;
   font-size: 2.2rem;
   padding-left: 1rem;
@@ -101,7 +88,8 @@ h1 {
 
 .containerInput{
   height: 6.5rem;
-  width: 30rem;
+  width: auto;
+  min-width: 35.6rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -110,7 +98,7 @@ h1 {
 
 .containerInputNome, .containerInputSobrenome, .containerInputCpf, .containerInputMoradia{
   height: 6.5rem;
-  width: 36rem;
+  width: 18.8vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -119,7 +107,7 @@ h1 {
 
 .containerInputEmail, .containerInputCpf{
   height: 6.5rem;
-  width: 81rem;
+  width: 42.3vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -154,7 +142,8 @@ h1 {
 }
 .form-control{
   height: 6.5rem;
-  width: 39.5rem;
+  width: auto;
+  min-width: 20.7vw;
   margin-right: 2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -189,7 +178,8 @@ h1 {
 
 .containerInputTelefone{
   height: 6.5rem;
-  width: 43rem;
+  width: auto;
+  min-width: 22.4vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
