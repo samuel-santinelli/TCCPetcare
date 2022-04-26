@@ -10,7 +10,7 @@ function InputsLogin(){
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", {
       login: userLogin.login,
-      senha: userLogin.email,
+      senha: userLogin.senha,
       }).then((res) => {
         console.log(res.data)
     })
