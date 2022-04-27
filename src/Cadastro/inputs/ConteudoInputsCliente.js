@@ -14,7 +14,7 @@ import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
 
-const ConteudoInputsCliente = () => {
+const ConteudoInputsCliente = props => {
   const nome = document.getElementById("nome");
   const dataNascimento = document.getElementById("dataNascimento");
   const email = document.getElementById("email");

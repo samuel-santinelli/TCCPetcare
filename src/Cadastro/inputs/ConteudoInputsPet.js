@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import ConteudoInputsCliente from "./ConteudoInputsCliente"
 import axios from "axios";
 import "../style/CadastroPet.css";
 import InputCamera from "./InputCamera";
 import "../style/InputCheckbox.css";
 
-const InputsPet = () => {
+const InputsPet = ({id}) => {
   const [pet, setPet] = useState({
     nome: "",
     deficiencia: 1,
@@ -24,8 +25,7 @@ const InputsPet = () => {
     nomeEspecie: "",
     tipo: "",
     nomeVacina: "",
-    idCliente: 10,
-    avaliacao: 1,
+    id: 10,
   });
 
   const handleSubmitPet = (pet) => {
@@ -36,13 +36,13 @@ const InputsPet = () => {
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) => console.log(res.data));
   };
-  const listElements = () => {
+  const listPets = () => {
     axios
       .get("http://localhost/Cuidador/Cliente/api/pets")
       .then((res) => console.log(res.data));
   };
   useEffect(() => {
-    listElements();
+    listPets();
   }, []);
 
   console.log(pet);

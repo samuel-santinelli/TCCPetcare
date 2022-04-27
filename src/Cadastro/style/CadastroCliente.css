@@ -88,8 +88,8 @@ h1 {
 
 .containerInput{
   height: 6.5rem;
-  width: auto;
-  min-width: 35.6rem;
+  width: 21vw;
+  min-width: 13.6rem;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -155,7 +155,8 @@ h1 {
 }
 
 .containerInputSenhaControl{
-  width: auto;
+  width: 15vw;
+  min-width: 18vw;
   font-size: 2.5rem;
   padding-left: 4rem;
   padding-top: 1.9rem;
@@ -178,8 +179,8 @@ h1 {
 
 .containerInputTelefone{
   height: 6.5rem;
-  width: auto;
-  min-width: 22.4vw;
+  width: 5vw;
+  min-width: 20vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
