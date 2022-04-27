@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../style/CadastroPet.css";
 import InputCamera from "./InputCamera";
 import "../style/InputCheckbox.css";
 
-const InputsPet = ({idCliente}) => {
+const id = 44;
+
+const InputsPet = () => {
   const [pet, setPet] = useState({
     nome: "",
     deficiencia: 1,
@@ -23,9 +26,10 @@ const InputsPet = ({idCliente}) => {
     nomeEspecie: "",
     tipo: "",
     nomeVacina: "",
-    idCliente: 44,
+    nomeRaca: "",
+    idCliente: id,
   });
-
+  const navigate = useNavigate();
   const handleSubmitPet = (pet) => {
     axios.defaults.headers.post["Content-Type"] =
       "application/json;charset=utf-8";
@@ -33,6 +37,7 @@ const InputsPet = ({idCliente}) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) => console.log(res.data));
+      navigate("/Agendamento")
   };
   const listPets = () => {
     axios
@@ -46,6 +51,8 @@ const InputsPet = ({idCliente}) => {
   console.log(pet);
 
   const [infoPet, setInfoPet] = useState([]);
+  const [infoRaca, setInfoRaca] = useState([]);
+  const [infoClient, setInfoClient] = useState([]);
 
   useEffect(() => {
     axios
@@ -73,7 +80,7 @@ const InputsPet = ({idCliente}) => {
     axios
       .get("http://localhost/Cuidador/Cliente/api/pets/listarRaca")
       .then((res) => {
-        setInfoPet(res.data);
+        setInfoRaca(res.data);
       })
       .catch(() => {
         console.log("Deu erro");
@@ -101,12 +108,12 @@ const InputsPet = ({idCliente}) => {
         console.log("Deu erro");
       });
   }, []);
-  
+
   useEffect(() => {
     axios
       .get("http://localhost/Cuidador/Cliente/api/cliente")
       .then((res) => {
-        setInfoPet(res.data);
+        setInfoClient(res.data);
       })
       .catch(() => {
         console.log("Deu erro");
@@ -118,9 +125,7 @@ const InputsPet = ({idCliente}) => {
       <form onSubmit={() => handleSubmitPet(pet)}>
         <div id="containerScroll">
           <InputCamera />
-          <div className="contInputsPet">
-          
-          </div>
+          <div className="contInputsPet"></div>
           <div id="contInputsPet">
             <input
               className="containerInputNomePet"
@@ -134,7 +139,9 @@ const InputsPet = ({idCliente}) => {
               className="containerInputNomePet"
               type="date"
               value={pet.dataNascimento}
-              onChange={(e) => setPet({ ...pet, dataNascimento: e.target.value })}
+              onChange={(e) =>
+                setPet({ ...pet, dataNascimento: e.target.value })
+              }
             />
           </div>
           <div id="contInputsPet">
@@ -164,8 +171,8 @@ const InputsPet = ({idCliente}) => {
               value={pet.idRaca}
               onChange={(e) => setPet({ ...pet, idRaca: e.target.value })}
             >
-              {infoPet.map((raca, keyRaca) => (
-                <option key={keyRaca}>{raca.nome}</option>
+              {infoRaca.map((raca, keyRaca) => (
+                <option key={keyRaca}>{raca.nomeRaca}</option>
               ))}
             </select>
           </div>
@@ -215,33 +222,25 @@ const InputsPet = ({idCliente}) => {
                 />
                 <span className="checkmarkCuidador"></span>
               </label>
-            </div>    
-            
-                   
+            </div>
           </div>
-          <div className="contInputsPet">
+          {/* <div className="contInputsPet">
             <input
               className="inputObs"
               type="number"
               placeholder="Descreva o comportamento do seu pet"
-              value={pet.idCliente}
-              onChange={(e) =>
-                setPet({ ...pet, idCliente: e.target.value })
-              }
+              value={infoClient.idCliente}
+              onChange={(e) => setPet({ ...pet, idCliente: e.target.value })}
             />
-            
-          </div>
+          </div> */}
           <div className="contInputsPet">
             <input
               className="inputObs"
               type="text"
               placeholder="Descreva o comportamento do seu pet"
               value={pet.descricao}
-              onChange={(e) =>
-                setPet({ ...pet, descricao: e.target.value })
-              }
+              onChange={(e) => setPet({ ...pet, descricao: e.target.value })}
             />
-            
           </div>
           <div id="containerButton">
             <input

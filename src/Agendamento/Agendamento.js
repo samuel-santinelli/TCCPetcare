@@ -17,6 +17,7 @@ import Banner from "./banner/Banner";
 
 const Agendamento = () => {
   const [cuidadores, setCuidadores] = useState([]);
+  const foto = "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   useEffect(() => {
     axios
@@ -50,7 +51,7 @@ const Agendamento = () => {
               {cuidadores.map((cuidador, key) => (
                 <div className="card" key={key}>
                   <div className="contentCenterCuidador">
-                    <img className="imageCuidador" src={cuidador.foto} alt="" />
+                    <img className="imageCuidador" value={cuidador.foto} src={foto} alt=""/>
                     <div className="infoCuidador">
                       <label className="nameCuidador">{cuidador.nome}</label>
                       <label className="hourCuidador">{cuidador.moradia}</label>
