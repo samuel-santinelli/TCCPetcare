@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -32,10 +32,12 @@ const ConteudoInputsCliente = props => {
     telefone: "",
     idSexo: 1,
     nomeSexo: "Masculino",
+    id: 10,
   });
 
   console.log(user);
   const navigate = useNavigate();
+  const {id} = useParams();
 
   const handleUserSubmit = (user) => {
     axios.defaults.headers.post["Content-Type"] =
@@ -208,10 +210,10 @@ const ConteudoInputsCliente = props => {
         <div id="containerButton">
           {/* <Link to="/BoasVindas"> */}
             <input
+              id={id}
               value="Cadastrar"
               type="submit"
-              name="inputConfirmarSenha"
-              id="buttonCadastrarCliente"
+              name="inputConfirmarSenha"   
               className="button"
               onClick={validate}
             />

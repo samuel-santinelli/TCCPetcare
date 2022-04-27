@@ -21,7 +21,7 @@ const InputsIcon = () => {
     senha: "",
     dataNascimento: "",
     cpf: "",
-    foto: "",
+    foto: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fvoxnews.com.br%2Ftwitter-muda-imagem-padrao-de-perfis-sem-foto%2F&psig=AOvVaw2qdSkAdSMBQCWgr56QGRGq&ust=1651148425645000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNi48a6dtPcCFQAAAAAdAAAAABAD",
     biografia: "",
     possuiAnimais: 1,
     possuiCriancas: 1,

@@ -1,11 +1,12 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import ConteudoInputsCliente from "../Cadastro/inputs/ConteudoInputsCliente";
 import { Link } from "react-router-dom";
 import "./style/styleBoasVindas.css";
 
 
-const Login = () => {
+const Login = ({id}) => {
   return (
     <div className="containerWelcome">
       <div className="containerBannerWelcome">
@@ -32,7 +33,7 @@ const Login = () => {
       </div>
 
       <div className="containerButtonWelcome">
-      <Link to="/Agendamento">
+      <Link to="/Agendamento" id={id}>
         <input
           type="button"
           value="Deixar para depois"
