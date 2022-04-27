@@ -32,14 +32,14 @@ const ConteudoInputsCliente = props => {
     telefone: "",
     idSexo: 1,
     nomeSexo: "Masculino",
-    id: 10,
+    idCliente: "",
   });
 
   console.log(user);
   const navigate = useNavigate();
   const {id} = useParams();
 
-  const handleUserSubmit = (user) => {
+  const handleUserSubmit = ({user}) => {
     axios.defaults.headers.post["Content-Type"] =
       "application/json;charset=utf-8";
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
