@@ -31,13 +31,11 @@ const ConteudoInputsCliente = props => {
     senha: "",
     telefone: "",
     idSexo: 1,
-    nomeSexo: "Masculino",
-    idCliente: "",
+    nomeSexo: "",
   });
 
   console.log(user);
   const navigate = useNavigate();
-  const {id} = useParams();
 
   const handleUserSubmit = ({user}) => {
     axios.defaults.headers.post["Content-Type"] =
@@ -208,16 +206,13 @@ const ConteudoInputsCliente = props => {
         </div>
 
         <div id="containerButton">
-          {/* <Link to="/BoasVindas"> */}
             <input
-              id={id}
               value="Cadastrar"
               type="submit"
               name="inputConfirmarSenha"   
               className="button"
               onClick={validate}
             />
-          {/* </Link> */}
         </div>
       </form>
     </>

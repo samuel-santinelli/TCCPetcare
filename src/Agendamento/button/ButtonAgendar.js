@@ -1,4 +1,5 @@
 import "./style/styleButton.css";
+import showDropdown from "../Agendamento"
 
 function ButtonAgendar() {
   return (
@@ -8,6 +9,7 @@ function ButtonAgendar() {
         type="submit"
         id="buttonProximo"
         className="buttonAgendar"
+        onClick={showDropdown} 
       />
     </div>
   );

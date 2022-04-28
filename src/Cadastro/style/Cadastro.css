@@ -44,7 +44,8 @@ html {
 
 
 #containerInput {
-  height: 8rem;
+  height: 8vh;
+  width: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,6 +107,22 @@ html {
   font-weight: 500;
   margin-right: 3rem;
 }
+
+#senha{
+  font-size: 2.4rem;
+}
+
+.containerInputSenhaCuidador{
+  height: 6.5rem;
+  width: 19vw;
+  min-width: 10.5vw;
+  margin-right: 1.3vw;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 6.2rem;
+}
+
 
 #InputsContainerSelect{
   height: 6.5rem;
@@ -212,7 +229,7 @@ input #iconInputNome{
 
 .containerInputLimitacoes{
   height: 6.5rem;
-  width: 75.5rem;
+  width: 39.3vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -262,8 +279,8 @@ input #iconInputNome{
 }
 
 #teste{
-  height: 70rem;
-  width: 83rem;
+  height: 70vh;
+  width: 43vw;
   overflow-x: scroll;
   color: #000;
 }
@@ -284,7 +301,8 @@ input #iconInputNome{
 
 .containerInputEmailScroll{
   height: 6.5rem;
-  width: 75rem;
+  width: 39vw;
+  min-width: 29.5vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -293,7 +311,8 @@ input #iconInputNome{
 
 .inputCalendarScroll{
   height: 6.5rem;
-  width: 35rem;
+  width: 19vw;
+  min-width: 15vw;
   padding-right: 3rem;
   margin-right: 2.8rem;
   font-size: 2.2rem;
@@ -304,7 +323,8 @@ input #iconInputNome{
 
 #InputsContainerSelectScroll{
   height: 6.5rem;
-  width: 37.5rem;
+  width: 18.6vw;
+  min-width: 10vw;
   padding-right: 3rem;
   margin-right: 2.8rem;
   font-size: 2.2rem;
@@ -315,7 +335,8 @@ input #iconInputNome{
 
 .containerInputCpfScroll{
   height: 6.5rem;
-  width: 75.5rem;
+  width: 38.9vw;
+  min-width: 30.9vw;
   margin-top: 3rem;
   padding-right: 3rem;
   margin-right: 2.8rem;
@@ -327,7 +348,8 @@ input #iconInputNome{
 
 .containerInputMoradiaScroll{
   height: 6.5rem;
-  width: 35.5rem;
+  width: 19.7vw;
+  min-width: 12vw;
   padding-right: 3rem;
   padding-left: 5.5rem;
   font-size: 2.5rem;
@@ -337,7 +359,8 @@ input #iconInputNome{
 
 .containerInputLocal{
   height: 6.5rem;
-  width: 38rem;
+  width: 18.5vw;
+  min-width: 12.4vw;
   padding-right: 3rem;
   padding-left: 5.5rem;
   margin-left: 2rem;
@@ -353,9 +376,20 @@ input #iconInputNome{
 
 #contInputCheckboxScroll{
   height: 6.5rem;
-  width: 36.3rem;
+  width: auto;
+  min-width: 18.3vw;
   padding-right: 3rem;
-  margin-right: 3rem;
+  font-size: 2.5rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+}
+
+#contInputCheckboxScrollAnimals{
+  height: 6.5rem;
+  width: 19.3vw;
+  min-width: 10.3vw;
+  padding-right: 3rem;
+  margin-right: 1.2vw;
   font-size: 2.5rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;

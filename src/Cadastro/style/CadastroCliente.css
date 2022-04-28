@@ -99,6 +99,8 @@ h1 {
 .containerInputNome, .containerInputSobrenome, .containerInputCpf, .containerInputMoradia{
   height: 6.5rem;
   width: 18.8vw;
+  min-width: 10vw;
+  min-width: 10.8vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
@@ -170,7 +172,8 @@ h1 {
 
 .containerInputConfirmarSenha{
   height: 6.5rem;
-  width: 48rem;
+  width: 18.7vw;
+  min-width: 10.7vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;

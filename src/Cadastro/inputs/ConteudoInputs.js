@@ -8,6 +8,7 @@ import {
   MdFingerprint,
 } from "react-icons/md";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import styles from "../style/Cadastro.css";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
@@ -33,6 +34,7 @@ const InputsIcon = () => {
   });
 
   console.log(cuidador);
+  const navigate = useNavigate();
 
   const handleUserCuidadorSubmit = (cuidador) => {
     axios.defaults.headers.post["Content-Type"] =
@@ -41,6 +43,7 @@ const InputsIcon = () => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
       .then((res) => console.log(res.data));
+      navigate('/Agendamento')
   };
   const listElements = () => {
     axios
@@ -71,7 +74,7 @@ const InputsIcon = () => {
             </div>
           </div>
           <div id="contInputsPet">
-            <MdAccountCircle id="iconInputLabel" />
+            {/* <MdAccountCircle id="iconInputLabel" /> */}
             <input
               id="nome"
               className="containerInputNome"
@@ -82,7 +85,7 @@ const InputsIcon = () => {
                 setCuidador({ ...cuidador, nome: e.target.value })
               }
             />
-            <MdOutlineAccountCircle id="iconInputLabel" />
+            {/* <MdOutlineAccountCircle id="iconInputLabel" /> */}
             <input
               label="Sobrenome"
               id="sobrenome"
@@ -96,7 +99,7 @@ const InputsIcon = () => {
             />
           </div>
           <div id="contInputStretch">
-            <MdAlternateEmail id="iconInputLabel" />
+            {/* <MdAlternateEmail id="iconInputLabel" /> */}
             <input
               label="Email"
               id="email"
@@ -110,12 +113,12 @@ const InputsIcon = () => {
             />
           </div>
           <div id="contInputsPet">
-            <MdLock id="iconInputLabel" />
+            {/* <MdLock id="iconInputLabel" /> */}
             <input
               id="senha"
               type="password"
               onKeyUp={validarSenhaForca}
-              className="containerInput"
+              className="containerInputSenhaCuidador"
               placeholder="Senha"
               value={cuidador.senha}
               onChange={(e) =>
@@ -123,7 +126,7 @@ const InputsIcon = () => {
               }
             />
 
-            <MdLockOpen id="iconInputLabel" />
+            {/* <MdLockOpen id="iconInputLabel" /> */}
             <input
               label="Confirmar Senha"
               id="confirmarSenha"
@@ -158,7 +161,7 @@ const InputsIcon = () => {
                 <option value={cuidador.Femininio}>Feminino</option>
               </select>
               <div>
-                <MdFingerprint className="iconInputLabelCpf"/>
+                {/* <MdFingerprint className="iconInputLabelCpf"/> */}
                 <input
                   type="number"
                   className="containerInputCpfScroll"
@@ -171,7 +174,7 @@ const InputsIcon = () => {
               </div>
             </div>
             <div id="contInputsCheckboxScroll">
-              <div id="contInputCheckboxScroll">
+              <div id="contInputCheckboxScrollAnimals">
                 <label className="labelInputCheckboxCuidador">
                   Possui Animais
                   <input
