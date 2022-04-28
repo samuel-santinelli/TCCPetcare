@@ -9,12 +9,12 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import CallIcon from "@mui/icons-material/Call";
 import CadastroPet from "../CadastroPet";
-import BoasVindas from "../../BoasVindas/BoasVindas"
+import BoasVindas from "../../BoasVindas/BoasVindas";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
 
-const ConteudoInputsCliente = props => {
+const ConteudoInputsCliente = (props) => {
   const nome = document.getElementById("nome");
   const dataNascimento = document.getElementById("dataNascimento");
   const email = document.getElementById("email");
@@ -37,14 +37,14 @@ const ConteudoInputsCliente = props => {
   console.log(user);
   const navigate = useNavigate();
 
-  const handleUserSubmit = ({user}) => {
+  const handleUserSubmit = ({ user }) => {
     axios.defaults.headers.post["Content-Type"] =
       "application/json;charset=utf-8";
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => console.log(res.data));
-      navigate("/BoasVindas")
+    navigate("/BoasVindas");
   };
 
   const [sexo, setSexo] = useState([]);
@@ -206,13 +206,13 @@ const ConteudoInputsCliente = props => {
         </div>
 
         <div id="containerButton">
-            <input
-              value="Cadastrar"
-              type="submit"
-              name="inputConfirmarSenha"   
-              className="button"
-              onClick={validate}
-            />
+          <input
+            value="Cadastrar"
+            type="submit"
+            name="inputConfirmarSenha"
+            className="button"
+            onClick={validate}
+          />
         </div>
       </form>
     </>

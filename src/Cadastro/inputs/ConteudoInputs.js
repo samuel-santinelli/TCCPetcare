@@ -14,6 +14,11 @@ import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
 
+const sexoMap = {
+  1: "Masculino",
+  2: "Feminino"
+}
+
 const InputsIcon = () => {
   const [cuidador, setCuidador] = useState({
     nome: "",
@@ -37,9 +42,6 @@ const InputsIcon = () => {
   const navigate = useNavigate();
 
   const handleUserCuidadorSubmit = (cuidador) => {
-    axios.defaults.headers.post["Content-Type"] =
-      "application/json;charset=utf-8";
-    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     axios
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
       .then((res) => console.log(res.data));
@@ -157,8 +159,8 @@ const InputsIcon = () => {
                   })
                 }
               >
-                <option value={cuidador.Masculino}>Masculino</option>
-                <option value={cuidador.Femininio}>Feminino</option>
+                <option value={1}>Masculino</option>
+                <option value={2}>Feminino</option>
               </select>
               <div>
                 {/* <MdFingerprint className="iconInputLabelCpf"/> */}
