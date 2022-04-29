@@ -14,13 +14,14 @@ import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
 
-const ConteudoInputsCliente = (props) => {
+const ConteudoInputsCliente = ({ id }) => {
   const nome = document.getElementById("nome");
   const dataNascimento = document.getElementById("dataNascimento");
   const email = document.getElementById("email");
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
   const button = document.getElementById("buttonCadastrarCliente");
+  
 
   const [user, setUser] = useState({
     nome: "",
@@ -32,19 +33,17 @@ const ConteudoInputsCliente = (props) => {
     telefone: "",
     idSexo: 1,
     nomeSexo: "",
+    id: "",
   });
 
   console.log(user);
   const navigate = useNavigate();
 
   const handleUserSubmit = (user) => {
-    axios.defaults.headers.post["Content-Type"] =
-      "application/json;charset=utf-8";
-    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => console.log(res.data));
-    navigate("/BoasVindas");
+    navigate("/CadastroPet", id);
   };
 
   const [sexo, setSexo] = useState([]);
@@ -176,9 +175,10 @@ const ConteudoInputsCliente = (props) => {
             placeholder="Selecione seu genêro"
             onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
           >
-            {sexo.map((sexo, keyCuidador) => (
-              <option key={keyCuidador}>{sexo.nomeSexo}</option>
-            ))}
+            <option value={1}>Masculino</option>
+            <option value={2}>Feminino</option>
+            <option value={3}>Não Binario</option>
+            <option value={4}>Prefiro não dizer</option>
           </select>
 
           <CallIcon id="iconInputLabel" />

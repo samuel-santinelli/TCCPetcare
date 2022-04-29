@@ -21,7 +21,7 @@ const Login = ({id}) => {
       </div>
 
       <div className="containerButtonWelcome">
-        <Link to="/CadastroPet">
+        <Link to="/CadastroPet" onClick={id}>
           <input
             type="button"
             value="Adicione seu pet"
@@ -33,7 +33,7 @@ const Login = ({id}) => {
       </div>
 
       <div className="containerButtonWelcome">
-      <Link to="/Agendamento" id={id}>
+      <Link to="/Agendamento">
         <input
           type="button"
           value="Deixar para depois"
