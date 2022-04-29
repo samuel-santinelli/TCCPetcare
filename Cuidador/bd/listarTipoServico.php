@@ -5,7 +5,7 @@ require_once(SRC.'bd/conexao.php');
 
 function listarTiposServicos(){
 
-    $sql = "select *from tblTipos ";
+    $sql = "select *from tblTipos";
 
     $conexao = conexao();
 

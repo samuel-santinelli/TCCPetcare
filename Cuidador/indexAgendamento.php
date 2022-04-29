@@ -53,7 +53,7 @@ $idPet= $_GET['idPet'];
                                 while($exibir= mysqli_fetch_assoc($listar))
                                 {
                                     ?>
-                                        <option value="<?=$exibir['idTipo']?>"> <?=$exibir['nome']?> </option>
+                                        <option value="<?=$exibir['idTipo']?>"> <?=$exibir['nomeTipo']?> </option>
                                     <?php
                                 }
       

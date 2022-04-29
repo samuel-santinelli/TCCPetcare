@@ -21,7 +21,10 @@
                  case 'agendar':
                     require_once('agendamentoApi/index.php');
                     break;       
-    
+                    case 'historico':
+                        require_once('historicoHost/index.php');
+                        break;         
+
     }
 
     
