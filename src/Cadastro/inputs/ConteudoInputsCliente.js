@@ -37,7 +37,7 @@ const ConteudoInputsCliente = (props) => {
   console.log(user);
   const navigate = useNavigate();
 
-  const handleUserSubmit = ({ user }) => {
+  const handleUserSubmit = (user) => {
     axios.defaults.headers.post["Content-Type"] =
       "application/json;charset=utf-8";
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";

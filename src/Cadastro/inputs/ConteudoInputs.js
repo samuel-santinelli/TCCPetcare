@@ -19,7 +19,7 @@ const sexoMap = {
   2: "Feminino"
 }
 
-const InputsIcon = () => {
+const InputsIcon = props => {
   const [cuidador, setCuidador] = useState({
     nome: "",
     sobrenome: "",
