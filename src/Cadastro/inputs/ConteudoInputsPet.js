@@ -5,7 +5,9 @@ import "../style/CadastroPet.css";
 import InputCamera from "./InputCamera";
 import "../style/InputCheckbox.css";
 
-const InputsPet = (props) => {
+const id = 44;
+
+const InputsPet = () => {
   const [pet, setPet] = useState({
     nome: "",
     deficiencia: 1,
@@ -21,24 +23,18 @@ const InputsPet = (props) => {
     idVacina: 2,
     idPorte: 1,
     nomePorte: "",
-    nomeEspecie: "",
-    tipo: "",
-    nomeVacina: "",
-    nomeRaca: "",
-    idCliente: props.id,
+    idCliente: id,
   });
-  console.log("Id do cliente:", props.id);
-  // const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const handleSubmitPet = (pet) => {
     axios
-      .post("http://localhost/Cuidador/Cliente/api/pet", pet)
+      .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) => console.log(res.data));
-    // navigate("/Agendamento")
+      navigate("/Agendamento")
   };
   const listPets = () => {
     axios
-      .get("http://localhost/Cuidador/Cliente/api/pet")
+      .get("http://localhost/Cuidador/Cliente/api/pets")
       .then((res) => console.log(res.data));
   };
   useEffect(() => {
@@ -58,7 +54,7 @@ const InputsPet = (props) => {
         setInfoPet(res.data);
       })
       .catch(() => {
-        console.log("Deu erro na listagem de especie");
+        console.log("Deu erro");
       });
   }, []);
 
@@ -69,7 +65,7 @@ const InputsPet = (props) => {
         setInfoPet(res.data);
       })
       .catch(() => {
-        console.log("Deu erro na listagem de fases");
+        console.log("Deu erro");
       });
   }, []);
 
@@ -80,7 +76,18 @@ const InputsPet = (props) => {
         setInfoRaca(res.data);
       })
       .catch(() => {
-        console.log("Deu erro na listagem de raças");
+        console.log("Deu erro");
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cliente/api/cliente")
+      .then((res) => {
+        setInfoPet(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
       });
   }, []);
 
@@ -91,7 +98,7 @@ const InputsPet = (props) => {
         setInfoPet(res.data);
       })
       .catch(() => {
-        console.log("Deu erro na listagem de vacinas");
+        console.log("Deu erro");
       });
   }, []);
 
@@ -102,7 +109,7 @@ const InputsPet = (props) => {
         setInfoClient(res.data);
       })
       .catch(() => {
-        console.log("Deu erro na listagem de cliente");
+        console.log("Deu erro");
       });
   }, []);
 
@@ -223,7 +230,7 @@ const InputsPet = (props) => {
             <input
               className="inputObs"
               type="text"
-              placeholder="Conte um pouco do seu pet"
+              placeholder="Conte um pouco sobre o seu pet"
               value={pet.descricao}
               onChange={(e) => setPet({ ...pet, descricao: e.target.value })}
             />
