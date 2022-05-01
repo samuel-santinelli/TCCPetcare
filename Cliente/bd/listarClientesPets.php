@@ -2,6 +2,7 @@
 
 require_once(SRC.'bd/conexao.php');
 
+
 function listarClientes(){
 
     $sql = "select *from  tblClientes";
