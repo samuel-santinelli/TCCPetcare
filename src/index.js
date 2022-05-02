@@ -14,11 +14,13 @@ import PerfilCuidador from "./Perfil/PerfilCuidador";
 import PerfilCliente from "./Perfil/PerfilCliente";
 import { BrowserRouter } from "react-router-dom";
 import OurRoutes from "./routes/OurRoutes";
+import DadosServico from "./Dados/DadosServico";
 
 ReactDOM.render(
   <BrowserRouter>
+  <DadosServico/>
   {/* <Login/> */}
-    <OurRoutes />
+    {/* <OurRoutes /> */}
   </BrowserRouter>,
   document.getElementById("root")
 );

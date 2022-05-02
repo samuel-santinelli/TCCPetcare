@@ -22,12 +22,6 @@ body{
   background-color: #f28907;
 }
 
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-padding-top: 9rem;
-  scroll-behavior: smooth;
-}
 
 #containerMain {
  height: 1001px;
