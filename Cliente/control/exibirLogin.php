@@ -6,8 +6,8 @@ function exibirLoginSenha($login, $senha){
 
     return $dados;
 }
-function buscarLoginSenha($login){
-    $dados = buscaLogin($login);
+function buscarLoginSenha($login, $senha){
+    $dados = buscaLogin($login, $senha);
 
     return $dados;
 }

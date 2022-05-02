@@ -22,11 +22,10 @@ function listarLogin($login, $senha){
 }
 // }
 
-function buscaLogin($login){
+function buscaLogin($login, $senha){
     //script
-    $sql = "select tblClientes.*
-    from tblClientes
-    where tblClientes.email  like  '%".$login."%'";
+    $sql = "select *from tblClientes where email ='".$login."' and
+    senha='".$senha."'";
  //9 passo, arrumar o select, retorna a sigla do estado, like no lugar do =
 
 

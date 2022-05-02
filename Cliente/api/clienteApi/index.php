@@ -44,9 +44,10 @@ $app->get('/cliente', function($request, $response, $args){
 
     /************** Recebendo dados pela query string */
         $login = (string) null;
+        $senha = (string) null;
         $login = $request ->getQueryParams()['email']; 
-
-        if($listDados = buscarLoginSenha($login)){
+        $senha = $request ->getQueryParams()['senha']; 
+        if($listDados = buscarLoginSenha($login, $senha)){
 
                 if( $listDadosArray = criarArrayCliente($listDados)){  
                          $listDadosJSON = criarJSONCLIENTE($listDadosArray);
