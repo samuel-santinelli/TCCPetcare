@@ -19,25 +19,25 @@ $app = new \Slim\App($config);
 
 
 
-// $app->get('/cliente', function($request, $response, $args){
+$app->get('/cliente', function($request, $response, $args){
 
-//     if($listar = exibirClientes()){
-//         if( $listarArray = criarArrayCliente($listar)){  
-//             $listarDadosJSON = criarJSONCLIENTE($listarArray);
-//              }
-//     }
-//        if($listarArray){
-//         return $response   ->withStatus(200) 
-//         ->withHeader('Content-Type', 'application/json') 
-//         ->write($listarDadosJSON);
-//     }else{
-//         return $response   ->withStatus(204);
-//     }
+    if($listar = exibirClientes()){
+        if( $listarArray = criarArrayCliente($listar)){  
+            $listarDadosJSON = criarJSONCLIENTE($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
   
 
-// });
+});
 
-$app->get('/cliente', function($request, $response, $args){ 
+$app->get('/cliente/login', function($request, $response, $args){ 
  
     if(isset( $request ->getQueryParams()['email'])) //vendo se existe esse parametro nome, se teve a existencia da chegada de dados, parametro para filtrar pelo nome
     {
@@ -231,5 +231,6 @@ $app->delete('/cliente/{id}', function($request, $response, $args){
 $app->run();
 
 // http://localhost/Cuidador/Cliente/api/cliente
+//http://localhost/Cuidador/Cliente/api/cliente?email=teste@teste&senha=123
 
 ?>
