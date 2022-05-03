@@ -18,9 +18,9 @@ import DadosServico from "./Dados/DadosServico";
 
 ReactDOM.render(
   <BrowserRouter>
-  <DadosServico/>
+  {/* <DadosServico/> */}
   {/* <Login/> */}
-    {/* <OurRoutes /> */}
+    <OurRoutes />
   </BrowserRouter>,
   document.getElementById("root")
 );

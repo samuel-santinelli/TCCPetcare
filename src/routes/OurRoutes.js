@@ -5,6 +5,8 @@ import CadastroCliente from "../Cadastro/CadastroCliente";
 import CadastroCuidador from "../Cadastro/CadastroCuidador"
 import BoasVindas from "../BoasVindas/BoasVindas";
 import Agendamento from "../Agendamento/Agendamento";
+import LandingPage from "../LandingPage/LandingPage"
+import DadosServico from "../Dados/DadosServico";
 
 function OurRoutes() {
   return (
@@ -14,6 +16,8 @@ function OurRoutes() {
       <Route path="/CadastroPet" element={<CadastroPet />} />
       <Route path="/Agendamento" element={<Agendamento />} />
       <Route path="/CadastroCuidador" element={<CadastroCuidador />} />
+      <Route path="/LandingPage" element={<LandingPage />} />
+      <Route path="/DadosServico" element={<DadosServico />} />
     </Routes>
   );
 }
