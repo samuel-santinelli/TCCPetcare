@@ -53,7 +53,6 @@ const Agendamento = () => {
           <div id="containerMainCard">
             <div className="containerScrollCardCuidadores">
               <div className="containerCardCuidadores">
-                <form encType="multipart/form">
                 {cuidadores.map((cuidador, key) => (
                   <div className="card" key={key}>
                     <div className="contentCenterCuidador">
@@ -101,7 +100,6 @@ const Agendamento = () => {
                     </div>
                   </div>
                 ))}
-                </form>
               </div>
             </div>
             {/* Conteudo da modal de cuidadores */}
