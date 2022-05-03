@@ -93,6 +93,7 @@ const ConteudoInputsCliente = ({ id }) => {
   return (
     <>
       <form onSubmit={() => handleUserSubmit(user)}>
+        <div className="containerMainInputsCliente">
         <div id="containerInput">
           <div id="containerBorderImage">
             <input
@@ -213,6 +214,7 @@ const ConteudoInputsCliente = ({ id }) => {
             className="button"
             onClick={validate}
           />
+        </div>
         </div>
       </form>
     </>

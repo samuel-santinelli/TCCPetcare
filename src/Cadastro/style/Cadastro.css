@@ -38,7 +38,7 @@ body{
 
 #containerInput {
   height: 8vh;
-  width: 3;
+  width: 47vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +68,7 @@ body{
 
 #iconInputCamera{
   margin-top: 5.5rem;
-  margin-left: 4.5rem;
+  margin-left: 4.2rem;
 }
 
 #contInputs {
@@ -274,7 +274,7 @@ input #iconInputNome{
 #teste{
   height: 70vh;
   width: 43vw;
-  overflow-x: scroll;
+  overflow-x: hidden;
   color: #000;
 }
 

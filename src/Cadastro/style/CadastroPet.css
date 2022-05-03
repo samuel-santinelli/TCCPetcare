@@ -59,11 +59,17 @@ label {
 }
 
 #containerInputsPet {
-  height: 95vh;
+  height: 108vh;
   width: auto;
   min-width: 30vw;
   margin-left: 1vw;
 }
+
+#containerInputsPet h1 {
+  font-size: 6.6rem;
+  padding-top: 2rem;
+}
+
 
 #contInputsPet {
   height: 4.5rem;

@@ -1,7 +1,7 @@
 .containerInputsLogin{
-    height: 55rem;
+    height: 46rem;
     width: 55rem;
-    margin-top: 6rem;
+    margin-bottom: 15rem;
     margin-left: 15rem;
     display: flex;
     justify-content:center;
@@ -10,7 +10,7 @@
   }
   
   #InputsLogin {
-      margin-top: 10rem;
+      margin-top: 15rem;
       height: 12.5rem;
       width: 105rem;
       max-width: 100rem;
@@ -32,3 +32,5 @@
       padding-left: 7.5rem;
   
     }
+
+  
