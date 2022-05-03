@@ -59,37 +59,41 @@ const LandingPage = () => {
           <div id="cuidadores-container">
             <div class="box1">
               <div class="header-box1">
-                <div className="imageDashboardCuidador" />
+                <div className="imageDashboardCuidador1" />
                 <div className="nomeCuidadorLandingPage">
-                  <h7>Nome do Cuidador</h7>
-                  <h8>Biografia do cuidador</h8>
+                  <h7>Mayara Pereira</h7>
+                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
+                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
                 </div>
               </div>
             </div>
             <div class="box1">
-              <div class="header-box1">
-                <div className="imageDashboardCuidador" />
+              <div class="header-box2">
+                <div className="imageDashboardCuidador2" />
                 <div className="nomeCuidadorLandingPage">
                   <h7>Nome do Cuidador</h7>
-                  <h8>Biografia do cuidador</h8>
+                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
+                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
                 </div>
               </div>
             </div>
             <div class="box1">
-              <div class="header-box1">
-                <div className="imageDashboardCuidador" />
+              <div class="header-box3">
+                <div className="imageDashboardCuidador3" />
                 <div className="nomeCuidadorLandingPage">
                   <h7>Nome do Cuidador</h7>
-                  <h8>Biografia do cuidador</h8>
+                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
+                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
                 </div>
               </div>
             </div>
             <div class="box1">
-              <div class="header-box1">
-                <div className="imageDashboardCuidador" />
+              <div class="header-box4">
+                <div className="imageDashboardCuidador4" />
                 <div className="nomeCuidadorLandingPage">
                   <h7>Nome do Cuidador</h7>
-                  <h8>Biografia do cuidador</h8>
+                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
+                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
                 </div>
               </div>
             </div>
