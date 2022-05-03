@@ -1,7 +1,8 @@
 .containerInputsLogin{
-    height: 55rem;
-    width: 55rem;
-    margin-top: 6rem;
+    height: 45vh;
+    width: 28vw;
+    min-width: 27vw;
+    margin-top: 1rem;
     margin-left: 15rem;
     display: flex;
     justify-content:center;
@@ -9,11 +10,13 @@
     
   }
   
-  #InputsLogin {
-      margin-top: 10rem;
-      height: 12.5rem;
-      width: 105rem;
-      max-width: 100rem;
+  .inputLoginEsqueciMinhaSenha {
+    height: 8.5rem;
+    width: 52rem;
+    font-size: 2.2rem;
+    border: solid 4px #f28907;
+    border-radius: 1.5rem;
+    padding-left: 7.5rem;
     }
   
     #iconInputLabelEsqueciMinhaSenha{
@@ -30,14 +33,13 @@
       border: solid 4px #f28907;
       border-radius: 1.5rem;
       padding-left: 7.5rem;
-  
     }
 
-    .containerTituloEsqueciMinhaSenha, h2{
+    .containerTituloEsqueciMinhaSenha, h3{
         height: 10rem;
-        width: 90rem;
-        margin-top: 5rem;
-        font-size: 2.9rem;
+        width: 40vw;
+        margin-top: 4rem;
+        font-size: 3rem;
         margin-left: 2rem;
         text-align: center;
         display: flex;

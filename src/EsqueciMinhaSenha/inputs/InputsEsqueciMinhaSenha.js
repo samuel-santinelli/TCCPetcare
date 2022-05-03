@@ -9,7 +9,7 @@ const InputsEsqueciMinhaSenha= () => {
   return (
     <>
     <div className="containerTituloEsqueciMinhaSenha">
-        <h2>Nós da PETcare lamentamos que tenha esquecido sua senha, mas não se preocupe, trabalharemos para recuperá-la o mais rapido possivel!</h2>
+        <h3>Nós da PETcare lamentamos que tenha esquecido sua senha, mas não se preocupe, trabalharemos para recuperá-la o mais rapido possivel!</h3>
     </div>
       <div className="containerInputsLogin">
         <div id="InputsLogin">
@@ -17,7 +17,7 @@ const InputsEsqueciMinhaSenha= () => {
           <input
             label="Nome"
             id="nome"
-            className="inputLogin"
+            className="inputLoginEsqueciMinhaSenha"
             placeholder="Digite seu email"
           />
         </div>

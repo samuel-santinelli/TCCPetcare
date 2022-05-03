@@ -331,7 +331,7 @@ header{
 
 #login-input{
     width: 120px;
-    height: inherit;
+    height: 5.5rem;
     border-style: none;
     background-color: #F28907;
     border-radius: 21px;
@@ -342,7 +342,7 @@ header{
 
 #cadastro-input{
     width: 180px;
-    height: inherit;
+    height: 5.5rem;
     border-style: none;
     background-color: #F28907;
     border-radius: 21px;

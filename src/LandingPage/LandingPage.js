@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import styleLandingPage from "./style/styleLandingPage.css";
 
@@ -8,8 +9,12 @@ const LandingPage = () => {
       <header>
         <div id="parteSuperior">
           <div class="boxBotao">
-            <input type="button" id="login-input" value="LOGIN" />
+            <Link to="/Login">
+              <input type="button" id="login-input" value="LOGIN" />
+            </Link>
+            <Link to="/Escolha">
             <input type="button" id="cadastro-input" value="CADASTRE-SE" />
+            </Link>
           </div>
         </div>
         <div id="parteMeio">
