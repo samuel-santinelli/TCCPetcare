@@ -1,7 +1,7 @@
 
 /* Container de modal */
 .cardModal {
-    height: 99vh;
+    height: 129rem;
     width: 50.9vw;
     display: none;
     mask-position: fixed;

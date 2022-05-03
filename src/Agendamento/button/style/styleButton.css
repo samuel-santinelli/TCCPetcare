@@ -15,12 +15,11 @@
 }
 
 #containerButtonAgendarModal{
-  height: 8vh;
+  height: 1vh;
   width: 37.5vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 11.5vw;
   margin-left: 6vw;
 }
 .buttonAgendarModal{
