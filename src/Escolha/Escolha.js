@@ -6,7 +6,7 @@ const Escolha = () => {
   return (
     <div className="containerBannerEscolha">
       <div className="containerInputsEscolha">
-        <h3>Para Continuar, selecione uma opçaõ </h3>
+        <h3>Para Continuar, selecione uma opção </h3>
         <Link to={"/CadastroCuidador"}>
           <input
             type="submit"

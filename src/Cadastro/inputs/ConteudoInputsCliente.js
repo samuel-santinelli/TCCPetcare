@@ -21,7 +21,6 @@ const ConteudoInputsCliente = ({ id }) => {
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
   const button = document.getElementById("buttonCadastrarCliente");
-  
 
   const [user, setUser] = useState({
     nome: "",
@@ -90,131 +89,214 @@ const ConteudoInputsCliente = ({ id }) => {
     listElements();
   }, []);
 
+ const pesquisarCep = async (cep) => {
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  };
+
+  const cepValido = (cep) => /^[0-9]{8}$/.test(cep);
+
+  const limparFormulario = () => {
+    document.querySelector("#endereco").value = "";
+    document.querySelector("#bairro").value = "";
+    document.querySelector("#cidade").value = "";
+  };
+
+  const preencherFormulario = async (evento) => {
+    const cep = evento.target.value.replace("-", "");
+    limparFormulario();
+    if (cepValido(cep)) {
+      const infoCep = await pesquisarCep(cep);
+      if (infoCep.erro) {
+        document.querySelector("#endereco").value =
+          "CEP não encontrado, tente novamente.";
+      } else {
+        document.querySelector("#endereco").value = infoCep.logradouro;
+        document.querySelector("#bairro").value = infoCep.bairro;
+        document.querySelector("#cidade").value = infoCep.localidade;
+      }
+    } else {
+      document.querySelector("#endereco").value =
+        "CEP invalido, por favor digite um cep valido!";
+    }
+  };
+
+  // document
+  //   .querySelector("#cep")
+  //   .addEventListener("focusout", preencherFormulario);
+
   return (
     <>
       <form onSubmit={() => handleUserSubmit(user)}>
         <div className="containerMainInputsCliente">
-        <div id="containerInput">
-          <div id="containerBorderImage">
-            <input
-              type="file"
-              name="inputImage"
-              className="inputImage"
-              id="foto"
-              value={user.foto}
-              onChange={(e) => setUser({ ...user, foto: e.target.value })}
-            />
-            <CameraAltIcon id="iconInputCamera" />
+          <div id="containerInput">
+            <div id="containerBorderImage">
+              <input
+                type="file"
+                name="inputImage"
+                className="inputImage"
+                id="foto"
+                value={user.foto}
+                onChange={(e) => setUser({ ...user, foto: e.target.value })}
+              />
+              <CameraAltIcon id="iconInputCamera" />
+            </div>
           </div>
-        </div>
-        <div id="contInputsPet">
-          <AccountCircle id="iconInputLabel" />
-          <input
-            label="Nome"
-            id="nome"
-            value={user.nome}
-            className="containerInputNome"
-            placeholder="Nome"
-            onChange={(e) => setUser({ ...user, nome: e.target.value })}
-          />
-
-          <input
-            type="date"
-            id="dataNascimento"
-            value={user.dataNascimento}
-            className="inputCalendar"
-            onChange={(e) =>
-              setUser({ ...user, dataNascimento: e.target.value })
-            }
-          />
-        </div>
-        <div id="contInputStretch">
-          <AlternateEmailIcon id="iconInputLabel" />
-          <input
-            label="Email"
-            id="email"
-            type="email"
-            value={user.email}
-            className="containerInputEmail"
-            placeholder="Email"
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
-        </div>
-        <div id="contInputsControl">
-          <div className="form-control">
-            <LockIcon id="iconInputLabelControl" />
+          <div id="contInputsPet">
+            <AccountCircle id="iconInputLabel" />
             <input
-              label="Senha"
-              type="password"
-              id="senhaClient"
-              value={user.senha}
-              className="containerInputSenhaControl"
-              placeholder="Senha"
-              onChange={(e) => setUser({ ...user, senha: e.target.value })}
+              label="Nome"
+              id="nome"
+              value={user.nome}
+              className="containerInputNome"
+              placeholder="Nome"
+              onChange={(e) => setUser({ ...user, nome: e.target.value })}
+            />
+
+            <input
+              type="date"
+              id="dataNascimento"
+              value={user.dataNascimento}
+              className="inputCalendar"
+              onChange={(e) =>
+                setUser({ ...user, dataNascimento: e.target.value })
+              }
             />
           </div>
-          <div className="form-control">
-            <LockOpenIcon id="iconInputLabelControl" />
+          <div id="contInputStretch">
+            <AlternateEmailIcon id="iconInputLabel" />
             <input
-              label="Confirmar Senha"
-              id="confirmarSenhaControl"
-              type="password"
-              className="containerInputSenhaControl"
-              placeholder="Confirmar Senha"
+              label="Email"
+              id="email"
+              type="email"
+              value={user.email}
+              className="containerInputEmail"
+              placeholder="Email"
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
           </div>
-        </div>
-        <div id="impSenha"></div>
-        <div id="impForcaSenha"></div>
-        <div id="erroSenhaForca"></div>
-        <div id="contInputsPet">
-          <LocationOnIcon id="iconInputLabel" />
-          <select
-            id="moradia"
-            className="containerInput"
-            value={user.idSexo}
-            placeholder="Selecione seu genêro"
-            onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
-          >
-            <option value={1}>Masculino</option>
-            <option value={2}>Feminino</option>
-            <option value={3}>Não Binario</option>
-            <option value={4}>Prefiro não dizer</option>
-          </select>
+          <div id="contInputsControl">
+            <div className="form-control">
+              <LockIcon id="iconInputLabelControl" />
+              <input
+                label="Senha"
+                type="password"
+                id="senhaClient"
+                value={user.senha}
+                className="containerInputSenhaControl"
+                placeholder="Senha"
+                onChange={(e) => setUser({ ...user, senha: e.target.value })}
+              />
+            </div>
+            <div className="form-control">
+              <LockOpenIcon id="iconInputLabelControl" />
+              <input
+                label="Confirmar Senha"
+                id="confirmarSenhaControl"
+                type="password"
+                className="containerInputSenhaControl"
+                placeholder="Confirmar Senha"
+              />
+            </div>
+          </div>
+          <div id="impSenha"></div>
+          <div id="impForcaSenha"></div>
+          <div id="erroSenhaForca"></div>
+          <div id="contInputsPet">
+            <LocationOnIcon id="iconInputLabel" />
+            <select
+              id="moradia"
+              className="containerInput"
+              value={user.idSexo}
+              placeholder="Selecione seu genêro"
+              onChange={(e) => setUser({ ...user, idSexo: e.target.value })}
+            >
+              <option value={1}>Masculino</option>
+              <option value={2}>Feminino</option>
+              <option value={3}>Não Binario</option>
+              <option value={4}>Prefiro não dizer</option>
+            </select>
 
-          <CallIcon id="iconInputLabel" />
-          <input
-            label="Telefone"
-            id="telefone"
-            type="number"
-            value={user.telefone}
-            className="containerInputTelefone"
-            placeholder="Telefone"
-            onChange={(e) => setUser({ ...user, telefone: e.target.value })}
-          />
-        </div>
-        <div id="contInputsPet">
-          <AssignmentIndIcon id="iconInputLabel" />
-          <input
-            label="CPF"
-            id="cpf"
-            type="number"
-            value={user.cpf}
-            className="containerInputCpf"
-            placeholder="CPF"
-            onChange={(e) => setUser({ ...user, cpf: e.target.value })}
-          />
-        </div>
-
-        <div id="containerButton">
-          <input
-            value="Cadastrar"
-            type="submit"
-            name="inputConfirmarSenha"
-            className="button"
-            onClick={validate}
-          />
-        </div>
+            <CallIcon id="iconInputLabel" />
+            <input
+              label="Telefone"
+              id="telefone"
+              type="number"
+              value={user.telefone}
+              className="containerInputTelefone"
+              placeholder="Telefone"
+              onChange={(e) => setUser({ ...user, telefone: e.target.value })}
+            />
+          </div>
+          <div id="contInputsPet">
+            <AssignmentIndIcon id="iconInputLabel" />
+            <input
+              label="CPF"
+              id="cpf"
+              type="number"
+              value={user.cpf}
+              className="containerInputCpf"
+              placeholder="CPF"
+              onChange={(e) => setUser({ ...user, cpf: e.target.value })}
+            />
+          </div>
+          <div id="contInputsControl">
+            <div className="form-control">
+              <LockOpenIcon id="iconInputLabelControl" />
+              <input
+                type="text"
+                className="containerInputSenhaControl"
+                placeholder="Informe seu cep"
+                id="cep"
+              />
+              <label for="cep"></label>
+            </div>
+            <div className="form-control">
+              <LockIcon id="iconInputLabelControl" />
+              <input
+                type="text"
+                className="containerInputSenhaControl"
+                placeholder="Bairro"
+                id="bairro"
+              />
+              <label for="bairro"></label>
+            </div>
+            
+            </div>                
+            <div id="contInputsControl">
+            <div className="form-control">
+              <LockOpenIcon id="iconInputLabelControl" />
+              <input
+                type="text"
+                className="containerInputSenhaControl"
+                placeholder="Rua / Avenida"
+                id="endereco"
+              />
+              <label for="endereco"></label>
+            </div>
+            <div className="form-control">
+              <LockIcon id="iconInputLabelControl" />
+              <input
+                type="text"
+                className="containerInputSenhaControl"
+                placeholder="Cidade"
+                id="cidade"
+              />
+              <label for="cidade"></label>
+            </div>
+            
+            </div>     
+          <div id="containerButton">
+            <input
+              value="Cadastrar"
+              type="submit"
+              name="inputConfirmarSenha"
+              className="button"
+              onClick={validate}
+            />
+          </div>
         </div>
       </form>
     </>
