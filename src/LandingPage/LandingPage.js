@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ButtonInfo from "./buttonInfo/ButtonInfo";
 import { AiOutlineSearch } from "react-icons/ai";
 import styleLandingPage from "./style/styleLandingPage.css";
 
@@ -13,7 +14,7 @@ const LandingPage = () => {
               <input type="button" id="login-input" value="LOGIN" />
             </Link>
             <Link to="/Escolha">
-            <input type="button" id="cadastro-input" value="CADASTRE-SE" />
+              <input type="button" id="cadastro-input" value="CADASTRE-SE" />
             </Link>
           </div>
         </div>
@@ -62,8 +63,10 @@ const LandingPage = () => {
                 <div className="imageDashboardCuidador1" />
                 <div className="nomeCuidadorLandingPage">
                   <h7>Mayara Pereira</h7>
-                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
-                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
+                  <h8>
+                    Amo muito os animais! e estou aqui para cuidador do seu!
+                  </h8>
+                  <ButtonInfo />
                 </div>
               </div>
             </div>
@@ -72,8 +75,10 @@ const LandingPage = () => {
                 <div className="imageDashboardCuidador2" />
                 <div className="nomeCuidadorLandingPage">
                   <h7>Larissa Santos</h7>
-                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
-                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
+                  <h8>
+                    Amo muito os animais! e estou aqui para cuidador do seu!
+                  </h8>
+                  <ButtonInfo />
                 </div>
               </div>
             </div>
@@ -82,8 +87,10 @@ const LandingPage = () => {
                 <div className="imageDashboardCuidador3" />
                 <div className="nomeCuidadorLandingPage">
                   <h7>Samira Sato</h7>
-                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
-                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
+                  <h8>
+                    Amo muito os animais! e estou aqui para cuidador do seu!
+                  </h8>
+                  <ButtonInfo />
                 </div>
               </div>
             </div>
@@ -92,8 +99,10 @@ const LandingPage = () => {
                 <div className="imageDashboardCuidador4" />
                 <div className="nomeCuidadorLandingPage">
                   <h7>Diego Junior</h7>
-                  <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
-                  <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
+                  <h8>
+                    Amo muito os animais! e estou aqui para cuidador do seu!
+                  </h8>
+                  <ButtonInfo />
                 </div>
               </div>
             </div>

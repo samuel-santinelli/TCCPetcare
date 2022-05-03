@@ -293,17 +293,6 @@ main{
     margin-bottom: 2rem;
 }
 
-.buttonInfoCuidadorLandingPage{
-    height: 5rem;
-    width: 26rem;
-    margin-top: 6rem;
-    font-size: 1.7rem;
-    text-transform: uppercase;
-    border-radius: 55rem;
-    color: #fff;
-    background-color: #F28907;
-}
-
 .feedback{
    height: 750px;
    /* background-color:purple;
