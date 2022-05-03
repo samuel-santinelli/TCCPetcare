@@ -71,7 +71,7 @@ const LandingPage = () => {
               <div class="header-box2">
                 <div className="imageDashboardCuidador2" />
                 <div className="nomeCuidadorLandingPage">
-                  <h7>Nome do Cuidador</h7>
+                  <h7>Larissa Santos</h7>
                   <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
                   <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
                 </div>
@@ -81,7 +81,7 @@ const LandingPage = () => {
               <div class="header-box3">
                 <div className="imageDashboardCuidador3" />
                 <div className="nomeCuidadorLandingPage">
-                  <h7>Nome do Cuidador</h7>
+                  <h7>Samira Sato</h7>
                   <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
                   <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
                 </div>
@@ -91,7 +91,7 @@ const LandingPage = () => {
               <div class="header-box4">
                 <div className="imageDashboardCuidador4" />
                 <div className="nomeCuidadorLandingPage">
-                  <h7>Nome do Cuidador</h7>
+                  <h7>Diego Junior</h7>
                   <h8>Amo muito os animais! e estou aqui para cuidador do seu!</h8>
                   <input type="submit" value={"Mais informações"} className="buttonInfoCuidadorLandingPage"/>
                 </div>
