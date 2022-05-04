@@ -37,8 +37,8 @@ body{
 }
 
 .containerMainInputsCliente{
-  /* height: 70vh;
-  overflow-x: scroll; */
+  height: 70vh;
+  overflow-x: scroll;
   
 }
 #containerInputsCliente{
@@ -119,6 +119,7 @@ h1 {
   position: absolute;
   margin-top: 1.5rem;
   margin-left: 1rem;
+  display: none;
 }
 
 .containerInputSenha{
@@ -156,8 +157,8 @@ h1 {
 }
 
 .containerInputSenhaControl{
-  width: 15vw;
-  min-width: 18vw;
+  width: 14.5vw;
+  min-width: 4vw;
   font-size: 2.5rem;
   padding-left: 4rem;
   padding-top: 1.9rem;
@@ -167,6 +168,7 @@ h1 {
   font-size: 3.5rem;
   margin-top: 1.5rem;
   position: absolute;
+  display: none;
 }
 
 .containerInputConfirmarSenha{
