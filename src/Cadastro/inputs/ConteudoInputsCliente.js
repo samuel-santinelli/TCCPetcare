@@ -123,9 +123,8 @@ const ConteudoInputsCliente = ({ id }) => {
     }
   };
 
-  // document
-  //   .querySelector("#cep")
-  //   .addEventListener("focusout", preencherFormulario);
+  document
+    .addEventListener("focusout", preencherFormulario);
 
   return (
     <>
@@ -251,7 +250,7 @@ const ConteudoInputsCliente = ({ id }) => {
                 placeholder="Informe seu cep"
                 id="cep"
               />
-              <label for="cep"></label>
+              <label htmlFor="cep"></label>
             </div>
             <div className="form-control">
               <LockIcon id="iconInputLabelControl" />
@@ -261,7 +260,7 @@ const ConteudoInputsCliente = ({ id }) => {
                 placeholder="Bairro"
                 id="bairro"
               />
-              <label for="bairro"></label>
+              <label htmlFor="bairro"></label>
             </div>
             
             </div>                
@@ -274,7 +273,7 @@ const ConteudoInputsCliente = ({ id }) => {
                 placeholder="Rua / Avenida"
                 id="endereco"
               />
-              <label for="endereco"></label>
+              <label htmlFor="endereco"></label>
             </div>
             <div className="form-control">
               <LockIcon id="iconInputLabelControl" />
@@ -284,7 +283,7 @@ const ConteudoInputsCliente = ({ id }) => {
                 placeholder="Cidade"
                 id="cidade"
               />
-              <label for="cidade"></label>
+              <label htmlFor="cidade"></label>
             </div>
             
             </div>     
