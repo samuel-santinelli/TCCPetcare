@@ -23,6 +23,7 @@ const ConteudoInputsCliente = ({ id }) => {
   const button = document.getElementById("buttonCadastrarCliente");
 
   const [user, setUser] = useState({
+    
     nome: "",
     cpf: "",
     dataNascimento: "",

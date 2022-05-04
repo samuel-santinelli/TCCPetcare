@@ -6,7 +6,7 @@ import "./style/styleAgendamento.css";
 import ButtonAgendar from "./button/ButtonAgendar";
 import Modal from "./modal/Modal";
 
-const Agendamento = () => {
+const Agendamento = (props) => {
   const [cuidadores, setCuidadores] = useState([]);
   const [dropdown, setDropdown] = useState("");
   // const foto = "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
@@ -14,7 +14,7 @@ const Agendamento = () => {
   const showDropdown = () => {
     console.log("modal foi clicada");
     setDropdown("show");
-    document.body.addEventListener("click", closeDropdown);
+    document.body.addEventListener("click", closeDropdown, props);
   };
 
   const closeDropdown = (event) => {
@@ -33,6 +33,8 @@ const Agendamento = () => {
         console.log("Deu erro");
       });
   }, []);
+
+  const nome = "Maria";
 
   return (
     <div className="containerMain">
@@ -63,7 +65,7 @@ const Agendamento = () => {
                         alt=""
                       />
                       <div className="infoCuidador">
-                        <label className="nameCuidador">{cuidador.nome}</label>
+                        <label className="nameCuidador" id="nome">{cuidador.nome}</label>
                         <label className="hourCuidador">
                           {cuidador.moradia}
                         </label>
@@ -103,7 +105,7 @@ const Agendamento = () => {
               </div>
             </div>
             {/* Conteudo da modal de cuidadores */}
-            <Modal className={dropdown} />
+            <Modal className={dropdown} nome={nome}/>
           </div>
         </div>
       </div>

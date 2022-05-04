@@ -7,7 +7,7 @@ import Rating from "@mui/material/Rating";
 import { RiBookmarkLine } from "react-icons/ri";
 import ButtonAgendarModal from "../button/ButtonAgendarModal";
 
-const Modal = props => {
+const Modal = (props) => {
   const {className, modalRef} = props;
 
     return(
@@ -21,7 +21,7 @@ const Modal = props => {
               <div className="imageCuidadorServico" />
               <div className="infoCuidador">
                 <label className="nameCuidadorModal">
-                  Maria de Lurdes
+                {props.nome}
                 </label>
                 <label className="hourCuidadorModal">São Paulo</label>
                 <div className="containerRating">
