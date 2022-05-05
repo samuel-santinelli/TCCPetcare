@@ -2,7 +2,7 @@
 /* Container de modal */
 .cardModal {
     height: 129rem;
-    width: 50.9vw;
+    width: auto;
     display: none;
     mask-position: fixed;
   }
@@ -10,141 +10,15 @@
 .show{
   display: block !important;
 }
+  
+.cardModalPag{
+  height: 100vh;
+  width: 100vw;
+  background-color: purple;
+  display: none;
+  position: fixed;
+}
 
-  .containerBanner {
-    height: 36vh;
-    min-width: 30.9vw;
-    width: 50.9vw;
-  }
-  
-  .imageCuidadorServico {
-    height: 11rem;
-    width: 11.4rem;
-    background-size: cover;
-    /* background-image: url("../../../images/imagePerfilCuidador.png"); */
-    margin-left: 2rem;
-  }
-  
-  .nameCuidadorModal {
-    font-size: 2.4rem;
-    color: #000;
-    margin-left: 1rem;
-    margin-bottom: 0.2rem;
-    font-weight: bolder;
-  }
-  
-  .hourCuidadorModal {
-    font-size: 1.9rem;
-    color: var(--colorLocation);
-    margin-left: 1.4rem;
-  }
-  
-  .containerServicos {
-    height: 40rem;
-    width: 70rem;
-    margin-top: 3rem;
-    margin-left: 7vw;
-    margin-right: auto;
-    text-align: center;
-  }
-  
-  .tituloServicos {
-    text-align: center;
-    font-size: 2.8rem;
-    color: var(--colorBiography);
-    margin-left: 5rem;
-  }
-  
-  .containerCardServicos {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-  }
-  
-  .cardPetTrip,
-  .cardPetHome {
-    height: 20rem;
-    width: 25rem;
-    margin-right: 5rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 1px 2px 5px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .titleServices {
-    height: 3rem;
-    width: 22rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .titleServices,
-  h4 {
-    font-size: 1.7rem;
-    padding: 0.3rem;
-    text-transform: uppercase;
-  }
-  
-  .titleServices,
-  h5 {
-    font-size: 1.7rem;
-    color: var(--main-color);
-  }
-  
-  .descServices {
-    font-size: 1.3rem;
-    color: var(--colorBiography);
-    text-align: center;
-  }
-  
-  .descServices p {
-    font-size: 1.3rem;
-    color: var(--colorBiography);
-  }
-  
-  .imagePetTrip {
-    height: 3.7rem;
-    width: 5.78rem;
-    flex-direction: column;
-    background-image: url("../../../../images/imagePetTrip.png");
-  }
-  
-  .imagePetHome {
-    height: 3.7rem;
-    width: 5.78rem;
-    background-size: cover;
-    justify-content: center;
-    background-image: url("../../../../images/imagePetHouse.png");
-  }
-  
-  .textServices {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  
-  .containerSelectPeso1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.6vw;
-  }
-  
-  .containerInputsSelectPeso2 {
-    height: 20vh;
-    width: 38vw;
-    min-width: 30vw;
-    padding-top: 2rem;
-    display: flex;
-    border: solid 2px #F28907;
-    border-radius: 4rem;
-  }
-  /* Container dos cards do cuidador termina aqui */
-  
-  .iconStar{
-    font-size: 3rem;
-  }
+.showModalPag{
+  display: block !important;
+}
