@@ -5,9 +5,9 @@ import "../style/CadastroPet.css";
 import InputCamera from "./InputCamera";
 import "../style/InputCheckbox.css";
 
-const id = 44;
+// const id = 44;
 
-const InputsPet = () => {
+const InputsPet = ({id}) => {
   const [pet, setPet] = useState({
     nome: "",
     deficiencia: 1,

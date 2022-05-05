@@ -4,7 +4,7 @@ const ModalPagamento = (props) => {
   const { classNamePag, modalRefPag } = props;
 
   return (
-    <div className="containerInfoCuidadores">
+    <div className="containerInfoCuidadoresModal">
       <div ref={modalRefPag} className={`${classNamePag} cardModalPag`}>
        <div className="containerInfoPagamento">
 

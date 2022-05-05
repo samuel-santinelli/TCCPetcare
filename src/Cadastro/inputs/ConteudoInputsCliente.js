@@ -14,7 +14,7 @@ import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
 
-const ConteudoInputsCliente = ({ id }) => {
+const ConteudoInputsCliente = (props) => {
   const nome = document.getElementById("nome");
   const dataNascimento = document.getElementById("dataNascimento");
   const email = document.getElementById("email");
@@ -23,7 +23,6 @@ const ConteudoInputsCliente = ({ id }) => {
   const button = document.getElementById("buttonCadastrarCliente");
 
   const [user, setUser] = useState({
-    
     nome: "",
     cpf: "",
     dataNascimento: "",
@@ -33,7 +32,6 @@ const ConteudoInputsCliente = ({ id }) => {
     telefone: "",
     idSexo: 1,
     nomeSexo: "",
-    id: "",
   });
 
   console.log(user);
@@ -43,7 +41,7 @@ const ConteudoInputsCliente = ({ id }) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => console.log(res.data));
-    navigate("/CadastroPet", id);
+    navigate(`/CadastroPet?id=${user.id}`);
   };
 
   const [sexo, setSexo] = useState([]);
@@ -90,7 +88,7 @@ const ConteudoInputsCliente = ({ id }) => {
     listElements();
   }, []);
 
- const pesquisarCep = async (cep) => {
+  const pesquisarCep = async (cep) => {
     const url = `https://viacep.com.br/ws/${cep}/json/`;
     const response = await fetch(url);
     const data = await response.json();
@@ -124,8 +122,7 @@ const ConteudoInputsCliente = ({ id }) => {
     }
   };
 
-  document
-    .addEventListener("focusout", preencherFormulario);
+  document.addEventListener("focusout", preencherFormulario);
 
   return (
     <>
@@ -263,9 +260,8 @@ const ConteudoInputsCliente = ({ id }) => {
               />
               <label htmlFor="bairro"></label>
             </div>
-            
-            </div>                
-            <div id="contInputsControl">
+          </div>
+          <div id="contInputsControl">
             <div className="form-control">
               <LockOpenIcon id="iconInputLabelControl" />
               <input
@@ -286,8 +282,7 @@ const ConteudoInputsCliente = ({ id }) => {
               />
               <label htmlFor="cidade"></label>
             </div>
-            
-            </div>     
+          </div>
           <div id="containerButton">
             <input
               value="Cadastrar"
