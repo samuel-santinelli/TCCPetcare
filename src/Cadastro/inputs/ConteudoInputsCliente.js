@@ -40,7 +40,7 @@ const ConteudoInputsCliente = (props) => {
   const handleUserSubmit = (user) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
-      .then((res) => console.log(res.data));
+      .then((res) => setUser(res.data.id));
     navigate(`/CadastroPet?id=${user.id}`);
   };
 
