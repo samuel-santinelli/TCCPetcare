@@ -12,7 +12,13 @@ function editaCliente($arrayCliente)
             email = '".$arrayCliente['email']."',
             senha = '".$arrayCliente['senha']."',
             idSexo = ".$arrayCliente['idSexo'].",
-            telefone = '".$arrayCliente['telefone']."'
+            telefone = '".$arrayCliente['telefone']."',
+            cep = '".$arrayCliente['cep']."',
+            endereco = '".$arrayCliente['endereco']."',
+            bairro = '".$arrayCliente['bairro']."',
+            cidade = '".$arrayCliente['cidade']."',
+            complemento = '".$arrayCliente['complemento']."',
+            numero = '".$arrayCliente['numero']."'
             
     
         where idCliente= ".$arrayCliente['id'];

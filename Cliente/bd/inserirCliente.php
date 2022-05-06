@@ -11,11 +11,13 @@ function inserirCliente($arrayCliente){
         email,
         senha,
        idSexo,
-       telefone
-       
-      
-
-      
+       telefone,
+       endereco,
+       cep,
+       cidade,
+       bairro,
+       complemento,
+       numero
     )
     values(
         '".$arrayCliente['nome']."',
@@ -25,7 +27,14 @@ function inserirCliente($arrayCliente){
         '".$arrayCliente['email']."',
         '".$arrayCliente['senha']."',
         ".$arrayCliente['idSexo'].",
-        '".$arrayCliente['telefone']."'
+        '".$arrayCliente['telefone']."',
+        '".$arrayCliente['endereco']."',
+        '".$arrayCliente['cep']."',
+        '".$arrayCliente['cidade']."',
+        '".$arrayCliente['bairro']."',
+        '".$arrayCliente['complemento']."',
+        '".$arrayCliente['numero']."'
+
          )
 ";
 
@@ -36,7 +45,15 @@ $conexao = conexao();
 
 // echo($sql);
 // die;
+// $idCliente =  mysqli_insert_id($conexao);
+// echo($idCliente);
+// echo($sql);
+// // die;
 
+//      return true;
+//     return $idCliente;
+   
+    
 if($resultado = mysqli_query($conexao, $sql)){
      return true;
     

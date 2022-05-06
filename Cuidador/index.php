@@ -28,6 +28,16 @@ $idSexoHost =  ( int )null;
 $possuiAnimais = (boolean) 0;
 $possuiCriancas = (boolean) 0;
 $id = (int) 0;
+$numero =  ( int )null;
+$endereco = (string) null;
+$bairro = (string) null;
+$cep = (string) null;
+$complemento = (string) null;
+$cidade = (string) null;
+
+
+
+
  $idSexo = (int) null; 
  $modo = (string) "Salvar"; 
  $foto = (string) "semFoto.png";
@@ -50,7 +60,7 @@ if(isset( $_SESSION['cuidador'])){
     $avaliacoes = $_SESSION['cuidador']['avaliacao'];
     $idSexoHost =$_SESSION['cuidador'] ['idSexoHost'];
     $nomeSexo =$_SESSION['cuidador'] ['nomeSexo']; 
-    $sobrenome = $_SESSION['cuidador']['sobrenome'];
+    // $sobrenome = $_SESSION['cuidador']['sobrenome'];
    
     $modo = "Atualizar";
 
@@ -91,7 +101,7 @@ if(isset( $_SESSION['cuidador'])){
                     
             <input value="<?=$nome?>" placeholder="Nome" type="text" name="inputNome" id="inputNome"/>
             <input value="<?=$data?>" placeholder="Data" type="text" name="inputData" id="inputData"/>
-            <input value="<?=$sobrenome?>" placeholder="Sobrenome" type="sobrenome" name="inputSobrenome" id="inputSobrenome"/>
+            <!-- <input value="<?=$sobrenome?>" placeholder="Sobrenome" type="sobrenome" name="inputSobrenome" id="inputSobrenome"/> -->
             <input value="<?=$email?>" placeholder="Email" type="email" name="inputEmail" id="inputEmail"/>
             <input value="<?=$senha?>" placeholder="Senha" type="password" name="inputSenha" id="inputSenha"/>
             <input value="<?=$confirmarSenha?>" placeholder="Confirmar Senha" type="password" name="inputConfirmarSenha" id="inputConfirmarSenha"/>
@@ -125,7 +135,17 @@ if(isset( $_SESSION['cuidador'])){
             <input value="<?=$preferencias?>" placeholder="Prefêrencias" type="text" name="inputPreferencias"/>
             <input value="<?=$biografia?>" placeholder="Biografia" type="text" name="inputBiografia"/>
             <input value="<?=$avaliacoes?>" placeholder="avaliacao" type="text" name="avaliacao"/>
+            <input value="<?=$cep?>" placeholder="cep" type="text" name="cep"/>
+<input value="<?=$endereco?>" placeholder="endereco" type="text" name="endereco"/>
+<input value="<?=$bairro?>" placeholder="bairro" type="text" name="bairro"/>
+<input value="<?=$cidade?>" placeholder="cidade" type="text" name="cidade"/>
+<input value="<?=$complemento?>" placeholder="complemento" type="text" name="complemento"/>
+<input value="<?=$numero?>" placeholder="numero" type="text" name="numero"/>
+
             <input value="<?=$modo?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+          
+     
+     
         </form>
 
         <?php
@@ -141,8 +161,7 @@ if(isset( $_SESSION['cuidador'])){
                     <br>
                     <td class="tblColunas registros"><?=$exibirHost['cpf']?></td>
                     <br>
-                    <td class="tblColunas registros"><?=$exibirHost['sobrenome']?></td>
-                    <br>
+                   
 
                     <td class="tblColunas registros"><?=$exibirHost['email']?></td>
                     <br>

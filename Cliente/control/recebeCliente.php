@@ -16,8 +16,12 @@ $idSexo =  ( int )null;
 $data = (string) null;
 $telefone = (string) null;
 $foto = (string) null;
-
-
+$numero =  ( int )null;
+$endereco = (string) null;
+$bairro = (string) null;
+$cep = (string) null;
+$complemento = (string) null;
+$cidade = (string) null;
 if(isset($_GET['id'])){
     $id = (int) $_GET['id'];
 }
@@ -34,6 +38,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $confirmarSenha = $_POST['inputConfirmarSenha'];
     $cpf = $_POST['inputCPF'];
     $telefone = $_POST['telefone'];
+    $cep = $_POST['cep'];
+    $endereco = $_POST['endereco'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $complemento = $_POST['complemento'];
+    $numero = $_POST['numero'];
     $idSexo = $_POST['sltSexo'];
   
     
@@ -80,7 +90,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                "senha" =>  $senha,
                 "idSexo" => $idSexo,
                 "telefone" => $telefone,
-                "id" => $id
+                "id" => $id,
+                "cep" => $cep,
+               "endereco" => $endereco,
+                "bairro"=>$bairro,
+                "cidade"=>$cidade,
+                "complemento"=>$complemento,
+                "numero"=>$numero
 
                
             

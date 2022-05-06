@@ -20,6 +20,12 @@ $data = (string) null;
 $telefone = (string) null;
 $id = (int) 0;
 $md = (string) "Salvar"; 
+$numero =  ( int )null;
+$endereco = (string) null;
+$bairro = (string) null;
+$cep = (string) null;
+$complemento = (string) null;
+$cidade = (string) null;
  
 $nomeSexo = "Selecione um Item"; 
 
@@ -35,6 +41,12 @@ if(isset( $_SESSION['cliente'])){
     $senha = $_SESSION['cliente']['senha'];
     $telefone = $_SESSION['cliente']['telefone'];
     $idSexo =$_SESSION['cliente'] ['idSexo'];
+    $cep =$_SESSION['cliente'] ['cep'];
+    $endereco =$_SESSION['cliente'] ['endereco'];
+    $bairro =$_SESSION['cliente'] ['bairro'];
+    $cidade =$_SESSION['cliente'] ['cidade'];
+    $complemento =$_SESSION['cliente'] ['complemento'];
+    $numero =$_SESSION['cliente'] ['numero'];
     $nomeSexo =$_SESSION['cliente'] ['nomeSexo']; 
    
     $md = "Atualizar";
@@ -83,7 +95,7 @@ if(isset( $_SESSION['cliente'])){
             <input value="<?=$confirmarSenha?>" placeholder="Confirmar Senha" type="password" name="inputConfirmarSenha" id="inputConfirmarSenha"/>
     
             <input value="<?=$cpf?>" placeholder="CPF" type="text" name="inputCPF"/>
-                          
+                  
             <select name="sltSexo">
                             
                             <option selected value="<?=$idSexo?>"> <?=$nomeSexo?>  </option> 
@@ -109,7 +121,13 @@ if(isset( $_SESSION['cliente'])){
                     ?>
 
 
-                    
+<input value="<?=$cep?>" placeholder="cep" type="text" name="cep"/>
+<input value="<?=$endereco?>" placeholder="endereco" type="text" name="endereco"/>
+<input value="<?=$bairro?>" placeholder="bairro" type="text" name="bairro"/>
+<input value="<?=$cidade?>" placeholder="cidade" type="text" name="cidade"/>
+<input value="<?=$complemento?>" placeholder="complemento" type="text" name="complemento"/>
+<input value="<?=$numero?>" placeholder="numero" type="text" name="numero"/>
+<input value="<?=$cep?>" placeholder="cep" type="text" name="cep"/>
             <input value="<?=$md?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
        
           

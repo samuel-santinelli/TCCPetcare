@@ -109,6 +109,8 @@ $app->post('/cliente', function($request, $response, $args){
          
           
             if(inserirClienteAPI($dadosBodyJSON)){ 
+                // var_dump($dadosBodyJSON);
+                // die;
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
                                     ->write('{"message":"Item criado com sucesso"}');
