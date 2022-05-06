@@ -22,6 +22,9 @@ const ConteudoInputsCliente = (props) => {
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
   const button = document.getElementById("buttonCadastrarCliente");
 
+  const {id} = useParams();
+  console.log(id);
+
   const [user, setUser] = useState({
     nome: "",
     cpf: "",
@@ -32,16 +35,22 @@ const ConteudoInputsCliente = (props) => {
     telefone: "",
     idSexo: 1,
     nomeSexo: "",
+    cep: "",
+    endereco: "",
+    bairro: "",
+    cidade: "",
+    complemento: "",
+    numero: "",
+    id: id,
   });
 
   console.log(user);
   const navigate = useNavigate();
-
   const handleUserSubmit = (user) => {
     axios
-      .post("http://localhost/Cuidador/Cliente/api/cliente", user)
+      .post('http://localhost/Cuidador/Cliente/api/cliente/:id', user)
       .then((res) => setUser(res.data.id));
-    navigate(`/CadastroPet?id=${user.id}`);
+    navigate(`/CadastroPet/id=${user.id}`);
   };
 
   const [sexo, setSexo] = useState([]);
@@ -101,6 +110,7 @@ const ConteudoInputsCliente = (props) => {
     document.querySelector("#endereco").value = "";
     document.querySelector("#bairro").value = "";
     document.querySelector("#cidade").value = "";
+  
   };
 
   const preencherFormulario = async (evento) => {
@@ -247,6 +257,8 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Informe seu cep"
                 id="cep"
+                value={user.cep}
+                onChange={(e) => setUser({ ...user, cep: e.target.value })}
               />
               <label htmlFor="cep"></label>
             </div>
@@ -257,6 +269,8 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Bairro"
                 id="bairro"
+                value={user.bairro}
+                onChange={(e) => setUser({ ...user, bairro: e.target.value })}
               />
               <label htmlFor="bairro"></label>
             </div>
@@ -269,6 +283,8 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Rua / Avenida"
                 id="endereco"
+                value={user.endereco}
+                onChange={(e) => setUser({ ...user, endereco: e.target.value })}
               />
               <label htmlFor="endereco"></label>
             </div>
@@ -279,8 +295,24 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Cidade"
                 id="cidade"
+                value={user.cidade}
+                onChange={(e) => setUser({ ...user, cidade: e.target.value })}
               />
               <label htmlFor="cidade"></label>
+            </div>
+          </div>
+          <div id="contInputsControl">
+            <div className="form-control">
+              <LockOpenIcon id="iconInputLabelControl" />
+              <input
+                type="text"
+                className="containerInputSenhaControl"
+                placeholder="Informe o numero de sua residência"
+                id="numero"
+                value={user.numero}
+                onChange={(e) => setUser({ ...user, numero: e.target.value })}
+              />
+              <label htmlFor="numero"></label>
             </div>
           </div>
           <div id="containerButton">

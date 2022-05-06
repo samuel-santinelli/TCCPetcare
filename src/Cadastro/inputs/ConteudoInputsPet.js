@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "../style/CadastroPet.css";
 import InputCamera from "./InputCamera";
@@ -8,6 +8,7 @@ import "../style/InputCheckbox.css";
 // const id = 44;
 
 const InputsPet = ({id}) => {
+
   const [pet, setPet] = useState({
     nome: "",
     deficiencia: 1,
