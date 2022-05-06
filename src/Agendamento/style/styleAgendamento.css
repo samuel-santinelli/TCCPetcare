@@ -134,7 +134,8 @@
 .locationCuidadorAgendamento{
   font-size: 1.9rem;
   text-align: center;
-  margin-left: 2vw;
+  margin-left: 1.3vw;
+  text-align: center;
   color: var(--main-color);
   text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
 }

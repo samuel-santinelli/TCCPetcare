@@ -5,8 +5,8 @@ function Footer() {
   return (
     <div id="containerLink">
       <Link to={"/Login"}>
-      <a href="">Já tem uma conta? </a>
-      <a className="linkEntreAgora">Entre agora</a>
+      <label className="linkHaveAccount" href="">Já tem uma conta? </label>
+      <label className="linkEntreAgora">Entre agora</label>
       </Link>
     </div>
   );

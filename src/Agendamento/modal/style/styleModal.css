@@ -10,15 +10,131 @@
 .show{
   display: block !important;
 }
-  
+
 .cardModalPag{
   height: 100vh;
-  width: 100vw;
-  background-color: purple;
-  display: none;
-  position: fixed;
+  width: 50vw;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: block;
 }
 
-.showModalPag{
-  display: block !important;
+.containerInfoPagamento h1{
+  height: 10vh;
+  width: 50vw;
+  padding-top: 3vw;
+  font-size: 2.5vw;
+}
+
+.containerInputsCompra{
+  height: 12vh;
+  width: 45vw;
+  min-width: 40vw;
+  display: flex;
+}
+
+.inputCompra{
+  height: 7vh;
+  width: 20vw;
+  min-width: 19vw;
+  margin-top: 3vw;
+  margin-left: 4vw;
+  border-radius: 55rem;
+  border: solid 1px #F28907;
+  font-size: 1.1vw;
+  padding-left: 1.8vw;
+}
+
+.labelInputCompra{
+  height: 7vw;
+  width: 20vw;
+  margin-top: 1.5vw;
+  position: absolute;
+  margin-left: 6vw;
+}
+
+.labelInputCompraRight{
+  height: 7vw;
+  min-width: 20vw;
+  width: 22vw;
+  margin-top: 1.5vw;
+  position: absolute;
+  margin-left: 28vw;
+}
+
+.labelInputCompraDate{
+  height: 7vw;
+  min-width: 20vw;
+  width: 32vw;
+  margin-top: 3.5vw;
+  position: absolute;
+  margin-left: 4.3vw;
+  font-size: 2.2vw;
+}
+
+.inputCompraSelect{
+  height: 7vh;
+  width: 20vw;
+  min-width: 19vw;
+  margin-top: 3vw;
+  margin-left: 4vw;
+  border-radius: 55rem;
+  background-color: #F28907;
+  font-size: 1.1vw;
+  color: #fff;
+  padding-left: 2vw;
+}
+
+.inputCompraDate{
+  height: 7vh;
+  width: 20vw;
+  min-width: 19vw;
+  margin-top: 3vw;
+  margin-left: 3.8vw;
+  border-radius: 55rem;
+  font-size: 1.4vw;
+  color: #F28907;
+  border: solid 1px #F28907;
+  padding-right: 1.5vw;
+  padding-left: 2vw;
+}
+
+.containerInputsDateCompra{
+  height: 4vh;
+  width: 4vw;
+  margin-top: 6vw;
+}
+
+.containerInputsInfoCompra{
+  margin-left: 20vw;
+  width: 32.5vw;
+  height: 50vh;
+  margin-top: 6vw;
+  display: flex;
+  justify-content: center;
+}
+
+.typeServiceCompra{
+  width: 10vw;
+  font-size: 1.5vw;
+  margin-left: 2vw;
+}
+
+.typeServiceCompraService{
+  width: 10vw;
+  font-size: 1.5vw;
+  margin-left: 2vw;
+  color: #F28907;
+}
+
+.InputConfirmarAgendamento{
+  height: 7vh;
+  width: 20vw;
+  border-radius: 30rem;
+  background-color: #F28907;
+  position: absolute;
+  margin-top: 6vw;
+  margin-left: 4vw;
+  color: #fff;
+  font-size: 1.4vw;
 }

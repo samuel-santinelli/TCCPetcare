@@ -12,13 +12,13 @@
 }
 
 #containerLink{
-    height: 20rem;
-    width: 90rem;
-    margin-top: 1rem;
+    height: 5vh;
+    width: 50vw;
+    margin-top: 1vw;
     display: flex;
     justify-content: right;
     align-items: right;
-    margin-left: 3rem;
+    margin-left: 2vw;
   }
 
   #containerLinkNext{
@@ -39,4 +39,9 @@
   
   .containerLink, .linkEntreAgora{
     color: #f28907;
+  }
+
+  .linkHaveAccount{
+    margin: 0;
+    color: #000;
   }

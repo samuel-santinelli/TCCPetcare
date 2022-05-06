@@ -10,7 +10,6 @@ import ModalPagamento from "./modal/ModalPagamento";
 const Agendamento = (props) => {
   const [cuidadores, setCuidadores] = useState([]);
   const [dropdown, setDropdown] = useState("");
-  const [modalPag, setModalPag] = useState("");
 
   const showDropdown = () => {
     console.log("modal foi clicada");
@@ -24,12 +23,6 @@ const Agendamento = (props) => {
     document.body.addEventListener("click", closeDropdown);
   };
 
-  const showModalPag = () => {
-    console.log("modal de pagamento foi clicada");
-    setModalPag("show")
-    document.body.addEventListener("click", closeDropdown, props)
-  } 
-
   useEffect(() => {
     axios
       .get("http://localhost/Cuidador/Cuidador/api/cuidador")
@@ -41,7 +34,6 @@ const Agendamento = (props) => {
       });
   }, []);
 
-  const nome = "Maria";
   const foto =
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
@@ -82,9 +74,7 @@ const Agendamento = (props) => {
                         />
                       </div>
                       <div className="infoCuidador">
-                        <label className="nameCuidador">
-                          {cuidador.nome}
-                        </label>
+                        <label className="nameCuidador">{cuidador.nome}</label>
                         <label className="locationCuidadorAgendamento">
                           {cuidador.moradia}
                         </label>
@@ -98,7 +88,7 @@ const Agendamento = (props) => {
                           type="submit"
                           id="buttonProximo"
                           className="buttonAgendar"
-                          onClick={(showDropdown, showModalPag)}
+                          onClick={showDropdown}
                         />
                       </div>
                     </div>
@@ -107,10 +97,10 @@ const Agendamento = (props) => {
               </div>
             </div>
             {/* Conteudo da modal de cuidadores */}
+
+            <ModalPagamento className={dropdown} />
             <Modal className={dropdown} />
-           
           </div>
-          <ModalPagamento className={modalPag} />
         </div>
       </div>
     </div>
