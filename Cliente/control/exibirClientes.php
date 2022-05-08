@@ -23,8 +23,13 @@ function criarArrayCliente($objeto)
             "email" => $exibirDados['email'],
             "senha" => $exibirDados['senha'],
             "idSexo" =>$exibirDados['idSexo'],
-            "telefone" => $exibirDados['telefone']
-            
+            "telefone" => $exibirDados['telefone'],
+            "cep" => $exibirDados['cep'],
+            "endereco" => $exibirDados['endereco'],
+            "bairro" => $exibirDados['bairro'],         
+            "cidade"   => $exibirDados['cidade'],
+            "complemento" => $exibirDados['complemento'],
+            "numero" => $exibirDados['numero']
            
         );
 
@@ -62,7 +67,7 @@ function busca($idCliente){
     $sql = "select tblClientes.*, tblPets.nome from tblClientes
 	inner join tblPets
     on tblPets.idPet = tblClientes.idPet
-    where tblClientes.idClientes = ".$idCliente;
+    where tblClientes.idCliente = ".$idCliente;
 
     $conexao = conexao();
 

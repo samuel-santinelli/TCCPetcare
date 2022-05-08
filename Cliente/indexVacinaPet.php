@@ -1,12 +1,20 @@
 <?php
 require_once('config/config.php');
-
-
+require_once(SRC.'control/exibirVacinas.php');
+require_once(SRC.'bd/listarPets.php');
 $idPet = (int)null;
 $idVacina = (int)null;
 
+// $idVacina= $_GET['idVacina'];
+//   // echo ($idVacina);
 
+//   $dados= buscaVacina($idVacina); 
+  $idPet= $_GET['idPet'];
+  // echo ($idVacina);
 
+  $dados= buscaPet($idPet); 
+  
+$nomeVacina = 'Selecione uma vacina';
 ?>
 
 
@@ -20,13 +28,30 @@ $idVacina = (int)null;
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebeVacinaPet.php">
+            <form method="post" enctype="multipart/form-data" action="control/recebeVacinaPet.php?id=<?=$idVacina?>idPet=<?=$idPet?>">
       
                    
 
-            <input value="<?=$idPet?>" placeholder="nome" type="text" name="idPet"/>
-            <input value="<?=$idVacina?>" placeholder="nome" type="text" name="idVacina"/>
-          
+            <input value="<?=$idPet?>" placeholder="idPet" type="text" name="idPet"/>
+            <select name="idVacina">
+                            
+                            <option selected value="<?=$idVacina?>"> <?=$nomeVacina?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirVacinas();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                     
+                                        <option value="<?=$exibir['idVacina']?>"> <?=$exibir['nomeVacina']?> </option>
+                                 
+                                   <?php
+                                }
+      
+                        ?>
+                </select> 
     
          <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
      

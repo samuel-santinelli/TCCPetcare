@@ -19,7 +19,12 @@ function edita($arrayCuidador)
             limitacoes = '".$arrayCuidador['limitacoes']."',
             avaliacao = ".$arrayCuidador['avaliacao'].",
             idSexoHost = ".$arrayCuidador['idSexoHost'].",
-            sobrenome = '".$arrayCuidador['sobrenome']."'
+            cep = '".$arrayCuidador['cep']."',
+            endereco = '".$arrayCuidador['endereco']."',
+            bairro = '".$arrayCuidador['bairro']."',
+            cidade = '".$arrayCuidador['cidade']."',
+            complemento = '".$arrayCuidador['complemento']."',
+            numero = '".$arrayCuidador['numero']."'
     
         where idHost= ".$arrayCuidador['id'];
         $conexao = conexao();

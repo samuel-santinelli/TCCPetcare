@@ -5,7 +5,7 @@
 require_once("vendor/autoload.php");
 require_once("../control/exibirHost.php");
 require_once('../control/recebeCuidadoresAPI.php');
-
+require_once("../control/exibirSexo.php");
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
@@ -18,12 +18,65 @@ $app = new \Slim\App($config);
 
 $app->get('/cuidador', function($request, $response, $args){
 
-    if($listar = exibirHost()){
-        if( $listarDadosArray = criarArrayHost($listar)){  
-            $listarDadosJSON = criarJSONHost($listarDadosArray);
+    // if($listar = exibirHost()){
+    //     if( $listarDadosArray = criarArrayHost($listar)){  
+    //         $listarDadosJSON = criarJSONHost($listarDadosArray);
+    //          }
+    // }
+    //    if($listarDadosArray){
+    //     return $response   ->withStatus(200) 
+    //     ->withHeader('Content-Type', 'application/json') 
+    //     ->write($listarDadosJSON);
+    // }else{
+    //     return $response   ->withStatus(204);
+    // }
+
+
+    if(isset( $request ->getQueryParams()['nome'])) //vendo se existe esse parametro nome, se teve a existencia da chegada de dados, parametro para filtrar pelo nome
+    {
+
+    /************** Recebendo dados pela query string */
+        $nome = (string) null;
+        $nome = $request ->getQueryParams()['nome']; 
+
+        if($listDados = buscarNomeCuidadores($nome)){
+
+                if( $listDadosArray = criarArrayHost($listDados)){  
+                         $listDadosJSON = criarJSONHost($listDadosArray);
+                }
+        }
+ 
+    }else{
+   
+  
+        if($listDados =  exibirHost()){
+       
+            if( $listDadosArray = criarArrayHost($listDados)){  
+                     $listDadosJSON = criarJSONHost($listDadosArray); 
+            }
+        } 
+    }
+
+   
+    if( $listDadosArray){ 
+        return $response   ->withStatus(200) 
+                           ->withHeader('Content-Type', 'application/json') 
+                           ->write($listDadosJSON); 
+
+    }else{
+                     return $response   ->withStatus(204); 
+    }
+  
+
+});
+$app->get('/cuidador/listarSexoHost', function($request, $response, $args){
+    
+    if($listar = exibirSexo()){
+        if( $listarArray = criarArraySexo($listar)){  
+            $listarDadosJSON = criarJsonSexo($listarArray);
              }
     }
-       if($listarDadosArray){
+       if($listarArray){
         return $response   ->withStatus(200) 
         ->withHeader('Content-Type', 'application/json') 
         ->write($listarDadosJSON);
@@ -33,7 +86,6 @@ $app->get('/cuidador', function($request, $response, $args){
   
 
 });
-
 
 $app->post('/cuidador', function($request, $response, $args){ 
 

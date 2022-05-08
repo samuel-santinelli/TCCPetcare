@@ -25,7 +25,12 @@
              limitacoes,
             avaliacao,
             idSexoHost,
-            sobrenome
+            cep,
+            cidade,
+            bairro,
+            complemento,
+            numero,
+            endereco
            
 
            
@@ -45,7 +50,12 @@
              '".$arrayCuidador['limitacoes']."',
              ".$arrayCuidador['avaliacao'].",
              ".$arrayCuidador['idSexoHost'].",
-             '".$arrayCuidador['sobrenome']."'
+             '".$arrayCuidador['cep']."',
+             '".$arrayCuidador['cidade']."',
+             '".$arrayCuidador['bairro']."',
+             '".$arrayCuidador['complemento']."',
+             '".$arrayCuidador['numero']."',
+             '".$arrayCuidador['endereco']."'
             
           
 
@@ -55,7 +65,7 @@
 
      $conexao = conexao();
             //  echo($sql);
-             //die;
+            //  die;
 
      if($teste = mysqli_query($conexao, $sql)){
         // echo('foi 1 / inserir.php');

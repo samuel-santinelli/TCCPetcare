@@ -8,7 +8,7 @@ require_once(SRC.'config/upload.php');
 
 
 $nome = (string) null;
-$sobrenome = (string) null;
+// $sobrenome = (string) null;
 $email = (string) null;
 $senha = (string) null;
 $confirmarSenha = (string) null;
@@ -22,7 +22,12 @@ $avaliacoes = (string) null;
 $idSexoHost =  ( int )null;
 $possuiAnimais = (int) 0;
 $possuiCriancas = (int) 0;
-
+$numero =  ( int )null;
+$endereco = (string) null;
+$bairro = (string) null;
+$cep = (string) null;
+$complemento = (string) null;
+$cidade = (string) null;
 
 $foto = (string) null; 
 
@@ -39,7 +44,7 @@ else{
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = $_POST['inputNome'];
     $data = $_POST['inputData'];
-    $sobrenome = $_POST['inputSobrenome'];
+    // $sobrenome = $_POST['inputSobrenome'];
     $email = $_POST['inputEmail'];
     $senha= md5($_POST['inputSenha']);
     $confirmarSenha = $_POST['inputConfirmarSenha'];
@@ -49,6 +54,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $preferencias = $_POST['inputPreferencias'];
     $biografia = $_POST['inputBiografia'];
     $avaliacoes=  $_POST['avaliacao'];
+    $cep = $_POST['cep'];
+    $endereco = $_POST['endereco'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $complemento = $_POST['complemento'];
+    $numero = $_POST['numero'];
 
     if(isset( $_POST['possuiAnimais'])){
        $possuiAnimais = 1;
@@ -82,7 +93,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 
-    if($nome == '' ||  $cpf == '' || $email == '' || $sobrenome == '' || $senha == '' || $biografia == '' || $moradia == '' || $limitacoes == ''|| $preferencias =='' ||  $confirmarSenha == '')
+    if($nome == '' ||  $cpf == '' || $email == '' || $senha == '' || $biografia == '' || $moradia == '' || $limitacoes == ''|| $preferencias =='' ||  $confirmarSenha == '')
     {
         echo ("<script> 
             alert('Preencha todos os campos');
@@ -114,8 +125,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "limitacoes" => $limitacoes,
                 "avaliacao" => $avaliacoes,
                 "idSexoHost" => $idSexoHost,
-                "sobrenome" => $sobrenome,
-                "id" => $id
+                "id" => $id,
+                "cep" => $cep,
+                "endereco" => $endereco,
+                 "bairro"=>$bairro,
+                 "cidade"=>$cidade,
+                 "complemento"=>$complemento,
+                 "numero"=>$numero
                
             
             );
@@ -124,7 +140,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            
             //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
            if (inserir($cuidador)) //tratamento para ver se os dados chegaram no banco
-                echo ("
+        
+           echo ("
                     <script>
                         alert('foi inserido');
                         window.location.href = '../index.php';

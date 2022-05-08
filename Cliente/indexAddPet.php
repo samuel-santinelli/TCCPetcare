@@ -30,10 +30,35 @@ else{
 <body>
     <form method="post" enctype="multipart/form-data" action="indexPets.php?id=<?=$idCliente?>">
             
-            <button id="Deixar para depois "> Deixar para depois</button> 
+            <!-- <button id="Deixar para depois "> Deixar para depois</button>  -->
    
    
-           </form>    
+           </form>   
+           <?php
+              
+              require_once(SRC .'bd/listarClientes.php');
+
+              $idCliente= $_GET['id'];
+              //  echo ($idCliente);
+
+              $dados= buscaCliente($idCliente); 
+             
+              $exibirCliente =mysqli_fetch_assoc($dados);
+              // var_dump($exbirCliente);
+              // die;
+                 
+         
+  
+  ?>
+
+       
+          <a href="indexPrincipal.php?id=<?=$exibirCliente['idCliente']?>">
+          <button  > Deixar Para depois</button>
+          </a>
+      <?php  
+      
+  ?> 
+           
            <?php
               
               require_once(SRC .'bd/listarClientes.php');

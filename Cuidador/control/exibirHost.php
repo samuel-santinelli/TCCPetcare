@@ -7,6 +7,11 @@ function exibirHost(){
     $dadosListar = listarHost();
     return $dadosListar;
 }
+function buscarNomeCuidadores($nome){
+    $dados = buscarNome($nome);
+
+    return $dados;
+}
 
       
 function criarArrayHost($objeto)
@@ -33,7 +38,12 @@ function criarArrayHost($objeto)
             "limitacoes" => $exibirDados['limitacoes'],
             "avaliacao" => $exibirDados['avaliacao'],
             "idSexoHost" =>$exibirDados['idSexoHost'],
-            "sobrenome" => $exibirDados['sobrenome']
+            "cep" => $exibirDados['cep'],
+            "endereco" => $exibirDados['endereco'],
+            "bairro" => $exibirDados['bairro'],         
+            "cidade"   => $exibirDados['cidade'],
+            "complemento" => $exibirDados['complemento'],
+            "numero" => $exibirDados['numero']
             
            
         );

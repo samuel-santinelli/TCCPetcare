@@ -8,8 +8,22 @@ require_once(SRC."control/exibirFase.php");
 require_once(SRC."control/exibirRaca.php");
 require_once(SRC."control/exibirClientes.php");
 require_once(SRC."control/exibirPets.php");
+require_once(SRC.'control/exibirVacinas.php');
+require_once(SRC.'control/exibirPorte.php');
+
+// $docil = (int) 0;
+// $temperamental = (int) 0;
+// $sistematico = (int) 0;
+// $antissocial = (int) 0;
+// $ciumento = (int) 0;
+// $acanhoso = (int) 0;
+// $guloso = (int) 0;
+// $bravo = (int) 0;
+
+
 
 $nome = (string)null;
+$comportamento = (string)null;
 $deficiencia = (int) null;
 $descricao = (string) null;
 $castrado = (string) null;
@@ -17,6 +31,8 @@ $foto = (string) "semFoto.png";
 $dataNascimento = (string) null;
 $avaliacao = (int) null;
 $idRacas = (int) 0;
+$idVacina = (int) 0;
+$nomeVacina = "selecione vacina";
 $idEspecie = (int) 0;
 $idFases = (int) 0;
 $idCliente = (int) null;
@@ -24,6 +40,7 @@ $nomeEspecie = "Selecione uma especie";
 $nomeFases = "Selecione uma fase"; 
  $nomeRacas = "Selecione uma racas"; 
  $nomeCliente = "nome cliente";
+ $nomePorte = "nome porte";
  $modo = (string) "Salvar"; 
 $idPet = (int) 0;
 //  if(isset($_GET['id'])){
@@ -38,8 +55,12 @@ $idPet = (int) 0;
 $idCliente= $_GET['id'];
 //   echo ($idCliente);
 
-  $dados= buscaCliente($idCliente); 
+  $dados= busca($idCliente); 
 
+//   $Vacina= $_GET['idVacina'];
+//   //   echo ($idCliente);
+  
+//     $dados= buscaVacina($idVacina); 
 
   if(isset($_SESSION['pet'])) 
   {
@@ -56,6 +77,7 @@ $idCliente= $_GET['id'];
       $idEspecie = $_SESSION['pet'] ['idEspecie'];
       $idFases = $_SESSION['pet']['idFase'];
       $idCliente = $_SESSION['pet'] ['idCliente']; 
+      $comportamento = $_SESSION['pet'] ['comportamento']; 
       $modo = "Atualizar"; 
       
 
@@ -78,7 +100,7 @@ $idCliente= $_GET['id'];
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebePets.php?modo=<?=$modo?>&id=<?=$idCliente?>&nomeFoto=<?=$foto?>&idPet=<?=$idPet?>">
+            <form method="post" enctype="multipart/form-data" action="control/recebePets.php?modo=<?=$modo?>&id=<?=$idCliente?>&nomeFoto=<?=$foto?>&idPet=<?=$idPet?>&idVacina=<?=$idVacina?>">
             <div class="campos">
                         <div class="cadastroInformacoesPessoais">
                             <label> Foto: </label>
@@ -129,6 +151,24 @@ $idCliente= $_GET['id'];
                         ?>
                         </select>
 
+                        <select name="sltPorte">
+                            
+                            <option selected value="<?=$idPorte?>"> <?=$nomePorte?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirPorte();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                        <option value="<?=$exibir['idPorte']?>"> <?=$exibir['nomePorte']?> </option>
+                                    <?php
+                                }
+      
+                        ?>
+                        </select>
+
                         <select name="sltraca">
                         
 
@@ -151,7 +191,26 @@ $idCliente= $_GET['id'];
                         </select>      
                       
                         
-                   
+                        <select name="sltVacina">
+                            
+                            <option selected value="<?=$idVacina?>"> <?=$nomeVacina?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirVacinas();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                     
+                                        <option value="<?=$exibir['idVacina']?>"> <?=$exibir['nomeVacina']?> </option>
+                                 
+                                   <?php
+                                }
+      
+                        ?>
+                </select> 
+
 
             <input value="<?=$nome?>" placeholder="nome" type="text" name="nome"/>
 
@@ -162,15 +221,36 @@ $idCliente= $_GET['id'];
             <input value="<?=$castrado?>" placeholder="castrado" type="checkbox" name="castrado" id="castrado"/>
             <input value="<?=$dataNascimento?>" placeholder="data nascimento" type="text" name="dataNascimento" id="dataNascimento"/>
             <input value="<?=$avaliacao?>" placeholder="avaliacao" type="text" name="avaliacao" id="avaliacao"/>
-                      
+            <input value="<?=$comportamento?>" placeholder="comportamento" type="text" name="comportamento" id="comportamento"/>
               
             <!-- <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>    -->
 
+           
+
+
+
+ 
+          
          <input value="<?=$modo?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
      
                        
         
         </form> 
+
+        
+                <!-- // $dados = exibirPets();
+                
+                // while ($exibir = mysqli_fetch_assoc($dados))
+                // {
+                //  -->
+                  <!-- <a href="indexVacinaPet.php?id=">   
+                  <button id="Adicionar um pet" > pet</button>                   
+                 </a> -->
+
+                     
+                <!-- //     } -->
+                
+          
       
         <?php
                 $dados = exibirPets();

@@ -28,5 +28,17 @@ function buscaCliente($idCliente){
   
     return $select;
   }
+  function buscaClientePet($idPet){
+   
+    $sql = "select tblPets.idPet, tblClientes.idCliente from tblPets 
+    inner join tblClientes on tblClientes.idCliente = tblPets.idCliente
+    where tblPets.idPet =".$idPet;
   
+    $conexao = conexao();
+    // echo($sql);
+    // die;
+    $select = mysqli_query($conexao,$sql);
+  
+    return $select;
+  }
 ?>

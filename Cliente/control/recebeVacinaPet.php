@@ -2,16 +2,22 @@
 
 require_once('../config/config.php');
 require_once(SRC.'bd/inserirVacinaPet.php');
-
-
-
+require_once(SRC.'control/exibirVacinas.php');
+require_once(SRC.'bd/listarPets.php');
+require_once(SRC."control/exibirPets.php");
 
 
 $idPet = (int)null;
 $idVacina = (int)null;
 
+// $idVacina= $_GET['idVacina'];
+//   echo ($idVacina);
 
+//   $dados= buscaVacina($idVacina); 
+  $idPet= $_GET['idPet'];
+  echo ($idPet);
 
+  $dados= buscaPet($idPet); 
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

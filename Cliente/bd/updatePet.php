@@ -15,7 +15,9 @@ function editaPet($arrayPet)
             idRaca = ".$arrayPet['idRaca'].",
             idEspecie = ".$arrayPet['idEspecie'].",
             idFase = ".$arrayPet['idFase'].",
-            idCliente = ".$arrayPet['idCliente']."
+            idCliente = ".$arrayPet['idCliente'].",
+            comportamento = '".$arrayPet['comportamento']."',
+            idVacina = ".$arrayPet['idVacina']."
     
         where idPet= ".$arrayPet['id'];
         $conexao = conexao();

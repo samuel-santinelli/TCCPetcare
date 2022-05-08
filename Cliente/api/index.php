@@ -32,6 +32,9 @@ $url = explode('/',$_GET['url']);
         case 'raca':
                 require_once('racaApi/index.php');
                 break;  
+                case 'servicoHost':
+                        require_once('servicoApi/index.php');
+                        break;  
 }
    
     

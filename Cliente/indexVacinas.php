@@ -1,9 +1,11 @@
 <?php
 require_once('config/config.php');
+require_once(SRC.'control/exibirVacinas.php');
 
+$nomeVacina = (string)null;
+$idVacina = (int) null;
 
-$nomeVacinas = (string)null;
-
+$nomeVacina = 'Selecione uma vacina';
 
 
 
@@ -20,20 +22,52 @@ $nomeVacinas = (string)null;
     <title>Cadastro do cuidador</title>
 </head>
 <body>
-            <form method="post" enctype="multipart/form-data" action="control/recebeVacina.php">
+            <!-- <form method="post" enctype="multipart/form-data" action="control/recebeVacina.php?idVacina=<?=$idVacina?>">
+       -->
+            <select name="sltVacina">
+                            
+                            <option selected value="<?=$idVacina?>"> <?=$nomeVacina?>  </option> 
+                        <?php 
+                            
+                               $listar= exibirVacinas();
+                              
+            
+                                while($exibir= mysqli_fetch_assoc($listar))
+                                {
+                                    ?>
+                                     
+                                        <option value="<?=$exibir['idVacina']?>"> <?=$exibir['nomeVacina']?> </option>
+                                 
+                                   <?php
+                                }
       
-                   
+                        ?>
+                </select> 
 
-            <input value="<?=$nomeVacinas?>" placeholder="nome" type="text" name="nome"/>
+                      
+        <?php
+                $dados = exibirVacinas();
+                
+                while ($exibir = mysqli_fetch_assoc($dados))
+                {
+                ?>
+                  <a href="indexVacinaPet.php?id=<?=$exibir['idVacina']?>">   
+                 <button id="Adicionar um pet" > Vacina</button>                   
+                </a>
 
+                    <?php  
+                    }
+                ?>
           
     
-         <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+         <!-- <input value="Salvar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>         -->
      
                        
         
         </form> 
-      
+        
+
+
        
 </body> 
 </html>

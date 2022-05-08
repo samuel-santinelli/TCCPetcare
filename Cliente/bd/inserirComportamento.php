@@ -26,15 +26,30 @@ function inserirComportamento($arrayComportamento){
         '".$arrayComportamento['bravo']."'
     )";
 
-        $conexao = conexao();
 
-        if(mysqli_query($conexao, $sql)){
-            // echo('Foi inserido');
-            return true;
-        }else{
-            // echo('Nao foi inserido');
-            return false;
-        }
+    $conexao = conexao();
+
+    // echo($sql);
+    // die;
+    
+    if(mysqli_query($conexao, $sql)){
+        return true;
+    }
+    else{
+        return false;
+    }
+    // }else{
+    //     return false;
+    // }
+
+
+        // if(mysqli_query($conexao, $sql)){
+        //     // echo('Foi inserido');
+        //     return true;
+        // }else{
+        //     // echo('Nao foi inserido');
+        //     return false;
+        // }
 }
 
 

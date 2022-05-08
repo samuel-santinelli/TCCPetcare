@@ -2,6 +2,7 @@
 
 
 require_once('../bd/inserirCliente.php');
+
 require_once('../config/config.php');
 require_once(SRC.'config/upload.php');
 require_once(SRC .'bd/updateCliente.php');
@@ -15,8 +16,12 @@ $idSexo =  ( int )null;
 $data = (string) null;
 $telefone = (string) null;
 $foto = (string) null;
-
-
+$numero =  ( int )null;
+$endereco = (string) null;
+$bairro = (string) null;
+$cep = (string) null;
+$complemento = (string) null;
+$cidade = (string) null;
 if(isset($_GET['id'])){
     $id = (int) $_GET['id'];
 }
@@ -33,6 +38,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $confirmarSenha = $_POST['inputConfirmarSenha'];
     $cpf = $_POST['inputCPF'];
     $telefone = $_POST['telefone'];
+    $cep = $_POST['cep'];
+    $endereco = $_POST['endereco'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $complemento = $_POST['complemento'];
+    $numero = $_POST['numero'];
     $idSexo = $_POST['sltSexo'];
   
     
@@ -79,7 +90,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                "senha" =>  $senha,
                 "idSexo" => $idSexo,
                 "telefone" => $telefone,
-                "id" => $id
+                "id" => $id,
+                "cep" => $cep,
+               "endereco" => $endereco,
+                "bairro"=>$bairro,
+                "cidade"=>$cidade,
+                "complemento"=>$complemento,
+                "numero"=>$numero
 
                
             
@@ -90,8 +107,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            
                 //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
                if (inserirCliente($cliente)) //tratamento para ver se os dados chegaram no banco
-                    echo ("
-                       foi");
+                 {
+               
+                
+                       echo (
+                       "
+                       <script>
+                           alert('foi inserido');
+                           window.location.href = '../indexAddPet.php';
+                          
+                           
+                       </script>
+                       " 
+                        );
+                 }
+               
+               
+               
+              
                 else
                     echo ("
                         <script>

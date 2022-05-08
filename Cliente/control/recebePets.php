@@ -2,9 +2,27 @@
 
 require_once('../config/config.php');
 require_once(SRC.'bd/inserirPets.php');
+require_once(SRC.'bd/inserirVacinaPet.php');
+require_once(SRC.'bd/inserirComportamento.php');
 require_once(SRC .'bd/listarClientes.php');
 require_once(SRC.'bd/updatePet.php');
 require_once(SRC.'config/upload.php');
+require_once(SRC.'control/exibirVacinas.php');
+require_once(SRC."control/exibirPets.php");
+// $idVacina= $_GET['idVacina'];
+//   echo ($idVacina);
+
+//   $dados= buscaVacina($idVacina); 
+
+
+// $docil = (int) 0;
+// $temperamental = (int) 0;
+// $sistematico = (int) 0;
+// $antissocial = (int) 0;
+// $ciumento = (int) 0;
+// $acanhoso = (int) 0;
+// $guloso = (int) 0;
+// $bravo = (int) 0;
 
 
 $nome = (string)null;
@@ -34,6 +52,52 @@ else{
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+    
+    // if(isset( $_POST['docil'])){
+    //     $docil = 1;
+    //  } else{
+    //      $docil = 0;
+    //  } 
+    //  if(isset( $_POST['temperamental'])){
+    //      $temperamental = 1;
+    //   } else{
+    //       $temperamental = 0;
+    //   }  
+    //   if(isset( $_POST['sistematico'])){
+    //      $sistematico = 1;
+    //   } else{
+    //       $sistematico = 0;
+    //   }   
+    //   if(isset( $_POST['antissocial'])){
+    //      $antissocial = 1;
+    //   } else{
+    //       $antissocial = 0;
+    //   }   
+    //   if(isset( $_POST['ciumento'])){
+    //      $ciumento = 1;
+    //   } else{
+    //       $ciumento = 0;
+    //   }   
+    //   if(isset( $_POST['acanhoso'])){
+    //      $acanhoso = 1;
+    //   } else{
+    //       $acanhoso = 0;
+    //   }   
+    //   if(isset( $_POST['guloso'])){
+    //      $guloso = 1;
+    //   } else{
+    //       $guloso = 0;
+    //   }   
+    //   if(isset( $_POST['bravo'])){
+    //      $bravo = 1;
+    //   } else{
+    //       $bravo = 0;
+    //   }      
+ 
+ 
+   
+
+
     $nome = $_POST['nome'];
     // echo($nome);
     // die;
@@ -46,6 +110,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $idRaca = $_POST['sltraca'];
     $idEspecie = $_POST['sltEspecie'];
     $idFases = $_POST['sltFases'];
+    $idVacina = $_POST['sltVacina'];
+    $comportamento = $_POST['comportamento'];
     // $idCliente = $_POST['idCliente'];
     if(isset( $_POST['deficiencia'])){
         $deficiencia = 1;
@@ -103,10 +169,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "idEspecie" => $idEspecie,
                 "idFase"=> $idFases,
                 "idCliente"=> $idCliente,
-                "idPet" => $idPet
+                "idPet" => $idPet,
+                "comportamento" => $comportamento,
+                "idVacina" => $idVacina
             
             );
 
+         
+         
             
           
             // echo($nome);
@@ -118,20 +188,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            
             //chama a função inserir do arquivo inserirCliente.php, e encaminha o array com os dados do cliente.
            if (inserirPet($pets)) //tratamento para ver se os dados chegaram no banco
-                echo ("
-                    <script>
-                        alert('foi');
-                        window.location.href = '../indexPets.php';
-                    </script>
-                    " );
-            else
-                echo ("
-                    <script>
-                        alert('Não foi');
-                         window.history.back();
-                    </script>
-                ");
-            }elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')//logica para o atualizar
+               
+            echo (
+                "
+                <script>
+                    alert('foi inserido');
+                    window.location.href = '../indexPets.php';
+                  
+                    
+                </script>
+                " 
+                 );
+        
+                    
+
+           
+            elseif(strtoupper($_GET['modo']) == 'ATUALIZAR')//logica para o atualizar
             { 
                 //  editaPet($pets);
                 
@@ -161,7 +233,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 
-
+}
 
 
 

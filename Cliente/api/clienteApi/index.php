@@ -6,6 +6,8 @@ require_once("vendor/autoload.php");
 
 require_once('../control/recebeClientesApi.php');
 require_once("../control/exibirClientes.php");
+require_once("../control/exibirSexo.php");
+require_once("../control/exibirLogin.php");
 
 $config = [
     'settings' => [
@@ -33,6 +35,46 @@ $app->get('/cliente', function($request, $response, $args){
     }
   
 
+});
+
+$app->get('/cliente/login', function($request, $response, $args){ 
+ 
+    if(isset( $request ->getQueryParams()['email'])) //vendo se existe esse parametro nome, se teve a existencia da chegada de dados, parametro para filtrar pelo nome
+    {
+
+    /************** Recebendo dados pela query string */
+        $login = (string) null;
+        $senha = (string) null;
+        $login = $request ->getQueryParams()['email']; 
+        $senha = $request ->getQueryParams()['senha']; 
+        if($listDados = buscarLoginSenha($login, $senha)){
+
+                if( $listDadosArray = criarArrayCliente($listDados)){  
+                         $listDadosJSON = criarJSONCLIENTE($listDadosArray);
+                }
+        }
+ 
+    }else{
+   
+  
+        if($listDados =  exibirClientes()){
+       
+            if( $listDadosArray = criarArrayCliente($listDados)){  
+                     $listDadosJSON = criarJSONCLIENTE($listDadosArray); 
+            }
+        } 
+    }
+
+   
+    if( $listDadosArray){ 
+        return $response   ->withStatus(200) 
+                           ->withHeader('Content-Type', 'application/json') 
+                           ->write($listDadosJSON); 
+
+    }else{
+                     return $response   ->withStatus(204); 
+    }
+  
 });
 
 
@@ -67,6 +109,8 @@ $app->post('/cliente', function($request, $response, $args){
          
           
             if(inserirClienteAPI($dadosBodyJSON)){ 
+                // var_dump($dadosBodyJSON);
+                // die;
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
                                     ->write('{"message":"Item criado com sucesso"}');
@@ -87,6 +131,26 @@ $app->post('/cliente', function($request, $response, $args){
     }
   
 });
+
+$app->get('/cliente/listarSexo', function($request, $response, $args){
+ 
+    if($listar = exibirSexo()){
+        if( $listarArray = criarArraySexo($listar)){  
+            $listarDadosJSON = criarJsonSexo($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
+
+
 
 $app->put('/cliente/{id}', function($request, $response, $args){ 
    
@@ -169,5 +233,6 @@ $app->delete('/cliente/{id}', function($request, $response, $args){
 $app->run();
 
 // http://localhost/Cuidador/Cliente/api/cliente
+//http://localhost/Cuidador/Cliente/api/cliente?email=teste@teste&senha=123
 
 ?>

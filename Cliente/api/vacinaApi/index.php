@@ -5,7 +5,7 @@
 require_once("vendor/autoload.php");
 
 require_once('../control/recebeVacinasApi.php');
-
+require_once("../control/exibirPetVacina.php");
 
 $config = [
     'settings' => [
@@ -16,6 +16,23 @@ $config = [
 $app = new \Slim\App($config);
 
 
+$app->get('/vacinas', function($request, $response, $args){
+    
+    if($listar = exibirPetVacina()){
+        if( $listarArray = criarArrayVacinas($listar)){  
+            $listarDadosJSON = criarJsonVacinas($listarArray);
+             }
+    }
+       if($listarArray){
+        return $response   ->withStatus(200) 
+        ->withHeader('Content-Type', 'application/json') 
+        ->write($listarDadosJSON);
+    }else{
+        return $response   ->withStatus(204);
+    }
+  
+
+});
 
 $app->post('/vacinas', function($request, $response, $args){ 
 
