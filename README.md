@@ -18,9 +18,9 @@ O comando `yarn start` permite você iniciar o projeto, ira abrir uma pagina no 
 
 O comando `yarn add react-icons --save` permite você instalar a dependencia de icone no qual eu não mandei na `node_modules`
 
-### `yarn add react-router`
+### `yarn add react-router-dom`
 
-O comando `yarn add react-router` permite você instalar a dependencia de rota no qual eu não mandei na `node_modules`
+O comando `yarn add react-router-domr` permite você instalar a dependencia de rota no qual eu não mandei na `node_modules`
 
 ### (ATENÇÃO) - VERIFIQUE A SUA BRANCH
 
