@@ -48,6 +48,117 @@ main{
     
 }
 
+/* Container Slide */
+
+.containerMenuLateral{
+    height: 46rem;
+    width: 14vw;
+    min-width: 10vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding-left: 0.5vw;
+    padding-top: 1vw;
+    transition: 2s;
+}
+
+.containerMenuLateral.close {
+    width: 88px;
+}
+.containerMenuLateral.close .text{
+    opacity: 0;
+}
+
+.locationProfileSlide{
+    font-size: 1.1vw;
+}
+
+.containerMenuLateral .header-slidebar{
+    position: relative;
+}
+
+.containerMenuLateral .text{
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: #fff;
+}
+
+.containerMenuLateral .image{
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.containerMenuLateral .image-text img{
+    height: 3.8vw;
+    width: 3.8vw;
+    border-radius: 55vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: solid 4px #F28907;
+}
+
+.containerMenuLateral .image-text{
+    display: flex;
+    align-items: center;
+}
+
+.nameProfileSlide{
+    margin-left: 1vw;
+}
+
+.containerMenuLateral .image-text img{
+    display: flex;
+    align-items: center;
+}
+
+.header-slidebar .image-text .header-text{
+    display: flex;
+}
+
+.header-text .name{
+    font-weight: 600;
+}
+
+.header-text .name{
+    margin-top: -2px;
+}
+
+.containerMenuLateral .header-slidebar .iconSlidebar{
+    position: absolute;
+    margin-left: 12.2vw;
+    margin-top: -1.9vw;
+    transform: translateY(-50%);
+    background-color: #F28907;
+    border-radius: 5vw;
+    font-size: 2.4vw;
+}
+
+.menu-slider{
+    margin-top: 2vw;
+    font-size: 1.9vw;
+}
+
+.menu-bar{
+    padding-left: 0.7vw;
+}
+
+.iconSlidebarLi{
+}
+
+.titleIconSlidebar{
+    font-size: 1vw;
+    position: absolute;
+    margin-top: 0.5vw;
+    margin-left: 0.3vw;
+}
+
+
+/* Container Slide */
+
 .tituloPet-servico{
     /* width: 10%; */
     height: inherit;
