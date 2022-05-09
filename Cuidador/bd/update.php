@@ -17,7 +17,6 @@ function edita($arrayCuidador)
             preferencias = '".$arrayCuidador['preferencias']."',
             moradia = '".$arrayCuidador['moradia']."',
             limitacoes = '".$arrayCuidador['limitacoes']."',
-            avaliacao = ".$arrayCuidador['avaliacao'].",
             idSexoHost = ".$arrayCuidador['idSexoHost'].",
             cep = '".$arrayCuidador['cep']."',
             endereco = '".$arrayCuidador['endereco']."',

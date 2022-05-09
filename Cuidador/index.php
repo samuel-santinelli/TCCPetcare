@@ -22,7 +22,6 @@ $preferencias = (string) null;
 $data = (string) null;
 $foto = (string) ''; 
 $biografia = (string) null;
-$avaliacoes = (string) null;
  $idAgendaHost =  ( int )null;
 $idSexoHost =  ( int )null;
 $possuiAnimais = (boolean) 0;
@@ -57,7 +56,6 @@ if(isset( $_SESSION['cuidador'])){
     $preferencias = $_SESSION['cuidador']['preferencias'];
     $moradia = $_SESSION['cuidador']['moradia'];
     $limitacoes = $_SESSION['cuidador']['limitacoes'];
-    $avaliacoes = $_SESSION['cuidador']['avaliacao'];
     $idSexoHost =$_SESSION['cuidador'] ['idSexoHost'];
     $nomeSexo =$_SESSION['cuidador'] ['nomeSexo']; 
     // $sobrenome = $_SESSION['cuidador']['sobrenome'];
@@ -134,7 +132,6 @@ if(isset( $_SESSION['cuidador'])){
             <input value="<?=$moradia?>" placeholder="Moradia" type="text" name="inputMoradia"/>
             <input value="<?=$preferencias?>" placeholder="Prefêrencias" type="text" name="inputPreferencias"/>
             <input value="<?=$biografia?>" placeholder="Biografia" type="text" name="inputBiografia"/>
-            <input value="<?=$avaliacoes?>" placeholder="avaliacao" type="text" name="avaliacao"/>
             <input value="<?=$cep?>" placeholder="cep" type="text" name="cep"/>
 <input value="<?=$endereco?>" placeholder="endereco" type="text" name="endereco"/>
 <input value="<?=$bairro?>" placeholder="bairro" type="text" name="bairro"/>
@@ -179,8 +176,7 @@ if(isset( $_SESSION['cuidador'])){
                     <br>
                     <td class="tblColunas registros"><?=$exibirHost['limitacoes']?></td>
                     <br>
-                    <td class="tblColunas registros"><?=$exibirHost['avaliacao']?></td>
-                    <br>
+                  
                    
                  <pre>
 

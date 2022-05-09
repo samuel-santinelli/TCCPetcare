@@ -10,12 +10,12 @@ function inserirCliente($arrayCliente){
         foto,
         email,
         senha,
-       idSexo,
-       telefone,
-       endereco,
-       cep,
-       cidade,
-       bairro,
+        idSexo,
+        telefone,
+        endereco,
+        cep,
+        cidade,
+        bairro,
        complemento,
        numero
     )

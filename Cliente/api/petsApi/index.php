@@ -16,7 +16,7 @@ $config = [
 $app = new \Slim\App($config);
 
 
-$app->get('/pets/listar', function($request, $response, $args){
+$app->get('/pets', function($request, $response, $args){
     require_once("../control/exibirPets.php");
     if($listar = exibirPets()){
         if( $listarArray = criarArrayPet($listar)){  
@@ -106,7 +106,7 @@ $app->get('/pets/vacinasPet', function($request, $response, $args){
 
 });
 
-$app->post('/pets/inserir', function($request, $response, $args){ 
+$app->post('/pets', function($request, $response, $args){ 
 
    
     $contentType = $request-> getHeaderLine('Content-Type'); 

@@ -77,8 +77,7 @@ $app->get('/cliente/login', function($request, $response, $args){
   
 });
 
-
-$app->post('/cliente', function($request, $response, $args){ 
+$app->post('/cliente/{id}', function($request, $response, $args){ 
 
    
     $contentType = $request-> getHeaderLine('Content-Type'); 
@@ -104,16 +103,18 @@ $app->post('/cliente', function($request, $response, $args){
         {
             // var_dump($dadosBodyJSON);
             // die;
-          
+             $idCliente = (int) 0;
+             $idCliente = $args['id'];
+            
 
          
           
-            if(inserirClienteAPI($dadosBodyJSON)){ 
+            if(inserirCliente($dadosBodyJSON, $idCliente)){ 
                 // var_dump($dadosBodyJSON);
                 // die;
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Item criado com sucesso"}');
+                                    ->write('{"message":"Item criado com sucesso", "'.$idCliente.'"}');
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')
@@ -131,6 +132,60 @@ $app->post('/cliente', function($request, $response, $args){
     }
   
 });
+
+// $app->post('/cliente', function($request, $response, $args){ 
+
+   
+//     $contentType = $request-> getHeaderLine('Content-Type'); 
+   
+
+    
+//     if($contentType == 'application/json'){
+       
+      
+//         $dadosBodyJSON = $request-> getParsedBody();
+//         // echo($dadosBodyJSON);
+//         // die;
+       
+//         if($dadosBodyJSON == "" || $dadosBodyJSON == null) 
+//         {
+
+//             var_dump($dadosBodyJSON);
+//             die;
+//             return $response    ->withStatus(406)
+//                                 ->withHeader('Content-Type', 'application/json')
+//                                  ->write('{"message":"Conteudo enviado pelo body não contem dados validos"}');
+//         }else
+//         {
+//             // var_dump($dadosBodyJSON);
+//             // die;
+          
+
+         
+          
+//             if(inserirClienteAPI($dadosBodyJSON)){ 
+//                 // var_dump($dadosBodyJSON);
+//                 // die;
+//                 return $response    ->withStatus(201)
+//                                     ->withHeader('Content-Type', 'application/json')
+//                                     ->write('{"message":"Item criado com sucesso"}');
+//             }else{
+//                 return $response    ->withStatus(400)
+//                                     ->withHeader('Content-Type', 'application/json')
+//                                     ->write('{"message":"Não foi possível salvar os dados, por favor conferir o body da mensagem"}');
+//             }
+          
+//         }
+
+    
+//     }else
+//     {
+//         return $response    ->withStatus(406)
+//                             ->withHeader('Content-Type', 'application/json')
+//                             ->write('{"message":"Formato de dados do header incompatível com o padrão json"}');
+//     }
+  
+// });
 
 $app->get('/cliente/listarSexo', function($request, $response, $args){
  

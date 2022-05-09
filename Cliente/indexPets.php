@@ -29,7 +29,6 @@ $descricao = (string) null;
 $castrado = (string) null;
 $foto = (string) "semFoto.png";
 $dataNascimento = (string) null;
-$avaliacao = (int) null;
 $idRacas = (int) 0;
 $idVacina = (int) 0;
 $nomeVacina = "selecione vacina";
@@ -70,7 +69,6 @@ $idCliente= $_GET['id'];
       $descricao = $_SESSION['pet']['descricao'];
       $castrado = $_SESSION['pet']['castrado'];
       $dataNascimento =$_SESSION['pet']['dataNascimento'];
-      $avaliacao = $_SESSION['pet']['avaliacao'];
       $idRacas = $_SESSION['pet']['idRaca'];
       $foto = $_SESSION['pet'] ['foto'];
     //   $nomeEspecie = $_SESSION['pet']['nomeEspecie'];
@@ -220,7 +218,6 @@ $idCliente= $_GET['id'];
             <input value="<?=$descricao?>" placeholder="descricao" type="text" name="descricao" id="descricao"/>
             <input value="<?=$castrado?>" placeholder="castrado" type="checkbox" name="castrado" id="castrado"/>
             <input value="<?=$dataNascimento?>" placeholder="data nascimento" type="text" name="dataNascimento" id="dataNascimento"/>
-            <input value="<?=$avaliacao?>" placeholder="avaliacao" type="text" name="avaliacao" id="avaliacao"/>
             <input value="<?=$comportamento?>" placeholder="comportamento" type="text" name="comportamento" id="comportamento"/>
               
             <!-- <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>    -->

@@ -36,7 +36,6 @@ function criarArrayHost($objeto)
             "preferencias" => $exibirDados['preferencias'],
             "moradia" => $exibirDados['moradia'],
             "limitacoes" => $exibirDados['limitacoes'],
-            "avaliacao" => $exibirDados['avaliacao'],
             "idSexoHost" =>$exibirDados['idSexoHost'],
             "cep" => $exibirDados['cep'],
             "endereco" => $exibirDados['endereco'],

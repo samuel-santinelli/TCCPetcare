@@ -11,7 +11,6 @@ function editaPet($arrayPet)
             castrado = '".$arrayPet['castrado']."',
             foto = '".$arrayPet['foto']."',
             dataNascimento = '".$arrayPet['dataNascimento']."',
-            avaliacao = '".$arrayPet['avaliacao']."',
             idRaca = ".$arrayPet['idRaca'].",
             idEspecie = ".$arrayPet['idEspecie'].",
             idFase = ".$arrayPet['idFase'].",

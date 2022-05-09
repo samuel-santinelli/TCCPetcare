@@ -31,7 +31,7 @@ $descricao = (string) null;
 $castrado = (string) null;
 $foto = (string) null;
 $dataNascimento = (string) null;
-$avaliacao = (int) 0;
+// $avaliacao = (int) 0;
 $idRaca = (int) 0;
 $idEspecie = (int) 0;
 $idFases = (int) 0;
@@ -106,7 +106,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     // $castrado = $_POST['castrado'];
     
     $dataNascimento = $_POST['dataNascimento'];
-    $avaliacao = $_POST['avaliacao'];
     $idRaca = $_POST['sltraca'];
     $idEspecie = $_POST['sltEspecie'];
     $idFases = $_POST['sltFases'];
@@ -164,7 +163,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "castrado" => $castrado,
                 "foto" => $foto,
                 "dataNascimento"  => $dataNascimento,
-                "avaliacao" => $avaliacao ,
                 "idRaca" =>$idRaca,
                 "idEspecie" => $idEspecie,
                 "idFase"=> $idFases,
