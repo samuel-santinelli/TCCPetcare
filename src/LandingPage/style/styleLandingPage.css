@@ -52,8 +52,8 @@ main{
 
 .containerMenuLateral{
     height: 46rem;
-    width: 14vw;
-    min-width: 10vw;
+    width: 54rem;
+    min-width: 32rem;
     top: 0;
     left: 0;
     position: fixed;
@@ -74,6 +74,7 @@ main{
 
 .locationProfileSlide{
     font-size: 1.1vw;
+    color: #000;
 }
 
 .containerMenuLateral .header-slidebar{
@@ -93,8 +94,8 @@ main{
 }
 
 .containerMenuLateral .image-text img{
-    height: 3.8vw;
-    width: 3.8vw;
+    height: 10em;
+    width: 10em;
     border-radius: 55vw;
     background-size: cover;
     background-repeat: no-repeat;
@@ -108,6 +109,7 @@ main{
 
 .nameProfileSlide{
     margin-left: 1vw;
+    color: #000;
 }
 
 .containerMenuLateral .image-text img{
@@ -129,17 +131,18 @@ main{
 
 .containerMenuLateral .header-slidebar .iconSlidebar{
     position: absolute;
-    margin-left: 12.2vw;
-    margin-top: -1.9vw;
+    margin-left: 27.4rem;
+    margin-top: -4.9rem;
     transform: translateY(-50%);
     background-color: #F28907;
     border-radius: 5vw;
-    font-size: 2.4vw;
+    font-size: 5.9rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .menu-slider{
-    margin-top: 2vw;
-    font-size: 1.9vw;
+    margin-top: 2rem;
+    font-size: 4.2rem;
 }
 
 .menu-bar{
@@ -150,10 +153,10 @@ main{
 }
 
 .titleIconSlidebar{
-    font-size: 1vw;
+    font-size: 2rem;
     position: absolute;
-    margin-top: 0.5vw;
-    margin-left: 0.3vw;
+    margin-top: 1.2rem;
+    margin-left: 0.4rem;
 }
 
 
@@ -484,14 +487,17 @@ main{
 /* Conteudo do header se inicia aqui */
 header{
     width: 100%;
-    height: 510px;
+    height: 210vh;
     display: flex;
+    
     flex-direction: column;
     background-image: url('../../../images/banner.jpeg');
+    padding-bottom: 51rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
 }
+
 #parteSuperior{
     height: 50px;
     width: inherit;
@@ -550,6 +556,7 @@ header{
     position: absolute;
     width: 544px;
     height: 172px;
+    margin-top: 10vw;
     color: #e9e9e9;
     text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
@@ -568,7 +575,7 @@ header{
 }
 
 #Agendar-agora{
-    width: 250px;
+    width: 35rem;
     height: 60px;
     border-style: none;
     background-color: #F28907;
@@ -576,7 +583,7 @@ header{
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.9rem;
-    margin-top: 25px
+    margin-top: 25rem;
 ;
     
 }

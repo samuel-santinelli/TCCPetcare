@@ -16,13 +16,12 @@ import validarSenhaForca from "./validation/validation";
 
 const sexoMap = {
   1: "Masculino",
-  2: "Feminino"
-}
+  2: "Feminino",
+};
 
-const InputsIcon = props => {
+const InputsIcon = (props) => {
   const [cuidador, setCuidador] = useState({
     nome: "",
-    sobrenome: "",
     email: "",
     senha: "",
     dataNascimento: "",
@@ -34,7 +33,13 @@ const InputsIcon = props => {
     preferencias: "",
     moradia: "",
     limitacoes: "",
-    avaliacao: 1,
+    cep: "",
+    endereco: "",
+    bairro: "",
+    cidade: "",
+    numero: "",
+    complemento: "",
+    valorHora: "",
     idSexoHost: 1,
   });
 
@@ -45,7 +50,7 @@ const InputsIcon = props => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
       .then((res) => console.log(res.data));
-      navigate('/Agendamento')
+    navigate("/Agendamento");
   };
   const listElements = () => {
     axios
@@ -55,6 +60,42 @@ const InputsIcon = props => {
   useEffect(() => {
     listElements();
   }, []);
+
+  const pesquisarCep = async (cep) => {
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  };
+
+  const cepValido = (cep) => /^[0-9]{8}$/.test(cep);
+
+  const limparFormulario = () => {
+    document.querySelector("#endereco").value = "";
+    document.querySelector("#bairro").value = "";
+    document.querySelector("#cidade").value = "";
+  };
+
+  const preencherFormulario = async (evento) => {
+    const cep = evento.target.value.replace("-", "");
+    limparFormulario();
+    if (cepValido(cep)) {
+      const infoCep = await pesquisarCep(cep);
+      if (infoCep.erro) {
+        document.querySelector("#endereco").value =
+          "CEP não encontrado, tente novamente.";
+      } else {
+        document.querySelector("#endereco").value = infoCep.logradouro;
+        document.querySelector("#bairro").value = infoCep.bairro;
+        document.querySelector("#cidade").value = infoCep.localidade;
+      }
+    } else {
+      document.querySelector("#endereco").value =
+        "CEP invalido, por favor digite um cep valido!";
+    }
+  };
+
+  document.addEventListener("focusout", preencherFormulario);
 
   return (
     <>
@@ -88,17 +129,6 @@ const InputsIcon = props => {
               }
             />
             {/* <MdOutlineAccountCircle id="iconInputLabel" /> */}
-            <input
-              label="Sobrenome"
-              id="sobrenome"
-              type="text"
-              className="containerInputSobrenome"
-              placeholder="Sobrenome"
-              value={cuidador.sobrenome}
-              onChange={(e) =>
-                setCuidador({ ...cuidador, sobrenome: e.target.value })
-              }
-            />
           </div>
           <div id="contInputStretch">
             {/* <MdAlternateEmail id="iconInputLabel" /> */}
@@ -233,12 +263,17 @@ const InputsIcon = props => {
                 className="containerInputMoradiaScroll"
                 placeholder="Informe seu cep"
                 type="number"
+                value={cuidador.cep}
+                onChange={(e) =>
+                  setCuidador({ ...cuidador, cep: e.target.value })
+                }
               />
-
+              <label htmlFor="cep"></label>
               {/* <HouseIcon id="iconInputLabelLeft" /> */}
               <input
                 label="Moradia"
                 type="text"
+                id="endereco"
                 className="containerInputLocal"
                 placeholder="Aonde você reside?"
                 value={cuidador.moradia}
@@ -249,6 +284,56 @@ const InputsIcon = props => {
                   })
                 }
               />
+              <label htmlFor="endereco"></label>
+
+              <div id="contInputsScroll">
+                {/* <BusinessIcon id="iconInputLabelLeft" /> */}
+                <input
+                  className="containerInputMoradiaScroll"
+                  placeholder="Qual cidade você reside?"
+                  type="text"
+                  id="cidade"
+                  value={cuidador.cidade}
+                  onChange={(e) =>
+                    setCuidador({ ...cuidador, cidade: e.target.value })
+                  }
+                />
+                <label htmlFor="cidade"></label>
+                <input
+                  className="containerInputLocal"
+                  placeholder="Informe seu bairro"
+                  type="text"
+                  id="bairro"
+                />
+                <label htmlFor="bairro"></label>
+                {/* <HouseIcon id="iconInputLabelLeft" /> */}
+              </div>
+              <div id="contInputsScroll">
+                {/* <BusinessIcon id="iconInputLabelLeft" /> */}
+                <input
+                  className="containerInputMoradiaScroll"
+                  placeholder="Informe seu numero"
+                  type="number"
+                  id="numero"
+                  value={cuidador.numero}
+                  onChange={(e) =>
+                    setCuidador({ ...cuidador, numero: e.target.value })
+                  }
+                />
+                <label htmlFor="numero"></label>
+                <input
+                  type="text"
+                  className="containerInputLocal"
+                  placeholder="Informe seu complemento"
+                  value={cuidador.complemento}
+                  onChange={(e) =>
+                    setCuidador({
+                      ...cuidador,
+                      complemento: e.target.value,
+                    })
+                  }
+                />
+              </div>
               <div>
                 <div className="containerPreferencesScroll">
                   {/* <AccessibilityIcon id="iconInputLabel" /> */}
@@ -270,7 +355,7 @@ const InputsIcon = props => {
                     {/* <InfoIcon id="iconInputLabel"/> */}
                     <input
                       id="biografia"
-                      placeholder="Me diga um pouco sobre você"
+                      placeholder="Conte um pouco sobre você"
                       className="containerInputEmailScroll"
                       value={cuidador.biografia}
                       type="text"
@@ -281,8 +366,21 @@ const InputsIcon = props => {
                         })
                       }
                     />
+                    
                     <div className="containerPreferencesScroll">
-                      
+                    <input
+                      id="biografia"
+                      placeholder="Valor por hora"
+                      className="containerInputEmailScroll"
+                      value={cuidador.valorHora}
+                      type="text"
+                      onChange={(e) =>
+                        setCuidador({
+                          ...cuidador,
+                          valorHora: e.target.value,
+                        })
+                      }
+                    />
                     </div>
                   </div>
                 </div>

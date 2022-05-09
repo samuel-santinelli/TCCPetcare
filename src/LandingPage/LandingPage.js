@@ -14,10 +14,6 @@ const LandingPage = () => {
   const slidebar = document.querySelector('.containerMenuLateral')
   const toggle = document.querySelector('.iconSlidebar')
 
-  toggle.addEventListener("click", () => {
-    toggle.classList.toggle("close")
-  })
-
   const imagePerson =
     "https://images.pexels.com/photos/6001779/pexels-photo-6001779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
@@ -39,15 +35,22 @@ const LandingPage = () => {
           <div className="menu-bar">
             <div className="menu-slider">
               <AiOutlineSearch className="iconSlidebarLi" />
+              <Link to={"./Agendamento"}>
               <span className="titleIconSlidebar">Pesquisar cuidador</span>
+              </Link>
             </div>
             <div className="menu-slider">
+              
               <FaClipboardList className="iconSlidebarLi" />
+              <Link to={"./DadosServico"}>
               <span className="titleIconSlidebar">Em Andamento</span>
+              </Link>
             </div>
             <div className="menu-slider">
               <AiOutlineHistory className="iconSlidebarLi" />
+              <Link to={"./HistoricoCliente"}>
               <span className="titleIconSlidebar">Histórico</span>
+              </Link>
             </div>
             <div className="menu-slider">
               <AiOutlineExport className="iconSlidebarLi" />

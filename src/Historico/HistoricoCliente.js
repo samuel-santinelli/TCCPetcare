@@ -1,16 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styleHistorico from "./style/styleHistorico.css"
 
 const HistoricoCliente = () => {
   return (
     <>
       <header>
+        <Link to={"../"}>
         <div id="icon-close">x</div>
+        </Link>
       </header>
       <main>
         <div id="titulo">
           <span id="text1">Cuidadores</span>
-          <span id="text2">Anteriores</span>
+          <span id="text2"> Anteriores</span>
         </div>
 
         <div id="box-container1">

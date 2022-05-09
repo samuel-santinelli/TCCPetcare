@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import CadastroPet from "../Cadastro/CadastroPet";
 import CadastroCliente from "../Cadastro/CadastroCliente";
 import CadastroCuidador from "../Cadastro/CadastroCuidador"
@@ -8,8 +8,9 @@ import Agendamento from "../Agendamento/Agendamento";
 import LandingPage from "../LandingPage/LandingPage"
 import DadosServico from "../Dados/DadosServico";
 import Login from "../Login/Login"
-import EsqueciMinhaSenha from "../EsqueciMinhaSenha/EsqueciMinhaSenha"
+import EsqueciMinhaSenha from "../EsqueciMinhaSenha/EsqueciMinhaSenha";
 import Escolha from "../Escolha/Escolha"
+import HistoricoCliente from "../Historico/HistoricoCliente"
 
 function OurRoutes() {
   return (
@@ -24,6 +25,7 @@ function OurRoutes() {
       <Route path="/Login" element={<Login />} />
       <Route path="/EsqueciMinhaSenha" element={<EsqueciMinhaSenha />} />
       <Route path="/Escolha" element={<Escolha />} />
+      <Route path="/HistoricoCliente" element={<HistoricoCliente />} />
     </Routes>
   );
 }

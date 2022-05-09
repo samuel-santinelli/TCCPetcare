@@ -192,3 +192,18 @@ h1 {
   background-position: center;
   background-size: cover;
 }
+
+.containerIconBack{
+  position: absolute;
+}
+
+.iconBack{
+  height: 8rem;
+  width: 8rem;
+  position: absolute;
+  font-size: 4.5rem;
+  margin-top: -50rem;
+  margin-left: 2rem;
+  border-radius: 100%;
+  border: solid 1.5px #f28907;
+}
