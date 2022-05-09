@@ -23,7 +23,8 @@ function edita($arrayCuidador)
             bairro = '".$arrayCuidador['bairro']."',
             cidade = '".$arrayCuidador['cidade']."',
             complemento = '".$arrayCuidador['complemento']."',
-            numero = '".$arrayCuidador['numero']."'
+            numero = '".$arrayCuidador['numero']."',
+            valorHora = '".$arrayCuidador['valorHora']."'
     
         where idHost= ".$arrayCuidador['id'];
         $conexao = conexao();

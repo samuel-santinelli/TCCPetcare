@@ -220,5 +220,6 @@ $app->delete('/cuidador/{id}', function($request, $response, $args){
 $app->run();
 
 // http://localhost/Cuidador/Cuidador/api/cuidador
+//http://localhost/Cuidador/Cuidador/api/cuidador?nome=agrteste
 
 ?>

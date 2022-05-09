@@ -29,7 +29,8 @@
             bairro,
             complemento,
             numero,
-            endereco
+            endereco,
+            valorHora
            
 
            
@@ -53,7 +54,8 @@
              '".$arrayCuidador['bairro']."',
              '".$arrayCuidador['complemento']."',
              '".$arrayCuidador['numero']."',
-             '".$arrayCuidador['endereco']."'
+             '".$arrayCuidador['endereco']."',
+             '".$arrayCuidador['valorHora']."'
             
           
 

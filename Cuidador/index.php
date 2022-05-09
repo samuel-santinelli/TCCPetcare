@@ -33,7 +33,7 @@ $bairro = (string) null;
 $cep = (string) null;
 $complemento = (string) null;
 $cidade = (string) null;
-
+$valorHora = (double) null;
 
 
 
@@ -59,6 +59,7 @@ if(isset( $_SESSION['cuidador'])){
     $idSexoHost =$_SESSION['cuidador'] ['idSexoHost'];
     $nomeSexo =$_SESSION['cuidador'] ['nomeSexo']; 
     // $sobrenome = $_SESSION['cuidador']['sobrenome'];
+    $valorHora = $_SESSION['cuidador'] ['valorHora']; 
    
     $modo = "Atualizar";
 
@@ -138,7 +139,7 @@ if(isset( $_SESSION['cuidador'])){
 <input value="<?=$cidade?>" placeholder="cidade" type="text" name="cidade"/>
 <input value="<?=$complemento?>" placeholder="complemento" type="text" name="complemento"/>
 <input value="<?=$numero?>" placeholder="numero" type="text" name="numero"/>
-
+<input value="<?=$valorHora?>" placeholder="valorHora" type="text" name="valorHora"/>
             <input value="<?=$modo?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
           
      
