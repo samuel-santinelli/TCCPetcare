@@ -44,14 +44,27 @@ function inserirCliente($arrayCliente){
 $conexao = conexao();
 
 // echo($sql);
-// die;
-// $idCliente =  mysqli_insert_id($conexao);
-// echo($idCliente);
-// echo($sql);
 // // die;
 
-//      return true;
+// if($rs = mysqli_query($conexao,$sql)){
+//     $idCliente =  mysqli_insert_id($conexao);
+//     echo($idCliente);
+//     // die;
 //     return $idCliente;
+//     // echo($idCliente);
+//     // die;
+//     return true;
+   
+// }else{
+//     return false;
+// }
+
+
+
+// echo($sql);
+// die;
+
+    
    
     
 if($resultado = mysqli_query($conexao, $sql)){
