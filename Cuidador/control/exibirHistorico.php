@@ -20,7 +20,6 @@ function criarArrayHistorico($objeto)
             "valor" => $exibirDados['valor'],
             "dataInicial" => $exibirDados['dataInicial'],
             "dataFinal" => $exibirDados['dataFinal'],
-            "avaliacao" =>$exibirDados['avaliacao'],
             "nomePet" =>$exibirDados['nomePet'],
             "foto" =>$exibirDados['foto'],
             "nomeTipo" =>$exibirDados['nomeTipo']
