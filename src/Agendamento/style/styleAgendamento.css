@@ -20,10 +20,16 @@
   transition: all 0.2s linear;
 }
 
+body{
+  
+}
+
 .containerMain {
-  height: 165rem;
-  width: 100vw;
-  max-height: 500rem;
+  background-image: url("../../../images/bannerCuidador2.jpg");
+  object-fit: cover;
+  background-size: cover;
+  min-height: 85vw !important;
+  background-repeat: no-repeat;
 }
 
 .map {
@@ -85,11 +91,10 @@
 
 .containerInfoCuidadores {
   margin-top: 3vw;
-  height: 130vh;
-  width: 52.8vw;
+  height: 95vh;
+  width: 48.8vw;
   background-color: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin-right: 1rem;
 }
 
@@ -101,7 +106,7 @@
 
 .card {
   height: auto;
-  min-height: 45vh;
+  min-height: 49vh;
   width: auto;
   min-width: 38vw;
   display: flex;
@@ -109,6 +114,13 @@
   align-content: center;
   margin-top: 3.6vw;
   background-color: #fff;
+  background: linear-gradient(
+    101.96deg,
+    rgba(249, 249, 249, 0.261) -0.52%,
+    rgba(249, 249, 249, 0.0775668) 88.4%,
+    rgba(249, 249, 249, 0.058) 100.25%
+  );
+  backdrop-filter: blur(20px); 
   border-radius: 2.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -136,14 +148,15 @@
   text-align: center;
   margin-left: 1.3vw;
   text-align: center;
-  color: var(--main-color);
+  color: var(--colorLocation);
   text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
 }
 
 .biographyCuidador {
   font-size: 1.6rem;
-  color: var(--colorBiography);
+  color: #fff;
   margin-left: 2vw;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 18px 23px rgba(0,0,0,0.1);
   margin-top: 0.3vw;
 }
 .containerInfoCuidadorAgendamento{
@@ -158,7 +171,7 @@
 
 .containerImageCuidadorAgendamento{
   height: 5vh;
-  width: 40vw;
+  width: 45vw;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -167,23 +180,23 @@
 
 .mapCardAgendamento{
   height: 15vh;
-  min-height: 14.9vh;
-  width: 38vw;
-  margin-left: 2.5rem;
+  min-height: 13.4vh;
+  width: 45vw;
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
   margin-top: 5.5vw;
 }
 
 .imageCuidador {
-  height: 11.8vh;
-  min-width: 5.9vw;
+  height: 12.5vh;
+  min-width: 7vw;
   border-radius: 100%;
+  object-fit: cover;
 }
 
 .valorCuidadorAgendamento{
   font-size: 3.2rem;
-  margin-top: 1rem;
+  margin-top: 5rem;
   color: #f28907;
 }
 
@@ -202,10 +215,13 @@
 
 .nameCuidador {
   margin-left: 1.3vw;
-  margin-top: 1vw;
+  margin-top: 5vw;
   margin-bottom: 0.2rem;
   font-weight: bolder;
-  color: #000;
+  color: #fff;
+text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
   font-size: 3.1rem;
 }
 
@@ -230,5 +246,5 @@
 
 .modalMapAgendamento{
   height: 131.5vh;
-  width: 51vw;
+  width: 45vw;
 }

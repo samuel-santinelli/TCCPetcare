@@ -35,7 +35,7 @@ const Agendamento = (props) => {
   }, []);
 
   const foto =
-    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
+    "https://images.pexels.com/photos/5540148/pexels-photo-5540148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
   return (
     <div className="containerMain">
@@ -74,7 +74,7 @@ const Agendamento = (props) => {
                       <div className="infoCuidador">
                         <label className="nameCuidador">{cuidador.nome}</label>
                         <label className="locationCuidadorAgendamento">
-                          {cuidador.moradia}
+                          {cuidador.moradia} (São Paulo)
                         </label>
                         <label className="biographyCuidador">
                           {cuidador.biografia}

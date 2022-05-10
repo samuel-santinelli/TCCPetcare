@@ -1,63 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BiChevronRight } from "react-icons/bi";
 import {
   AiOutlineSearch,
-  AiOutlineHistory,
-  AiOutlineExport,
 } from "react-icons/ai";
-import { FaClipboardList } from "react-icons/fa";
 import ButtonInfo from "./buttonInfo/ButtonInfo";
+import Toolbar from "./slidebar/ToolBar"
 import styleLandingPage from "./style/styleLandingPage.css";
+import Sidebar from "./slidebar/Sidebar";
+import Backdrop from "./slidebar/Backdrop";
 
 const LandingPage = () => {
-  const slidebar = document.querySelector('.containerMenuLateral')
-  const toggle = document.querySelector('.iconSlidebar')
+  const slidebar = document.querySelector(".containerMenuLateral");
+  const toggle = document.querySelector(".iconSlidebar");
 
   const imagePerson =
     "https://images.pexels.com/photos/6001779/pexels-photo-6001779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
+    const [sidebar, setSidear] = useState(false);
+    const toggleSidebar = () => {
+      setSidear((prevState) => !prevState)
+    }
+
   return (
     <>
       <header>
-        <nav className="containerMenuLateral close">
-          <div className="header-slidebar">
-            <div className="image-text">
-              <span className="image-slide">
-                <img src={imagePerson} alt="logo" className="logoMenuSlider" />
-              </span>
-              <div className="text header-text">
-                <span className="nameProfileSlide">Mayara</span>
-              </div>
-            </div>
-            <BiChevronRight className="iconSlidebar" />
-          </div>
-          <div className="menu-bar">
-            <div className="menu-slider">
-              <AiOutlineSearch className="iconSlidebarLi" />
-              <Link to={"./Agendamento"}>
-              <span className="titleIconSlidebar">Pesquisar cuidador</span>
-              </Link>
-            </div>
-            <div className="menu-slider">
-              
-              <FaClipboardList className="iconSlidebarLi" />
-              <Link to={"./DadosServico"}>
-              <span className="titleIconSlidebar">Em Andamento</span>
-              </Link>
-            </div>
-            <div className="menu-slider">
-              <AiOutlineHistory className="iconSlidebarLi" />
-              <Link to={"./HistoricoCliente"}>
-              <span className="titleIconSlidebar">Histórico</span>
-              </Link>
-            </div>
-            <div className="menu-slider">
-              <AiOutlineExport className="iconSlidebarLi" />
-              <span className="titleIconSlidebar">Logout</span>
-            </div>
-          </div>
-        </nav>
+        <Toolbar openSidebar={toggleSidebar}/>
+        <Backdrop sidebar={sidebar} closeSidebar={toggleSidebar}/>
+        <Sidebar sidebar={sidebar}/>
         <div id="parteSuperior">
           <div class="boxBotao">
             <Link to="/Login">

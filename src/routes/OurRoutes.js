@@ -11,6 +11,7 @@ import Login from "../Login/Login"
 import EsqueciMinhaSenha from "../EsqueciMinhaSenha/EsqueciMinhaSenha";
 import Escolha from "../Escolha/Escolha"
 import HistoricoCliente from "../Historico/HistoricoCliente"
+import PerfiCliente from "../Perfil/PerfilCliente"
 
 function OurRoutes() {
   return (
@@ -26,6 +27,7 @@ function OurRoutes() {
       <Route path="/EsqueciMinhaSenha" element={<EsqueciMinhaSenha />} />
       <Route path="/Escolha" element={<Escolha />} />
       <Route path="/HistoricoCliente" element={<HistoricoCliente />} />
+      <Route path="/PerfilCliente" element={<PerfiCliente />} />
     </Routes>
   );
 }

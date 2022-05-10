@@ -13,7 +13,17 @@
 
 #containerLink{
     height: 5vh;
-    width: 50vw;
+    width: 45vw;
+    margin-top: 1vw;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-left: 2vw;
+  }
+
+  #containerLinkCliente{
+    height: 5vh;
+    width: 53vw;
     margin-top: 1vw;
     display: flex;
     justify-content: right;

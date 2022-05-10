@@ -26,19 +26,19 @@ color:black
     height: inherit;
     /* background-color: #F28907; */
 }
-#mapa{
+#containerMapaHistory{
     margin-right: 30px;
-    width: 50%;
-    height: 100rem;
+    width: 40%;
+    height: 50rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.card{
+.card-history{
     width: 600px;
     height: 110px;
     border-radius: 21px;
     background-color: #fff;
     margin-top: 30px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 22px 80px 4px;
     margin-left: 100px;
     display: flex;
 }
@@ -113,13 +113,30 @@ header{
     background-color: #F28907;
     margin: 50px;
     text-align: center;
-    padding-top: 6px;
+    padding-top: 3px;
     border-radius:50%; 
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 700;   
     font-size: 32px;    
     color: white;
+}
+
+#icon-close-home{
+    width: 50px;
+    height:50px;
+    background-color: #F28907;
+    margin: 50px;
+    text-align: center;
+    padding-top: 3px;
+    border-radius:50%; 
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;   
+    font-size: 32px;  
+    margin-top: -80rem;  
+    color: white;
+    position: absolute;
 }
 /* Conteudo do header se encerra aqui */
 
@@ -141,4 +158,10 @@ body{
     font-family: 'Montserrat', sans-serif;
     /* background-color: aqua; */
 }
+
+.mapHistory{
+    height: 58rem;
+    width: 90rem;
+}
+
 /* Conteudo do body se encerra aqui */

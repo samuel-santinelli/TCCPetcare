@@ -9,7 +9,7 @@ import {
 } from "react-icons/md";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import styles from "../style/Cadastro.css";
+import "../style/Cadastro.css";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
@@ -120,7 +120,7 @@ const InputsIcon = (props) => {
             {/* <MdAccountCircle id="iconInputLabel" /> */}
             <input
               id="nome"
-              className="containerInputNome"
+              className="containerInputNomeCuidador"
               placeholder="Nome"
               type="text"
               value={cuidador.nome}
@@ -290,7 +290,7 @@ const InputsIcon = (props) => {
                 {/* <BusinessIcon id="iconInputLabelLeft" /> */}
                 <input
                   className="containerInputMoradiaScroll"
-                  placeholder="Qual cidade você reside?"
+                placeholder="Cidade"
                   type="text"
                   id="cidade"
                   value={cuidador.cidade}
@@ -301,7 +301,7 @@ const InputsIcon = (props) => {
                 <label htmlFor="cidade"></label>
                 <input
                   className="containerInputLocal"
-                  placeholder="Informe seu bairro"
+                  placeholder="Bairro"
                   type="text"
                   id="bairro"
                 />
@@ -312,7 +312,7 @@ const InputsIcon = (props) => {
                 {/* <BusinessIcon id="iconInputLabelLeft" /> */}
                 <input
                   className="containerInputMoradiaScroll"
-                  placeholder="Informe seu numero"
+                  placeholder="Numero da casa"
                   type="number"
                   id="numero"
                   value={cuidador.numero}
@@ -324,7 +324,7 @@ const InputsIcon = (props) => {
                 <input
                   type="text"
                   className="containerInputLocal"
-                  placeholder="Informe seu complemento"
+                  placeholder="Complemento"
                   value={cuidador.complemento}
                   onChange={(e) =>
                     setCuidador({

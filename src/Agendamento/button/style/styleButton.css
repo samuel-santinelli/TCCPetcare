@@ -1,6 +1,7 @@
 #containerButtonAgendar{
   height: 1vh;
-  width: 40vw;
+  width: 45vw;
+  margin-top: 4vw;
   display: flex;
   justify-content: center;
   align-content: center;

@@ -5,9 +5,9 @@ import { Link} from "react-router-dom";
 function HomeCuidador() {
   return (
     <>
-      <Link to={"../"} className="containerIconBack">
-        <BiArrowBack className="iconBack" />
-      </Link>
+        <Link to={"../"} id="icon-close-home">
+          <div >x</div>
+        </Link>
       <div id="banner" className="banner"></div>
       <div id="wave" className="wave"></div>
     </>

@@ -5,11 +5,69 @@ const Modal = (props) => {
 
   return (
     <div className="containerInfoCuidadores">
-      <div ref={modalRef} className={`${className} cardModal`}>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29276.363111143826!2d-46.88371138889647!3d-23.4768574223817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03aaf6d062af%3A0x2c22de58cd7f17f1!2sAlphaville%2C%20Santana%20de%20Parna%C3%ADba%20-%20SP%2C%2006542-115!5e0!3m2!1spt-BR!2sbr!4v1640096190707!5m2!1spt-BR!2sbr"
-          className="modalMapAgendamento"
-        />
+      <div ref={modalRef} className={`${className} cardModalPag`}>
+        <div className="containerInfoPagamento">
+          <h1>Insira as Informações de Compra</h1>
+          <div className="containerInputsCompra">
+            <label className="labelInputCompra">Seu Nome</label>
+            <input
+              className="inputCompra"
+              type="text"
+              placeholder="Digite Seu nome"
+            />
+            <label className="labelInputCompraRight">Seu CPF</label>
+            <input
+              className="inputCompra"
+              type="text"
+              placeholder="Digite Seu CPF"
+            />
+          </div>
+          <div className="containerInputsCompra">
+            <label className="labelInputCompra">Seu Endereço</label>
+            <input
+              className="inputCompra"
+              type="text"
+              placeholder="Digite Seu CPF"
+            />
+            <label className="labelInputCompraRight">
+              Selecione o Tipo de Serviço
+            </label>
+            <select className="inputCompraSelect">
+              <option>Pet Home</option>
+              <option>Pet Trip</option>
+            </select>
+          </div>
+          <div className="containerInputsCompra">
+            <label className="labelInputCompraDate">Para Quando?</label>
+            <div className="containerInputsDateCompra">
+              <label className="labelInputCompra">
+                Data de inicio do serviço
+              </label>
+              <input
+                className="inputCompraDate"
+                type="date"
+                placeholder="Data De Inicio"
+              />
+              <label className="labelInputCompra">
+              Data final do serviço
+              </label>
+              <input
+                className="inputCompraDate"
+                type="date"
+                placeholder="Data De Término"
+              />
+            </div>
+            <div className="containerInputsInfoCompra">
+              <h2 className="typeServiceCompra">Serviço</h2>
+              <h2 className="typeServiceCompraService">Pet Home</h2>
+            </div>
+          </div>
+          <div className="containerInputsInfoCompra">
+            <h2 className="typeServiceCompra">Total</h2>
+            <h2 className="typeServiceCompraService">R$157,09</h2>
+            <input type="button" className="InputConfirmarAgendamento" value="Confirmar Agendamento"/>
+          </div>
+        </div>
       </div>
     </div>
   );

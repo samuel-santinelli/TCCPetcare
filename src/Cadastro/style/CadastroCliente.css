@@ -83,6 +83,7 @@ h1 {
   padding-left: 1rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
+  color: #757575;
 }
 
 .containerInput{
@@ -92,6 +93,7 @@ h1 {
   font-size: 2.2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
+  color: #757575;
   padding-left: 5.5rem;
 }
 

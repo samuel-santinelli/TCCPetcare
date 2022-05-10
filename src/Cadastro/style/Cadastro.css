@@ -13,7 +13,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-  color: #000;
+
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
@@ -116,6 +116,17 @@ body{
   padding-left: 6.2rem;
 }
 
+
+.containerInputNomeCuidador{
+  height: 6.5rem;
+  width: 38.9vw;
+  min-width: 10vw;
+  min-width: 10.8vw;
+  font-size: 2.2rem;
+  border: solid 1px #f28907;
+  border-radius: 1.5rem;
+  padding-left: 5.5rem;
+}
 
 #InputsContainerSelect{
   height: 6.5rem;
@@ -295,6 +306,7 @@ input #iconInputNome{
 .containerInputEmailScroll{
   height: 6.5rem;
   width: 39vw;
+  font-size: 2.6rem !important;
   min-width: 29.5vw;
   font-size: 2.2rem;
   border: solid 1px #f28907;
@@ -309,7 +321,8 @@ input #iconInputNome{
   padding-right: 3rem;
   margin-right: 2.8rem;
   font-size: 2.2rem;
-  padding-left: 1rem;
+  color: #757575;
+  padding-left: 2rem;
   border: solid 1px #f28907;
   border-radius: 1.5rem;
 }
@@ -323,6 +336,7 @@ input #iconInputNome{
   font-size: 2.2rem;
   padding-left: 1rem;
   border: solid 1px #f28907;
+  color: #757575;
   border-radius: 1.5rem;
 }
 
