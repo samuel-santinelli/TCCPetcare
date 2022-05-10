@@ -5,7 +5,6 @@ import { MdOutlineStarPurple500, MdOutlineStarHalf } from "react-icons/md";
 import "./style/styleAgendamento.css";
 import ButtonAgendar from "./button/ButtonAgendar";
 import Modal from "./modal/Modal";
-import ModalPagamento from "./modal/ModalPagamento";
 
 const Agendamento = (props) => {
   const [cuidadores, setCuidadores] = useState([]);
@@ -35,7 +34,7 @@ const Agendamento = (props) => {
   }, []);
 
   const foto =
-    "https://images.pexels.com/photos/5540148/pexels-photo-5540148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   return (
     <div className="containerMain">
@@ -100,7 +99,7 @@ const Agendamento = (props) => {
             </div>
             {/* Conteudo da modal de cuidadores */}
 
-            <ModalPagamento className={dropdown} />
+          
             <Modal className={dropdown} />
           </div>
         </div>

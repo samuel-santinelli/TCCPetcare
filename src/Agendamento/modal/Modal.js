@@ -48,9 +48,7 @@ const Modal = (props) => {
                 type="date"
                 placeholder="Data De Inicio"
               />
-              <label className="labelInputCompra">
-              Data final do serviço
-              </label>
+              <label className="labelInputCompra">Data final do serviço</label>
               <input
                 className="inputCompraDate"
                 type="date"
@@ -65,7 +63,11 @@ const Modal = (props) => {
           <div className="containerInputsInfoCompra">
             <h2 className="typeServiceCompra">Total</h2>
             <h2 className="typeServiceCompraService">R$157,09</h2>
-            <input type="button" className="InputConfirmarAgendamento" value="Confirmar Agendamento"/>
+            <input
+              type="button"
+              className="InputConfirmarAgendamento"
+              value="Confirmar Agendamento"
+            />
           </div>
         </div>
       </div>

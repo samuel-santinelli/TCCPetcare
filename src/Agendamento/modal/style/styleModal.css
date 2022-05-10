@@ -14,17 +14,16 @@
 .cardModalPag{
   height: 100vh;
   width: 40vw;
-
-
   display: none;
 }
 
 .containerInfoPagamento h1{
   height: 10vh;
-  width: 43vw;
+  width: 45vw;
   padding-top: 3vw;
   margin-bottom: 5rem;
-  font-size: 2.5vw;
+  font-size: 2.6vw;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
 }
 
 .containerInputsCompra{
@@ -32,6 +31,7 @@
   width: 45vw;
   min-width: 40vw;
   display: flex;
+  color: #fff;
 }
 
 .inputCompra{
@@ -44,6 +44,18 @@
   border: solid 1px #F28907;
   font-size: 1.1vw;
   padding-left: 1.8vw;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
+  background: linear-gradient(
+    101.96deg,
+    rgba(249, 249, 249, 0.261) -0.52%,
+    rgba(249, 249, 249, 0.0775668) 88.4%,
+    rgba(249, 249, 249, 0.058) 100.25%
+  );
+  backdrop-filter: blur(20px); 
+  border-radius: 2.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    color: #fff;
 }
 
 .labelInputCompra{
@@ -52,6 +64,8 @@
   margin-top: 1.2vw;
   position: absolute;
   margin-left: 1.2vw;
+  color: #fff;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
 }
 
 .labelInputCompraRight{
@@ -61,6 +75,8 @@
   margin-top: 1.5vw;
   position: absolute;
   margin-left: 22vw;
+  color: #fff;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
 }
 
 .labelInputCompraDate{
@@ -71,6 +87,7 @@
   position: absolute;
   margin-left: 4.3vw;
   font-size: 2.2vw;
+  color: #fff;
 }
 
 .inputCompraSelect{
@@ -84,6 +101,18 @@
   font-size: 1.1vw;
   color: #fff;
   padding-left: 2vw;
+   text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
+  background: linear-gradient(
+    101.96deg,
+    rgba(249, 249, 249, 0.261) -0.52%,
+    rgba(249, 249, 249, 0.0775668) 88.4%,
+    rgba(249, 249, 249, 0.058) 100.25%
+  );
+  backdrop-filter: blur(20px); 
+  border-radius: 2.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    color: #fff !important;
 }
 
 .inputCompraDate{
@@ -94,10 +123,22 @@
   margin-left: 1.3vw;
   border-radius: 55rem;
   font-size: 1.4vw;
-  color: #F28907;
+  color: #fff;
   border: solid 1px #F28907;
   padding-right: 1.5vw;
   padding-left: 2vw;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
+  background: linear-gradient(
+    101.96deg,
+    rgba(249, 249, 249, 0.261) -0.52%,
+    rgba(249, 249, 249, 0.0775668) 88.4%,
+    rgba(249, 249, 249, 0.058) 100.25%
+  );
+  backdrop-filter: blur(20px); 
+  border-radius: 2.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    color: #fff !important;
 }
 
 .containerInputsDateCompra{
@@ -110,7 +151,7 @@
   margin-left: 20vw;
   width: 25.5vw;
   height: 50vh;
-  margin-top: 6vw;
+  margin-top: 10.5vw;
   display: flex;
   justify-content: center;
 }
@@ -119,6 +160,8 @@
   width: 10vw;
   font-size: 1.5vw;
   margin-left: 2vw;
+  color: #fff;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
 }
 
 .typeServiceCompraService{
@@ -134,8 +177,8 @@
   border-radius: 30rem;
   background-color: #F28907;
   position: absolute;
-  margin-top: 6vw;
-  margin-left: 4vw;
+  margin-top: 8vw;
+  margin-left: -19vw;
   color: #fff;
   font-size: 1.4vw;
 }

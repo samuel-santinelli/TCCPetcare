@@ -1,13 +1,14 @@
 import "./style/stylePerfilCliente.css";
 import { TiHome } from "react-icons/ti";
 import { BsPencil } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const PerfilCliente = () => {
   return (
     <div className="containerMainPerfilCliente">
       <div className="containerBannerCliente" />
-      <div className="containerEditPerfil"/>
-      <BsPencil className="iconPencil"/>
+      <div className="containerEditPerfil" />
+      <BsPencil className="iconPencil" />
       <div className="containerCardPerfilCliente" />
       <div className="containerPefilClienteInfo">
         <div className="cardFotoPerfilCliente" />
@@ -27,9 +28,15 @@ const PerfilCliente = () => {
               <label className="containerLocationPet">Moradia</label>
               <label className="containerCityPet">Alphaville SP</label>
             </div>
-            <div className="containerLastServices">
-                    <input type="submit" className="buttonLastServices" value="Ultimos Serviços" />
-            </div>
+            <Link to={"/HistoricoCliente"}>
+              <div className="containerLastServices">
+                <input
+                  type="submit"
+                  className="buttonLastServices"
+                  value="Ultimos Serviços"
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

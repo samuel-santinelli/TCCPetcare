@@ -13,11 +13,11 @@ const Sidebar = ({ sidebar }) => {
     "https://images.pexels.com/photos/2530775/pexels-photo-2530775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
   return (
     <div className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
-      <img src={imagePerfil} className="imageSidebar" alt="" />
+      <Link to="/PerfilCliente">
+        <img src={imagePerfil} className="imageSidebar" alt="" />
 
-      <li className="nameCuidadorSidebar">Maria Silva</li>
+        <li className="nameCuidadorSidebar">Maria Silva</li>
 
-      <Link to="/PerfiCliente">
         <AiOutlineSearch className="iconSidebar" />
       </Link>
       <Link to="/Agendamento">
