@@ -159,6 +159,7 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputNome"
               placeholder="Nome"
               onChange={(e) => setUser({ ...user, nome: e.target.value })}
+              required
             />
 
             <input
@@ -169,6 +170,7 @@ const ConteudoInputsCliente = (props) => {
               onChange={(e) =>
                 setUser({ ...user, dataNascimento: e.target.value })
               }
+              required
             />
           </div>
           <div id="contInputStretch">
@@ -181,6 +183,7 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputEmail"
               placeholder="Email"
               onChange={(e) => setUser({ ...user, email: e.target.value })}
+              required
             />
           </div>
           <div id="contInputsControl">
@@ -194,6 +197,7 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Senha"
                 onChange={(e) => setUser({ ...user, senha: e.target.value })}
+                required
               />
             </div>
             <div className="form-control">
@@ -204,6 +208,7 @@ const ConteudoInputsCliente = (props) => {
                 type="password"
                 className="containerInputSenhaControl"
                 placeholder="Confirmar Senha"
+                required
               />
             </div>
           </div>
@@ -231,6 +236,7 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputTelefone"
               placeholder="Telefone"
               onChange={(e) => setUser({ ...user, telefone: e.target.value })}
+              required
             />
           </div>
           <div id="contInputsPet">
@@ -243,6 +249,7 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputCpf"
               placeholder="CPF"
               onChange={(e) => setUser({ ...user, cpf: e.target.value })}
+              required
             />
           </div>
           <div id="contInputsControl">
@@ -255,6 +262,7 @@ const ConteudoInputsCliente = (props) => {
                 id="numero"
                 value={user.numero}
                 onChange={(e) => setUser({ ...user, numero: e.target.value })}
+                required
               />
               <label htmlFor="numero"></label>
             </div>
@@ -267,6 +275,7 @@ const ConteudoInputsCliente = (props) => {
                 id="cep"
                 value={user.cep}
                 onChange={(e) => setUser({ ...user, cep: e.target.value })}
+                required
               />
               <label htmlFor="cep"></label>
             </div>
@@ -281,6 +290,7 @@ const ConteudoInputsCliente = (props) => {
                 id="cidade"
                 value={user.cidade}
                 onChange={(e) => setUser({ ...user, cidade: e.target.value })}
+                required
               />
               <label htmlFor="cidade"></label>
             </div>
@@ -294,6 +304,7 @@ const ConteudoInputsCliente = (props) => {
                 id="bairro"
                 value={user.bairro}
                 onChange={(e) => setUser({ ...user, bairro: e.target.value })}
+                required
               />
               <label htmlFor="bairro"></label>
             </div>
@@ -308,6 +319,7 @@ const ConteudoInputsCliente = (props) => {
                 id="endereco"
                 value={user.endereco}
                 onChange={(e) => setUser({ ...user, endereco: e.target.value })}
+                required
               />
               <label htmlFor="endereco"></label>
             </div>

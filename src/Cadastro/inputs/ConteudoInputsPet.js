@@ -26,6 +26,9 @@ const InputsPet = ({id}) => {
     idCliente: id,
   });
   const navigate = useNavigate();
+  console.log("o id é ", id);
+
+
   const handleSubmitPet = (pet) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)

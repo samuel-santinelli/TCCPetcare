@@ -5,6 +5,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import "./style/ContainerInputsLogin.css";
 
 function InputsLogin(){
+  const [userLogin, setUserLogin] = useState();
 
   const handleLoginSubmit = (userLogin) => {
     axios
@@ -16,9 +17,10 @@ function InputsLogin(){
     })
   };
 
+
   return (
     <>
-    <form onSubmit={handleLoginSubmit}>
+    <form onSubmit={handleLoginSubmit(userLogin)}>
       <div className="containerInputsLogin">
         <div id="InputsLogin">
           <AccountCircle id="iconInputLabelLogin" />
@@ -27,6 +29,8 @@ function InputsLogin(){
             id="emailLogin"
             className="inputLogin"
             placeholder="Digite seu email"
+            value={userLogin.login}
+            onChange={(e) => setUserLogin({...userLogin, login: e.target.value})}
           />
         </div>
         <div>
@@ -37,6 +41,8 @@ function InputsLogin(){
             id="senhaLogin"
             className="inputLogin"
             placeholder="Digite sua senha"
+            value={userLogin.senha}
+            onChange={(e) => setUserLogin({...userLogin, senha: e.target.value})}
           />
         </div>
         <div id="containerButton">
