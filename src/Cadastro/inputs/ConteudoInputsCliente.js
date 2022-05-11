@@ -255,6 +255,20 @@ const ConteudoInputsCliente = (props) => {
               <input
                 type="text"
                 className="containerInputSenhaControl"
+                placeholder="Informe o numero de sua residência"
+                id="numero"
+                value={user.numero}
+                onChange={(e) => setUser({ ...user, numero: e.target.value })}
+              />
+              <label htmlFor="numero"></label>
+            </div>
+          </div>
+          <div id="contInputsControl">
+            <div className="form-control">
+              <LockOpenIcon id="iconInputLabelControl" />
+              <input
+                type="text"
+                className="containerInputSenhaControl"
                 placeholder="Informe seu cep"
                 id="cep"
                 value={user.cep}
@@ -299,20 +313,6 @@ const ConteudoInputsCliente = (props) => {
                 onChange={(e) => setUser({ ...user, cidade: e.target.value })}
               />
               <label htmlFor="cidade"></label>
-            </div>
-          </div>
-          <div id="contInputsControl">
-            <div className="form-control">
-              <LockOpenIcon id="iconInputLabelControl" />
-              <input
-                type="text"
-                className="containerInputSenhaControl"
-                placeholder="Informe o numero de sua residência"
-                id="numero"
-                value={user.numero}
-                onChange={(e) => setUser({ ...user, numero: e.target.value })}
-              />
-              <label htmlFor="numero"></label>
             </div>
           </div>
           <div id="containerButton">

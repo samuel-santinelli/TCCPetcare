@@ -16,7 +16,6 @@ const InputsPet = ({id}) => {
     castrado: 1,
     foto: "",
     dataNascimento: "",
-    avaliacao: 1,
     idRaca: 2,
     idFase: 1,
     idEspecie: 1,

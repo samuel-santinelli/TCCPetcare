@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { MdOutlineStarPurple500, MdOutlineStarHalf } from "react-icons/md";
 import "./style/styleAgendamento.css";
 import ButtonAgendar from "./button/ButtonAgendar";
+import { Link } from "react-router-dom";
 import Modal from "./modal/Modal";
 
 const Agendamento = (props) => {
@@ -99,7 +100,6 @@ const Agendamento = (props) => {
             </div>
             {/* Conteudo da modal de cuidadores */}
 
-          
             <Modal className={dropdown} />
           </div>
         </div>

@@ -18,7 +18,7 @@ function OurRoutes() {
     <Routes>
       <Route path="/" element={<LandingPage />} exact />
       <Route path="/BoasVindas" element={<BoasVindas />} />
-      <Route path="/CadastroCliente" element={<CadastroCliente />} />
+      <Route path="/CadastroCliente/:id" element={<CadastroCliente />} />
       <Route path="/CadastroPet/:id" element={<CadastroPet />} />
       <Route path="/Agendamento" element={<Agendamento />} />
       <Route path="/CadastroCuidador" element={<CadastroCuidador />} />
