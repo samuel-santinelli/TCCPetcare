@@ -1,25 +1,36 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style/styleModal.css";
 const Modal = (props) => {
   const { className, modalRef } = props;
 
   const [agendamento, setAgendamento] = useState({
-    valor: 22,
-    dataInicial: "2022-02-02",
-    dataFinal: "2022-02-07",
-    idHost: 22,
-    idPet: 23,
-    idTipo: 2,
-    idCliente: 34,
+    valor: 10.1,
+    dataInicial: "2022-03-29 00:00:00",
+    dataFinal: "2022-03-30 00:00:00",
+    idHost: 10,
+    idPet: 9,
+    idTipo: 1,
+    idCliente: 50,
   });
   console.log(agendamento);
 
   const handleSubmitAgendamento = (agendamento) => {
     axios
-      .post("http://localhost/Cuidador/Cliente/api/agendamento", agendamento)
+      .post("http://localhost/Cuidador/Cuidador/api/agendar", agendamento)
       .then((res) => setAgendamento(res.data));
   };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cuidador/api/agendar")
+      .then((res) => {
+        setAgendamento(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro");
+      });
+  }, []);
 
   return (
     <form onSubmit={() => handleSubmitAgendamento(agendamento)}>
@@ -70,7 +81,7 @@ const Modal = (props) => {
                 </label>
                 <input
                   className="inputCompraDate"
-                  type="datetime"
+                  type="datetime-local"
                   placeholder="Data De Inicio"
                   value={agendamento.dataInicial}
                   onChange={(e) =>
@@ -85,7 +96,7 @@ const Modal = (props) => {
                 </label>
                 <input
                   className="inputCompraDate"
-                  type="datetime"
+                  type="datetime-local"
                   placeholder="Data De Término"
                   value={agendamento.dataFinal}
                   onChange={(e) =>
@@ -103,9 +114,17 @@ const Modal = (props) => {
             </div>
             <div className="containerInputsInfoCompra">
               <h2 className="typeServiceCompra">Total</h2>
-              <h2 className="typeServiceCompraService">R$157,09</h2>
               <input
-                type="button"
+                type="text"
+                className="typeServiceCompraService"
+                disabled
+                value={agendamento.valor}
+                onChange={(e) =>
+                  setAgendamento({ ...agendamento, valor: e.target.value })
+                }
+              ></input>
+              <input
+                type="submit"
                 className="InputConfirmarAgendamento"
                 value="Confirmar Agendamento"
               />

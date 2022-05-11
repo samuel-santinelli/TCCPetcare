@@ -166,9 +166,11 @@
 
 .typeServiceCompraService{
   width: 10vw;
+  height: 10vh;
   font-size: 1.5vw;
   margin-left: 2vw;
   color: #F28907;
+  background: none;
 }
 
 .InputConfirmarAgendamento{
