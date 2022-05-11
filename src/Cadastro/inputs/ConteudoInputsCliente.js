@@ -41,7 +41,6 @@ const ConteudoInputsCliente = (props) => {
     cidade: "",
     complemento: "",
     numero: "",
-    id: id,
   });
 
   console.log(user);
@@ -208,9 +207,6 @@ const ConteudoInputsCliente = (props) => {
               />
             </div>
           </div>
-          <div id="impSenha"></div>
-          <div id="impForcaSenha"></div>
-          <div id="erroSenhaForca"></div>
           <div id="contInputsPet">
             <LocationOnIcon id="iconInputLabel" />
             <select
@@ -255,27 +251,40 @@ const ConteudoInputsCliente = (props) => {
               <input
                 type="text"
                 className="containerInputSenhaControl"
-                placeholder="Informe o numero de sua residência"
+                placeholder="Numero"
                 id="numero"
                 value={user.numero}
                 onChange={(e) => setUser({ ...user, numero: e.target.value })}
               />
               <label htmlFor="numero"></label>
             </div>
-          </div>
-          <div id="contInputsControl">
             <div className="form-control">
               <LockOpenIcon id="iconInputLabelControl" />
               <input
                 type="text"
                 className="containerInputSenhaControl"
-                placeholder="Informe seu cep"
+                placeholder="Cep"
                 id="cep"
                 value={user.cep}
                 onChange={(e) => setUser({ ...user, cep: e.target.value })}
               />
               <label htmlFor="cep"></label>
             </div>
+          </div>
+          <div id="contInputsControl">
+            <div className="form-control">
+              <LockIcon id="iconInputLabelControl" />
+              <input
+                type="text"
+                className="containerInputSenhaControl"
+                placeholder="Cidade"
+                id="cidade"
+                value={user.cidade}
+                onChange={(e) => setUser({ ...user, cidade: e.target.value })}
+              />
+              <label htmlFor="cidade"></label>
+            </div>
+          
             <div className="form-control">
               <LockIcon id="iconInputLabelControl" />
               <input
@@ -294,25 +303,13 @@ const ConteudoInputsCliente = (props) => {
               <LockOpenIcon id="iconInputLabelControl" />
               <input
                 type="text"
-                className="containerInputSenhaControl"
+                className="containerInputEnderecoControl"
                 placeholder="Rua / Avenida"
                 id="endereco"
                 value={user.endereco}
                 onChange={(e) => setUser({ ...user, endereco: e.target.value })}
               />
               <label htmlFor="endereco"></label>
-            </div>
-            <div className="form-control">
-              <LockIcon id="iconInputLabelControl" />
-              <input
-                type="text"
-                className="containerInputSenhaControl"
-                placeholder="Cidade"
-                id="cidade"
-                value={user.cidade}
-                onChange={(e) => setUser({ ...user, cidade: e.target.value })}
-              />
-              <label htmlFor="cidade"></label>
             </div>
           </div>
           <div id="containerButton">
