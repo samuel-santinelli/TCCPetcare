@@ -4,13 +4,21 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import LockIcon from "@mui/icons-material/Lock";
 import "./style/ContainerInputsLogin.css";
 
-function InputsLogin(){
-  const [userLogin, setUserLogin] = useState();
+const InputsLogin = () =>{
+  
+
+  const [userLogin, setUserLogin] = useState({
+    email: "",
+    senha: ""
+  });
 
   const handleLoginSubmit = (userLogin) => {
+    const email = document.getElementById("emailLogin");;
+    const senha = document.getElementById("senhaLogin");
+    
     axios
-      .post("http://localhost/Cuidador/Cliente/api/cliente", {
-      login: userLogin.login,
+      .get(`http://localhost/Cuidador/Cliente/api/cliente/login?${email}&${senha}`, {
+      email: userLogin.email,
       senha: userLogin.senha,
       }).then((res) => {
         console.log(res.data)
@@ -29,8 +37,8 @@ function InputsLogin(){
             id="emailLogin"
             className="inputLogin"
             placeholder="Digite seu email"
-            value={userLogin.login}
-            onChange={(e) => setUserLogin({...userLogin, login: e.target.value})}
+            value={userLogin.email}
+            onChange={(e) => setUserLogin({...userLogin, email: e.target.value})}
           />
         </div>
         <div>

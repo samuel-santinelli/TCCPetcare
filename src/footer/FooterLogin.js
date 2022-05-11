@@ -16,8 +16,8 @@ function FooterLogin() {
       </div>
       <div id="containerLink">
         <Link to={"/Escolha"}>
-          <a href="">Não tem uma conta?</a>
-          <a className="linkEntreAgora">Cadastre-se já!</a>
+          <label className="linkHaveAccount" >Não tem uma conta?</label>
+          <label  className="linkEntreAgora">Cadastre-se já!</label>
         </Link>
       </div>
     </>
