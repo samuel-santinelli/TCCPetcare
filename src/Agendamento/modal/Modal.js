@@ -9,7 +9,7 @@ const Modal = (props) => {
     dataInicial: "2022-03-29 00:00:00",
     dataFinal: "2022-03-30 00:00:00",
     idHost: 10,
-    idPet: 9,
+    idPet: 7,
     idTipo: 1,
     idCliente: 50,
   });
@@ -81,7 +81,7 @@ const Modal = (props) => {
                 </label>
                 <input
                   className="inputCompraDate"
-                  type="datetime-local"
+                  type="text"
                   placeholder="Data De Inicio"
                   value={agendamento.dataInicial}
                   onChange={(e) =>
@@ -96,7 +96,7 @@ const Modal = (props) => {
                 </label>
                 <input
                   className="inputCompraDate"
-                  type="datetime-local"
+                  type="text"
                   placeholder="Data De Término"
                   value={agendamento.dataFinal}
                   onChange={(e) =>
@@ -116,7 +116,7 @@ const Modal = (props) => {
               <h2 className="typeServiceCompra">Total</h2>
               <input
                 type="text"
-                className="typeServiceCompraService"
+                className="typeServiceCompraServiceTotal"
                 disabled
                 value={agendamento.valor}
                 onChange={(e) =>

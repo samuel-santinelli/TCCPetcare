@@ -1,36 +1,36 @@
 .containerInputsLogin{
-    height: 46rem;
-    width: 55rem;
-    margin-bottom: 15rem;
-    margin-left: 15rem;
-    display: flex;
-    justify-content:center;
-    flex-direction:column;
-    
-  }
+  height: 46vh;
+  width: 55vw;
+  margin-bottom: 15rem;
+  margin-left: 15rem;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
   
-  #InputsLogin {
-      margin-top: 15rem;
-      height: 12.5rem;
-      width: 105rem;
-      max-width: 100rem;
-    }
-  
-    #iconInputLabelLogin{
-      position: absolute;
-      width: 6rem;
-      height: 9.5rem;
-      margin-left: 1rem;
-    }
-  
-    .inputLogin{
-      height: 8.5rem;
-      width: 52rem;
-      font-size: 2.2rem;
-      border: solid 4px #f28907;
-      border-radius: 1.5rem;
-      padding-left: 7.5rem;
-  
-    }
+}
 
-  
+#InputsLogin {
+    margin-top: 15rem;
+    height: 12.5vh;
+    width: 34vw;
+  }
+
+  #iconInputLabelLogin{
+    position: absolute;
+    width: 6rem;
+    height: 9.5rem;
+    margin-left: 1rem;
+  }
+
+  .inputLogin{
+    height: 8.5rem;
+    width: 32vw;
+    min-width: 32vw;
+    margin-bottom: 3vw;
+    font-size: 2.2rem;
+    border: solid 4px #f28907;
+    border-radius: 1.5rem;
+    padding-left: 7.5rem;
+
+  }
+

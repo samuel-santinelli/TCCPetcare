@@ -14,12 +14,12 @@ function FooterLogin() {
           <label>Esqueci minha senha</label>
         </Link>
       </div>
-      <div id="containerLink">
+      {/* <div id="containerLink">
         <Link to={"/Escolha"}>
           <label className="linkHaveAccount" >Não tem uma conta?</label>
           <label  className="linkEntreAgora">Cadastre-se já!</label>
         </Link>
-      </div>
+      </div> */}
     </>
   );
 }

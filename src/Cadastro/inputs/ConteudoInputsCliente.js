@@ -22,7 +22,7 @@ const ConteudoInputsCliente = (props) => {
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
   const button = document.getElementById("buttonCadastrarCliente");
 
-  const {id} = useParams();
+  const { id } = useParams();
   console.log(id);
 
   const [user, setUser] = useState({
@@ -47,7 +47,7 @@ const ConteudoInputsCliente = (props) => {
   const navigate = useNavigate();
   const handleUserSubmit = (user) => {
     axios
-      .post('http://localhost/Cuidador/Cliente/api/cliente/:id', user)
+      .post("http://localhost/Cuidador/Cliente/api/cliente/:id", user)
       .then((res) => setUser(res.data.id));
     navigate(`/CadastroPet/id=${user.id}`);
   };
@@ -109,7 +109,6 @@ const ConteudoInputsCliente = (props) => {
     document.querySelector("#endereco").value = "";
     document.querySelector("#bairro").value = "";
     document.querySelector("#cidade").value = "";
-  
   };
 
   const preencherFormulario = async (evento) => {
@@ -275,7 +274,6 @@ const ConteudoInputsCliente = (props) => {
                 id="cep"
                 value={user.cep}
                 onChange={(e) => setUser({ ...user, cep: e.target.value })}
-                required
               />
               <label htmlFor="cep"></label>
             </div>
@@ -290,11 +288,10 @@ const ConteudoInputsCliente = (props) => {
                 id="cidade"
                 value={user.cidade}
                 onChange={(e) => setUser({ ...user, cidade: e.target.value })}
-                required
               />
               <label htmlFor="cidade"></label>
             </div>
-          
+
             <div className="form-control">
               <LockIcon id="iconInputLabelControl" />
               <input
@@ -304,7 +301,6 @@ const ConteudoInputsCliente = (props) => {
                 id="bairro"
                 value={user.bairro}
                 onChange={(e) => setUser({ ...user, bairro: e.target.value })}
-                required
               />
               <label htmlFor="bairro"></label>
             </div>
@@ -319,7 +315,6 @@ const ConteudoInputsCliente = (props) => {
                 id="endereco"
                 value={user.endereco}
                 onChange={(e) => setUser({ ...user, endereco: e.target.value })}
-                required
               />
               <label htmlFor="endereco"></label>
             </div>
@@ -330,7 +325,6 @@ const ConteudoInputsCliente = (props) => {
               type="submit"
               name="inputConfirmarSenha"
               className="button"
-              onClick={validate}
             />
           </div>
         </div>

@@ -18,7 +18,6 @@ const Agendamento = (props) => {
   };
 
   const closeDropdown = (event) => {
-    console.log("hidden");
     setDropdown("show");
     document.body.addEventListener("click", closeDropdown);
   };
@@ -30,7 +29,7 @@ const Agendamento = (props) => {
         setCuidadores(res.data);
       })
       .catch(() => {
-        console.log("Deu erro");
+        console.log("Deu erro na busca de cuidador");
       });
   }, []);
 

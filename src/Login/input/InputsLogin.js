@@ -13,7 +13,7 @@ const InputsLogin = () =>{
   });
 
   const handleLoginSubmit = (userLogin) => {
-    const email = document.getElementById("emailLogin");;
+    const email = document.getElementById("emailLogin");
     const senha = document.getElementById("senhaLogin");
     
     axios
@@ -22,6 +22,7 @@ const InputsLogin = () =>{
       senha: userLogin.senha,
       }).then((res) => {
         console.log(res.data)
+        
     })
   };
 

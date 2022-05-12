@@ -166,9 +166,18 @@
 
 .typeServiceCompraService{
   width: 10vw;
-  height: 10vh;
+  height: 13.5vh;
   font-size: 1.5vw;
   margin-left: 2vw;
+  color: #F28907;
+  background: none;
+}
+
+.typeServiceCompraServiceTotal{
+  width: 5vw;
+  height: 13.5vh;
+  font-size: 1.5vw;
+  margin-left: 6vw;
   color: #F28907;
   background: none;
 }

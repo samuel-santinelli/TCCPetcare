@@ -1,7 +1,10 @@
 
 .containerCheckBox{
   height: 8rem;
-  width: 92rem;
+  width: 50vw;
+  position: absolute;
+  margin-top: -4.5vw;
+  margin-left: 5vw;
   display: flex;
   justify-content:center;
 }
@@ -14,11 +17,11 @@
 #containerLink{
     height: 5vh;
     width: 45vw;
-    margin-top: 1vw;
+    margin-top: 5vw;
     display: flex;
     justify-content: right;
     align-items: right;
-    margin-left: 2vw;
+    margin-left: 10vw;
   }
 
   #containerLinkCliente{
@@ -52,6 +55,8 @@
   }
 
   .linkHaveAccount{
-    margin: 0;
     color: #000;
+    position: absolute;
+    min-width: 20vw;
+    margin-left: -12.5vw;
   }
