@@ -49,7 +49,7 @@ const InputsIcon = (props) => {
   const handleUserCuidadorSubmit = (cuidador) => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
-      .then((res) => console.log(res.data));
+      .then((res) => console.log(res.data.foto));
     navigate("/Agendamento");
   };
   const listElements = () => {
@@ -99,7 +99,7 @@ const InputsIcon = (props) => {
 
   return (
     <>
-      <form onSubmit={() => handleUserCuidadorSubmit(cuidador)}>
+      <form onSubmit={() => handleUserCuidadorSubmit(cuidador)} encType="multipart/form-data">
         <div id="teste">
           <div id="containerInput">
             <div id="containerBorderImage">
@@ -107,8 +107,8 @@ const InputsIcon = (props) => {
                 type="file"
                 name="inputImage"
                 className="inputImage"
+                accept="image/jpeg, image/jpg, image/png"
                 id="foto"
-                value={cuidador.foto}
                 onChange={(e) =>
                   setCuidador({ ...cuidador, foto: e.target.value })
                 }
@@ -369,7 +369,7 @@ const InputsIcon = (props) => {
                     
                     <div className="containerPreferencesScroll">
                     <input
-                      id="biografia"
+                      id="valorHora"
                       placeholder="Valor por hora"
                       className="containerInputEmailScroll"
                       value={cuidador.valorHora}

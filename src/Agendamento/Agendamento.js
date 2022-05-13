@@ -66,7 +66,7 @@ const Agendamento = (props) => {
                         <img
                           className="imageCuidador"
                           value={cuidador.foto}
-                          src={foto}
+                          src={cuidador.foto}
                           alt=""
                         />
                       </div>
