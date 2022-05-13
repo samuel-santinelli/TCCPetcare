@@ -24,16 +24,15 @@ const Modal = (props) => {
       .then((res) => setAgendamento(res.data));
   };
 
-  useEffect(() => {
+  const listServices = () => {
     axios
       .get("http://localhost/Cuidador/Cuidador/api/agendar")
-      .then((res) => {
-        setAgendamento(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro ao receber os dados de agendamento");
-      });
+      .then((res) => console.log(res.data));
+  };
+  useEffect(() => {
+    listServices();
   }, []);
+
 
   return (
     <form onSubmit={() => handleSubmitAgendamento(agendamento)}>
