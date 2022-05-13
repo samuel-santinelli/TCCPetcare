@@ -5,11 +5,11 @@ const Modal = (props) => {
   const { className, modalRef } = props;
 
   const [agendamento, setAgendamento] = useState({
-    nome: "Cuidador",
-    endereco: "Barueri sp",
-    cpf: "2313523242",
-    dataFinal: "2022-03-30 00:00:00",
-    dataInicial: "2022-03-29 00:00:00",
+    nome: "",
+    endereco: "",
+    cpf: "",
+    dataFinal: "",
+    dataInicial: "",
     idCliente: 40,
     idHost: 13,
     idPet: 82,
@@ -96,7 +96,7 @@ const Modal = (props) => {
               </label>
               <input
                 className="inputCompraDate"
-                type="text"
+                type="datetime-local"
                 placeholder="Data De Inicio"
                 value={agendamento.dataInicial}
                 id="dataInicialAgendamento"
@@ -106,7 +106,7 @@ const Modal = (props) => {
               <label className="labelInputCompra">Data final do serviço</label>
               <input
                 className="inputCompraDate"
-                type="text"
+                type="datetime-local"
                 placeholder="Data De Término"
                 value={agendamento.dataFinal}
                 id="dataFinalAgendamento"
