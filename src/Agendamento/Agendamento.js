@@ -33,6 +33,7 @@ const Agendamento = (props) => {
       });
   }, []);
 
+    console.log(cuidadores);
   const foto =
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
