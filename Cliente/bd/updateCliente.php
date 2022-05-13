@@ -1,9 +1,12 @@
 <?php
 
-require_once('../bd/conexao.php');
+// require_once('../config/config.php');
+ require_once('../bd/conexao.php');
 
 function editaCliente($arrayCliente)
+
 {
+   
     $sql = "update tblClientes set 
             nome = '".$arrayCliente['nome']."',
             cpf =  '".$arrayCliente['cpf']."',
@@ -35,6 +38,22 @@ function editaCliente($arrayCliente)
             // echo('nao foi a edicao');
         }
     
+
+}
+
+function editar($novaSenhaCriptografada,$email)
+{
+    require_once('../bd/conexao.php');
+    $sqlCode = "UPDATE tblClientes SET senha = '$novaSenhaCriptografada' where email='$email'";
+            echo($sqlCode);
+            die;
+            $conexao = conexao();
+            $sqlQuery = mysqli_query($conexao,$sqlCode);
+            
+            if($sqlQuery){
+                return true;
+                echo("senha alterada no banco");
+            }
 
 }
 

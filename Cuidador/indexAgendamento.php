@@ -61,7 +61,11 @@ $idPet= $_GET['idPet'];
                         </select>
                         <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>   
                         <input value="<?=$idPet?>" placeholder="idPet" type="text" name="idPet" id="idPet"/>   
-                        <input value="<?=$idHost?>" placeholder="idHost" type="text" name="idHost" id="idHost"/>   
+                        <input value="<?=$idHost?>" placeholder="idHost" type="text" name="idHost" id="idHost"/>  
+                        <input value="<?=$nome?>" placeholder="nome" type="text" name="nome" id="nome"/>   
+                        <input value="<?=$cpf?>" placeholder="cpf" type="text" name="cpf" id="cpf"/>
+                        <input value="<?=$endereco?>" placeholder="endereco" type="text" name="endereco" id="endereco"/>   
+                         
             <input value="agendar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
         </form>
 </body>

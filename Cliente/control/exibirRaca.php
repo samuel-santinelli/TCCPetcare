@@ -19,7 +19,7 @@ function criarArrayRaca($objeto)
         
         $arrayDados[$cont] = array( 
             "id" => $exibirDados['idRaca'],
-            "nome" => $exibirDados['nomeRaca'],
+            "nomeRaca" => $exibirDados['nomeRaca'],
             "idPorte" =>$exibirDados['idPorte']
             
            

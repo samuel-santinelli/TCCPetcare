@@ -1,8 +1,9 @@
 <?php
 
-require_once('../bd/conexao.php');
+
 
 function inserirCliente($arrayCliente){
+    require_once('../bd/conexao.php');
     $sql = "insert into tblClientes(
         nome,
         cpf,

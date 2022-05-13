@@ -10,7 +10,9 @@ require_once(SRC."../Cliente/bd/listarClientes.php");
 $valor = (double) null;
 $dataFinal = (string) null;
 $dataInicial = (string) null;
-
+$nome = (string) null;
+$cpf = (string) null;
+$endereco = (string) null;
 // $idCliente= $_GET['idCliente'];
 // //   echo ($idCliente);
 //   $dados= buscaCliente($idCliente);
@@ -32,6 +34,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $idCliente = $_POST['idCliente'];
     $idPet = $_POST['idPet'];
     $idHost = $_POST['idHost'];
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $endereco = $_POST['endereco'];
 
   
 
@@ -55,7 +60,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "idHost" => $idHost,
                 "idPet" => $idPet,
                 "idTipo" => $idTipo,
-                "idCliente" => $idCliente
+                "idCliente" => $idCliente,
+                "nome" => $nome,
+                "cpf" => $cpf,
+                "endereco" => $endereco
                
             
             );

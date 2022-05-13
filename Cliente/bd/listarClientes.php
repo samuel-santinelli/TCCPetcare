@@ -28,6 +28,20 @@ function buscaCliente($idCliente){
   
     return $select;
   }
+
+  function buscarCliente($email)
+{
+    $sql= "select * from tblClientes
+    where email = '".$email ."'";
+    $conexao = conexao();
+    $sqlQuery = mysqli_query($conexao,$sql);
+    //$dado = mysqli_fetch_assoc($sqlQuery);
+    $total = $sqlQuery->num_rows;
+
+
+    return $total;
+}
+
   function buscaClientePet($idPet){
    
     $sql = "select tblPets.idPet, tblClientes.idCliente from tblPets 
