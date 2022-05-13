@@ -338,6 +338,6 @@ $app->put('cliente/recuperarsenha/{email}', function($request, $response, $args)
 $app->run();
 
 // http://localhost/Cuidador/Cliente/api/cliente
-//http://localhost/Cuidador/Cliente/api/cliente?email=teste@teste&senha=123
+//http://localhost/Cuidador/Cliente/api/cliente/login?email=teste@teste&senha=123
 
 ?>

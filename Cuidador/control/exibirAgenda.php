@@ -20,6 +20,9 @@ function criarArrayAgenda($objeto)
         
         $arrayDados[$cont] = array( 
             "idServico" => $exibirDados['idServico'],
+            "nome" => $exibirDados['nome'],
+            "cpf" => $exibirDados['cpf'],
+            "endereco" => $exibirDados['endereco'],
             "valor" => $exibirDados['valor'],
             "dataInicial" => $exibirDados['dataInicial'],
             "dataFinal" => $exibirDados['dataFinal'],

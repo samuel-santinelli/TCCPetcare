@@ -47,6 +47,7 @@ function criaLinha(usuario) {
     linha = document.createElement("tr");
     tdId = document.createElement("td");
     tdNome = document.createElement("td");
+    tdSenha = document.createElement("td");
     tdId.innerHTML = usuario.idSexo
     tdNome.innerHTML = usuario.nomeSexo
 
