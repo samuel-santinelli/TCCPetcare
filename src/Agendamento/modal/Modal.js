@@ -10,9 +10,9 @@ const Modal = (props) => {
     cpf: "",
     dataFinal: "",
     dataInicial: "",
-    idCliente: 40,
-    idHost: 13,
-    idPet: 82,
+    idCliente: 1,
+    idHost: 1,
+    idPet: 1,
     idTipo: 1,
     valor: 22.22,
   });
@@ -79,8 +79,8 @@ const Modal = (props) => {
             </label>
             <select
               className="inputCompraSelect"
-              value={agendamento.idTipo}
               id="tipoAgendamento"
+              value={agendamento.idTipo}
               onChange={(e) => setAgendamento({ ...agendamento, idTipo: e.target.value })
               }
             >

@@ -10,6 +10,7 @@ import Modal from "./modal/Modal";
 const Agendamento = (props) => {
   const [cuidadores, setCuidadores] = useState([]);
   const [dropdown, setDropdown] = useState("");
+  
 
   const showDropdown = () => {
     console.log("modal foi clicada");
