@@ -13,8 +13,8 @@ const Modal = (props) => {
     idCliente: 1,
     idHost: 1,
     idPet: 1,
-    idTipo: 1,
-    valor: 22.22,
+    idTipo: "",
+    valor: 33.33,
   });
   console.log(agendamento);
 
@@ -123,12 +123,12 @@ const Modal = (props) => {
             <h2 className="typeServiceCompra">Total</h2>
             <input
               type="text"
-              className="typeServiceCompraServiceTotal"
+            className="typeServiceCompraServiceTotal"
               value={agendamento.valor}
               onChange={(e) => setAgendamento({ ...agendamento, valor: e.target.value })
               }
-              
             ></input>
+            <label className="simbolPriceAgendamento">R$</label>
             <input
               type="submit"
               id="submitAgendamento"

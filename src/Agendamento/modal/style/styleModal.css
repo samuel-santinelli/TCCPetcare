@@ -70,8 +70,8 @@
 
 .labelInputCompraRight{
   height: 7vw;
-  min-width: 20vw;
-  width: 22vw;
+  min-width: 35vw;
+  width: 45vw;
   margin-top: 1.5vw;
   position: absolute;
   margin-left: 22vw;
@@ -192,4 +192,12 @@
   margin-left: -19vw;
   color: #fff;
   font-size: 1.4vw;
+}
+
+.simbolPriceAgendamento{
+  position: absolute;
+  width: 10vw;
+  margin-left: 33.5vw;
+  margin-top: 2.5vw;
+  font-size: 1.1vw;
 }
