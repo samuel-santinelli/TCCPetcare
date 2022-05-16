@@ -8,13 +8,13 @@ const Modal = (props) => {
     nome: "",
     endereco: "",
     cpf: "",
-    dataFinal: "",
     dataInicial: "",
-    idCliente: 1,
-    idHost: 1,
-    idPet: 1,
-    idTipo: "",
-    valor: 33.33,
+    dataFinal: "",    
+    idCliente: 215,
+    idHost: 40,
+    idPet: 533,
+    idTipo: 1,
+    valor: "",
   });
   console.log(agendamento);
 
@@ -104,6 +104,7 @@ const Modal = (props) => {
                 }
               />
               <label className="labelInputCompra">Data final do serviço</label>
+              {/* datetime-local */}
               <input
                 className="inputCompraDate"
                 type="datetime-local"

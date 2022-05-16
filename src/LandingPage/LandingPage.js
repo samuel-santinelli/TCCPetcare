@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import {
-  AiOutlineSearch,
-} from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import ButtonInfo from "./buttonInfo/ButtonInfo";
-import Toolbar from "./slidebar/ToolBar"
+import Toolbar from "./slidebar/ToolBar";
 import styleLandingPage from "./style/styleLandingPage.css";
 import Sidebar from "./slidebar/Sidebar";
 import Backdrop from "./slidebar/Backdrop";
@@ -16,19 +15,32 @@ const LandingPage = () => {
   const imagePerson =
     "https://images.pexels.com/photos/6001779/pexels-photo-6001779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
-    const [sidebar, setSidear] = useState(false);
-    const toggleSidebar = () => {
-      setSidear((prevState) => !prevState)
-    }
+  const [sidebar, setSidear] = useState(false);
+  const toggleSidebar = () => {
+    setSidear((prevState) => !prevState);
+  };
+
+  const [cuidadoresLandingPage, setCuidadoresLandingPage] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/Cuidador/Cuidador/api/cuidador")
+      .then((res) => {
+        setCuidadoresLandingPage(res.data);
+      })
+      .catch(() => {
+        console.log("Deu erro na busca de cuidador");
+      });
+  }, []);
 
   return (
     <>
       <header>
-        <Toolbar openSidebar={toggleSidebar}/>
-        <Backdrop sidebar={sidebar} closeSidebar={toggleSidebar}/>
-        <Sidebar sidebar={sidebar}/>
+        <Toolbar openSidebar={toggleSidebar} />
+        <Backdrop sidebar={sidebar} closeSidebar={toggleSidebar} />
+        <Sidebar sidebar={sidebar} />
         <div id="parteSuperior">
-          <div class="boxBotao">
+          <div className="boxBotao">
             <Link to="/Login">
               <input type="button" id="login-input" value="LOGIN" />
             </Link>
@@ -46,12 +58,12 @@ const LandingPage = () => {
       </header>
 
       <main>
-        <div class="box-container">
-          <div class="img-box-container" />
-          <div class="texto-container">
-            <div class="texto-superior">
-              <div class="tituloPet-servico">PET</div>
-              <div class="tituloHome-servico">HOME</div>
+        <div className="box-container">
+          <div className="img-box-container" />
+          <div className="texto-container">
+            <div className="texto-superior">
+              <div className="tituloPet-servico">PET</div>
+              <div className="tituloHome-servico">HOME</div>
             </div>
             <div class="texto-meio">
               O PET HOME permite que o seu PET fique na casa de excelentes
@@ -63,77 +75,49 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div class="box-container2">
+        <div className="box-container2">
           <span id="text-center">SEU PET </span>
           <span id="text-center2">SEGURO</span>
         </div>
-        <div class="box-container3">
+        <div className="box-container3">
           <div id="div-input">
-            <AiOutlineSearch class="pesquisa-icon" />
+            <AiOutlineSearch className="pesquisa-icon" />
             <input
               type="text"
               id="input-pesquisa"
               placeholder="Busque um cuidador"
             />
           </div>
+
           <div id="cuidadores-container">
-            <div class="box1">
-              <div class="header-box1">
-                <div className="imageDashboardCuidador1" />
-                <div className="nomeCuidadorLandingPage">
-                  <h7>Mayara Pereira</h7>
-                  <h8>
-                    Amo muito os animais! e estou aqui para cuidador do seu!
-                  </h8>
-                  <ButtonInfo />
+            {cuidadoresLandingPage.map((cuidadorLandingP, key) => (
+              <div className="box1" key={key}>
+                <div className="header-box1" >
+                  <>
+                    <img
+                      className="imageDashboardCuidador1"
+                      src={cuidadorLandingP.foto}
+                      alt=""
+                    />
+                    <div className="nomeCuidadorLandingPage">
+                      <h7>{cuidadorLandingP.nome}</h7>
+                      <h8>{cuidadorLandingP.moradia}</h8>
+                      <h8>{cuidadorLandingP.biografia}</h8>
+                      <ButtonInfo />
+                    </div>
+                  </>
                 </div>
               </div>
-            </div>
-            <div class="box1">
-              <div class="header-box2">
-                <div className="imageDashboardCuidador2" />
-                <div className="nomeCuidadorLandingPage">
-                  <h7>Larissa Santos</h7>
-                  <h8>
-                    Amo muito os animais! e estou aqui para cuidador do seu!
-                  </h8>
-                  <ButtonInfo />
-                </div>
-              </div>
-            </div>
-            <div class="box1">
-              <div class="header-box3">
-                <div className="imageDashboardCuidador3" />
-                <div className="nomeCuidadorLandingPage">
-                  <h7>Samira Sato</h7>
-                  <h8>
-                    Amo muito os animais! e estou aqui para cuidador do seu!
-                  </h8>
-                  <ButtonInfo />
-                </div>
-              </div>
-            </div>
-            <div class="box1">
-              <div class="header-box4">
-                <div className="imageDashboardCuidador4" />
-                <div className="nomeCuidadorLandingPage">
-                  <h7>Diego Junior</h7>
-                  <h8>
-                    Amo muito os animais! e estou aqui para cuidador do seu!
-                  </h8>
-                  <ButtonInfo />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        <div class="feedback">
+        <div className="feedback">
           <div id="linha-feedback">DEIXE SEU FEEDBACK</div>
           <div id="container-feedback">
             <div id="div-form-feedback">
               <form
                 name="frmfeedback"
-                class="frmfeedback"
+                className="frmfeedback"
                 action=""
                 method="post"
               >
@@ -141,7 +125,7 @@ const LandingPage = () => {
                   <input
                     type="text"
                     id="txtNome"
-                    class="input-feedback"
+                    className="input-feedback"
                     placeholder="SEU NOME"
                   />
                 </div>
@@ -149,7 +133,7 @@ const LandingPage = () => {
                   <input
                     type="email"
                     id="txtEmail"
-                    class="input-feedback"
+                    className="input-feedback"
                     placeholder="SEU EMAIL"
                   />
                 </div>
@@ -158,7 +142,7 @@ const LandingPage = () => {
                   <input
                     type="number"
                     id="txtNumero"
-                    class="input-feedback"
+                    className="input-feedback"
                     placeholder="SEU NUMERO"
                     value=""
                   />
@@ -167,7 +151,7 @@ const LandingPage = () => {
                   <input
                     type="text"
                     id="txtMensagem"
-                    class="input-feedback-mensagem"
+                    className="input-feedback-mensagem"
                     placeholder="SUA MENSAGEM"
                   />
                 </div>
@@ -175,13 +159,13 @@ const LandingPage = () => {
                   <input
                     type="submit"
                     id="btnEnviar"
-                    class="input-feedback-enviar"
+                    className="input-feedback-enviar"
                     value="ENVIAR"
                   />
                 </div>
               </form>
             </div>
-            <div class="img-feedback"></div>
+            <div className="img-feedback"></div>
           </div>
         </div>
       </main>

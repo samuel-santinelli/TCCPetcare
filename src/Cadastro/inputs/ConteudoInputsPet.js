@@ -23,7 +23,7 @@ const InputsPet = ({id}) => {
     idVacina: 2,
     idPorte: 1,
     nomePorte: "",
-    idCliente: id,
+    idCliente: 200,
   });
   const navigate = useNavigate();
   console.log("o id é ", id);

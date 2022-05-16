@@ -14,7 +14,7 @@ const Escolha = () => {
             value="Desejo ser cuidador"
           />
         </Link>
-        <Link to={"/CadastroCliente"}>
+        <Link to={"/CadastroCliente/id"}>
         <input
           type="submit"
           className="inputEscolha"
