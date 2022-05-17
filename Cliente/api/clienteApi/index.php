@@ -77,7 +77,7 @@ $app->get('/cliente/login', function($request, $response, $args){
   
 });
 
-$app->post('/cliente/{id}', function($request, $response, $args){ 
+$app->post('/cliente', function($request, $response, $args){ 
 
    
     $contentType = $request-> getHeaderLine('Content-Type'); 
@@ -101,13 +101,13 @@ $app->post('/cliente/{id}', function($request, $response, $args){
                                  ->write('{"message":"Conteudo enviado pelo body não contem dados validos"}');
         }else
         {
-            // var_dump($dadosBodyJSON);
-            // die;
+        
              $idCliente = (int) 0;
-             $idCliente = $args['id'];
-            
+             $idCliente = $args['idCliente'];
+            //  var_dump($dadosBodyJSON);
+            //  die;
 
-         
+            //  require_once('../control/recebeClientesApi.php');
           
             if(inserirCliente($dadosBodyJSON, $idCliente)){ 
                 // var_dump($dadosBodyJSON);

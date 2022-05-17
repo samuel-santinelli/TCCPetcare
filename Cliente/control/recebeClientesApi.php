@@ -3,9 +3,18 @@
 // require_once('config/config.php');
 require_once(SRC.'bd/inserirCliente.php');
 require_once(SRC. 'bd/updateCliente.php');
+// require_once(SRC.'bd/listarClientes.php');
+// $idCliente =(int) 0;
+// $idCliente = $_GET['idCliente'];
 
-function inserirClienteAPI($arrayDados){
-    if(inserirCliente($arrayDados)){
+// // $idCliente= $_GET['idCliente'];
+//   echo ($idCliente);
+
+//   $dados= buscaCliente($idCliente); 
+function inserirClienteAPI($arrayDados, $idCliente){
+    if(inserirCliente($arrayDados, $idCliente)){
+        // var_dump($arrayDados, $idCliente);
+        // die;
         return true;
     }else{
         return false;

@@ -1,10 +1,11 @@
 <?php
 
 
-
-function inserirCliente($arrayCliente){
+function inserirCliente($arrayCliente, $idCliente){
+    
     require_once('../bd/conexao.php');
     $sql = "insert into tblClientes(
+   
         nome,
         cpf,
         dataNascimento,
@@ -21,6 +22,8 @@ function inserirCliente($arrayCliente){
        numero
     )
     values(
+       
+       
         '".$arrayCliente['nome']."',
         '".$arrayCliente['cpf']."',
         '".$arrayCliente['dataNascimento']."',
@@ -35,21 +38,29 @@ function inserirCliente($arrayCliente){
         '".$arrayCliente['bairro']."',
         '".$arrayCliente['complemento']."',
         '".$arrayCliente['numero']."'
-
-         )
-";
+    
 
 
+        )
+        
+        ";
 
 
 $conexao = conexao();
 
-// echo($sql);
-// // die;
+echo($sql);
+// die;
+$rs = mysqli_query($conexao,$sql);
+$idCliente = (int) 0;
+        $idCliente =  mysqli_insert_id($conexao);
+         echo($idCliente);
+    //     // die;
+       return $idCliente;
+        return $rs;
 
 // if($rs = mysqli_query($conexao,$sql)){
 //     $idCliente =  mysqli_insert_id($conexao);
-//     echo($idCliente);
+//     // echo($idCliente);
 //     // die;
 //     return $idCliente;
 //     // echo($idCliente);
@@ -68,12 +79,14 @@ $conexao = conexao();
     
    
     
-if($resultado = mysqli_query($conexao, $sql)){
-     return true;
+// if($resultado = mysqli_query($conexao, $sql)){
+//      return true;
     
-    }else{
-        return false;
-    }
+//     }else{
+//         return false;
+//     }
 
 }
+
+
 ?>
