@@ -9,11 +9,10 @@ import Modal from "./modal/Modal";
 
 const Agendamento = (props) => {
   const [cuidadores, setCuidadores] = useState([]);
+  const [search, setSearch] = useState([]);
   const [dropdown, setDropdown] = useState("");
-  const [search, setSearch] = useState("");
-  console.log(search);
 
-  const frutas = ["joao", "joao123", "tester"];
+  console.log(search);
 
   const showDropdown = () => {
     console.log("modal foi clicada");
@@ -27,23 +26,32 @@ const Agendamento = (props) => {
   };
 
   useEffect(() => {
-    axios
-      .get("http://localhost/Cuidador/Cuidador/api/cuidador")
-      .then((res) => {
-        setCuidadores(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro na busca de cuidador");
-      });
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost/Cuidador/Cuidador/api/cuidador`
+        );
+        const data = await response.json();
+        setCuidadores(data);
+        setSearch(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, []);
 
-  const filterCuidadores = frutas.filter((searchCuidador) =>
-    searchCuidador.startsWith(search)
-  );
+  const handleChange = ({ target }) => {
+    if (!target.value) {
+      setSearch(cuidadores);
+      return;
+    }
 
-  console.log(cuidadores);
-  const foto =
-    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
+    const filterCuidadores = search.filter(({ nome }) =>
+      nome.includes(target.value));
+
+      setSearch(filterCuidadores);
+  };
 
   return (
     <div className="containerMain">
@@ -63,13 +71,12 @@ const Agendamento = (props) => {
             type="search"
             className="inputSearch"
             placeholder="Busque um cuidador especifico (Ex: Maria Antonieta)"
-            value={search}
-            onChange={(ev) => setSearch(ev.target.value)}
+            onChange={handleChange}
           />
           <div id="containerMainCard">
             <div className="containerScrollCardCuidadores">
               <div className="containerCardCuidadores">
-                {filterCuidadores.map((cuidador, key) => (
+                {search.map((cuidador, key) => (
                   <div className="card" key={key}>
                     <div className="containerInfoCuidadorAgendamento">
                       <iframe
@@ -81,11 +88,13 @@ const Agendamento = (props) => {
                           className="imageCuidador"
                           value={cuidador.foto}
                           src={cuidador.foto}
-                          alt=""
+                          alt="foto do cuidador"
                         />
                       </div>
                       <div className="infoCuidador">
-                        <label className="nameCuidador">{cuidador.nome}</label>
+                        <label className="nameCuidador" id="nome">
+                          {cuidador.nome}
+                        </label>
                         <label className="locationCuidadorAgendamento">
                           {cuidador.moradia} (São Paulo)
                         </label>
