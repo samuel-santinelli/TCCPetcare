@@ -48,8 +48,8 @@ const ConteudoInputsCliente = (props) => {
   const handleUserSubmit = (user) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente/:id", user)
-      .then((res) => setUser(res.data));
-    navigate(`/CadastroPet/id=${user.id}`);
+      .then((res) => setUser(res.data.id));
+    navigate(`/CadastroPet/id=${user.data.id}`);
   };
 
   const [sexo, setSexo] = useState([]);
