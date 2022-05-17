@@ -14,8 +14,8 @@ const InputsLogin = () => {
   });
 
   const handleLoginSubmit = (userLogin) => {
-    const email = document.getElementById("emailLogin").value
-    const senha = document.getElementById("senhaLogin").value
+    const email = ((document.getElementById("emailLogin")||{}).value)||"";
+    const senha = ((document.getElementById("senhaLogin")||{}).value)||"";
 
     if (email === email) {      
       axios
@@ -28,9 +28,11 @@ const InputsLogin = () => {
       )
       .then((res) => {
         console.log("O cuidador é", res.data);
+        window.localStorage.setItem("cliente", JSON.stringify(res.data))
       }); 
     } else {
       console.log("ta errado irmao");
+      
     }
   };
   return (
