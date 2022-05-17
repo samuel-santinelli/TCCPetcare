@@ -37,7 +37,6 @@ function criarArrayAgenda($objeto)
     }
  
   
- 
     if(isset($arrayDados)){
         return $arrayDados;
     }else{

@@ -16,7 +16,7 @@ function criarArrayHistorico($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            // "idServico" => $exibirDados['idServico'],
+            "idServico" => $exibirDados['idServico'],
             "valor" => $exibirDados['valor'],
             "dataInicial" => $exibirDados['dataInicial'],
             "dataFinal" => $exibirDados['dataFinal'],

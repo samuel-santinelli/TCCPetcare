@@ -6,6 +6,7 @@ require_once("vendor/autoload.php");
 require_once("../control/exibirHost.php");
 require_once('../control/recebeCuidadoresAPI.php');
 require_once("../control/exibirSexo.php");
+require_once("../control/exibirLogin.php");
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
@@ -69,6 +70,49 @@ $app->get('/cuidador', function($request, $response, $args){
   
 
 });
+
+$app->get('/cuidador/loginHost', function($request, $response, $args){ 
+ 
+    if(isset( $request ->getQueryParams()['email'])) //vendo se existe esse parametro nome, se teve a existencia da chegada de dados, parametro para filtrar pelo nome
+    {
+
+    /************** Recebendo dados pela query string */
+        $login = (string) null;
+        $senha = (string) null;
+        $login = $request ->getQueryParams()['email']; 
+        $senha = $request ->getQueryParams()['senha']; 
+        if($listDados = buscarLoginSenha($login, $senha)){
+
+                if( $listDadosArray = criarArrayHost($listDados)){  
+                         $listDadosJSON = criarJSONHost($listDadosArray);
+                }
+        }
+ 
+    }else{
+   
+  
+        if($listDados =  exibirHost()){
+       
+            if( $listDadosArray = criarArrayCliente($listDados)){  
+                     $listDadosJSON = criarJSONCLIENTE($listDadosArray); 
+            }
+        } 
+    }
+
+   
+    if( $listDadosArray){ 
+        return $response   ->withStatus(200) 
+                           ->withHeader('Content-Type', 'application/json') 
+                           ->write($listDadosJSON); 
+
+    }else{
+                     return $response   ->withStatus(204); 
+    }
+  
+});
+
+
+
 $app->get('/cuidador/listarSexoHost', function($request, $response, $args){
     
     if($listar = exibirSexo()){
