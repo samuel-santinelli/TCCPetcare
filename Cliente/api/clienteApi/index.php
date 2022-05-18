@@ -107,14 +107,14 @@ $app->post('/cliente', function($request, $response, $args){
             //  var_dump($dadosBodyJSON);
             //  die;
 
-             require_once('../control/recebeClientesApi.php');
+             require_once('../bd/inserirCliente.php');
           
-            if(inserirClienteAPI($dadosBodyJSON, $idCliente)){ 
+            if($resposta = inserirClienteAPI($dadosBodyJSON, $idCliente)){ 
                 // var_dump($dadosBodyJSON);
                 // die;
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Item criado com sucesso", "'.$idCliente.'"}');
+                                    ->write('{"message":"Item criado com sucesso", "'.$resposta.'"}');
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')

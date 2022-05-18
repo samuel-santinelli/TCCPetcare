@@ -31,12 +31,13 @@ require_once(SRC. 'bd/updateCliente.php');
 function inserirClienteAPI($arrayDados) 
 {
        
-    // var_dump(inserir($arrayDados));
+    // var_dump(inserirCliente($arrayDados));
     // die;
-    if(inserirCliente($arrayDados)){
-        // var_dump($arrayDados);
+    if($resposta = inserirCliente($arrayDados)){
+    $resposta =  json_encode($resposta);
+        // var_dump($resposta);
         // die;
-        return true;
+        return $resposta;
     }else{
         return false;
     }

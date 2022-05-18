@@ -66,6 +66,8 @@ if($rs = mysqli_query($conexao,$sql)){
     // die;
     $novoItem = array("id" => $idCliente); 
   $arrayDados = $arrayCliente + $novoItem;
+// $arrayDados = array("id" => $idCliente,
+//                   $arrayCliente  );
 //   echo($sql);
 // die;
 //  var_dump($arrayDados);
