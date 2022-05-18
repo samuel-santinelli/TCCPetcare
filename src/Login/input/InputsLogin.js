@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import LockIcon from "@mui/icons-material/Lock";
 import "./style/ContainerInputsLogin.css";
@@ -13,32 +13,39 @@ const InputsLogin = () => {
     senha: "",
   });
 
+  function useQuery() {
+    const { search } = useLocation();
+  
+    return React.useMemo(() => new URLSearchParams(search), [search]);
+  }
+  
+  function QueryParamsDemo() {
+    let query = useQuery();
+  }
+
   const handleLoginSubmit = (userLogin) => {
     const email = (document.getElementById("emailLogin") || {}).value || "";
     const senha = (document.getElementById("senhaLogin") || {}).value || "";
     const button = document.getElementById("buttonProximo");
 
-    if (!email) {
-      alert("ta errado isso ai");
-     
-  }else{
     axios
-    .get(
-      `http://localhost/Cuidador/Cliente/api/cliente/login?email=${email}&senha=${senha}`,
-      {
-        email: email,
-        senha: senha,
-      }
-    )
-    .then((res) => {
-      console.log("O cuidador é", res.data);
-      window.localStorage.setItem("cliente", JSON.stringify(res.data));
-      button.addEventListener("click", () => {
-        navigate(`/BoasVindas/id=${res.data.id}`);
+      .get(
+        `http://localhost/Cuidador/Cliente/api/cliente/login?email=${email}&senha=${senha}`,
+        {
+          email: email,
+          senha: senha,
+        }
+      )
+      .then((res) => {
+        console.log("O cuidador é", res.data[0].id);
+        window.localStorage.setItem("cliente", JSON.stringify(res.data));
+        button.addEventListener("click", () => {
+          navigate("/BoasVindas?id=" + res.data[0].id);
+      
+        });
       });
-    });
+  };
 
-  }}
   return (
     <>
       <form onSubmit={handleLoginSubmit(userLogin)}>

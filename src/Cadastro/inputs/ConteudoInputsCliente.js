@@ -20,7 +20,6 @@ const ConteudoInputsCliente = (props) => {
   const email = document.getElementById("email");
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
-  const button = document.getElementById("buttonCadastrarCliente");
 
   const { id } = useParams();
   console.log(id);
@@ -46,10 +45,15 @@ const ConteudoInputsCliente = (props) => {
   console.log(user);
   const navigate = useNavigate();
   const handleUserSubmit = (user) => {
+    const buttonCadastrarCliente = document.getElementById("buttonCadastrarCliente");
     axios
-      .post("http://localhost/Cuidador/Cliente/api/cliente/:id", user)
-      .then((res) => setUser(res.data.id));
-    navigate(`/CadastroPet/id=${user.data.id}`);
+      .post("http://localhost/Cuidador/Cliente/api/cliente", user)
+      .then((res) => {
+        buttonCadastrarCliente.addEventListener("click", () => {
+          navigate("/BoasVindas/id=" + res.data.id);
+          console.log("/BoasVindas/id=" + res.data.id);
+        });
+      });
   };
 
   const [sexo, setSexo] = useState([]);
@@ -325,6 +329,7 @@ const ConteudoInputsCliente = (props) => {
               type="submit"
               name="inputConfirmarSenha"
               className="button"
+              id="buttonCadastrarCliente"
             />
           </div>
         </div>
