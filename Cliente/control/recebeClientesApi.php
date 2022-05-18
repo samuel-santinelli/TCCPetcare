@@ -11,14 +11,38 @@ require_once(SRC. 'bd/updateCliente.php');
 //   echo ($idCliente);
 
 //   $dados= buscaCliente($idCliente); 
-function inserirClienteAPI($arrayDados, $idCliente){
-    if(inserirCliente($arrayDados, $idCliente)){
-        // var_dump($arrayDados, $idCliente);
+// function inserirClienteAPI($arrayDados, $idCliente){
+    
+//     $novoItem = array("id" => $idCliente); 
+
+   
+//     $arrayCliente = $arrayDados + $novoItem;
+
+   
+       
+//     if(inserirCliente($arrayCliente)){ 
+//         var_dump($arrayCliente);
+//         die;
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+function inserirClienteAPI($arrayDados) 
+{
+       
+    // var_dump(inserir($arrayDados));
+    // die;
+    if(inserirCliente($arrayDados)){
+        // var_dump($arrayDados);
         // die;
         return true;
     }else{
         return false;
     }
+       
+    
+
 }
 
 function atualizarClienteAPI($arrayDados, $id){

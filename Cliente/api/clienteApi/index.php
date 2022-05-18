@@ -88,14 +88,14 @@ $app->post('/cliente', function($request, $response, $args){
        
       
         $dadosBodyJSON = $request-> getParsedBody();
-        // echo($dadosBodyJSON);
+        // var_dump($dadosBodyJSON);
         // die;
        
         if($dadosBodyJSON == "" || $dadosBodyJSON == null) 
         {
 
-            var_dump($dadosBodyJSON);
-            die;
+            // var_dump($dadosBodyJSON);
+            // die;
             return $response    ->withStatus(406)
                                 ->withHeader('Content-Type', 'application/json')
                                  ->write('{"message":"Conteudo enviado pelo body não contem dados validos"}');
@@ -103,13 +103,13 @@ $app->post('/cliente', function($request, $response, $args){
         {
         
              $idCliente = (int) 0;
-             $idCliente = $args['idCliente'];
+            //  $idCliente = $args['idCliente'];
             //  var_dump($dadosBodyJSON);
             //  die;
 
-            //  require_once('../control/recebeClientesApi.php');
+             require_once('../control/recebeClientesApi.php');
           
-            if(inserirCliente($dadosBodyJSON, $idCliente)){ 
+            if(inserirClienteAPI($dadosBodyJSON, $idCliente)){ 
                 // var_dump($dadosBodyJSON);
                 // die;
                 return $response    ->withStatus(201)

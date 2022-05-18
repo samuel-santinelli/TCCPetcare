@@ -1,7 +1,7 @@
 <?php
 
 
-function inserirCliente($arrayCliente, $idCliente){
+function inserirCliente($arrayCliente){
     
     require_once('../bd/conexao.php');
     $sql = "insert into tblClientes(
@@ -38,7 +38,7 @@ function inserirCliente($arrayCliente, $idCliente){
         '".$arrayCliente['bairro']."',
         '".$arrayCliente['complemento']."',
         '".$arrayCliente['numero']."'
-    
+        
 
 
         )
@@ -48,28 +48,37 @@ function inserirCliente($arrayCliente, $idCliente){
 
 $conexao = conexao();
 
-echo($sql);
-// die;
-$rs = mysqli_query($conexao,$sql);
-$idCliente = (int) 0;
-        $idCliente =  mysqli_insert_id($conexao);
-         echo($idCliente);
-    //     // die;
-       return $idCliente;
-        return $rs;
 
-// if($rs = mysqli_query($conexao,$sql)){
-//     $idCliente =  mysqli_insert_id($conexao);
-//     // echo($idCliente);
-//     // die;
-//     return $idCliente;
-//     // echo($idCliente);
-//     // die;
-//     return true;
+// $rs = mysqli_query($conexao,$sql);
+// $idCliente = (int) 0;
+//         $idCliente =  mysqli_insert_id($conexao);
+//          echo($idCliente);
+//          $novoItem = array("id" => $idCliente); 
+//         //  $arrayCliente = $rs + $novoItem;
+//     //     // die;
+//        return $idCliente;
+//         return true;
+
+
+if($rs = mysqli_query($conexao,$sql)){
+    $idCliente =  mysqli_insert_id($conexao);
+    // var_dump($idCliente, $sql);
+    // die;
+    $novoItem = array("id" => $idCliente); 
+  $arrayDados = $arrayCliente + $novoItem;
+//   echo($sql);
+// die;
+//  var_dump($arrayDados);
+//     die;
+    return $arrayDados;
    
-// }else{
-//     return false;
-// }
+    // echo($idCliente);
+    // die;
+    // return true;
+   
+}else{
+    return false;
+}
 
 
 
@@ -87,6 +96,24 @@ $idCliente = (int) 0;
 //     }
 
 }
+
+// function inserirClienteAPI($arrayDados, $idCliente){
+
+//     $novoItem = array("id" => $idCliente); 
+
+   
+//     $arrayCliente = $arrayDados + $novoItem;
+
+   
+       
+//     if(inserirCliente($arrayCliente)){ 
+//         var_dump($arrayCliente);
+//         die;
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
 
 
 ?>
