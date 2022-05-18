@@ -7,7 +7,13 @@ import "../style/InputCheckbox.css";
 
 // const id = 44;
 
-const InputsPet = ({id}) => {
+const InputsPet = ({ props }) => {
+  
+  const listIds = () => {
+  axios.get("http://localhost/Cuidador/Cliente/api/cliente").then((res) => {
+    console.log("o dono do pet é", res.data[0].id);
+  })
+}
 
   const [pet, setPet] = useState({
     nome: "",
@@ -23,17 +29,16 @@ const InputsPet = ({id}) => {
     idVacina: 2,
     idPorte: 1,
     nomePorte: "",
-    idCliente: 200,
+    idCliente: 216,
   });
-  const navigate = useNavigate();
-  console.log("o id é ", id);
 
+  const navigate = useNavigate();
 
   const handleSubmitPet = (pet) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) => console.log(res.data));
-      navigate("/Agendamento")
+    navigate("/Agendamento");
   };
   const listPets = () => {
     axios
@@ -44,7 +49,7 @@ const InputsPet = ({id}) => {
     listPets();
   }, []);
 
-  console.log(pet);
+  // console.log(pet);
 
   const [infoPet, setInfoPet] = useState([]);
   const [infoRaca, setInfoRaca] = useState([]);
@@ -99,17 +104,6 @@ const InputsPet = ({id}) => {
       .get("http://localhost/Cuidador/Cliente/api/pets/listarVacinas")
       .then((res) => {
         setInfoPet(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro");
-      });
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost/Cuidador/Cliente/api/cliente")
-      .then((res) => {
-        setInfoClient(res.data);
       })
       .catch(() => {
         console.log("Deu erro");
@@ -220,15 +214,7 @@ const InputsPet = ({id}) => {
               </label>
             </div>
           </div>
-          {/* <div className="contInputsPet">
-            <input
-              className="inputObs"
-              type="number"
-              placeholder="Descreva o comportamento do seu pet"
-              value={infoClient.idCliente}
-              onChange={(e) => setPet({ ...pet, idCliente: e.target.value })}
-            />
-          </div> */}
+
           <div className="contInputsPet">
             <input
               className="inputObs"

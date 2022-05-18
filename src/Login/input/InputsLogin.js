@@ -1,27 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import LockIcon from "@mui/icons-material/Lock";
 import "./style/ContainerInputsLogin.css";
 
-const InputsLogin = () => {
+const InputsLogin = (props) => {
   const navigate = useNavigate();
 
   const [userLogin, setUserLogin] = useState({
     email: "",
     senha: "",
   });
-
-  function useQuery() {
-    const { search } = useLocation();
-  
-    return React.useMemo(() => new URLSearchParams(search), [search]);
-  }
-  
-  function QueryParamsDemo() {
-    let query = useQuery();
-  }
 
   const handleLoginSubmit = (userLogin) => {
     const email = (document.getElementById("emailLogin") || {}).value || "";
@@ -40,8 +30,7 @@ const InputsLogin = () => {
         console.log("O cuidador é", res.data[0].id);
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
         button.addEventListener("click", () => {
-          navigate("/BoasVindas?id=" + res.data[0].id);
-      
+          navigate("/CadastroPet?id=" + res.data[0].id);
         });
       });
   };
