@@ -13,13 +13,14 @@ const InputsLogin = (props) => {
     senha: "",
   });
 
-  const handleLoginSubmit = (userLogin) => {
-    const email = (document.getElementById("emailLogin") || {}).value || "";
-    const senha = (document.getElementById("senhaLogin") || {}).value || "";
-    const button = document.getElementById("buttonProximo");
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    const {email, senha} = userLogin;
+
+    console.log("email", email, "senha", senha);
 
     axios
-      .get(
+      .get( // ISSO JAMAAAAAAAIS PODE SER UM GET
         `http://localhost/Cuidador/Cliente/api/cliente/login?email=${email}&senha=${senha}`,
         {
           email: email,
@@ -27,17 +28,18 @@ const InputsLogin = (props) => {
         }
       )
       .then((res) => {
-        console.log("O cuidador é", res.data[0].id);
+        console.log("O cliente é", res.data[0].id);
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
-        button.addEventListener("click", () => {
-          navigate("/CadastroPet?id=" + res.data[0].id);
-        });
+        navigate("/CadastroPet?id=" + res.data[0].id);
+      })
+      .catch(e => {
+        console.error("Erro", e);
       });
   };
 
   return (
     <>
-      <form onSubmit={handleLoginSubmit(userLogin)}>
+      <form onSubmit={handleLoginSubmit}>
         <div className="containerInputsLogin">
           <div id="InputsLogin">
             <AccountCircle id="iconInputLabelLogin" />

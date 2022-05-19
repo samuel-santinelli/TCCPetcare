@@ -51,7 +51,7 @@ const ConteudoInputsCliente = (props) => {
       .then((res) => {
         buttonCadastrarCliente.addEventListener("click", () => {
           navigate("/BoasVindas/id=" + res.data.id);
-          console.log("/BoasVindas/id=" + res.data.id);
+          console.log("/CadastroPet/id=" + res.data.id);
         });
       });
   };

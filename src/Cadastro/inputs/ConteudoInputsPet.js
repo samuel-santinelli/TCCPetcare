@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import "../style/CadastroPet.css";
 import InputCamera from "./InputCamera";
@@ -8,6 +8,13 @@ import "../style/InputCheckbox.css";
 // const id = 44;
 
 const InputsPet = ({ props }) => {
+
+  const [querystring] = useSearchParams();
+  const id = querystring.get('id')
+  const teste = querystring.get('teste');
+
+  console.log("ID recebido do cliente", id, teste);
+
   
   const listIds = () => {
   axios.get("http://localhost/Cuidador/Cliente/api/cliente").then((res) => {
@@ -29,7 +36,7 @@ const InputsPet = ({ props }) => {
     idVacina: 2,
     idPorte: 1,
     nomePorte: "",
-    idCliente: 216,
+    idCliente: id,
   });
 
   const navigate = useNavigate();
