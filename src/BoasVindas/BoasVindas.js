@@ -21,7 +21,7 @@ const Login = ({id}) => {
       </div>
 
       <div className="containerButtonWelcome">
-        <Link to="/CadastroPet" onClick={id}>
+        <Link to="/CadastroPet">
           <input
             type="button"
             value="Adicione seu pet"

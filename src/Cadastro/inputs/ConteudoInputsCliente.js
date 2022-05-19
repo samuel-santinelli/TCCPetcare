@@ -15,6 +15,8 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
 
 const ConteudoInputsCliente = (props) => {
+  const navigate = useNavigate();
+
   const nome = document.getElementById("nome");
   const dataNascimento = document.getElementById("dataNascimento");
   const email = document.getElementById("email");
@@ -43,16 +45,17 @@ const ConteudoInputsCliente = (props) => {
   });
 
   console.log(user);
-  const navigate = useNavigate();
-  const handleUserSubmit = (user) => {
-    const buttonCadastrarCliente = document.getElementById("buttonCadastrarCliente");
+
+  const handleUserSubmit = (e) => {
+    e.preventDefault();
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => {
-        buttonCadastrarCliente.addEventListener("click", () => {
-          navigate("/BoasVindas/id=" + res.data.id);
-          console.log("/CadastroPet/id=" + res.data.id);
-        });
+        console.log("O cliente é", res.data[0].id);
+        navigate("/BoasVindas?id=" + res.data.id);
+      })
+      .catch((e) => {
+        console.error("Erro", e);
       });
   };
 
@@ -66,6 +69,9 @@ const ConteudoInputsCliente = (props) => {
       })
       .catch(() => {
         console.log("Deu erro");
+      })
+      .catch((e) => {
+        console.error("Erro", e);
       });
   }, []);
 

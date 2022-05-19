@@ -46,7 +46,7 @@ const InputsIcon = (props) => {
   console.log(cuidador);
   const navigate = useNavigate();
 
-  const handleUserCuidadorSubmit = (cuidador) => {
+  const handleUserCuidadorSubmit = () => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
       .then((res) => console.log(res.data.foto));
