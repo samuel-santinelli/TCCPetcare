@@ -22,8 +22,8 @@ function buscaCliente($idCliente){
       where tblClientes.idCliente =".$idCliente;
   
     $conexao = conexao();
-    // echo($sql);
-    // die;
+    echo($sql);
+    die;
     $select = mysqli_query($conexao,$sql);
   
     return $select;

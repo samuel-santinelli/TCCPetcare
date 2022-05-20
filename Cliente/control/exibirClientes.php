@@ -5,7 +5,15 @@ function exibirClientes(){
     $dadosListar = listarClientes();
     return $dadosListar;
 }
-
+function buscarClientes($id)
+{
+   
+   $dados = buscaCliente($id);
+    
+    return $dados;
+    
+    
+}
 function criarArrayCliente($objeto)
 {
     $cont = (int) 0;
