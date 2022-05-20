@@ -10,10 +10,10 @@ import "../style/InputCheckbox.css";
 const InputsPet = ({ props }) => {
 
   const [querystring] = useSearchParams();
-  const id = querystring.get('id')
+  const idCliente = querystring.get('idCliente')
   const teste = querystring.get('teste');
 
-  console.log("ID recebido do cliente", id, teste);
+  console.log("ID recebido do cliente", idCliente, teste);
 
   
   const listIds = () => {
@@ -36,7 +36,7 @@ const InputsPet = ({ props }) => {
     idVacina: 2,
     idPorte: 1,
     nomePorte: "",
-    idCliente: id,
+    idCliente: idCliente,
   });
 
   const navigate = useNavigate();
@@ -45,7 +45,8 @@ const InputsPet = ({ props }) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) => console.log(res.data));
-    navigate("/Agendamento");
+    navigate("/Agendamento?idCliente=" + idCliente);
+    
   };
   const listPets = () => {
     axios

@@ -23,8 +23,8 @@ const ConteudoInputsCliente = (props) => {
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
 
-  const { id } = useParams();
-  console.log(id);
+  const { idCliente } = useParams();
+  console.log(idCliente);
 
   const [user, setUser] = useState({
     nome: "",
@@ -46,17 +46,12 @@ const ConteudoInputsCliente = (props) => {
 
   console.log(user);
 
-  const handleUserSubmit = (e) => {
-    e.preventDefault();
+  const handleUserSubmit = (user) => {
+  
     axios
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
-      .then((res) => {
-        console.log("O cliente é", res.data[0].id);
-        navigate("/BoasVindas?id=" + res.data.id);
-      })
-      .catch((e) => {
-        console.error("Erro", e);
-      });
+      .then((res) => setUser(res.data))
+      navigate("/Login")
   };
 
   const [sexo, setSexo] = useState([]);

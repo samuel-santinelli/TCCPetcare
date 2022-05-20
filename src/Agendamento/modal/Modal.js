@@ -1,22 +1,30 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./style/styleModal.css";
 const Modal = (props) => {
   const { className, modalRef } = props;
-
+  const [querystring] = useSearchParams();
+  
+  const idCliente = querystring.get('idCliente')
+  const idPet = querystring.get('idPet')
+  
   const [agendamento, setAgendamento] = useState({
     nome: "",
     endereco: "",
     cpf: "",
     dataInicial: "",
     dataFinal: "",    
-    idCliente: 215,
+    idCliente: idCliente,
     idHost: 40,
-    idPet: 533,
+    idPet: idPet,
     idTipo: 1,
     valor: "",
   });
   console.log(agendamento);
+
+
+  console.log("Os IDS são:", idCliente, idPet);
 
   const handleSubmitAgendamento = (agendamento) => {
     axios

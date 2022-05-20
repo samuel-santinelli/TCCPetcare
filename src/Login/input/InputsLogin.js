@@ -28,9 +28,9 @@ const InputsLogin = (props) => {
         }
       )
       .then((res) => {
-        console.log("O cliente é", res.data[0].id);
+        console.log("O cliente é", res.data[0].idCliente);
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
-        navigate("/CadastroPet?id=" + res.data[0].id);
+        navigate("/CadastroPet?idCliente=" + res.data[0].idCliente);
       })
       .catch(e => {
         console.error("Erro", e);
