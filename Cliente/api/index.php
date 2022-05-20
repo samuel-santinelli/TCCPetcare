@@ -15,6 +15,7 @@ $url = (string) null;
    
        
 $url = explode('/',$_GET['url']); 
+
            
        switch($url[0]){
            case 'cliente':
