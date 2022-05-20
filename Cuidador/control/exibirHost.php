@@ -12,7 +12,15 @@ function buscarNomeCuidadores($nome){
 
     return $dados;
 }
-
+function buscarCuidadores($id)
+{
+   
+   $dados = buscarCuidador($id);
+    
+    return $dados;
+    
+    
+}
       
 function criarArrayHost($objeto)
 {

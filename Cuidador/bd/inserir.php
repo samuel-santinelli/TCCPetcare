@@ -67,13 +67,36 @@
             //  echo($sql);
             //  die;
 
-     if($teste = mysqli_query($conexao, $sql)){
-        // echo('foi 1 / inserir.php');
-         return true;
-     }else{
-        //  echo(' nao foi 1 / inserir.php - ');
-            return false;
-     }
+            if($rs = mysqli_query($conexao,$sql)){
+                $idCuidador =  mysqli_insert_id($conexao);
+                // var_dump($idCliente, $sql);
+                // die;
+                $novoItem = array("id" => $idCuidador); 
+              $arrayDados = $arrayCuidador + $novoItem;
+            // $arrayDados = array("id" => $idCliente,
+            //                   $arrayCliente  );
+            //   echo($sql);
+            // die;
+            //  var_dump($arrayDados);
+            //     die;
+                return $arrayDados;
+               
+                // echo($idCliente);
+                // die;
+                // return true;
+               
+            }else{
+                return false;
+            }
+            
+            
+    //  if($teste = mysqli_query($conexao, $sql)){
+    //     // echo('foi 1 / inserir.php');
+    //      return true;
+    //  }else{
+    //     //  echo(' nao foi 1 / inserir.php - ');
+    //         return false;
+    //  }
  }
 
 
