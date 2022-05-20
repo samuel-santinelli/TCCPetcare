@@ -17,7 +17,7 @@ const Modal = (props) => {
     dataFinal: "",    
     idCliente: idCliente,
     idHost: 40,
-    idPet: idPet,
+    idPet: 65,
     idTipo: 1,
     valor: "",
   });
