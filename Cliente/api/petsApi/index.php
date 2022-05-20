@@ -138,11 +138,11 @@ $app->post('/pets', function($request, $response, $args){
             require_once('../control/recebePetsApi.php');
             // require_once('../control/recebeVacinasApi.php');
            
-            if( inserirPetsAPI($dadosBodyJSON)) { 
+            if( $resposta = inserirPetsAPI($dadosBodyJSON)) { 
 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Cadastro de pet criado com sucesso"}');
+                                    ->write('{"message":"Cadastro de pet feito com sucesso", "'.$resposta.'"}');
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')

@@ -192,7 +192,7 @@ $app->post('/cuidador', function($request, $response, $args){
             if($resposta = inserirCuidadorAPI($dadosBodyJSON)){ 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Item criado com sucesso", "'.$resposta.'"}');
+                                    ->write('{"message":"Cadastro de cuidador feito com sucesso", "'.$resposta.'"}');
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')
