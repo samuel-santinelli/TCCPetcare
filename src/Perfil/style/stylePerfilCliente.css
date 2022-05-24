@@ -27,30 +27,27 @@ html {
 }
 
 .containerMainPerfilCliente {
- height: 95vh;
- width: 85vw;
+ height: 116vh;
+ width: 180rem;
  margin-top: 5rem;
   display: flex;
-  justify-content: center;
-  -ms-flex-pack: end;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #f28907;
 }
 
 .containerBannerCliente{
-  height: 40vh;
-  width: 85vw;
+  height: 40rem;
+  width: 180rem;
   background-image: url("../../../images/bannerGolden.jpg");
   background-size: cover;
 }
 
 .containerCardPerfilCliente{
-  height: 65vh;
-  width: 58vw;
-  margin-top: 28vh;
+  height: 90rem;
+  width: 95rem;
+  margin-top: 50rem;
   border-radius: 3vh;
   background-color: var(--main-color);
   position: absolute;
@@ -58,10 +55,10 @@ html {
 
 
 .containerPefilClienteInfo{
-  height: 30vh;
-  width: 40vw;
-  margin-top: 23vh;
-  margin-right: 48vw;
+  height: 30rem;
+  width: 80rem;
+  margin-top: 36rem;
+  margin-right: 53rem;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -69,9 +66,11 @@ html {
 }
 
 .cardFotoPerfilCliente{
-  height: 20vh;
-  width: 20vh;
-  margin-left: 10.7vw;
+  height: 19rem;
+  width: 20rem;
+  margin-left: 2.7rem;
+  border: solid 5px #fff;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   background-image: url("../../../images/imagePerfilCuidador.png");
   background-size: cover;
   border-radius: 50%;
@@ -79,33 +78,64 @@ html {
 
 .containerNamePerfilCliente{
   position: absolute;
-  margin-top: 22vh;
+  min-width: 30rem;
+  width: 43rem;
   font-size: 3.5rem;
   display: flex;
   color: #fff;
-  margin-left: 15vw;
+  margin-left: 2rem;
+  margin-top: 2rem;
 }
 
 .containerLocationPerfilCliente{
   position: absolute;
-  margin-top: 25.5vh;
-  font-size: 2.4rem;
+  margin-top: 6.3rem;
+  font-size: 1.9rem;
   color: #fff;
-  margin-left: 15vw;
+  margin-left: 2rem;
 }
 
 .containerInfoCardPetCuidador{
-  height: 35vh;
-  width: 45vw;
+  height: 35rem;
+  width: 80rem;
+  margin-left: 50rem;
   display: flex;
-  margin-top: 55vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55rem;
   position: absolute;
+  flex-direction: row;
+}
+
+
+.containerPetInfoPet{
+  height: 35rem;
+  width: 110rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5rem;
+  background: linear-gradient(
+    101.96deg,
+    rgba(249, 249, 249, 0.261) -0.52%,
+    rgba(249, 249, 249, 0.0775668) 88.4%,
+    rgba(249, 249, 249, 0.058) 100.25%
+  );
+  backdrop-filter: blur(20px); 
+  border-radius: 2.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .containerFotoPerfilPet{
-  height: 13vh;
-  width: 13vh;
-  margin-top: 2rem;
+  height: 13rem;
+  width: 13rem;
+  margin-top: -29rem;
+  border: solid 5px #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   margin-left: 2rem;
   background-image: url("../../../images/fotoPerfilPet.png");
   background-size: cover;
@@ -113,124 +143,76 @@ html {
   border-radius: 50%;
 }
 
-.containerPetInfoPet{
-  height: 35vh;
-  width: 105vw;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 5rem;
-}
-
 .containerNamePerfilPet{
   position: absolute;
-  margin-top: 4vh;
+  margin-top: -11rem;
   font-size: 4rem;
   display: flex;
-  color: #000;
-  margin-left: 8vw;
+  color: #fff;
+  margin-left: 12.5rem;
+  text-align: center;
 }
 
 .containerRacaPerfilPet{
   position: absolute;
-  margin-top: 7.5vh;
-  font-size: 2.4rem;
-  color: #000;
-  margin-left: 9vw;
-}
-
-.containerRightPet{
-  height: 35vh;
-  width: 40vh;
-  padding-top: 1vh;
-  padding-left: 2vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-bottom-right-radius: 5rem;
-  border-top-right-radius: 5rem;
-}
-
-.containerLocationPet{
+  font-size: 2rem;
+  color: #fff;
+  margin-top: -4.5rem;
+  margin-left: 12rem;
   text-align: center;
-  font-size: 3.5rem;
-  margin-left: 3vh;
-  color: #000;
 }
 
-.fotoMoradiaHouse{
-  height: 10vh;
-  width: 5vw;
-  margin-top: 4rem;
-  background-size: cover;
-}
-
-.containerMoradiaPerfilPetRight{
-  height: 15vh;
-  width: 5vw;
-  margin-left: 2vh;
+.containerBioProfilePet{
+  height: 10rem;
+  width: 50rem;
+  color: #fff;
+  margin-top: 12rem;
+  position: absolute;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.9rem;
 }
 
-.containerMoradiaNamePetRight{
-  height: 10vh;
-  width: 6vw;
-  display: flex;
-  flex-direction: column;
+.containerInfoProfile{
+  height: 10rem;
+  width: 45rem;
+  margin-top: 3.5rem;
+  justify-content: center;
 }
 
 .containerMainInfoPet{
-  height: 22vh;
-  width: 45vw;
+  height: 22rem;
+  width: 45rem;
   display: flex;
   flex-direction: row;
 }
 
-.containerMoradiaName{
-  height: 15vh;
-  width: 10vw;
-  margin-top: 6rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.containerCityPet{
-  font-size: 2rem;
-  text-align: center;
-  margin-left: 2vw;
-}
-
-.containerLastServices{
-  height: 20vh;
-  width: 20vw;
-  margin-left: 8vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.buttonLastServices{
-  height: 8vh;
-  width: 30vh;
-  background-color: var(--main-color);
-  border-radius: 1rem;
-  font-size: 3rem;
-  color: #fff;
-}
-
 .containerEditPerfil{
-  height: 8vh;
-  width: 4vw;
+  height: 8rem;
+  width: 7.8rem;
   position: absolute;
-  margin-left: 81vw;
+  margin-left: 172.3rem;
   border: solid 0.2px #fff;
 }
 
 .iconPencil{
   position: absolute;
-  height: 3.5vh;
-  width: 5vw;
+  font-size: 3.4rem;
   margin-top: 1vw;
-  margin-left: 81vw;
+  margin-left: 174.5rem;
+}
+
+.icon-close-homeProfile{
+  position: absolute;
+}
+
+.icon-close-home-profile{
+  height: 8rem;
+  width: 8rem;
+  position: absolute;
+  font-size: 4.5rem;
+  margin-left: 7rem;
+  border-radius: 100%;
+  border: solid 1.5px #f28907;
 }

@@ -17,44 +17,39 @@ const PerfilCliente = () => {
   console.log(profile);
 
   return (
-    <div className="containerMainPerfilCliente">
-      <div className="containerBannerCliente" />
-      <div className="containerEditPerfil" />
-      <BsPencil className="iconPencil" />
-      <div className="containerCardPerfilCliente" />
-      <div className="containerPefilClienteInfo">
-        <div className="cardFotoPerfilCliente" />
-        <label className="containerNamePerfilCliente">{profile[0].nome}</label>
-        <label className="containerLocationPerfilCliente">
-          {profile[0].endereco}
-        </label>
-      </div>
-      <div className="containerInfoCardPetCuidador">
-        <div className="containerPetInfoPet">
-          <div className="containerFotoPerfilPet"></div>
-          <label className="containerNamePerfilPet"></label>
-          <label className="containerRacaPerfilPet">Labrador</label>
-          <div className="containerMainInfoPet">
-            <div className="containerMoradiaPerfilPetRight">
-              <TiHome className="fotoMoradiaHouse" />
+    <>
+      <Link to={"../"} id="icon-close-homeProfile">
+        <div className="icon-close-home-profile">x</div>
+      </Link>
+      <div className="containerMainPerfilCliente">
+        <div className="containerBannerCliente" />
+        <div className="containerEditPerfil" />
+        <BsPencil className="iconPencil" />
+
+        <div className="containerPefilClienteInfo">
+          <div className="cardFotoPerfilCliente" />
+          <div className="containerInfoProfile">
+            <label className="containerNamePerfilCliente">
+              {profile[0].nome}
+            </label>
+            <label className="containerLocationPerfilCliente">
+              {profile[0].email}
+            </label>
+          </div>
+        </div>
+
+        <div className="containerInfoCardPetCuidador">
+          <div className="containerPetInfoPet">
+            <div className="containerFotoPerfilPet"></div>
+            <label className="containerNamePerfilPet">Diana</label>
+            <label className="containerRacaPerfilPet">Labrador</label>
+            <div className="containerBioProfilePet">
+              Diana tem 4 aninhos, é muito brincalhona e adora correr pela casa
             </div>
-            <div className="containerMoradiaName">
-              <label className="containerLocationPet">Moradia</label>
-              <label className="containerCityPet">Alphaville SP</label>
-            </div>
-            <Link to={"/HistoricoCliente"}>
-              <div className="containerLastServices">
-                <input
-                  type="submit"
-                  className="buttonLastServices"
-                  value="Ultimos Serviços"
-                />
-              </div>
-            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
