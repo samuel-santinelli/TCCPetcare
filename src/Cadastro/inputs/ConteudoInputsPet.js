@@ -8,19 +8,17 @@ import "../style/InputCheckbox.css";
 // const id = 44;
 
 const InputsPet = ({ props }) => {
-
   const [querystring] = useSearchParams();
-  const idCliente = querystring.get('idCliente')
-  const teste = querystring.get('teste');
+  const idCliente = querystring.get("idCliente");
+  const teste = querystring.get("teste");
 
   console.log("ID recebido do cliente", idCliente, teste);
 
-  
   const listIds = () => {
-  axios.get("http://localhost/Cuidador/Cliente/api/cliente").then((res) => {
-    console.log("o dono do pet é", res.data[0].id);
-  })
-}
+    axios.get("http://localhost/Cuidador/Cliente/api/cliente").then((res) => {
+      console.log("o dono do pet é", res.data[0].id);
+    });
+  };
 
   const [pet, setPet] = useState({
     nome: "",
@@ -44,9 +42,10 @@ const InputsPet = ({ props }) => {
   const handleSubmitPet = (pet) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
-      .then((res) => console.log(res.data));
+      .then((res) =>
+        window.localStorage.setItem("pet", JSON.stringify(res.data))
+      );
     navigate("/Agendamento?idCliente=" + idCliente);
-    
   };
   const listPets = () => {
     axios

@@ -1,27 +1,20 @@
 import "./style/stylePerfilCliente.css";
-import {useState, useEffect} from 'react';
-import axios from "axios"
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { TiHome } from "react-icons/ti";
 import { BsPencil } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const PerfilCliente = () => {
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState([""]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost/Cuidador/Cliente/api/cliente")
-      .then((res) => {
-        setProfile(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro na busca de cuidador");
-      });
+    const profile = JSON.parse(localStorage.getItem("cliente"));
+    if (profile) {
+      setProfile(profile);
+    }
   }, []);
-  
-  const getNome = localStorage.getItem("nome")
-
-  
+  console.log(profile);
 
   return (
     <div className="containerMainPerfilCliente">
@@ -31,8 +24,10 @@ const PerfilCliente = () => {
       <div className="containerCardPerfilCliente" />
       <div className="containerPefilClienteInfo">
         <div className="cardFotoPerfilCliente" />
-        <label className="containerNamePerfilCliente">{getNome}</label>
-        <label className="containerLocationPerfilCliente"></label>
+        <label className="containerNamePerfilCliente">{profile[0].nome}</label>
+        <label className="containerLocationPerfilCliente">
+          {profile[0].endereco}
+        </label>
       </div>
       <div className="containerInfoCardPetCuidador">
         <div className="containerPetInfoPet">
