@@ -5,8 +5,9 @@ import { TiHome } from "react-icons/ti";
 import { BsPencil } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const PerfilCliente = () => {
+const PerfilCliente = (props) => {
   const [profile, setProfile] = useState([""]);
+  const [pet, setPet] = useState([""]);
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem("cliente"));
@@ -15,6 +16,15 @@ const PerfilCliente = () => {
     }
   }, []);
   console.log(profile);
+
+  useEffect(() => {
+    const pet = JSON.parse(localStorage.getItem("pets"));
+    if (pet) {
+      setPet(pet);
+    }
+  }, []);
+  console.log(pet);
+
 
   return (
     <>
@@ -41,10 +51,10 @@ const PerfilCliente = () => {
         <div className="containerInfoCardPetCuidador">
           <div className="containerPetInfoPet">
             <div className="containerFotoPerfilPet"></div>
-            <label className="containerNamePerfilPet">Diana</label>
-            <label className="containerRacaPerfilPet">Labrador</label>
+            <label className="containerNamePerfilPet">{pet.nome}</label>
+            <label className="containerRacaPerfilPet">{pet.raca}</label>
             <div className="containerBioProfilePet">
-              Diana tem 4 aninhos, é muito brincalhona e adora correr pela casa
+              {pet.descricao}
             </div>
           </div>
         </div>

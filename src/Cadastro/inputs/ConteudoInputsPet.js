@@ -26,7 +26,6 @@ const InputsPet = ({ props }) => {
     descricao: "",
     castrado: 1,
     foto: "",
-    dataNascimento: "",
     idRaca: 2,
     idFase: 1,
     idEspecie: 1,
@@ -43,7 +42,7 @@ const InputsPet = ({ props }) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) =>
-        window.localStorage.setItem("pet", JSON.stringify(res.data))
+        window.localStorage.setItem("pets", JSON.stringify(res.data))
       );
     navigate("/Agendamento?idCliente=" + idCliente);
   };
@@ -60,7 +59,6 @@ const InputsPet = ({ props }) => {
 
   const [infoPet, setInfoPet] = useState([]);
   const [infoRaca, setInfoRaca] = useState([]);
-  const [infoClient, setInfoClient] = useState([]);
 
   useEffect(() => {
     axios
@@ -129,16 +127,6 @@ const InputsPet = ({ props }) => {
               placeholder="Qual o nome do seu pet?"
               value={pet.nome}
               onChange={(e) => setPet({ ...pet, nome: e.target.value })}
-            />
-          </div>
-          <div id="contInputsPet">
-            <input
-              className="containerInputNomePet"
-              type="date"
-              value={pet.dataNascimento}
-              onChange={(e) =>
-                setPet({ ...pet, dataNascimento: e.target.value })
-              }
             />
           </div>
           <div id="contInputsPet">

@@ -14,9 +14,9 @@ const Agendamento = (props) => {
 
   console.log(search);
 
-  const showDropdown = () => {
-    console.log("modal foi clicada");
+  const showDropdown = function ({target}) {
     setDropdown("show");
+    console.log(target.getAttribute('data-id'))
     document.body.addEventListener("click", closeDropdown, props);
   };
 
@@ -33,6 +33,15 @@ const Agendamento = (props) => {
         );
         const data = await response.json();
         setCuidadores(data);
+
+        const idHost = data.idHost;
+
+        const detectClick = function (event) {
+          console.log(">>>>>" + this)
+          console.log("o id enviado é", data.length, data[7].idHost); 
+        };
+
+
         setSearch(data);
       } catch (error) {
         console.log(error);
@@ -48,9 +57,10 @@ const Agendamento = (props) => {
     }
 
     const filterCuidadores = search.filter(({ nome }) =>
-      nome.includes(target.value));
+      nome.includes(target.value)
+    );
 
-      setSearch(filterCuidadores);
+    setSearch(filterCuidadores);
   };
 
   return (
@@ -58,12 +68,12 @@ const Agendamento = (props) => {
       <Link to={"../"} className="containerLinkBackAgendamento">
         <div id="icon-closeAgendamento">X</div>
       </Link>
-      <iframe
+      {/* <iframe
         className="map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29276.363111143826!2d-46.88371138889647!3d-23.4768574223817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03aaf6d062af%3A0x2c22de58cd7f17f1!2sAlphaville%2C%20Santana%20de%20Parna%C3%ADba%20-%20SP%2C%2006542-115!5e0!3m2!1spt-BR!2sbr!4v1640096190707!5m2!1spt-BR!2sbr"
         allowfullscreen=""
         loading="lazy"
-      ></iframe>
+      ></iframe> */}
       <div className="containerAgendamento">
         <div className="containerInputSearch">
           <SearchIcon id="iconSearch" />
@@ -79,10 +89,10 @@ const Agendamento = (props) => {
                 {search.map((cuidador, key) => (
                   <div className="card" key={key}>
                     <div className="containerInfoCuidadorAgendamento">
-                      <iframe
+                      {/* <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29276.363111143826!2d-46.88371138889647!3d-23.4768574223817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03aaf6d062af%3A0x2c22de58cd7f17f1!2sAlphaville%2C%20Santana%20de%20Parna%C3%ADba%20-%20SP%2C%2006542-115!5e0!3m2!1spt-BR!2sbr!4v1640096190707!5m2!1spt-BR!2sbr"
                         className="mapCardAgendamento"
-                      />
+                      /> */}
                       <div className="containerImageCuidadorAgendamento">
                         <img
                           className="imageCuidador"
@@ -96,7 +106,7 @@ const Agendamento = (props) => {
                           {cuidador.nome}
                         </label>
                         <label className="locationCuidadorAgendamento">
-                          {cuidador.moradia} (São Paulo)
+                          {cuidador.moradia} ({cuidador.cidade})
                         </label>
                         <label className="biographyCuidador">
                           {cuidador.biografia}
@@ -108,6 +118,7 @@ const Agendamento = (props) => {
                       </div>
                       <div id="containerButtonAgendar">
                         <input
+                          data-id={cuidador.idHost}
                           value="Agendar"
                           type="submit"
                           id="buttonProximo"

@@ -49,7 +49,7 @@ const InputsIcon = (props) => {
   const handleUserCuidadorSubmit = () => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
-      .then((res) => console.log(res.data.foto));
+      .then((res) => window.localStorage.setItem("cuidador", JSON.stringify(res.data)));
     navigate("/Agendamento");
   };
   const listElements = () => {

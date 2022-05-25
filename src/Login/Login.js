@@ -8,7 +8,7 @@ const Login = () => {
     <div className="containerMainPet" id="containerMainPet" >
     <HomeLogin />
     <div id="containerInputsPet" className="containerInputsPet">
-      <h1>Entre na sua conta, venha conosco!</h1>
+      <h1 className="titleLogin">Entre na sua conta, venha conosco!</h1>
       <InputsLogin/>
      
     

@@ -8,6 +8,7 @@ import "./style/ContainerInputsLogin.css";
 const InputsLogin = (props) => {
   const navigate = useNavigate();
 
+
   const [userLogin, setUserLogin] = useState({
     email: "",
     senha: "",
@@ -15,12 +16,13 @@ const InputsLogin = (props) => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const {email, senha} = userLogin;
+    const { email, senha } = userLogin;
 
     console.log("email", email, "senha", senha);
 
     axios
-      .get( // ISSO JAMAAAAAAAIS PODE SER UM GET
+      .get(
+        // ISSO JAMAAAAAAAIS PODE SER UM GET
         `http://localhost/Cuidador/Cliente/api/cliente/login?email=${email}&senha=${senha}`,
         {
           email: email,
@@ -32,7 +34,7 @@ const InputsLogin = (props) => {
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
         navigate("/CadastroPet?idCliente=" + res.data[0].idCliente);
       })
-      .catch(e => {
+      .catch((e) => {
         console.error("Erro", e);
       });
   };

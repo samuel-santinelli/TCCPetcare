@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AiOutlineSearch,
   AiOutlineHistory,
@@ -7,8 +6,20 @@ import {
 import { FaClipboardList } from "react-icons/fa";
 import "./style/styleSideBar.css";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Sidebar = ({ sidebar }) => {
+  const [profile, setProfile] = useState([""]);
+
+  useEffect(() => {
+    const profile = JSON.parse(localStorage.getItem("cliente"));
+    if (profile) {
+      setProfile(profile);
+    }
+  }, []);
+  console.log(profile);
+
+
   const imagePerfil =
     "https://images.pexels.com/photos/2530775/pexels-photo-2530775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
   return (
@@ -16,7 +27,7 @@ const Sidebar = ({ sidebar }) => {
       <Link to="/PerfilCliente">
         <img src={imagePerfil} className="imageSidebar" alt="" />
 
-        <li className="nameCuidadorSidebar">Maria Silva</li>
+        <li className="nameCuidadorSidebar">{profile[0].nome}</li>
 
         <AiOutlineSearch className="iconSidebar" />
       </Link>
