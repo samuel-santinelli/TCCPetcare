@@ -26,7 +26,7 @@ $bairro = (string) null;
 $cep = (string) null;
 $complemento = (string) null;
 $cidade = (string) null;
- 
+
 $nomeSexo = "Selecione um Item"; 
 
 $foto = (string) 'semFoto.png'; 
@@ -47,6 +47,7 @@ if(isset( $_SESSION['cliente'])){
     $cidade =$_SESSION['cliente'] ['cidade'];
     $complemento =$_SESSION['cliente'] ['complemento'];
     $numero =$_SESSION['cliente'] ['numero'];
+  
     $nomeSexo =$_SESSION['cliente'] ['nomeSexo']; 
    
     $md = "Atualizar";
@@ -95,7 +96,7 @@ if(isset( $_SESSION['cliente'])){
             <input value="<?=$confirmarSenha?>" placeholder="Confirmar Senha" type="password" name="inputConfirmarSenha" id="inputConfirmarSenha"/>
     
             <input value="<?=$cpf?>" placeholder="CPF" type="text" name="inputCPF"/>
-                  
+            <input value="<?=$telefone?>" placeholder="telefone" type="text" name="telefone"/>   
             <select name="sltSexo">
                             
                             <option selected value="<?=$idSexo?>"> <?=$nomeSexo?>  </option> 

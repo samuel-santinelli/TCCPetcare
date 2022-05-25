@@ -9,18 +9,18 @@ function criaLinha(cuidador) {
     console.log(cuidador)
     linha = document.createElement("tr");
     tdId = document.createElement("td");
-    tdNome = document.createElement("td");
+    tdFoto = document.createElement("td");
     tdId.innerHTML = cuidador.id
-    tdNome.innerHTML = cuidador.nome
+    tdFoto.innerHTML = cuidador.foto
 
     linha.appendChild(tdId);
-    linha.appendChild(tdNome);
+    linha.appendChild(tdFoto);
 
     return linha;
 }
 
 function main() {
-    let data = fazGet("http://localhost/Cuidador/Cuidador/api/cliente");
+    let data = fazGet("http://localhost/Cuidador/cuidador/api/cuidador");
     let cuidador = JSON.parse(data);
     let tabela = document.getElementById("tabela");
     cuidador.forEach(element => {
@@ -46,19 +46,19 @@ function criaLinha(usuario) {
     console.log(usuario)
     linha = document.createElement("tr");
     tdId = document.createElement("td");
-    tdNome = document.createElement("td");
+    tdFoto = document.createElement("td");
     tdSenha = document.createElement("td");
-    tdId.innerHTML = usuario.idSexo
-    tdNome.innerHTML = usuario.nomeSexo
+    tdId.innerHTML = usuario.id
+    tdFoto.innerHTML = usuario.foto
 
     linha.appendChild(tdId);
-    linha.appendChild(tdNome);
+    linha.appendChild(tdFoto);
 
     return linha;
 }
 
 function main() {
-    let data = fazGet("http://localhost/Cuidador/Cliente/api/cliente/listarSexo");
+    let data = fazGet("http://localhost/Cuidador/cliente/api/cliente");
     let usuarios = JSON.parse(data);
     let tabela = document.getElementById("tabela");
     usuarios.forEach(element => {

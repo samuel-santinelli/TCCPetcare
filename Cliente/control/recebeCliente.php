@@ -22,6 +22,7 @@ $bairro = (string) null;
 $cep = (string) null;
 $complemento = (string) null;
 $cidade = (string) null;
+$telefone  =(string) null;
 if(isset($_GET['id'])){
     $id = (int) $_GET['id'];
 }
@@ -45,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $complemento = $_POST['complemento'];
     $numero = $_POST['numero'];
     $idSexo = $_POST['sltSexo'];
-  
+    $telefone = $_POST['telefone'];
     
     $nomeFoto = $_GET['nomeFoto']; 
     if(strtoupper($_GET['modo']) == 'ATUALIZAR')
@@ -96,7 +97,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "bairro"=>$bairro,
                 "cidade"=>$cidade,
                 "complemento"=>$complemento,
-                "numero"=>$numero
+                "numero"=>$numero,
+                "telefone" => $telefone
 
                
             

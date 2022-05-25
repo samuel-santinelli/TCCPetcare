@@ -28,7 +28,6 @@ function criarArrayPet($objeto)
             "descricao" => $exibirDados['descricao'],
             "castrado" => $exibirDados['castrado'],
             "foto" => $exibirDados['foto'],
-            "dataNascimento" => $exibirDados['dataNascimento'],
             "idRaca" =>$exibirDados['idRaca'],
             "idFase" =>$exibirDados['idFase'],
             "idEspecie" =>$exibirDados['idEspecie'],

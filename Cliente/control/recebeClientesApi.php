@@ -54,6 +54,7 @@ function atualizarClienteAPI($arrayDados, $id){
    
     $arrayCuidador = $arrayDados + $novoItem;
 
+ 
   
        
     if(editaCliente($arrayCuidador)){ 
@@ -64,17 +65,30 @@ function atualizarClienteAPI($arrayDados, $id){
        
     
 }
-function atualizarSenhaAPI($novaSenhaCriptografada,$email){
+function atualizarSenhaAPI($email){
     
-    
-    $novoItem = array("email" => $email); 
 
-   
-    $arrayClienteSenha = array("senha" =>$novaSenhaCriptografada);
+    $novaSenha = substr(md5(time()),0, 6);
+
+    $arrayDadosNovaSenha = array(  "email" => $email,
+                                    "senha" =>$novaSenha
+                                ); 
 
   
        
-    if(editar($arrayClienteSenha,$novoItem)){ 
+    if(editar($arrayDadosNovaSenha)){ 
+
+        ### Colocar o codigo de envio de email
+        require_once('enviarEmail.php');
+
+        if($mailSend($email, $novaSenha))
+        {
+             echo 'Enviado com sucesso !';
+             die;
+        }
+        else
+             {echo 'Erro ao enviar Email:' . $mail->ErrorInfo;
+             die;}
         return true;
     }else{
         return false;

@@ -241,9 +241,10 @@ $app->post('/cliente', function($request, $response, $args){
 
 
 
+$app->put('/cliente/recuperarsenha', function($request, $response, $args){
 
-$app->put('/cliente/{id}', function($request, $response, $args){ 
    
+    
 
     $contentType = $request-> getHeaderLine('Content-Type'); 
     
@@ -252,23 +253,23 @@ $app->put('/cliente/{id}', function($request, $response, $args){
     if($contentType == 'application/json'){ 
     
     $dadosBodyJSON = $request-> getParsedBody();
+
     
     
-    
-    
-    if( $dadosBodyJSON == "" || $dadosBodyJSON == null || !isset($args['id']) || !is_numeric($args['id']) ) 
+    if( $dadosBodyJSON == "" || $dadosBodyJSON == null || !isset($dadosBodyJSON['email']) ) 
     {
         return $response    ->withStatus(406)
         ->withHeader('Content-Type', 'application/json')
-        ->write('{"message":"Conteudo enviado pelo body não contem dados validos"}');
+        ->write('{"message":"Conteudo enviado pelo body não contem dados validos....."}');
     }else
     {
     
-    $id = $args['id']; 
+    $email = $dadosBodyJSON['email']; 
     
-    
+    // echo($email);
+    // die;
     require_once('../control/recebeClientesApi.php');
-    if(atualizarClienteAPI($dadosBodyJSON,$id)){
+    if(atualizarSenhaAPI($email)){
         return $response    ->withStatus(200)
         ->withHeader('Content-Type', 'application/json')
         ->write('{"message":"Cliente foi atualizado com sucesso"}');
@@ -290,6 +291,55 @@ $app->put('/cliente/{id}', function($request, $response, $args){
     }
     
     });
+
+// $app->put('/cliente/{id}', function($request, $response, $args){ 
+   
+
+//     $contentType = $request-> getHeaderLine('Content-Type'); 
+    
+    
+    
+//     if($contentType == 'application/json'){ 
+    
+//     $dadosBodyJSON = $request-> getParsedBody();
+    
+    
+    
+    
+//     if( $dadosBodyJSON == "" || $dadosBodyJSON == null || !isset($args['id']) || !is_numeric($args['id']) ) 
+//     {
+//         return $response    ->withStatus(406)
+//         ->withHeader('Content-Type', 'application/json')
+//         ->write('{"message":"Conteudo enviado pelo body não contem dados validos"}');
+//     }else
+//     {
+    
+//     $id = $args['id']; 
+    
+    
+//     require_once('../control/recebeClientesApi.php');
+//     if(atualizarClienteAPI($dadosBodyJSON,$id)){
+//         return $response    ->withStatus(200)
+//         ->withHeader('Content-Type', 'application/json')
+//         ->write('{"message":"Cliente foi atualizado com sucesso"}');
+//     }
+//     else{
+//         return $response    ->withStatus(400)
+//         ->withHeader('Content-Type', 'application/json')
+//         ->write('{"message":"Não foi possível salvar os dados, por favor conferir o body da mensagem"}');
+//     }
+    
+//     }
+    
+    
+//     }
+//     else{
+//         return $response    ->withStatus(406)
+//         ->withHeader('Content-Type', 'application/json')
+//         ->write('{"message":"Formato de dados do header incompatível com o padrão json"}');
+//     }
+    
+//     });
 
 $app->delete('/cliente/{id}', function($request, $response, $args){ 
        
@@ -320,56 +370,6 @@ $app->delete('/cliente/{id}', function($request, $response, $args){
 
 });
 
-// $app->put('/cliente/recuperarsenha', function($request, $response, $args){
-
-   
-    
-
-//     $contentType = $request-> getHeaderLine('Content-Type'); 
-    
-    
-    
-//     if($contentType == 'application/json'){ 
-    
-//     $dadosBodyJSON = $request-> getParsedBody();
-
-    
-    
-//     if( $dadosBodyJSON == "" || $dadosBodyJSON == null || !isset($dadosBodyJSON['email']) ) 
-//     {
-//         return $response    ->withStatus(406)
-//         ->withHeader('Content-Type', 'application/json')
-//         ->write('{"message":"Conteudo enviado pelo body não contem dados validos....."}');
-//     }else
-//     {
-    
-//     $email = $dadosBodyJSON['email']; 
-    
-//     echo($email);
-//     die;
-//     require_once('../control/recebeClientesApi.php');
-//     if(atualizarSenhaAPI($dadosBodyJSON,$email)){
-//         return $response    ->withStatus(200)
-//         ->withHeader('Content-Type', 'application/json')
-//         ->write('{"message":"Cliente foi atualizado com sucesso"}');
-//     }
-//     else{
-//         return $response    ->withStatus(400)
-//         ->withHeader('Content-Type', 'application/json')
-//         ->write('{"message":"Não foi possível salvar os dados, por favor conferir o body da mensagem"}');
-//     }
-    
-//     }
-    
-    
-//     }
-//     else{
-//         return $response    ->withStatus(406)
-//         ->withHeader('Content-Type', 'application/json')
-//         ->write('{"message":"Formato de dados do header incompatível com o padrão json"}');
-//     }
-    
-//     });
 
 $app->run();
 

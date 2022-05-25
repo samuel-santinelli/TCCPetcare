@@ -34,7 +34,7 @@ $cep = (string) null;
 $complemento = (string) null;
 $cidade = (string) null;
 $valorHora = (double) null;
-
+$telefone = (string) null;
 
 
  $idSexo = (int) null; 
@@ -60,7 +60,7 @@ if(isset( $_SESSION['cuidador'])){
     $nomeSexo =$_SESSION['cuidador'] ['nomeSexo']; 
     // $sobrenome = $_SESSION['cuidador']['sobrenome'];
     $valorHora = $_SESSION['cuidador'] ['valorHora']; 
-   
+    $telefone = $_SESSION['cuidador'] ['telefone'];
     $modo = "Atualizar";
 
     unset($_SESSION['cuidador']);
@@ -97,7 +97,7 @@ if(isset( $_SESSION['cuidador'])){
 
                         </div>
                     </div>
-                    
+                    <input value="<?=$telefone?>" placeholder="telefone" type="text" name="telefone"/>   
             <input value="<?=$nome?>" placeholder="Nome" type="text" name="inputNome" id="inputNome"/>
             <input value="<?=$data?>" placeholder="Data" type="text" name="inputData" id="inputData"/>
             <!-- <input value="<?=$sobrenome?>" placeholder="Sobrenome" type="sobrenome" name="inputSobrenome" id="inputSobrenome"/> -->

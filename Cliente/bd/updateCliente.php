@@ -41,12 +41,16 @@ function editaCliente($arrayCliente)
 
 }
 
-function editar($novaSenhaCriptografada,$email)
+function editar($arrayDadosNovaSenha)
 {
+
+
+    $email = $arrayDadosNovaSenha['email'];
+    $senha = $arrayDadosNovaSenha['senha'];
+
     require_once('../bd/conexao.php');
-    $sqlCode = "UPDATE tblClientes SET senha = '$novaSenhaCriptografada' where email='$email'";
-            echo($sqlCode);
-            die;
+    $sqlCode = "UPDATE tblClientes SET senha = '$senha' where email='$email'";
+  
             $conexao = conexao();
             $sqlQuery = mysqli_query($conexao,$sqlCode);
             

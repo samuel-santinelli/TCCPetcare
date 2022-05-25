@@ -1,6 +1,7 @@
 <?php
 
-
+echo('sdhfgdsjgfjgdsjfgjsgjfgjhds' );
+die;
 
 require_once('./bd/conexao.php');
 require_once('./bd/updateCliente.php');
@@ -24,7 +25,7 @@ if(buscarCliente($total == 0))
     $novaSenhaCriptografada = $novaSenha;
     }
 
-    
+
 
 if(atualizarSenhaAPI($novaSenhaCriptografada,$email)){
     require_once('./control/enviarEmail.php');

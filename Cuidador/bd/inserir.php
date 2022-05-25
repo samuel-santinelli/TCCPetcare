@@ -30,7 +30,8 @@
             complemento,
             numero,
             endereco,
-            valorHora
+            valorHora,
+            telefone
            
 
            
@@ -55,7 +56,8 @@
              '".$arrayCuidador['complemento']."',
              '".$arrayCuidador['numero']."',
              '".$arrayCuidador['endereco']."',
-             '".$arrayCuidador['valorHora']."'
+             '".$arrayCuidador['valorHora']."',
+             '".$arrayCuidador['telefone']."'
             
           
 

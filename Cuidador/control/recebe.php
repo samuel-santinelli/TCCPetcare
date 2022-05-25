@@ -29,7 +29,7 @@ $complemento = (string) null;
 $cidade = (string) null;
 $valorHora = (double) null;
 $foto = (string) null; 
-
+$telefone = (string) null;
 
 if(isset($_GET['id'])){
     $id = (int) $_GET['id'];
@@ -59,6 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $complemento = $_POST['complemento'];
     $numero = $_POST['numero'];
     $valorHora = $_POST['valorHora'];
+    $telefone = $_POST['telefone'];
     if(isset( $_POST['possuiAnimais'])){
        $possuiAnimais = 1;
     } else{
@@ -129,7 +130,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                  "cidade"=>$cidade,
                  "complemento"=>$complemento,
                  "numero"=>$numero,
-                 "valorHora" => $valorHora
+                 "valorHora" => $valorHora,
+                 "telefone" => $telefone
                
             
             );
