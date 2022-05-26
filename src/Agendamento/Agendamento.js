@@ -4,19 +4,21 @@ import SearchIcon from "@mui/icons-material/Search";
 import { MdOutlineStarPurple500, MdOutlineStarHalf } from "react-icons/md";
 import "./style/styleAgendamento.css";
 import ButtonAgendar from "./button/ButtonAgendar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "./modal/Modal";
 
 const Agendamento = (props) => {
+  const navigate = useNavigate();
   const [cuidadores, setCuidadores] = useState([]);
   const [search, setSearch] = useState([]);
   const [dropdown, setDropdown] = useState("");
 
-  console.log(search);
 
   const showDropdown = function ({target}) {
     setDropdown("show");
-    console.log(target.getAttribute('data-id'))
+    const dadosCuidador = target.getAttribute('data-id')
+    // console.log(dadosCuidador)
+    navigate("/Agendamento?idHost=" + dadosCuidador);
     document.body.addEventListener("click", closeDropdown, props);
   };
 
@@ -33,13 +35,6 @@ const Agendamento = (props) => {
         );
         const data = await response.json();
         setCuidadores(data);
-
-        const idHost = data.idHost;
-
-        const detectClick = function (event) {
-          console.log(">>>>>" + this)
-          console.log("o id enviado é", data.length, data[7].idHost); 
-        };
 
 
         setSearch(data);

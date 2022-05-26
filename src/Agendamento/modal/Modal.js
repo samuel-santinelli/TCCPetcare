@@ -4,27 +4,49 @@ import { useSearchParams } from "react-router-dom";
 import "./style/styleModal.css";
 const Modal = (props) => {
   const { className, modalRef } = props;
+  const [petAgendamento, setPetAgendamento] = useState([""]);
+  const [clienteAgendamento, setClienteAgendamento] = useState([""]);
+  
   const [querystring] = useSearchParams();
+  const idHost = querystring.get('idHost')
+
+ 
+  useEffect(() => {
+    const petAgendamento = JSON.parse(localStorage.getItem("pets"));
+    if (petAgendamento) {
+      setPetAgendamento(petAgendamento);
+    }
+  }, []);
+ 
+  useEffect(() => {
+    const clienteAgendamento = JSON.parse(localStorage.getItem("cliente"));
+    if (clienteAgendamento) {
+      setClienteAgendamento(clienteAgendamento);
+    }
+  }, []);
   
-  const idCliente = querystring.get('idCliente')
-  const idPet = querystring.get('idPet')
+  const clientezinho = clienteAgendamento[0].idCliente;
+  const petzinho = petAgendamento.id;
   
+  const number = 23
+
+  console.log("o id do cliente é", clientezinho);
+  console.log("o id do pet é", petzinho);
+
   const [agendamento, setAgendamento] = useState({
     nome: "",
     endereco: "",
     cpf: "",
     dataInicial: "",
     dataFinal: "",    
-    idCliente: idCliente,
-    idHost: 40,
-    idPet: 65,
+    idCliente: clientezinho,
+    idPet: petzinho,
+    idHost: idHost,
     idTipo: 1,
     valor: "",
   });
   console.log(agendamento);
 
-
-  console.log("Os IDS são:", idCliente, idPet);
 
   const handleSubmitAgendamento = (agendamento) => {
     axios
