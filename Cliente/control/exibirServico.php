@@ -14,17 +14,27 @@ function criarArraySERVICO($objeto)
     {
         
         $arrayDados[$cont] = array( 
+            // "idServico" => $exibirDados['idServico'],
+            // "idHost" => $exibirDados['idHost'],
+            // "idTipo" => $exibirDados['idTipo'],
+            // "idCliente" => $exibirDados['idCliente']
+            // // "valor" => $exibirDados['valor'],
+            // // "dataInicial" => $exibirDados['dataInicial'],
+            // // "dataFinal" => $exibirDados['dataFinal'],
+            // // "nomeHost" =>$exibirDados['nomeHost'],
+            // // "foto" =>$exibirDados['foto'],
+            // // "nomeTipo" =>$exibirDados['nomeTipo']
             "idServico" => $exibirDados['idServico'],
+            "valor" => $exibirDados['valor'],
+            "dataInicial" => $exibirDados['dataInicial'],
+            "dataFinal" => $exibirDados['dataFinal'],
             "idHost" => $exibirDados['idHost'],
+            "idPet" => $exibirDados['idPet'],
             "idTipo" => $exibirDados['idTipo'],
-            "idCliente" => $exibirDados['idCliente']
-            // "valor" => $exibirDados['valor'],
-            // "dataInicial" => $exibirDados['dataInicial'],
-            // "dataFinal" => $exibirDados['dataFinal'],
-            // "nomeHost" =>$exibirDados['nomeHost'],
-            // "foto" =>$exibirDados['foto'],
-            // "nomeTipo" =>$exibirDados['nomeTipo']
-           
+            "idCliente" => $exibirDados['idCliente'],
+            "nome" =>$exibirDados['nome'],
+            "cpf" =>$exibirDados['cpf'],
+            "endereco" =>$exibirDados['endereco']
         );
 
         $cont +=1; 

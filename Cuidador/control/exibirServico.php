@@ -15,14 +15,16 @@ function criarArraySERVICO($objeto)
         
         $arrayDados[$cont] = array( 
             "idServico" => $exibirDados['idServico'],
+            "valor" => $exibirDados['valor'],
+            "dataInicial" => $exibirDados['dataInicial'],
+            "dataFinal" => $exibirDados['dataFinal'],
             "idHost" => $exibirDados['idHost'],
+            "idPet" => $exibirDados['idPet'],
             "idTipo" => $exibirDados['idTipo'],
-            "idCliente" => $exibirDados['idCliente']
-            // "valor" => $exibirDados['valor'],
-            // "dataInicial" => $exibirDados['dataInicial'],
-            // "dataFinal" => $exibirDados['dataFinal'],
-            // "nomeHost" =>$exibirDados['nomeHost'],
-            // "foto" =>$exibirDados['foto'],
+            "idCliente" => $exibirDados['idCliente'],
+            "nome" =>$exibirDados['nome'],
+            "cpf" =>$exibirDados['cpf'],
+            "endereco" =>$exibirDados['endereco']
             // "nomeTipo" =>$exibirDados['nomeTipo']
            
         );

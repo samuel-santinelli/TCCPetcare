@@ -49,7 +49,15 @@ function criaLinha(usuario) {
     tdFoto = document.createElement("td");
     tdSenha = document.createElement("td");
     tdId.innerHTML = usuario.id
-    tdFoto.innerHTML = usuario.foto
+    tdFoto.innerHTML =`
+    <div class="imagem-container">
+        <img class= "imgPreview" alt="fotinha" src="${usuario.foto}">
+   </div>  
+   <div class="caixaTags">
+     <div class="tags">
+        ${usuario.foto}
+        </div>
+   </div> `
 
     linha.appendChild(tdId);
     linha.appendChild(tdFoto);
@@ -58,7 +66,7 @@ function criaLinha(usuario) {
 }
 
 function main() {
-    let data = fazGet("http://localhost/Cuidador/cliente/api/cliente");
+    let data = fazGet("http://localhost/Cuidador/cuidador/api/cuidador");
     let usuarios = JSON.parse(data);
     let tabela = document.getElementById("tabela");
     usuarios.forEach(element => {
@@ -71,3 +79,4 @@ function main() {
 }
 
 main()
+

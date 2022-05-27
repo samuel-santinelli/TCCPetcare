@@ -1,4 +1,8 @@
 <?php
+
+require_once('../api/vendor/autoload.php');
+
+
 function enviarEmail ($email, $novaSenha)
 {
 
