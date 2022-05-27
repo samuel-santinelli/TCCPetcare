@@ -76,15 +76,17 @@ function atualizarSenhaAPI($email){
 
   
        
-    if(editar($arrayDadosNovaSenha)){ 
+    if(editar($arrayDadosNovaSenha)){
 
         ### Colocar o codigo de envio de email
         require_once('enviarEmail.php');
-
+$mailSend = (string) null;
         if($mailSend($email, $novaSenha))
         {
              echo 'Enviado com sucesso !';
+             return $email;
              die;
+             
         }
         else
              {echo 'Erro ao enviar Email:' . $mail->ErrorInfo;

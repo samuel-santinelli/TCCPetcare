@@ -50,13 +50,17 @@ function editar($arrayDadosNovaSenha)
 
     require_once('../bd/conexao.php');
     $sqlCode = "UPDATE tblClientes SET senha = '$senha' where email='$email'";
-  
+    // echo($sqlCode);
+    // die;
             $conexao = conexao();
             $sqlQuery = mysqli_query($conexao,$sqlCode);
             
             if($sqlQuery){
-                return true;
+               
                 echo("senha alterada no banco");
+                
+                return $sqlQuery;
+                 
             }
 
 }

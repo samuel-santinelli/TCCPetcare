@@ -5,7 +5,7 @@ function enviarEmail ($email, $novaSenha)
 
     
     // Caminho da biblioteca PHPMailer
-    //require_once ('C:\xampp\htdocs\Cuidador\Cliente\PHPMailer/PHPMailerAutoload.php');
+    //require_once ('C:\xampp\htdocs\Cuidador\Cliente\PHPMailer/class.phpmailer.php');
 
 
 
