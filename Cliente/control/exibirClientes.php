@@ -23,7 +23,7 @@ function criarArrayCliente($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            "id" => $exibirDados['idCliente'],
+            "idCliente" => $exibirDados['idCliente'],
             "nome" => $exibirDados['nome'],
             "cpf" => $exibirDados['cpf'],
             "dataNascimento" => $exibirDados['dataNascimento'],

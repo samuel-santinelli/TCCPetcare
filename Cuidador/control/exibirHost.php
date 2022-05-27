@@ -31,7 +31,7 @@ function criarArrayHost($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            "id" => $exibirDados['idHost'],
+            "idHost" => $exibirDados['idHost'],
             "nome" => $exibirDados['nome'],
             "dataNascimento" => $exibirDados['dataNascimento'],
             "cpf" => $exibirDados['cpf'],

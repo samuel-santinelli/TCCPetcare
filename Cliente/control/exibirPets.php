@@ -22,7 +22,7 @@ function criarArrayPet($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            "id" => $exibirDados['idPet'],
+            "idPet" => $exibirDados['idPet'],
             "nome" => $exibirDados['nome'],
             "deficiencia" => $exibirDados['deficiencia'],
             "descricao" => $exibirDados['descricao'],
