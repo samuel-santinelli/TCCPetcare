@@ -4,34 +4,17 @@ import { useSearchParams } from "react-router-dom";
 import "./style/styleModal.css";
 const Modal = (props) => {
   const { className, modalRef } = props;
-  const [petAgendamento, setPetAgendamento] = useState([""]);
+  const [petAgendamento, setPetAgendamento] = useState("");
   const [clienteAgendamento, setClienteAgendamento] = useState([""]);
   
   const [querystring] = useSearchParams();
   const idHost = querystring.get('idHost')
 
- 
-  useEffect(() => {
-    const petAgendamento = JSON.parse(localStorage.getItem("pets"));
-    if (petAgendamento) {
-      setPetAgendamento(petAgendamento);
-    }
-  }, []);
- 
-  useEffect(() => {
-    const clienteAgendamento = JSON.parse(localStorage.getItem("cliente"));
-    if (clienteAgendamento) {
-      setClienteAgendamento(clienteAgendamento);
-    }
-  }, []);
-  
-  const clientezinho = clienteAgendamento[0].idCliente;
-  const petzinho = petAgendamento.id;
-  
-  const number = 23
+  const cliente = JSON.parse(localStorage.getItem("cliente"))
+  const pet = JSON.parse(localStorage.getItem("pets"))
 
-  console.log("o id do cliente é", clientezinho);
-  console.log("o id do pet é", petzinho);
+  console.log("o id do storage é", cliente[0].idCliente);
+  console.log("o id do pet é", pet.id);
 
   const [agendamento, setAgendamento] = useState({
     nome: "",
@@ -39,8 +22,8 @@ const Modal = (props) => {
     cpf: "",
     dataInicial: "",
     dataFinal: "",    
-    idCliente: clientezinho,
-    idPet: petzinho,
+    idCliente: cliente[0].idCliente,
+    idPet: pet.id,
     idHost: idHost,
     idTipo: 1,
     valor: "",

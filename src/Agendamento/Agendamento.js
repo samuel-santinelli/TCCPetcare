@@ -13,6 +13,7 @@ const Agendamento = (props) => {
   const [search, setSearch] = useState([]);
   const [dropdown, setDropdown] = useState("");
 
+  const foto = "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png"
 
   const showDropdown = function ({target}) {
     setDropdown("show");
@@ -92,7 +93,7 @@ const Agendamento = (props) => {
                         <img
                           className="imageCuidador"
                           value={cuidador.foto}
-                          src={cuidador.foto}
+                          src={foto}
                           alt="foto do cuidador"
                         />
                       </div>
