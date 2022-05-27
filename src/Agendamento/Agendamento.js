@@ -18,9 +18,11 @@ const Agendamento = (props) => {
   const showDropdown = function ({target}) {
     setDropdown("show");
     const dadosCuidador = target.getAttribute('data-id')
-    // console.log(dadosCuidador)
+    const valueService = target.getAttribute('data-valor')
+  
     navigate("/Agendamento?idHost=" + dadosCuidador);
     document.body.addEventListener("click", closeDropdown, props);
+    console.log("o valor do serviço é", valueService);
   };
 
   const closeDropdown = (event) => {
@@ -58,6 +60,8 @@ const Agendamento = (props) => {
 
     setSearch(filterCuidadores);
   };
+
+  
 
   return (
     <div className="containerMain">
@@ -115,6 +119,7 @@ const Agendamento = (props) => {
                       <div id="containerButtonAgendar">
                         <input
                           data-id={cuidador.idHost}
+                          data-valor={cuidador.valorHora}
                           value="Agendar"
                           type="submit"
                           id="buttonProximo"

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./style/styleModal.css";
+
 const Modal = (props) => {
   const { className, modalRef } = props;
   const [petAgendamento, setPetAgendamento] = useState("");
@@ -10,8 +11,12 @@ const Modal = (props) => {
   const [querystring] = useSearchParams();
   const idHost = querystring.get('idHost')
 
+  
+
   const cliente = JSON.parse(localStorage.getItem("cliente"))
   const pet = JSON.parse(localStorage.getItem("pets"))
+  
+  console.log("dados de outra tela");
 
   console.log("o id do storage é", cliente[0].idCliente);
   console.log("o id do pet é", pet.id);
@@ -28,13 +33,14 @@ const Modal = (props) => {
     idTipo: 1,
     valor: "",
   });
-  console.log(agendamento);
 
 
   const handleSubmitAgendamento = (agendamento) => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/agendar", agendamento)
-      .then((res) => setAgendamento(res.data));
+      .then((res) => window.localStorage.setItem("agendamento", JSON.stringify(res.data)));
+      console.log("foi");
+      alert("Agendamento realizado com sucesso!")
   };
 
   const listServices = () => {
@@ -46,7 +52,6 @@ const Modal = (props) => {
     listServices();
   }, []);
 
-
   return (
     <form onSubmit={() => handleSubmitAgendamento(agendamento)}>
       <div className="containerInfoCuidadores">
@@ -55,6 +60,7 @@ const Modal = (props) => {
           <h1>Insira as Informações de Compra</h1>
           <div className="containerInputsCompra">
             <label className="labelInputCompra">Seu Nome</label>
+
             <input
               className="inputCompra"
               type="text"
@@ -140,6 +146,7 @@ const Modal = (props) => {
             className="typeServiceCompraServiceTotal"
               value={agendamento.valor}
               onChange={(e) => setAgendamento({ ...agendamento, valor: e.target.value })
+              
               }
             ></input>
             <label className="simbolPriceAgendamento">R$</label>

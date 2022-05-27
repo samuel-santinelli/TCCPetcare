@@ -51,6 +51,7 @@ const InputsIcon = (props) => {
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
       .then((res) => window.localStorage.setItem("cuidador", JSON.stringify(res.data)));
     navigate("/Agendamento");
+    alert("Cadastro realizado com sucesso!")
   };
   const listElements = () => {
     axios
@@ -124,8 +125,10 @@ const InputsIcon = (props) => {
               placeholder="Nome"
               type="text"
               value={cuidador.nome}
+              required
               onChange={(e) =>
                 setCuidador({ ...cuidador, nome: e.target.value })
+                
               }
             />
             {/* <MdOutlineAccountCircle id="iconInputLabel" /> */}
@@ -138,6 +141,7 @@ const InputsIcon = (props) => {
               type="email"
               className="containerInputEmailScroll"
               placeholder="Email"
+              required
               value={cuidador.email}
               onChange={(e) =>
                 setCuidador({ ...cuidador, email: e.target.value })
@@ -152,6 +156,7 @@ const InputsIcon = (props) => {
               onKeyUp={validarSenhaForca}
               className="containerInputSenhaCuidador"
               placeholder="Senha"
+              required
               value={cuidador.senha}
               onChange={(e) =>
                 setCuidador({ ...cuidador, senha: e.target.value })
@@ -165,6 +170,7 @@ const InputsIcon = (props) => {
               type="password"
               className="containerInputConfirmarSenha"
               placeholder="Confirmar Senha"
+              required
             />
             <div id="contInputsScroll">
               <input

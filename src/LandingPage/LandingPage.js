@@ -53,7 +53,9 @@ const LandingPage = () => {
           <div id="div-texto">PetCare a maior rede de cuidadores da região</div>
         </div>
         <div id="parteInferior">
+          <Link to="/Agendamento">
           <input type="button" id="Agendar-agora" value="AGENDE AGORA" />
+          </Link>
         </div>
       </header>
 
