@@ -51,8 +51,8 @@ function criarArrayHost($objeto)
             "cidade"   => $exibirDados['cidade'],
             "complemento" => $exibirDados['complemento'],
             "numero" => $exibirDados['numero'],
-            "valorHora" => $exibirDados['valorHora']
-            
+            "valorHora" => $exibirDados['valorHora'],
+            "telefone" => $exibirDados['telefone']            
            
         );
 
