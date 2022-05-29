@@ -35,6 +35,7 @@ const InputsPet = ({ props }) => {
     nomePorte: "",
     idCliente: idCliente,
   });
+  console.log(pet);
 
   const navigate = useNavigate();
 

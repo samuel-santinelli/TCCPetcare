@@ -208,7 +208,7 @@ h1 {
 }
 
 .titleLogin{
-  width: 45vw;
+  min-width: 40vw;
   height: 10vh;
   margin-top: 18vh;
 }

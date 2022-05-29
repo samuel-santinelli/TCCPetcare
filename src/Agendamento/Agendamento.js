@@ -19,10 +19,19 @@ const Agendamento = (props) => {
     setDropdown("show");
     const dadosCuidador = target.getAttribute('data-id')
     const valueService = target.getAttribute('data-valor')
+    const nomeCuidador = target.getAttribute('data-nome')
+    const moradiaCuidador = target.getAttribute('data-moradia')
+    const cidadeCuidador = target.getAttribute('data-cidade')
+    const biografiaCuidador = target.getAttribute('data-biografia')
   
     navigate("/Agendamento?idHost=" + dadosCuidador);
     document.body.addEventListener("click", closeDropdown, props);
     console.log("o valor do serviço é", valueService);
+    window.localStorage.setItem("infoCuidadorModal", JSON.stringify(dadosCuidador))
+    window.localStorage.setItem("nomeCuidador", JSON.stringify(nomeCuidador))
+    window.localStorage.setItem("moradiaCuidador", JSON.stringify(moradiaCuidador))
+    window.localStorage.setItem("cidadeCuidador", JSON.stringify(cidadeCuidador))
+    window.localStorage.setItem("biografiaCuidador", JSON.stringify(biografiaCuidador))
   };
 
   const closeDropdown = (event) => {
@@ -120,6 +129,10 @@ const Agendamento = (props) => {
                         <input
                           data-id={cuidador.idHost}
                           data-valor={cuidador.valorHora}
+                          data-nome={cuidador.nome}
+                          data-moradia={cuidador.moradia}
+                          data-cidade={cuidador.cidade}
+                          data-biografia={cuidador.biografia}
                           value="Agendar"
                           type="submit"
                           id="buttonProximo"
