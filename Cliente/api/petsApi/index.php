@@ -142,7 +142,7 @@ $app->post('/pets', function($request, $response, $args){
 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Cadastro de pet feito com sucesso", "'.$resposta.'"}');
+                                    ->write($resposta);
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')

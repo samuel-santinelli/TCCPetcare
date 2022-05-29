@@ -164,7 +164,7 @@ $app->post('/cliente', function($request, $response, $args){
                 // die;
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Cadastro de cliente feito com sucesso", "'.$resposta.'"}');
+                                    ->write($resposta);
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')
