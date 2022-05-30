@@ -20,7 +20,7 @@ O comando `yarn add react-icons --save` permite você instalar a dependencia de 
 
 ### `yarn add react-router-dom`
 
-O comando `yarn add react-router-domr` permite você instalar a dependencia de rota no qual eu não mandei na `node_modules`
+O comando `yarn add react-router-dom` permite você instalar a dependencia de rota no qual eu não mandei na `node_modules`
 
 ### (ATENÇÃO) - VERIFIQUE A SUA BRANCH
 
