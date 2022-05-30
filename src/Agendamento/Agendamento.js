@@ -32,6 +32,7 @@ const Agendamento = (props) => {
     window.localStorage.setItem("moradiaCuidador", JSON.stringify(moradiaCuidador))
     window.localStorage.setItem("cidadeCuidador", JSON.stringify(cidadeCuidador))
     window.localStorage.setItem("biografiaCuidador", JSON.stringify(biografiaCuidador))
+    window.localStorage.setItem("valueService", JSON.stringify(valueService))
   };
 
   const closeDropdown = (event) => {
