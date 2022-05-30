@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useForm } from 'react-hook-form'
 import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -101,41 +102,22 @@ const ConteudoInputsCliente = (props) => {
     listElements();
   }, []);
 
-  const pesquisarCep = async (cep) => {
-    const url = `https://viacep.com.br/ws/${cep}/json/`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  };
+  const {register, setValue} = useForm();
 
-  const cepValido = (cep) => /^[0-9]{8}$/.test(cep);
-
-  const limparFormulario = () => {
-    document.querySelector("#endereco").value = "";
-    document.querySelector("#bairro").value = "";
-    document.querySelector("#cidade").value = "";
-  };
-
-  const preencherFormulario = async (evento) => {
-    const cep = evento.target.value.replace("-", "");
-    limparFormulario();
-    if (cepValido(cep)) {
-      const infoCep = await pesquisarCep(cep);
-      if (infoCep.erro) {
-        document.querySelector("#endereco").value =
-          "CEP não encontrado, tente novamente.";
-      } else {
-        document.querySelector("#endereco").value = infoCep.logradouro;
-        document.querySelector("#bairro").value = infoCep.bairro;
-        document.querySelector("#cidade").value = infoCep.localidade;
-      }
-    } else {
-      document.querySelector("#endereco").value =
-        "CEP invalido, por favor digite um cep valido!";
-    }
-  };
-
-  document.addEventListener("focusout", preencherFormulario);
+  const checkCep = (e) => {
+    const cep = e.target.value.replace(/\D/g, '');
+    console.log("o cep é", cep);
+   axios
+   .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .then(res => res.data).then(data => {console.log(data)
+      setValue('address', data.logradouro)
+      setValue('neighborhood', data.bairro)
+      setValue('city', data.localidade)
+      setValue('uf', data.uf)
+      setValue('complement', data.complemento)
+      })
+      
+  }
 
   return (
     <>
@@ -277,7 +259,8 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Cep"
                 id="cep"
-                value={user.cep}
+                {...register("cep")}
+                onBlur={checkCep}
                 onChange={(e) => setUser({ ...user, cep: e.target.value })}
               />
               <label htmlFor="cep"></label>
@@ -291,6 +274,7 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Cidade"
                 id="cidade"
+                {...register("city")}
                 value={user.cidade}
                 onChange={(e) => setUser({ ...user, cidade: e.target.value })}
               />
@@ -305,6 +289,7 @@ const ConteudoInputsCliente = (props) => {
                 placeholder="Bairro"
                 id="bairro"
                 value={user.bairro}
+                {...register("neighborhood")}
                 onChange={(e) => setUser({ ...user, bairro: e.target.value })}
               />
               <label htmlFor="bairro"></label>
@@ -319,6 +304,7 @@ const ConteudoInputsCliente = (props) => {
                 placeholder="Rua / Avenida"
                 id="endereco"
                 value={user.endereco}
+                {...register("address")}
                 onChange={(e) => setUser({ ...user, endereco: e.target.value })}
               />
               <label htmlFor="endereco"></label>

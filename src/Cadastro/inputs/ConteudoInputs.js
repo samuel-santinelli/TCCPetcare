@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useForm } from 'react-hook-form'
 import {
   MdAccountCircle,
   MdOutlineAccountCircle,
@@ -62,41 +63,23 @@ const InputsIcon = (props) => {
     listElements();
   }, []);
 
-  const pesquisarCep = async (cep) => {
-    const url = `https://viacep.com.br/ws/${cep}/json/`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  };
+  const {register, setValue} = useForm();
 
-  const cepValido = (cep) => /^[0-9]{8}$/.test(cep);
+  const checkCep = (e) => {
+    const cep = e.target.value.replace(/\D/g, '');
+    console.log(cep);
+   axios
+   .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .then(res => res.data).then(data => {console.log(data)
+      setValue('address', data.logradouro)
+      setValue('neighborhood', data.bairro)
+      setValue('city', data.localidade)
+      setValue('uf', data.uf)
+      setValue('complement', data.complemento)
+      })
+      
+  }
 
-  const limparFormulario = () => {
-    document.querySelector("#endereco").value = "";
-    document.querySelector("#bairro").value = "";
-    document.querySelector("#cidade").value = "";
-  };
-
-  const preencherFormulario = async (evento) => {
-    const cep = evento.target.value.replace("-", "");
-    limparFormulario();
-    if (cepValido(cep)) {
-      const infoCep = await pesquisarCep(cep);
-      if (infoCep.erro) {
-        document.querySelector("#endereco").value =
-          "CEP não encontrado, tente novamente.";
-      } else {
-        document.querySelector("#endereco").value = infoCep.logradouro;
-        document.querySelector("#bairro").value = infoCep.bairro;
-        document.querySelector("#cidade").value = infoCep.localidade;
-      }
-    } else {
-      document.querySelector("#endereco").value =
-        "CEP invalido, por favor digite um cep valido!";
-    }
-  };
-
-  document.addEventListener("focusout", preencherFormulario);
 
   return (
     <>
@@ -270,6 +253,8 @@ const InputsIcon = (props) => {
                 placeholder="Informe seu cep"
                 type="number"
                 value={cuidador.cep}
+                {...register("cep")}
+                onBlur={checkCep}
                 onChange={(e) =>
                   setCuidador({ ...cuidador, cep: e.target.value })
                 }
@@ -283,6 +268,7 @@ const InputsIcon = (props) => {
                 className="containerInputLocal"
                 placeholder="Aonde você reside?"
                 value={cuidador.moradia}
+                {...register("address")}
                 onChange={(e) =>
                   setCuidador({
                     ...cuidador,
@@ -300,6 +286,7 @@ const InputsIcon = (props) => {
                   type="text"
                   id="cidade"
                   value={cuidador.cidade}
+                  {...register("city")}
                   onChange={(e) =>
                     setCuidador({ ...cuidador, cidade: e.target.value })
                   }
@@ -310,6 +297,7 @@ const InputsIcon = (props) => {
                   placeholder="Bairro"
                   type="text"
                   id="bairro"
+                  {...register("neighborhood")}
                 />
                 <label htmlFor="bairro"></label>
                 {/* <HouseIcon id="iconInputLabelLeft" /> */}
@@ -332,6 +320,7 @@ const InputsIcon = (props) => {
                   className="containerInputLocal"
                   placeholder="Complemento"
                   value={cuidador.complemento}
+                  {...register("complement")}
                   onChange={(e) =>
                     setCuidador({
                       ...cuidador,
