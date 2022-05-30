@@ -188,6 +188,7 @@ main{
     margin-left: 20px;
     margin-top: 20px;
     
+    
 }
 .header-box1{
     height: 17rem;
@@ -198,6 +199,7 @@ main{
     flex-direction: column;
     background-image: url("../../../images/bannerDog1.jpeg");
     background-size: cover;
+   
 }
 
 .header-box2{
@@ -236,48 +238,49 @@ main{
 .imageDashboardCuidador1{
     height: 13rem;
     width: 13rem;
-    margin-top: 12rem;
-    background-image: url("../../../images/fotoCuidadorLandingPage1.jpeg");
+    margin-top: 14rem;
     background-size: cover;
     border-radius: 100%;
     
 }
 
-.imageDashboardCuidador2{
-    height: 13rem;
-    width: 13rem;
-    margin-top: 12rem;
-    background-image: url("../../../images/fotoCuidador2.jpeg");
-    background-size: cover;
-    border-radius: 100%;
-    
+.containerScrollLandingP{
+    height: 40rem;
+    width: 70rem;
+    padding-top: 20rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-.imageDashboardCuidador3{
-    height: 13rem;
-    width: 13rem;
-    margin-top: 12rem;
-    background-image: url("../../../images/fotoCuidador3.jpeg");
-    background-size: cover;
-    border-radius: 100%;
-    
+.nomeCuidadorLandingP{
+    font-size: 2.4rem;
+    margin-left: 4.5vw;
 }
 
-.imageDashboardCuidador4{
-    height: 13rem;
-    width: 13rem;
-    margin-top: 12rem;
-    background-image: url("../../../images/fotoCuidador4.jpeg");
-    background-size: cover;
-    border-radius: 100%;
-    
+.moradiaCuidadorLandingP{
+    font-size: 1.8rem;
+    margin-top: 0.3rem;
+    margin-left: 4vw;
+    color: #000;
+    opacity: 50%;
 }
+
+.biografiaCuidadorLandingP{
+    width: 38rem;
+    font-size: 1.7rem;
+    margin-left: 3vw;
+    margin-top: 0.5rem;
+    color: #000;
+}
+
 
 .nomeCuidadorLandingPage{
-    height: 26rem;
+    height: 5rem;
     width: 35rem;
-    position: absolute;
-    margin-top: 45rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -285,7 +288,7 @@ main{
 }
 
 .nomeCuidadorLandingPage h7{
-    font-size: 3rem;
+    font-size: 3.8rem;
     margin-top: 2rem;
     color: #F28907;
 }

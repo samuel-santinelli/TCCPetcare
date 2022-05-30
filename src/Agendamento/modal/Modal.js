@@ -19,8 +19,6 @@ const Modal = (props) => {
   const cidadeCuidador = JSON.parse(localStorage.getItem("cidadeCuidador"));
   const biografiaCuidador = JSON.parse(localStorage.getItem("biografiaCuidador"));
 
-  console.log("dados de outra tela");
-
   console.log("o id do storage é", cliente[0].idCliente);
   console.log("o id do pet é", pet.id);
 
@@ -191,6 +189,7 @@ const Modal = (props) => {
             </div>
             <div className="containerInputsInfoCompra">
               <h2 className="typeServiceCompra">Total</h2>
+              <label className="simbolPriceAgendamento">R$</label>
               <h3
                 className="typeServiceCompraServiceTotal"
                 value={agendamento.valor}
@@ -200,7 +199,7 @@ const Modal = (props) => {
               >
                 {priceService}
               </h3>
-              <label className="simbolPriceAgendamento">R$</label>
+              
               <input
                 type="submit"
                 id="submitAgendamento"

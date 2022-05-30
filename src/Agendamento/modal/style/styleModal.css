@@ -175,9 +175,9 @@
 
 .typeServiceCompraServiceTotal{
   width: 5vw;
-  height: 13.5vh;
+  height: 5.4vh;
   font-size: 1.5vw;
-  margin-left: 6vw;
+  margin-left: 3vw;
   color: #F28907;
   background: none;
 }
@@ -197,7 +197,7 @@
 .simbolPriceAgendamento{
   position: absolute;
   width: 10vw;
-  margin-left: 33.5vw;
+  margin-left: 20vw;
   margin-top: 2.5vw;
   font-size: 1.1vw;
 }

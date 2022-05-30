@@ -13,7 +13,7 @@ const LandingPage = () => {
   const toggle = document.querySelector(".iconSlidebar");
 
   const imagePerson =
-    "https://images.pexels.com/photos/6001779/pexels-photo-6001779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   const [sidebar, setSidear] = useState(false);
   const toggleSidebar = () => {
@@ -54,7 +54,7 @@ const LandingPage = () => {
         </div>
         <div id="parteInferior">
           <Link to="/Agendamento">
-          <input type="button" id="Agendar-agora" value="AGENDE AGORA" />
+            <input type="button" id="Agendar-agora" value="AGENDE AGORA" />
           </Link>
         </div>
       </header>
@@ -94,19 +94,26 @@ const LandingPage = () => {
           <div id="cuidadores-container">
             {cuidadoresLandingPage.map((cuidadorLandingP, key) => (
               <div className="box1" key={key}>
-                <div className="header-box1" >
+                <div className="header-box1">
                   <>
+                    <div className="containerScrollLandingP">
                     <img
                       className="imageDashboardCuidador1"
-                      src={cuidadorLandingP.foto}
+                      src={imagePerson}
                       alt=""
                     />
-                    <div className="nomeCuidadorLandingPage">
-                      <h7>{cuidadorLandingP.nome}</h7>
-                      <h8>{cuidadorLandingP.moradia}</h8>
-                      <h8>{cuidadorLandingP.biografia}</h8>
-                      <ButtonInfo />
+                      <label className="nomeCuidadorLandingP">
+                        {cuidadorLandingP.nome}
+                      </label>
+                      <label className="moradiaCuidadorLandingP">
+                        {cuidadorLandingP.moradia} ({cuidadorLandingP.cidade})
+                      </label>
+                      <label className="biografiaCuidadorLandingP">
+                        {cuidadorLandingP.biografia}
+                      </label>
                     </div>
+
+                    <ButtonInfo />
                   </>
                 </div>
               </div>
