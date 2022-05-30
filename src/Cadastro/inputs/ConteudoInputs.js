@@ -32,15 +32,16 @@ const InputsIcon = (props) => {
     possuiAnimais: 1,
     possuiCriancas: 1,
     preferencias: "",
-    moradia: "",
     limitacoes: "",
     cep: "",
+    moradia: "",
     endereco: "",
     bairro: "",
     cidade: "",
     numero: "",
     complemento: "",
     valorHora: "",
+    telefone: "",
     idSexoHost: 1,
   });
 
@@ -298,6 +299,10 @@ const InputsIcon = (props) => {
                   type="text"
                   id="bairro"
                   {...register("neighborhood")}
+                  value={cuidador.bairro}
+                  onChange={(e) =>
+                    setCuidador({ ...cuidador, bairro: e.target.value })
+                  }
                 />
                 <label htmlFor="bairro"></label>
                 {/* <HouseIcon id="iconInputLabelLeft" /> */}
@@ -365,7 +370,7 @@ const InputsIcon = (props) => {
                     <div className="containerPreferencesScroll">
                     <input
                       id="valorHora"
-                      placeholder="Valor por hora"
+                      placeholder="Valor diario"
                       className="containerInputEmailScroll"
                       value={cuidador.valorHora}
                       type="text"
@@ -373,6 +378,21 @@ const InputsIcon = (props) => {
                         setCuidador({
                           ...cuidador,
                           valorHora: e.target.value,
+                        })
+                      }
+                    />
+                    </div>
+                    <div className="containerPreferencesScroll">
+                    <input
+                      id="telCuidador"
+                      placeholder="Numero do telefone"
+                      className="containerInputEmailScroll"
+                      value={cuidador.telefone}
+                      type="text"
+                      onChange={(e) =>
+                        setCuidador({
+                          ...cuidador,
+                          telefone: e.target.value,
                         })
                       }
                     />

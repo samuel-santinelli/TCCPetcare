@@ -53,6 +53,7 @@ const ConteudoInputsCliente = (props) => {
       .post("http://localhost/Cuidador/Cliente/api/cliente", user)
       .then((res) => setUser(res.data))
       navigate("/Login")
+      alert("Cadastro efetuado com sucesso!");
   };
 
   const [sexo, setSexo] = useState([]);
