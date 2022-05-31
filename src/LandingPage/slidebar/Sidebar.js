@@ -21,7 +21,7 @@ const Sidebar = ({ sidebar }) => {
 
 
   const imagePerfil =
-    "https://images.pexels.com/photos/2530775/pexels-photo-2530775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
   return (
     <div className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
       <Link to="/PerfilCliente">

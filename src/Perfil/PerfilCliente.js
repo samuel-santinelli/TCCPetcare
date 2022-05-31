@@ -45,6 +45,9 @@ const PerfilCliente = (props) => {
             <label className="containerLocationPerfilCliente">
               {profile[0].email}
             </label>
+            <label className="containerLocationPerfilCliente">
+              {profile[0].bairro}
+            </label>
           </div>
         </div>
 

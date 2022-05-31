@@ -5,7 +5,7 @@ function HomePet() {
   return (
     <>
          <Link to={"../"} id="icon-close-home">
-        <div>x</div>
+        <div className="containerExit">x</div>
       </Link>
       <div id="bannerPet" className="bannerPet"></div>
       <div id="wavePetMain" ></div>

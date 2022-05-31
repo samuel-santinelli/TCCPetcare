@@ -88,6 +88,24 @@ color:black
     color:rgba(0, 0, 0, 0.46);
 }
 
+.inputSearchHistory{
+    height: 6.9rem;
+    width: 80vw;
+    border-radius: 14rem;
+    margin-top: 2rem;
+    font-size: 2.6rem;
+    padding-left: 7.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-left: 10rem;
+}
+
+#iconSearchHistory{
+    font-size: 4.3rem;
+    position: absolute;
+    margin-left: 12.5rem;
+    margin-top: 3.4rem;
+}
+
 .priceHistory{
     margin-top: -4.5rem;
     font-size: 17px;
@@ -169,7 +187,7 @@ footer{
     font-style: normal;
     font-weight: 700;   
     font-size: 32px;  
-    margin-top: -80rem;  
+    margin-top: -90rem;  
     color: white;
     position: absolute;
 }
@@ -203,6 +221,10 @@ body{
 
 .containerScrollHistory{
     position: absolute;
+}
+
+.containerExit{
+    color: #fff;
 }
 
 

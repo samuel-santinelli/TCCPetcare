@@ -170,25 +170,55 @@ main{
     border-radius: 50%;
 }
 
+.mouse{
+    width: 15rem;
+    height: 50px;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    position: absolute;
+    border: 3px solid #F28907;
+    border-radius: 20px;
+    display: flex;
+}
+
+.mouse-wheel{
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: auto;
+    animation: move-wheel 1s linear infinite;
+}
+
+@keyframes move-wheel{
+    0% {
+        opacity: 0;
+        transform: translateZ(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(5rem)
+    }
+}
+
 #cuidadores-container{
     justify-content:center;
     display: flex;
     height: 470px;
     min-width: 90vw;
+    margin-top: 7rem;
     width: auto;
     flex-direction: row;
     overflow-y: scroll;
 }
 
 .box1{
-    width: 380px;
+    width: 399px;
     height: 45rem;
     background-color: #e9e9e9;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-top: 20px;
-    
-    
 }
 .header-box1{
     height: 17rem;

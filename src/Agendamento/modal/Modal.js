@@ -73,7 +73,7 @@ const Modal = (props) => {
 
   function agendamentoProcess(e) {
     setMessageAgendamento(!messageAgendamento);
-    e.preventDefault();
+   
   }
 
   return (

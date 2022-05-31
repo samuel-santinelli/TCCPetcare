@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form";
 import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -18,9 +18,9 @@ import validarSenhaForca from "./validation/validation";
 const ConteudoInputsCliente = (props) => {
   const navigate = useNavigate();
 
-  const nome = document.getElementById("nome");
-  const dataNascimento = document.getElementById("dataNascimento");
-  const email = document.getElementById("email");
+  // const nome = document.getElementById("nome");
+  // const dataNascimento = document.getElementById("dataNascimento");
+  // const email = document.getElementById("email");
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
 
@@ -43,17 +43,55 @@ const ConteudoInputsCliente = (props) => {
     cidade: "",
     complemento: "",
     numero: "",
+    process: "PROCESSAMENTO"
   });
+
+  // Function para validar se ele está preenchido
+  function receivedAgendamento(e) {
+  if(user.process === "PROCESSAMENTO"){
+     e.preventDefault();
+  }else{
+    if(user.process === "ACEITO"){
+      return true
+    }
+    else{
+      return false;
+    }
+  }
+}
 
   console.log(user);
 
   const handleUserSubmit = (user) => {
-  
-    axios
-      .post("http://localhost/Cuidador/Cliente/api/cliente", user)
-      .then((res) => setUser(res.data))
-      navigate("/Login")
-      alert("Cadastro efetuado com sucesso!");
+    if (
+      user.nome === "" ||
+      user.cpf === "" ||
+      user.dataNascimento === "" ||
+      user.email === "" ||
+      user.senha === "" ||
+      user.telefone === "" ||
+      user.idSexo === "" ||
+      user.cep === "" ||
+      user.endereco === "" ||
+      user.bairro === "" ||
+      user.cidade === "" ||
+      user.complemento === "" ||
+      user.numero === ""
+    ) {
+      alert("Preencha todos os campos");
+      
+      return false;
+    } else {
+      axios
+        .post("http://localhost/Cuidador/Cliente/api/cliente", user)
+        .then((res) => setUser(res.data));
+      navigate("/Login");
+      if (user) {
+        alert("Cadastro efetuado com sucesso!");
+      } else {
+        alert("Deu algum erro!!!");
+      }
+    }
   };
 
   const [sexo, setSexo] = useState([]);
@@ -103,22 +141,23 @@ const ConteudoInputsCliente = (props) => {
     listElements();
   }, []);
 
-  const {register, setValue} = useForm();
+  const { register, setValue } = useForm();
 
   const checkCep = (e) => {
-    const cep = e.target.value.replace(/\D/g, '');
+    const cep = e.target.value.replace(/\D/g, "");
     console.log("o cep é", cep);
-   axios
-   .get(`https://viacep.com.br/ws/${cep}/json/`)
-      .then(res => res.data).then(data => {console.log(data)
-      setValue('address', data.logradouro)
-      setValue('neighborhood', data.bairro)
-      setValue('city', data.localidade)
-      setValue('uf', data.uf)
-      setValue('complement', data.complemento)
-      })
-      
-  }
+    axios
+      .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data);
+        setValue("address", data.logradouro);
+        setValue("neighborhood", data.bairro);
+        setValue("city", data.localidade);
+        setValue("uf", data.uf);
+        setValue("complement", data.complemento);
+      });
+  };
 
   return (
     <>
@@ -146,7 +185,6 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputNome"
               placeholder="Nome"
               onChange={(e) => setUser({ ...user, nome: e.target.value })}
-              required
             />
 
             <input
@@ -157,7 +195,6 @@ const ConteudoInputsCliente = (props) => {
               onChange={(e) =>
                 setUser({ ...user, dataNascimento: e.target.value })
               }
-              required
             />
           </div>
           <div id="contInputStretch">
@@ -170,7 +207,6 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputEmail"
               placeholder="Email"
               onChange={(e) => setUser({ ...user, email: e.target.value })}
-              required
             />
           </div>
           <div id="contInputsControl">
@@ -184,7 +220,6 @@ const ConteudoInputsCliente = (props) => {
                 className="containerInputSenhaControl"
                 placeholder="Senha"
                 onChange={(e) => setUser({ ...user, senha: e.target.value })}
-                required
               />
             </div>
             <div className="form-control">
@@ -195,7 +230,6 @@ const ConteudoInputsCliente = (props) => {
                 type="password"
                 className="containerInputSenhaControl"
                 placeholder="Confirmar Senha"
-                required
               />
             </div>
           </div>
@@ -223,7 +257,6 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputTelefone"
               placeholder="Telefone"
               onChange={(e) => setUser({ ...user, telefone: e.target.value })}
-              required
             />
           </div>
           <div id="contInputsPet">
@@ -236,7 +269,6 @@ const ConteudoInputsCliente = (props) => {
               className="containerInputCpf"
               placeholder="CPF"
               onChange={(e) => setUser({ ...user, cpf: e.target.value })}
-              required
             />
           </div>
           <div id="contInputsControl">
@@ -249,7 +281,6 @@ const ConteudoInputsCliente = (props) => {
                 id="numero"
                 value={user.numero}
                 onChange={(e) => setUser({ ...user, numero: e.target.value })}
-                required
               />
               <label htmlFor="numero"></label>
             </div>
@@ -264,7 +295,6 @@ const ConteudoInputsCliente = (props) => {
                 onBlur={checkCep}
                 onChange={(e) => setUser({ ...user, cep: e.target.value })}
               />
-              <label htmlFor="cep"></label>
             </div>
           </div>
           <div id="contInputsControl">

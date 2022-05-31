@@ -167,7 +167,6 @@
 .containerInfoCuidadorAgendamento{
   height: 10vh;
   width: 50vw;
-  margin-top: 2vw;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -215,7 +214,7 @@
   flex-direction: column;
   text-align: center;
   margin-left: 3.3vw;
-  margin-top: 6vw;
+  margin-top: 4.5vw;
   color: var(--main-color);
 }
 

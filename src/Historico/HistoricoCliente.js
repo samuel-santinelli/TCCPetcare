@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import  "./style/styleHistorico.css";
+import SearchIcon from "@mui/icons-material/Search";
 
 const HistoricoCliente = () => {
   const [history, setHistory] = useState([]);
@@ -40,6 +41,8 @@ const HistoricoCliente = () => {
   };
 
 
+  console.log("o id do cuidador", history[5]);
+
   return (
     <>
       
@@ -52,9 +55,10 @@ const HistoricoCliente = () => {
           <span id="text1">Cuidadores</span>
           <span id="text2"> Anteriores</span>
         </div>
+        <SearchIcon id="iconSearchHistory" />
         <input
             type="search"
-            className="inputSearch"
+            className="inputSearchHistory"
             placeholder="Busque um cuidador especifico (Ex: Maria Antonieta)"
             onChange={handleSearchHistory}
           />
@@ -62,15 +66,15 @@ const HistoricoCliente = () => {
          
           <div id="pessoas">
             {searchHistory.map((historyServices, key) => (
-              <div class="card-history" key={key}>
-                <img class="foto" src={semFoto} value={semFoto} alt="foto pet"/>
-                <div class="texts">
-                  <div class="nome1">{historyServices.nomePet}</div>
-                  <div class="nome2"> {historyServices.nomeTipo}</div>
-                  <div class="priceHistory"> Valor R$ {historyServices.valor}</div>
+              <div className="card-history" key={key}>
+                <img className="foto" src={semFoto} value={semFoto} alt="foto pet"/>
+                <div className="texts">
+                  <div className="nome1">{historyServices.nomePet}</div>
+                  <div className="nome2"> {historyServices.nomeTipo}</div>
+                  <div className="priceHistory"> Valor R$ {historyServices.valor}</div>
                   <div className="containerDateHistory">
-                  <div class="nome3"> <label className="dateHistory">Do dia</label> {historyServices.dataInicial} </div>
-                  <div class="nome3"> <label className="dateHistory2">Ao dia</label> {historyServices.dataFinal}</div>
+                  <div className="nome3"> <label className="dateHistory">Do dia</label> {historyServices.dataInicial} </div>
+                  <div className="nome3"> <label className="dateHistory2">Ao dia</label> {historyServices.dataFinal}</div>
                   </div>
                   <iframe
               className="mapHistory"

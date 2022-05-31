@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
+import {BsFillHandIndexFill} from "react-icons/bs"
 import ButtonInfo from "./buttonInfo/ButtonInfo";
 import Toolbar from "./slidebar/ToolBar";
 import styleLandingPage from "./style/styleLandingPage.css";
@@ -22,7 +23,7 @@ const LandingPage = () => {
 
   const [cuidadoresLandingPage, setCuidadoresLandingPage] = useState([]);
   const [searchCuidadores, setSearchCuidadores] = useState([]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,7 +33,6 @@ const LandingPage = () => {
         const data = await response.json();
         setCuidadoresLandingPage(data);
 
-
         setSearchCuidadores(data);
       } catch (error) {
         console.log(error);
@@ -41,22 +41,21 @@ const LandingPage = () => {
     fetchData();
   }, []);
 
-  const searchCuidador = ({target}) => {
-    if(!target.value){
-      setSearchCuidadores(cuidadoresLandingPage)
+  const searchCuidador = ({ target }) => {
+    if (!target.value) {
+      setSearchCuidadores(cuidadoresLandingPage);
       return;
     }
 
-    const filterCuidadores = searchCuidadores.filter(({nome}) => nome.includes(target.value)
-      );
-      setSearchCuidadores(filterCuidadores)
-  }
+    const filterCuidadores = searchCuidadores.filter(({ nome }) =>
+      nome.includes(target.value)
+    );
+    setSearchCuidadores(filterCuidadores);
+  };
 
   const [carousel, setCarousel] = useState();
   const [like, setLike] = useState(false);
   console.log(setLike);
-
-
 
   return (
     <>
@@ -97,8 +96,8 @@ const LandingPage = () => {
               cuidadores qualificados
             </div>
             <div className="containerButtonCarrosel">
-              <div className="buttonCarrosel" ></div>
-              <div className="buttonCarroselSec" ></div>
+              <div className="buttonCarrosel"></div>
+              <div className="buttonCarroselSec"></div>
             </div>
           </div>
         </div>
@@ -116,18 +115,22 @@ const LandingPage = () => {
               onChange={searchCuidador}
             />
           </div>
-
+          <div>
+            <span className="mouse">
+              <BsFillHandIndexFill className="mouse-wheel"/>
+            </span>
+          </div>
           <div id="cuidadores-container">
             {searchCuidadores.map((cuidadorLandingP, key) => (
               <div className="box1" key={key}>
                 <div className="header-box1">
                   <>
                     <div className="containerScrollLandingP">
-                    <img
-                      className="imageDashboardCuidador1"
-                      src={imagePerson}
-                      alt=""
-                    />
+                      <img
+                        className="imageDashboardCuidador1"
+                        src={imagePerson}
+                        alt=""
+                      />
                       <label className="nomeCuidadorLandingP">
                         {cuidadorLandingP.nome}
                       </label>

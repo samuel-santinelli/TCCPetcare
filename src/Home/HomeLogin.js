@@ -5,7 +5,7 @@ function HomeLogin() {
     return (
       <>
         <Link to={"../"} id="icon-close-home">
-          <div >x</div>
+          <div className="containerExit">x</div>
         </Link>
         <div className="bannerLogin"></div>
         <div id="waveLogin" className="wavelogin"></div>

@@ -6,7 +6,7 @@ function HomeCuidador() {
   return (
     <>
       <Link to={"../"} id="icon-close-home">
-        <div>x</div>
+        <div className="containerExit">x</div>
       </Link>
       <div id="banner" className="banner"></div>
       <div id="wave" className="wave"></div>

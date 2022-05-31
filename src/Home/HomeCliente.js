@@ -6,7 +6,7 @@ function HomeCliente() {
   return (
     <>
       <Link to={"../"} id="icon-close-home">
-        <div>x</div>
+        <div className="containerExit">x</div>
       </Link>
       <div id="bannerLogin" className="bannerLogin"></div>
       <div id="waveCliente"></div>

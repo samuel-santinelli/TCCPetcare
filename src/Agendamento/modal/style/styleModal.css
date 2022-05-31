@@ -177,7 +177,8 @@
   width: 5vw;
   height: 5.4vh;
   font-size: 1.5vw;
-  margin-left: 3vw;
+  margin-left: 3.9vw;
+  margin-top: 1.8vw;
   color: #F28907;
   background: none;
 }
@@ -192,6 +193,7 @@
   margin-left: -19vw;
   color: #fff;
   font-size: 1.4vw;
+  cursor: pointer;
 }
 
 .simbolPriceAgendamento{
