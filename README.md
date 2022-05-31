@@ -25,6 +25,9 @@ O comando `yarn add react-router-dom` permite você instalar a dependencia de ro
 ### `yarn add react-hook-form`
 O comando `yarn add react-hook-form` permite você instalar a dependencia de rota no qual eu não mandei na `node_modules`
 
+### `yarn add react-input-mask`
+O comando `yarn add react-input-mask`permite você instalar a dependencia de rota no qual eu não mandei na `node_modules`
+
 ### (ATENÇÃO) - VERIFIQUE A SUA BRANCH
 
 Se você estiver na branch padrão, certifique-se de entrar na sua branch, para que todas as alterações que você fizer, sejá veridica ao cenario em que está
