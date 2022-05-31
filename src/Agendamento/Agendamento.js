@@ -13,25 +13,35 @@ const Agendamento = (props) => {
   const [search, setSearch] = useState([]);
   const [dropdown, setDropdown] = useState("");
 
-  const foto = "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png"
+  const foto =
+    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
-  const showDropdown = function ({target}) {
+  const showDropdown = function ({ target }) {
     setDropdown("show");
-    const dadosCuidador = target.getAttribute('data-id')
-    const valueService = target.getAttribute('data-valor')
-    const nomeCuidador = target.getAttribute('data-nome')
-    const moradiaCuidador = target.getAttribute('data-moradia')
-    const cidadeCuidador = target.getAttribute('data-cidade')
-    const biografiaCuidador = target.getAttribute('data-biografia')
-  
+    const dadosCuidador = target.getAttribute("data-id");
+    const valueService = target.getAttribute("data-valor");
+    const nomeCuidador = target.getAttribute("data-nome");
+    const moradiaCuidador = target.getAttribute("data-moradia");
+    const cidadeCuidador = target.getAttribute("data-cidade");
+    const biografiaCuidador = target.getAttribute("data-biografia");
+
     navigate("/Agendamento?idHost=" + dadosCuidador);
     document.body.addEventListener("click", closeDropdown, props);
     // console.log("o valor do serviço é", valueService);
-    window.localStorage.setItem("nomeCuidador", JSON.stringify(nomeCuidador))
-    window.localStorage.setItem("moradiaCuidador", JSON.stringify(moradiaCuidador))
-    window.localStorage.setItem("cidadeCuidador", JSON.stringify(cidadeCuidador))
-    window.localStorage.setItem("biografiaCuidador", JSON.stringify(biografiaCuidador))
-    window.localStorage.setItem("valueService", JSON.stringify(valueService))
+    window.localStorage.setItem("nomeCuidador", JSON.stringify(nomeCuidador));
+    window.localStorage.setItem(
+      "moradiaCuidador",
+      JSON.stringify(moradiaCuidador)
+    );
+    window.localStorage.setItem(
+      "cidadeCuidador",
+      JSON.stringify(cidadeCuidador)
+    );
+    window.localStorage.setItem(
+      "biografiaCuidador",
+      JSON.stringify(biografiaCuidador)
+    );
+    window.localStorage.setItem("valueService", JSON.stringify(valueService));
   };
 
   const closeDropdown = (event) => {
@@ -47,7 +57,6 @@ const Agendamento = (props) => {
         );
         const data = await response.json();
         setCuidadores(data);
-
 
         setSearch(data);
       } catch (error) {
@@ -122,23 +131,24 @@ const Agendamento = (props) => {
                         </label>
 
                         <label className="valorCuidadorAgendamento">
-                        R$ {cuidador.valorHora} o dia
+                          R$ {cuidador.valorHora} o dia
                         </label>
                       </div>
                       <div id="containerButtonAgendar">
-                        <input
+                        <button
                           data-id={cuidador.idHost}
                           data-valor={cuidador.valorHora}
                           data-nome={cuidador.nome}
                           data-moradia={cuidador.moradia}
                           data-cidade={cuidador.cidade}
                           data-biografia={cuidador.biografia}
-                          value="Agendar"
                           type="submit"
                           id="buttonProximo"
                           className="buttonAgendar"
                           onClick={showDropdown}
-                        />
+                        >
+                         Agendar Agora
+                        </button>
                       </div>
                     </div>
                   </div>

@@ -23,6 +23,8 @@ const Modal = (props) => {
     localStorage.getItem("biografiaCuidador")
   );
 
+  
+
   // console.log("o id do storage é", cliente[0].idCliente);
   // console.log("o id do pet é", pet.id);
 
@@ -66,6 +68,13 @@ const Modal = (props) => {
   useEffect(() => {
     listServices();
   }, []);
+
+  const [messageAgendamento, setMessageAgendamento] = useState(true);
+
+  function agendamentoProcess(e) {
+    setMessageAgendamento(!messageAgendamento);
+    e.preventDefault();
+  }
 
   return (
     <form onSubmit={() => handleSubmitAgendamento(agendamento)}>
@@ -210,12 +219,15 @@ const Modal = (props) => {
                 {priceService}
               </h3>
 
-              <input
+              <button
                 type="submit"
                 id="submitAgendamento"
                 className="InputConfirmarAgendamento"
-                value="Confirmar Agendamento"
-              />
+                onClick={agendamentoProcess}>
+                {messageAgendamento
+                  ? "Confirmar Agendamento"
+                  : "Agendamento Realizado"}
+              </button>
             </div>
           </div>
         </div>
