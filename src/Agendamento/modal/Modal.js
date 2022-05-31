@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import InputMask from "react-input-mask";
 import "./style/styleModal.css";
 
 const Modal = (props) => {
@@ -9,7 +10,8 @@ const Modal = (props) => {
   const [querystring] = useSearchParams();
   const idHost = querystring.get("idHost");
 
-  const foto = "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png"
+  const foto =
+    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   const cliente = JSON.parse(localStorage.getItem("cliente"));
   const pet = JSON.parse(localStorage.getItem("pets"));
@@ -17,14 +19,16 @@ const Modal = (props) => {
   const nomeCuidador = JSON.parse(localStorage.getItem("nomeCuidador"));
   const moradiaCuidador = JSON.parse(localStorage.getItem("moradiaCuidador"));
   const cidadeCuidador = JSON.parse(localStorage.getItem("cidadeCuidador"));
-  const biografiaCuidador = JSON.parse(localStorage.getItem("biografiaCuidador"));
+  const biografiaCuidador = JSON.parse(
+    localStorage.getItem("biografiaCuidador")
+  );
 
-  console.log("o id do storage é", cliente[0].idCliente);
-  console.log("o id do pet é", pet.id);
+  // console.log("o id do storage é", cliente[0].idCliente);
+  // console.log("o id do pet é", pet.id);
 
-  const total = priceService * 2 / 24;
+  const total = priceService * 2;
 
-  console.log("total do serviço", total);
+  // console.log("total do serviço", total);
 
   const [agendamento, setAgendamento] = useState({
     nome: "",
@@ -36,11 +40,10 @@ const Modal = (props) => {
     idPet: pet.id,
     idHost: idHost,
     idTipo: 1,
-    valor: priceService
+    valor: priceService,
   });
 
   // .toString().replace(".", ",")
-
 
   console.log(agendamento);
 
@@ -74,9 +77,9 @@ const Modal = (props) => {
             <div className="cardModal">
               <div className="containerInfoCuidadorAgendamento">
                 <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29276.363111143826!2d-46.88371138889647!3d-23.4768574223817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03aaf6d062af%3A0x2c22de58cd7f17f1!2sAlphaville%2C%20Santana%20de%20Parna%C3%ADba%20-%20SP%2C%2006542-115!5e0!3m2!1spt-BR!2sbr!4v1640096190707!5m2!1spt-BR!2sbr"
-                        className="mapCardAgendamentoModal"
-                      />
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29276.363111143826!2d-46.88371138889647!3d-23.4768574223817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03aaf6d062af%3A0x2c22de58cd7f17f1!2sAlphaville%2C%20Santana%20de%20Parna%C3%ADba%20-%20SP%2C%2006542-115!5e0!3m2!1spt-BR!2sbr!4v1640096190707!5m2!1spt-BR!2sbr"
+                  className="mapCardAgendamentoModal"
+                />
                 <div className="containerImageCuidadorAgendamento">
                   <img
                     className="imageCuidador"
@@ -96,7 +99,6 @@ const Modal = (props) => {
                     {biografiaCuidador}
                   </label>
                 </div>
-
               </div>
             </div>
 
@@ -114,10 +116,11 @@ const Modal = (props) => {
                 }
               />
               <label className="labelInputCompraRight">Seu CPF</label>
-              <input
+              <InputMask
                 className="inputCompra"
                 type="text"
                 placeholder="Digite Seu CPF"
+                mask="99999.999"
                 id="cpfAgendamento"
                 value={agendamento.cpf}
                 onChange={(e) =>
@@ -206,7 +209,7 @@ const Modal = (props) => {
               >
                 {priceService}
               </h3>
-              
+
               <input
                 type="submit"
                 id="submitAgendamento"

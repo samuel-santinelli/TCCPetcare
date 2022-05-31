@@ -8,18 +8,27 @@
     font-weight: 700;
     font-size: 40px;
 }
+
+header{
+    height: 150px;
+    background-size: cover;
+   
+}
+
 #text1{
 color:black
 }
+
 #text2{
     color: #F28907;
 }
 
 #box-container1{
-    height: 600px;
+    height: 900px;
     /* background-color: aqua; */
     display: flex;
     flex-direction:row;
+    justify-content: center;
     
 }
 #pessoas{
@@ -35,8 +44,8 @@ color:black
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .card-history{
-    width: 600px;
-    height: 110px;
+    width: 80rem;
+    height: 40rem;
     border-radius: 21px;
     background-color: #fff;
     margin-top: 30px;
@@ -51,7 +60,7 @@ color:black
     margin-left: 24px;
     margin-top: 10px;
     border-radius: 50%;
-    background-image: url("../../../images/fotoCuidador2.jpeg");
+    /* background-image: url("../../../images/fotoCuidador2.jpeg"); */
     background-size: cover;
 }
 .texts{
@@ -74,10 +83,37 @@ color:black
     font-size: 20px;
 }
 .nome2{
-    margin-top: 10px;
-    font-size: 13px;
+    margin-top: 8px;
+    font-size: 17px;
     color:rgba(0, 0, 0, 0.46);
 }
+
+.priceHistory{
+    margin-top: -4.5rem;
+    font-size: 17px;
+    text-align: end;
+    width: 62rem;
+    color:rgba(0, 0, 0, 0.46);
+}
+
+.nome3{
+    width: 50rem;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.containerDateHistory{
+    margin-top: 5rem;
+}
+
+.dateHistory{
+    margin-right: -4rem;
+}
+
+.dateHistory2{
+    margin-right: -3.8rem;
+}
+
 .texts2{
     display: flex;
     flex-direction:column;
@@ -105,10 +141,7 @@ footer{
 /* Conteudo da main se encerra aqui */
 
 /* Conteudo do header se inicia aqui */
-header{
-    height: 150px;
-    /* background-color: rgb(218, 87, 87); */
-}
+
 #icon-close{
     width: 50px;
     height:50px;
@@ -162,12 +195,15 @@ body{
 }
 
 .mapHistory{
-    height: 58rem;
-    width: 90rem;
+    height: 20rem;
+    width: 55rem;
+    margin-top: 5rem;
+
 }
 
 .containerScrollHistory{
     position: absolute;
 }
+
 
 /* Conteudo do body se encerra aqui */

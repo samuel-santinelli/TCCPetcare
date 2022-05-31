@@ -21,17 +21,40 @@ const LandingPage = () => {
   };
 
   const [cuidadoresLandingPage, setCuidadoresLandingPage] = useState([]);
-
+  const [searchCuidadores, setSearchCuidadores] = useState([]);
+  
   useEffect(() => {
-    axios
-      .get("http://localhost/Cuidador/Cuidador/api/cuidador")
-      .then((res) => {
-        setCuidadoresLandingPage(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro na busca de cuidador");
-      });
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost/Cuidador/Cuidador/api/cuidador`
+        );
+        const data = await response.json();
+        setCuidadoresLandingPage(data);
+
+
+        setSearchCuidadores(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, []);
+
+  
+
+  const searchCuidador = ({target}) => {
+    if(!target.value){
+      setSearchCuidadores(cuidadoresLandingPage)
+      return;
+    }
+
+    const filterCuidadores = searchCuidadores.filter(({nome}) => nome.includes(target.value)
+      );
+      setSearchCuidadores(filterCuidadores)
+  }
+
+
 
   return (
     <>
@@ -85,14 +108,15 @@ const LandingPage = () => {
           <div id="div-input">
             <AiOutlineSearch className="pesquisa-icon" />
             <input
-              type="text"
+              type="search"
               id="input-pesquisa"
               placeholder="Busque um cuidador"
+              onChange={searchCuidador}
             />
           </div>
 
           <div id="cuidadores-container">
-            {cuidadoresLandingPage.map((cuidadorLandingP, key) => (
+            {searchCuidadores.map((cuidadorLandingP, key) => (
               <div className="box1" key={key}>
                 <div className="header-box1">
                   <>

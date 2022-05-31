@@ -118,7 +118,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 3.6vw;
+  margin-top: 5.6vw;
   background-color: #fff;
   background: linear-gradient(
     101.96deg,
@@ -215,7 +215,7 @@
   flex-direction: column;
   text-align: center;
   margin-left: 3.3vw;
-  margin-top: 4vw;
+  margin-top: 6vw;
   color: var(--main-color);
 }
 
@@ -269,4 +269,46 @@ text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
   font-size: 1.6vw;  
   color: white;
   position: absolute;
+}
+
+@media only screen and (max-width: 992px){
+  .card{
+    height: auto;
+    min-height: 49vh;
+    width: 43vw;
+    min-width: 40vw;
+    margin-bottom: 3rem;
+    
+  }
+
+  .mapCardAgendamento{
+    width: 44vw;
+    margin-top: 11vw;
+  }
+
+ .infoCuidador{
+    text-align: center;
+    padding-left: 4rem;
+ }
+
+ .nameCuidador{
+   font-size: 3rem !important;
+ }
+
+ .locationCuidadorAgendamento{
+   font-size: 1.2rem;
+   color: #fff;
+ }
+
+ .biographyCuidador{
+   font-size: 1.4rem;
+ }
+
+ .containerInfoCuidadores{
+   height: 128vh;
+ }
+}
+
+@media only screen and (max-width: 1200px){
+   
 }

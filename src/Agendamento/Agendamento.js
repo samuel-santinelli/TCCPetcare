@@ -26,8 +26,7 @@ const Agendamento = (props) => {
   
     navigate("/Agendamento?idHost=" + dadosCuidador);
     document.body.addEventListener("click", closeDropdown, props);
-    console.log("o valor do serviço é", valueService);
-    window.localStorage.setItem("infoCuidadorModal", JSON.stringify(dadosCuidador))
+    // console.log("o valor do serviço é", valueService);
     window.localStorage.setItem("nomeCuidador", JSON.stringify(nomeCuidador))
     window.localStorage.setItem("moradiaCuidador", JSON.stringify(moradiaCuidador))
     window.localStorage.setItem("cidadeCuidador", JSON.stringify(cidadeCuidador))

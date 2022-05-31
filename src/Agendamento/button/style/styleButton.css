@@ -1,7 +1,7 @@
 #containerButtonAgendar{
   height: 1vh;
   width: 45vw;
-  margin-top: 4vw;
+  margin-top: 5vw;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -35,4 +35,12 @@
   color: #fff;
   font-size: 2.2rem;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 992px){
+  #containerButtonAgendar{
+    position: absolute;
+    margin-top: 55rem;
+  }
+
 }
