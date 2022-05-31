@@ -5,19 +5,40 @@ import  "./style/styleHistorico.css";
 
 const HistoricoCliente = () => {
   const [history, setHistory] = useState([]);
+  const [searchHistory, setSearchHistory] = useState([]);
+  const semFoto = "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   useEffect(() => {
-    axios
-      .get("http://localhost/Cuidador/Cuidador/api/historico")
-      .then((res) => {
-        setHistory(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro na busca de cuidador");
-      });
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost/Cuidador/Cuidador/api/historico`
+        );
+        const data = await response.json();
+        setHistory(data);
+
+
+        setSearchHistory(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, []);
 
-  const semFoto = "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
+  const handleSearchHistory = ({ target }) => {
+    if (!target.value) {
+      setSearchHistory(history);
+      return;
+    }
+
+    const filterHistory = searchHistory.filter(({ nomePet }) =>
+    nomePet.includes(target.value)
+    );
+
+    setSearchHistory(filterHistory);
+  };
+
 
   return (
     <>
@@ -35,12 +56,12 @@ const HistoricoCliente = () => {
             type="search"
             className="inputSearch"
             placeholder="Busque um cuidador especifico (Ex: Maria Antonieta)"
-            // onChange={handleChange}
+            onChange={handleSearchHistory}
           />
         <div id="box-container1">
          
           <div id="pessoas">
-            {history.map((historyServices, key) => (
+            {searchHistory.map((historyServices, key) => (
               <div class="card-history" key={key}>
                 <img class="foto" src={semFoto} value={semFoto} alt="foto pet"/>
                 <div class="texts">

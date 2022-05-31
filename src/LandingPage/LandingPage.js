@@ -41,8 +41,6 @@ const LandingPage = () => {
     fetchData();
   }, []);
 
-  
-
   const searchCuidador = ({target}) => {
     if(!target.value){
       setSearchCuidadores(cuidadoresLandingPage)
@@ -53,6 +51,10 @@ const LandingPage = () => {
       );
       setSearchCuidadores(filterCuidadores)
   }
+
+  const [carousel, setCarousel] = useState();
+  const [like, setLike] = useState(false);
+  console.log(setLike);
 
 
 
@@ -95,8 +97,8 @@ const LandingPage = () => {
               cuidadores qualificados
             </div>
             <div className="containerButtonCarrosel">
-              <div className="buttonCarrosel"></div>
-              <div className="buttonCarroselSec"></div>
+              <div className="buttonCarrosel" ></div>
+              <div className="buttonCarroselSec" ></div>
             </div>
           </div>
         </div>
