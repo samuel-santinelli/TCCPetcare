@@ -16,8 +16,8 @@ const Login = ({id}) => {
       <div className="containerH1">
         <h1 className="titleWelcome">Seja Bem-Vindo!</h1>
         <h2 className="subtitleWelcome">
-          Agora que você já se cadastrou, seremos como amigos, já temos algo em
-          comum! zelamos nossos PET'S!
+          Agora que você já se cadastrou, já temos algo em
+          comum! zelamos nossos PET'S! 
         </h2>
       </div>
 
