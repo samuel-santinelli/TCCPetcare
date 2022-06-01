@@ -4,10 +4,20 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 function InputCamera() {
   return (
     <div id="containerInput">
-        <div id="containerBorderImage">
-    <input type="file" name="inputImage" className="inputImage" id="foto" />
-    <CameraAltIcon id="iconInputCamera" />
-    </div>
+         <div id="containerBorderImage">
+              <img className="imgPreview" alt=""  />
+              <input
+                type="file"
+                name="inputImage"
+                className="inputImage"
+                accept="image/jpeg, image/jpg, image/png"
+                id="foto"
+             
+              />
+
+              <CameraAltIcon id="iconInputCamera" />
+              
+            </div>
   </div>
   );
 }

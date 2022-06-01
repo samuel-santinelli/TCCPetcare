@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 
 const PerfilCliente = (props) => {
   const [profile, setProfile] = useState([""]);
-  const [pet, setPet] = useState([]);
+  const [pet, setPet] = useState([""]);
+
+  const imagePet = window.localStorage.getItem("imagePet");
+  const imageCliente = window.localStorage.getItem("imageCliente");
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem("cliente"));
@@ -17,13 +20,11 @@ const PerfilCliente = (props) => {
   }, []);
   console.log("os dados do cliente", profile);
 
-
   useEffect(() => {
-    const petStorage = JSON.parse(localStorage.getItem("pets"));
-    if (petStorage) {
-      setPet(petStorage);
+    const pet = JSON.parse(localStorage.getItem("pets"));
+    if (pet) {
+      setPet(pet);
     }
-    
   }, []);
 
   console.log("os dados do pet", pet);
@@ -45,7 +46,7 @@ const PerfilCliente = (props) => {
           <img
             className="cardFotoPerfilCliente"
             alt="foto de Perfil"
-            src={foto}
+            src={imageCliente}
           />
           <div className="containerInfoProfile">
             <label className="nameClienteProfile"> Seu nome</label>
@@ -90,18 +91,16 @@ const PerfilCliente = (props) => {
         </div>
 
         <div className="containerInfoCardPetCuidador">
-          
-            <div className="containerPetInfoPet">
-              <img
-                className="containerFotoPerfilPet"
-                src={foto}
-                alt="foto de perfil do pet"
-              />
-              <label className="containerNamePerfilPet">{pet.nome}</label>
-              <label className="containerRacaPerfilPet">{pet.raca}</label>
-              <div className="containerBioProfilePet">{pet.descricao}</div>
-            </div>
-          
+          <div className="containerPetInfoPet">
+            <img
+              className="containerFotoPerfilPet"
+              src={imagePet}
+              alt="foto de perfil do pet"
+            />
+            <label className="containerNamePerfilPet">{pet.nome}</label>
+            <label className="containerRacaPerfilPet">{pet.raca}</label>
+            <div className="containerBioProfilePet">{pet.descricao}</div>
+          </div>
         </div>
       </div>
     </>

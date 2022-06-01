@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
-import { MdOutlineStarPurple500, MdOutlineStarHalf } from "react-icons/md";
+import InputMask from "react-input-mask";
 import "./style/styleAgendamento.css";
 import ButtonAgendar from "./button/ButtonAgendar";
 import { Link, useNavigate } from "react-router-dom";
@@ -79,8 +79,6 @@ const Agendamento = (props) => {
     setSearch(filterCuidadores);
   };
 
-  
-
   return (
     <div className="containerMain">
       <Link to={"../"} className="containerLinkBackAgendamento">
@@ -147,7 +145,7 @@ const Agendamento = (props) => {
                           className="buttonAgendar"
                           onClick={showDropdown}
                         >
-                         Agendar Agora
+                          Agendar Agora
                         </button>
                       </div>
                     </div>

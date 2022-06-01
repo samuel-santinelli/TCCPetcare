@@ -88,6 +88,8 @@
     -ms-user-select: none;
     user-select: none;
     margin-right: 2rem;
+    width: 30rem;
+    color: #757575;
   }
   
   /* Hide the browser's default checkbox */

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useForm } from 'react-hook-form'
+import React, { useState, useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
 import {
   MdAccountCircle,
   MdOutlineAccountCircle,
@@ -14,11 +14,6 @@ import "../style/Cadastro.css";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
-
-const sexoMap = {
-  1: "Masculino",
-  2: "Feminino",
-};
 
 const InputsIcon = (props) => {
   const [cuidador, setCuidador] = useState({
@@ -48,13 +43,28 @@ const InputsIcon = (props) => {
   console.log(cuidador);
   const navigate = useNavigate();
 
-  const handleUserCuidadorSubmit = () => {
+  const imgRef = useRef();
+
+  const [imagem, setImagem] = useState(null);
+
+  const handleUserCuidadorSubmit = (e) => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/cuidador", cuidador)
-      .then((res) => window.localStorage.setItem("cuidador", JSON.stringify(res.data)));
+      .then((res) =>
+        window.localStorage.setItem("cuidador", JSON.stringify(res.data))
+      );
     navigate("/Agendamento");
-    alert("Cadastro realizado com sucesso!")
+    alert("Cadastro realizado com sucesso!");
   };
+
+  const handleImageSubmit = (e) => {
+    if (e.target.files[0]) {
+      imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+    }
+    setImagem(e.target.files[0]);
+  };
+  
+
   const listElements = () => {
     axios
       .get("http://localhost/Cuidador/Cuidador/api/cuidador")
@@ -64,41 +74,46 @@ const InputsIcon = (props) => {
     listElements();
   }, []);
 
-  const {register, setValue} = useForm();
+  const { register, setValue } = useForm();
 
   const checkCep = (e) => {
-    const cep = e.target.value.replace(/\D/g, '');
+    const cep = e.target.value.replace(/\D/g, "");
     console.log(cep);
-   axios
-   .get(`https://viacep.com.br/ws/${cep}/json/`)
-      .then(res => res.data).then(data => {console.log(data)
-      setValue('address', data.logradouro)
-      setValue('neighborhood', data.bairro)
-      setValue('city', data.localidade)
-      setValue('uf', data.uf)
-      setValue('complement', data.complemento)
-      })
-      
-  }
-
+    axios
+      .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data);
+        setValue("address", data.logradouro);
+        setValue("neighborhood", data.bairro);
+        setValue("city", data.localidade);
+        setValue("uf", data.uf);
+        setValue("complement", data.complemento);
+      });
+  };
 
   return (
     <>
-      <form onSubmit={() => handleUserCuidadorSubmit(cuidador)} encType="multipart/form-data">
+      <form
+        onSubmit={() => handleUserCuidadorSubmit(cuidador)}
+        encType="multipart/form-data"
+      >
         <div id="teste">
           <div id="containerInput">
             <div id="containerBorderImage">
+              <img className="imgPreview" alt="" ref={imgRef} />
               <input
                 type="file"
                 name="inputImage"
                 className="inputImage"
                 accept="image/jpeg, image/jpg, image/png"
                 id="foto"
-                onChange={(e) =>
-                  setCuidador({ ...cuidador, foto: e.target.value })
-                }
+                onChange={handleImageSubmit}
+                value={cuidador.foto}
               />
+
               <CameraAltIcon id="iconInputCamera" />
+              
             </div>
           </div>
           <div id="contInputsPet">
@@ -112,7 +127,6 @@ const InputsIcon = (props) => {
               required
               onChange={(e) =>
                 setCuidador({ ...cuidador, nome: e.target.value })
-                
               }
             />
             {/* <MdOutlineAccountCircle id="iconInputLabel" /> */}
@@ -260,7 +274,6 @@ const InputsIcon = (props) => {
                   setCuidador({ ...cuidador, cep: e.target.value })
                 }
               />
-              <label htmlFor="cep"></label>
               {/* <HouseIcon id="iconInputLabelLeft" /> */}
               <input
                 label="Moradia"
@@ -277,13 +290,12 @@ const InputsIcon = (props) => {
                   })
                 }
               />
-              <label htmlFor="endereco"></label>
 
               <div id="contInputsScroll">
                 {/* <BusinessIcon id="iconInputLabelLeft" /> */}
                 <input
                   className="containerInputMoradiaScroll"
-                placeholder="Cidade"
+                  placeholder="Cidade"
                   type="text"
                   id="cidade"
                   value={cuidador.cidade}
@@ -292,7 +304,6 @@ const InputsIcon = (props) => {
                     setCuidador({ ...cuidador, cidade: e.target.value })
                   }
                 />
-                <label htmlFor="cidade"></label>
                 <input
                   className="containerInputLocal"
                   placeholder="Bairro"
@@ -304,7 +315,6 @@ const InputsIcon = (props) => {
                     setCuidador({ ...cuidador, bairro: e.target.value })
                   }
                 />
-                <label htmlFor="bairro"></label>
                 {/* <HouseIcon id="iconInputLabelLeft" /> */}
               </div>
               <div id="contInputsScroll">
@@ -319,7 +329,6 @@ const InputsIcon = (props) => {
                     setCuidador({ ...cuidador, numero: e.target.value })
                   }
                 />
-                <label htmlFor="numero"></label>
                 <input
                   type="text"
                   className="containerInputLocal"
@@ -366,36 +375,36 @@ const InputsIcon = (props) => {
                         })
                       }
                     />
-                    
+
                     <div className="containerPreferencesScroll">
-                    <input
-                      id="valorHora"
-                      placeholder="Valor diario"
-                      className="containerInputEmailScroll"
-                      value={cuidador.valorHora}
-                      type="text"
-                      onChange={(e) =>
-                        setCuidador({
-                          ...cuidador,
-                          valorHora: e.target.value,
-                        })
-                      }
-                    />
+                      <input
+                        id="valorHora"
+                        placeholder="Valor diario"
+                        className="containerInputEmailScroll"
+                        value={cuidador.valorHora}
+                        type="text"
+                        onChange={(e) =>
+                          setCuidador({
+                            ...cuidador,
+                            valorHora: e.target.value,
+                          })
+                        }
+                      />
                     </div>
                     <div className="containerPreferencesScroll">
-                    <input
-                      id="telCuidador"
-                      placeholder="Numero do telefone"
-                      className="containerInputEmailScroll"
-                      value={cuidador.telefone}
-                      type="text"
-                      onChange={(e) =>
-                        setCuidador({
-                          ...cuidador,
-                          telefone: e.target.value,
-                        })
-                      }
-                    />
+                      <input
+                        id="telCuidador"
+                        placeholder="Numero do telefone"
+                        className="containerInputEmailScroll"
+                        value={cuidador.telefone}
+                        type="text"
+                        onChange={(e) =>
+                          setCuidador({
+                            ...cuidador,
+                            telefone: e.target.value,
+                          })
+                        }
+                      />
                     </div>
                   </div>
                 </div>

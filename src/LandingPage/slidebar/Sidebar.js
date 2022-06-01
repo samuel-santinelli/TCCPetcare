@@ -19,13 +19,13 @@ const Sidebar = ({ sidebar }) => {
   }, []);
   console.log(profile);
 
+  const imageCliente = window.localStorage.getItem("imageCliente");
+  
 
-  const imagePerfil =
-    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
   return (
     <div className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
       <Link to="/PerfilCliente">
-        <img src={imagePerfil} className="imageSidebar" alt="" />
+        <img src={imageCliente} className="imageSidebar" alt="" />
 
         <li className="nameCuidadorSidebar">{profile[0].nome}</li>
 

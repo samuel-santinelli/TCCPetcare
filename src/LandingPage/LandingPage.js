@@ -55,7 +55,6 @@ const LandingPage = () => {
 
   const [carousel, setCarousel] = useState();
   const [like, setLike] = useState(false);
-  console.log(setLike);
 
   return (
     <>

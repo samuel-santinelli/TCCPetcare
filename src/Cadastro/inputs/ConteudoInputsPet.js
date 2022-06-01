@@ -1,16 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import "../style/CadastroPet.css";
 import InputCamera from "./InputCamera";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import "../style/InputCheckbox.css";
 
 // const id = 44;
 
 const InputsPet = ({ props }) => {
   const [querystring] = useSearchParams();
-  const idCliente = querystring.get("idCliente");
+  // const idCliente = querystring.get("idCliente");
   const teste = querystring.get("teste");
+  const idCliente = JSON.parse(localStorage.getItem("idCliente"));
+  const imgRef = useRef();
+  const [imagePet, setImagePet] = useState(null);
+
+  const handleImageSubmitPet = (e) => {
+    if (e.target.files[0]) {
+      imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+      console.log(imgRef.current.src);
+      window.localStorage.setItem("imagePet", imgRef.current.src)
+    }
+    setImagePet(e.target.files[0]);
+  };
+  
+
 
   console.log("ID recebido do cliente", idCliente, teste);
 
@@ -21,6 +36,7 @@ const InputsPet = ({ props }) => {
   };
 
   const [pet, setPet] = useState({
+    foto: "",
     nome: "",
     deficiencia: 1,
     descricao: "",
@@ -120,7 +136,23 @@ const InputsPet = ({ props }) => {
     <>
       <form onSubmit={() => handleSubmitPet(pet)} method="post">
         <div id="containerScroll">
-          <InputCamera />
+        <div id="containerInput">
+            <div id="containerBorderImage">
+              <img className="imgPreview" alt="" ref={imgRef} />
+              <input
+                type="file"
+                name="inputImage"
+                className="inputImage"
+                accept="image/jpeg, image/jpg, image/png"
+                id="foto"
+                onChange={handleImageSubmitPet}
+                value={pet.foto}
+              />
+
+              <CameraAltIcon id="iconInputCamera" />
+              
+            </div>
+          </div>
           <div className="contInputsPet"></div>
           <div id="contInputsPet">
             <input

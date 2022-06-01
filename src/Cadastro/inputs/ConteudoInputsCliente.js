@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
@@ -9,11 +9,9 @@ import LockOpenIcon from "@mui/icons-material/LockOpen";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import CallIcon from "@mui/icons-material/Call";
-import CadastroPet from "../CadastroPet";
-import BoasVindas from "../../BoasVindas/BoasVindas";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import validarSenhaForca from "./validation/validation";
+import InputMask from "react-input-mask";
 
 const ConteudoInputsCliente = (props) => {
   const navigate = useNavigate();
@@ -24,8 +22,19 @@ const ConteudoInputsCliente = (props) => {
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
 
-  const { idCliente } = useParams();
-  console.log(idCliente);
+  const imgRef = useRef();
+
+  const [imagem, setImagem] = useState(null);
+
+  const handleImageClienteSubmit = (e) => {
+    if (e.target.files[0]) {
+     const imagem = imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+      window.localStorage.setItem("imageCliente", imagem);
+    }
+    setImagem(e.target.files[0]);
+    console.log("A imagem é", imagem);
+  };
+  console.log(imgRef.current);
 
   const [user, setUser] = useState({
     nome: "",
@@ -43,22 +52,20 @@ const ConteudoInputsCliente = (props) => {
     cidade: "",
     complemento: "",
     numero: "",
-    process: "PROCESSAMENTO"
   });
 
   // Function para validar se ele está preenchido
   function receivedAgendamento(e) {
-  if(user.process === "PROCESSAMENTO"){
-     e.preventDefault();
-  }else{
-    if(user.process === "ACEITO"){
-      return true
-    }
-    else{
-      return false;
+    if (user.process === "PROCESSAMENTO") {
+      e.preventDefault();
+    } else {
+      if (user.process === "ACEITO") {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
-}
 
   console.log(user);
 
@@ -71,15 +78,14 @@ const ConteudoInputsCliente = (props) => {
       user.senha === "" ||
       user.telefone === "" ||
       user.idSexo === "" ||
-      user.cep === "" ||
-      user.endereco === "" ||
-      user.bairro === "" ||
-      user.cidade === "" ||
-      user.complemento === "" ||
+      // user.cep === "" ||
+      // user.endereco === "" ||
+      // user.bairro === "" ||
+      // user.cidade === "" ||
       user.numero === ""
     ) {
       alert("Preencha todos os campos");
-      
+
       return false;
     } else {
       axios
@@ -93,22 +99,6 @@ const ConteudoInputsCliente = (props) => {
       }
     }
   };
-
-  const [sexo, setSexo] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost/Cuidador/Cliente/api/cliente/listarSexo")
-      .then((res) => {
-        setSexo(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro");
-      })
-      .catch((e) => {
-        console.error("Erro", e);
-      });
-  }, []);
 
   function validate(e) {
     const passwordValue = senha.value.trim();
@@ -165,14 +155,17 @@ const ConteudoInputsCliente = (props) => {
         <div className="containerMainInputsCliente">
           <div id="containerInput">
             <div id="containerBorderImage">
+              <img className="imgPreview" alt="" ref={imgRef} />
               <input
                 type="file"
                 name="inputImage"
                 className="inputImage"
+                accept="image/jpeg, image/jpg, image/png"
                 id="foto"
+                onChange={handleImageClienteSubmit}
                 value={user.foto}
-                onChange={(e) => setUser({ ...user, foto: e.target.value })}
               />
+
               <CameraAltIcon id="iconInputCamera" />
             </div>
           </div>
@@ -264,7 +257,6 @@ const ConteudoInputsCliente = (props) => {
             <input
               label="CPF"
               id="cpf"
-              type="number"
               value={user.cpf}
               className="containerInputCpf"
               placeholder="CPF"
@@ -309,7 +301,6 @@ const ConteudoInputsCliente = (props) => {
                 value={user.cidade}
                 onChange={(e) => setUser({ ...user, cidade: e.target.value })}
               />
-              <label htmlFor="cidade"></label>
             </div>
 
             <div className="form-control">
@@ -323,7 +314,6 @@ const ConteudoInputsCliente = (props) => {
                 {...register("neighborhood")}
                 onChange={(e) => setUser({ ...user, bairro: e.target.value })}
               />
-              <label htmlFor="bairro"></label>
             </div>
           </div>
           <div id="contInputsControl">
@@ -338,7 +328,6 @@ const ConteudoInputsCliente = (props) => {
                 {...register("address")}
                 onChange={(e) => setUser({ ...user, endereco: e.target.value })}
               />
-              <label htmlFor="endereco"></label>
             </div>
           </div>
           <div id="containerButton">
