@@ -8,7 +8,6 @@ import "./style/ContainerInputsLogin.css";
 const InputsLogin = (props) => {
   const navigate = useNavigate();
 
-
   const [userLogin, setUserLogin] = useState({
     email: "",
     senha: "",
@@ -32,7 +31,8 @@ const InputsLogin = (props) => {
       .then((res) => {
         console.log("O cliente é", res.data[0].idCliente);
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
-        navigate("/CadastroPet?idCliente=" + res.data[0].idCliente);
+        navigate("/BoasVindas?idCliente=" + res.data[0].idCliente);
+        window.localStorage.setItem("idCliente", res.data[0].idCliente)
       })
       .catch((e) => {
         console.error("Erro", e);

@@ -5,6 +5,7 @@ import ConteudoInputsCliente from "../Cadastro/inputs/ConteudoInputsCliente";
 import { Link } from "react-router-dom";
 import "./style/styleBoasVindas.css";
 
+const idCliente = JSON.parse(localStorage.getItem("idCliente"));
 
 const Login = ({id}) => {
   return (
@@ -21,7 +22,7 @@ const Login = ({id}) => {
       </div>
 
       <div className="containerButtonWelcome">
-        <Link to="/CadastroPet">
+        <Link to={"/CadastroPet?idCliente=" + idCliente}>
           <input
             type="button"
             value="Adicione seu pet"

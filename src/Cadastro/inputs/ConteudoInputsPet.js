@@ -118,7 +118,7 @@ const InputsPet = ({ props }) => {
 
   return (
     <>
-      <form onSubmit={() => handleSubmitPet(pet)}>
+      <form onSubmit={() => handleSubmitPet(pet)} method="post">
         <div id="containerScroll">
           <InputCamera />
           <div className="contInputsPet"></div>

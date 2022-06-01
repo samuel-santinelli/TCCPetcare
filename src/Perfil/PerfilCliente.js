@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const PerfilCliente = (props) => {
   const [profile, setProfile] = useState([""]);
-  const [pet, setPet] = useState([""]);
+  const [pet, setPet] = useState([]);
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem("cliente"));
@@ -15,22 +15,25 @@ const PerfilCliente = (props) => {
       setProfile(profile);
     }
   }, []);
-  console.log(profile);
+  console.log("os dados do cliente", profile);
+
 
   useEffect(() => {
-    const pet = JSON.parse(localStorage.getItem("pets"));
-    if (pet) {
-      setPet(pet);
+    const petStorage = JSON.parse(localStorage.getItem("pets"));
+    if (petStorage) {
+      setPet(petStorage);
     }
+    
   }, []);
-  console.log(pet);
+
+  console.log("os dados do pet", pet);
 
   const foto =
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   return (
     <>
-      <Link to={"../"} >
+      <Link to={"../"}>
         <div className="icon-close-home-profile">x</div>
       </Link>
       <div className="containerMainPerfilCliente">
@@ -87,12 +90,18 @@ const PerfilCliente = (props) => {
         </div>
 
         <div className="containerInfoCardPetCuidador">
-          <div className="containerPetInfoPet">
-            <img className="containerFotoPerfilPet" src={foto} alt="foto de perfil do pet"/>
-            <label className="containerNamePerfilPet">{pet.nome}</label>
-            <label className="containerRacaPerfilPet">{pet.raca}</label>
-            <div className="containerBioProfilePet">{pet.descricao}</div>
-          </div>
+          
+            <div className="containerPetInfoPet">
+              <img
+                className="containerFotoPerfilPet"
+                src={foto}
+                alt="foto de perfil do pet"
+              />
+              <label className="containerNamePerfilPet">{pet.nome}</label>
+              <label className="containerRacaPerfilPet">{pet.raca}</label>
+              <div className="containerBioProfilePet">{pet.descricao}</div>
+            </div>
+          
         </div>
       </div>
     </>
