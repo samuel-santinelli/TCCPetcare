@@ -25,10 +25,12 @@ const PerfilCliente = (props) => {
   }, []);
   console.log(pet);
 
+  const foto =
+    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   return (
     <>
-      <Link to={"../"} id="icon-close-homeProfile">
+      <Link to={"../"} >
         <div className="icon-close-home-profile">x</div>
       </Link>
       <div className="containerMainPerfilCliente">
@@ -37,28 +39,59 @@ const PerfilCliente = (props) => {
         <BsPencil className="iconPencil" />
 
         <div className="containerPefilClienteInfo">
-          <div className="cardFotoPerfilCliente" />
+          <img
+            className="cardFotoPerfilCliente"
+            alt="foto de Perfil"
+            src={foto}
+          />
           <div className="containerInfoProfile">
-            <label className="containerNamePerfilCliente">
-              {profile[0].nome}
-            </label>
-            <label className="containerLocationPerfilCliente">
-              {profile[0].email}
-            </label>
-            <label className="containerLocationPerfilCliente">
-              {profile[0].bairro}
-            </label>
+            <label className="nameClienteProfile"> Seu nome</label>
+            <input
+              className="containerInputProfileCliente"
+              value={profile[0].nome}
+              disabled
+            />
+            <label className="nameClienteProfile"> Seu email</label>
+            <input
+              className="containerInputProfileCliente"
+              value={profile[0].email}
+              disabled
+            />
+            <label className="nameClienteProfile"> Data de Nascimento</label>
+            <input
+              className="containerInputProfileCliente"
+              value={profile[0].dataNascimento}
+              disabled
+            />
+            <div>
+              <label className="nameClienteProfile"> Endereço</label>
+              <input
+                className="containerInputProfileCliente"
+                value={profile[0].endereco}
+                disabled
+              />
+              <label className="nameClienteProfile"> Bairro</label>
+              <input
+                className="containerInputProfileCliente"
+                value={profile[0].endereco}
+                disabled
+              />
+              <label className="nameClienteProfile"> Numero da Casa</label>
+              <input
+                className="containerInputProfileCliente"
+                value={profile[0].numero}
+                disabled
+              />
+            </div>
           </div>
         </div>
 
         <div className="containerInfoCardPetCuidador">
           <div className="containerPetInfoPet">
-            <div className="containerFotoPerfilPet"></div>
+            <img className="containerFotoPerfilPet" src={foto} alt="foto de perfil do pet"/>
             <label className="containerNamePerfilPet">{pet.nome}</label>
             <label className="containerRacaPerfilPet">{pet.raca}</label>
-            <div className="containerBioProfilePet">
-              {pet.descricao}
-            </div>
+            <div className="containerBioProfilePet">{pet.descricao}</div>
           </div>
         </div>
       </div>
