@@ -8,14 +8,17 @@ require_once(SRC. 'bd/update.php');
 
 function inserirCuidadorAPI($arrayDados) 
 {
-       
-    // var_dump(inserir());
+         // var_dump(inserir($arrayDados));
     // die;
-    if(inserir($arrayDados)){
-        return true;
-    }else{
-        return false;
-    }
+    if($resposta = inserir($arrayDados)){
+        $resposta =  json_encode($resposta);
+            // var_dump($resposta);
+            // die;
+            return $resposta;
+        }else{
+            return false;
+        }
+           
        
     
 

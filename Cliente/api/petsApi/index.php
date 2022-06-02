@@ -16,6 +16,7 @@ $config = [
 $app = new \Slim\App($config);
 
 
+
 $app->get('/pets', function($request, $response, $args){
     require_once("../control/exibirPets.php");
     if($listar = exibirPets()){
@@ -33,6 +34,9 @@ $app->get('/pets', function($request, $response, $args){
   
 
 });
+
+
+
 
 $app->get('/pets/listarEspecie', function($request, $response, $args){
     require_once("../control/exibirEspecie.php");
@@ -52,6 +56,8 @@ $app->get('/pets/listarEspecie', function($request, $response, $args){
 
 });
 
+
+
 $app->get('/pets/listarFase', function($request, $response, $args){
     require_once("../control/exibirFase.php");
     if($listar = exibirFase()){
@@ -69,6 +75,8 @@ $app->get('/pets/listarFase', function($request, $response, $args){
   
 
 });
+
+
 
 $app->get('/pets/listarRaca', function($request, $response, $args){
     require_once("../control/exibirRaca.php");
@@ -88,6 +96,7 @@ $app->get('/pets/listarRaca', function($request, $response, $args){
 
 });
 
+
 $app->get('/pets/vacinasPet', function($request, $response, $args){
     require_once("../control/exibirVacinas.php");
     if($listar = exibirVacinas()){
@@ -105,6 +114,9 @@ $app->get('/pets/vacinasPet', function($request, $response, $args){
   
 
 });
+
+
+
 
 $app->post('/pets', function($request, $response, $args){ 
 
@@ -138,11 +150,11 @@ $app->post('/pets', function($request, $response, $args){
             require_once('../control/recebePetsApi.php');
             // require_once('../control/recebeVacinasApi.php');
            
-            if( inserirPetsAPI($dadosBodyJSON)) { 
+            if( $resposta = inserirPetsAPI($dadosBodyJSON)) { 
 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
-                                    ->write('{"message":"Cadastro de pet criado com sucesso"}');
+                                    ->write($resposta);
             }else{
                 return $response    ->withStatus(400)
                                     ->withHeader('Content-Type', 'application/json')
@@ -300,6 +312,7 @@ $app->put('/pets/{id}', function($request, $response, $args){
     }
     
     });
+
 $app->delete('/pets/{id}', function($request, $response, $args){ 
        
             
@@ -329,8 +342,33 @@ $app->delete('/pets/{id}', function($request, $response, $args){
 
 });
 
+$app->get('/pets/{id}', function($request, $response, $args){ 
+    $id = $args['id']; 
+ 
+    require_once("../control/exibirPets.php");
+  
+    if($listDados = buscarPets($id)){
+     
+            if( $listDadosArray = criarArrayPet($listDados)){ 
+                     $listDadosJSON = criarJsonPet($listDadosArray);
+            }
+    } 
+   
+    if( $listDadosArray){ 
+        return $response   ->withStatus(200) 
+                           ->withHeader('Content-Type', 'application/json')
+                           ->write($listDadosJSON); 
+
+    }else{
+                     return $response   ->withStatus(204); 
+    }
+ 
+
+});
+
 $app->run();
 
 // http://localhost/Cuidador/Cliente/api/pets
 
 ?>
+

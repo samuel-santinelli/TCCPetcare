@@ -9,8 +9,6 @@ function inserirPet($arrayPets){
         descricao,
         castrado,
         foto,
-        dataNascimento,
-        avaliacao,
         idRaca,
         idEspecie,
         idFase,
@@ -26,8 +24,6 @@ function inserirPet($arrayPets){
         '".$arrayPets['descricao']."',
         '".$arrayPets['castrado']."',
         '".$arrayPets['foto']."',
-        '".$arrayPets['dataNascimento']."',
-        '".$arrayPets['avaliacao']."',
         '".$arrayPets['idRaca']."',
         '".$arrayPets['idEspecie']."',
         '".$arrayPets['idFase']."',
@@ -46,12 +42,34 @@ $conexao = conexao();
 // echo($sql);
 // die;
 
-if(mysqli_query($conexao, $sql)){
-    return true;
-}
-else{
+if($rs = mysqli_query($conexao,$sql)){
+    $idPet =  mysqli_insert_id($conexao);
+    // var_dump($idCliente, $sql);
+    // die;
+    $novoItem = array("id" => $idPet); 
+  $arrayDados = $arrayPets + $novoItem;
+// $arrayDados = array("id" => $idCliente,
+//                   $arrayCliente  );
+//   echo($sql);
+// die;
+//  var_dump($arrayDados);
+//     die;
+    return $arrayDados;
+   
+    // echo($idCliente);
+    // die;
+    // return true;
+   
+}else{
     return false;
 }
+
+// if(mysqli_query($conexao, $sql)){
+//     return true;
+// }
+// else{
+//     return false;
+// }
 // printf ( mysqli_insert_id($conexao));
 // $idPet =  mysqli_insert_id($conexao);
 // echo($idPet);

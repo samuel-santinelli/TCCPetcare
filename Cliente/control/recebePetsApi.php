@@ -5,11 +5,17 @@ require_once(SRC.'bd/inserirPets.php');
 require_once(SRC. 'bd/updatePet.php');
 
 function inserirPetsAPI($arrayDados){
-    if(inserirPet($arrayDados)){
-        return true;
-    }else{
-        return false;
-    }
+    
+    if($resposta = inserirPet($arrayDados)){
+        $resposta =  json_encode($resposta);
+            // var_dump($resposta);
+            // die;
+            return $resposta;
+        }else{
+            return false;
+        }
+           
+   
 }
 
 function atualizarPetAPI($arrayDados, $id){

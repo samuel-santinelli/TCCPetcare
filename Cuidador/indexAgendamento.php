@@ -3,21 +3,35 @@ require_once('config/config.php');
 require_once(SRC. 'control/exibirTiposServicos.php');
 require_once(SRC."../Cliente/bd/listarClientes.php");
 require_once(SRC."../Cuidador/bd/listarHost.php");
+require_once(SRC. 'control/exibirAgenda.php');
+
 $idTipo = (int) null;
 $nome = ("selecione um tipo");
+$modo = (string) "Salvar";
+$dataFinal = (string) null;
 
-$idCliente= $_GET['idCliente'];
-//   echo ($idCliente);
+// $idCliente= $_GET['idCliente'];
+// //   echo ($idCliente);
 
-  $dados= buscaClientePet($idCliente);
+//   $dados= buscaClientePet($idCliente);
   
-$idPet= $_GET['idPet'];
-//   echo ($idCliente);
+// $idPet= $_GET['idPet'];
+// //   echo ($idCliente);
 
-  $dados= buscaClientePet($idPet);
+//   $dados= buscaClientePet($idPet);
   
-  $idHost = $_GET['idHost'];
-  $dados= buscaHost($idHost); 
+//   $idHost = $_GET['idHost'];
+//   $dados= buscaHost($idHost); 
+  $status = "Processamento";
+
+  if(isset( $_SESSION['agendar'])){
+
+    $status = "Aceitar";
+
+    unset($_SESSION['agendar']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +43,9 @@ $idPet= $_GET['idPet'];
     <title>Agendamento</title>
 </head>
 <body>
-<form method="post" action="control/recebeAgenda.php?idCliente=<?=$idCliente?>?idPet=<?=$idPet?>?idHost=<?=$idHost?>">
+<form method="post" action="control/recebeAgenda.php?status=<?=$status?>&idCliente=<?=$idCliente?>&idPet=<?=$idPet?>&idHost=<?=$idHost?>&modo=<?=$modo?>">
 
-<input value="" placeholder="nome" type="text" name="nome" id="nome"/>
+<!-- <input value="" placeholder="nome" type="text" name="nome" id="nome"/> -->
 
 
 <input value="" placeholder="cpf" type="text" name="cpf" id="cpf"/>
@@ -61,8 +75,49 @@ $idPet= $_GET['idPet'];
                         </select>
                         <input value="<?=$idCliente?>" placeholder="idCliente" type="text" name="idCliente" id="idCliente"/>   
                         <input value="<?=$idPet?>" placeholder="idPet" type="text" name="idPet" id="idPet"/>   
-                        <input value="<?=$idHost?>" placeholder="idHost" type="text" name="idHost" id="idHost"/>   
-            <input value="agendar" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
+                        <input value="<?=$idHost?>" placeholder="idHost" type="text" name="idHost" id="idHost"/>  
+                        <input value="<?=$nome?>" placeholder="nome" type="text" name="nome" id="nome"/>   
+                        <input value="<?=$cpf?>" placeholder="cpf" type="text" name="cpf" id="cpf"/>
+                        <input value="<?=$endereco?>" placeholder="endereco" type="text" name="endereco" id="endereco"/>   
+                        <input value="<?=$status?>" placeholder="status" type="text" name="status" id="status"/>   
+            <input value="<?=$modo?>" type="submit" name="inputConfirmarSenha" id="buttonProximo" class="buttonProximo"/>        
         </form>
+
+
+        <?php
+                $dados = exibirAgenda();
+                
+                while ($exibirAgenda = mysqli_fetch_assoc($dados))
+                {
+                ?>
+                <tr id="tblLinhas">
+                    <td class="tblColunas registros"><?=$exibirAgenda['nome']?></td>
+                    <br>
+                    <tr id="tblLinhas">
+                    <td class="tblColunas registros"><?=$exibirAgenda['valor']?></td>
+                    <br>
+                    <tr id="tblLinhas">
+                    <td class="tblColunas registros"><?=$exibirAgenda['dataInicial']?></td>
+                    <br>
+                    <tr id="tblLinhas">
+                    <td class="tblColunas registros"><?=$exibirAgenda['dataFinal']?></td>
+                    <br>
+                    <tr id="tblLinhas">
+                    <td class="tblColunas registros"><?=$exibirAgenda['cpf']?></td>
+                    <br>
+                    <tr id="tblLinhas">
+                    <td class="tblColunas registros"><?=$exibirAgenda['endereco']?></td>
+                    <br>
+                 <pre>
+
+         
+
+                        <a href="control/editaAgendamento.php?id=<?=$exibirAgenda['idServico']?>">
+                          <img src="img/edit.png" > 
+                        </a>
+
+                    <?php  
+                    }
+                ?>
 </body>
 </html>

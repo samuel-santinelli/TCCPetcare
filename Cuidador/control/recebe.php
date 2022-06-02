@@ -17,7 +17,6 @@ $moradia = (string) null;
 $preferencias = (string) null;
 $data = (string) null;
 $biografia = (string) null;
-$avaliacoes = (string) null;
  $idAgendaHost =  ( int )null;
 $idSexoHost =  ( int )null;
 $possuiAnimais = (int) 0;
@@ -28,9 +27,9 @@ $bairro = (string) null;
 $cep = (string) null;
 $complemento = (string) null;
 $cidade = (string) null;
-
+$valorHora = (double) null;
 $foto = (string) null; 
-
+$telefone = (string) null;
 
 if(isset($_GET['id'])){
     $id = (int) $_GET['id'];
@@ -53,14 +52,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $moradia = $_POST['inputMoradia'];
     $preferencias = $_POST['inputPreferencias'];
     $biografia = $_POST['inputBiografia'];
-    $avaliacoes=  $_POST['avaliacao'];
     $cep = $_POST['cep'];
     $endereco = $_POST['endereco'];
     $bairro = $_POST['bairro'];
     $cidade = $_POST['cidade'];
     $complemento = $_POST['complemento'];
     $numero = $_POST['numero'];
-
+    $valorHora = $_POST['valorHora'];
+    $telefone = $_POST['telefone'];
     if(isset( $_POST['possuiAnimais'])){
        $possuiAnimais = 1;
     } else{
@@ -123,7 +122,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 "preferencias" => $preferencias,
                 "moradia" => $moradia,
                 "limitacoes" => $limitacoes,
-                "avaliacao" => $avaliacoes,
                 "idSexoHost" => $idSexoHost,
                 "id" => $id,
                 "cep" => $cep,
@@ -131,7 +129,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                  "bairro"=>$bairro,
                  "cidade"=>$cidade,
                  "complemento"=>$complemento,
-                 "numero"=>$numero
+                 "numero"=>$numero,
+                 "valorHora" => $valorHora,
+                 "telefone" => $telefone
                
             
             );

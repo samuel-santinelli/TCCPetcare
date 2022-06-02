@@ -12,7 +12,15 @@ function buscarNomeCuidadores($nome){
 
     return $dados;
 }
-
+function buscarCuidadores($id)
+{
+   
+   $dados = buscarCuidador($id);
+    
+    return $dados;
+    
+    
+}
       
 function criarArrayHost($objeto)
 {
@@ -23,7 +31,7 @@ function criarArrayHost($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            "id" => $exibirDados['idHost'],
+            "idHost" => $exibirDados['idHost'],
             "nome" => $exibirDados['nome'],
             "dataNascimento" => $exibirDados['dataNascimento'],
             "cpf" => $exibirDados['cpf'],
@@ -36,14 +44,14 @@ function criarArrayHost($objeto)
             "preferencias" => $exibirDados['preferencias'],
             "moradia" => $exibirDados['moradia'],
             "limitacoes" => $exibirDados['limitacoes'],
-            "avaliacao" => $exibirDados['avaliacao'],
             "idSexoHost" =>$exibirDados['idSexoHost'],
             "cep" => $exibirDados['cep'],
             "endereco" => $exibirDados['endereco'],
             "bairro" => $exibirDados['bairro'],         
             "cidade"   => $exibirDados['cidade'],
             "complemento" => $exibirDados['complemento'],
-            "numero" => $exibirDados['numero']
+            "numero" => $exibirDados['numero'],
+            "valorHora" => $exibirDados['valorHora']
             
            
         );

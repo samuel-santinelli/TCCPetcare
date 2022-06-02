@@ -4,6 +4,7 @@
 
 require_once("vendor/autoload.php");
 require_once("../control/exibirAgenda.php");
+require_once('../control/recebeAgendaApi.php');
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
@@ -61,7 +62,7 @@ $app->post('/agendar', function($request, $response, $args){
           
 
          
-            require_once('../control/recebeAgendaApi.php');
+            
             if(inserirAgendaApi($dadosBodyJSON)){ 
                 return $response    ->withStatus(201)
                                     ->withHeader('Content-Type', 'application/json')
@@ -83,6 +84,57 @@ $app->post('/agendar', function($request, $response, $args){
     }
   
 });
+
+$app->put('/agendar/status/{id}', function($request, $response, $args){ 
+   
+
+    $contentType = $request-> getHeaderLine('Content-Type'); 
+    
+    
+    
+    if($contentType == 'application/json'){ 
+    
+    $dadosBodyJSON = $request-> getParsedBody();
+    
+    
+    
+    
+    if( $dadosBodyJSON == "" || $dadosBodyJSON == null || !isset($args['id']) || !is_numeric($args['id']) ) 
+    {
+        return $response    ->withStatus(406)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Conteudo enviado pelo body não contem dados validos"}');
+    }else
+    {
+    
+    $id = $args['id']; 
+    
+    
+    require_once('../control/recebeAgendaApi.php');
+    if(atualizarAgendamentoAPI($dadosBodyJSON,$id)){
+        return $response    ->withStatus(200)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Item atualizado com sucesso"}');
+    }
+    else{
+        return $response    ->withStatus(400)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Não foi possível salvar os dados, por favor conferir o body da mensagem"}');
+    }
+    
+    }
+    
+    
+    }
+    else{
+        return $response    ->withStatus(406)
+        ->withHeader('Content-Type', 'application/json')
+        ->write('{"message":"Formato de dados do header incompatível com o padrão json"}');
+    }
+    
+    });
+
+
 
 $app->run();
 

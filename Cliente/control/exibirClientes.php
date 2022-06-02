@@ -5,7 +5,15 @@ function exibirClientes(){
     $dadosListar = listarClientes();
     return $dadosListar;
 }
-
+function buscarClientes($id)
+{
+   
+   $dados = buscaCliente($id);
+    
+    return $dados;
+    
+    
+}
 function criarArrayCliente($objeto)
 {
     $cont = (int) 0;
@@ -15,7 +23,7 @@ function criarArrayCliente($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            "id" => $exibirDados['idCliente'],
+            "idCliente" => $exibirDados['idCliente'],
             "nome" => $exibirDados['nome'],
             "cpf" => $exibirDados['cpf'],
             "dataNascimento" => $exibirDados['dataNascimento'],

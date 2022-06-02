@@ -17,7 +17,11 @@
              idHost,
              idPet,
              idTipo,
-             idCliente
+             idCliente,
+             nome,
+             cpf,
+             endereco,
+             status
            
 
            
@@ -29,8 +33,11 @@
              ".$arrayAgenda['idHost'].",
              ".$arrayAgenda['idPet'].",
              ".$arrayAgenda['idTipo'].",
-             ".$arrayAgenda['idCliente']."
-             
+             ".$arrayAgenda['idCliente'].",
+             '".$arrayAgenda['nome']."',
+             '".$arrayAgenda['cpf']."',
+             '".$arrayAgenda['endereco']."',
+             '".$arrayAgenda['status']."'
             
           
 

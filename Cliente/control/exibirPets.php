@@ -1,3 +1,5 @@
+
+
 <?php
 
 // require_once("config/config.php");
@@ -8,11 +10,17 @@ function exibirPets(){
     $dados = listarPets();
     return $dados;
 }
-// function buscarNomeClientes($nome){
-//     $dados = buscarNome($nome);
 
-//     return $dados;
-// }
+function buscarPets($id)
+{
+   
+   $dados = buscaPet($id);
+    
+    return $dados;
+    
+    
+}
+
 function criarArrayPet($objeto)
 {
     $cont = (int) 0;
@@ -22,14 +30,12 @@ function criarArrayPet($objeto)
     {
         
         $arrayDados[$cont] = array( 
-            "id" => $exibirDados['idPet'],
+            "idPet" => $exibirDados['idPet'],
             "nome" => $exibirDados['nome'],
             "deficiencia" => $exibirDados['deficiencia'],
             "descricao" => $exibirDados['descricao'],
             "castrado" => $exibirDados['castrado'],
             "foto" => $exibirDados['foto'],
-            "dataNascimento" => $exibirDados['dataNascimento'],
-            "avaliacao" => $exibirDados['avaliacao'],
             "idRaca" =>$exibirDados['idRaca'],
             "idFase" =>$exibirDados['idFase'],
             "idEspecie" =>$exibirDados['idEspecie'],

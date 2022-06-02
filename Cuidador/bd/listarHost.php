@@ -63,4 +63,18 @@ function buscaHost($idHost){
   return $select;
 }
 
+function buscarCuidador($idHost){
+   
+  $sql = "select tblHost.*, tblSexoHost.idSexoHost from tblHost 
+  inner join tblSexoHost on tblSexoHost.idSexoHost = tblHost.idSexoHost
+  where tblHost.idHost =".$idHost;
+
+  $conexao = conexao();
+  // echo($sql);
+  // die;
+  $select = mysqli_query($conexao,$sql);
+
+  return $select;
+}
+
 ?>
