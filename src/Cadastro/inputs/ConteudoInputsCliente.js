@@ -28,7 +28,9 @@ const ConteudoInputsCliente = (props) => {
 
   const handleImageClienteSubmit = (e) => {
     if (e.target.files[0]) {
-     const imagem = imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+      const imagem = (imgRef.current.src = URL.createObjectURL(
+        e.target.files[0]
+      ));
       window.localStorage.setItem("imageCliente", imagem);
     }
     setImagem(e.target.files[0]);
@@ -165,7 +167,6 @@ const ConteudoInputsCliente = (props) => {
                 onChange={handleImageClienteSubmit}
                 value={user.foto}
               />
-
               <CameraAltIcon id="iconInputCamera" />
             </div>
           </div>

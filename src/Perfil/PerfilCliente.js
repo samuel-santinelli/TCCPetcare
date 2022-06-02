@@ -1,5 +1,5 @@
 import "./style/stylePerfilCliente.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { TiHome } from "react-icons/ti";
 import { BsPencil } from "react-icons/bs";
@@ -10,7 +10,13 @@ const PerfilCliente = (props) => {
   const [pet, setPet] = useState([""]);
 
   const imagePet = window.localStorage.getItem("imagePet");
-  const imageCliente = window.localStorage.getItem("imageCliente");
+  const imageCliente = window.localStorage.getItem("imageCliente").toString();
+  const bannerCLiente =
+    "https://png.pngtree.com/thumb_backfh260background20210207pngtree-simple-black-solid-color-background-image_556932jpg";
+  const foto =
+    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
+
+  console.log("a foto do perfil é", imageCliente);
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem("cliente"));
@@ -26,11 +32,24 @@ const PerfilCliente = (props) => {
       setPet(pet);
     }
   }, []);
-
   console.log("os dados do pet", pet);
 
-  const foto =
-    "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
+  const imgRef = useRef();
+  const [imagemProfile, setImagemProfile] = useState();
+
+  function handleImageClienteProfile(e, url, callback) {
+    if (e.target.files[0]) {
+      const imagem = (imgRef.current.src = URL.createObjectURL(
+        e.target.files[0]
+      ));
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.responseType = "blob";
+      window.localStorage.setItem("imageBannerCliente", imagem);
+    }
+    setImagemProfile(e.target.files[0]);
+    console.log("A imagem é", imagemProfile);
+  }
 
   return (
     <>
@@ -38,9 +57,22 @@ const PerfilCliente = (props) => {
         <div className="icon-close-home-profile">x</div>
       </Link>
       <div className="containerMainPerfilCliente">
-        <div className="containerBannerCliente" />
-        <div className="containerEditPerfil" />
-        <BsPencil className="iconPencil" />
+        <div className="containerInputBanner">
+          <input
+            type="file"
+            className="inputBanner"
+            onChange={handleImageClienteProfile}
+          />
+          <div className="containerPencilBanner">
+            <BsPencil className="iconPencil" color="green" />
+          </div>
+        </div>
+        <img
+          className="containerBannerCliente"
+          src={localStorage.getItem("imageBannerCliente")}
+          ref={imgRef}
+          alt=""
+        />
 
         <div className="containerPefilClienteInfo">
           <img
@@ -53,39 +85,38 @@ const PerfilCliente = (props) => {
             <input
               className="containerInputProfileCliente"
               value={profile[0].nome}
-              disabled
             />
             <label className="nameClienteProfile"> Seu email</label>
             <input
               className="containerInputProfileCliente"
               value={profile[0].email}
-              disabled
             />
             <label className="nameClienteProfile"> Data de Nascimento</label>
             <input
               className="containerInputProfileCliente"
               value={profile[0].dataNascimento}
-              disabled
             />
             <div>
               <label className="nameClienteProfile"> Endereço</label>
               <input
                 className="containerInputProfileCliente"
                 value={profile[0].endereco}
-                disabled
               />
               <label className="nameClienteProfile"> Bairro</label>
               <input
                 className="containerInputProfileCliente"
                 value={profile[0].endereco}
-                disabled
               />
               <label className="nameClienteProfile"> Numero da Casa</label>
               <input
                 className="containerInputProfileCliente"
                 value={profile[0].numero}
-                disabled
               />
+            </div>
+            <div className="containerSaveAlteratons">
+              <button className="buttonSaveAlterations">
+                Salvar Alterações
+              </button>
             </div>
           </div>
         </div>

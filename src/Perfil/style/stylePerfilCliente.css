@@ -27,7 +27,7 @@ html {
 }
 
 .containerMainPerfilCliente {
- height: 1296px;
+ height: 1366px;
  width: 180rem;
  margin-top: 5rem;
   display: flex;
@@ -40,8 +40,8 @@ html {
 .containerBannerCliente{
   height: 40rem;
   width: 180rem;
-  background-image: url("../../../images/bannerGolden.jpg");
   background-size: cover;
+  object-fit: cover;
 }
 
 .containerCardPerfilCliente{
@@ -53,6 +53,49 @@ html {
   position: absolute;
 }
 
+.containerInputBanner{
+  height: 20rem;
+  width: 180rem;
+  margin-top: 17rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.inputBanner{
+  position: absolute;
+  margin-top: 1.5rem;
+  opacity: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.containerPencilBanner{
+  height: 10rem;
+  width: 10rem;
+  margin-top: -2.5rem;
+  border-radius: 55px;
+  border: solid 4px #fff;
+  opacity: 45%;
+}
+
+.containerPencilBanner:hover{
+  height: 10rem;
+  width: 10rem;
+  margin-top: -2.5rem;
+  border-radius: 55px;
+  border: solid 4px #fff;
+  transition: 0.8s;
+  opacity: 85%;
+  cursor: pointer;
+}
+
+.iconPencil{ 
+  font-size: 3.4rem;
+  margin-top: 2.8rem;
+  position: absolute;
+  margin-left: 2.7rem;
+}
 
 .containerPefilClienteInfo{
   height: 30rem;
@@ -73,6 +116,7 @@ html {
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   object-fit: cover;
   background-size: cover;
+  background-color: #000;
   border-radius: 50%;
 }
 
@@ -111,15 +155,45 @@ html {
   margin-left: 2rem;
 }
 
+.containerSaveAlteratons{
+  height: 10rem;
+  width: 125rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.buttonSaveAlterations{
+  height: 5.5rem;
+  width: 30rem;
+  font-size: 2rem;
+  border-radius: 55px;
+  color: #fff;
+  background-color: #f28907;
+  border: solid 2px #fff;
+  cursor: pointer;
+}
+
+.buttonSaveAlterations:hover{
+  height: 5rem;
+  width: 25rem;
+  transition: 0.6s;
+  font-size: 2rem;
+  border-radius: 55px;
+  color: #F28907;
+  background-color: #fff;
+  border: solid 2px #F28907;
+}
+
 .containerInfoCardPetCuidador{
   height: 45rem;
   width: 170rem;
   min-width: 90rem;
-  margin-left: 5rem;
+  margin-left: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 85rem;
+  margin-top: 94rem;
   position: absolute;
   overflow-x: scroll;
     overflow-y: hidden;
@@ -216,21 +290,6 @@ html {
   width: 45rem;
   display: flex;
   flex-direction: row;
-}
-
-.containerEditPerfil{
-  height: 8rem;
-  width: 7.8rem;
-  position: absolute;
-  margin-left: 172.3rem;
-  border: solid 0.2px #fff;
-}
-
-.iconPencil{
-  position: absolute;
-  font-size: 3.4rem;
-  margin-top: 1vw;
-  margin-left: 174.5rem;
 }
 
 .icon-close-homeProfile{
