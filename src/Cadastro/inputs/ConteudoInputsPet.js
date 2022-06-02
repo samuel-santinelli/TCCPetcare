@@ -41,12 +41,11 @@ const InputsPet = ({ props }) => {
     deficiencia: 1,
     descricao: "",
     castrado: 1,
-    foto: "",
-    idRaca: 2,
+    idRaca: 1,
     idFase: 1,
     idEspecie: 1,
     comportamento: "",
-    idVacina: 2,
+    idVacina: 1,
     idPorte: 1,
     nomePorte: "",
     idCliente: idCliente,
@@ -59,7 +58,7 @@ const InputsPet = ({ props }) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) =>
-        window.localStorage.setItem("pets", JSON.stringify(res.data))
+        window.localStorage.setItem("idPet", JSON.stringify(res.data.id))
       );
     navigate("/Agendamento?idCliente=" + idCliente);
   };

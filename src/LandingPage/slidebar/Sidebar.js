@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 
 const Sidebar = ({ sidebar }) => {
   const [profile, setProfile] = useState([""]);
+  const idCliente = window.localStorage.getItem("idCliente")
+  console.log("o id do cliente é", idCliente);
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem("cliente"));
@@ -20,18 +22,19 @@ const Sidebar = ({ sidebar }) => {
   console.log(profile);
 
   const imageCliente = window.localStorage.getItem("imageCliente");
-  
+  const foto =
+  "https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png";
 
   return (
     <div className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
-      <Link to="/PerfilCliente">
-        <img src={imageCliente} className="imageSidebar" alt="" />
+      <Link to={"/PerfilCliente?idCliente=" + idCliente}>
+        <img src={imageCliente} className="imageSidebar" alt=""  />
 
         <li className="nameCuidadorSidebar">{profile[0].nome}</li>
 
         <AiOutlineSearch className="iconSidebar" />
       </Link>
-      <Link to="/Agendamento">
+      <Link to={"/Agendamento"}>
         <li className="nameLi">Buscar</li>
         <AiOutlineHistory className="iconSidebar" />
       </Link>

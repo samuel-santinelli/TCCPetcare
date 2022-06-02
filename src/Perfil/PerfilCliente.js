@@ -1,55 +1,74 @@
 import "./style/stylePerfilCliente.css";
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { TiHome } from "react-icons/ti";
 import { BsPencil } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const PerfilCliente = (props) => {
-  const [profile, setProfile] = useState([""]);
-  const [pet, setPet] = useState([""]);
+  const [profileData, setProfileData] = useState([""]);
+  const [petData, setPetData] = useState([""]);
+  const [querystring] = useSearchParams();
+  
+  const idCliente = querystring.get("idCliente");
+  const idPet = localStorage.getItem("idPet");
 
   const imagePet = window.localStorage.getItem("imagePet");
   const imageCliente = window.localStorage.getItem("imageCliente").toString();
-  const bannerCLiente =
-    "https://png.pngtree.com/thumb_backfh260background20210207pngtree-simple-black-solid-color-background-image_556932jpg";
+
+  const imgRef = useRef();
+  const [imagemProfile, setImagemProfile] = useState();
+  
   const foto =
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
-  console.log("a foto do perfil é", imageCliente);
+    const handleEditSubmit = (e) => {
+      axios.put(`http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`, profileData)
+      .then(res => {
+        console.log(res.data)
+    })
+    .catch(error => console.log(error))
+    };
 
-  useEffect(() => {
-    const profile = JSON.parse(localStorage.getItem("cliente"));
-    if (profile) {
-      setProfile(profile);
-    }
+    useEffect(() =>{
+    axios
+    .get(`http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`, profileData)
+    .then((res) => {setProfileData(res.data)
+    })
+    .catch(() => {
+      console.log("Deu erro ao buscar os dados do cliente");
+    });
   }, []);
-  console.log("os dados do cliente", profile);
+  
+    useEffect(() =>{
+    axios
+    .get(`http://localhost/Cuidador/Cliente/api/pets/${idPet}`, petData)
+    .then((res) => {setPetData(res.data)
+    })
+    .catch(() => {
+      console.log("Deu erro ao buscar os dados do pet");
+    });
+  }, []);
 
   useEffect(() => {
     const pet = JSON.parse(localStorage.getItem("pets"));
     if (pet) {
-      setPet(pet);
+      setPetData(pet);
     }
   }, []);
-  console.log("os dados do pet", pet);
 
-  const imgRef = useRef();
-  const [imagemProfile, setImagemProfile] = useState();
 
-  function handleImageClienteProfile(e, url, callback) {
+  function handleImageClienteProfile(e) {
     if (e.target.files[0]) {
       const imagem = (imgRef.current.src = URL.createObjectURL(
         e.target.files[0]
       ));
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", url, true);
-      xhr.responseType = "blob";
       window.localStorage.setItem("imageBannerCliente", imagem);
     }
     setImagemProfile(e.target.files[0]);
-    console.log("A imagem é", imagemProfile);
   }
+
 
   return (
     <>
@@ -64,7 +83,7 @@ const PerfilCliente = (props) => {
             onChange={handleImageClienteProfile}
           />
           <div className="containerPencilBanner">
-            <BsPencil className="iconPencil" color="green" />
+            <BsPencil className="iconPencil" color={"red"} />
           </div>
         </div>
         <img
@@ -77,47 +96,56 @@ const PerfilCliente = (props) => {
         <div className="containerPefilClienteInfo">
           <img
             className="cardFotoPerfilCliente"
-            alt="foto de Perfil"
+            alt=""
             src={imageCliente}
           />
+
           <div className="containerInfoProfile">
-            <label className="nameClienteProfile"> Seu nome</label>
-            <input
-              className="containerInputProfileCliente"
-              value={profile[0].nome}
-            />
-            <label className="nameClienteProfile"> Seu email</label>
-            <input
-              className="containerInputProfileCliente"
-              value={profile[0].email}
-            />
-            <label className="nameClienteProfile"> Data de Nascimento</label>
-            <input
-              className="containerInputProfileCliente"
-              value={profile[0].dataNascimento}
-            />
-            <div>
-              <label className="nameClienteProfile"> Endereço</label>
+            <form onSubmit={() => handleEditSubmit(profileData)}>
+              <label className="nameClienteProfile"> Seu nome</label>
               <input
                 className="containerInputProfileCliente"
-                value={profile[0].endereco}
+                value={profileData[0].nome}
+                onChange={(e) => setProfileData(e.target.value)}
               />
-              <label className="nameClienteProfile"> Bairro</label>
+              <label className="nameClienteProfile"> Seu email</label>
               <input
                 className="containerInputProfileCliente"
-                value={profile[0].endereco}
+                value={profileData[0].email}
+                onChange={(e) => setProfileData(e.target.value)}
               />
-              <label className="nameClienteProfile"> Numero da Casa</label>
+              <label className="nameClienteProfile"> Data de Nascimento</label>
               <input
                 className="containerInputProfileCliente"
-                value={profile[0].numero}
+                value={profileData[0].dataNascimento}
+                onChange={(e) => setProfileData(e.target.value)}
               />
-            </div>
-            <div className="containerSaveAlteratons">
-              <button className="buttonSaveAlterations">
-                Salvar Alterações
-              </button>
-            </div>
+              <div>
+                <label className="nameClienteProfile"> Endereço</label>
+                <input
+                  className="containerInputProfileCliente"
+                  value={profileData[0].endereco}
+                  onChange={(e) => setProfileData(e.target.value)}
+                />
+                <label className="nameClienteProfile"> Bairro</label>
+                <input
+                  className="containerInputProfileCliente"
+                  value={profileData[0].endereco}
+                  onChange={(e) => setProfileData(e.target.value)}
+                />
+                <label className="nameClienteProfile"> Numero da Casa</label>
+                <input
+                  className="containerInputProfileCliente"
+                  value={profileData[0].numero}
+                  onChange={(e) => setProfileData(e.target.value)}
+                />
+              </div>
+              <div className="containerSaveAlteratons">
+                <button className="buttonSaveAlterations" onClick={handleEditSubmit}>
+                  Salvar Alterações
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
@@ -126,11 +154,12 @@ const PerfilCliente = (props) => {
             <img
               className="containerFotoPerfilPet"
               src={imagePet}
-              alt="foto de perfil do pet"
+              alt=""
+              value={foto}
             />
-            <label className="containerNamePerfilPet">{pet.nome}</label>
-            <label className="containerRacaPerfilPet">{pet.raca}</label>
-            <div className="containerBioProfilePet">{pet.descricao}</div>
+            <label className="containerNamePerfilPet">{petData.nome}</label>
+            <label className="containerRacaPerfilPet">{petData.raca}</label>
+            <div className="containerBioProfilePet">{petData.descricao}</div>
           </div>
         </div>
       </div>
