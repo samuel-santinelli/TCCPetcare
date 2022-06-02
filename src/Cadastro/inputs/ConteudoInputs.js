@@ -63,6 +63,8 @@ const InputsIcon = (props) => {
     }
     setImagem(e.target.files[0]);
   };
+
+
   
 
   const listElements = () => {
@@ -90,7 +92,8 @@ const InputsIcon = (props) => {
         setValue("uf", data.uf);
         setValue("complement", data.complemento);
       });
-  };
+  }
+
 
   return (
     <>

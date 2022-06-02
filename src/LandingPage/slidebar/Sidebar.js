@@ -38,7 +38,7 @@ const Sidebar = ({ sidebar }) => {
         <li className="nameLi">Buscar</li>
         <AiOutlineHistory className="iconSidebar" />
       </Link>
-      <Link to="/HistoricoCliente">
+      <Link to={"/HistoricoCliente?idCliente=" + idCliente}>
         <li className="nameLi">Histórico</li>
         <FaClipboardList className="iconSidebar" />
       </Link>

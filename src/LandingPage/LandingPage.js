@@ -53,9 +53,6 @@ const LandingPage = () => {
     setSearchCuidadores(filterCuidadores);
   };
 
-  const [carousel, setCarousel] = useState();
-  const [like, setLike] = useState(false);
-
   return (
     <>
       <header>
