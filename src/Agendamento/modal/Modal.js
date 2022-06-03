@@ -14,7 +14,7 @@ const Modal = (props) => {
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   const cliente = JSON.parse(localStorage.getItem("cliente"));
-  const pet = JSON.parse(localStorage.getItem("pets"));
+  const pet = JSON.parse(localStorage.getItem("idPet"));
   const priceService = JSON.parse(localStorage.getItem("valueService"));
   const nomeCuidador = JSON.parse(localStorage.getItem("nomeCuidador"));
   const moradiaCuidador = JSON.parse(localStorage.getItem("moradiaCuidador"));
