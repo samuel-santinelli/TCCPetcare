@@ -12,6 +12,30 @@ $config = [
 
 $app = new \Slim\App($config);
 
+$app->get('/servicoHost/{id}', function($request, $response, $args){ 
+    $id = $args['id']; 
+ 
+    require_once("../control/exibirClientes.php");
+  
+    if($listDados = buscaClienteId($id)){
+     
+            if( $listDadosArray = criarArraySERVICO($listDados)){ 
+                     $listDadosJSON = criarJSONSERVICO($listDadosArray);
+            }
+    } 
+   
+    if( $listDadosArray){ 
+        return $response   ->withStatus(200) 
+                           ->withHeader('Content-Type', 'application/json')
+                           ->write($listDadosJSON); 
+
+    }else{
+                     return $response   ->withStatus(204); 
+    }
+ 
+
+});
+
 $app->get('/servicoHost', function($request, $response, $args){
     
     if($listar = exibirServico()){
