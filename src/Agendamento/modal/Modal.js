@@ -27,16 +27,19 @@ const Modal = (props) => {
 
   // console.log("o id do storage é", cliente[0].idCliente);
   // console.log("o id do pet é", pet.id);
+  // if(dataInicial - dataFinal){
+    
+  // }
 
-  const total = priceService * 2;
 
-  // console.log("total do serviço", total);
 
+
+  
   const [agendamento, setAgendamento] = useState({
     nome: "",
     endereco: "",
     cpf: "",
-    dataInicial: "",
+    dataInicial:"" ,
     dataFinal: "",
     idCliente: cliente[0].idCliente,
     idPet: pet,
@@ -45,18 +48,38 @@ const Modal = (props) => {
     valor: priceService,
   });
 
+
+  const dateIntial = new Date(agendamento.dataInicial).getDate()
+  const dateFinally = new Date(agendamento.dataFinal).getDate()
+
+  const resultPrice = dateFinally - dateIntial * priceService 
+
+  console.log("a data é", resultPrice)
+  // const total =( dataInicial);
+  
+  
+
+
   // .toString().replace(".", ",")
 
-  console.log(agendamento);
+  // console.log(" o agendamento é", agendamento.dataInicial);
+  // const resultDate = agendamento.dataInicial - agendamento.dataFinal
+  // console.log("result is é", typeof resultDate); 
 
+
+  console.log(agendamento);
+ 
   const handleSubmitAgendamento = (agendamento) => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/agendar", agendamento)
       .then((res) =>
         window.localStorage.setItem("agendamento", JSON.stringify(res.data))
       );
+     
     console.log("foi");
     alert("Agendamento realizado com sucesso!");
+  
+
   };
 
   const listServices = () => {
@@ -85,10 +108,10 @@ const Modal = (props) => {
 
             <div className="cardModal">
               <div className="containerInfoCuidadorAgendamento">
-                <iframe
+                {/* <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29276.363111143826!2d-46.88371138889647!3d-23.4768574223817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf03aaf6d062af%3A0x2c22de58cd7f17f1!2sAlphaville%2C%20Santana%20de%20Parna%C3%ADba%20-%20SP%2C%2006542-115!5e0!3m2!1spt-BR!2sbr!4v1640096190707!5m2!1spt-BR!2sbr"
                   className="mapCardAgendamentoModal"
-                />
+                /> */}
                 <div className="containerImageCuidadorAgendamento">
                   <img
                     className="imageCuidador"
@@ -216,7 +239,7 @@ const Modal = (props) => {
                   setAgendamento({ ...agendamento, valor: e.target.value })
                 }
               >
-                {priceService}
+                {resultPrice}
               </h3>
 
               <button
