@@ -155,6 +155,13 @@ main{
     margin-top: 0.3vw;
     
 }
+
+.iconBanner{
+    font-size: 3rem;
+    margin-left: -27rem;
+    margin-top: -7rem;
+}
+
 .pesquisa-icon::before{
     content:'';
     width: 30%;
@@ -201,19 +208,26 @@ main{
     }
 }
 
+.containerScrollCuidadores{
+    max-width:  100%;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 1rem;
+    overflow-x: auto;
+}
+
 #cuidadores-container{
     justify-content:center;
     display: flex;
     height: 470px;
-    min-width: 90vw;
+    display: flex;
     margin-top: 7rem;
     width: auto;
     flex-direction: row;
-    overflow-y: scroll;
 }
 
 .box1{
-    width: 399px;
+    width: 540px;
     height: 45rem;
     background-color: #e9e9e9;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -222,48 +236,16 @@ main{
 }
 .header-box1{
     height: 17rem;
-    width: 38.1rem;
+    width: 54.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("../../../images/bannerDog1.jpeg");
+    background-color: #c5c3c1;
     background-size: cover;
    
 }
 
-.header-box2{
-    height: 17rem;
-    width: 38.1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url("../../../images/bannerCuidador2.jpg");
-    background-size: cover;
-}
-
-.header-box3{
-    height: 17rem;
-    width: 38.1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url("../../../images/bannerCuidador3.jpeg");
-    background-size: cover;
-}
-
-.header-box4{
-    height: 17rem;
-    width: 38.1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url("../../../images/bannerCuidador4.jpeg");
-    background-size: cover;
-}
 
 .imageDashboardCuidador1{
     height: 13rem;
@@ -288,7 +270,545 @@ main{
 
 .nomeCuidadorLandingP{
     font-size: 2.4rem;
-    margin-left: 4.5vw;
+    margin-left: 11.5rem;
+}
+
+.moradiaCuidadorLandingP{
+    font-size: 1.8rem;
+    margin-top: 0.3rem;
+    margin-left: 4rem;
+    color: #000;
+    opacity: 50%;
+}
+
+.containerInfoCardScroll{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.biografiaCuidadorLandingP{
+    width: 55.8rem;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: #000;
+}
+
+
+.nomeCuidadorLandingPage{
+    height: 5rem;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nomeCuidadorLandingPage h7{
+    font-size: 3.8rem;
+    margin-top: 2rem;
+    color: #F28907;
+}
+
+.nomeCuidadorLandingPage h8{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.feedback{
+   height: 750px;
+   /* background-color:purple;
+     */
+}
+#linha-feedback{
+    height:150px;
+    /* background-color:gold; */
+    text-align: center;
+    font-size: 62px;
+    padding-top: 105px;
+    color: #F28907;
+}
+#container-feedback{
+    height: 750px;
+    display: flex;
+    flex-direction: row;
+    /* background-color: red; */
+}
+#div-form-feedback{
+    width: 50%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.frmfeedback{
+    /* width: 500px; */
+    margin-left: 130px;
+    margin-top: 50px;
+}
+.input-feedback{ 
+    height: 70px;
+    width:450px;
+    border: none;
+    outline: none;
+    color: #000;
+    border-style: none;
+    list-style: none;
+    border-bottom: 2px solid #F28907;
+    margin-bottom: 50px;
+    padding-left: 16px;
+    /* background-color: aqua; */
+}
+.input-feedback-mensagem{
+    height: 240px;
+    width:450px;
+    outline: none;
+    border-style: none;
+    list-style: none;
+    border: 2px solid #F28907;
+    border-radius: 21px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    padding-left: 16px;
+}
+.input-feedback-enviar{
+    width: 190px;
+    height: 55px;
+    background-color: #F28907;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    border: none;
+    border-radius: 21px;
+    color: white;
+
+}
+.img-feedback{
+    height: 72rem;
+    width: 76rem;
+    margin-top: 2vw;
+    background-image: url("../../../images/feedbackImage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Conteudo da main se encerra aqui */
+
+/* Conteudo do header se inicia aqui */
+header{
+    width: 100%;
+    height: 210vh;
+    display: flex;
+    
+    flex-direction: column;
+    background-image: url('../../../images/banner.jpeg');
+    padding-bottom: 51rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+}
+
+#parteSuperior{
+    height: 50px;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.boxBotao{
+    width: 451px;
+    height: inherit;
+    gap: 20px;
+    display: flex;
+}
+
+#login-input{
+    width: 120px;
+    height: 5.5rem;
+    border-style: none;
+    background-color: #F28907;
+    border-radius: 21px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+}
+
+#cadastro-input{
+    width: 180px;
+    height: 5.5rem;
+    border-style: none;
+    background-color: #F28907;
+    border-radius: 21px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+}
+
+#parteMeio{
+    width: inherit;
+    height: 210px;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 300px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 44px;
+    margin-top: 38px;
+    line-height: 60px;
+    font-weight: 700;
+    /* justify-content: center; */
+}
+#div-texto{
+    position: absolute;
+    width: 544px;
+    height: 172px;
+    margin-top: 10vw;
+    color: #e9e9e9;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+    font-size: 4.9rem;
+    
+}
+
+#parteInferior{
+    width: inherit;
+    height: 100px;
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 500px;
+}
+
+#Agendar-agora{
+    width: 35rem;
+    height: 60px;
+    border-style: none;
+    background-color: #F28907;
+    border-radius: 21px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+    margin-top: 25rem;
+;
+    
+}
+
+/* .texto-header{
+    float: right;
+    margin-right: 100px;
+
+    color: white;
+    font-size: larger;
+    float: left;
+}
+
+@media (max-width: 720px){
+    header{
+        
+    }
+} */
+
+/* Conteudo do header se se encerra aqui */
+
+/* Conteudo do body se inicia aqui */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: aqua; */
+}
+
+/* Conteudo do body se encerra aqui *//* Conteudo da main se inicia aqui */
+
+main{
+    width: 100%;
+    height: 2700px;
+    background-color: #fff;
+
+}
+.box-container{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+    border-radius: 21px;
+    width: 93%;
+    height: 480px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+}
+
+.img-box-container{
+    height: 70rem;
+    width: 65rem;
+    min-width: 60rem;
+    margin-left: 6rem;
+    background-size: cover;
+    background-image: url("../../../images/carrouseSlideImage.png");
+}
+
+.texto-container{
+    width: 42rem;
+    height: 30rem;
+    margin-left: 12rem;
+    margin-top: 2vw;
+}
+
+.texto-superior{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    margin-top: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.tituloPet-servico{
+    /* width: 10%; */
+    height: inherit;
+    color: black;
+    text-align: center;
+    font-size: 6rem;
+}
+
+.buttonCarrosel{
+    height: 5rem;
+    width: 5rem;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    border-radius: 100%;
+    background-color: #F28907;
+    cursor: pointer;
+}
+
+.buttonCarroselSec{
+    height: 5rem;
+    width: 5rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    border-radius: 100%;
+    background-color: #c1b8b8;
+    cursor: pointer;
+}
+
+.buttonCarroselSec:hover{
+    background-color: #F28907;
+    cursor: pointer;
+}
+
+.containerButtonCarrosel{
+    height: 10rem;
+    width: 25rem;
+    margin-left: 10.3rem;
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.tituloHome-servico{
+    /* width: 10%; */
+    height: inherit;
+    color: #F28907;
+    text-align: center;
+    font-size: 6rem;
+}
+
+
+.texto-meio{
+    margin-top: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    line-height: 4.1rem;
+}
+
+.box-container2{
+    height:200px;
+    text-align: center;
+    font-size: 32px;
+    padding-top: 7rem;
+}
+#text-center{
+    color:black;
+    font-size: 2em;
+}
+#text-center2{
+    color: #F28907;
+    font-size: 2em;
+}
+.box-container3{
+    height: 550px;
+    /* background-color: aqua; */
+}
+#div-input{
+    height: 80px;
+    /* background-color:blue; */
+}
+#input-pesquisa{
+    width: 163rem;
+    height: 5.5rem;
+    border-style: none;
+    list-style: none;
+    border-radius: 21px;
+    margin-left: 9rem;
+    padding-left: 5.4rem;
+    font-size: 2.7rem;
+    display: flex;
+    outline: none;
+    border:none;
+    background-color: #e9e9e9;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
+}
+.pesquisa-icon{
+    font-size: 4.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 10rem;
+    margin-top: 0.3vw;
+    
+}
+
+.iconBanner{
+    font-size: 3rem;
+    margin-left: -27rem;
+    margin-top: -7rem;
+}
+
+.pesquisa-icon::before{
+    content:'';
+    width: 30%;
+    height: 30%;
+    border:4px solid #F28907;
+    border-radius: 50%;
+}
+.pesquisa-icon::after{
+    content: "";
+    width: 25%;
+    height: 4px;
+    background-color: #F28907;
+    border-radius: 50%;
+}
+
+.mouse{
+    width: 15rem;
+    height: 50px;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    position: absolute;
+    border: 3px solid #F28907;
+    border-radius: 20px;
+    display: flex;
+}
+
+.mouse-wheel{
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: auto;
+    animation: move-wheel 1s linear infinite;
+}
+
+@keyframes move-wheel{
+    0% {
+        opacity: 0;
+        transform: translateZ(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(5rem)
+    }
+}
+
+.containerScrollCuidadores{
+    max-width:  100%;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 1rem;
+    overflow-x: auto;
+}
+
+#cuidadores-container{
+    justify-content:center;
+    display: flex;
+    height: 470px;
+    display: flex;
+    margin-top: 7rem;
+    width: auto;
+    flex-direction: row;
+}
+
+.box1{
+    width: 540px;
+    height: 45rem;
+    background-color: #e9e9e9;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.header-box1{
+    height: 17rem;
+    width: 54.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #c5c3c1;
+    background-size: cover;
+   
+}
+
+
+.imageDashboardCuidador1{
+    height: 13rem;
+    width: 13rem;
+    margin-top: 14rem;
+    background-size: cover;
+    border-radius: 100%;
+    
+}
+
+.containerScrollLandingP{
+    height: 40rem;
+    width: 70rem;
+    padding-top: 20rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nomeCuidadorLandingP{
+    font-size: 2.4rem;
+    margin-left: 11.5rem;
 }
 
 .moradiaCuidadorLandingP{
@@ -300,10 +820,11 @@ main{
 }
 
 .biografiaCuidadorLandingP{
-    width: 38rem;
+    width: 48.8rem;
     font-size: 1.7rem;
-    margin-left: 3vw;
-    margin-top: 0.5rem;
+    text-align: center;
+    margin-left: 9rem;
+    margin-top: 1rem;
     color: #000;
 }
 
@@ -339,7 +860,7 @@ main{
     /* background-color:gold; */
     text-align: center;
     font-size: 62px;
-    padding-top: 50px;
+    padding-top: 105px;
     color: #F28907;
 }
 #container-feedback{

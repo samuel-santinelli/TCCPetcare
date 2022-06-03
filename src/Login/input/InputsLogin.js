@@ -15,27 +15,47 @@ const InputsLogin = (props) => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const { email, senha } = userLogin;
+    const { email, senha, buttonSend } = userLogin;
 
     console.log("email", email, "senha", senha);
+
+    // buttonSend.addEventListener("click", () => {
+    //   alert("foi jonatao")
+      
+    // })
+
+
 
     axios
       .get(
         // ISSO JAMAAAAAAAIS PODE SER UM GET
         `http://localhost/Cuidador/Cliente/api/cliente/login?email=${email}&senha=${senha}`,
+        
+       
         {
+          
           email: email,
           senha: senha,
+          
         }
+        
+     
       )
+
       .then((res) => {
         console.log("O cliente é", res.data[0].idCliente);
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
         navigate("/BoasVindas?idCliente=" + res.data[0].idCliente);
-        window.localStorage.setItem("idCliente", res.data[0].idCliente)
+        alert("Seja bem vindo!!!");
       })
       .catch((e) => {
         console.error("Erro", e);
+        if(email === "" || senha === ""){
+          alert("Preencha todos os campos");
+        }else{
+          alert("Email ou senha invalidos!!!");
+        }
+       
       });
   };
 
@@ -71,12 +91,12 @@ const InputsLogin = (props) => {
             />
           </div>
           <div id="containerButton">
-            <input
-              value="Entre Agora"
+            <button
               type="submit"
               id="buttonProximo"
+              value={userLogin.buttonSend}
               className="button"
-            />
+            >Entre Agora</button>
           </div>
         </div>
       </form>

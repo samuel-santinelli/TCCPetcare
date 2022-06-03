@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { FiCameraOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
-import {BsFillHandIndexFill} from "react-icons/bs"
+import { BsFillHandIndexFill } from "react-icons/bs";
 import ButtonInfo from "./buttonInfo/ButtonInfo";
 import Toolbar from "./slidebar/ToolBar";
-import styleLandingPage from "./style/styleLandingPage.css";
+import "./style/styleLandingPage.css";
 import Sidebar from "./slidebar/Sidebar";
 import Backdrop from "./slidebar/Backdrop";
 
@@ -113,36 +113,42 @@ const LandingPage = () => {
           </div>
           <div>
             <span className="mouse">
-              <BsFillHandIndexFill className="mouse-wheel"/>
+              <BsFillHandIndexFill className="mouse-wheel" />
             </span>
           </div>
-          <div id="cuidadores-container">
-            {searchCuidadores.map((cuidadorLandingP, key) => (
-              <div className="box1" key={key}>
-                <div className="header-box1">
-                  <>
-                    <div className="containerScrollLandingP">
-                      <img
-                        className="imageDashboardCuidador1"
-                        src={imagePerson}
-                        alt=""
-                      />
-                      <label className="nomeCuidadorLandingP">
-                        {cuidadorLandingP.nome}
-                      </label>
-                      <label className="moradiaCuidadorLandingP">
-                        {cuidadorLandingP.moradia} ({cuidadorLandingP.cidade})
-                      </label>
-                      <label className="biografiaCuidadorLandingP">
-                        {cuidadorLandingP.biografia}
-                      </label>
-                    </div>
+          <div className="containerScrollCuidadores">
+            <div id="cuidadores-container">
+              {searchCuidadores.map((cuidadorLandingP, key) => (
+                <div className="box1" key={key}>
+                  
+                  <div className="header-box1">
+                  {/* <FiCameraOff className="iconBanner" /> */}
+                    <>
+                      <div className="containerScrollLandingP">
+                        <img
+                          className="imageDashboardCuidador1"
+                          src={imagePerson}
+                          alt=""
+                        />
+                        <div className="containerInfoCardScroll">
+                        <label className="nomeCuidadorLandingP">
+                          {cuidadorLandingP.nome}
+                        </label>
+                        <label className="moradiaCuidadorLandingP">
+                          {cuidadorLandingP.moradia} ({cuidadorLandingP.cidade})
+                        </label>
+                        <label className="biografiaCuidadorLandingP">
+                          {cuidadorLandingP.biografia}
+                        </label>
+                        </div>
+                      </div>
 
-                    <ButtonInfo />
-                  </>
+                      <ButtonInfo />
+                    </>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <div className="feedback">
