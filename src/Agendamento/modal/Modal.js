@@ -39,7 +39,7 @@ const Modal = (props) => {
     dataInicial: "",
     dataFinal: "",
     idCliente: cliente[0].idCliente,
-    idPet: pet.id,
+    idPet: pet,
     idHost: idHost,
     idTipo: 1,
     valor: priceService,

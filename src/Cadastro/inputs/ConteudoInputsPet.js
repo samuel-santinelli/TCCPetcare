@@ -58,7 +58,7 @@ const InputsPet = ({ props }) => {
     axios
       .post("http://localhost/Cuidador/Cliente/api/pets", pet)
       .then((res) =>
-        window.localStorage.setItem("idPet", JSON.stringify(res.data.id))
+        window.localStorage.setItem("idPet", JSON.parse(res.data.id))
       );
     navigate("/Agendamento?idCliente=" + idCliente);
   };
