@@ -11,18 +11,11 @@ const PerfilCliente = (props) => {
   const [petData, setPetData] = useState([""]);
   const [querystring] = useSearchParams();
 
+  const [url, setUrl] = useState([])
+  console.log(url);
+
   const idCliente = querystring.get("idCliente");
   const idPet = localStorage.getItem("idPet");
-
-  const imagePet = window.localStorage.getItem("imagePet");
-  const imageCliente = window.localStorage.getItem("imageCliente").toString();
-
-  
-  const imgRef = useRef();
-  const imgRefProfile = useRef();
-  
-  const [imagemBannerProfile, setImagemBannerProfile] = useState();
-  const [imagePerfil, setImagemPerfil] = useState();
 
   const foto =
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
@@ -49,13 +42,12 @@ const PerfilCliente = (props) => {
       )
       .then((res) => {
         setProfileData(res.data);
+        setUrl(res.data.foto)
       })
       .catch(() => {
         console.log("Deu erro ao buscar os dados do cliente");
       });
   }, []);
-
-  
 
   useEffect(() => {
     axios
@@ -70,27 +62,6 @@ const PerfilCliente = (props) => {
   console.log("os dados do pet", petData);
   console.log("os dados do cliente", profileData);
 
-  function handleFotoBannerCliente(e) {
-    if (e.target.files[0]) {
-      const imagem = (imgRef.current.src = URL.createObjectURL(
-        e.target.files[0]
-      ));
-      window.localStorage.setItem("imageBannerCliente", imagem);
-    }
-    setImagemBannerProfile(e.target.files[0]);
-  }
-
-  const handleFotoProfileCliente = (e) => {
-    if (e.target.files[0]) {
-
-      const imageProfile = (imgRefProfile.current.src = URL.createObjectURL(e.target.files[0]));
-      console.log("a foto do cliente", imageProfile);
-      window.localStorage.setItem("imageCliente", imageProfile)
-    }
-    setImagemPerfil(e.target.files[0]);
-  };
-  
-
   return (
     <>
       <Link to={"../"}>
@@ -101,7 +72,6 @@ const PerfilCliente = (props) => {
           <input
             type="file"
             className="inputBanner"
-            onChange={handleFotoBannerCliente}
           />
           <div className="containerPencilBanner">
             <BsPencil className="iconPencil" color={"red"} />
@@ -109,15 +79,23 @@ const PerfilCliente = (props) => {
         </div>
         <img
           className="containerBannerCliente"
-          src={localStorage.getItem("imageBannerCliente")}
-          ref={imgRef}
           alt=""
         />
         <div className="containerPefilClienteInfo">
+          <img
+            className="cardFotoPerfilCliente"
+            alt={profileData[0].foto}
+            src={profileData[0].foto}
+          />
+          <input
+            className="imgIputProfile"
+            type="file"
           
-          <img className="cardFotoPerfilCliente" alt="" ref={imgRefProfile} src={imageCliente}/>
-          <input className="imgIputProfile" type="file" onChange={handleFotoProfileCliente} />
-          <div className="iconInputCameraProfile"> <BsPencil className="iconPrice"/></div>
+          />
+          <div className="iconInputCameraProfile">
+            {" "}
+            <BsPencil className="iconPrice" />
+          </div>
           <div className="containerInfoProfile">
             <form onSubmit={() => handleEditSubmit(profileData)}>
               <label className="nameClienteProfile"> Seu nome</label>
@@ -174,9 +152,8 @@ const PerfilCliente = (props) => {
           <div className="containerPetInfoPet">
             <img
               className="containerFotoPerfilPet"
-              src={imagePet}
+              src={petData[0].foto}
               alt=""
-              value={foto}
             />
             <label className="containerNamePerfilPet">{petData[0].nome}</label>
             <label className="containerRacaPerfilPet">{petData[0].raca}</label>

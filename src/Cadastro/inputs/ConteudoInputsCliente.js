@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -15,34 +15,20 @@ import InputMask from "react-input-mask";
 
 const ConteudoInputsCliente = (props) => {
   const navigate = useNavigate();
+  const [selectedFile, setSelectedFile] = useState([])
 
-  // const nome = document.getElementById("nome");
-  // const dataNascimento = document.getElementById("dataNascimento");
-  // const email = document.getElementById("email");
+  const data = new FormData()
+  data.append('file', selectedFile)
+  console.log(data);
+
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
-
-  const imgRef = useRef();
-
-  const [imagem, setImagem] = useState(null);
-
-  const handleImageClienteSubmit = (e) => {
-    if (e.target.files[0]) {
-      const imagem = (imgRef.current.src = URL.createObjectURL(
-        e.target.files[0]
-      ));
-      window.localStorage.setItem("imageCliente", imagem);
-    }
-    setImagem(e.target.files[0]);
-    console.log("A imagem é", imagem);
-  };
-  console.log(imgRef.current);
 
   const [user, setUser] = useState({
     nome: "",
     cpf: "",
     dataNascimento: "",
-    foto: "",
+    foto: data,
     email: "",
     senha: "",
     telefone: "",
@@ -56,22 +42,10 @@ const ConteudoInputsCliente = (props) => {
     numero: "",
   });
 
-  // Function para validar se ele está preenchido
-  function receivedAgendamento(e) {
-    if (user.process === "PROCESSAMENTO") {
-      e.preventDefault();
-    } else {
-      if (user.process === "ACEITO") {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-
   console.log(user);
-
   const handleUserSubmit = (user) => {
+     
+
     if (
       user.nome === "" ||
       user.cpf === "" ||
@@ -80,10 +54,6 @@ const ConteudoInputsCliente = (props) => {
       user.senha === "" ||
       user.telefone === "" ||
       user.idSexo === "" ||
-      // user.cep === "" ||
-      // user.endereco === "" ||
-      // user.bairro === "" ||
-      // user.cidade === "" ||
       user.numero === ""
     ) {
       alert("Preencha todos os campos");
@@ -101,6 +71,7 @@ const ConteudoInputsCliente = (props) => {
       }
     }
   };
+
 
   function validate(e) {
     const passwordValue = senha.value.trim();
@@ -157,15 +128,15 @@ const ConteudoInputsCliente = (props) => {
         <div className="containerMainInputsCliente">
           <div id="containerInput">
             <div id="containerBorderImage">
-              <img className="imgPreview" alt="" ref={imgRef} />
               <input
                 type="file"
                 name="inputImage"
                 className="inputImage"
                 accept="image/jpeg, image/jpg, image/png"
                 id="foto"
-                onChange={handleImageClienteSubmit}
-                value={user.foto}
+                onChange={(e) => setUser({ ...user, foto: e.target.files[0]})}
+                // onChange={e => setSelectedFile(e.target.files[0])}
+ 
               />
               <CameraAltIcon id="iconInputCamera" />
             </div>
