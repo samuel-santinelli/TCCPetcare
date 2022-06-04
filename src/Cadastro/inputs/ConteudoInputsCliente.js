@@ -255,9 +255,10 @@ const ConteudoInputsCliente = (props) => {
           </div>
           <div id="contInputsPet">
             <AssignmentIndIcon id="iconInputLabel" />
-            <input
+            <InputMask
               label="CPF"
               id="cpf"
+              mask="99999.999"
               value={user.cpf}
               className="containerInputCpf"
               placeholder="CPF"

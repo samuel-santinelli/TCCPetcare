@@ -13,7 +13,7 @@ const Modal = (props) => {
   const foto =
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
-  const cliente = JSON.parse(localStorage.getItem("cliente"));
+  const idCliente = JSON.parse(localStorage.getItem("idCliente"));
   const pet = JSON.parse(localStorage.getItem("idPet"));
   const priceService = JSON.parse(localStorage.getItem("valueService"));
   const nomeCuidador = JSON.parse(localStorage.getItem("nomeCuidador"));
@@ -23,63 +23,51 @@ const Modal = (props) => {
     localStorage.getItem("biografiaCuidador")
   );
 
-  
-
   // console.log("o id do storage é", cliente[0].idCliente);
   // console.log("o id do pet é", pet.id);
   // if(dataInicial - dataFinal){
-    
+
   // }
 
-
-
-
-  
   const [agendamento, setAgendamento] = useState({
     nome: "",
     endereco: "",
     cpf: "",
-    dataInicial:"" ,
+    dataInicial: "",
     dataFinal: "",
-    idCliente: cliente[0].idCliente,
+    idCliente: idCliente,
     idPet: pet,
     idHost: idHost,
     idTipo: 1,
     valor: priceService,
+    status: "PROCESSO"
   });
 
+  const dateIntial = new Date(agendamento.dataInicial).getDate();
+  const dateFinally = new Date(agendamento.dataFinal).getDate();
 
-  const dateIntial = new Date(agendamento.dataInicial).getDate()
-  const dateFinally = new Date(agendamento.dataFinal).getDate()
+  const resultPrice = dateFinally - dateIntial * priceService;
 
-  const resultPrice = dateFinally - dateIntial * priceService 
-
-  console.log("a data é", resultPrice)
+  console.log("a data é", resultPrice);
   // const total =( dataInicial);
-  
-  
-
 
   // .toString().replace(".", ",")
 
   // console.log(" o agendamento é", agendamento.dataInicial);
   // const resultDate = agendamento.dataInicial - agendamento.dataFinal
-  // console.log("result is é", typeof resultDate); 
-
+  // console.log("result is é", typeof resultDate);
 
   console.log(agendamento);
- 
+
   const handleSubmitAgendamento = (agendamento) => {
     axios
       .post("http://localhost/Cuidador/Cuidador/api/agendar", agendamento)
       .then((res) =>
         window.localStorage.setItem("agendamento", JSON.stringify(res.data))
       );
-     
+
     console.log("foi");
     alert("Agendamento realizado com sucesso!");
-  
-
   };
 
   const listServices = () => {
@@ -96,7 +84,6 @@ const Modal = (props) => {
 
   function agendamentoProcess(e) {
     setMessageAgendamento(!messageAgendamento);
-   
   }
 
   return (
@@ -246,7 +233,8 @@ const Modal = (props) => {
                 type="submit"
                 id="submitAgendamento"
                 className="InputConfirmarAgendamento"
-                onClick={agendamentoProcess}>
+                onClick={agendamentoProcess}
+              >
                 {messageAgendamento
                   ? "Confirmar Agendamento"
                   : "Agendamento Realizado"}

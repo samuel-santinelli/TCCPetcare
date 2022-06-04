@@ -15,47 +15,35 @@ const InputsLogin = (props) => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const { email, senha, buttonSend } = userLogin;
+    const { email, senha } = userLogin;
 
     console.log("email", email, "senha", senha);
-
-    // buttonSend.addEventListener("click", () => {
-    //   alert("foi jonatao")
-      
-    // })
-
-
 
     axios
       .get(
         // ISSO JAMAAAAAAAIS PODE SER UM GET
         `http://localhost/Cuidador/Cliente/api/cliente/login?email=${email}&senha=${senha}`,
-        
-       
+
         {
-          
           email: email,
           senha: senha,
-          
         }
-        
-     
       )
 
       .then((res) => {
         console.log("O cliente é", res.data[0].idCliente);
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
+        window.localStorage.setItem("idCliente", JSON.parse(res.data[0].idCliente));
         navigate("/BoasVindas?idCliente=" + res.data[0].idCliente);
         alert("Seja bem vindo!!!");
       })
       .catch((e) => {
         console.error("Erro", e);
-        if(email === "" || senha === ""){
+        if (email === "" || senha === "") {
           alert("Preencha todos os campos");
-        }else{
+        } else {
           alert("Email ou senha invalidos!!!");
         }
-       
       });
   };
 
@@ -96,7 +84,9 @@ const InputsLogin = (props) => {
               id="buttonProximo"
               value={userLogin.buttonSend}
               className="button"
-            >Entre Agora</button>
+            >
+              Entre Agora
+            </button>
           </div>
         </div>
       </form>
