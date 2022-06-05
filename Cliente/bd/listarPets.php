@@ -1,3 +1,4 @@
+
 <?php
 
 // require_once("../config/config.php");
@@ -19,11 +20,7 @@ function listarPets(){
 function buscaPet($idPet){
    
     $sql = "select tblPets.* from tblPets
-    inner join tblEspecies
-      on tblEspecies.idEspecie = tblPets.idEspecie inner join tblRacas on tblRacas.idRaca = tblPets.idRaca 
-      inner join tblFases on tblFases.idFase = tblPets.idFase 
-      inner join tblClientes on tblClientes.idCliente = tblPets.idCliente
-      inner join tblVacinas on tblVacinas.idVacina = tblPets.idVacina
+   
       where tblPets.idPet =".$idPet;
     
     $conexao = conexao();
@@ -49,3 +46,4 @@ function buscaPet($idPet){
 // }
 
 ?>
+

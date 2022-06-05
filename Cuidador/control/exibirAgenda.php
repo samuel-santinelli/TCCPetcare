@@ -29,7 +29,8 @@ function criarArrayAgenda($objeto)
             "idHost" =>$exibirDados['idHost'],
             "idPet" =>$exibirDados['idPet'],
             "idTipo" =>$exibirDados['idTipo'],
-            "idCliente" =>$exibirDados['idCliente']
+            "idCliente" =>$exibirDados['idCliente'],
+            "status" =>$exibirDados['status']
            
         );
 

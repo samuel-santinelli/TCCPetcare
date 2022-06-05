@@ -34,7 +34,9 @@ function criarArraySERVICO($objeto)
             "idCliente" => $exibirDados['idCliente'],
             "nome" =>$exibirDados['nome'],
             "cpf" =>$exibirDados['cpf'],
-            "endereco" =>$exibirDados['endereco']
+            "endereco" =>$exibirDados['endereco'],
+            "nomeHost" =>$exibirDados['nomeHost'],
+            "nomePet" =>$exibirDados['nomePet']
         );
 
         $cont +=1; 

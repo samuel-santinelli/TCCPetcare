@@ -11,7 +11,29 @@ $config = [
 ];
 
 $app = new \Slim\App($config);
+$app->get('/historico/{id}', function($request, $response, $args){ 
+    $id = $args['id']; 
+ 
 
+    require_once("../control/exibirHost.php");
+    if($listDados = buscarCuidadoresId($id)){
+     
+            if( $listDadosArray = criarArrayHistorico($listDados)){ 
+                     $listDadosJSON = criarJSONHistorico($listDadosArray);
+            }
+    } 
+   
+    if( $listDadosArray){ 
+        return $response   ->withStatus(200) 
+                           ->withHeader('Content-Type', 'application/json')
+                           ->write($listDadosJSON); 
+
+    }else{
+                     return $response   ->withStatus(204); 
+    }
+ 
+
+});
 $app->get('/historico', function($request, $response, $args){
     
     if($listar = exibirHistorico()){

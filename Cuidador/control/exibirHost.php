@@ -21,6 +21,17 @@ function buscarCuidadores($id)
     
     
 }
+function buscarCuidadoresId($id)
+{
+   
+   $dados = buscaHostId($id);
+    
+    return $dados;
+    
+    
+}
+
+
       
 function criarArrayHost($objeto)
 {
@@ -51,8 +62,8 @@ function criarArrayHost($objeto)
             "cidade"   => $exibirDados['cidade'],
             "complemento" => $exibirDados['complemento'],
             "numero" => $exibirDados['numero'],
-            "valorHora" => $exibirDados['valorHora'],
-            "telefone" => $exibirDados['telefone']            
+            "valorHora" => $exibirDados['valorHora']
+            
            
         );
 

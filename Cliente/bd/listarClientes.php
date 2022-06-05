@@ -22,12 +22,31 @@ function buscaCliente($idCliente){
       where tblClientes.idCliente =".$idCliente;
   
     $conexao = conexao();
-    echo($sql);
-    die;
+    // echo($sql);
+    // die;
     $select = mysqli_query($conexao,$sql);
   
     return $select;
   }
+
+
+  function buscaClienteId($idCliente){
+   
+    $sql = "select tblServico.*, tblClientes.*, tblPets.nome as nomePet, tblHost.nome as nomeHost, tblTipos.nomeTipo as nomeTipo from tblServico
+    inner join tblPets
+      on tblPets.idPet = tblServico.idPet inner join tblHost on tblHost.idHost = tblServico.idHost 
+      inner join tblClientes on tblClientes.idCliente = tblServico.idCliente
+      inner join tblTipos on tblTipos.idTipo = tblServico.idTipo
+      where tblClientes.idCliente =".$idCliente;
+  
+    $conexao = conexao();
+    // echo($sql);
+    // die;
+    $select = mysqli_query($conexao,$sql);
+  
+    return $select;
+  }
+
 
   function buscarCliente($email)
 {

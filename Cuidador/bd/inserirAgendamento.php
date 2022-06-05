@@ -20,7 +20,8 @@
              idCliente,
              nome,
              cpf,
-             endereco
+             endereco,
+             status
            
 
            
@@ -35,7 +36,8 @@
              ".$arrayAgenda['idCliente'].",
              '".$arrayAgenda['nome']."',
              '".$arrayAgenda['cpf']."',
-             '".$arrayAgenda['endereco']."'
+             '".$arrayAgenda['endereco']."',
+             '".$arrayAgenda['status']."'
             
           
 

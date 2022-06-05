@@ -20,9 +20,15 @@ function criarArrayHistorico($objeto)
             "valor" => $exibirDados['valor'],
             "dataInicial" => $exibirDados['dataInicial'],
             "dataFinal" => $exibirDados['dataFinal'],
-            "nomePet" =>$exibirDados['nomePet'],
-            "foto" =>$exibirDados['foto'],
-            "nomeTipo" =>$exibirDados['nomeTipo']
+            "idHost" => $exibirDados['idHost'],
+            "idPet" => $exibirDados['idPet'],
+            "idTipo" => $exibirDados['idTipo'],
+            "idCliente" => $exibirDados['idCliente'],
+            "nome" =>$exibirDados['nome'],
+            "cpf" =>$exibirDados['cpf'],
+            "endereco" =>$exibirDados['endereco'],
+            "nomeHost" =>$exibirDados['nomeHost'],
+            "nomePet" =>$exibirDados['nomePet']
            
         );
 

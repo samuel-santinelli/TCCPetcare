@@ -4,10 +4,10 @@ require_once(SRC.'bd/conexao.php');
 
 function listarHistorico(){
 
-    $sql = "select tblServico.valor, tblServico.idServico, tblServico.dataInicial, tblServico.dataFinal, tblPets.nome as nomePet, tblPets.foto,tblPets.idEspecie , tblTipos.nomeTipo as nomeTipo from tblServico
-    inner join tblPets
-      on tblPets.idPet = tblServico.idPet inner join tblHost on tblHost.idHost = tblServico.idServico 
-      inner join tblTipos on tblTipos.idTipo = tblServico.idTipo";
+  $sql = "select tblServico.*, tblTipos.nomeTipo as nomeTipo from tblServico
+  inner join tblPets
+    on tblPets.idPet = tblServico.idPet inner join tblHost on tblHost.idHost = tblServico.idServico 
+    inner join tblTipos on tblTipos.idTipo = tblServico.idTipo";
 
     $conexao = conexao();
   // echo($sql);

@@ -7,4 +7,4 @@ Options All -Indexes
 
 DirectoryIndex index.php
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*) http://localhost/Cuidador/Cliente/api/index.php?url=$1 [QSA,L]
+RewriteRule ^(.*) index.php?url=$1 [QSA,L]

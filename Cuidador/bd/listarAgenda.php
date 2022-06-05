@@ -22,5 +22,24 @@ function listarAgenda(){
 }
 
 
+function buscaAgendamento($idAgenda){
+   
+  $sql = "select tblServico.*, tblPets.idPet, tblClientes.idCliente, tblTipos.idTipo, tblHost.idHost from tblServico
+  inner join tblPets
+    on tblPets.idPet = tblServico.idPet
+    inner join tblClientes on tblClientes.idCliente = tblServico.idCliente
+    inner join tblTipos on tblTipos.idTipo = tblServico.idTipo
+    inner join tblHost on tblHost.idHost = tblServico.idHost
+    where tblServico.idServico =".$idAgenda;
+
+  $conexao = conexao();
+  // echo($sql);
+  // die;
+  $select = mysqli_query($conexao,$sql);
+
+  return $select;
+}
+
+
 
 ?>
