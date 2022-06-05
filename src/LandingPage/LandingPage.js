@@ -61,7 +61,7 @@ const LandingPage = () => {
         <Sidebar sidebar={sidebar} />
         <div id="parteSuperior">
           <div className="boxBotao">
-            <Link to="/Login">
+            <Link to="/EscolhaLogin">
               <input type="button" id="login-input" value="LOGIN" />
             </Link>
             <Link to="/Escolha">

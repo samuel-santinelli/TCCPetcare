@@ -8,10 +8,14 @@ import Agendamento from "../Agendamento/Agendamento";
 import LandingPage from "../LandingPage/LandingPage"
 import DadosServico from "../Dados/DadosServico";
 import Login from "../Login/Login"
+import LoginCuidador from "../Login/LoginCuidador"
 import EsqueciMinhaSenha from "../EsqueciMinhaSenha/EsqueciMinhaSenha";
 import Escolha from "../Escolha/Escolha"
 import HistoricoCliente from "../Historico/HistoricoCliente"
+import HistoricoCuidador from "../Historico/HistoricoCuidador"
 import PerfiCliente from "../Perfil/PerfilCliente"
+import EscolhaLogin from "../Escolha/EscolhaLogin"
+
 
 function OurRoutes() {
   return (
@@ -27,7 +31,10 @@ function OurRoutes() {
       <Route path="/EsqueciMinhaSenha" element={<EsqueciMinhaSenha />} />
       <Route path="/Escolha" element={<Escolha />} />
       <Route path="/HistoricoCliente" element={<HistoricoCliente />} />
+      <Route path="/HistoricoCuidador" element={<HistoricoCuidador />} />
       <Route path="/PerfilCliente" element={<PerfiCliente />} />
+      <Route path="/LoginCuidador" element={<LoginCuidador />} />
+      <Route path="/EscolhaLogin" element={<EscolhaLogin />} />
     </Routes>
   );
 }

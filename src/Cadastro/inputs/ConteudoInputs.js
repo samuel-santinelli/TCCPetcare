@@ -14,6 +14,7 @@ import "../style/Cadastro.css";
 import "../style/CadastroCliente.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import validarSenhaForca from "./validation/validation";
+import InputMask from "react-input-mask";
 
 const InputsIcon = (props) => {
   const [cuidador, setCuidador] = useState({
@@ -201,10 +202,10 @@ const InputsIcon = (props) => {
               </select>
               <div>
                 {/* <MdFingerprint className="iconInputLabelCpf"/> */}
-                <input
-                  type="number"
+                <InputMask
                   className="containerInputCpfScroll"
                   placeholder="Informe seu CPF"
+                  mask="99999.999"
                   value={cuidador.cpf}
                   onChange={(e) =>
                     setCuidador({ ...cuidador, cpf: e.target.value })
@@ -265,11 +266,11 @@ const InputsIcon = (props) => {
             </div>
             <div id="contInputsScroll">
               {/* <BusinessIcon id="iconInputLabelLeft" /> */}
-              <input
+              <InputMask
                 id="cep"
                 className="containerInputMoradiaScroll"
                 placeholder="Informe seu cep"
-                type="number"
+                mask="99999.999"
                 value={cuidador.cep}
                 {...register("cep")}
                 onBlur={checkCep}
@@ -380,12 +381,12 @@ const InputsIcon = (props) => {
                     />
 
                     <div className="containerPreferencesScroll">
-                      <input
+                      <InputMask
                         id="valorHora"
                         placeholder="Valor diario"
                         className="containerInputEmailScroll"
                         value={cuidador.valorHora}
-                        type="text"
+                        mask="99.99"
                         onChange={(e) =>
                           setCuidador({
                             ...cuidador,

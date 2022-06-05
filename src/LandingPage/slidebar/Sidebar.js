@@ -11,7 +11,9 @@ import { useEffect, useState } from "react";
 const Sidebar = ({ sidebar }) => {
   const [profile, setProfile] = useState([""]);
   const idCliente = window.localStorage.getItem("idCliente")
+  const idCuidador = window.localStorage.getItem("idCuidadorLogin")
   console.log("o id do cliente é", idCliente);
+  console.log("o id do cuidador é", idCuidador);
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem("cliente"));
@@ -42,7 +44,7 @@ const Sidebar = ({ sidebar }) => {
         <li className="nameLi">Histórico</li>
         <FaClipboardList className="iconSidebar" />
       </Link>
-      <Link to="/HistoricoCliente">
+      <Link to={"/HistoricoCuidador?idCuidador=" + idCuidador}>
         <li className="nameLi">Andamento</li>
       </Link>
       <AiOutlineExport className="iconSidebar" />

@@ -1,15 +1,15 @@
 import React from "react"
 import HomeLogin from "../Home/HomeLogin"
 import FooterLogin from "../footer/FooterLogin"
-import InputsLogin from "./input/InputsLogin"
+import InputsLoginCuidador from "./input/InputsLoginCuidador"
 
 const Login = () => {
   return (
     <div className="containerMainPet" id="containerMainPet" >
     <HomeLogin />
     <div id="containerInputsPet" className="containerInputsPet">
-      <h1 className="titleLogin">Entre na sua conta, e aproveite com o seu pet!</h1>
-      <InputsLogin/>
+      <h1 className="titleLogin">Entre na sua conta, e cuide bem dos pets!</h1>
+      <InputsLoginCuidador/>
      
     
       <FooterLogin />

@@ -4,7 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import "./style/styleHistorico.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-const HistoricoCliente = () => {
+const HistoricoCuidador = () => {
   const [history, setHistory] = useState([]);
   const [searchHistory, setSearchHistory] = useState([]);
   const [historyCuidador, setHistoryCuidador] = useState([]);
@@ -12,15 +12,13 @@ const HistoricoCliente = () => {
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
   const [querystring] = useSearchParams();
 
-  const idCliente = querystring.get("idCliente");
-
-  // const idHost = searchHistory[0].idHost
+  const idCuidador = querystring.get("idCuidador");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost/Cuidador/Cliente/apI/servicoHost/${idCliente}`
+          `http://localhost/Cuidador/Cuidador/api/historico/${idCuidador}`
         );
         const data = await response.json();
         setHistory(data);
@@ -55,6 +53,12 @@ const HistoricoCliente = () => {
     setSearchHistory(filterHistory);
   };
 
+  const [messageDecision, setMessageDecision] = useState(true);
+
+  function DecisionCuidador() {
+    setMessageDecision(!messageDecision);
+  }
+
   return (
     <>
       <Link to={"../"}>
@@ -63,8 +67,8 @@ const HistoricoCliente = () => {
 
       <main>
         <div id="titulo">
-          <span id="text1">Cuidadores</span>
-          <span id="text2"> Anteriores</span>
+          <span id="text1">Serviços em </span>
+          <span id="text2"> Processo</span>
         </div>
         <SearchIcon id="iconSearchHistory" />
         <input
@@ -131,11 +135,19 @@ const HistoricoCliente = () => {
                       <label className="dateHistory2">Ao dia</label>
                       {historyServices.dataFinal}
                     </div>
+                    <div className="nome3">
+                      {historyServices.endereco}
+                    </div>
                   </div>
                   <div className="containerStatusService">
                     <div className="statusService">
-                      Status do Serviço:{" "}
-                      <label className="respStatus">processamento</label>
+                      <label
+                        className="respStatusAcept"
+                        onClick={DecisionCuidador}
+                      >
+                        {messageDecision ? "Aceitar" : "Recusado"}
+                      </label>
+                      <label className="respStatusRecused">Recusar</label>
                     </div>
                   </div>
                   {/* <iframe
@@ -155,4 +167,4 @@ const HistoricoCliente = () => {
   );
 };
 
-export default HistoricoCliente;
+export default HistoricoCuidador;
