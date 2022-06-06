@@ -55,11 +55,20 @@ const HistoricoCuidador = () => {
 
   const [messageDecision, setMessageDecision] = useState(true);
 
-  function DecisionCuidador() {
+  function DecisionCuidadorAcept() {
     setMessageDecision(!messageDecision);
     const recused = document.getElementById("recused");
     const acept = document.getElementById("acept")
     recused.style.display = "none";
+
+    console.log("oi");
+  }
+
+  function DecisionCuidadorRecused() {
+    setMessageDecision(!messageDecision);
+    const recused = document.getElementById("recused");
+    const acept = document.getElementById("acept")
+    acept.style.display = "none";
 
     console.log("oi");
   }
@@ -148,13 +157,13 @@ const HistoricoCuidador = () => {
                     <div className="statusService">
                       <label
                         className="respStatusAcept"
-                        onClick={DecisionCuidador}
+                        onClick={DecisionCuidadorAcept}
                         id="acept"
                       >
                         {messageDecision ? "Aceitar" : "Serviço aceito"}
                       </label>
-                      <label id="recused" className="respStatusRecused" value={messageDecision.recused} >
-                        {messageDecision ? "Recusar" : "Serviço Aceito"}
+                      <label onClick={DecisionCuidadorRecused}  id="recused" className="respStatusRecused" >
+                        {messageDecision ? "Recusar" : "Serviço Recusado"}
                       </label>
                     </div>
                   </div>
