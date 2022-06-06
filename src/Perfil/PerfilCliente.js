@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 const PerfilCliente = (props) => {
   const [profileData, setProfileData] = useState([""]);
 
-  const [editProfile, setEditProfile] = useState([
+  const [editProfile, setEditProfile] = useState(
     {
       nome: "",
     },
-  ]);
+  );
   const [petData, setPetData] = useState([""]);
   const [querystring] = useSearchParams();
 
@@ -31,7 +31,7 @@ const PerfilCliente = (props) => {
     axios
       .put(
         `http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`,
-        editProfile
+        e
       )
 
       .then((res) => {

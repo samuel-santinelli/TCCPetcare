@@ -103,9 +103,7 @@ const HistoricoCliente = () => {
                       alt="foto pet"
                     />
                   </div>
-                  <div className="priceHistory">
-                    Valor R$ {historyServices.valor}
-                  </div>
+                  
                 </div>
 
                 <div className="texts">
@@ -133,6 +131,9 @@ const HistoricoCliente = () => {
                       {historyServices.dataFinal}
                     </div>
                   </div>
+                  <p className="valorServiceHistory">
+                    Valor R$ {historyServices.valor}
+                  </p>
                   <div className="containerStatusService">
                     <div className="statusServiceCliente">
                       Status do Serviço:{" "}

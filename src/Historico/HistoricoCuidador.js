@@ -31,14 +31,14 @@ const HistoricoCuidador = () => {
     fetchData();
   }, []);
 
-  axios
-    .get(`http://localhost/Cuidador/Cuidador/api/cuidador`, historyCuidador)
-    .then((res) => {
-      setHistoryCuidador(res.data);
-    })
-    .catch(() => {
-      console.log("Deu erro ao buscar os dados do cliente");
-    });
+  // axios
+  //   .get(`http://localhost/Cuidador/Cuidador/api/cuidador`, historyCuidador)
+  //   .then((res) => {
+  //     setHistoryCuidador(res.data);
+  //   })
+  //   .catch(() => {
+  //     console.log("Deu erro ao buscar os dados do cliente");
+  //   });
 
   const handleSearchHistory = ({ target }) => {
     if (!target.value) {
@@ -55,21 +55,30 @@ const HistoricoCuidador = () => {
 
   const [messageDecision, setMessageDecision] = useState(true);
 
-  function DecisionCuidadorAcept() {
+  const [editStatus, setEditStatus] = useState({
+    status: "ACEITO",
+  });
+
+  function DecisionCuidadorAcept(userEdit) {
+    axios
+      .put(
+        `http://localhost/Cuidador/Cuidador/api/agendar/status/${idCuidador}`, {
+          status: "ACEITO",
+        })
+      .then((res) => {
+        setEditStatus(console.log("editado com sucesos"));
+      });
+
     setMessageDecision(!messageDecision);
     const recused = document.getElementById("recused");
-    const acept = document.getElementById("acept")
+    const acept = document.getElementById("acept");
     recused.style.display = "none";
-
-    console.log("oi");
   }
 
   function DecisionCuidadorRecused() {
     setMessageDecision(!messageDecision);
-    const acept = document.getElementById("acept")
+    const acept = document.getElementById("acept");
     acept.style.display = "none";
-
-    console.log("oi");
   }
 
   return (
@@ -119,9 +128,6 @@ const HistoricoCuidador = () => {
                       alt="foto pet"
                     />
                   </div>
-                  <div className="priceHistory">
-                    Valor R$ {historyServices.valor}
-                  </div>
                 </div>
 
                 <div className="texts">
@@ -148,8 +154,12 @@ const HistoricoCuidador = () => {
                       <label className="dateHistory2">Ao dia</label>
                       {historyServices.dataFinal}
                     </div>
-                    
                   </div>
+
+                  <p className="valorServiceHistory">
+                    Valor R$ {historyServices.valor}
+                  </p>
+
                   <div className="containerStatusService">
                     <div className="statusService">
                       <label
@@ -159,7 +169,11 @@ const HistoricoCuidador = () => {
                       >
                         {messageDecision ? "Aceitar" : "Serviço aceito"}
                       </label>
-                      <label onClick={DecisionCuidadorRecused}  id="recused" className="respStatusRecused" >
+                      <label
+                        onClick={DecisionCuidadorRecused}
+                        id="recused"
+                        className="respStatusRecused"
+                      >
                         {messageDecision ? "Recusar" : "Serviço Recusado"}
                       </label>
                     </div>
