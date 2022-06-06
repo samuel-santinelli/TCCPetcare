@@ -74,6 +74,7 @@ const HistoricoCliente = () => {
           onChange={handleSearchHistory}
         />
         <div id="box-container1">
+          <div className="containerHistoryScroll">
           <div id="pessoas">
             {searchHistory.map((historyServices, key) => (
               <div
@@ -133,9 +134,9 @@ const HistoricoCliente = () => {
                     </div>
                   </div>
                   <div className="containerStatusService">
-                    <div className="statusService">
+                    <div className="statusServiceCliente">
                       Status do Serviço:{" "}
-                      <label className="respStatus">processamento</label>
+                      <label className="respStatus">{historyServices.status}</label>
                     </div>
                   </div>
                   {/* <iframe
@@ -147,6 +148,7 @@ const HistoricoCliente = () => {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </main>

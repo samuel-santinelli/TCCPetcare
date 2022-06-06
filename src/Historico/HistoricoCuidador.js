@@ -66,7 +66,6 @@ const HistoricoCuidador = () => {
 
   function DecisionCuidadorRecused() {
     setMessageDecision(!messageDecision);
-    const recused = document.getElementById("recused");
     const acept = document.getElementById("acept")
     acept.style.display = "none";
 
@@ -149,9 +148,7 @@ const HistoricoCuidador = () => {
                       <label className="dateHistory2">Ao dia</label>
                       {historyServices.dataFinal}
                     </div>
-                    <div className="nome3">
-                      {historyServices.endereco}
-                    </div>
+                    
                   </div>
                   <div className="containerStatusService">
                     <div className="statusService">

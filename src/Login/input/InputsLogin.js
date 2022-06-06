@@ -17,8 +17,6 @@ const InputsLogin = (props) => {
     e.preventDefault();
     const { email, senha } = userLogin;
 
-    console.log("email", email, "senha", senha);
-
     axios
       .get(
         // ISSO JAMAAAAAAAIS PODE SER UM GET

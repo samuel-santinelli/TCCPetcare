@@ -8,6 +8,12 @@ import { Link } from "react-router-dom";
 
 const PerfilCliente = (props) => {
   const [profileData, setProfileData] = useState([""]);
+
+  const [editProfile, setEditProfile] = useState([
+    {
+      nome: "",
+    },
+  ]);
   const [petData, setPetData] = useState([""]);
   const [querystring] = useSearchParams();
 
@@ -25,11 +31,11 @@ const PerfilCliente = (props) => {
     axios
       .put(
         `http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`,
-        profileData
+        editProfile
       )
 
       .then((res) => {
-        console.log(res.data);
+        setEditProfile(res.data);
       })
       .catch((error) => console.log(error));
   };
@@ -91,7 +97,12 @@ const PerfilCliente = (props) => {
               <input
                 className="containerInputProfileCliente"
                 value={profileData[0].nome}
-                onChange={(e) => setProfileData(e.target.value)}
+                onChange={(e) =>
+                  setEditProfile({
+                    ...editProfile,
+                    nome: e.target.value,
+                  })
+                }
               />
               <label className="nameClienteProfile"> Seu email</label>
               <input
@@ -115,7 +126,7 @@ const PerfilCliente = (props) => {
                 <label className="nameClienteProfile"> Bairro</label>
                 <input
                   className="containerInputProfileCliente"
-                  value={profileData[0].endereco}
+                  value={profileData[0].bairro}
                   onChange={(e) => setProfileData(e.target.value)}
                 />
                 <label className="nameClienteProfile"> Numero da Casa</label>
