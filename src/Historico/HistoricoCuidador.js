@@ -55,18 +55,25 @@ const HistoricoCuidador = () => {
 
   const [messageDecision, setMessageDecision] = useState(true);
 
-  const [editStatus, setEditStatus] = useState({
-    status: "ACEITO",
-  });
+  const [editStatus, setEditStatus] = useState(
+    {
+      status: "ACEITO",
+    },
+  );
+
+  const id = 18;
 
   function DecisionCuidadorAcept(userEdit) {
     axios
       .put(
-        `http://localhost/Cuidador/Cuidador/api/agendar/status/${idCuidador}`, {
+        `http://localhost/Cuidador/Cuidador/api/agendar/status/${id}`,
+        editStatus,
+        {
           status: "ACEITO",
-        })
+        }
+      )
       .then((res) => {
-        setEditStatus(console.log("editado com sucesos"));
+        setEditStatus(console.log({ UpdatedAt: res.data.updatedAt }));
       });
 
     setMessageDecision(!messageDecision);
@@ -74,6 +81,8 @@ const HistoricoCuidador = () => {
     const acept = document.getElementById("acept");
     recused.style.display = "none";
   }
+
+  console.log(editStatus);
 
   function DecisionCuidadorRecused() {
     setMessageDecision(!messageDecision);
@@ -166,6 +175,7 @@ const HistoricoCuidador = () => {
                         className="respStatusAcept"
                         onClick={DecisionCuidadorAcept}
                         id="acept"
+                        value={editStatus.status}
                       >
                         {messageDecision ? "Aceitar" : "Serviço aceito"}
                       </label>

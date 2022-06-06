@@ -30,8 +30,9 @@ const PerfilCliente = (props) => {
     e.preventDefault();
     axios
       .put(
-        `http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`,
-        e
+        `http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`,{
+        nome: ""
+      }
       )
 
       .then((res) => {
