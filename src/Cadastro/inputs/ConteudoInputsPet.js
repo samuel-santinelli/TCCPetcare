@@ -6,34 +6,15 @@ import InputCamera from "./InputCamera";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import "../style/InputCheckbox.css";
 
-// const id = 44;
-
 const InputsPet = ({ props }) => {
   const [querystring] = useSearchParams();
   // const idCliente = querystring.get("idCliente");
   const teste = querystring.get("teste");
   const idCliente = JSON.parse(localStorage.getItem("idCliente"));
   const imgRef = useRef();
-  const [imagePet, setImagePet] = useState(null);
-
-  const handleImageSubmitPet = (e) => {
-    if (e.target.files[0]) {
-      imgRef.current.src = URL.createObjectURL(e.target.files[0]);
-      console.log(imgRef.current.src);
-      window.localStorage.setItem("imagePet", imgRef.current.src)
-    }
-    setImagePet(e.target.files[0]);
-  };
-  
 
 
   console.log("ID recebido do cliente", idCliente, teste);
-
-  const listIds = () => {
-    axios.get("http://localhost/Cuidador/Cliente/api/cliente").then((res) => {
-      console.log("o dono do pet é", res.data[0].id);
-    });
-  };
 
   const [pet, setPet] = useState({
     foto: "",
@@ -141,13 +122,12 @@ const InputsPet = ({ props }) => {
               <input
                 type="file"
                 name="inputImage"
-                className="inputImage"
+                className="inputImageCadastroPet"
                 accept="image/jpeg, image/jpg, image/png"
                 id="foto"
-                onChange={handleImageSubmitPet}
-                value={pet.foto}
+                onChange={(e) => setPet({ ...pet, foto: e.target.files[0]})}
+ 
               />
-
               <CameraAltIcon id="iconInputCamera" />
               
             </div>

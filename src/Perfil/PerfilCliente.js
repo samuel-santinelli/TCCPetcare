@@ -11,7 +11,7 @@ const PerfilCliente = (props) => {
   const [petData, setPetData] = useState([""]);
   const [querystring] = useSearchParams();
 
-  const [url, setUrl] = useState([])
+  const [url, setUrl] = useState([]);
   console.log(url);
 
   const idCliente = querystring.get("idCliente");
@@ -42,7 +42,7 @@ const PerfilCliente = (props) => {
       )
       .then((res) => {
         setProfileData(res.data);
-        setUrl(res.data.foto)
+        setUrl(res.data.foto);
       })
       .catch(() => {
         console.log("Deu erro ao buscar os dados do cliente");
@@ -69,31 +69,20 @@ const PerfilCliente = (props) => {
       </Link>
       <div className="containerMainPerfilCliente">
         <div className="containerInputBanner">
-          <input
-            type="file"
-            className="inputBanner"
-          />
+          <input type="file" className="inputBanner" />
           <div className="containerPencilBanner">
             <BsPencil className="iconPencil" color={"red"} />
           </div>
         </div>
-        <img
-          className="containerBannerCliente"
-          alt=""
-        />
+        <img className="containerBannerCliente" alt="" />
         <div className="containerPefilClienteInfo">
           <img
             className="cardFotoPerfilCliente"
-            alt={profileData[0].foto}
-            src={profileData[0].foto}
+            alt="foto do cliente"
+            src={foto}
           />
-          <input
-            className="imgIputProfile"
-            type="file"
-          
-          />
+          <input className="imgIputProfile" type="file" />
           <div className="iconInputCameraProfile">
-            {" "}
             <BsPencil className="iconPrice" />
           </div>
           <div className="containerInfoProfile">
@@ -152,9 +141,12 @@ const PerfilCliente = (props) => {
           <div className="containerPetInfoPet">
             <img
               className="containerFotoPerfilPet"
-              src={petData[0].foto}
-              alt=""
+              src={foto}
+              alt="Foto do pet"
             />
+            <div className="iconInputCameraProfilePet">
+              <BsPencil className="iconPrice" />
+            </div>
             <label className="containerNamePerfilPet">{petData[0].nome}</label>
             <label className="containerRacaPerfilPet">{petData[0].raca}</label>
             <div className="containerBioProfilePet">{petData[0].descricao}</div>

@@ -30,7 +30,7 @@ const Sidebar = ({ sidebar }) => {
   return (
     <div className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
       <Link to={"/PerfilCliente?idCliente=" + idCliente}>
-        <img src={imageCliente} className="imageSidebar" alt=""  />
+        <img src={foto} className="imageSidebar" alt="Foto do cliente na Sidebar"  />
 
         <li className="nameCuidadorSidebar">{profile[0].nome}</li>
 
@@ -42,7 +42,7 @@ const Sidebar = ({ sidebar }) => {
       </Link>
       <Link to={"/HistoricoCliente?idCliente=" + idCliente}>
         <li className="nameLi">Histórico</li>
-        <FaClipboardList className="iconSidebar" />
+        <FaClipboardList className="iconSidebar" color="white" />
       </Link>
       <Link to={"/HistoricoCuidador?idCuidador=" + idCuidador}>
         <li className="nameLi">Andamento</li>

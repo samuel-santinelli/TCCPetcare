@@ -23,12 +23,6 @@ const Modal = (props) => {
     localStorage.getItem("biografiaCuidador")
   );
 
-  // console.log("o id do storage é", cliente[0].idCliente);
-  // console.log("o id do pet é", pet.id);
-  // if(dataInicial - dataFinal){
-
-  // }
-
   const [agendamento, setAgendamento] = useState({
     nome: "",
     endereco: "",
@@ -39,23 +33,16 @@ const Modal = (props) => {
     idPet: pet,
     idHost: idHost,
     idTipo: 1,
-    valor: priceService,
+    valor: priceService ,
     status: "PROCESSO"
   });
 
   const dateIntial = new Date(agendamento.dataInicial).getDate();
   const dateFinally = new Date(agendamento.dataFinal).getDate();
 
-  const resultPrice = dateFinally - dateIntial * priceService;
+  const resultPrice = dateFinally - dateIntial + priceService;
 
   console.log("a data é", resultPrice);
-  // const total =( dataInicial);
-
-  // .toString().replace(".", ",")
-
-  // console.log(" o agendamento é", agendamento.dataInicial);
-  // const resultDate = agendamento.dataInicial - agendamento.dataFinal
-  // console.log("result is é", typeof resultDate);
 
   console.log(agendamento);
 

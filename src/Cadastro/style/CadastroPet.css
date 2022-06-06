@@ -288,3 +288,9 @@ h3{
 
   border: solid 1px #f28907;
 }
+
+.inputImageCadastroPet{
+  position: absolute;
+  margin-top: 7rem;
+  opacity: 0;
+}

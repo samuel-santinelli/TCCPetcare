@@ -25,6 +25,7 @@ color:black
 
 #box-container1{
     height: 900px;
+    width: auto;
     /* background-color: aqua; */
     display: flex;
     flex-direction:row;
@@ -32,7 +33,9 @@ color:black
     
 }
 #pessoas{
-    width: 50%;
+    width: 200rem;
+    display: flex;
+    justify-content: center;
     height: inherit;
     overflow-y: scroll;
     /* background-color: #F28907; */
@@ -217,7 +220,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F28907;
+    background-color: #fff;
     color: #fff;
     text-transform: uppercase;
     border-radius: 2rem;
@@ -258,7 +261,7 @@ footer{
 
 .respStatusAcept{
     height: 5rem;
-    width: 25rem;
+    width: 35rem;
     display: flex;
     justify-content: center;
     align-items: center;

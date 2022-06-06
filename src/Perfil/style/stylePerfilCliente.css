@@ -40,6 +40,7 @@ html {
 .containerBannerCliente{
   height: 40rem;
   width: 180rem;
+  border: solid 1px #fff;
   background-size: cover;
   object-fit: cover;
 }
@@ -324,6 +325,18 @@ html {
   width: 5rem;
   margin-top: 13rem;
   margin-left: 6rem;
+  border-radius: 50px;
+  border: solid 3px #fff;
+  position: absolute;
+  background-color: #f28907;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.iconInputCameraProfilePet{
+  height: 5rem;
+  width: 5rem;
+  margin-top: -21rem;
+  margin-left: 12rem;
   border-radius: 50px;
   border: solid 3px #fff;
   position: absolute;

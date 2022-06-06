@@ -57,6 +57,11 @@ const HistoricoCuidador = () => {
 
   function DecisionCuidador() {
     setMessageDecision(!messageDecision);
+    const recused = document.getElementById("recused");
+    const acept = document.getElementById("acept")
+    recused.style.display = "none";
+
+    console.log("oi");
   }
 
   return (
@@ -144,10 +149,13 @@ const HistoricoCuidador = () => {
                       <label
                         className="respStatusAcept"
                         onClick={DecisionCuidador}
+                        id="acept"
                       >
-                        {messageDecision ? "Aceitar" : "Recusado"}
+                        {messageDecision ? "Aceitar" : "Serviço aceito"}
                       </label>
-                      <label className="respStatusRecused">Recusar</label>
+                      <label id="recused" className="respStatusRecused" value={messageDecision.recused} >
+                        {messageDecision ? "Recusar" : "Serviço Aceito"}
+                      </label>
                     </div>
                   </div>
                   {/* <iframe
