@@ -28,7 +28,8 @@ function criarArrayHistorico($objeto)
             "cpf" =>$exibirDados['cpf'],
             "endereco" =>$exibirDados['endereco'],
             "nomeHost" =>$exibirDados['nomeHost'],
-            "nomePet" =>$exibirDados['nomePet']
+            "nomePet" =>$exibirDados['nomePet'],
+            "status" => $exibirDados['status']
            
         );
 

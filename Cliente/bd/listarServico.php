@@ -7,7 +7,7 @@ function listarServico(){
     // $sql = "select tblServico.valor, tblServico.dataInicial, tblServico.dataFinal, tblHost.nome as nomeHost, tblHost.endereco, tblHost.foto, tblTipos.nomeTipo as nomeTipo from tblServico
     // inner join tblHost on tblHost.idHost = tblServico.idServico 
     //     inner join tblTipos on tblTipos.idTipo = tblServico.idTipo";
-$sql = "select tblServico.*, tblTipos.nomeTipo as nomeTipo from tblServico
+$sql = "select tblServico.*, tblTipos.nomeTipo as nomeTipo, tblPets.idPet as nomePet, tblHost.idHost as nomeHost  from tblServico
 inner join tblPets
   on tblPets.idPet = tblServico.idPet inner join tblHost on tblHost.idHost = tblServico.idServico 
   inner join tblTipos on tblTipos.idTipo = tblServico.idTipo";
