@@ -177,10 +177,10 @@ const PerfilCliente = (props) => {
                     })
                   }
                 />
-              </div>
               <label className="containerDetailsInputProfile">
                   {profileData[0].numero}
                 </label>
+              </div>
               <div className="containerSaveAlteratons">
                 <button
                   className="buttonSaveAlterations"
