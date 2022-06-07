@@ -37,10 +37,10 @@
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 992px){
+@media only screen and (max-width:  1200px){
   #containerButtonAgendar{
     position: absolute;
-    margin-top: 55rem;
+    margin-top: 52rem;
   }
 
 }
