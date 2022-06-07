@@ -70,7 +70,7 @@
             android:id="@+id/txtNome"
             android:layout_width="170dp"
             android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:hint=" | Nome"
             android:inputType="text"
@@ -80,18 +80,27 @@
             android:paddingStart="15dp"
             android:layout_marginStart="15dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Formato: ano-mês-dia"
+            android:textSize="11dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toTopOf="@id/txtDataDeNascimento"
+            app:layout_constraintStart_toStartOf="@id/txtDataDeNascimento"/>
+
         <EditText
             android:id="@+id/txtDataDeNascimento"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:drawableStart="@drawable/ic_baseline_calendar_month_24"
-            android:hint=" | Data De Nascimento"
+            android:hint=" | Data De Nasc."
             android:inputType="text"
             app:layout_constraintStart_toEndOf="@id/txtNome"
             app:layout_constraintTop_toTopOf="@+id/txtNome"
             android:background="@drawable/bordas"
-            android:paddingStart="5dp"
+            android:paddingStart="15dp"
             android:paddingEnd="5dp"/>
 
         <EditText
@@ -152,59 +161,87 @@
             android:background="@drawable/bordas"
             android:paddingStart="15dp"/>
 
-        <EditText
-            android:id="@+id/txtCEP"
-            android:layout_width="170dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:drawableStart="@drawable/ic_baseline_my_location_24"
-            android:hint="  | CEP"
-            android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/txtSenha"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/bordas"
-            android:paddingStart="15dp"
-            android:layout_marginStart="15dp"/>
+<!--        <EditText-->
+<!--            android:id="@+id/txtCEP"-->
+<!--            android:layout_width="170dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:drawableStart="@drawable/ic_baseline_my_location_24"-->
+<!--            android:hint="  | CEP"-->
+<!--            android:inputType="text"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtSenha"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:background="@drawable/bordas"-->
+<!--            android:paddingStart="15dp"-->
+<!--            android:layout_marginStart="15dp"/>-->
 
-        <EditText
-            android:id="@+id/txtNumero"
-            android:layout_width="190dp"
-            android:layout_height="40dp"
-            android:drawableStart="@drawable/ic_baseline_numbers_24"
-            android:hint=" | Numero"
-            android:inputType="number"
-            android:background="@drawable/bordas"
-            android:paddingStart="15dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toEndOf="@id/txtCEP"
-            app:layout_constraintTop_toTopOf="@id/txtCEP"/>
+<!--        <EditText-->
+<!--            android:id="@+id/txtNumero"-->
+<!--            android:layout_width="190dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:drawableStart="@drawable/ic_baseline_numbers_24"-->
+<!--            android:hint=" | Numero"-->
+<!--            android:inputType="number"-->
+<!--            android:background="@drawable/bordas"-->
+<!--            android:paddingStart="15dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            app:layout_constraintStart_toEndOf="@id/txtCEP"-->
+<!--            app:layout_constraintTop_toTopOf="@id/txtCEP"/>-->
+
 
         <EditText
             android:id="@+id/txtCpf"
-            android:layout_width="170dp"
+            android:layout_width="370dp"
             android:layout_height="40dp"
             android:layout_marginTop="12dp"
             android:drawableStart="@drawable/ic_baseline_person_pin_24"
             android:hint=" | CPF"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/txtCEP"
+            app:layout_constraintTop_toBottomOf="@id/txtConfirmarSenha"
             app:layout_constraintStart_toStartOf="parent"
             android:background="@drawable/bordas"
             android:paddingStart="15dp"
             android:layout_marginStart="15dp"/>
 
-        <EditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexo:"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/txtSexo"
+            app:layout_constraintStart_toStartOf="@id/txtSexo"
+            android:layout_marginStart="5dp"/>
+
+        <RadioGroup
             android:id="@+id/txtSexo"
-            android:layout_width="190dp"
+            android:layout_width="370dp"
             android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:drawableStart="@drawable/ic_baseline_wc_24"
-            android:hint=" | Sexo"
-            android:inputType="number"
-            app:layout_constraintStart_toEndOf="@id/txtCpf"
-            app:layout_constraintTop_toTopOf="@+id/txtCpf"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="@id/txtCpf"
+            app:layout_constraintTop_toBottomOf="@id/txtCpf"
             android:background="@drawable/bordas"
-            android:paddingStart="15dp"/>
+            android:paddingStart="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feminino"
+                android:layout_marginStart="15dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não binário"
+                android:layout_marginStart="15dp"/>
+
+        </RadioGroup>
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -218,6 +255,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@id/txtSexo"/>
+
 
         <TextView
             android:id="@+id/txtJaTemConta"

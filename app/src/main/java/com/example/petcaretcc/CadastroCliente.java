@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +31,7 @@ public class CadastroCliente extends AppCompatActivity {
     private EditText txtCEP;
     private EditText txtTelefone;
     private EditText txtCPF;
-    private EditText txtSexo;
+    private RadioGroup txtSexo;
     private EditText txtNumero;
     private Button btnCadastrar;
 
@@ -42,17 +44,27 @@ public class CadastroCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_cliente);
 
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+        // a general rule, you should design your app to hide the status bar whenever you
+        // hide the navigation bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+
         //Resgate
         txtNome = findViewById(R.id.txtNome);
         txtEmail = findViewById(R.id.txtEmail);
         txtDataNascimento = findViewById(R.id.txtDataDeNascimento);
         txtSenha = findViewById(R.id.txtSenha);
         txtConfirmarSenha = findViewById(R.id.txtConfirmarSenha);
-        txtCEP = findViewById(R.id.txtCEP);
+        //txtCEP = findViewById(R.id.txtCEP);
         txtTelefone = findViewById(R.id.txtTelefone);
         txtCPF = findViewById(R.id.txtCpf);
         txtSexo = findViewById(R.id.txtSexo);
-        txtNumero = findViewById(R.id.txtNumero);
+        //txtNumero = findViewById(R.id.txtNumero);
         btnCadastrar = findViewById(R.id.btnCadastrar);
 
         routerInterface = APIUtil.getClientInterface();
@@ -62,10 +74,10 @@ public class CadastroCliente extends AppCompatActivity {
         btnCadastrar.setOnClickListener(view -> {
 
 
-            if(!camposVazios()){
-                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
-            }
-            else{
+//            if(!camposVazios()){
+//                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+//            }
+//            else{
 
                 if(validacaoSenha()){
 
@@ -76,30 +88,31 @@ public class CadastroCliente extends AppCompatActivity {
 
                                 Cliente cliente = new Cliente();
 
-//                                cliente2.setNome(txtNome.getText().toString());
-//                                cliente2.setEmail(txtEmail.getText().toString());
-//                                cliente2.setDataNascimento(txtDataNascimento.getText().toString());
-//                                cliente2.setSenha(txtSenha.getText().toString());
-//                                cliente2.setTelefone(txtTelefone.getText().toString());
-//                                cliente2.setSexo(Integer.parseInt(txtSexo.getText().toString()));
-//                                cliente2.setCpf(txtCPF.getText().toString());
-//                                cliente2.setFoto("0");
+                              //  if()
 
-                                cliente.setNome("nome teste");
-                                cliente.setEmail("email teste");
-                                cliente.setDataNascimento("2022-04-12");
-                                cliente.setSenha("senha teste");
-                                cliente.setTelefone("123 telefone");
-                                cliente.setSexo(1);
-                                cliente.setCpf("123 cpf");
-                                cliente.setFoto("foto teste");
+                                cliente.setNome(txtNome.getText().toString());
+                                cliente.setEmail(txtEmail.getText().toString());
+                                cliente.setDataNascimento(txtDataNascimento.getText().toString());
+                                cliente.setSenha(txtSenha.getText().toString());
+                                cliente.setTelefone(txtTelefone.getText().toString());
+//                                //cliente.setSexo();
+                                cliente.setCpf(txtCPF.getText().toString());
+                                cliente.setFoto("0");
+
+//                                cliente.setNome("nome teste");
+//                                cliente.setEmail("email teste");
+//                                cliente.setDataNascimento("2022-04-12");
+//                                cliente.setSenha("senha teste");
+//                                cliente.setTelefone("123 telefone");
+                                cliente.setSexo(2);
+//                                cliente.setCpf("123 cpf");
+//                                cliente.setFoto("foto teste");
 
                                 addCliente(cliente);
 
                                 //cliente2.setCep(txtCPF.getText().toString());
                                 //cliente2.setNumero(43);
 
-                                //addCliente(cliente2);
 
                             })
                             .setNegativeButton("CANCELAR", (dialog1, wich)->{})
@@ -111,7 +124,7 @@ public class CadastroCliente extends AppCompatActivity {
                     Toast.makeText(this, "Senhas não correspondentes!", Toast.LENGTH_SHORT).show();
                 }
 
-            }// Fim do camposVazios()
+//            }// Fim do camposVazios()
 
         });//Fim do setOnClickListener
 
@@ -127,9 +140,9 @@ public class CadastroCliente extends AppCompatActivity {
     private boolean validacaoSenha(){
 
         String senha = txtSenha.getText().toString();
-        String ConfirmarSenha = txtConfirmarSenha.getText().toString();
+        String confirmarSenha = txtConfirmarSenha.getText().toString();
 
-        return senha.equals(ConfirmarSenha);
+        return senha.equals(confirmarSenha);
 
     }//Fim da Validação de Senha
 
@@ -144,7 +157,7 @@ public class CadastroCliente extends AppCompatActivity {
         !txtCEP.getText().toString().isEmpty() &&
         !txtTelefone.getText().toString().isEmpty() &&
         !txtCPF.getText().toString().isEmpty() &&
-        !txtSexo.getText().toString().isEmpty() &&
+        //!txtSexo.getText().toString().isEmpty() &&
         !txtNumero.getText().toString().isEmpty()
         );
 
@@ -171,7 +184,7 @@ public class CadastroCliente extends AppCompatActivity {
 
                 if(response.isSuccessful()){
 
-                    Log.d("API-ERRO ONFAILURE", String.valueOf(response.message()));
+                    Log.d("API- deu bom aaaaaa", String.valueOf(response.message()));
                     Toast.makeText(CadastroCliente.this,
                             "CLIENTE CADASTRADO",
                             Toast.LENGTH_LONG).show();
@@ -181,6 +194,9 @@ public class CadastroCliente extends AppCompatActivity {
                     Toast.makeText(CadastroCliente.this,
                             "ELSE ONRESPONSE",
                             Toast.LENGTH_LONG).show();
+
+                    Log.d("API-ERRO else isSucessful", String.valueOf(response.errorBody()));
+
                 }
             }
 

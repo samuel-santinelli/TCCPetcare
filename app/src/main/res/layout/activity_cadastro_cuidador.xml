@@ -37,7 +37,8 @@
         <EditText
             android:id="@+id/txtNome"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:minHeight="80dp"
+            android:layout_height="wrap_content"
             android:hint=" | Nome"
             android:maxLength="100"
             android:singleLine="true"
@@ -57,7 +58,8 @@
         <EditText
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:minHeight="80dp"
+            android:layout_height="wrap_content"
             android:hint=" | Email"
             android:maxLength="100"
             android:singleLine="true"
@@ -77,7 +79,8 @@
         <EditText
             android:id="@+id/txtSenha"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:minHeight="80dp"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint=" | Senha"
             android:maxLength="30"
@@ -95,7 +98,8 @@
         <EditText
             android:id="@+id/txtConfirmarSenha"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:minHeight="80dp"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint=" | Confirme a senha"
             android:maxLength="30"
@@ -114,11 +118,27 @@
             android:id="@+id/txtCpf"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:hint=" | CPF"
-            android:maxLength="11"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/txtConfirmarSenha"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bordas"
+            android:drawableStart="@drawable/ic_baseline_person_pin_24"
+            android:hint=" | CPF"
+            android:maxLength="11"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtConfirmarSenha" />
+
+        <EditText
+            android:id="@+id/txtDataDeNascimento"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint=" | Data de nascimento"
+            android:maxLength="10"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@id/txtCpf"
             app:layout_constraintStart_toStartOf="parent"
             android:drawableStart="@drawable/ic_baseline_person_pin_24"
             android:background="@drawable/bordas"
@@ -127,14 +147,14 @@
             android:layout_marginTop="5dp"/>
 
         <EditText
-            android:id="@+id/txtDataDeNascimento"
+            android:id="@+id/txtTelefone"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:hint=" | Data de nascimento"
-            android:maxLength="11"
+            android:hint=" | Telefone"
+            android:maxLength="10"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/txtCpf"
+            app:layout_constraintTop_toBottomOf="@id/txtDataDeNascimento"
             app:layout_constraintStart_toStartOf="parent"
             android:drawableStart="@drawable/ic_baseline_person_pin_24"
             android:background="@drawable/bordas"
@@ -147,7 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Selecione seu sexo"
-            app:layout_constraintTop_toBottomOf="@id/txtDataDeNascimento"
+            app:layout_constraintTop_toBottomOf="@id/txtTelefone"
             app:layout_constraintStart_toStartOf="@id/radioSexo"
             android:layout_marginStart="-5dp"
             android:layout_marginTop="15dp"/>
@@ -177,7 +197,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gênero fluído"/>
+                android:text="Não binário"/>
         </RadioGroup>
 
         <TextView
@@ -216,37 +236,8 @@
 
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/txtCep"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:hint=" | CEP"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/radioMoradia"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableStart="@drawable/ic_baseline_back_hand_24"
-            android:background="@drawable/bordas"
-            android:layout_marginTop="15dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            />
 
-        <EditText
-            android:id="@+id/txtNumero"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:hint=" | Número"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/txtCep"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableStart="@drawable/ic_baseline_back_hand_24"
-            android:background="@drawable/bordas"
-            android:layout_marginTop="15dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            />
+
 
 
         <CheckBox
@@ -256,7 +247,7 @@
             android:text="Possui animais?"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/txtNumero"
+            app:layout_constraintTop_toBottomOf="@id/radioMoradia"
             app:layout_constraintStart_toStartOf="parent"
             android:background="@drawable/bordas"
             android:layout_marginTop="15dp"
@@ -269,42 +260,11 @@
             android:text="Possui crianças?"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/txtNumero"
+            app:layout_constraintTop_toTopOf="@id/checkPossuiAnimais"
             app:layout_constraintStart_toEndOf="@id/checkPossuiAnimais"
             android:background="@drawable/bordas"
-            android:layout_marginTop="15dp"
             />
 
-        <EditText
-            android:id="@+id/txtLimitacoes"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:hint=" | Limitações"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/checkPossuiCriancas"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableStart="@drawable/ic_baseline_back_hand_24"
-            android:background="@drawable/bordas"
-            android:layout_marginTop="15dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            />
-
-        <EditText
-            android:id="@+id/txtPreferencias"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:hint=" | Prefêrencias"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/txtLimitacoes"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableStart="@drawable/ic_baseline_accessibility_new_24"
-            android:background="@drawable/bordas"
-            android:layout_marginTop="5dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"/>
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -313,7 +273,7 @@
             android:text="CADASTRE-SE"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            app:layout_constraintTop_toBottomOf="@id/txtPreferencias"
+            app:layout_constraintTop_toBottomOf="@id/checkPossuiCriancas"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="30dp"
             android:backgroundTint="#DC7D0A"/>

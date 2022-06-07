@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaDadosServico">
+
+
+
+    <ScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="650dp"
+        android:layout_width="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            tools:context=".CadastroPet">
+
+            <View
+                android:id="@+id/backgroundView"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:background="@color/orange"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:layout_width="330dp"
+                android:layout_height="50dp"
+                android:text="Dados do Serviço"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/backgroundView"
+                app:layout_constraintEnd_toEndOf="@id/backgroundView"
+                app:layout_constraintTop_toTopOf="@id/backgroundView"
+                android:gravity="center"/>
+
+
+            <View
+                android:id="@+id/containerMapa"
+                android:layout_width="230dp"
+                android:layout_height="160dp"
+                android:background="@drawable/bordas"
+                app:layout_constraintTop_toBottomOf="@id/backgroundView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/tituloServico"
+                android:layout_width="330dp"
+                android:layout_height="50dp"
+                android:text="Local do Serviço"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/containerMapa"
+                android:gravity="center"
+                android:layout_marginTop="5dp"/>
+
+            <View
+                android:id="@+id/statusServico"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bordas"
+                app:layout_constraintTop_toBottomOf="@id/tituloServico"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"/>
+
+            <View
+                android:id="@+id/dataInicio"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bordas"
+                app:layout_constraintTop_toBottomOf="@id/statusServico"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:id="@+id/dataFim"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bordas"
+                app:layout_constraintTop_toBottomOf="@id/dataInicio"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"/>
+
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="Em Andamento"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/statusServico"
+                app:layout_constraintEnd_toEndOf="@id/statusServico"
+                app:layout_constraintTop_toTopOf="@id/statusServico"
+                app:layout_constraintBottom_toBottomOf="@id/statusServico"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="20/08/22 - 12h45"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/dataInicio"
+                app:layout_constraintEnd_toEndOf="@id/dataInicio"
+                app:layout_constraintTop_toTopOf="@id/dataInicio"
+                app:layout_constraintBottom_toBottomOf="@id/dataInicio"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="28/08/22 - 17h"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/dataFim"
+                app:layout_constraintEnd_toEndOf="@id/dataFim"
+                app:layout_constraintTop_toTopOf="@id/dataFim"
+                app:layout_constraintBottom_toBottomOf="@id/dataFim"
+                android:gravity="center"/>
+
+
+            <TextView
+                android:id="@+id/tipoDeServico"
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="PET Trip"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/statusServico"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/statusServico"
+                app:layout_constraintBottom_toBottomOf="@id/statusServico"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="R$ 289,90"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tipoDeServico"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:id="@+id/containerParticipantes"
+                android:layout_width="380dp"
+                android:layout_height="240dp"
+                android:background="@drawable/bordas"
+                app:layout_constraintTop_toBottomOf="@id/dataFim"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/tituloParticipantes"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:text="Participantes"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@id/containerParticipantes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vwFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintTop_toTopOf="@id/containerParticipantes"
+                app:layout_constraintBottom_toBottomOf="@id/containerParticipantes"
+                app:layout_constraintStart_toStartOf="@id/containerParticipantes"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vwFoto2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintTop_toTopOf="@id/containerParticipantes"
+                app:layout_constraintBottom_toBottomOf="@id/containerParticipantes"
+                app:layout_constraintEnd_toEndOf="@id/containerParticipantes"
+                app:layout_constraintStart_toStartOf="@id/containerParticipantes"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vwFoto3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintTop_toTopOf="@id/containerParticipantes"
+                app:layout_constraintBottom_toBottomOf="@id/containerParticipantes"
+                app:layout_constraintEnd_toEndOf="@id/containerParticipantes"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="Ritinha"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/vwFoto"
+                app:layout_constraintStart_toStartOf="@id/containerParticipantes"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="João"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/vwFoto2"
+                app:layout_constraintEnd_toEndOf="@id/containerParticipantes"
+                app:layout_constraintStart_toStartOf="@id/containerParticipantes"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:text="Mari Ruana"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/vwFoto3"
+                app:layout_constraintEnd_toEndOf="@id/containerParticipantes"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/retanguloMenu"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="761dp"
+        android:background="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/hexagono"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_baseline_add_orange_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/bordas2"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintStart_toStartOf="@id/hexagono"
+        app:layout_constraintEnd_toEndOf="@id/hexagono"
+        app:layout_constraintBottom_toBottomOf="@id/hexagono"
+        app:layout_constraintTop_toTopOf="@id/hexagono"
+        android:paddingBottom="5dp"/>
+
+    <ImageView
+        android:id="@+id/iconeCasa"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingBottom="5dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintBottom_toBottomOf="@id/retanguloMenu"
+        app:layout_constraintStart_toStartOf="@id/retanguloMenu"
+        app:layout_constraintTop_toTopOf="@id/retanguloMenu"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingBottom="5dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@id/retanguloMenu"
+        app:layout_constraintTop_toTopOf="@id/retanguloMenu"
+        app:layout_constraintStart_toEndOf="@id/iconeCasa"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingBottom="5dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@id/retanguloMenu"
+        app:layout_constraintTop_toTopOf="@id/retanguloMenu"
+        app:layout_constraintStart_toEndOf="@id/iconeCasa"/>
+
+    <ImageView
+        android:id="@+id/iconePessoa"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingBottom="5dp"
+        android:src="@drawable/ic_baseline_person_white_24"
+        app:layout_constraintBottom_toBottomOf="@id/retanguloMenu"
+        app:layout_constraintEnd_toEndOf="@id/retanguloMenu"
+        app:layout_constraintTop_toTopOf="@id/retanguloMenu"
+        android:layout_marginEnd="20dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingBottom="5dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_baseline_history_24"
+        app:layout_constraintBottom_toBottomOf="@id/retanguloMenu"
+        app:layout_constraintTop_toTopOf="@id/retanguloMenu"
+        app:layout_constraintEnd_toStartOf="@id/iconePessoa"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

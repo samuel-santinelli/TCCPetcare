@@ -3,26 +3,42 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/backgroundgray.xml" value="0.33125" />
+        <entry key="app/src/main/res/drawable/backgroundgrey.xml" value="0.36614583333333334" />
         <entry key="app/src/main/res/drawable/bordas.xml" value="0.4222222222222222" />
         <entry key="app/src/main/res/drawable/bordas2.xml" value="0.32395833333333335" />
+        <entry key="app/src/main/res/drawable/ic_baseline_accessibility_new_24.xml" value="0.36614583333333334" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.36614583333333334" />
         <entry key="app/src/main/res/drawable/ic_baseline_my_location_24.xml" value="0.3145833333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_pets_24.xml" value="0.32447916666666665" />
+        <entry key="app/src/main/res/drawable/sombra.xml" value="0.36614583333333334" />
         <entry key="app/src/main/res/layout/activity_alterar_senha.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_boas_vindas.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_boas_vindas.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_busca_por_cuidador.xml" value="0.2859375" />
         <entry key="app/src/main/res/layout/activity_cadastro_cliente.xml" value="0.2984375" />
-        <entry key="app/src/main/res/layout/activity_cadastro_cuidador.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_cadastro_cuidador.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_cadastro_cuidador_endereco.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_cadastro_pet.xml" value="0.2984375" />
         <entry key="app/src/main/res/layout/activity_editar_perfil_cliente.xml" value="0.2984375" />
-        <entry key="app/src/main/res/layout/activity_editar_perfil_cuidador.xml" value="0.2984375" />
+        <entry key="app/src/main/res/layout/activity_editar_perfil_cuidador.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_historico_servico_cliente.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_landing_page.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_perfil_cuidador.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_perfil_cuidador_agenda.xml" value="0.3078125" />
         <entry key="app/src/main/res/layout/activity_perfil_cuidador_bio.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_perfil_cuidador_detalhes.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_recuperar_senha.xml" value="0.5338541666666666" />
+        <entry key="app/src/main/res/layout/activity_perfil_cuidador_detalhes.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/activity_recuperar_senha.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_tela_agendamento.xml" value="0.3078125" />
+        <entry key="app/src/main/res/layout/activity_tela_dados_servico.xml" value="0.2859375" />
         <entry key="app/src/main/res/layout/activity_tela_loading.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_tela_pagamento.xml" value="0.271875" />
+        <entry key="app/src/main/res/layout/activity_tela_perfil_cliente.xml" value="0.2859375" />
         <entry key="app/src/main/res/layout/activity_tela_redirecionamento.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_container_agendamento.xml" value="0.2921875" />
+        <entry key="app/src/main/res/layout/item_container_feedback.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_conteiner_cliente.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/item_conteiner_pet.xml" value="0.3078125" />
       </map>
     </option>
   </component>

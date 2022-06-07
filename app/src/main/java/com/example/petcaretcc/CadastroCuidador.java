@@ -1,27 +1,19 @@
 package com.example.petcaretcc;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.petcaretcc.model.Cuidador;
-import com.example.petcaretcc.remote.APIUtil;
-import com.example.petcaretcc.remote.RouterInterface;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class CadastroCuidador extends AppCompatActivity {
 
@@ -44,164 +36,153 @@ public class CadastroCuidador extends AppCompatActivity {
     private Button btnCadastrar;
 
     private CheckBox cbPossuiCriancas;
+    private int cbPossuiCriancasInt = 0;
     private CheckBox cbPossuiAnimais;
+    private int cbPossuiAnimaisInt = 0;
 
     private TextView intentLogin;
-
-    RouterInterface routerInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_cuidador);
 
-        //Resgate
-        //btnCadastrar = findViewById(R.id.btnCadastrar)
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
         txtNome = findViewById(R.id.txtNome);
         txtEmail = findViewById(R.id.txtEmail);
         txtDataNascimento = findViewById(R.id.txtDataDeNascimento);
         txtSenha = findViewById(R.id.txtSenha);
+        txtConfirmarSenha = findViewById(R.id.txtConfirmarSenha);
         txtTelefone = findViewById(R.id.txtTelefone);
-        radioSexo = findViewById(R.id.radioSexo);
         txtCPF = findViewById(R.id.txtCpf);
+
+        btnCadastrar = findViewById(R.id.btnCadastrar);
+
         radioMoradia = findViewById(R.id.radioMoradia);
-        txtCEP = findViewById(R.id.txtCep);
-        cbPossuiAnimais = findViewById(R.id.checkPossuiAnimais);
-        cbPossuiCriancas = findViewById(R.id.checkPossuiCriancas);
-        txtLimitacoes = findViewById(R.id.txtLimitacoes);
-        txtPreferencias = findViewById(R.id.txtPreferencias);
-        //cvFoto = findViewById(R.id);
+        radioSexo = findViewById(R.id.radioSexo);
 
-        routerInterface = APIUtil.getClientInterface();
+        btnCadastrar.setOnClickListener(view ->
+        {
+            Log.d("testes", "setOnClick: entrou");
 
-        intentLogin = findViewById(R.id.txtEncaminhaCadastro);
+            if (!camposVazios()) {
 
-        btnCadastrar.setOnClickListener(view -> {
-
-
-            if(!camposVazios()){
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
-            }
-            else{
 
-                if(validacaoSenha()){
+                Log.d("testes", "CamposVazios: OK");
 
-                    AlertDialog dialog = new AlertDialog.Builder(this)
-                            .setTitle("CADASTRO COMO Cuidador NA PLATAFORMA PETCARE")
-                            .setMessage("O cadastro será concluído e você entrará em nossa base de dados! =)")
-                            .setPositiveButton("CADASTRAR", (dialog1, which) -> {
+            } else {
 
-                                Cuidador cuidador = new Cuidador();
+                if (validacaoSenha()) {
 
-                                cuidador.setNome("nome teste");
-                                cuidador.setEmail("email teste");
-                                cuidador.setDataNascimento("2022-04-12");
-                                cuidador.setSenha("senha teste");
-                                cuidador.setTelefone("123 telefone");
-                                //cuidador.setSexo();
-                                cuidador.setCpf("123 cpf");
-                                //cuidador.setMoradia();
-                                cuidador.setCep("foto teste");
-                                cuidador.setNumero("foto teste");
-                                //cuidador.setPossuiAnimais();
-                                //cuidador.setPossuiCriancas();
-                                cuidador.setLimitacoes("foto teste");
-                                cuidador.setPreferencias("wfe");
-                                cuidador.setFoto("wfe");
+                    Log.d("testes", "validacaoSenha: OK");
 
-                                addCuidador(cuidador);
+                    /**Colocar dentro do botão**/
+                    cbPossuiAnimais = findViewById(R.id.checkPossuiAnimais);
+                    if (cbPossuiAnimais.isChecked()) {
+                        cbPossuiAnimaisInt = 1;
+                    }
 
-                                //Cuidador.setCep(txtCPF.getText().toString());
-                                //Cuidador.setNumero(43);
+                    cbPossuiCriancas = findViewById(R.id.checkPossuiCriancas);
+                    if (cbPossuiCriancas.isChecked()) {
+                        cbPossuiCriancasInt = 1;
+                    }
+
+                    radioSexo.getCheckedRadioButtonId();
+                    radioMoradia.getCheckedRadioButtonId();
+
+                     int radioSexoInt = radioSexo.getCheckedRadioButtonId();
+                     int radioMoradiaInt = radioMoradia.getCheckedRadioButtonId();
 
 
-                            })
-                            .setNegativeButton("CANCELAR", (dialog1, wich)->{})
-                            .create();
+                    Intent intent = new Intent(CadastroCuidador.this, CadastroCuidadorEndereco.class);
 
-                    dialog.show();
+                    intent.putExtra("txtNome", txtNome.getText().toString());
+                    intent.putExtra("txtEmail", txtEmail.getText().toString());
+                    intent.putExtra("txtDataNascimento",txtDataNascimento.getText().toString());
+                    intent.putExtra("txtSenha",txtSenha.getText().toString());
+                    intent.putExtra("txtCpf",txtCPF.getText().toString());
+                    intent.putExtra("txtTelefone", txtTelefone.getText().toString());
 
-                }else{
-                    Toast.makeText(this, "Senhas não correspondentes!", Toast.LENGTH_SHORT).show();
-                }
+                    if(cbPossuiCriancasInt == 1){
+                        //intent.putExtra("cbPossuiCriancas", "Possui!");
+                        intent.putExtra("cbPossuiCriancas", 1);
+                    }
+                    else{
+                        //intent.putExtra("cbPossuiCriancas", "Não possui!");
+                        intent.putExtra("cbPossuiCriancas", 0);
+                    }
 
-            }// Fim do camposVazios()
+                    if(cbPossuiAnimaisInt == 1){
+                        //intent.putExtra("cbPossuiAnimais", "Possui!");
+                        intent.putExtra("cbPossuiAnimais", 1);
+                    }
+                    else{
+                        intent.putExtra("cbPossuiAnimais", "Não possui!");
+                        intent.putExtra("cbPossuiAnimais", 0);
+                    }
 
-        });//Fim do setOnClickListener
+                    if (radioSexoInt == 1){
+                        String radioSexoString = "Feminino";
+                        //intent.putExtra("radioSexo", radioSexoString);
+                        intent.putExtra("radioSexo", 2);
+                    }
 
-        intentLogin.setOnClickListener(view->{
-            Intent intent = new Intent(CadastroCuidador.this, MainActivity.class);
-            startActivity(intent);
-        });//Fim do intentLogin
+                    if (radioSexoInt == 2){
+                        String radioSexoString = "Masculino";
+                        //intent.putExtra("radioSexo", radioSexoString);
+                        intent.putExtra("radioSexo", 1);
+                    }
 
+                    if (radioSexoInt == 3){
+                        String radioSexoString = "Não binário";
+                        //intent.putExtra("radioSexo", radioSexoString);
+                        intent.putExtra("radioSexo", 3);
+                    }
 
+                    if (radioMoradiaInt == 4){
+                        String radioMoradiaString = "Casa";
+                        intent.putExtra("radioMoradia", radioMoradiaString);
+                    }else{
+                        String radioMoradiaString = "Apartamento";
+                        intent.putExtra("radioMoradia", radioMoradiaString);
+                    }
 
-    }//Fim do OnCreate
-
-    private boolean validacaoSenha(){
-
-        String senha = txtSenha.getText().toString();
-        String ConfirmarSenha = txtConfirmarSenha.getText().toString();
-
-        return senha.equals(ConfirmarSenha);
-
-    }//Fim da Validação de Senha
-
-    private boolean camposVazios(){
-
-        return(
-                !txtNome.getText().toString().isEmpty() &&
-                        !txtEmail.getText().toString().isEmpty() &&
-                        !txtDataNascimento.getText().toString().isEmpty() &&
-                        !txtSenha.getText().toString().isEmpty() &&
-                        !txtConfirmarSenha.getText().toString().isEmpty() &&
-                        !txtCEP.getText().toString().isEmpty() &&
-                        !txtTelefone.getText().toString().isEmpty() &&
-                        !txtCPF.getText().toString().isEmpty() &&
-                        //!txtSexo.getText().toString().isEmpty() &&
-                        !txtNumero.getText().toString().isEmpty()
-        );
-
-    }//Fim da validacao de campos vazios
-
-    public void addCuidador(Cuidador cuidador){
-
-        Log.d("API-ERRO", String.valueOf(cuidador.getNome()));
-        Log.d("API-ERRO", String.valueOf(cuidador.getEmail()));
-        Log.d("API-ERRO", String.valueOf(cuidador.getDataNascimento()));
-        Log.d("API-ERRO", String.valueOf(cuidador.getSenha()));
-        Log.d("API-ERRO", String.valueOf(cuidador.getTelefone()));
-        Log.d("API-ERRO", String.valueOf(cuidador.getSexo()));
-        Log.d("API-ERRO", String.valueOf(cuidador.getCpf()));
-        Log.d("API-ERRO", String.valueOf(cuidador.getFoto()));
-
-        Call<Cuidador> call = routerInterface.addCuidador(cuidador);
-
-        call.enqueue(new Callback<Cuidador>() {
-            @Override
-            public void onResponse(Call<Cuidador> call, Response<Cuidador> response) {
-
-                if(response.isSuccessful()){
-
-                    Toast.makeText(CadastroCuidador.this,
-                            "Cuidador CADASTRADO",
-                            Toast.LENGTH_LONG).show();
+                    startActivity(intent);
 
                 }
-            }
-
-            @Override
-            public void onFailure(Call<Cuidador> call, Throwable t) {
-
-                Log.d("API-ERRO ONFAILURE", t.getMessage());
-                Toast.makeText(CadastroCuidador.this,
-                        "ON FAILURE",
-                        Toast.LENGTH_LONG).show();
-
             }
         });
 
-    }//Fim do consumo de API para cadastrar Cuidador
+    }
 
+
+
+    private boolean validacaoSenha() {
+
+            String senha = txtSenha.getText().toString();
+            String confirmarSenha = txtConfirmarSenha.getText().toString();
+
+        return senha.equals(confirmarSenha);
+    }
+
+    private boolean camposVazios() {
+
+        return(
+                    !txtNome.getText().toString().isEmpty() &&
+                            !txtEmail.getText().toString().isEmpty() &&
+                            !txtDataNascimento.getText().toString().isEmpty() &&
+                            !txtSenha.getText().toString().isEmpty() &&
+                            !txtConfirmarSenha.getText().toString().isEmpty() &&
+                            !txtTelefone.getText().toString().isEmpty() &&
+                            !txtCPF.getText().toString().isEmpty()
+            );
+
+    }
 }
+
+

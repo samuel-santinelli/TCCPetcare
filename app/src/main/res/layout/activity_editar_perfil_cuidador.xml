@@ -1,236 +1,475 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F28907">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/orange">
 
-    <androidx.cardview.widget.CardView
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/vwFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30px">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.cardview.widget.CardView
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/vwFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            android:layout_marginTop="30px">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+
+        </androidx.cardview.widget.CardView>
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"/>
+            android:id="@+id/ivSair"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_close_24"/>
 
-    </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/nomeTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Larissa Pinheiro"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/vwFoto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ImageView
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_close_24"/>
+        <View
+            android:id="@+id/container"
+            android:layout_width="350dp"
+            android:layout_height="410dp"
+            android:background="@drawable/bordas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nomeTitulo"
+            android:layout_marginTop="10dp"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Larissa Pinheiro"
-        android:textColor="@color/white"
-        android:textSize="24dp"
-        app:layout_constraintTop_toBottomOf="@id/vwFoto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <View
-        android:id="@+id/container"
-        android:layout_width="350dp"
-        android:layout_height="550dp"
-        android:background="@drawable/bordas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="150dp"/>
-
-    <TextView
-        android:id="@+id/editarPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Editar Perfil"
-        android:textColor="#F28907"
-        android:textSize="28dp"
-        app:layout_constraintTop_toTopOf="@id/container"
-        app:layout_constraintEnd_toEndOf="@id/container"
-        app:layout_constraintStart_toStartOf="@id/container"
-        android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/editarPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar informaçoes pessoais"
+            android:textColor="#F28907"
+            android:textSize="24dp"
+            app:layout_constraintTop_toTopOf="@id/container"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            android:layout_marginTop="15dp"/>
 
 
 
-    <EditText
-        android:id="@+id/txtEditarNome"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="Larissa Pinheiro"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/editarPerfil"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
+        <EditText
+            android:id="@+id/txtEditarNome"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Larissa Pinheiro"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/editarPerfil"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
 
-    <EditText
-        android:id="@+id/txtEditarCpf"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="231.121.131-83"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarNome"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
+        <EditText
+            android:id="@+id/txtEditarCpf"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="231.121.131-83"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarNome"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
 
-    <EditText
-        android:id="@+id/txtEditarTelefone"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="11 94329321"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarCpf"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
+        <EditText
+            android:id="@+id/txtEditarTelefone"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="11 94329321"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarCpf"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
 
-    <EditText
-        android:id="@+id/txtEditarSexo"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableStart="@drawable/ic_baseline_edit_24"
-        android:hint="Não Binário"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarTelefone"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
+        <EditText
+            android:id="@+id/txtEditarEmail"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:hint="Larrissa@gmail.com"
+            android:inputType="text"
+            android:paddingStart="15dp"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarTelefone"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:layout_marginStart="40dp"
+            />
 
-    <CheckBox
-        android:id="@+id/txtEditarPossuiCriancas"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="Possui Crianças?"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarTelefone"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
+        <RadioGroup
+            android:id="@+id/txtEditarSexo"
+            android:layout_height="40dp"
+            android:layout_width="330dp"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarEmail"
+            app:layout_constraintStart_toStartOf="@id/txtEditarEmail"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordas"
+            android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/txtEditarPossuiAnimais"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="Possui Animais?"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarPossuiCriancas"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feminino"
+                android:layout_marginStart="10dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino"
+                android:layout_marginStart="5dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não binário"
+                android:layout_marginStart="5dp"/>
 
-    <EditText
-        android:id="@+id/txtEditarLimitacoes"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="Limitações"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarPossuiAnimais"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
+        </RadioGroup>
 
-    <EditText
-        android:id="@+id/txtEditarMoradia"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="Moradia"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarLimitacoes"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
-
-    <EditText
-        android:id="@+id/txtEditarPreferencias"
-        android:layout_width="330dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_edit_24"
-        android:hint="Preferencias"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarLimitacoes"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bordas"
-        android:paddingStart="15dp"
-        android:layout_marginStart="40dp"
-        android:textColor="#F28907"/>
-
-    <Button
-        android:id="@+id/btnAlterarSenha"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:backgroundTint="#F28907"
-        android:text="Alterar Senha"
-        app:layout_constraintStart_toStartOf="@id/container"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarPreferencias"/>
-
-    <Button
-        android:id="@+id/btnSalvar"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:backgroundTint="#F28907"
-        android:text="Salvar"
-        app:layout_constraintStart_toEndOf="@id/btnAlterarSenha"
-        app:layout_constraintTop_toBottomOf="@id/txtEditarPreferencias"/>
-
-    <Button
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/btnExcluirMinhaConta"
-        android:layout_width="210dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:backgroundTint="#F28907"
-        android:text="Excluir Minha Conta"
-        app:layout_constraintTop_toBottomOf="@id/btnAlterarSenha"/>
+        <EditText
+            android:id="@+id/txtEditarDataNascimento"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Data de Nascimento"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarSexo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/txtEditarValorHora"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="R$ cobrado por hora de serviço"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarDataNascimento"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
+
+
+        <View
+            android:id="@+id/containerEditarEndereco"
+            android:layout_width="350dp"
+            android:layout_height="430dp"
+            android:background="@drawable/bordas"
+            app:layout_constraintTop_toBottomOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            android:layout_marginTop="40dp"
+            />
+
+        <TextView
+            android:id="@+id/editarEndereco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar endereço"
+            android:textColor="#F28907"
+            android:textSize="24dp"
+            app:layout_constraintTop_toTopOf="@id/containerEditarEndereco"
+            app:layout_constraintEnd_toEndOf="@id/containerEditarEndereco"
+            app:layout_constraintStart_toStartOf="@id/containerEditarEndereco"
+            android:layout_marginTop="15dp" />
+
+        <EditText
+            android:id="@+id/txtEditarCep"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="CEP"
+            android:maxLength="8"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/editarEndereco"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
+
+        <EditText
+            android:id="@+id/txtEditarNumero"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Número"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarCep"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
+
+        <EditText
+            android:id="@+id/txtEditarComplemento"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Complemento"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarNumero"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
+
+        <TextView
+            android:id="@+id/txtEditarEndereco"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:text="Endereço"
+            android:gravity="center"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarComplemento"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            android:textColor="#F28907"/>
+
+        <TextView
+            android:id="@+id/txtEditarBairro"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:text="Bairro"
+            android:gravity="center"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarEndereco"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            android:textColor="#F28907"/>
+
+        <TextView
+            android:id="@+id/txtEditarCidade"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:text="Cidade"
+            android:gravity="center"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarBairro"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            android:textColor="#F28907"/>
+
+        <View
+            android:id="@+id/containerEditarExtras"
+            android:layout_width="350dp"
+            android:layout_height="640dp"
+            android:background="@drawable/bordas"
+            app:layout_constraintTop_toBottomOf="@id/containerEditarEndereco"
+            app:layout_constraintStart_toStartOf="@id/container"
+            android:layout_marginTop="40dp"
+            />
+
+        <TextView
+            android:id="@+id/editarExtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar informações adicionais"
+            android:textColor="#F28907"
+            android:textSize="24dp"
+            app:layout_constraintTop_toTopOf="@id/containerEditarExtras"
+            app:layout_constraintEnd_toEndOf="@id/containerEditarExtras"
+            app:layout_constraintStart_toStartOf="@id/containerEditarExtras"
+            android:layout_marginTop="15dp" />
+
+        <EditText
+            android:id="@+id/txtEditarBiografia"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Biografia"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/editarExtras"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
+
+        <EditText
+            android:id="@+id/txtEditarPreferencias"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Preferências"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarBiografia"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
+
+        <EditText
+            android:id="@+id/txtEditarLimitacoes"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Limitações"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarPreferencias"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/txtEditarMoradia"
+            android:layout_height="40dp"
+            android:layout_width="330dp"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarLimitacoes"
+            app:layout_constraintStart_toStartOf="@id/txtEditarEmail"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordas"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Casa"
+                android:layout_marginStart="60dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apartamento"
+                android:layout_marginStart="30dp"/>
+
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/txtEditarPossuiCriancas"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Possui Crianças?"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarMoradia"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            android:textColor="#F28907"/>
+
+        <CheckBox
+            android:id="@+id/txtEditarPossuiAnimais"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_baseline_edit_24"
+            android:hint="Possui Animais?"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarPossuiCriancas"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bordas"
+            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
+            android:textColor="#F28907"/>
+
+        <Button
+            android:id="@+id/btnAlterarSenha"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#F28907"
+            android:text="Alterar Senha"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarPossuiAnimais"/>
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#F28907"
+            android:text="Salvar"
+            app:layout_constraintStart_toEndOf="@id/btnAlterarSenha"
+            app:layout_constraintTop_toBottomOf="@id/txtEditarPossuiAnimais"/>
+
+        <Button
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btnExcluirMinhaConta"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#F28907"
+            android:text="Excluir Minha Conta"
+            app:layout_constraintTop_toBottomOf="@id/btnAlterarSenha"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintTop_toBottomOf="@id/containerEditarExtras"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

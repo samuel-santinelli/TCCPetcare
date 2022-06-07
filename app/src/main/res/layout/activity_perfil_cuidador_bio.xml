@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilCuidadorAgenda">
+    tools:context=".PerfilCuidadorBio">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_height="match_parent"
@@ -33,9 +33,11 @@
         >
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/dona_lurdes"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_person_24"
             />
 
     </androidx.cardview.widget.CardView>
@@ -44,8 +46,10 @@
         android:id="@+id/tvNomeCuidador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Maria Lurdes"
+        android:text="Gustavo Enrique Galvão Agostinho dos Santos"
+        android:textSize="20dp"
         android:layout_marginTop="10dp"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/cvFoto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -76,14 +80,15 @@
                 app:cardBackgroundColor="#F28907">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_baseline_star_border_24"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/ic_baseline_berco"
                     android:layout_gravity="center"
                     android:layout_marginBottom="20dp"
                     />
 
                 <TextView
+                    android:id="@+id/PossuiCriancas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -105,13 +110,14 @@
                 app:cardBackgroundColor="#F28907">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:src="@drawable/ic_baseline_pets2_24"
                     android:layout_gravity="center"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
+                    android:id="@+id/PossuiAnimais"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -132,13 +138,14 @@
                 app:cardBackgroundColor="#F28907">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_baseline_verified_24"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/ic_baseline_money"
                     android:layout_gravity="center"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
+                    android:id="@+id/valorHora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -155,25 +162,14 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tvAgenda"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="Agenda"
-        app:layout_constraintEnd_toStartOf="@id/tvBio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvBanner"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-
-        />
-    <TextView
         android:id="@+id/tvBio"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:text="Bio"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvAgenda"
+        app:layout_constraintEnd_toStartOf="@id/tvDetalhes"
+        app:layout_constraintTop_toBottomOf="@id/cvBanner"
+        android:layout_marginTop="10dp"
         android:textColor="@color/white"
         android:background="@drawable/bordas2"
         android:gravity="center"/>
@@ -184,7 +180,7 @@
         android:text="Detalhes"
         app:layout_constraintStart_toEndOf="@id/tvBio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvAgenda"
+        app:layout_constraintTop_toTopOf="@id/tvBio"
         android:gravity="center"/>
 
     <TextView
@@ -193,7 +189,7 @@
         android:layout_height="wrap_content"
         android:text="Biografia"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAgenda"
+        app:layout_constraintTop_toBottomOf="@id/tvBio"
         android:layout_marginTop="50dp"
         android:textSize="20dp"
         android:textColor="#F28907"
@@ -216,7 +212,7 @@
         android:id="@+id/tvLimitacoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Limitacoes"
+        android:text="Limitacões"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtBiografia"
         android:layout_marginTop="50dp"
@@ -225,7 +221,7 @@
         android:layout_marginStart="10dp"/>
 
     <TextView
-        android:id="@+id/txtLimitacoes"
+        android:id="@+id/txtLimitacoesPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse rede de cuidadores e tenho muita experiência em cuidar de animais. Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama "
@@ -243,13 +239,14 @@
         android:layout_height="wrap_content"
         android:text="Preferências"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtLimitacoes"
+        app:layout_constraintTop_toBottomOf="@id/txtLimitacoesPerfil"
         android:layout_marginTop="50dp"
         android:textSize="20dp"
         android:textColor="#F28907"
         android:layout_marginStart="10dp"/>
 
     <TextView
+        android:id="@+id/txtPreferenciasPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse rede de cuidadores e tenho muita experiência em cuidar de animais. Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama os animais desde minha infância, estou a muitos anos nesse Sou uma senhora que ama "
@@ -260,6 +257,14 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/bordas"/>
+
+    <ImageView
+        android:id="@+id/ivEditarPerfil"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/viewPerfil"
+        app:layout_constraintTop_toTopOf="@+id/viewPerfil"
+        android:src="@drawable/ic_baseline_edit_24"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

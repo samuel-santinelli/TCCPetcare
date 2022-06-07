@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">PetCareTCC</string>
 
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
     <string-array name="spnVacinas">
         <item>V8/V10</item>
         <item>Antirrábica</item>

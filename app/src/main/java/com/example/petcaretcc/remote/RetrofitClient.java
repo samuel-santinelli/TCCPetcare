@@ -8,17 +8,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
+    private static Retrofit retrofit = null;
 
-
-    public static Retrofit retrofit = null;
-
+    /** MÉTODO DE ACESSO AO CLIENT **/
     public static Retrofit getClient(String url){
 
-        if (retrofit == null){
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
 
-            Gson gson = new GsonBuilder()
-                    .setLenient()
-                    .create();
+        if(retrofit == null){
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(url)
@@ -32,3 +31,5 @@ public class RetrofitClient {
     }
 
 }
+
+

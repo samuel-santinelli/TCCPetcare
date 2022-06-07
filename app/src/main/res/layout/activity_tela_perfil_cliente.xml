@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaPerfilCliente">
+
+    <View
+        android:id="@+id/viewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/golden"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <View
+        android:id="@+id/viewBackgroundLaranja"
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:layout_marginTop="-50dp"
+        android:background="@drawable/bordas2"
+        app:layout_constraintTop_toBottomOf="@+id/viewBackground" />
+
+    <View
+        android:id="@+id/viewBackgroundBranca"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bordas"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/perfilFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="290dp"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp">
+
+        <ImageView
+            android:id="@+id/imgCliente"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtNomeCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Larissa Pinheiro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/perfilFoto"
+        android:textColor="@color/white"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/txtJaTemConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="(Alphaville SP)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeCliente"
+        android:textColor="@color/white"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/nomeDoPet"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="@id/viewBackgroundBranca"
+        android:text="Princesa"
+        android:textSize="20dp"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/ic_baseline_pets_24"
+        android:background="@drawable/backgroundgrey"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="5dp"/>
+
+
+    <TextView
+        android:id="@+id/nomeDaRaca"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/nomeDoPet"
+        android:text="(Labrador)"
+        android:textSize="13dp"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:background="@drawable/backgroundgrey"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/nomeDaCidade"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:text="Alphaville - SP"
+        app:layout_constraintTop_toBottomOf="@id/nomeDaRaca"
+        android:textSize="13dp"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:background="@drawable/backgroundgrey"/>
+
+    <!--    <RatingBar-->
+    <!--        android:id="@+id/ratingBar"-->
+    <!--        android:layout_width="200dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="4dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:numStars="5"-->
+    <!--        android:text-->
+    <!--        android:rating="5.0"-->
+    <!--        android:stepSize="1.0"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/nomeDoPet"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/nomeDoPet"/>-->
+
+    <TextView
+        android:id="@+id/sexoPet"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="Fêmea"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/viewBackgroundBranca"
+        app:layout_constraintTop_toTopOf="@id/viewBackgroundBranca"
+        android:background="@drawable/backgroundgrey"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(2 anos)"
+        app:layout_constraintTop_toBottomOf="@+id/sexoPet"
+        app:layout_constraintEnd_toEndOf="@id/viewBackgroundBranca"
+        android:paddingEnd="3dp"
+        android:textStyle="bold"
+        android:background="@drawable/backgroundgrey"
+        android:layout_marginEnd="5dp"
+        android:padding="5dp"/>
+
+
+    <TextView
+        android:id="@+id/tituloBiografia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="3dp"
+        android:text="Biografia da Princesa"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/textoBiografia"
+        app:layout_constraintStart_toStartOf="@id/textoBiografia"
+        app:layout_constraintBottom_toTopOf="@id/textoBiografia"
+        android:textSize="20dp"/>
+
+
+    <TextView
+        android:id="@+id/textoBiografia"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="52dp"
+        android:paddingEnd="3dp"
+        android:text="O que falar da minha princesa? sempre me recebe com tanta felicidade quando chego em casa, para mim ela é a cachorra mais amorosa do mundo!"
+        app:layout_constraintBottom_toTopOf="@id/btnBuscarCuidador"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/backgroundgrey"
+        android:padding="35px"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/btnBuscarCuidador"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/orange"
+        android:text="BUSCAR CUIDADOR"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/viewBackgroundBranca"
+        app:layout_constraintEnd_toEndOf="@id/viewBackgroundBranca"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

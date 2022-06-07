@@ -1,423 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PerfilCuidadorAgenda">
+    android:layout_height="match_parent">
 
-    <View
-        android:id="@+id/viewPerfil"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/image_23"
-        />
+        android:layout_height="match_parent"
+        tools:context=".PerfilCuidadorAgenda">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvFoto"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintTop_toBottomOf="@id/viewPerfil"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="-50dp"
-        app:cardCornerRadius="100dp"
-        >
-
-        <ImageView
+        <View
+            android:id="@+id/viewPerfil"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/dona_lurdes"
+            android:layout_height="180dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/image_23"
             />
 
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tvNomeCuidador"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Maria Lurdes"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/cvFoto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvBanner"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintTop_toBottomOf="@id/tvNomeCuidador"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:cardCornerRadius="15dp"
-        >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvFoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/viewPerfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="-50dp"
+            app:cardCornerRadius="100dp"
             >
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvAvaliacao"
-                android:layout_width="125dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:cardBackgroundColor="#F28907">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_person_24"
+                />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_baseline_star_border_24"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
-                    />
+        </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:text="4.3"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="45dp"/>
+        <TextView
+            android:id="@+id/tvNomeCuidador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maria Lurdes"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/cvFoto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvAnimaisCuidados"
-                android:layout_width="125dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cvAvaliacao"
-                app:layout_constraintEnd_toStartOf="@id/cvPremium"
-                app:cardBackgroundColor="#F28907">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_baseline_pets2_24"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="302"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="45dp"
-                    android:layout_marginBottom="20dp"
-                    android:textColor="@color/white"
-                    />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvPremium"
-                android:layout_width="125dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:cardBackgroundColor="#F28907">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_baseline_verified_24"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SIM"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="45dp"
-                    android:layout_marginBottom="20dp"
-                    android:textColor="@color/white"
-                    />
-
-
-            </androidx.cardview.widget.CardView>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tvAgenda"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="Agenda"
-        app:layout_constraintEnd_toStartOf="@id/tvBio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvBanner"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-
-        />
-    <TextView
-        android:id="@+id/tvBio"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="Bio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvAgenda"
-
-        android:gravity="center"/>
-    <TextView
-        android:id="@+id/tvDetalhes"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="Detalhes"
-        app:layout_constraintStart_toEndOf="@id/tvBio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvAgenda"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@drawable/bordas2"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CPF:"
-        app:layout_constraintStart_toStartOf="@id/tvCpf"
-        app:layout_constraintBottom_toTopOf="@id/tvCpf"
-        android:layout_marginStart="5dp"/>
-
-    <TextView
-        android:id="@+id/tvCpf"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="485.934.935.04"
-        android:textSize="20dp"
-        android:padding="5dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@id/tvDetalhes"
-        android:layout_marginEnd="40dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@drawable/bordas2"
-        android:layout_marginStart="15dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Valor:"
-        app:layout_constraintStart_toStartOf="@id/tvValor"
-        app:layout_constraintBottom_toTopOf="@id/tvValor"
-        android:layout_marginStart="5dp"/>
-
-
-    <TextView
-        android:id="@+id/tvValor"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bordas2"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="R$213"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@id/tvCpf"
-        app:layout_constraintTop_toBottomOf="@id/tvCpf"
-        android:layout_marginTop="30dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sexo:"
-        app:layout_constraintStart_toStartOf="@id/tvSexo"
-        app:layout_constraintBottom_toTopOf="@id/tvSexo"
-        android:layout_marginStart="5dp"/>
-
-
-    <TextView
-        android:id="@+id/tvSexo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Não Binário"
-        android:textSize="20dp"
-        android:padding="5dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="@id/tvValor"
-        app:layout_constraintTop_toBottomOf="@id/tvValor"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@drawable/bordas2"/>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvPorte"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSexo"
-        >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvBanner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNomeCuidador"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="15dp"
             >
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/porteMuitoPequeno"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:cardBackgroundColor="#F28907">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_pets2_24"
-                    android:layout_marginBottom="10dp"
-                    />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAvaliacao"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardBackgroundColor="#F28907">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="até 5kg"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="25dp"
-                    android:textColor="@color/white"/>
+                    <ImageView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:src="@drawable/ic_baseline_berco"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_verified_24"
-                    android:layout_marginStart="5dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/porteMuitoPequeno"
-                app:cardBackgroundColor="#F28907"
-                android:id="@+id/portePequeno"
-                android:background="@drawable/bordas2">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_pets2_24"
-                    android:layout_marginBottom="10dp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5kg até 10kg"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="25dp"
-                    android:textColor="@color/white"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_verified_24"
-                    android:layout_marginStart="5dp"/>
-
-            </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/PossuiCriancas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="4.3"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="45dp"/>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/porteGrande"
-                app:cardBackgroundColor="#F28907"
-                android:id="@+id/porteMedio">
+                </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_pets2_24"
-                    android:layout_marginBottom="10dp"
-                    />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAnimaisCuidados"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cvAvaliacao"
+                    app:layout_constraintEnd_toStartOf="@id/cvPremium"
+                    app:cardBackgroundColor="#F28907">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10kg até 20kg"
-                    android:layout_gravity="center"
-                   android:layout_marginTop="25dp"
-                    android:textColor="@color/white"/>
+                    <ImageView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:src="@drawable/ic_baseline_pets2_24"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_verified_24"
-                    android:layout_marginStart="5dp"/>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:cardBackgroundColor="#F28907"
-                android:id="@+id/porteGrande">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_pets2_24"
-                    android:layout_marginBottom="10dp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20kg até 50kg"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="25dp"
-                    android:textColor="@color/white"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_block_24"
-                    android:layout_marginStart="5dp"/>
+                    <TextView
+                        android:id="@+id/PossuiAnimais"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="302"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/white"
+                        />
 
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvPremium"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardBackgroundColor="#F28907">
+
+                    <ImageView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/ic_baseline_money" />
+
+                    <TextView
+                        android:id="@+id/valorHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SIM"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/white"
+                        />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvBio"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Bio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvDetalhes"
+            app:layout_constraintTop_toBottomOf="@id/cvBanner"
+            android:layout_marginTop="10dp"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tvDetalhes"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Detalhes"
+            app:layout_constraintStart_toEndOf="@id/tvBio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvBio"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bordas2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CEP:"
+            app:layout_constraintStart_toStartOf="@id/tvCpf"
+            app:layout_constraintBottom_toTopOf="@id/tvCep"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/tvCep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="485.934.935.04"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/tvDetalhes"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bordas2"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPF:"
+            app:layout_constraintStart_toStartOf="@id/tvCpf"
+            app:layout_constraintBottom_toTopOf="@id/tvCpf"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/tvCpf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="485.934.935.04"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/tvCep"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bordas2"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="@id/tvEmail"
+            app:layout_constraintBottom_toTopOf="@id/tvEmail"
+            android:layout_marginStart="5dp"/>
+
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordas2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="R$213"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/tvCpf"
+            app:layout_constraintTop_toBottomOf="@id/tvCpf"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexo:"
+            app:layout_constraintStart_toStartOf="@id/tvSexo"
+            app:layout_constraintBottom_toTopOf="@id/tvSexo"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moradia"
+            app:layout_constraintStart_toStartOf="@id/tvMoradia"
+            app:layout_constraintBottom_toTopOf="@id/tvMoradia"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/tvMoradia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordas2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="R$213"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/tvEmail"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexo:"
+            app:layout_constraintStart_toStartOf="@id/tvSexo"
+            app:layout_constraintBottom_toTopOf="@id/tvSexo"
+            android:layout_marginStart="5dp"/>
+
+
+        <TextView
+            android:id="@+id/tvSexo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não Binário"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/tvMoradia"
+            app:layout_constraintTop_toBottomOf="@id/tvMoradia"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bordas2"/>
+
+        <ImageView
+            android:id="@+id/ivEditarPerfil"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/viewPerfil"
+            app:layout_constraintTop_toTopOf="@+id/viewPerfil"
+            android:src="@drawable/ic_baseline_edit_24"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

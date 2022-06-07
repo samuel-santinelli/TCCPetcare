@@ -18,10 +18,10 @@
             android:layout_marginTop="40dp"/>
 
         <EditText
-            android:id="@+id/txtLogin"
+            android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:hint="Login"
+            android:hint="Email"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -41,21 +41,34 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/txtLogin"
+            app:layout_constraintTop_toBottomOf="@id/txtEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:background="@drawable/bordas"
             android:paddingStart="15dp"/>
 
         <Button
-            android:id="@+id/btnEntreAgora"
+            android:id="@+id/btnEntreAgoraCliente"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="ENTRE AGORA"
+            android:text="ENTRE AGORA COMO CLIENTE"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/txtSenha"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+        <Button
+            android:id="@+id/btnEntreAgoraCuidador"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="ENTRE AGORA COMO CUIDADOR"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@id/btnEntreAgoraCliente"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
@@ -66,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="Lembre-se de mim"
-            app:layout_constraintTop_toBottomOf="@id/btnEntreAgora"
+            app:layout_constraintTop_toBottomOf="@id/btnEntreAgoraCuidador"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"/>
@@ -87,8 +100,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Esqueci minha senha"
-            app:layout_constraintEnd_toEndOf="@id/btnEntreAgora"
-            app:layout_constraintTop_toBottomOf="@id/btnEntreAgora"
+            app:layout_constraintEnd_toEndOf="@id/btnEntreAgoraCuidador"
+            app:layout_constraintTop_toBottomOf="@id/btnEntreAgoraCuidador"
             />
 
         <TextView

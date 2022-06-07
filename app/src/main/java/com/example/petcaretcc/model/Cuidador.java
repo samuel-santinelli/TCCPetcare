@@ -1,9 +1,5 @@
 package com.example.petcaretcc.model;
 
-import android.widget.CheckBox;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -21,13 +17,13 @@ public class Cuidador {
     @Expose
     private String senha;
 
+    @SerializedName("biografia")
+    @Expose
+    private String biografia;
+
     @SerializedName("cpf")
     @Expose
     private String cpf;
-
-    @SerializedName("telefone")
-    @Expose
-    private String telefone;
 
     @SerializedName("limitacoes")
     @Expose
@@ -39,11 +35,11 @@ public class Cuidador {
 
     @SerializedName("cep")
     @Expose
-    private String cep;
+    private int cep;
 
     @SerializedName("numero")
     @Expose
-    private String numero;
+    private int numero;
 
     @SerializedName("dataNascimento")
     @Expose
@@ -53,33 +49,51 @@ public class Cuidador {
     @Expose
     private String foto;
 
-    @SerializedName("sexo")
+    @SerializedName("idSexoHost")
     @Expose
-    private RadioGroup sexo;
-    private RadioButton generoFluido;
-    private RadioButton masculino;
-    private RadioButton feminino;
+    private int sexo;
 
-    @SerializedName("sexo")
+    @SerializedName("moradia")
     @Expose
-    private RadioGroup moradia;
-    private RadioButton casa;
-    private RadioButton apartamento;
+    private String moradia;
+
+    @SerializedName("idHost")
+    @Expose
+    private int idHost;
 
     @SerializedName("possuiAnimais")
     @Expose
-    private CheckBox possuiAnimais;
+    private int possuiAnimais;
 
     @SerializedName("possuiCriancas")
     @Expose
-    private CheckBox possuiCriancas;
+    private int possuiCriancas;
 
+    @SerializedName("complemento")
+    @Expose
+    private String complemento;
+
+    @SerializedName("cidade")
+    @Expose
+    private String cidade;
+
+    @SerializedName("endereco")
+    @Expose
+    private String endereco;
+
+    @SerializedName("bairro")
+    @Expose
+    private String bairro;
+
+    @SerializedName("valorHora")
+    @Expose
+    private double valorHora;
 
     public Cuidador (){
 
     }
 
-    public Cuidador(String nome, String email, String senha, String cpf, String dataNascimento, String cep, String foto, RadioGroup moradia, CheckBox possuiAnimais, CheckBox possuiCriancas, RadioGroup sexo, String limitacoes, String preferencias, String telefone, String numero){
+    public Cuidador(String nome, String email, String senha, String cpf, String dataNascimento, int cep, String foto, String moradia, int possuiAnimais, int possuiCriancas, int sexo, String limitacoes, String preferencias, String telefone, int numero, String biografia, double valorHora, String complemento, int idHost, String estado, String cidade, String endereco, String bairro){
         this.cep = cep;
         this.cpf = cpf;
         this.foto = foto;
@@ -93,9 +107,14 @@ public class Cuidador {
         this.possuiAnimais = possuiAnimais;
         this.limitacoes = limitacoes;
         this.preferencias = preferencias;
-        this.foto = foto;
-        this.telefone = telefone;
         this.numero = numero;
+        this.biografia = biografia;
+        this.valorHora = valorHora;
+        this.complemento = complemento;
+        this.cidade = cidade;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.idHost = idHost;
     }
 
     public String getNome() { return nome; }
@@ -114,10 +133,6 @@ public class Cuidador {
 
     public void setCpf(String cpf) { this.cpf = cpf; }
 
-    public String getTelefone() { return telefone; }
-
-    public void setTelefone(String telefone) { this.telefone = telefone; }
-
     public String getLimitacoes() { return limitacoes; }
 
     public void setLimitacoes(String limitacoes) { this.limitacoes = limitacoes; }
@@ -126,7 +141,9 @@ public class Cuidador {
 
     public void setPreferencias(String preferencias) { this.preferencias = preferencias; }
 
-    public String getCep() { return cep; }
+    public int getCep() { return cep; }
+
+    public void setCep(int cep) { this.cep = cep; }
 
     public String getDataNascimento() { return dataNascimento; }
 
@@ -138,44 +155,59 @@ public class Cuidador {
 
     public void setCep(String cep) { }
 
-    public String getNumero() { return numero; }
+    public int getNumero() { return numero; }
 
-    public void setNumero(String numero) { this.numero = numero; }
+    public void setNumero(int numero) { this.numero = numero; }
 
-    public RadioGroup getSexo() { return sexo; }
+    public int getSexo() { return sexo; }
 
-    public void setSexo(RadioGroup sexo) { this.sexo = sexo; }
+    public void setSexo(int sexo) { this.sexo = sexo; }
 
-    public RadioButton getGeneroFluido() { return generoFluido; }
+    public String getMoradia() { return moradia; }
 
-    public void setGeneroFluido(RadioButton generoFluido) { }
+    public void setMoradia(String moradia) { }
 
-    public RadioButton getMasculino() { return masculino; }
+    public int getPossuiAnimais() { return possuiAnimais; }
 
-    public void setMasculino(RadioButton masculino) { this.masculino = masculino; }
+    public void setPossuiAnimais(int possuiAnimais) { this.possuiAnimais = possuiAnimais; }
 
-    public RadioButton getFeminino() { return feminino; }
+    public int getPossuiCriancas() { return possuiCriancas; }
 
-    public void setFeminino(RadioButton feminino) { this.feminino = feminino; }
+    public void setPossuiCriancas(int possuiCriancas) { this.possuiCriancas = possuiCriancas; }
 
-    public RadioGroup getMoradia() { return moradia; }
+    public String getBiografia() {
+        return biografia;
+    }
 
-    public void setMoradia(RadioGroup moradia) { }
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
+    }
 
-    public RadioButton getCasa() { return casa; }
+    public double getValorHora() { return valorHora; }
 
-    public void setCasa(RadioButton casa) { this.casa = casa; }
+    public void setValorHora(double valorHora) { this.valorHora = valorHora; }
 
-    public RadioButton getApartamento() { return apartamento; }
+    public String getComplemento() { return complemento; }
 
-    public void setApartamento(RadioButton apartamento) { this.apartamento = apartamento; }
+    public void setComplemento(String complemento) { this.complemento = complemento; }
 
-    public CheckBox getPossuiAnimais() { return possuiAnimais; }
+    public String getCidade() { return cidade; }
 
-    public void setPossuiAnimais(CheckBox possuiAnimais) { this.possuiAnimais = possuiAnimais; }
+    public void setCidade(String cidade) { this.cidade = cidade; }
 
-    public CheckBox getPossuiCriancas() { return possuiCriancas; }
+    public String getEndereco() { return endereco; }
 
-    public void setPossuiCriancas(CheckBox possuiCriancas) { this.possuiCriancas = possuiCriancas; }
+    public void setEndereco(String endereco) { this.endereco = endereco; }
 
+    public String getBairro() { return bairro; }
+
+    public void setBairro(String bairro) { this.bairro = bairro;}
+
+    public int getIdHost() {
+        return idHost;
+    }
+
+    public void setIdHost(int idHost) {
+        this.idHost = idHost;
+    }
 }
