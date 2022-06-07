@@ -194,6 +194,7 @@ public class LandingPage extends AppCompatActivity {
                                             @Override
                                             public void onResponse(Call<Agendamento> call, Response<Agendamento> response) {
 
+                                                Log.d("API-FINAL", String.valueOf(response.body()));
 
                                                 if(response.isSuccessful()){
 
@@ -207,6 +208,7 @@ public class LandingPage extends AppCompatActivity {
 
                                             @Override
                                             public void onFailure(Call<Agendamento> call, Throwable t) {
+                                                Log.d("API-FINAL", String.valueOf(t), t);
                                                 Toast.makeText(LandingPage.this, "Problemas de conexão! (Entre em contato com os desenvolvedores.)", Toast.LENGTH_SHORT).show();
                                             }
                                         });
@@ -227,6 +229,53 @@ public class LandingPage extends AppCompatActivity {
 
                         }
                 );
+
+                btnRecusar.setOnClickListener(view -> {
+
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(LandingPage.this)
+                            .setMessage("Você está prestes a recusar um agendamento, tem certeza disso?!")
+                            .setPositiveButton("Confirmar", (dialog1, witch) -> {
+
+                                Agendamento agendamento = new Agendamento();
+
+                                agendamento.setStatus("Recusado");
+
+                                Call<Agendamento> callAgendamento = routerInterface.atualizarAgendamentoRECUSADO(agendamento);
+
+                                callAgendamento.enqueue(new Callback<Agendamento>() {
+                                    @Override
+                                    public void onResponse(Call<Agendamento> call, Response<Agendamento> response) {
+
+
+                                        if(response.isSuccessful()){
+
+                                            Toast.makeText(LandingPage.this, "Agendamento recusado com sucesso!", Toast.LENGTH_SHORT).show();
+
+                                        }else{
+
+                                            Toast.makeText(LandingPage.this, "Não foi possivel recusar o agendamento!", Toast.LENGTH_SHORT).show();}
+
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<Agendamento> call, Throwable t) {
+                                        Toast.makeText(LandingPage.this, "Problemas de conexão! (Entre em contato com os desenvolvedores.)", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+                                Intent intent = new Intent(LandingPage.this, LandingPage.class);
+                                intent.putExtra("idCuidador", idCuidador);
+                                startActivity(intent);
+                            })
+                            .setNegativeButton("Cancelar", (dialog1, witch) -> {
+
+                                Intent intent = new Intent(LandingPage.this, LandingPage.class);
+                                intent.putExtra("idCuidador", idCuidador);
+                                startActivity(intent);
+
+                            });
+                    alertDialog.show();
+                });
 
             }
 
