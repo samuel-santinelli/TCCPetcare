@@ -162,6 +162,7 @@ public class LandingPage extends AppCompatActivity {
         class AgendamentoViewHolder extends RecyclerView.ViewHolder {
 
             private TextView txtDataInicial, txtDataFinal, txtPet, txtCliente, txtTipo, txtEndereco, txtCpf, txtValor, btnAceitar, btnRecusar;
+            private int idAgendamento;
             //private Button btnAceitar, btnRecusar;
 
             public AgendamentoViewHolder(@NonNull View itemView) {
@@ -178,6 +179,8 @@ public class LandingPage extends AppCompatActivity {
                 btnAceitar = itemView.findViewById(R.id.btnAceitar);
                 btnRecusar = itemView.findViewById(R.id.btnRecusar);
 
+
+
                 btnAceitar.setOnClickListener(view -> {
 
                             AlertDialog.Builder alertDialog = new AlertDialog.Builder(LandingPage.this)
@@ -185,8 +188,6 @@ public class LandingPage extends AppCompatActivity {
                                     .setPositiveButton("Confirmar", (dialog1, witch) -> {
 
                                         Agendamento agendamento = new Agendamento();
-
-                                        agendamento.setStatus("Aceito");
 
                                         Call<Agendamento> callAgendamento = routerInterface.atualizarAgendamentoACEITO(agendamento);
 
@@ -284,7 +285,7 @@ public class LandingPage extends AppCompatActivity {
                 txtDataFinal.setText(agendamento.getDataFinal());
                 txtPet.setText(agendamento.getNomePet());
                 txtCliente.setText(agendamento.getNome());
-                //txtTipo.setText(agendamento.getTipoServico());
+//                txtTipo.setText(agendamento.getTipoServico());
                 txtValor.setText(String.valueOf(agendamento.getValor()));
                 txtEndereco.setText(agendamento.getEndereco());
                 txtCpf.setText(String.valueOf(agendamento.getCpf()));

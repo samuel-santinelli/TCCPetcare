@@ -55,6 +55,8 @@ public class HistoricoServicoCliente extends AppCompatActivity {
                     | View.SYSTEM_UI_FLAG_FULLSCREEN;
             decorView.setSystemUiVisibility(uiOptions);
 
+            int idCuidador = getIntent().getExtras().getInt("idCuidador");
+            Log.d("API-idCuidador", String.valueOf(idCuidador));
 
             intentPerfil = findViewById(R.id.iconePessoa);
             intentServicos = findViewById(R.id.intentServicos);
@@ -62,7 +64,7 @@ public class HistoricoServicoCliente extends AppCompatActivity {
             intentLanding = findViewById(R.id.iconeCasa);
 
             intentLanding.setOnClickListener(view->{
-                Intent intent = new Intent(HistoricoServicoCliente.this,RecuperarSenha.class);
+                Intent intent = new Intent(HistoricoServicoCliente.this, LandingPage.class);
                 startActivity(intent);
             });
 
@@ -74,6 +76,12 @@ public class HistoricoServicoCliente extends AppCompatActivity {
 
             intentServicos.setOnClickListener(view->{
                 Intent intent = new Intent(HistoricoServicoCliente.this,TelaAgendamento.class);
+                startActivity(intent);
+            });
+
+            intentPerfil.setOnClickListener(view->{
+                Intent intent = new Intent(HistoricoServicoCliente.this, PerfilCuidadorBio.class);
+                intent.putExtra("idCuidador", idCuidador);
                 startActivity(intent);
             });
 
