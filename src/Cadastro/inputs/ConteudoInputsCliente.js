@@ -21,6 +21,8 @@ const ConteudoInputsCliente = (props) => {
   data.append('file', selectedFile)
   console.log(data);
 
+  const idClienteUrl = JSON.parse(localStorage.getItem("idCliente"));
+
   const senha = document.getElementById("senhaClient");
   const confirmarSenha = document.getElementById("confirmarSenhaControl");
 
@@ -62,8 +64,11 @@ const ConteudoInputsCliente = (props) => {
     } else {
       axios
         .post("http://localhost/Cuidador/Cliente/api/cliente", user)
-        .then((res) => setUser(res.data));
-      navigate("/Login");
+        .then((res) =>  {
+          window.localStorage.setItem("idCliente", JSON.parse(res.data[0].idCliente));
+          
+        });
+        navigate("/BoasVindas?idCliente=" + idClienteUrl);
       if (user) {
         alert("Cadastro efetuado com sucesso!");
       } else {

@@ -32,7 +32,7 @@ const InputsLogin = (props) => {
         console.log("O cliente é", res.data[0].idCliente);
         window.localStorage.setItem("cliente", JSON.stringify(res.data));
         window.localStorage.setItem("idCliente", JSON.parse(res.data[0].idCliente));
-        navigate("/BoasVindas?idCliente=" + res.data[0].idCliente);
+        navigate("/Agendamento?idCliente=" + res.data[0].idCliente);
         alert("Seja bem vindo!!!");
       })
       .catch((e) => {
