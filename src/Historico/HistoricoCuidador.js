@@ -72,16 +72,16 @@ const HistoricoCuidador = () => {
     axios
       .put(
         `http://localhost/Cuidador/Cuidador/api/agendar/status/${idServicoUrl}`,
-        editStatusRecused,
+        editStatus,
      
       )
       .then((res) => {
-        setEditStatusRecused(console.log({ UpdatedAt: res.data.updatedAt }));
+        setEditStatus(console.log({ UpdatedAt: res.data.updatedAt }));
       });
 
     setMessageDecision(!messageDecision);
-    const acept = document.getElementById("acept");
-    acept.style.display = "none";
+    const recused = document.getElementById("recused");
+    recused.style.display = "none";
   }
 
   console.log(editStatus);
@@ -191,7 +191,6 @@ const HistoricoCuidador = () => {
                         className="respStatusAcept"
                         onClick={DecisionCuidadorAcept}
                         id="acept"
-                        
                       >
                         {messageDecision ? "Aceitar" : "Serviço aceito"}
                       </label>
