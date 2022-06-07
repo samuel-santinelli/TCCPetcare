@@ -59,17 +59,6 @@ const InputsPet = ({ props }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost/Cuidador/Cliente/api/pets/listarEspecie")
-      .then((res) => {
-        setInfoPet(res.data);
-      })
-      .catch(() => {
-        console.log("Deu erro");
-      });
-  }, []);
-
-  useEffect(() => {
-    axios
       .get("http://localhost/Cuidador/Cliente/api/pets/listarFase")
       .then((res) => {
         setInfoPet(res.data);
@@ -148,9 +137,9 @@ const InputsPet = ({ props }) => {
               value={pet.idEspecie}
               onChange={(e) => setPet({ ...pet, idEspecie: e.target.value })}
             >
-              {infoPet.map((pet, keyVacina) => (
-                <option key={keyVacina}>{pet.nomeEspecie}</option>
-              ))}
+         <option value={0}>Cão</option>
+         <option value={1}>Gato</option>
+         <option value={2}>Ave</option>
             </select>
           </div>
           <div id="contInputsPet">
