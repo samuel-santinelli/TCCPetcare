@@ -465,6 +465,7 @@ header{
     font-weight: 700;
     /* justify-content: center; */
 }
+
 #div-texto{
     position: absolute;
     width: 544px;
@@ -1067,3 +1068,27 @@ body{
 }
 
 /* Conteudo do body se encerra aqui */
+
+
+
+@media only screen and (max-width: 1100px){
+   .img-box-container{
+       width: 40rem;
+       height: 50rem;
+       background-size: cover;
+       object-fit: cover;
+   }
+
+   .texto-container{
+       margin-left: -15rem;
+       margin-top: 5rem;
+   }
+
+   #input-pesquisa{
+       width: 85rem;
+       padding-left: 6rem;
+   }
+   .pesquisa-icon{
+       margin-top: 0.6rem;
+   }
+}

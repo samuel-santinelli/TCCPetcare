@@ -129,9 +129,9 @@ const Modal = (props) => {
                 className="inputCompra"
                 type="text"
                 placeholder="Digite Seu CPF"
-                mask="99999.999"
+                mask="999.999.999-99"
                 id="cpfAgendamento"
-                value={agendamento.cpf}
+                value={agendamento.cpf.replace(".", "").replace("-", "")}
                 onChange={(e) =>
                   setAgendamento({ ...agendamento, cpf: e.target.value })
                 }
