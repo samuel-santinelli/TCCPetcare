@@ -9,11 +9,14 @@ import { Link } from "react-router-dom";
 const PerfilCliente = (props) => {
   const [profileData, setProfileData] = useState([""]);
 
-  const [editProfile, setEditProfile] = useState(
-    {
-      nome: "",
-    },
-  );
+  const [editProfile, setEditProfile] = useState({
+    nome: "",
+    email: "",
+    dataNascimento: "",
+    endereco: "",
+    bairro: "",
+    numero: "",
+  });
   const [petData, setPetData] = useState([""]);
   const [querystring] = useSearchParams();
 
@@ -27,16 +30,13 @@ const PerfilCliente = (props) => {
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
 
   const handleEditSubmit = (e) => {
-    e.preventDefault();
     axios
       .put(
-        `http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`,{
-        nome: ""
-      }
+        `http://localhost/Cuidador/Cliente/api/cliente/${idCliente}`,
+        editProfile
       )
-
       .then((res) => {
-        setEditProfile(res.data);
+        setEditProfile({ UpdatedAt: res.data.updatedAt });
       })
       .catch((error) => console.log(error));
   };
@@ -66,6 +66,7 @@ const PerfilCliente = (props) => {
         console.log("Deu erro ao buscar os dados do pet");
       });
   }, []);
+
   console.log("os dados do pet", petData);
   console.log("os dados do cliente", profileData);
 
@@ -93,11 +94,11 @@ const PerfilCliente = (props) => {
             <BsPencil className="iconPrice" />
           </div>
           <div className="containerInfoProfile">
-            <form onSubmit={() => handleEditSubmit(profileData)}>
+            <form onSubmit={() => handleEditSubmit(editProfile)}>
               <label className="nameClienteProfile"> Seu nome</label>
               <input
                 className="containerInputProfileCliente"
-                value={profileData[0].nome}
+                value={editProfile.nome}
                 onChange={(e) =>
                   setEditProfile({
                     ...editProfile,
@@ -105,42 +106,85 @@ const PerfilCliente = (props) => {
                   })
                 }
               />
+              <label className="containerDetailsInputProfile">
+                {profileData[0].nome}
+              </label>
               <label className="nameClienteProfile"> Seu email</label>
               <input
                 className="containerInputProfileCliente"
-                value={profileData[0].email}
-                onChange={(e) => setProfileData(e.target.value)}
+                value={editProfile.email}
+                onChange={(e) =>
+                  setEditProfile({
+                    ...editProfile,
+                    email: e.target.value,
+                  })
+                }
               />
+              <label className="containerDetailsInputProfile">
+                {profileData[0].email}
+              </label>
               <label className="nameClienteProfile"> Data de Nascimento</label>
               <input
                 className="containerInputProfileCliente"
-                value={profileData[0].dataNascimento}
-                onChange={(e) => setProfileData(e.target.value)}
+                value={editProfile.dataNascimento}
+                onChange={(e) =>
+                  setEditProfile({
+                    ...editProfile,
+                    dataNascimento: e.target.value,
+                  })
+                }
               />
+              <label className="containerDetailsInputProfile">
+                {profileData[0].dataNascimento}
+              </label>
               <div>
                 <label className="nameClienteProfile"> Endereço</label>
                 <input
                   className="containerInputProfileCliente"
-                  value={profileData[0].endereco}
-                  onChange={(e) => setProfileData(e.target.value)}
+                  value={editProfile.endereco}
+                  onChange={(e) =>
+                    setEditProfile({
+                      ...editProfile,
+                      endereco: e.target.value,
+                    })
+                  }
                 />
+                <label className="containerDetailsInputProfile">
+                  {profileData[0].endereco}
+                </label>
                 <label className="nameClienteProfile"> Bairro</label>
                 <input
                   className="containerInputProfileCliente"
-                  value={profileData[0].bairro}
-                  onChange={(e) => setProfileData(e.target.value)}
+                  value={editProfile.bairro}
+                  onChange={(e) =>
+                    setEditProfile({
+                      ...editProfile,
+                      bairro: e.target.value,
+                    })
+                  }
                 />
+                <label className="containerDetailsInputProfile">
+                  {profileData[0].bairro}
+                </label>
                 <label className="nameClienteProfile"> Numero da Casa</label>
                 <input
                   className="containerInputProfileCliente"
-                  value={profileData[0].numero}
-                  onChange={(e) => setProfileData(e.target.value)}
+                  value={editProfile.numero}
+                  onChange={(e) =>
+                    setEditProfile({
+                      ...editProfile,
+                      numero: e.target.value,
+                    })
+                  }
                 />
               </div>
+              <label className="containerDetailsInputProfile">
+                  {profileData[0].numero}
+                </label>
               <div className="containerSaveAlteratons">
                 <button
                   className="buttonSaveAlterations"
-                  onClick={handleEditSubmit}
+                  
                 >
                   Salvar Alterações
                 </button>
