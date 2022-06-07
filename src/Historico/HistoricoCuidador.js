@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import "./style/styleHistorico.css";
 import SearchIcon from "@mui/icons-material/Search";
 
 const HistoricoCuidador = () => {
+  const navigate = useNavigate();
   const [history, setHistory] = useState([]);
   const [searchHistory, setSearchHistory] = useState([]);
-  const [historyCuidador, setHistoryCuidador] = useState([]);
+  
   const semFoto =
     "https://www.promoview.com.br/uploads/images/unnamed%2819%29.png";
   const [querystring] = useSearchParams();
@@ -31,15 +32,6 @@ const HistoricoCuidador = () => {
     fetchData();
   }, []);
 
-  // axios
-  //   .get(`http://localhost/Cuidador/Cuidador/api/cuidador`, historyCuidador)
-  //   .then((res) => {
-  //     setHistoryCuidador(res.data);
-  //   })
-  //   .catch(() => {
-  //     console.log("Deu erro ao buscar os dados do cliente");
-  //   });
-
   const handleSearchHistory = ({ target }) => {
     if (!target.value) {
       setSearchHistory(history);
@@ -61,31 +53,56 @@ const HistoricoCuidador = () => {
     },
   );
 
-  const id = 18;
+  const [editStatusRecused, setEditStatusRecused] = useState(
+    {
+      status: "RECUSADO"
+    },
+  );
 
-  function DecisionCuidadorAcept(userEdit) {
+  function detectIdService({target}) {
+    const idServico = target.getAttribute("data-id");
+    console.log(idServico);
+    navigate("/HistoricoCuidador?idServico=" + idServico);
+  }
+
+  function DecisionCuidadorAcept() {
+    const idServicoUrl = querystring.get("idServico");
+    console.log(idServicoUrl);
+
     axios
       .put(
-        `http://localhost/Cuidador/Cuidador/api/agendar/status/${id}`,
-        editStatus,
+        `http://localhost/Cuidador/Cuidador/api/agendar/status/${idServicoUrl}`,
+        editStatusRecused,
      
       )
       .then((res) => {
-        setEditStatus(console.log({ UpdatedAt: res.data.updatedAt }));
+        setEditStatusRecused(console.log({ UpdatedAt: res.data.updatedAt }));
       });
 
     setMessageDecision(!messageDecision);
-    const recused = document.getElementById("recused");
     const acept = document.getElementById("acept");
-    recused.style.display = "none";
+    acept.style.display = "none";
   }
 
   console.log(editStatus);
 
   function DecisionCuidadorRecused() {
+    const idServicoUrl = querystring.get("idServico");
+    console.log(idServicoUrl);
+    axios
+      .put(
+        `http://localhost/Cuidador/Cuidador/api/agendar/status/${idServicoUrl}`,
+        editStatusRecused,
+     
+      )
+      .then((res) => {
+        setEditStatusRecused(console.log({ UpdatedAt: res.data.updatedAt }));
+      });
+
     setMessageDecision(!messageDecision);
     const acept = document.getElementById("acept");
     acept.style.display = "none";
+
   }
 
   return (
@@ -112,7 +129,8 @@ const HistoricoCuidador = () => {
               <div
                 className="card-history"
                 key={key}
-                data-id={historyServices.idHost}
+                data-id={historyServices.idServico}
+                onClick={detectIdService}
               >
                 <div className="direcionar">
                   <div className="containerFotoHistory">
