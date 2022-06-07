@@ -57,7 +57,7 @@ const HistoricoCuidador = () => {
 
   const [editStatus, setEditStatus] = useState(
     {
-      status: "ACEITO",
+      status: "ACEITO"
     },
   );
 
@@ -68,9 +68,7 @@ const HistoricoCuidador = () => {
       .put(
         `http://localhost/Cuidador/Cuidador/api/agendar/status/${id}`,
         editStatus,
-        {
-          status: "ACEITO",
-        }
+     
       )
       .then((res) => {
         setEditStatus(console.log({ UpdatedAt: res.data.updatedAt }));
@@ -175,7 +173,7 @@ const HistoricoCuidador = () => {
                         className="respStatusAcept"
                         onClick={DecisionCuidadorAcept}
                         id="acept"
-                        value={editStatus.status}
+                        
                       >
                         {messageDecision ? "Aceitar" : "Serviço aceito"}
                       </label>
