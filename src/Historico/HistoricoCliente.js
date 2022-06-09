@@ -54,6 +54,7 @@ const HistoricoCliente = () => {
 
     setSearchHistory(filterHistory);
   };
+  
 
   return (
     <>

@@ -15,7 +15,7 @@ import HistoricoCliente from "../Historico/HistoricoCliente"
 import HistoricoCuidador from "../Historico/HistoricoCuidador"
 import PerfiCliente from "../Perfil/PerfilCliente"
 import EscolhaLogin from "../Escolha/EscolhaLogin"
-
+import ModalPagamento from "../Agendamento/modal/ModalPagamento"
 
 function OurRoutes() {
   return (
@@ -35,6 +35,7 @@ function OurRoutes() {
       <Route path="/PerfilCliente" element={<PerfiCliente />} />
       <Route path="/LoginCuidador" element={<LoginCuidador />} />
       <Route path="/EscolhaLogin" element={<EscolhaLogin />} />
+      <Route path="/ModalPagamento" element={<ModalPagamento />} />
     </Routes>
   );
 }

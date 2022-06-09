@@ -105,6 +105,7 @@ const HistoricoCuidador = () => {
 
   }
 
+
   return (
     <>
       <Link to={"../"}>

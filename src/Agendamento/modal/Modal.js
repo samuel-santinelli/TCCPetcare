@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import InputMask from "react-input-mask";
 import "./style/styleModal.css";
 
@@ -9,6 +9,8 @@ const Modal = (props) => {
 
   const [querystring] = useSearchParams();
   const idHost = querystring.get("idHost");
+
+  const navigate = useNavigate()
 
   const date = new Date().toLocaleString();
   console.log(date);
@@ -55,9 +57,9 @@ const Modal = (props) => {
       .then((res) =>
         window.localStorage.setItem("agendamento", JSON.stringify(res.data))
       );
-
-    console.log("foi");
+  
     alert("Agendamento realizado com sucesso!");
+    navigate("/ModalPagamento")
   };
 
   const listServices = () => {
