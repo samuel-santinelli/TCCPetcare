@@ -4,7 +4,7 @@ require_once(SRC.'bd/conexao.php');
 
 function listarHost(){
 
-    $sql = "select *from  tblHost";
+    $sql = "select *from  tblHost order by idHost desc";
 
     $conexao = conexao();
 
